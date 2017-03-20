@@ -1,0 +1,1000 @@
+ 1569  git pull origin master
+ 1570  git push origin master
+ 1571  cd ../../CMPT-419-Project/
+ 1572  ll
+ 1573  cd HMRF-EM-image_v2.1/
+ 1574  ll
+ 1575  cd code/
+ 1576  ll
+ 1577  rm FW*
+ 1578  rm -r FW*
+ 1579  ll
+ 1580  rm test_*
+ 1581  ll
+ 1582  rm Fw001*
+ 1583  rm -r Fw001*
+ 1584  ll
+ 1585  less preprocess.m 
+ 1586  less ExtractNLargestBlobs.m 
+ 1587  cp /home/elijah/Desktop/temp/Cropped_images/FW0001_0812_02Squally_7DE_47927_cropped.jpg .
+ 1588  ll
+ 1589  matlab -nodisplay -r "preprocess.m"
+ 1590  less preprocess.m 
+ 1591  vim preprocess.m 
+ 1592  vim ExtractNLargestBlobs.m 
+ 1593  matlab -nodisplay -r "preprocess('FW0001_0812_02Squally_7DE_47927_cropped.jpg'); exit;"
+ 1594  ll
+ 1595  gnome-open initial\ labels.png 
+ 1596  gnome-open final\ labels.png 
+ 1597  vim preprocess.m 
+ 1598  vim ExtractNLargestBlobs.m 
+ 1599  vim preprocess.m 
+ 1600  matlab -nodisplay -r "preprocess('FW0001_0812_02Squally_7DE_47927_cropped.jpg'); exit;"
+ 1601  ll
+ 1602  vim preprocess.m 
+ 1603  matlab -nodisplay -r "preprocess('FW0001_0812_02Squally_7DE_47927_cropped.jpg'); exit;"
+ 1604  ll
+ 1605  gnome-open test.png 
+ 1606  vim preprocess.m 
+ 1607  matlab -nodisplay -r "preprocess('FW0001_0812_02Squally_7DE_47927_cropped.jpg'); exit;"
+ 1608  gnome-open test.png 
+ 1609  ll
+ 1610  gnome-open FW0001_0812_02Squally_7DE_47927_cropped.jpg 
+ 1611  gnome-open test.png 
+ 1612  vim preprocess.m 
+ 1613  mv test.png test_old.png
+ 1614  vim preprocess.m 
+ 1615  matlab -nodisplay -r "preprocess('FW0001_0812_02Squally_7DE_47927_cropped.jpg'); exit;"
+ 1616  gnome-open test.png 
+ 1617  python
+ 1618  vim preprocess.m 
+ 1619  matlab -nodisplay -r "preprocess('FW0001_0812_02Squally_7DE_47927_cropped.jpg'); exit;"
+ 1620  gnome-open test.png 
+ 1621  python
+ 1622  ll
+ 1623  cd ..
+ 1624  ll
+ 1625  mkdir ../../Binary_images
+ 1626  cp *.m ../../Binary_images
+ 1627  cp code/ ../../Binary_images
+ 1628  cp -r code/ ../../Binary_images
+ 1629  cd ../../../
+ 1630  cd Desktop/temp/Cropped_images/
+ 1631  ll
+ 1632  while read line; do cp $line ../../Binary_images/code/; done <images.txt 
+ 1633  less images.txt 
+ 1634  ll
+ 1635  while read line; do cp $line ../../Binary_images/code/; done <images.txt 
+ 1636  gnome-open Bonilla_D-3914-2_cropped.jpg
+ 1637  cd ..
+ 1638  c d..
+ 1639  cd ..
+ 1640  ll
+ 1641  cd Cropped_images_2/
+ 1642  ll
+ 1643  ls * | less
+ 1644  ls * | wc -l 
+ 1645  ls FW0* | less
+ 1646  ls FW0* | wc -l
+ 1647  ls FW0* | less
+ 1648  ls FW0* > blah.txt
+ 1649  less blah.txt 
+ 1650  cd ..
+ 1651  cd temp/Cropped_images/
+ 1652  ll
+ 1653  cp ../../Cropped_images_2/blah.txt .
+ 1654  while read line; do cp $line ../../Binary_images/code/; done <blah.txt 
+ 1655  ll
+ 1656  cd ../../
+ 1657  ll
+ 1658  cd dataset_79/
+ 1659  ll
+ 1660  ls -1 * | less
+ 1661  ls -1 * | wc -l
+ 1662  cd ../Cropped_images_2/
+ 1663  ll
+ 1664  ls -1 FW0* | less 
+ 1665  ls -1 FW0* | wc -l
+ 1666  ls -l FW0* | less
+ 1667  ls -1 FW0* | less
+ 1668  ls  | less
+ 1669  ls  > folders.txt
+ 1670  vim folders.txt 
+ 1671  while read line; do cd $line; cp * ../Binary_images/code/; cd..; done <folders.txt 
+ 1672  while read line; do cd $line; cp * ../Binary_images/code/; cd ..; done <folders.txt 
+ 1673  ll
+ 1674  cd ..
+ 1675  ll
+ 1676  while read line; do cd $line; cp * ../Binary_images/code/; cd ..; done <folders.txt 
+ 1677  ll ../Binary_images/code/
+ 1678  vim temp_2.sh
+ 1679  bash temp_2.sh folders.txt 
+ 1680  cd ../Binary_images/code/
+ 1681  pwd
+ 1682  cd ../../Cropped_images_2/
+ 1683  vim temp_2.sh 
+ 1684  bash temp_2.sh folders.txt 
+ 1685  ll
+ 1686  cd ../temp/Cropped_images/
+ 1687  ll
+ 1688  vim blah.txt 
+ 1689  rm blah.txt 
+ 1690  vim blah.txt
+ 1691  ll
+ 1692  while read line; do cut -f1 -d"_" $line; done <images.txt 
+ 1693  while read line; do cut -f1 -d"_" ; done <images.txt 
+ 1694  less images.txt 
+ 1695  while read line; do cut -f1 -d"." ; done <images.txt 
+ 1696  while read line; do cut -f1 -d"." ; done <images.txt > names.txt 
+ 1697  less names.txt 
+ 1698  less images.txt 
+ 1699  ll
+ 1700  less images.txt 
+ 1701  cp names.txt ../../Binary_images/code/
+ 1702  ll
+ 1703  less images.txt 
+ 1704  less names.txt 
+ 1705  ll
+ 1706  ll
+ 1707  gnome-open FW0001_B130628_01WHA_WILL_07592_cropped_binary.png
+ 1708  ll
+ 1709  gnome-open FW0001_B130628_01WHA_WILL_07592_cropped_binary.png
+ 1710  ll
+ 1711  ls *_binary.png
+ 1712  gnome-open FW0001_B130628_01WHA_WILL_07592_cropped_binary.png
+ 1713  gnome-open FW0001_B130628_01WHA_WILL_07592_cropped.jpg 
+ 1714  gnome-open FW0001_B130719_01CAM_WILL_26131_cropped_binary.png
+ 1715  gnome-open FW0001_B130719_01CAM_WILL_26131_cropped.jpg 
+ 1716  gnome-open FW0001_B130719_01CAM_WILL_26131_cropped_binary.png
+ 1717  gnome-open FW0001_B130719_01CAM_WILL_26131_cropped.jpg 
+ 1718  gnome-open FW0001_B130719_01CAM_WILL_26131_cropped_binary.png
+ 1719  gnome-open FW0001_B130719_01CAM_WILL_26131_cropped.jpg 
+ 1720  ll
+ 1721  gnome-open FW0001_0812_02Squally_7DE_47927_cropped.jpg
+ 1722  llll
+ 1723  ll
+ 1724  vim preprocess.m 
+ 1725  cd temp/Cropped_images/ll
+ 1726  vim preprocess.m 
+ 1727  ls *_binary*
+ 1728  gnome-open FW0001_0812_02Squally_7DE_47927_cropped.jpg_binary.png
+ 1729  ls *_binary*
+ 1730  ll
+ 1731  ls *_binary*
+ 1732  ls *_binary* | wc -l
+ 1733  gnome-open FW0001_0812_02Squally_7DE_47927_cropped.jpg_binary.png
+ 1734  ls *_binary*
+ 1735  ls *_binary* | wc -l
+ 1736  vim preprocess.m
+ 1737  ll
+ 1738  vim preprocess.m 
+ 1739  while read -r f1 f2; do matlab -nodisplay -r "preprocess('$f1','$f2');exit;"; done < <(paste images.txt names.txt)
+ 1740  vim preprocess.m 
+ 1741  while read -r f1 f2; do matlab -nodisplay -r "preprocess('$f1','$f2');exit;"; done < <(paste images.txt names.txt)
+ 1742  vim preprocess.m 
+ 1743  while read -r f1 f2; do matlab -nodisplay -r "preprocess('$f1','$f2');exit;"; done < <(paste images.txt names.txt)
+ 1744  LL
+ 1745  ll
+ 1746  rm *_binary*
+ 1747  ll
+ 1748  while read -r f1; do matlab -nodisplay -r "preprocess('$f1','$f1');exit;"; done < images.txt 
+ 1749  vim preprocess.m 
+ 1750  while read -r f1; do matlab -nodisplay -r "preprocess('$f1','$f1');exit;"; done < images.txt 
+ 1751  ll
+ 1752  vim preprocess.m 
+ 1753  while read -r f1; do matlab -nodisplay -r "preprocess('$f1','$f1');exit;"; done < images.txt 
+ 1754  vim preprocess.m 
+ 1755  while read -r f1; do matlab -nodisplay -r "preprocess('$f1','$f1');exit;"; done < images.txt 
+ 1756  vim preprocess.m 
+ 1757  while read -r f1; do matlab -nodisplay -r "preprocess('$f1','$f1');exit;"; done < images.txt 
+ 1758  ll
+ 1759  cd Desktop/
+ 1760  ll
+ 1761  cd SRA_Files_2/
+ 1762  ll
+ 1763  cd ..
+ 1764  cd SRA_bowtie/
+ 1765  ll
+ 1766  cd clpA/
+ 1767  ll
+ 1768  less clpA.fasta
+ 1769  clustalw clpA.fasta 
+ 1770  ll
+ 1771  clustalx2 clpA.aln 
+ 1772  ll
+ 1773  less clpA.aln 
+ 1774  cd ../../
+ 1775  ll 
+ 1776  mkdir Diabetes_files 
+ 1777  df -h
+ 1778  ll
+ 1779  less ClpA_all_4_1.fa 
+ 1780  less clpA.log
+ 1781  vim Compute_values.py 
+ 1782  rm ClpA_all_3*
+ 1783  rm ClpA_all_2*
+ 1784  ll
+ 1785  rm ClpA_all_1*
+ 1786  ll
+ 1787  rm ClpA_all_40
+ 1788  rm ClpA_all_40*
+ 1789  ll
+ 1790  rm ClpA_all_8*
+ 1791  rm ClpA_all_9*
+ 1792  l
+ 1793  rm ClpA_all_6*
+ 1794  rm ClpA_all_5*
+ 1795  ll
+ 1796  rm ClpA_all_7*
+ 1797  ll
+ 1798  rm clpA_bowtie.*
+ 1799  ll
+ 1800  rm ClpA_all_4_bowtie.*
+ 1801  ll
+ 1802  rm SRR2034333_*
+ 1803  ll
+ 1804  vim Compute_values.py 
+ 1805  python Compute_values.py 
+ 1806  vim Compute_values.py 
+ 1807  python Compute_values.py 
+ 1808  ll
+ 1809  rm ClpA_all_1_*
+ 1810  vim Compute_values.py 
+ 1811  python Compute_values.py 
+ 1812  vim Compute_values.py 
+ 1813  python Compute_values.py 
+ 1814  ll
+ 1815  rm ClpA_all_1_*
+ 1816  rm ClpA_all_2_*
+ 1817  ll
+ 1818  vim Compute_values.py 
+ 1819  python Compute_values.py 
+ 1820  vim Compute_values.py 
+ 1821  python Compute_values.py 
+ 1822  vim Compute_values.py 
+ 1823  ll
+ 1824  rm clpA_141_1_*
+ 1825  ll
+ 1826  rm clpA_*
+ 1827  ll
+ 1828  vim Compute_values.py 
+ 1829  python Compute_values.py 
+ 1830  ll
+ 1831  rm ClpA_0.*
+ 1832  vim Compute_values.py 
+ 1833  python Compute_values.py 
+ 1834  ll
+ 1835  rm ClpA_1.fas 
+ 1836  rm ClpA_2.fas 
+ 1837  vim Compute_values.py 
+ 1838  python Compute_values.py 
+ 1839  ll
+ 1840  less ClpA_run_1.fas
+ 1841  rm ClpA_run_*
+ 1842  rm ClpA_all_1*
+ 1843  rm ClpA_all_2*
+ 1844  ll
+ 1845  vim Compute_values.py 
+ 1846  gnome-open ../../../../scripts/preprocess.py 
+ 1847  vim Compute_values.py 
+ 1848  python Compute_values.py 
+ 1849  vim Compute_values.py 
+ 1850  python Compute_values.py 
+ 1851  python Compute_values.py -g clpA
+ 1852  vim Compute_values.py 
+ 1853  python Compute_values.py -g clpA
+ 1854  ll
+ 1855  rm clpA_1*
+ 1856  ll
+ 1857  rm clpA_2*
+ 1858  ll
+ 1859  rm clpAall_*
+ 1860  ll
+ 1861  vim Compute_values.py 
+ 1862  python Compute_values.py 
+ 1863  python Compute_values.py -g clpA
+ 1864  ll
+ 1865  rm clpA*
+ 1866  ll
+ 1867  rm Clpa_*
+ 1868  ll
+ 1869  vim Compute_values.py 
+ 1870  python Compute_values.py -g clpA
+ 1871  ll
+ 1872  rm Clpa_*
+ 1873  rm clpA*
+ 1874  ll
+ 1875  vim Compute_values.py 
+ 1876  python Compute_values.py 
+ 1877  python Compute_values.py -g clpA
+ 1878  rm Clpa_*
+ 1879  rm clpA*
+ 1880  ll
+ 1881  rm C_*
+ 1882  ll
+ 1883  vim Compute_values.py 
+ 1884  python Compute_values.py 
+ 1885  python Compute_values.py -g clpA
+ 1886  ll
+ 1887  rm C_*
+ 1888  ll
+ 1889  vim Compute_values.py 
+ 1890  python Compute_values.py -g clpA
+ 1891  ll
+ 1892  vim Compute_values.py 
+ 1893  python
+ 1894  vim Compute_values.py 
+ 1895  python Compute_values.py 
+ 1896  python Compute_values.py -g clpA
+ 1897  vim Compute_values.py 
+ 1898  python Compute_values.py -g clpA
+ 1899  ll
+ 1900  cd 
+ 1901  cd Documents/
+ 1902  ll
+ 1903  cd ..
+ 1904  cd Desktop/
+ 1905  ll
+ 1906  mkdir 475_Assignments 
+ 1907  cd 475_Assignments/
+ 1908  mkdir A1
+ 1909  cd A1/
+ 1910  pwd
+ 1911  ll
+ 1912  rm A1_figure.pdf 
+ 1913  ll
+ 1914  gnome-open A1_figure.pdf 
+ 1915  ll
+ 1916  gnome-open A1_figure.png 
+ 1917  gnome-open A1_figure.pdf 
+ 1918  ll
+ 1919  gnome-open A1_figure.png 
+ 1920  cd ../../SRA_bowtie/Alignments/Simulated_data/SRR2034333/clpA/
+ 1921  less linear.txt 
+ 1922  cd ../
+ 1923  cd ../../../
+ 1924  cd ../
+ 1925  ll
+ 1926  cd qcma-master/
+ 1927  ll
+ 1928  less README.md 
+ 1929  ./version_bump.sh 
+ 1930  cd android/
+ 1931  ll
+ 1932  cd ..
+ 1933  ll
+ 1934  cd gui/
+ 1935  ll
+ 1936  cd ..
+ 1937  ll
+ 1938  cd common/
+ 1939  ll
+ 1940  cd ..
+ 1941  cd ,,
+ 1942  cd ..
+ 1943  ll
+ 1944  rm -r qcma-master/
+ 1945  sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/codestation/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/qcma.list"
+ 1946  ll
+ 1947  sudo apt-get update
+ 1948  sudo apt-get install qcma
+ 1949  ll
+ 1950  qcma 
+ 1951  ll
+ 1952  libreoffice PRINT THIS WORKBOOK & BRING TO THE  COURSE-Active_Start_Coach_Workbook.pdf
+ 1953  ll
+ 1954  libreoffice temp.pdf
+ 1955  libreoffice temp2.PDF
+ 1956  libreoffice temp2.pdf
+ 1957  gnome-open temp2.pdf 
+ 1958  ll
+ 1959  cd Desktop/
+ 1960  ll
+ 1961  cd SRA_bowtie/
+ 1962  ll
+ 1963  cd Alignments/Simulated_data/
+ 1964  ll
+ 1965  cd SRR2034333/clpA/
+ 1966  ll
+ 1967  python Compute_values.py -g clpA
+ 1968  ll
+ 1969  less ClpA_7.fas
+ 1970  mkdir temp 
+ 1971  mv output_k_* temp
+ 1972  ll
+ 1973  mv variants* temp
+ 1974  mv ClpA_7_ClpA_7* temp
+ 1975  ll
+ 1976  less ClpA_7_proportions.csv 
+ 1977  rm ClpA_*
+ 1978  ll
+ 1979  rm clpA_64_17_*
+ 1980  ll
+ 1981  python Compute_values.pypy -g clpA > ClpA.log 
+ 1982  python Compute_values.py -g clpA > ClpA.log 
+ 1983  cp temp/variants.txt .
+ 1984  python Compute_values.py -g clpA > ClpA.log 
+ 1985  ll
+ 1986  less ClpA_7.fas
+ 1987  less temp
+ 1988  less temp.sh 
+ 1989  cd temp/
+ 1990  ll
+ 1991  less variants.txt 
+ 1992  less ClpA_7_ClpA_7.out
+ 1993  vim ClpA_7_ClpA_7.reads.out 
+ 1994  vim ClpA_7_ClpA_7_reads.txt 
+ 1995  less ClpA_7_ClpA_7_reads.txt
+ 1996  less ClpA_7_ClpA_7.reads.out 
+ 1997  ll
+ 1998  less ClpA_7_ClpA_7.reads.out
+ 1999  python ../../../../../scripts/preprocess.py 
+ 2000  python ../../../../../scripts/preprocess.py -i ClpA_7_ClpA_7.reads.out -g clpA
+ 2001  ll
+ 2002  less clpA_proportions.csv
+ 2003  rm clpA_proportions.csv 
+ 2004  less ClpA_7_ClpA_7.reads.out
+ 2005  less ClpA_7_ClpA_7.out
+ 2006  cd ..
+ 2007  ll
+ 2008  less Compute_values.py 
+ 2009  less temp
+ 2010  less temp.sh 
+ 2011  ll
+ 2012  less ClpA_7_1.fa
+ 2013  less ../../../scripts/temp.sh 
+ 2014  less ClpA_7.fas
+ 2015  cd temp/
+ 2016  ll
+ 2017  while read line; do grep -w -A1 $line linear.txt >> reference.fa; done <known_var.txt 
+ 2018  ll
+ 2019  less reference.fa 
+ 2020  ll
+ 2021  cd ..
+ 2022  ll
+ 2023  cd ..
+ 2024  ll
+ 2025  cd ..
+ 2026  ll
+ 2027  cd ..
+ 2028  ll
+ 2029  less Alignments/
+ 2030  cd Alignments/
+ 2031  ll
+ 2032  cd ..
+ 2033  cd scripts/
+ 2034  ll
+ 2035  less temp.sh 
+ 2036  ll
+ 2037  less temp.sh 
+ 2038  cd ../Simulated_data/SRR2034333/clpA/temp/
+ 2039  ll
+ 2040  bowtie-build reference.fa clpA_7_bowtie 
+ 2041  ll
+ 2042  less temp
+ 2043  less ../../../../scripts/temp.sh 
+ 2044  cp ../../../../../SRR20343
+ 2045  cp ../../../../../SRR2034333/SRR2034333_1.fastq .
+ 2046  cp ../../../../../SRR2034333/SRR2034333_2.fastq .
+ 2047  less ../../../../scripts/temp.sh 
+ 2048  cat ../../../../scripts/temp.sh 
+ 2049  bowtie -a -p clpA_7_bowtie -1 SRR2034333_1.fastq -2 SRR2034333_2.fastq clpA_7.out 
+ 2050  ll
+ 2051  less ClpA_7_ClpA_7.out
+ 2052  less SRR2034333_1.fastq
+ 2053  less ClpA_7_ClpA_7.out
+ 2054  cat ../../../../scripts/temp.sh 
+ 2055  bowtie -a -p 8 clpA_7_bowtie -1 SRR2034333_1.fastq -2 SRR2034333_2.fastq clpA_7.out 
+ 2056  ll
+ 2057  less clpA_7.out 
+ 2058  awk '{print $1"\t"$3"\t"$8}' clpA_7.out | less
+ 2059  awk '{print $1"\t"$4"\t"$8}' clpA_7.out | less
+ 2060  awk '{print $1"\t"$3"\t"$8}' clpA_7.out | less
+ 2061  less clpA_7.out 
+ 2062  less ClpA_7_ClpA_7.out 
+ 2063  less ClpA_7_ClpA_7_reads.txt 
+ 2064  less ClpA_7_ClpA_7.out 
+ 2065  less ClpA_7_ClpA_7.reads.out 
+ 2066  awk '{print $1"\t"$5"\t"$8}' clpA_7.out | less
+ 2067  awk '{print $1"\t"$5"\t"$9}' clpA_7.out | less
+ 2068  less ClpA_7_ClpA_7.reads.out 
+ 2069  awk '{print $1"\t"$5"\t"$8}' clpA_7.out | less
+ 2070  awk '{print $1"\t"$5"\t"$4}' clpA_7.out | less
+ 2071  awk '{print $1"\t"$5"\t"$3}' clpA_7.out | less
+ 2072  awk '{print $1"\t"$5"\t"$2}' clpA_7.out | less
+ 2073  awk '{print $1"\t"$5"\t"$0}' clpA_7.out | less
+ 2074  awk '{print $1"\t"$5"\t"$6}' clpA_7.out | less
+ 2075  awk '{print $1"\t"$5"\t"$7}' clpA_7.out | less
+ 2076  awk '{print $1"\t"$5"\t"$3}' clpA_7.out | less
+ 2077  less clpA_7.out 
+ 2078  awk '{print $1"\t"$5"\t"$11}' clpA_7.out | less
+ 2079  awk '{print $1"\t"$5"\t"$10}' clpA_7.out | less
+ 2080  less clpA_7.out 
+ 2081  less reference.fa
+ 2082  less clpA_7.out 
+ 2083  bowtie-build reference.fa clpA_7_bowtie 
+ 2084  ll
+ 2085  less clpA_7.out 
+ 2086  rm clpA_7.out 
+ 2087  ll
+ 2088  rm clpA_7_bowtie.*
+ 2089  ll
+ 2090  cp ../../../../../clpA/clpA.fasta .
+ 2091  ll
+ 2092  bowtie-build clpA.fasta clpA_7_bowtie 
+ 2093  ll
+ 2094  less clpA.fasta
+ 2095  less ClpA_7_ClpA_7.reads.out 
+ 2096  cd ..
+ 2097  mkdir temp_2
+ 2098  ll
+ 2099  cp ClpA_7* temp_2/
+ 2100  ll
+ 2101  ll temp_2/
+ 2102  cd temp_2/
+ 2103  cp ../temp/clpA.fasta .
+ 2104  bowtie-build clpA.fasta clpA_7_bowtie 
+ 2105  ll
+ 2106  bowtie -a -p 8 clpA_7_bowtie -1 ClpA_7_1.fa -2 ClpA_7_2.fa clpA_7.out 
+ 2107  ll
+ 2108  less clpA_7.out
+ 2109  awk '{print $1"\t"$5"\t"$10}' clpA_7.out | less
+ 2110  awk '{print $1"\t"$3"\t"$8}' clpA_7.out | less
+ 2111  awk '{print $1"\t"$3"\t"$8"\t"$4}' clpA_7.out | less
+ 2112  awk '{print $1"\t"$3"\t"$8"\t"$5}' clpA_7.out | less
+ 2113  less ClpA_7_ClpA_7_reads.txt
+ 2114  awk '{print $1"\t"$3"\t"$8"\t"$5}' clpA_7.out > ClpA_7_ClpA_7_reads.txt
+ 2115  less ClpA_7_ClpA_7_reads.txt
+ 2116  less ClpA_7_1.fa
+ 2117  less ClpA_7.fas
+ 2118  vim known_variants.txt
+ 2119  cp ../linear.txt 
+ 2120  cp ../linear.txt .
+ 2121  while read line; do grep -w -A1 $line linear.txt >> reference.fa; done <known_var.txt 
+ 2122  ll
+ 2123  mv known_variants.txt known_var.txt 
+ 2124  while read line; do grep -w -A1 $line linear.txt >> reference.fa; done <known_var.txt 
+ 2125  less reference.fa 
+ 2126  cp ../variants.txt .
+ 2127  ll
+ 2128  while read line; do grep -w -A1 $line linear.txt >> reference.fa; done <known_var.txt 
+ 2129  python ../../../../scripts/generate_kmers.py -i variants.txt -r ClpA_7_ClpA_7.reads.out -k 15 -sknown_var.txt
+ 2130  ll
+ 2131  less clpA_7.out
+ 2132  less ClpA_7_ClpA_7_reads.txt
+ 2133  python ../../../../scripts/generate_kmers.py -i variants.txt -r ClpA_7_ClpA_7_reads.txt -k 15 -sknown_var.txt
+ 2134  ll
+ 2135  less output_k_35.txt
+ 2136  python ../../../../scripts/generate_kmers.py -i variants.txt -r ClpA_7_ClpA_7_reads.txt -k 15 -sknown_var.txt
+ 2137  ll
+ 2138  less ClpA_7_ClpA_7.reads.out 
+ 2139  less ClpA_7_ClpA_7_reads.txt
+ 2140  python ../../../../../scripts/preprocess.py -i ClpA_7_ClpA_7_reads.txt -g clpA
+ 2141  ll
+ 2142  less clpA_proportions.csv
+ 2143  wc -l clpA_proportions.csv
+ 2144  python ../../../../scripts/generate_kmers.py -i variants.txt -r ClpA_7_ClpA_7_reads.txt -k 15 -sknown_var.txt
+ 2145  ll
+ 2146  less test.txt 
+ 2147  less clpA_proportions.csv 
+ 2148  python ../../../../scripts/generate_kmers.py -i variants.txt -r ClpA_7_ClpA_7_reads.txt -k 15 -sknown_var.txt
+ 2149  while read line; do grep -w -A1 $line linear.txt >> new_reference.fa; done <known_var.txt 
+ 2150  less new_reference.fa 
+ 2151  while read line; do grep -w -A1 $line linear.txt >> new_reference.fa; done <test.txt 
+ 2152  less new_reference.fa 
+ 2153  bowtie-build new_reference.fa clpA_7_new_bowtie 
+ 2154  bowtie -a -p 8 clpA_7_new_bowtie -1 ClpA_7_1.fa -2 ClpA_7_2.fa clpA_7_new.out 
+ 2155  less clpA_7_new.out
+ 2156  awk '{print $1"\t"$3"\t"$8"\t"$5}' clpA_7_new.out > ClpA_7_ClpA_7_reads_new.txt
+ 2157  less ClpA_7_ClpA_7_reads_new.txt
+ 2158  python ../../../../../scripts/preprocess.py -i ClpA_7_ClpA_7_reads_new.txt -g clpA_new
+ 2159  less clpA_new_proportions.csv 
+ 2160  wc -l clpA_new_proportions.csv 
+ 2161  less clpA_new_proportions.csv 
+ 2162  less known_var.txt 
+ 2163  less clpA_new_proportions.csv 
+ 2164  while read line; do grep $line clpA_new_proportions.csv; done <known_var.txt 
+ 2165  less clpA_new_proportions.csv 
+ 2166  less known_var.txt 
+ 2167  grep "clpA_123" clpA_new_proportions.csv 
+ 2168  less known_var.txt 
+ 2169  grep "clpA_159" clpA_new_proportions.csv 
+ 2170  less known_var.txt 
+ 2171  grep "clpA_5" clpA_new_proportions.csv 
+ 2172  less known_var.txt 
+ 2173  grep "clpA_148" clpA_new_proportions.csv 
+ 2174  less known_var.txt 
+ 2175  grep "clpA_149" clpA_new_proportions.csv 
+ 2176  less known_var.txt 
+ 2177  grep "clpA_171" clpA_new_proportions.csv 
+ 2178  less known_var.txt 
+ 2179  grep "clpA_117" clpA_new_proportions.csv 
+ 2180  less clpA_new_proportions.csv 
+ 2181  python ../../../../../scripts/preprocess.py -i ClpA_7_ClpA_7_reads_new.txt -g clpA_new
+ 2182  ll
+ 2183  less clpA_new_proportions.csv
+ 2184  head clpA_new_proportions.csv 
+ 2185  head clpA_proportions.csv 
+ 2186  python ../../../../../scripts/preprocess.py -i ClpA_7_ClpA_7_reads_new.txt -g clpA_new
+ 2187  ll
+ 2188  rm clpA_newnew_proportions.csv 
+ 2189  python ../../../../../scripts/preprocess.py -i ClpA_7_ClpA_7_reads_new.txt -g clpA_new
+ 2190  ll
+ 2191  less clpA_newrecalc_proportions.csv
+ 2192  less known_var.txt 
+ 2193  cat known_var.txt 
+ 2194  less clpA_newrecalc_proportions.csv
+ 2195  grep 'clpA_103' clpA_newrecalc_proportions.csv 
+ 2196  grep 'clpA_159' clpA_newrecalc_proportions.csv 
+ 2197  grep 'clpA_5' clpA_newrecalc_proportions.csv 
+ 2198  grep 'clpA_149' clpA_newrecalc_proportions.csv 
+ 2199  grep 'clpA_171' clpA_newrecalc_proportions.csv 
+ 2200  grep 'clpA_159' clpA_newrecalc_proportions.csv 
+ 2201  grep 'clpA_117' clpA_newrecalc_proportions.csv 
+ 2202  less clpA_newrecalc_proportions.csv
+ 2203  ll
+ 2204  rm output_k_*
+ 2205  python ../../../../scripts/generate_kmers.py -i variants.txt -r ClpA_7_ClpA_7_reads.txt -k 15 -s known_var.txt
+ 2206  ll
+ 2207  less output_k_15_S.txt
+ 2208  python ../../../../scripts/generate_kmers.py -i variants.txt -r ClpA_7_ClpA_7_reads.txt -k 20 -s known_var.txt
+ 2209  python ../../../../scripts/generate_kmers.py -i variants.txt -r ClpA_7_ClpA_7_reads.txt -k 25 -s known_var.txt
+ 2210  python ../../../../scripts/generate_kmers.py -i variants.txt -r ClpA_7_ClpA_7_reads.txt -k 30 -s known_var.txt
+ 2211  python ../../../../scripts/generate_kmers.py -i variants.txt -r ClpA_7_ClpA_7_reads.txt -k 35 -s known_var.txt
+ 2212  ll
+ 2213  while read line; do grep $line clpA.fasta > k_15_reference.fas; done <output_k_15.txt 
+ 2214  less k_15_reference.fas 
+ 2215  while read line; do grep -w -A1 $line clpA.fasta > k_15_reference.fas; done <output_k_15_S.txt 
+ 2216  less k_15_reference.fas 
+ 2217  less output_k_15_S.txt 
+ 2218  while read line; do grep -w -A1 $line clpA.fasta; done <output_k_15_S.txt 
+ 2219  less clpA.fasta 
+ 2220* while read line; do grep -w -A1 $line linear.txt >> ; done <output_k_15_S.txt 
+ 2221  while read line; do grep -w -A1 $line linear.txt >> k_15_reference.fas; done <output_k_15_S.txt 
+ 2222  less k_15_reference.fas 
+ 2223  rm k_15_reference.fas 
+ 2224  while read line; do grep -w -A1 $line linear.txt >> k_15_reference.fas; done <output_k_15_S.txt 
+ 2225  less k_15_reference.fas 
+ 2226  while read line; do grep -w -A1 $line linear.txt >> k_20_reference.fas; done <output_k_20_S.txt 
+ 2227  while read line; do grep -w -A1 $line linear.txt >> k_25_reference.fas; done <output_k_25_S.txt 
+ 2228  while read line; do grep -w -A1 $line linear.txt >> k_30_reference.fas; done <output_k_30_S.txt 
+ 2229  while read line; do grep -w -A1 $line linear.txt >> k_35_reference.fas; done <output_k_35_S.txt 
+ 2230  ll
+ 2231  rm clpA_7_new*
+ 2232  ll
+ 2233  rm clpA_new*
+ 2234  ll
+ 2235  bowtie-build k_15_reference.fas k_15_bowtie
+ 2236  bowtie-build k_20_reference.fas k_20_bowtie
+ 2237  bowtie-build k_25_reference.fas k_25_bowtie
+ 2238  bowtie-build k_30_reference.fas k_30_bowtie
+ 2239  bowtie-build k_35_reference.fas k_35_bowtie
+ 2240  ll
+ 2241  bowtie -a -p 8 k_15_bowtie -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_15.out  
+ 2242  bowtie -a -p 8 k_20_bowtie -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_20.out  
+ 2243  bowtie -a -p 8 k_25_bowtie -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_25.out  
+ 2244  bowtie -a -p 8 k_30_bowtie -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_30.out  
+ 2245  bowtie -a -p 8 k_35_bowtie -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_35.out  
+ 2246  ll
+ 2247  less k_15.out 
+ 2248  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_15.out > k_15_reads.txt
+ 2249  less k_15_reads.txt 
+ 2250  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_20.out > k_20_reads.txt
+ 2251  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_25.out > k_25_reads.txt
+ 2252  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_30.out > k_30_reads.txt
+ 2253  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_35.out > k_35_reads.txt
+ 2254  less k_20_reads.txt 
+ 2255  less k_25_reads.txt 
+ 2256  less k_30_reads.txt 
+ 2257  less k_35_reads.txt 
+ 2258  python ../../../../../scripts/preprocess.py -i k_15_reads.txt -g clpA_7_k_15
+ 2259  ll
+ 2260  python ../../../../../scripts/preprocess.py -i k_20_reads.txt -g clpA_7_k_20
+ 2261  python ../../../../../scripts/preprocess.py -i k_25_reads.txt -g clpA_7_k_25
+ 2262  python ../../../../../scripts/preprocess.py -i k_30_reads.txt -g clpA_7_k_30
+ 2263  python ../../../../../scripts/preprocess.py -i k_35_reads.txt -g clpA_7_k_35
+ 2264  ll
+ 2265  python ../../../../../scripts/preprocess.py -i k_15_reads.txt -g clpA_7_k_15
+ 2266  python ../../../../../scripts/preprocess.py -i k_20_reads.txt -g clpA_7_k_20
+ 2267  python ../../../../../scripts/preprocess.py -i k_25_reads.txt -g clpA_7_k_25
+ 2268  python ../../../../../scripts/preprocess.py -i k_30_reads.txt -g clpA_7_k_30
+ 2269  python ../../../../../scripts/preprocess.py -i k_35_reads.txt -g clpA_7_k_35
+ 2270  ll
+ 2271  less k_15_normalized_fractions.txt
+ 2272  less known_var.txt 
+ 2273  grep 'clpA_103' k_15_normalized_fractions.txt 
+ 2274  cat known_var.txt 
+ 2275  grep 'clpA_159' k_15_normalized_fractions.txt 
+ 2276  grep -w 'clpA_5' k_15_normalized_fractions.txt 
+ 2277  grep -w 'clpA_149' k_15_normalized_fractions.txt 
+ 2278  grep -w 'clpA_171' k_15_normalized_fractions.txt 
+ 2279  grep -w 'clpA_117' k_15_normalized_fractions.txt 
+ 2280  ll
+ 2281  cd ..
+ 2282  ll
+ 2283  less ClpA.log 
+ 2284  grep 'clpA_7' clpA.log
+ 2285  grep 'clpA_7' ClpA.log
+ 2286  grep -w 'clpA_7' ClpA.log
+ 2287  grep -w 'ClpA_7' ClpA.log
+ 2288  grep  'ClpA_7' ClpA.log
+ 2289  grep  -A1 'ClpA_7' ClpA.log
+ 2290  less ClpA.log 
+ 2291  cd temp2
+ 2292  cd temp_2/
+ 2293  ll
+ 2294  less ClpA_7_proportions.csv
+ 2295  cd ..
+ 2296  grep  -A1 'ClpA_7' ClpA.log
+ 2297  cat temp_2/ClpA_7_proportions.csv 
+ 2298  less ClpA.log 
+ 2299  grep  -A1 '>ClpA_7' ClpA.log
+ 2300  grep  -A1 '>ClpA_171' ClpA.log
+ 2301  grep  -A1 'ClpA_171' ClpA.log
+ 2302  grep  -A1 'clpA_171' ClpA.log
+ 2303  less ClpA.log 
+ 2304  grep  -A1 'clpA_7' ClpA.log
+ 2305  grep  -w 'clpA_7' ClpA.log
+ 2306  grep  -w 'ClpA_7' ClpA.log
+ 2307  grep  -w -A1'ClpA_7' ClpA.log
+ 2308  grep  -w -A1 'ClpA_7' ClpA.log
+ 2309  grep  -A1 'clpA_171' ClpA.log
+ 2310  grep  -A1 'clpA_149' ClpA.log
+ 2311  ll
+ 2312  less ClpA_7_proportions.csv
+ 2313  cat ClpA_7_proportions.csv
+ 2314  grep  -A1 '37' ClpA.log
+ 2315  grep  -w '37' ClpA.log
+ 2316  grep  -w '36' ClpA.log
+ 2317  cat ClpA_7_proportions.csv
+ 2318  cd temp_2/
+ 2319  ll
+ 2320  less ClpA_7_proportions.csv
+ 2321  less clpA_7_k_15_proportions.csv
+ 2322  cat ClpA_7_proportions.csv
+ 2323  grep 'clpA_171' clpA_7_k_15_proportions.csv
+ 2324  grep 'clpA_5' clpA_7_k_15_proportions.csv
+ 2325  grep -w 'clpA_5' clpA_7_k_15_proportions.csv
+ 2326  grep -w 'clpA_103' clpA_7_k_15_proportions.csv
+ 2327  grep -w 'clpA_117' clpA_7_k_15_proportions.csv
+ 2328  grep -w 'clpA_149' clpA_7_k_15_proportions.csv
+ 2329  grep -w 'clpA_159' clpA_7_k_15_proportions.csv
+ 2330  less clpA_7_k_15_proportions.csv
+ 2331  less k_15_normalized_fractions.txt
+ 2332  grep 'clpA_171' k_15_normalized_fractions.txt
+ 2333  grep 'clpA_5' k_15_normalized_fractions.txt
+ 2334  grep 'clpA_103' k_15_normalized_fractions.txt
+ 2335  grep 'clpA_117' k_15_normalized_fractions.txt
+ 2336  grep 'clpA_149' k_15_normalized_fractions.txt
+ 2337  grep 'clpA_159' k_15_normalized_fractions.txt
+ 2338  ll
+ 2339  less ClpA_7_ClpA_7_reads.txt
+ 2340  python ../../../../../scripts/preprocess.py -i ClpA_7_ClpA_7_reads.txt -g clpA_7
+ 2341  ll
+ 2342  less clpA_7_proportions.csv
+ 2343  python ../../../../../scripts/preprocess.py -i ClpA_7_ClpA_7_reads.txt -g clpA_7
+ 2344  less clpA_7_proportions.csv
+ 2345  python ../../../../../scripts/preprocess.py -i k_15_reads.txt -g clpA_15_new
+ 2346  ll
+ 2347  less k_35_normalized_fractions.txt
+ 2348  which bwa
+ 2349  bwa
+ 2350  cd ..
+ 2351  mkdir temp_3
+ 2352  cd temp_3
+ 2353  cp ../temp_2/k_15_reference.fas .
+ 2354  cp ../temp_2/ClpA_7_1.fa .
+ 2355  cp ../temp_2/ClpA_7_2.fa .
+ 2356  ll
+ 2357  cp ../ClpA_7.fas .
+ 2358  bwa index ClpA_7.fas 
+ 2359  ll
+ 2360  rm ClpA_7.fas*
+ 2361  ll
+ 2362  bwa index k_15_reference.fas 
+ 2363  ll
+ 2364  bwa aln -n 3 k_15_reference.fas ClpA_7_1.fa > ClpA_7_1.sai
+ 2365  bwa aln -n 3 k_15_reference.fas ClpA_7_2.fa > ClpA_7_2.sai
+ 2366  ll
+ 2367  bwa sampe dmel-all-chromosome-r5.37.fasta RAL357_1.sai RAL357_2.sai RAL357_1.fastq RAL357_2.fastq > RAL357_bwa.sam
+ 2368  bwa sampe k_15_reference.fas ClpA_7_1.sai ClpA_7_1.sai ClpA_7_1.fa ClpA_7_1.fa > ClpA_k_15.sam
+ 2369  ll
+ 2370  rm RAL357_bwa.sam 
+ 2371  less ClpA_k_15.sam 
+ 2372  ll
+ 2373  rm ClpA_7_1.sai 
+ 2374  rm ClpA_7_2.sai 
+ 2375  rm k_15_reference.fas.*
+ 2376  ll
+ 2377  bowtie-build k_15_reference.fas k_15_reference_bowtie
+ 2378  ll
+ 2379  bowtie -a -v 2 -1 ClpA_7_1.fa -2 ClpA_7_2.fa | less
+ 2380  bowtie k_15_reference_bowtie -p 8 -a -v 2 -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_15_reference.out 
+ 2381  bowtie k_15_reference_bowtie -p 8 -a -v 2 -1 ClpA_7_1.fa -2 ClpA_7_2.fa | less
+ 2382  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_15_reference.out | less
+ 2383  more k_15_reference.out 
+ 2384  head k_15_reference.out 
+ 2385  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_15_reference.out | less
+ 2386  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_15_reference.out | head
+ 2387  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_15_reference.out | less
+ 2388  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_15_reference.out | wc -l
+ 2389  ll
+ 2390  less k_15_reference.out 
+ 2391  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_15_reference.out > k_15_reads.txt
+ 2392  less k_15_reads.txt 
+ 2393  python ../../../../../scripts/preprocess_new.py -i k_15_reads.txt -g clpA_15
+ 2394  less k_15_reference.out 
+ 2395  less k_15_reads.txt 
+ 2396  sort k_15_reads.txt | less
+ 2397  python ../../../../../scripts/preprocess_new.py -i k_15_reads.txt -g clpA_15
+ 2398  less k_15_reads.txt 
+ 2399  sort -k 2 k_15_reads.txt | less
+ 2400  python ../../../../../scripts/preprocess_new.py -i k_15_reads.txt -g clpA_15
+ 2401  less k_15_reads.txt 
+ 2402  sort -k 2 k_15_reads.txt | less
+ 2403  sort -k 1 k_15_reads.txt | less
+ 2404  sort -k 0 k_15_reads.txt | less
+ 2405  sort -k 3 k_15_reads.txt | less
+ 2406  sort -k 4 k_15_reads.txt | less
+ 2407  sort -u 4 k_15_reads.txt | less
+ 2408  sort -u k_15_reads.txt | less
+ 2409  sort -u k_15_reads.txt | wc -l
+ 2410  sort -u k_15_reads.txt | less
+ 2411  less k_15_reads.txt 
+ 2412  python ../../../../../scripts/preprocess_new.py -i k_15_reads.txt -g clpA_15
+ 2413  ll
+ 2414  less k_15_reads.txt
+ 2415  python ../../../../../scripts/preprocess_new.py -i k_15_reads.txt -g clpA_15
+ 2416  ll
+ 2417  less k_15_reference.out
+ 2418  less ClpA_7_1.fa
+ 2419  python ../../../../../scripts/preprocess_new.py -i k_15_reads.txt -g clpA_15
+ 2420  less ClpA_7_1.fa
+ 2421  ll
+ 2422  less k_15_reads.txt
+ 2423  cd ..
+ 2424  ll
+ 2425  cd ..
+ 2426  ll
+ 2427  cd ..
+ 2428  ll
+ 2429  cd Alignments/
+ 2430  ll
+ 2431  clustalx2 clpA.aln 
+ 2432  ll
+ 2433  cd ../Simulated_data/SRR2034333/
+ 2434  ll
+ 2435  cd clpA/
+ 2436  ll
+ 2437  cd temp_3
+ 2438  ll
+ 2439  less k_15_reads.txt
+ 2440  python ../../../../../scripts/preprocess_new.py -i k_15_reads.txt -g clpA_15
+ 2441  less k_15_reads.txt
+ 2442  python ../../../../../scripts/preprocess_new.py -i k_15_reads.txt -g clpA_15
+ 2443  less k_15_reads.txt
+ 2444  wc -l k_15_reads.txt 
+ 2445  python ../../../../../scripts/preprocess_new.py -i k_15_reads.txt -g clpA_15
+ 2446  ll
+ 2447  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_15_reference.out | less
+ 2448  ll
+ 2449  cd ..
+ 2450  ll
+ 2451  cd temp2
+ 2452  ll
+ 2453  cd temp2
+ 2454  cd temp_2
+ 2455  ll
+ 2456  less k_30_reads.txt
+ 2457  cp k_20_reads.txt ../temp_3/
+ 2458  cp k_25_reads.txt ../temp_3/
+ 2459  cp k_30_reads.txt ../temp_3/
+ 2460  cp k_35_reads.txt ../temp_3/
+ 2461  cp ../temp_3
+ 2462  cd ../temp_3
+ 2463  ll
+ 2464  python ../../../../../scripts/preprocess_new.py -i k_20_reads.txt -g clpA_20
+ 2465  python ../../../../../scripts/preprocess_new.py -i k_15_reads.txt -g clpA_15
+ 2466  python ../../../../../scripts/preprocess_new.py -i k_25_reads.txt -g clpA_25
+ 2467  ll
+ 2468  wc -l k_20_reads.txt 
+ 2469  wc -l k_25_reads.txt 
+ 2470  wc -l k_30_reads.txt 
+ 2471  wc -l k_35_reads.txt 
+ 2472  python ../../../../../scripts/preprocess_new.py -i k_30_reads.txt -g clpA_30
+ 2473  cd ..
+ 2474  ll
+ 2475  cd temp_2
+ 2476  ll
+ 2477  less output_k_15_S.txt
+ 2478  less output_k_15.txt
+ 2479  less k_25_reference.fas
+ 2480  grep ">" k_25_reference.fas | wc -l
+ 2481  wc -l output_k_25_S.txt 
+ 2482  wc -l variants.txt 
+ 2483  cd ../temp_3
+ 2484  ll
+ 2485  rm k_20_reads.txt k_25_reads.txt k_30_reads.txt k_35_reads.txt 
+ 2486  ll
+ 2487  cd ..
+ 2488  ll
+ 2489  cd temp_3
+ 2490  ll
+ 2491  cp ../temp_2/k_20_reference.fas .
+ 2492  bowtie-build k_20_reference.fas k_20_rerence_bowtie
+ 2493  ll
+ 2494  bowtie k_20_reference_bowtie -p 8 -a -v 2 -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_20_reference.out 
+ 2495  rm k_20_rerence_bowtie.*
+ 2496  bowtie-build k_20_reference.fas k_20_reference_bowtie
+ 2497  ll
+ 2498  bowtie k_20_reference_bowtie -p 8 -a -v 2 -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_20_reference.out 
+ 2499  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_20_reference.out | less
+ 2500  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_20_reference.out | wc -l
+ 2501  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_20_reference.out > k_20_reads.txt
+ 2502  less k_20_reads.txt 
+ 2503  python ../../../../../scripts/preprocess_new.py -i k_20_reads.txt -g clpA_20
+ 2504  wc -l k_20_reads.txt 
+ 2505  python ../../../../../scripts/preprocess_new.py -i k_15_reads.txt -g clpA_15 > log.txt 
+ 2506  less log.txt 
+ 2507  python ../../../../../scripts/preprocess_new.py -i k_20_reads.txt -g clpA_20 >> log.txt 
+ 2508  less log.txt 
+ 2509  ll
+ 2510  cp ../temp_2/k_25_reference.fas .
+ 2511  bowtie-build k_25_reference.fas k_25_reference_bowtie
+ 2512  bowtie k_25_reference_bowtie -p 8 -a -v 2 -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_25_reference.out 
+ 2513  wc -l k_20_reference.out 
+ 2514  wc -l k_25_reference.out 
+ 2515  wc -l k_20_reference.out 
+ 2516  wc -l k_15_reference.out 
+ 2517  cp ../temp_2/k_30_reference.fas .
+ 2518  bowtie-build k_30_reference.fas k_30_reference_bowtie
+ 2519  bowtie k_30_reference_bowtie -p 8 -a -v 2 -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_30_reference.out 
+ 2520  wc -l k_30_reference.out 
+ 2521  cp ../temp_2/k_35_reference.fas .
+ 2522  bowtie-build k_35_reference.fas k_35_reference_bowtie
+ 2523  bowtie k_35_reference_bowtie -p 8 -a -v 2 -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_35_reference.out 
+ 2524  ll
+ 2525  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_25_reference.out > k_25_reads.txt
+ 2526  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_30_reference.out > k_30_reads.txt
+ 2527  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_35_reference.out > k_35_reads.txt
+ 2528  python ../../../../../scripts/preprocess_new.py -i k_25_reads.txt -g clpA_25 
+ 2529  diff k_15_reads.txt k_20_reads.txt | less
+ 2530  diff k_15_reads.txt k_25_reads.txt | less
+ 2531  diff <(sort k_15_reads.txt) <(sort k_20_reads.txt) | less
+ 2532  diff <(sort k_15_reads.txt) <(sort k_25_reads.txt) | less
+ 2533  diff <(sort k_15_reads.txt) <(sort k_30_reads.txt) | less
+ 2534  diff <(sort k_15_reads.txt) <(sort k_35_reads.txt) | less
+ 2535  diff <(sort k_20_reads.txt) <(sort k_25_reads.txt) | less
+ 2536  diff <(sort k_20_reads.txt) <(sort k_30_reads.txt) | less
+ 2537  diff <(sort k_20_reads.txt) <(sort k_35_reads.txt) | less
+ 2538  diff <(sort k_25_reads.txt) <(sort k_30_reads.txt) | less
+ 2539  diff <(sort k_25_reads.txt) <(sort k_35_reads.txt) | less
+ 2540  diff <(sort k_30_reads.txt) <(sort k_35_reads.txt) | less
+ 2541  ll
+ 2542  bowtie-build k_15_reference.fas k_15_reference_bowtie
+ 2543  bowtie-build k_15_reference.fa k_15_reference_bowtie
+ 2544  ll
+ 2545  bowtie k_15_reference_bowtie -p 8 -a -v 2 -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_15_reference.out 
+ 2546  bowtie-build k_20_reference.fa k_20_reference_bowtie | less
+ 2547  bowtie k_20_reference_bowtie -p 8 -a -v 2 -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_20_reference.out 
+ 2548  bowtie-build k_25_reference.fa k_25_reference_bowtie | less
+ 2549  bowtie k_25_reference_bowtie -p 8 -a -v 2 -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_25_reference.out 
+ 2550  bowtie-build k_30_reference.fa k_30_reference_bowtie | less
+ 2551  bowtie k_30_reference_bowtie -p 8 -a -v 2 -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_30_reference.out 
+ 2552  bowtie-build k_35_reference.fa k_35_reference_bowtie | less
+ 2553  bowtie k_35_reference_bowtie -p 8 -a -v 2 -1 ClpA_7_1.fa -2 ClpA_7_2.fa k_35_reference.out 
+ 2554  python ../../../../../scripts/preprocess_new.py -i k_15_reads.txt -g clpA_15 
+ 2555  ll
+ 2556  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_15_reference.out > k_15_reads.txt
+ 2557  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_20_reference.out > k_20_reads.txt
+ 2558  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_25_reference.out > k_25_reads.txt
+ 2559  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_30_reference.out > k_30_reads.txt
+ 2560  awk '{print $1"\t"$3"\t"$8"\t"$5}' k_35_reference.out > k_35_reads.txt
+ 2561  python ../../../../../scripts/preprocess_new.py -i k_15_reads.txt -g clpA_15 
+ 2562  python ../../../../../scripts/preprocess_new.py -i k_20_reads.txt -g clpA_20 
+ 2563  python ../../../../../scripts/preprocess_new.py -i k_25_reads.txt -g clpA_25 
+ 2564  python ../../../../../scripts/preprocess_new.py -i k_30_reads.txt -g clpA_30 
+ 2565  python ../../../../../scripts/preprocess_new.py -i k_35_reads.txt -g clpA_35 
+ 2566  history | less
+ 2567  history < history_1.txt
+ 2568  history > history_1.txt
