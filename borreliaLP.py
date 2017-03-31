@@ -49,7 +49,16 @@ def readData(dataFilePath, numSamples, startingSampleNum, lociOrder):
             (data['sample%d' %i])[gene[0]] = alist
             
     return data
-    
+
+def roundAndCheckProp(data):
+    for sample in data:
+        sampleDF = data[sample]
+        
+        for column in sampleDF.values[0]:
+            prop = column.values()
+            prop = [float(p) for p in prop]
+            
+   
 #'''Return the unique combinations of variants at all loci across all samples
 #data: Data file preloaded previously'''
 #def uniqueCombinations(data):
@@ -226,10 +235,12 @@ numSamples = 2
 loci = ['clpA', 'clpX', 'nifS']
 
 #read data for samples and reference
-data = readData("/home/stanleygan/Documents/Borrelia/data/toyExample",numSamples,startingSampleNum, loci)
-reference = pd.read_csv('~/Documents/Borrelia/data/toyExample/reference.csv',usecols=range(1,numLoci+1))
+data = readData("/home/stanleygan/Documents/Borrelia/data/simpleEx",numSamples,startingSampleNum, loci)
+reference = pd.read_csv('~/Documents/Borrelia/data/simpleEx/reference.csv',usecols=range(1,numLoci+1))
 lociNames = list(reference.columns.values)
 numReference = reference.shape[0]
+
+roundAndCheckProp(data)
 
 #As reference only contains numbers as entries, add gene name to the variants for better identification
 for name in lociNames:
@@ -367,14 +378,14 @@ model.linear_constraints.add(lin_expr=errLessSumMinProp, rhs=errLessSumMinPropRH
 model.linear_constraints.add(lin_expr=errLessPropMinSum, rhs=errLessPropMinSumRHS, senses=["L"]*len(errLessPropMinSum), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(errLessPropMinSum))])
 
 #Final part
-model.write("a.lp")
-model.solve()
-objvalue = model.solution.get_objective_value()
-varNames = model.variables.get_names()
-varValues = model.solution.get_values(varNames)
-conclusion = pd.DataFrame(columns=["Name", "Value"])
-conclusion["Name"] = varNames
-conclusion["Value"] = varValues
+#model.write("a.lp")
+#model.solve()
+#objvalue = model.solution.get_objective_value()
+#varNames = model.variables.get_names()
+#varValues = model.solution.get_values(varNames)
+#conclusion = pd.DataFrame(columns=["Name", "Value"])
+#conclusion["Name"] = varNames
+#conclusion["Value"] = varValues
 
 #varNames = [name for name in model.variables.get_names() if any(char in name for char in 'pi_')]
 #varValues = model.solution.get_values(varNames)
