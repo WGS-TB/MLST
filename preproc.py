@@ -101,8 +101,12 @@ if __name__ == "__main__":
     model.linear_constraints.add(lin_expr=readCoverConstr, senses=["G"]*len(readCoverConstr), rhs=[0]*len(readCoverConstr), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(readCoverConstr))])
     #model.write("hello.lp")
     
+    #constraint: limit variants
+    #model.linear_constraints.add(lin_expr=[[varsForEachRead[key],[1]*len(varsForEachRead[key])] for key in varsForEachRead.keys()], senses=["L"]*len(varsForEachRead.keys()), rhs=[15]*len(varsForEachRead.keys()), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(varsForEachRead.keys()))])
+    
     #solve
     model.solve()
+#    model.write("hello.lp")
     objvalue = model.solution.get_objective_value()
     varNames = model.variables.get_names()
     varValues = model.solution.get_values(varNames)
@@ -111,3 +115,13 @@ if __name__ == "__main__":
     conclusion["Value"] = varValues
               
     present = conclusion[conclusion["Value"]==1]
+    
+    varValues2 = model.solution.pool.get_values(1,varNames)
+    conclusion2 = pd.DataFrame(columns=["Decision Variable", "Value"])
+    conclusion2["Decision Variable"] = varNames
+    conclusion2["Value"] = varValues2
+              
+    present2 = conclusion2[conclusion2["Value"]==1]
+    
+        #171, 5, 103, 117, 149, 159
+        #x65, x113, x4, x13, 45, 54

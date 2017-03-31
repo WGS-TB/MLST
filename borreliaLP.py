@@ -498,11 +498,16 @@ model.linear_constraints.add(lin_expr=errLessPropMinSum, rhs=errLessPropMinSumRH
 
 #Final part
 #model.write("borreliaLP.lp")
-#model.solve()
-#objvalue = model.solution.get_objective_value()
-#varNames = model.variables.get_names()
-#varValues = model.solution.get_values(varNames)
-#conclusion = pd.DataFrame(columns=["Decision Variable", "Value"])
-#conclusion["Decision Variable"] = varNames
-#conclusion["Value"] = varValues
-#strainInfo = conclusion.merge(strainWeightDecVarDF[strainWeightDecVarDF["Decision Variable"].isin(varNames)])
+model.solve()
+objvalue = model.solution.get_objective_value()
+varNames = model.variables.get_names()
+varValues = model.solution.get_values(varNames)
+conclusion = pd.DataFrame(columns=["Decision Variable", "Value"])
+conclusion["Decision Variable"] = varNames
+conclusion["Value"] = varValues
+strainInfo = conclusion.merge(strainWeightDecVarDF[strainWeightDecVarDF["Decision Variable"].isin(varNames)])
+
+varValues2 = model.solution.pool.get_values(1,varNames)
+conclusion2 = pd.DataFrame(columns=["Decision Variable", "Value"])
+conclusion2["Decision Variable"] = varNames
+conclusion2["Value"] = varValues2
