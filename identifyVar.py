@@ -22,12 +22,14 @@ def returnDataMatrix(path):
     return data_matrix
 
 def solver(dataFile, fileName, storeFile):
+#    data_matrix = returnDataMatrix("/home/stanleygan/Documents/Borrelia/data/simData/clpA_7_weighted.csv")
     data_matrix = returnDataMatrix(dataFile+fileName)
     total_read = data_matrix.shape[0]
     total_var = data_matrix.shape[1] - 1  #As first column are reads
     
     xIsVariant = pd.DataFrame(index=[var for var in data_matrix.columns.tolist()[1:]], data=["x{0}".format(i+1) for i in range(total_var)], columns=["Variable"])
-    xIsVariantDict = xIsVariant["Variable"].to_dict()
+    variantName_variable_dict = xIsVariant["Variable"].to_dict()
+    variable_variantName_dict = pd.DataFrame(data=[var for var in data_matrix.columns.tolist()[1:]], index=["x{0}".format(i+1) for i in range(total_var)], columns=["Variant"])["Variant"].to_dict()
     reads = list()
     readAndMM = list()
     
@@ -44,18 +46,20 @@ def solver(dataFile, fileName, storeFile):
     yIsRead["Variable"] = readAndMMVariable
     
     #Dictionary for easier retrievable of y_variable name when formulating ILP
-    yIsReadDict = dict()
+    #key is a tuple of read name and number of mismatches, value = read variable name
+    readMM_varName_dict = dict()
     for r in range(total_read):
         for mm in readAndMM[r]:
-            yIsReadDict[(reads[r], mm)] = "y{0}_{1}".format(r+1, mm)
+            readMM_varName_dict[(reads[r], mm)] = "y{0}_{1}".format(r+1, mm)
             
            
-    '''====================================== Form ILP ============================================= '''
+    '''=============================================== Form ILP ====================================================== '''
     model = cplex.Cplex()
     model.objective.set_sense(model.objective.sense.minimize)
     #add variables related to variants, x_j represents variant j
     model.variables.add(obj=[1]*total_var, names=xIsVariant["Variable"].tolist(), types=[model.variables.type.binary]*total_var)
     #model.variables.add(names=xIsVariant["Variable"].tolist(), types=[model.variables.type.binary]*total_var)
+    
     #add variables related to reads, y_ik means read i with k mismatches
     y_weights = [mm[0] for mmName in readAndMMVariable for mm in mmName]
     y_variables = [mm[1] for mmName in readAndMMVariable for mm in mmName]
@@ -76,6 +80,7 @@ def solver(dataFile, fileName, storeFile):
     #This is for easier formulation of the constraints related to: If y_ik=1, then it must be 
     #covered by some variant with k mm
     yCoverConstr = list()
+    readVar_variant_dict = dict()   #key is read variable name, value is the list of variants covering that read(with the particular mm)
     for row in data_matrix.itertuples():
         read = row[1]
         uniqueMm = list(set(row[2:]))
@@ -84,8 +89,9 @@ def solver(dataFile, fileName, storeFile):
         for mm in uniqueMm:
             temp = [i for i in range(len(list(row[1:]))) if list(row[1:])[i] == mm]
             
-            xVariable = [xIsVariantDict[variant] for variant in data_matrix.columns[temp].tolist()]
-            yVariable = [ yIsReadDict[read, mm] ]
+            xVariable = [variantName_variable_dict[variant] for variant in data_matrix.columns[temp].tolist()]
+            yVariable = [ readMM_varName_dict[read, mm] ]
+            readVar_variant_dict[readMM_varName_dict[read, mm]] = xVariable
             yCoverConstr.append([ xVariable + yVariable, [1]*len(xVariable) + [-1]*len(yVariable) ])
             
     #Constraint: If y_ik is chosen, it must be covered by some variant j with k mm
@@ -93,26 +99,61 @@ def solver(dataFile, fileName, storeFile):
     
     #model.write("a.lp")
     model.solve()
-    
+       
+    '''=========================================== Presenting Results ========================================================'''
     objvalue = model.solution.get_objective_value()
     varNames = model.variables.get_names()
     varValues = model.solution.get_values(varNames)
     conclusion = pd.DataFrame(columns=["Decision Variable", "Value"])
     conclusion["Decision Variable"] = varNames
     conclusion["Value"] = varValues
-              
+
     present = conclusion[conclusion["Value"]==1]
     variantsPresent = xIsVariant[xIsVariant["Variable"] .isin(present["Decision Variable"].tolist())]
+    varPresentList = variantsPresent.index.tolist()
+    xPresentList = variantsPresent["Variable"].tolist()
     
+    #Output predicted variants
     name = re.sub("_weighted.csv", "" ,fileName)
     with open(storeFile+name+"_variants.csv", "w") as f:
         writer = csv.writer(f)
         for var in variantsPresent.index.tolist():
             writer.writerow([var])
 
-''' ============================================================================== '''
+    #Find assignment of reads to variants and the proportions of the variants
+    predictedProp = dict.fromkeys(variantsPresent["Variable"].tolist(), 0.0)
+    readsCovered = present[present["Decision Variable"].str.contains(u"y.*")]["Decision Variable"].tolist()
+    
+    for readVar in readsCovered:
+        variantCovering = readVar_variant_dict[readVar]
+        variantCoveringAndPredicted = list(set.intersection(set(variantCovering), set(xPresentList)))
+        
+        for variant in variantCoveringAndPredicted:
+            increment = 1/len(variantCoveringAndPredicted)
+            predictedProp[variant] = predictedProp[variant] + increment
+                         
+    #Normalize the proportions
+    normalize_term = 1.0/sum(predictedProp.values())
+    
+    for key in predictedProp:
+        predictedProp[key] = normalize_term * predictedProp[key]
+        
+    #Match x variables back to variant name
+    variantName_proportions = dict()
+    for key in predictedProp:
+        variantName_proportions[variable_variantName_dict[key]] = predictedProp[key]*100
+        
+    #output the predicted proportions
+    with open(storeFile+name+"_predicted_proportions.csv", "w") as f:
+        writer = csv.writer(f)
+        for key, val in variantName_proportions.items():
+            writer.writerow([key,val])
+    
+''' ================================= Main ============================================= '''
 dataFile = "/home/stanleygan/Documents/Borrelia/data/simData/"
-storeFile = "/home/stanleygan/Documents/Borrelia/data/identifyVar/"
+storeFile = "/home/stanleygan/Documents/Borrelia/data/predictedVar/"
+#dataFile = "/home/stanleygan/Documents/Borrelia/data/preproc/"
+#fileName = "toy.csv"
 extension = "csv"
 os.chdir(dataFile)
 csvFiles = [f for f in glob.glob("*.{}".format(extension))]
