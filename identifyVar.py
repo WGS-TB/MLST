@@ -20,10 +20,45 @@ def returnDataMatrix(path):
     data_matrix = pd.read_csv(path)
     data_matrix.rename(columns={'Unnamed: 0':'Read'}, inplace=True)
     return data_matrix
-
-def solver(dataFile, fileName, storeFile):
+    
+def precision(predicted, true):
+    truePos = set.intersection(set(predicted), set(true))
+    return float(len(truePos)/len(predicted))
+        
+def recall(predicted, true):
+    truePos = set.intersection(set(predicted), set(true))
+    return float(len(truePos)/len(true))
+    
+# pred_prop and true_prop: dictionaries
+def totalVariationDist(pred_prop, true_prop):
+    common_keys = set.intersection(set(pred_prop.keys()), set(true_prop.keys()))
+    diff_keys_pred = set.difference(set(pred_prop.keys()), common_keys)
+    diff_keys_true = set.difference(set(true_prop.keys()), common_keys)
+    common_keys = list(common_keys)
+    diff_keys_pred = list(diff_keys_pred)
+    diff_keys_true = list(diff_keys_true)
+    
+    totalVarDist=0
+    for key in common_keys:
+        totalVarDist += abs(pred_prop[key] - true_prop[key])
+        
+    for key in diff_keys_pred:
+        totalVarDist += pred_prop[key]
+        
+    for key in diff_keys_true:
+        totalVarDist += true_prop[key]
+        
+    return totalVarDist/2
+    
+def predictCorrectly(predicted, true):
+    return set(predicted) == set(true)  #1 if true, 0 if false
+    
+#def solver(dataFile, fileName, storeFile):
+''' dataMatrix: data frame '''
+def solver(dataMatrix):
 #    data_matrix = returnDataMatrix("/home/stanleygan/Documents/Borrelia/data/simData/clpA_7_weighted.csv")
-    data_matrix = returnDataMatrix(dataFile+fileName)
+#    data_matrix = returnDataMatrix(dataFile+fileName)
+    data_matrix = dataMatrix
     total_read = data_matrix.shape[0]
     total_var = data_matrix.shape[1] - 1  #As first column are reads
     
@@ -98,6 +133,7 @@ def solver(dataFile, fileName, storeFile):
     model.linear_constraints.add(lin_expr=yCoverConstr, senses=["G"]*len(y_variables), rhs=[0]*len(y_variables), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(y_variables))])
     
     #model.write("a.lp")
+    model.set_results_stream(None)
     model.solve()
        
     '''=========================================== Presenting Results ========================================================'''
@@ -111,8 +147,10 @@ def solver(dataFile, fileName, storeFile):
     present = conclusion[conclusion["Value"]==1]
     variantsPresent = xIsVariant[xIsVariant["Variable"] .isin(present["Decision Variable"].tolist())]
     varPresentList = variantsPresent.index.tolist()
-    xPresentList = variantsPresent["Variable"].tolist()
+    return varPresentList, objvalue
+#    xPresentList = variantsPresent["Variable"].tolist()
     
+'''    
     #Output predicted variants
     name = re.sub("_weighted.csv", "" ,fileName)
     with open(storeFile+name+"_variants.csv", "w") as f:
@@ -148,18 +186,21 @@ def solver(dataFile, fileName, storeFile):
         writer = csv.writer(f)
         for key, val in variantName_proportions.items():
             writer.writerow([key,val])
-    
+'''
+ 
 ''' ================================= Main ============================================= '''
-dataFile = "/home/stanleygan/Documents/Borrelia/data/simData/"
-storeFile = "/home/stanleygan/Documents/Borrelia/data/predictedVar/"
-#dataFile = "/home/stanleygan/Documents/Borrelia/data/preproc/"
-#fileName = "toy.csv"
-extension = "csv"
-os.chdir(dataFile)
-csvFiles = [f for f in glob.glob("*.{}".format(extension))]
-
-for fileName in csvFiles:
-    solver(dataFile, fileName, storeFile)
-
-#if __name__ == "__main__":
+if __name__ == "__main__":
     #identifyVar()
+    dataFile = "/home/glgan/Documents/borrelia/data/simData/"
+    storeFile = "/home/glgan/Documents/borrelia/data/predictedVar/"
+    #dataFile = "/home/glgan/Documents/borrelia/data/preproc/"
+    #fileName = "toy.csv"
+    extension = "csv"
+    os.chdir(dataFile)
+    csvFiles = [f for f in glob.glob("*.{}".format(extension))]
+    
+    epoch=0
+    for fileName in csvFiles:
+        print("Epoch:{} ".format(epoch))
+        solver(dataFile, fileName, storeFile)
+        epoch +=1
