@@ -1,5 +1,6 @@
 clear;
 clc;
+format long;
 
 numLoci = 3;
 startingSampleNum = 1;
@@ -41,6 +42,8 @@ fval_min = Inf;
 x_min = [];
 var_min = [];
 subset_min = [];
+sol = [];
+num_variable = [];
 %Here goes the solving
 for problem=1:size(strainSubset,1)
     mySubset = strainSubset(problem);
@@ -120,22 +123,31 @@ for problem=1:size(strainSubset,1)
         if size(nonZeroStrain,1) == size(mySubset,2)
             fval = fval + totalStrainUsage;
             if fval <= fval_min
+                sol = [sol; fval];
                 fval_min = fval;
-                x_min = x;
-                var_min = variables;
-                subset_min = mySubset;
+                x_min = [x_min; x];
+                num_variable = [num_variable; size(x,1)];
+                var_min = [var_min; variables];
+                subset_min = [subset_min; mySubset];
             end
         end
     end
 end
 
 %Print the optimal value and values of decision variable
-for i = 1:size(x_min,1)
-  fprintf('%12.2f \t%s\n',x_min(i),var_min{i}) 
+start=0;
+for num_min=1:size(sol,1)
+    numberOfVariable = num_variable(num_min);
+    for i = 1:numberOfVariable
+        fprintf('%12.5f \t%s\n',x_min(start+i),var_min{start+i}) 
+    end
+    fprintf('\n')
+    start = start+i;
 end
 
 fval_min
 subset_min
+sol
 
 %% ===================================== Functions Definition =================================== %%
 function [ st ] = strainSubsets( strain, proportion, numSamples, loci )
