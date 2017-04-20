@@ -23,6 +23,13 @@ import itertools
 import numpy as np
 import cplex
 import sys
+import argparse
+
+#Can set config from command line
+parser = argparse.ArgumentParser()
+parser.add_argument("--data", help="path to data directory", default="/home/stanleygan/Documents/Borrelia/data/randEx")
+parser.add_argument("--ref", help="path to reference.csv", default='~/Documents/Borrelia/data/randEx/reference.csv')
+args = parser.parse_args()
 
 ''' ====================================== Function Definition ======================================================= '''
 
@@ -327,8 +334,8 @@ numSamples = 2
 loci = ['clpA', 'clpX', 'nifS']
 
 #read data for samples and reference
-data = readData("/home/stanleygan/Documents/Borrelia/data/randEx",numSamples,startingSampleNum, loci)
-reference = pd.read_csv('~/Documents/Borrelia/data/randEx/reference.csv',usecols=range(1,numLoci+1))
+data = readData(args.data, numSamples,startingSampleNum, loci)
+reference = pd.read_csv(args.ref,usecols=range(1,numLoci+1))
 lociNames = list(reference.columns.values)
 numReference = reference.shape[0]
 
