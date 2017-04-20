@@ -449,7 +449,7 @@ for i in range(len(indic)):
         
     indicMinusAvgPropLess1_LHS.append([temp, coef])
     
-model.linear_constraints.add(lin_expr=indicMinusAvgPropLess1_LHS, rhs=[0.999]*len(indicMinusAvgPropLess1_LHS), senses=["L"]*len(indicMinusAvgPropLess1_LHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusAvgPropLess1_LHS))])
+model.linear_constraints.add(lin_expr=indicMinusAvgPropLess1_LHS, rhs=[0.9999]*len(indicMinusAvgPropLess1_LHS), senses=["L"]*len(indicMinusAvgPropLess1_LHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusAvgPropLess1_LHS))])
 model.linear_constraints.add(lin_expr=indicMinusAvgPropLess1_LHS, rhs=[0]*len(indicMinusAvgPropLess1_LHS), senses=["G"]*len(indicMinusAvgPropLess1_LHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusAvgPropLess1_LHS))])
 
 #add error variables and linear constraints related to error terms
@@ -459,6 +459,7 @@ errorName = [ele.replace("d_sample", "d_s") for ele in errorName]
 varAndProp["Decision Variable"] = errorName
           
 #add error variable
+#model.variables.add(lb=(-1*varAndProp["Proportion"]).tolist(), ub=(1-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
 model.variables.add(obj=[1]*varAndProp.shape[0], lb=(-1*varAndProp["Proportion"]).tolist(), ub=(1-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
 
 #add the constraints whereby for each sample, at each locus, the sum of the error of all variants=0
@@ -493,12 +494,24 @@ for index, row in varAndProp.iterrows():
 model.linear_constraints.add(lin_expr=errLessSumMinProp, rhs=errLessSumMinPropRHS, senses=["L"]*len(errLessSumMinProp), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(errLessSumMinProp))])  
 model.linear_constraints.add(lin_expr=errLessPropMinSum, rhs=errLessPropMinSumRHS, senses=["L"]*len(errLessPropMinSum), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(errLessPropMinSum))])
 
+#Add a known optimal objective value as constraint
+model.linear_constraints.add(lin_expr=[ [model.variables.get_names(), [1]*len(model.variables.get_names())] ], rhs=[10], senses=["L"])
+
 #Export some info for MATLAB use
 #writeInfoToCsv()
 
 #Final part
 #model.write("borreliaLP.lp")
-model.solve()
+#model.solve()
+
+#options for searching more optimal solutions
+#model.parameters.mip.pool.capacity.set(10)
+model.parameters.mip.pool.intensity.set(4)
+#model.parameters.mip.limits.populate.set(2100000000)
+model.parameters.mip.pool.absgap.set(0)
+model.parameters.mip.pool.replace.set(1)
+model.populate_solution_pool()
+
 objvalue = model.solution.get_objective_value()
 varNames = model.variables.get_names()
 varValues = model.solution.get_values(varNames)
