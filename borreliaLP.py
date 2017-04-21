@@ -502,7 +502,7 @@ model.linear_constraints.add(lin_expr=errLessSumMinProp, rhs=errLessSumMinPropRH
 model.linear_constraints.add(lin_expr=errLessPropMinSum, rhs=errLessPropMinSumRHS, senses=["L"]*len(errLessPropMinSum), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(errLessPropMinSum))])
 
 #Add a known optimal objective value as constraint
-model.linear_constraints.add(lin_expr=[ [model.variables.get_names(), [1]*len(model.variables.get_names())] ], rhs=[10], senses=["L"])
+#model.linear_constraints.add(lin_expr=[ [model.variables.get_names(), [1]*len(model.variables.get_names())] ], rhs=[10], senses=["L"])
 
 #Export some info for MATLAB use
 #writeInfoToCsv()
