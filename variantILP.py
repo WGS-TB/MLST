@@ -1,60 +1,17 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Created on Thu Mar 30 11:42:23 2017
+Created on Mon Apr 24 11:34:31 2017
 
-@author: stanleygan
-
-Integer Linear Program for figuring out variants which cover most of the read
+@author: glgan
 
 """
+
 import pandas as pd
 import numpy as np
 import cplex
-import csv
-import re
-import os
-import glob
 
-def returnDataMatrix(path):
-    data_matrix = pd.read_csv(path)
-    data_matrix.rename(columns={'Unnamed: 0':'Read'}, inplace=True)
-    return data_matrix
-    
-def precision(predicted, true):
-    truePos = set.intersection(set(predicted), set(true))
-    return float(len(truePos)/len(predicted))
-        
-def recall(predicted, true):
-    truePos = set.intersection(set(predicted), set(true))
-    return float(len(truePos)/len(true))
-    
-# pred_prop and true_prop: dictionaries
-def totalVariationDist(pred_prop, true_prop):
-    common_keys = set.intersection(set(pred_prop.keys()), set(true_prop.keys()))
-    diff_keys_pred = set.difference(set(pred_prop.keys()), common_keys)
-    diff_keys_true = set.difference(set(true_prop.keys()), common_keys)
-    common_keys = list(common_keys)
-    diff_keys_pred = list(diff_keys_pred)
-    diff_keys_true = list(diff_keys_true)
-    
-    totalVarDist=0
-    for key in common_keys:
-        totalVarDist += abs(pred_prop[key] - true_prop[key])
-        
-    for key in diff_keys_pred:
-        totalVarDist += pred_prop[key]
-        
-    for key in diff_keys_true:
-        totalVarDist += true_prop[key]
-        
-    return totalVarDist/2
-    
-# Returns the number of dataset in which variants are predicted correctly
-def predictCorrectly(predicted, true):
-    return set(predicted) == set(true)  #1 if true, 0 if false
-    
-#def solver(dataFile, fileName, storeFile):
+
 ''' dataMatrix: data frame 
     Return: Objective value, variants predicted and reads covered by these variants
 '''
@@ -158,58 +115,3 @@ def solver(dataMatrix):
     yCovered = present[present["Decision Variable"].str.contains(u"y.*")]["Decision Variable"].tolist()
     readsCovered = [varName_read_dict[y] for y in yCovered]
     return objvalue, varPresentList, readsCovered
-    
-'''    
-    #Output predicted variants
-    name = re.sub("_weighted.csv", "" ,fileName)
-    with open(storeFile+name+"_variants.csv", "w") as f:
-        writer = csv.writer(f)
-        for var in variantsPresent.index.tolist():
-            writer.writerow([var])
-
-    #Find assignment of reads to variants and the proportions of the variants
-    predictedProp = dict.fromkeys(variantsPresent["Variable"].tolist(), 0.0)
-    readsCovered = present[present["Decision Variable"].str.contains(u"y.*")]["Decision Variable"].tolist()
-    
-    for readVar in readsCovered:
-        variantCovering = readVar_variant_dict[readVar]
-        variantCoveringAndPredicted = list(set.intersection(set(variantCovering), set(xPresentList)))
-        
-        for variant in variantCoveringAndPredicted:
-            increment = 1/len(variantCoveringAndPredicted)
-            predictedProp[variant] = predictedProp[variant] + increment
-                         
-    #Normalize the proportions
-    normalize_term = 1.0/sum(predictedProp.values())
-    
-    for key in predictedProp:
-        predictedProp[key] = normalize_term * predictedProp[key]
-        
-    #Match x variables back to variant name
-    variantName_proportions = dict()
-    for key in predictedProp:
-        variantName_proportions[variable_variantName_dict[key]] = predictedProp[key]*100
-        
-    #output the predicted proportions
-    with open(storeFile+name+"_predicted_proportions.csv", "w") as f:
-        writer = csv.writer(f)
-        for key, val in variantName_proportions.items():
-            writer.writerow([key,val])
-'''
- 
-''' ================================= Main ============================================= '''
-if __name__ == "__main__":
-    #identifyVar()
-    dataFile = "/home/glgan/Documents/Borrelia/data/simData/"
-    storeFile = "/home/glgan/Documents/Borrelia/data/predictedVar/"
-    #dataFile = "/home/glgan/Documents/borrelia/data/preproc/"
-    #fileName = "toy.csv"
-    extension = "csv"
-    os.chdir(dataFile)
-    csvFiles = [f for f in glob.glob("*.{}".format(extension))]
-    
-    epoch=0
-    for fileName in csvFiles:
-        print("Epoch:{} ".format(epoch))
-        solver(dataFile, fileName, storeFile)
-        epoch +=1
