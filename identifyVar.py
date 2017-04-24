@@ -56,7 +56,7 @@ def predictCorrectly(predicted, true):
 #def solver(dataFile, fileName, storeFile):
 ''' dataMatrix: data frame '''
 def solver(dataMatrix):
-#    data_matrix = returnDataMatrix("/home/stanleygan/Documents/Borrelia/data/simData/clpA_7_weighted.csv")
+#    data_matrix = returnDataMatrix("/home/glgan/Documents/Borrelia/data/simData/clpA_7_weighted.csv")
 #    data_matrix = returnDataMatrix(dataFile+fileName)
     data_matrix = dataMatrix
     total_read = data_matrix.shape[0]
@@ -64,7 +64,7 @@ def solver(dataMatrix):
     
     xIsVariant = pd.DataFrame(index=[var for var in data_matrix.columns.tolist()[1:]], data=["x{0}".format(i+1) for i in range(total_var)], columns=["Variable"])
     variantName_variable_dict = xIsVariant["Variable"].to_dict()
-    variable_variantName_dict = pd.DataFrame(data=[var for var in data_matrix.columns.tolist()[1:]], index=["x{0}".format(i+1) for i in range(total_var)], columns=["Variant"])["Variant"].to_dict()
+#    variable_variantName_dict = pd.DataFrame(data=[var for var in data_matrix.columns.tolist()[1:]], index=["x{0}".format(i+1) for i in range(total_var)], columns=["Variant"])["Variant"].to_dict()
     reads = list()
     readAndMM = list()
     
@@ -83,9 +83,12 @@ def solver(dataMatrix):
     #Dictionary for easier retrievable of y_variable name when formulating ILP
     #key is a tuple of read name and number of mismatches, value = read variable name
     readMM_varName_dict = dict()
+    #key is y variable name, value is the matching read
+    varName_read_dict = dict()
     for r in range(total_read):
         for mm in readAndMM[r]:
             readMM_varName_dict[(reads[r], mm)] = "y{0}_{1}".format(r+1, mm)
+            varName_read_dict["y{0}_{1}".format(r+1, mm)] = reads[r]
             
            
     '''=============================================== Form ILP ====================================================== '''
@@ -147,8 +150,11 @@ def solver(dataMatrix):
     present = conclusion[conclusion["Value"]==1]
     variantsPresent = xIsVariant[xIsVariant["Variable"] .isin(present["Decision Variable"].tolist())]
     varPresentList = variantsPresent.index.tolist()
-    return varPresentList, objvalue
 #    xPresentList = variantsPresent["Variable"].tolist()
+
+    yCovered = present[present["Decision Variable"].str.contains(u"y.*")]["Decision Variable"].tolist()
+    readsCovered = [varName_read_dict[y] for y in yCovered]
+    return objvalue, varPresentList, readsCovered
     
 '''    
     #Output predicted variants
@@ -191,8 +197,8 @@ def solver(dataMatrix):
 ''' ================================= Main ============================================= '''
 if __name__ == "__main__":
     #identifyVar()
-    dataFile = "/home/glgan/Documents/borrelia/data/simData/"
-    storeFile = "/home/glgan/Documents/borrelia/data/predictedVar/"
+    dataFile = "/home/glgan/Documents/Borrelia/data/simData/"
+    storeFile = "/home/glgan/Documents/Borrelia/data/predictedVar/"
     #dataFile = "/home/glgan/Documents/borrelia/data/preproc/"
     #fileName = "toy.csv"
     extension = "csv"
