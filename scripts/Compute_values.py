@@ -132,9 +132,10 @@ def compute_proportions(dataframe):
 def compute_True_objective_val(dataframe):
         run_sum = 0
         for row in dataframe.itertuples(index=False):
-                my_list = list(row)
-                run_sum += min(i for i in my_list if i >= 0)
-        run_sum += len(variants_current)
+                my_list = [i for i in list(row) if i >= 0]
+                if len(my_list) > 0:
+                        run_sum += min(my_list)
+        run_sum += len(my_list)
         return run_sum
 
 def create_dictionary(keys, vals):
@@ -144,8 +145,13 @@ def create_dictionary(keys, vals):
                         my_dict[keys[i]] = vals[i]*100
         return my_dict 
 
+def Compute_obj_diff(predicted, true):
+        diff = predicted - true
+        return diff
+
 ap = argparse.ArgumentParser()
 ap.add_argument("-g", "--gene", required = True,  help="name of gene")
+ap.add_argument("-l", "--numOfIter", required = False, default = 41)
 args = vars(ap.parse_args())
 random.seed(a=1994) #set random seed
 true_ratios = []
@@ -155,8 +161,9 @@ Precision = []
 Recall = []
 pred_object_vals = []
 true_Objective_vals = []
+diff_obj_vals = []
 count = 0
-for x in range(1,21): 
+for x in range(1,args["numOfIter"]): 
         k =random.randint(2,7) #generate a random integer k between 2 and 7
 	#generate k random fractions that sum up to 1
         r = [random.random() for j in range(k)] 
@@ -190,9 +197,9 @@ for x in range(1,21):
                 temp = str(temp)
 		temp2 = temp2 + temp
 		#print temp2 
-                cmd = "art_illumina -ss HS25 -sam -i "+file_name+" -p -l 76 -c "+str(ratios[i])+" -m 200 -s 30 -o "+sim_name #the ART command to generate the simulated data for a variant
+                cmd = "art_illumina -q -ss HS25 -sam -i "+file_name+" -p -l 76 -c "+str(ratios[i])+" -m 200 -s 30 -o "+sim_name + " >/dev/null"#the ART command to generate the simulated data for a variant
                 #write the variant sequence to a text file
-		with open(file_name, "w") as text_file:
+		with open(file_name, "w") as text_file: 
                         text_file.write(temp)
                 #print sim_name #testing purposes
                 #print file_name #testing purposes
@@ -202,7 +209,7 @@ for x in range(1,21):
 		text_file2.write(temp2)
         new_cmd = "cat *_1.fq > "+gene+"_"+str(x)+"_1.fa" #append all the first of the pairs together
         new_cmd2 ="cat *_2.fq > "+gene+"_"+str(x)+"_2.fa" #append all the second of the pairs together
-	new_cmd3 = "bash /home/elijah/Desktop/SRA_bowtie/Alignments/scripts/temp.sh "+ gene+"_"+str(x) + " " + gene + "_" + str(x)
+	new_cmd3 = "bash /home/elijah/Desktop/SRA_bowtie/Alignments/scripts/temp.sh "+ gene+"_"+str(x) + " " + gene + "_" + str(x)+ " >/dev/null"
 	#print new_cmd3 
         os.system(new_cmd) #run the command
         os.system(new_cmd2) #run the command
@@ -234,15 +241,18 @@ for x in range(1,21):
         pred_prop = create_dictionary(var_predicted, prop)
         val = totalVariationDist(pred_prop, true_prop)
         total_var.append(val)
+        print "======================================== SIMULATION " + str(x) + " ===================================================="
         print 'True variants are:', variants_current
         print 'Predicted variants are:', var_predicted
         print 'True proportions are:', true_prop
         print 'Predicted proportions are:', pred_prop
-        true_Objective_vals.append(compute_True_objective_val(df2))
+        true_Objective_val = compute_True_objective_val(df2)
+        true_Objective_vals.append(true_Objective_val)
+        diff_obj_vals.append(Compute_obj_diff(pred_object_val,true_Objective_val))
 
         if predictedCorrectly(var_predicted, variants_current):
                 count += 1
-
+print "======================================== SUMMARY STATISTICS ===================================================="
 print "total variation distances are:",total_var
 avg = sum(total_var)/len(total_var)   
 variance = map(lambda x: (x - avg)**2, total_var)
@@ -255,12 +265,15 @@ print 'Precision is:', Precision
 print 'Recall is:', Recall
 print 'Predicted objective values are:', pred_object_vals
 print 'True objective values are:', true_Objective_vals
+print 'The difference in objective values are:', diff_obj_vals
 print x
 print count/x
 X = []
-for i in range(1,21):
+for i in range(1,args["numOfIter"]):
         X.append(i)
 plt.hist(total_var, bins='auto')
 plt.xlabel('Total Variation Distance')
 plt.ylabel('Frequency')
 plt.show()
+os.system("rm ClpA_*.fa")
+os.system("rm ClpA_*.out")
