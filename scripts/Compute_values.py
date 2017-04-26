@@ -209,7 +209,8 @@ for x in range(1,args["numOfIter"]):
 		text_file2.write(temp2)
         new_cmd = "cat *_1.fq > "+gene+"_"+str(x)+"_1.fa" #append all the first of the pairs together
         new_cmd2 ="cat *_2.fq > "+gene+"_"+str(x)+"_2.fa" #append all the second of the pairs together
-	new_cmd3 = "bash /home/elijah/Desktop/SRA_bowtie/Alignments/scripts/temp.sh "+ gene+"_"+str(x) + " " + gene + "_" + str(x)+ " >/dev/null"
+        ref = upperfirst(gene)+"_bowtie"
+	new_cmd3 = "bash /home/elijah/Desktop/SRA_bowtie/Alignments/scripts/temp.sh "+ gene+"_"+str(x) + " " + gene + "_" + str(x)+ " " + ref + " >/dev/null"
 	#print new_cmd3 
         os.system(new_cmd) #run the command
         os.system(new_cmd2) #run the command
@@ -269,11 +270,12 @@ print 'The difference in objective values are:', diff_obj_vals
 print x
 print count/x
 X = []
+os.system("rm ClpX_*.fa")
+os.system("rm ClpX_*.out")
+
 for i in range(1,args["numOfIter"]):
         X.append(i)
 plt.hist(total_var, bins='auto')
 plt.xlabel('Total Variation Distance')
 plt.ylabel('Frequency')
 plt.show()
-os.system("rm ClpA_*.fa")
-os.system("rm ClpA_*.out")

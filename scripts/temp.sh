@@ -2,6 +2,7 @@
 
 gene=$1 #gene name
 sample=$2 #sample
+reference=$3
 #bowtie-build ./$gene".fas" $gene"_bowtie"		#build index of reference gene
 #echo "Building index for "$gene" done."
 #echo ""
@@ -10,8 +11,8 @@ sample=$2 #sample
 #echo "Mapping "$sample" sequence to "$gene" done."
 #python /home/elijah/Desktop/SRA_bowtie/scripts/preprocess.py --path $sample'_'$gene'_reads.txt' --gene $gene #run the python script
 #echo "computing proportions of "$gene" done"
-bowtie -a -p 8 "ClpA_bowtie" -1 ./$sample"_1.fa" -2 ./$sample"_2.fa" $gene".out"  >/dev/null
+bowtie -a -p 8 $reference -1 ./$sample"_1.fa" -2 ./$sample"_2.fa" $gene".out"  >/dev/null
 awk '{print $1"\t"$3"\t"$8"\t"$5}' $gene".out" > $gene"_reads.txt" 
-rm ClpA_*.fas
+rm ClpX_*.fas
 echo ""
 
