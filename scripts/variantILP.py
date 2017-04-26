@@ -20,20 +20,18 @@ def solver(dataMatrix):
 #    data_matrix = returnDataMatrix(dataFile+fileName)
     data_matrix = dataMatrix
     total_read = data_matrix.shape[0]
-    total_var = data_matrix.shape[1] - 1  #As first column are reads
+    total_var = data_matrix.shape[1]  #As first column are reads
     
-    xIsVariant = pd.DataFrame(index=[var for var in data_matrix.columns.tolist()[1:]], data=["x{0}".format(i+1) for i in range(total_var)], columns=["Variable"])
+    xIsVariant = pd.DataFrame(index=[var for var in data_matrix.columns.tolist()], data=["x{0}".format(i+1) for i in range(total_var)], columns=["Variable"])
     variantName_variable_dict = xIsVariant["Variable"].to_dict()
 #    variable_variantName_dict = pd.DataFrame(data=[var for var in data_matrix.columns.tolist()[1:]], index=["x{0}".format(i+1) for i in range(total_var)], columns=["Variant"])["Variant"].to_dict()
-    reads = list()
+    reads = data_matrix.index.tolist()
     readAndMM = list()
     
     #Grab unique set of mismatches for each read 
     for row in data_matrix.itertuples():
-        read = row[1]
-        varMM = list(set(list(row[2:])))
+        varMM = list(set(list(row[1:])))
         varMM = [int(mm) for mm in varMM if mm != -1]
-        reads.append(read)
         readAndMM.append(varMM)
             
     readAndMMVariable = [[[j,"y{0}_{1}".format(i+1, j)] for j in readAndMM[i]] for i in range(total_read)]
@@ -80,8 +78,8 @@ def solver(dataMatrix):
     yCoverConstr = list()
     readVar_variant_dict = dict()   #key is read variable name, value is the list of variants covering that read(with the particular mm)
     for row in data_matrix.itertuples():
-        read = row[1]
-        uniqueMm = list(set(row[2:]))
+        read = row[0]
+        uniqueMm = list(set(row[1:]))
         uniqueMm = [int(mm) for mm in uniqueMm if mm!=-1]
         
         for mm in uniqueMm:
@@ -91,7 +89,7 @@ def solver(dataMatrix):
             yVariable = [ readMM_varName_dict[read, mm] ]
             readVar_variant_dict[readMM_varName_dict[read, mm]] = xVariable
             yCoverConstr.append([ xVariable + yVariable, [1]*len(xVariable) + [-1]*len(yVariable) ])
-            
+        
     #Constraint: If y_ik is chosen, it must be covered by some variant j with k mm
     model.linear_constraints.add(lin_expr=yCoverConstr, senses=["G"]*len(y_variables), rhs=[0]*len(y_variables), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(y_variables))])
     
