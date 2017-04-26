@@ -13,6 +13,6 @@ reference=$3
 #echo "computing proportions of "$gene" done"
 bowtie -a -p 8 $reference -1 ./$sample"_1.fa" -2 ./$sample"_2.fa" $gene".out"  >/dev/null 2>&1
 awk '{print $1"\t"$3"\t"$8"\t"$5}' $gene".out" > $gene"_reads.txt" 
-rm ClpX_*.fas
+rm *.fas *.out
 echo ""
 
