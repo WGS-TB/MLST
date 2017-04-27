@@ -209,7 +209,7 @@ for x in range(1,args["numOfIter"]):
         new_cmd = "cat *_1.fq > "+gene+"_"+str(x)+"_1.fa" #append all the first of the pairs together
         new_cmd2 ="cat *_2.fq > "+gene+"_"+str(x)+"_2.fa" #append all the second of the pairs together
         ref = upperfirst(gene)+"_bowtie"
-	new_cmd3 = "bash /home/glgan/Documents/Borrelia/scripts/temp.sh "+ gene+"_"+str(x) + " " + gene + "_" + str(x)+ " " + ref + " >/dev/null 2>&1"
+	new_cmd3 = "bash /home/glgan/Documents/Borrelia/scripts/temp.sh "+ gene+"_"+str(x) + " " + gene + "_" + str(x)+ " " + ref + " >/dev/null "
 	#print new_cmd3 
         os.system(new_cmd) #run the command
         os.system(new_cmd2) #run the command
@@ -253,7 +253,7 @@ for x in range(1,args["numOfIter"]):
         if predictedCorrectly(var_predicted, variants_current):
                 count += 1
                 
-print "======================================== SUMMARY STATISTICS ====================================================\n"
+print "======================================== {0}: SUMMARY STATISTICS ====================================================\n".format(gene)
 avg_totalVarDist = sum(total_var)/len(total_var)   
 variance_totalVarDist = map(lambda x: (x - avg_totalVarDist)**2, total_var)
 variance_totalVarDist = sum(variance_totalVarDist)/len(variance_totalVarDist)
@@ -298,7 +298,6 @@ print 'Percentage of simulations predicted correctly: ', 100*count/x, "\n"
 
 X = []
 os.system("rm {0}_*.fa".format(gene))
-os.system("rm {0}_*.out".format(gene))
 
 for i in range(1,args["numOfIter"]):
         X.append(i)
