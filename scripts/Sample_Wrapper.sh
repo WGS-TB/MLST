@@ -1,4 +1,6 @@
 #!/bin/bash
+#This script takes 4 arguments: Sample name, path to sample reads, output path for identified variants and their proportions, indexed reference variants for each loci
+#Finally it will run pipeline_wrapper.py which outputs identified variants and their proportions
 sample=$1
 sample_path=$2
 output_path=$3

@@ -1,23 +1,18 @@
 #!/usr/bin/python
+'''
+This script take reads(text file) specific to a sample as input, gene name.
+It outputs identified variants at that gene and their proportions.
+'''
 from __future__ import division
-from scipy.stats import binom
 from collections import defaultdict
 from scipy.special import comb
-from pandas import *
-import operator
-import subprocess
-import sh
+import pandas as pd
 import math
-import random
-import os
 import argparse
-import matplotlib.pyplot as plt
 import csv
-from itertools import groupby
-import matplotlib.pyplot as plt
 import variantILP as ilp
 
-#function to generate matrix to be passed to 
+#Generate matrix of rows=reads and columns=number of mismatches
 def Generate_Matrix(path):
     var_list = [] #holds the variants
     read_list = [] #holds the reads
@@ -58,12 +53,13 @@ def Generate_Matrix(path):
                                     '''
                                     x[key][var] = int(val)
 
-            df = DataFrame(x).T.fillna(-1)
+            df = pd.DataFrame(x).T.fillna(-1)
     return df
 
 def tree():
     return defaultdict(tree)
 
+#Compute P(read j | var i)
 def compute_probability(n, k):
     b = comb(n, k, exact=False)
     x = math.pow(0.99,(n-k))
@@ -71,12 +67,11 @@ def compute_probability(n, k):
     prob = x*y*b
     return prob
 
-
+#Compute proportions of a variant
 def compute_proportions(dataframe):
     prob_list = [] #a list to hold the probabilities
     for row in dataframe.itertuples(index=False):
             temp_list = list(row)
-            run_sum = 0
             #compute the probability for each row in the matrix
             for i in range(len(temp_list)):
                     if temp_list[i] >= 0:
