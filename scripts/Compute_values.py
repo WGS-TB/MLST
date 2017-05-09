@@ -8,6 +8,7 @@ import operator
 import subprocess
 import sh
 import math
+import numpy as np
 import random
 import os
 import argparse
@@ -103,17 +104,16 @@ def compute_probability(n, k):
         if k > 3:
                 return 0
         else:
-                #b = comb(n, k, exact=False)
+                b = comb(n, k, exact=False)
                 x = math.pow(0.99,(n-k))
                 y = math.pow(0.01,k)
-                prob = x*y
+                prob = b*x*y
         return prob
 
 def compute_proportions(dataframe):
         prob_list = [] #a list to hold the probabilities
         for row in dataframe.itertuples(index=False):
                 temp_list = list(row)
-                run_sum = 0
                 #compute the probability for each row in the matrix
                 for i in range(len(temp_list)):
                         if temp_list[i] >= 0:
@@ -151,7 +151,7 @@ def Compute_obj_diff(predicted, true):
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-g", "--gene", required = True,  help="name of gene")
-ap.add_argument("-l", "--numOfIter", required = False, default = 41)
+ap.add_argument("-l", "--numOfIter", required = False, default = 41, type=int)
 args = vars(ap.parse_args())
 random.seed(a=1994) #set random seed
 true_ratios = []
@@ -176,8 +176,7 @@ for x in range(1,args["numOfIter"]):
         ratios = [] #list to store the proprotions of reads to generate
         true_prop = dict()
 	gene = args["gene"]
-	w = gene[0].capitalize()
-	gene = gene.replace(gene[0],w)
+	gene = upperfirst(gene)
 	temp2 = ""
 	file_name2 = gene+"_"+str(x)+".fas"
         variants_current = [] #list to hold the variants randomly chosen
@@ -210,7 +209,7 @@ for x in range(1,args["numOfIter"]):
         new_cmd = "cat *_1.fq > "+gene+"_"+str(x)+"_1.fa" #append all the first of the pairs together
         new_cmd2 ="cat *_2.fq > "+gene+"_"+str(x)+"_2.fa" #append all the second of the pairs together
         ref = upperfirst(gene)+"_bowtie"
-	new_cmd3 = "bash /home/elijah/Desktop/SRA_bowtie/Alignments/scripts/temp.sh "+ gene+"_"+str(x) + " " + gene + "_" + str(x)+ " " + ref + " >/dev/null"
+	new_cmd3 = "bash /home/glgan/Documents/Borrelia/scripts/temp.sh "+ gene+"_"+str(x) + " " + gene + "_" + str(x)+ " " + ref + " >/dev/null "
 	#print new_cmd3 
         os.system(new_cmd) #run the command
         os.system(new_cmd2) #run the command
@@ -242,40 +241,68 @@ for x in range(1,args["numOfIter"]):
         pred_prop = create_dictionary(var_predicted, prop)
         val = totalVariationDist(pred_prop, true_prop)
         total_var.append(val)
-        print "======================================== SIMULATION " + str(x) + " ===================================================="
-        print 'True variants are:', variants_current
-        print 'Predicted variants are:', var_predicted
-        print 'True proportions are:', true_prop
-        print 'Predicted proportions are:', pred_prop
+        print "======================================== SIMULATION " + str(x) + " ====================================================" +  "\n"
+        print 'True variants are:', variants_current, "\n"
+        print 'Predicted variants are:', var_predicted, "\n"
+        print 'True proportions are:', true_prop, "\n"
+        print 'Predicted proportions are:', pred_prop, "\n"
         true_Objective_val = compute_True_objective_val(df2)
         true_Objective_vals.append(true_Objective_val)
         diff_obj_vals.append(Compute_obj_diff(pred_object_val,true_Objective_val))
 
         if predictedCorrectly(var_predicted, variants_current):
                 count += 1
-print "======================================== SUMMARY STATISTICS ===================================================="
-print "total variation distances are:",total_var
-avg = sum(total_var)/len(total_var)   
-variance = map(lambda x: (x - avg)**2, total_var)
-variance = sum(variance)/len(variance)
-stdev = math.sqrt(variance)
-print "The average variation distance is:", avg
-print "The variance is:", variance
-print "standard deviation is:",stdev
-print 'Precision is:', Precision
-print 'Recall is:', Recall
-print 'Predicted objective values are:', pred_object_vals
-print 'True objective values are:', true_Objective_vals
-print 'The difference in objective values are:', diff_obj_vals
-print x
-print count/x
+                
+print "======================================== {0}: SUMMARY STATISTICS ====================================================\n".format(gene)
+avg_totalVarDist = sum(total_var)/len(total_var)   
+variance_totalVarDist = map(lambda x: (x - avg_totalVarDist)**2, total_var)
+variance_totalVarDist = sum(variance_totalVarDist)/len(variance_totalVarDist)
+std_totalVarDist = math.sqrt(variance_totalVarDist)
+context=1
+print "({0})Total Variation Distance:\n".format(context)
+print "Total variation distances are:",total_var, "\n"
+print "The average of total variation distance is:", avg_totalVarDist, "\n"
+#print "The variance of total variation distance is:", variance_totalVarDist, "\n"
+print "The standard deviation of total variation distance is:",std_totalVarDist, "\n"
+context+=1
+
+avg_prec = sum(Precision)/len(Precision)
+std_prec = np.std(np.array(Precision))
+print "({0}) Precision: \n".format(context)
+print 'Precision is:', Precision, "\n"
+print "Average of precision is: ", avg_prec, "\n"
+print "Standard deviation of precision is: ", std_prec, "\n"
+context+=1
+
+avg_rec = sum(Recall)/len(Recall)
+std_rec = np.std(np.array(Recall))
+print "({0}) Recall : \n".format(context)
+print 'Recall is:', Recall, "\n"
+print "Average of recall is: ", avg_rec, "\n"
+print "Standard deviation of recall is: ", std_rec, "\n"
+context+=1
+
+avg_diffObjVal = sum(diff_obj_vals)/len(diff_obj_vals)
+std_diffObjVal = np.std(np.array(diff_obj_vals))
+print "({0}) Objective Value: \n".format(context)
+print 'Predicted objective values are:', pred_object_vals, "\n"
+print 'True objective values are:', true_Objective_vals, "\n"
+print 'The difference in objective values are:', diff_obj_vals, "\n"
+print "Average of difference in objective value is: ", avg_diffObjVal, "\n"
+print "Standard deviation of difference in objective value is: ", std_diffObjVal, "\n"
+context+=1
+
+print "({0})Accuracy: \n".format(context)
+print 'Total number of simulations: ', args["numOfIter"]-1 , "\n"
+print 'Percentage of simulations predicted correctly: ', 100*count/x, "\n"
+
 X = []
-os.system("rm ClpX_*.fa")
-os.system("rm ClpX_*.out")
+os.system("rm {0}_*.fa".format(gene))
 
 for i in range(1,args["numOfIter"]):
         X.append(i)
 plt.hist(total_var, bins='auto')
 plt.xlabel('Total Variation Distance')
 plt.ylabel('Frequency')
-plt.show()
+#plt.show()
+plt.savefig("/home/glgan/Documents/Borrelia/simulated_stats/{0}_totalVarDist".format(gene))
