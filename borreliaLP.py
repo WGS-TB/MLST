@@ -9,11 +9,16 @@ Project: Illuminating the diversity of pathogenic bacteria Borrelia Burgdorferi 
 
 This program reads the data, construct a mixed integer linear program and solves it. The data consists
 of different samples, each has 8 locus, each locus has different variants and their proportions. The 
-Mixed ILP is implemented using CPLEX Python API. In the end, this program will construct a summary of
-the values of each decision variables in the Mixed ILP in a dataframe. 
+Mixed ILP is implemented using CPLEX Python API. 
 
-conclusion contains the name of decision variables and their value
-strainInfo contains the info of each strain indicator variable
+In the end, this program will output the indices for strains used in the Mixed ILP and for each sample,
+it will output strains infecting the sample and their proportions. 
+
+This script takes 3 arguments: 
+1) Path to the directory which contains the information about variants and their proportions at each locus
+    for each sample
+2) Path to MLST reference file
+3) Output path for files 
 """
 import pandas as pd
 import csv
@@ -29,17 +34,18 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument("--data", help="path to data directory", default="/home/glgan/Documents/Borrelia/data/randEx")
 parser.add_argument("--ref", help="path to reference.csv", default='~/Documents/Borrelia/data/randEx/reference.csv')
+parser.add_argument("--output", help="path to store conclusion", required=True)
 args = parser.parse_args()
 
 ''' ====================================== Function Definition ======================================================= '''
 
 '''Create a function to read all data files and return a dictionary where keys are the sample names, 
-values are dataframes which contain the information about variants and proportions at different loci
+values are dataframes which contain the information about variants and proportions at different loci.
+It also return total number of samples and starting sample number(based on last 3 digits)
 
 Input
-dataFilePath: File path that contains all your sample folders 
-numSamples: number of samples
-startingSampleNum: the unique index of the first sample
+dataFilePath: File path that contains all your sample folders. dataFilePath should only contain directories of samples and 
+              a reference csv
 lociOrder: a list that contains order of columns that you want '''
 def readData(dataFilePath, lociOrder):
     data = dict()
@@ -123,7 +129,7 @@ Check the proportions at each locus for each sample sum to 1. Raise systemExit e
 Input: 
 data: dictionary, data file loaded previously
 '''            
-def checkProp(data):
+def checkProp(data, propFormat):
     print("....Checking sum of proportions at each locus for each sample are equal to 1....")
     report = list()
     for sample in data:
@@ -135,7 +141,7 @@ def checkProp(data):
             prop = column.values()
             prop = [float(p) for p in prop]
             
-            if round(sum(prop), 4) != 100.0:
+            if round(sum(prop), 4) != float(propFormat):
                 report.append((sample, locus))
              
     try:
@@ -336,6 +342,8 @@ def writeInfoToCsv():
 
 ''' ============================================== Data handling ====================================================== '''
 #paramaters
+propFormat = 100    #proportion in percentage or fraction
+#loci = ['clpA', 'clpX', 'nifS']
 loci = ['clpA', 'clpX', 'nifS', 'pepX', 'pyrG', 'recG', 'rplB', 'uvrA']
 numLoci = len(loci)
 
@@ -347,7 +355,7 @@ numReference = reference.shape[0]
 allSamples = data.keys()
 
 #check proportions sum to 100
-checkProp(data)
+checkProp(data, propFormat)
 
 #round the proportions to 3 decimal places
 data = roundProp(data)
@@ -396,7 +404,6 @@ strainWeightDecVarDF = strainWeightDecVarDF[retainCol].reset_index(drop=True)
 strainWeightDecVarDF["Decision Variable"] = ["a{}".format(i) for i in range(1, strainWeightDecVarDF.shape[0] + 1)]
 
 '''==================================== Forming ILP here ================================================'''
-propFormat = 100    #proportion in percentage or fraction
 #Form a CPLEX model
 model = cplex.Cplex()
 #minimize problem
@@ -514,7 +521,7 @@ model.linear_constraints.add(lin_expr=errLessPropMinSum, rhs=errLessPropMinSumRH
 #Export some info for MATLAB use
 #writeInfoToCsv()
 
-#Final part
+''' ================================== Solve ILP ========================================== '''
 #model.write("borreliaLP.lp")
 #model.solve()
 
@@ -526,15 +533,30 @@ model.parameters.mip.pool.absgap.set(0)
 model.parameters.mip.pool.replace.set(1)
 model.populate_solution_pool()
 
-objvalue = model.solution.get_objective_value()
+objvalue = model.solution.pool.get_objective_value(0)
 varNames = model.variables.get_names()
-varValues = model.solution.get_values(varNames)
+varValues = model.solution.pool.get_values(0,varNames)
 conclusion = pd.DataFrame(columns=["Decision Variable", "Value"])
 conclusion["Decision Variable"] = varNames
 conclusion["Value"] = varValues
 strainInfo = conclusion.merge(strainWeightDecVarDF[strainWeightDecVarDF["Decision Variable"].isin(varNames)])
+strainInfo["New/Existing"] = ["Existing" if w==0 else "New" for w in strainInfo["Weights"].tolist()]
+strainsNeeded = (strainInfo[strainInfo["Value"] == 1][loci + ["ST", "New/Existing"]])
 
-varValues2 = model.solution.pool.get_values(1,varNames)
-conclusion2 = pd.DataFrame(columns=["Decision Variable", "Value"])
-conclusion2["Decision Variable"] = varNames
-conclusion2["Value"] = varValues2
+#output indices of all strains (New/Existing)
+allStr = strainWeightDecVarDF[["ST", "Weights"] + loci]
+allStr["New/Existing"] = ["Existing" if w==0 else "New" for w in allStr["Weights"].tolist()]
+allStr.drop("Weights", 1, inplace=True)
+allStr.to_csv("{0}/indexedStrains.csv".format(args.output))
+
+for samp in allSamples:
+    output = proportionWeightDecVarDF[proportionWeightDecVarDF["Sample"] == samp].merge(strainsNeeded).drop(["Weights", "Sample"],1)
+    output["Proportion"] = model.solution.pool.get_values(0, output["Decision Variable"].tolist())
+    output.drop("Decision Variable", axis=1, inplace=True)
+    output = output[["ST", "New/Existing"]+loci+["Proportion"]]
+    output.to_csv("{0}/{1}_strainsAndProportions.csv".format(args.output, samp))
+
+#varValues2 = model.solution.pool.get_values(1,varNames)
+#conclusion2 = pd.DataFrame(columns=["Decision Variable", "Value"])
+#conclusion2["Decision Variable"] = varNames
+#conclusion2["Value"] = varValues2
