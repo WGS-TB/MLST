@@ -396,7 +396,7 @@ strainWeightDecVarDF = strainWeightDecVarDF[retainCol].reset_index(drop=True)
 strainWeightDecVarDF["Decision Variable"] = ["a{}".format(i) for i in range(1, strainWeightDecVarDF.shape[0] + 1)]
 
 '''==================================== Forming ILP here ================================================'''
-
+propFormat = 100    #proportion in percentage or fraction
 #Form a CPLEX model
 model = cplex.Cplex()
 #minimize problem
@@ -404,7 +404,7 @@ model.objective.set_sense(model.objective.sense.minimize)
 #add the decision variables for unqiue strain types
 model.variables.add(obj=strainWeightDecVarDF['Weights'].values.tolist(), names=strainWeightDecVarDF['Decision Variable'], types = [model.variables.type.binary]* len(strainWeightDecVarDF['Weights'].values.tolist()))
 #add proportions decision variables
-model.variables.add(obj=proportionWeightDecVarDF['Weights'].values.tolist(),ub=[1]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))
+model.variables.add(obj=proportionWeightDecVarDF['Weights'].values.tolist(),ub=[propFormat]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))
 
 #add linear constraints such that for each sample, the sum of the proportions of its variants combination = 1
 propVarSumTo1 = list()
@@ -413,7 +413,7 @@ for samp in allSamples:
     temp = (proportionWeightDecVarDF.loc[proportionWeightDecVarDF['Sample'] == samp])['Decision Variable'].tolist()        
     propVarSumTo1.append([temp, [1]* len(temp)])
     
-model.linear_constraints.add(lin_expr=propVarSumTo1, rhs=[1]*len(propVarSumTo1), senses=["E"]*len(propVarSumTo1), names=["c{0}".format(i+1) for i in range(len(propVarSumTo1))])
+model.linear_constraints.add(lin_expr=propVarSumTo1, rhs=[propFormat]*len(propVarSumTo1), senses=["E"]*len(propVarSumTo1), names=["c{0}".format(i+1) for i in range(len(propVarSumTo1))])
 
 #add linear constraints such that for each sample, sum of pi_ik \dot V_ik (proportion \dot matrix representation) across all combinations = Proportion matrix
 piDotComb = list()
@@ -438,7 +438,7 @@ indicLargerPropDF = (indicLargerPropDF.merge(proportionWeightDecVarDF, indicator
 indicLargerPropDF.rename(columns={"Decision Variable": "Proportion Variable"}, inplace=True)
 indicMinusProp = list()
 for i,pi in itertools.izip(indicLargerPropDF["Indicator"].tolist(), indicLargerPropDF["Proportion Variable"].tolist()):
-    indicMinusProp.append([[i, pi],[1, -1]])  
+    indicMinusProp.append([[i, pi],[propFormat, -1]])  
 
 model.linear_constraints.add(lin_expr=indicMinusProp, rhs=[0]*len(indicMinusProp), senses=["G"]*len(indicMinusProp), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusProp))] )
 
@@ -455,26 +455,26 @@ for i in range(len(indic)):
     size = len(pi_i)
     temp.append(a_i)
     coef = list()
-    coef.append(1)
+    coef.append(propFormat)
     
     for j in range(size):
         temp.append(pi_i[j])
         coef.append(-1.0/size)
         
     indicMinusAvgPropLess1_LHS.append([temp, coef])
-    
-model.linear_constraints.add(lin_expr=indicMinusAvgPropLess1_LHS, rhs=[0.9999]*len(indicMinusAvgPropLess1_LHS), senses=["L"]*len(indicMinusAvgPropLess1_LHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusAvgPropLess1_LHS))])
+
+tolerance = 0.01     #how much tolerance we set for the upper bound    
+model.linear_constraints.add(lin_expr=indicMinusAvgPropLess1_LHS, rhs=[propFormat - tolerance]*len(indicMinusAvgPropLess1_LHS), senses=["L"]*len(indicMinusAvgPropLess1_LHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusAvgPropLess1_LHS))])
 model.linear_constraints.add(lin_expr=indicMinusAvgPropLess1_LHS, rhs=[0]*len(indicMinusAvgPropLess1_LHS), senses=["G"]*len(indicMinusAvgPropLess1_LHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusAvgPropLess1_LHS))])
 
 #add error variables and linear constraints related to error terms
 #create error variable names
-errorName = ["d_"]*(varAndProp.shape[0]) + varAndProp["Sample"] + ["_"]*(varAndProp.shape[0]) + varAndProp["Variant"]
-errorName = [ele.replace("d_sample", "d_s") for ele in errorName]
-varAndProp["Decision Variable"] = errorName
+varAndProp["Decision Variable"] = ["d_s{}_".format(samp[-3:]) for samp in varAndProp["Sample"].tolist() ]
+varAndProp["Decision Variable"] = varAndProp["Decision Variable"] + varAndProp["Variant"]
           
 #add error variable
 #model.variables.add(lb=(-1*varAndProp["Proportion"]).tolist(), ub=(1-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
-model.variables.add(obj=[1]*varAndProp.shape[0], lb=(-1*varAndProp["Proportion"]).tolist(), ub=(1-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
+model.variables.add(obj=[1]*varAndProp.shape[0], lb=(-1*varAndProp["Proportion"]).tolist(), ub=(propFormat-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
 
 #add the constraints whereby for each sample, at each locus, the sum of the error of all variants=0
 errorSumTo0 = list()
