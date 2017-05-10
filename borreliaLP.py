@@ -27,7 +27,7 @@ import argparse
 
 #Can set config from command line
 parser = argparse.ArgumentParser()
-parser.add_argument("--data", help="path to data directory", default="/home/stanleygan/Documents/Borrelia/data/randEx")
+parser.add_argument("--data", help="path to data directory", default="/home/glgan/Documents/Borrelia/data/randEx")
 parser.add_argument("--ref", help="path to reference.csv", default='~/Documents/Borrelia/data/randEx/reference.csv')
 args = parser.parse_args()
 
@@ -41,19 +41,27 @@ dataFilePath: File path that contains all your sample folders
 numSamples: number of samples
 startingSampleNum: the unique index of the first sample
 lociOrder: a list that contains order of columns that you want '''
-def readData(dataFilePath, numSamples, startingSampleNum, lociOrder):
+def readData(dataFilePath, lociOrder):
     data = dict()
+    sampleFold = list()
     
-    for i in range(startingSampleNum, startingSampleNum+numSamples):
-        data['sample%d' %i] = pd.DataFrame(columns=lociOrder)   #require column to be a specfic order based on lociOrder
-        
-        sampleFilePath = dataFilePath + ('/sample%d/' %i)
-        dirs= os.listdir(sampleFilePath)
-        for files in dirs:
-            temp = re.compile('_(.*).csv')  #grab gene name
-            gene = temp.findall(files)
+    for folder in os.listdir(dataFilePath):
+        if not folder.endswith(".csv"):
+            sampleFold.append(folder)
             
-            reader = csv.reader(open(sampleFilePath+files, 'r'))
+    numSamples = len(sampleFold)
+    startingSamp = min([int(i[-3:]) for i in sampleFold])
+    
+    for folder in sampleFold:
+        data["{}".format(folder)] = pd.DataFrame(columns=lociOrder)   #require column to be a specfic order based on lociOrder
+        sampleFilePath = dataFilePath + "/{}".format(folder)
+        dirs= os.listdir(sampleFilePath)
+        csvFiles = [i for i in dirs if i.endswith(".csv")]
+        
+        temp = re.compile('(.*)_proportions.csv')  #grab gene name
+        for f in csvFiles:
+            gene = temp.findall(f)
+            reader = csv.reader(open(sampleFilePath+"/"+f, 'r'))
             
             #store variants and respective proportions in a dictionary
             d = dict()  
@@ -62,9 +70,9 @@ def readData(dataFilePath, numSamples, startingSampleNum, lociOrder):
             
             #wrap dictionary with a list for storage in dataframe
             alist =[d]
-            (data['sample%d' %i])[gene[0]] = alist
+            (data["{}".format(folder)])[gene[0]] = alist
             
-    return data
+    return data, numSamples, startingSamp
 
 '''
 Return data(dictionary) with all proportions rounded to 3 dp
@@ -127,7 +135,7 @@ def checkProp(data):
             prop = column.values()
             prop = [float(p) for p in prop]
             
-            if round(sum(prop), 4) != 1.0:
+            if round(sum(prop), 4) != 100.0:
                 report.append((sample, locus))
              
     try:
@@ -300,15 +308,15 @@ Input:
     start: starting sample number
     numSamp: number of samples
 '''                                                                           
-def mapVarAndSampleToStrain(strain, loci, start, numSamp):
+def mapVarAndSampleToStrain(strain, loci, allSamples):
     varToStr = pd.DataFrame(columns=loci)
     for name in loci:
         varDF = strain.drop_duplicates(name)    #unique variants at a locus
         varDF = (varDF[name]).reset_index(drop=True)
         varDict = dict()
-        for sample, var in list(itertools.product(range(start, start+numSamp), varDF.tolist())):
-            #grab strain types that (sample, var) maps to
-            strList = strain[(strain[name]==var) & (strain["Sample"]=="sample{0}".format(sample))]["ST"]
+        for sample, var in list(itertools.product(allSamples, varDF.tolist())):
+            #grab strain types which (sample, var) maps to
+            strList = strain[(strain[name]==var) & (strain["Sample"]=="{}".format(sample))]["ST"]
             if len(strList) != 0:   #if not empty
                 varDict[(var, sample)] = strList
                
@@ -328,18 +336,17 @@ def writeInfoToCsv():
 
 ''' ============================================== Data handling ====================================================== '''
 #paramaters
-numLoci = 3
-startingSampleNum = 1
-numSamples = 2
-loci = ['clpA', 'clpX', 'nifS']
+loci = ['clpA', 'clpX', 'nifS', 'pepX', 'pyrG', 'recG', 'rplB', 'uvrA']
+numLoci = len(loci)
 
 #read data for samples and reference
-data = readData(args.data, numSamples,startingSampleNum, loci)
+data, numSamples, startingSampleNum = readData(args.data,loci)
 reference = pd.read_csv(args.ref,usecols=range(1,numLoci+1))
 lociNames = list(reference.columns.values)
 numReference = reference.shape[0]
+allSamples = data.keys()
 
-#check proportions sum to 1
+#check proportions sum to 100
 checkProp(data)
 
 #round the proportions to 3 decimal places
@@ -363,7 +370,7 @@ strains = strains.merge(uniqueStrains, indicator=True, how="left")    #assign th
 strains = strains.drop("_merge",1)
 
 #For each variants, get a mapping of which strains it maps to
-varSampToST = mapVarAndSampleToStrain(strains, loci, startingSampleNum, numSamples)
+varSampToST = mapVarAndSampleToStrain(strains, loci, allSamples)
 
 #weights and decision variables for proportion of strains. weight=0 if the strain is in reference, otherwise =1. Notice there will be duplications of strain types
 #here because for proportions, we consider sample by sample rather than unique strain types
@@ -374,16 +381,19 @@ proportionWeightDecVarDF = proportionWeightDecVarDF.rename(columns = {"_merge":"
 
 #Add proportion decision variable names
 proportionWeightDecVarDF["Decision Variable"] = np.nan
-for i in range(startingSampleNum, startingSampleNum + numSamples):
-    propNameTemp = ["pi_%s_%d" %t for t in itertools.izip((proportionWeightDecVarDF.loc[proportionWeightDecVarDF['Sample'] == "sample%d" %i])['Sample'], range(1,1+(proportionWeightDecVarDF.loc[proportionWeightDecVarDF['Sample'] == "sample%d" %i]).shape[0]))]
-    propNameTemp = [ele.replace("pi_sample", "pi_s") for ele in propNameTemp]   #shorter name as CPLEX can't hold name with >16 char
-    proportionWeightDecVarDF.loc[proportionWeightDecVarDF['Sample'] == "sample%d" %i, 'Decision Variable'] = propNameTemp
+
+for samp in allSamples:
+    thisSample = (proportionWeightDecVarDF.loc[proportionWeightDecVarDF['Sample'] == samp])['Sample']
+    propNameTemp = ["pi_%s_%d" %t for t in itertools.izip(thisSample, range(1,1+thisSample.shape[0]))]
+    #shorter name as CPLEX can't hold name with >16 char. Use last 3 digits of sample name to name decision variables i.e. SRR2034333 -> use 333
+    propNameTemp = [ele.replace("pi_{}".format(samp), "pi_s{}".format(samp[-3:])) for ele in propNameTemp]   
+    proportionWeightDecVarDF.loc[proportionWeightDecVarDF['Sample'] == samp, 'Decision Variable'] = propNameTemp
     
 #weights and decision variables for unique strain types, weight=0 if strain is in reference, otherwise=1. no duplications
 strainWeightDecVarDF = proportionWeightDecVarDF.drop_duplicates(loci)
 retainCol = loci + ['Weights', 'ST']
 strainWeightDecVarDF = strainWeightDecVarDF[retainCol].reset_index(drop=True)
-strainWeightDecVarDF["Decision Variable"] = ["a%d" %(i+1) for i in range(len(strainWeightDecVarDF['Weights'].values.tolist()))]
+strainWeightDecVarDF["Decision Variable"] = ["a{}".format(i) for i in range(1, strainWeightDecVarDF.shape[0] + 1)]
 
 '''==================================== Forming ILP here ================================================'''
 
@@ -399,11 +409,8 @@ model.variables.add(obj=proportionWeightDecVarDF['Weights'].values.tolist(),ub=[
 #add linear constraints such that for each sample, the sum of the proportions of its variants combination = 1
 propVarSumTo1 = list()
 
-for i in range(numSamples):
-    temp=list()
-    for num in range(1, 1+ numOfComb["sample{0}".format(i + startingSampleNum)]):
-        temp.append("pi_s{0}_{1}".format(i + startingSampleNum, num))
-        
+for samp in allSamples:
+    temp = (proportionWeightDecVarDF.loc[proportionWeightDecVarDF['Sample'] == samp])['Decision Variable'].tolist()        
     propVarSumTo1.append([temp, [1]* len(temp)])
     
 model.linear_constraints.add(lin_expr=propVarSumTo1, rhs=[1]*len(propVarSumTo1), senses=["E"]*len(propVarSumTo1), names=["c{0}".format(i+1) for i in range(len(propVarSumTo1))])
@@ -411,13 +418,13 @@ model.linear_constraints.add(lin_expr=propVarSumTo1, rhs=[1]*len(propVarSumTo1),
 #add linear constraints such that for each sample, sum of pi_ik \dot V_ik (proportion \dot matrix representation) across all combinations = Proportion matrix
 piDotComb = list()
 propConstrRHS = list()
-for name in varSampToST:
+for locusName in varSampToST:
     temp=list()
-    varSampToSTDict = varSampToST[name][0]
+    varSampToSTDict = varSampToST[locusName][0]
     for (var, sample) in varSampToSTDict:
         strainTypes = varSampToSTDict[(var, sample)]
-        propDecVar = proportionWeightDecVarDF[(proportionWeightDecVarDF["ST"].isin(strainTypes)) & (proportionWeightDecVarDF["Sample"] == "sample{0}".format(sample))]["Decision Variable"]
-        propConstrRHS.append(  float( ( (data["sample{0}".format(sample)])[name][0] )[var] )  )
+        propDecVar = proportionWeightDecVarDF[(proportionWeightDecVarDF["ST"].isin(strainTypes)) & (proportionWeightDecVarDF["Sample"] == "{}".format(sample))]["Decision Variable"]
+        propConstrRHS.append(  float( ( (data["{}".format(sample)])[locusName][0] )[var] )  )
         piDotComb.append([propDecVar.tolist(), [1]*len(propDecVar)])
        
 model.linear_constraints.add(lin_expr=piDotComb, rhs=propConstrRHS, senses=["E"]*len(propConstrRHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(propConstrRHS))])                                                                         
