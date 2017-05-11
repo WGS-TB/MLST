@@ -11,6 +11,8 @@ import math
 import argparse
 import csv
 import variantILP as ilp
+import matplotlib.pyplot as plt
+import numpy as np
 
 #Generate matrix of rows=reads and columns=number of mismatches
 def Generate_Matrix(path):
@@ -110,6 +112,11 @@ pred_object_val,var_predicted,reads_cov = ilp.solver(df)
 print var_predicted
 df2 = df.loc[reads_cov,var_predicted]
 
+#write matrix to file
+df2.to_csv(args["gene"]+'_predicted_matrix.csv', sep='\t')
+fig, ax = plt.subplots()
+df2.hist(bins=np.histogram(df2.values.ravel())[1],ax=ax)
+fig.savefig(args["gene"]+'_matrix_plots.png')
 
 #compute proportions
 prop = compute_proportions(df2)

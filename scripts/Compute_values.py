@@ -163,6 +163,7 @@ pred_object_vals = []
 true_Objective_vals = []
 diff_obj_vals = []
 count = 0
+bool_list = []
 for x in range(1,args["numOfIter"]): 
         k =random.randint(2,7) #generate a random integer k between 2 and 7
 	#generate k random fractions that sum up to 1
@@ -249,21 +250,36 @@ for x in range(1,args["numOfIter"]):
         true_Objective_val = compute_True_objective_val(df2)
         true_Objective_vals.append(true_Objective_val)
         diff_obj_vals.append(Compute_obj_diff(pred_object_val,true_Objective_val))
-
+        
         if predictedCorrectly(var_predicted, variants_current):
                 count += 1
+                bool_list.append(True)
+        else:
+                bool_list.append(False)
+
+
                 
 print "======================================== {0}: SUMMARY STATISTICS ====================================================\n".format(gene)
-avg_totalVarDist = sum(total_var)/len(total_var)   
+avg_totalVarDist = sum(total_var)/len(total_var)
+true_avg_totalVarDist = sum(list(itertools.compress(total_var, bool_list)))/sum(bool_list)
 variance_totalVarDist = map(lambda x: (x - avg_totalVarDist)**2, total_var)
+true_variance_totalVarDist = map(lambda x:(x - true_avg_totalVarDist)**2, list(itertools.compress(total_var, bool_list)))
 variance_totalVarDist = sum(variance_totalVarDist)/len(variance_totalVarDist)
+true_variance_totalVarDist = sum(true_variance_totalVarDist)/len(true_variance_totalVarDist)
 std_totalVarDist = math.sqrt(variance_totalVarDist)
+true_std_totalVarDist = math.sqrt(true_variance_totalVarDist)
 context=1
 print "({0})Total Variation Distance:\n".format(context)
 print "Total variation distances are:",total_var, "\n"
 print "The average of total variation distance is:", avg_totalVarDist, "\n"
 #print "The variance of total variation distance is:", variance_totalVarDist, "\n"
 print "The standard deviation of total variation distance is:",std_totalVarDist, "\n"
+context+=1
+print "({0})Total Variation Distance for variants which are predicted correctly:\n".format(context)
+print "Total variation distances are:",list(itertools.compress(total_var, bool_list)), "\n"
+print "The average of total variation distance is:", true_avg_totalVarDist, "\n"
+#print "The variance of total variation distance is:", variance_totalVarDist, "\n"
+print "The standard deviation of total variation distance is:",true_std_totalVarDist, "\n"
 context+=1
 
 avg_prec = sum(Precision)/len(Precision)
@@ -302,7 +318,7 @@ os.system("rm {0}_*.fa".format(gene))
 for i in range(1,args["numOfIter"]):
         X.append(i)
 plt.hist(total_var, bins='auto')
-plt.xlabel('Total Variation Distance')
+plt.xlabel('Total Variation Distance in percentage')
 plt.ylabel('Frequency')
 #plt.show()
 plt.savefig("/home/glgan/Documents/Borrelia/simulated_stats/{0}_totalVarDist".format(gene))
