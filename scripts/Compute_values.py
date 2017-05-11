@@ -1,11 +1,8 @@
 #!/usr/bin/python
 from __future__ import division
-from scipy.stats import binom
 from collections import defaultdict
 from scipy.special import comb
 from pandas import *
-import operator
-import subprocess
 import sh
 import math
 import numpy as np
@@ -13,10 +10,8 @@ import random
 import os
 import argparse
 import matplotlib.pyplot as plt
-import csv
-from itertools import groupby
-import matplotlib.pyplot as plt
 import variantILP as ilp
+import itertools
 
 
 # pred_prop and true_prop: dictionaries
@@ -101,13 +96,10 @@ def Generate_Matrix(path):
         return df
 
 def compute_probability(n, k):
-        if k > 3:
-                return 0
-        else:
-                b = comb(n, k, exact=False)
-                x = math.pow(0.99,(n-k))
-                y = math.pow(0.01,k)
-                prob = b*x*y
+        b = comb(n, k, exact=False)
+        x = math.pow(0.99,(n-k))
+        y = math.pow(0.01,k)
+        prob = b*x*y
         return prob
 
 def compute_proportions(dataframe):
@@ -131,10 +123,15 @@ def compute_proportions(dataframe):
 
 def compute_True_objective_val(dataframe):
         run_sum = 0
+        #Even no limit on mm, there are reads which are covered by predicted variants but not
+        #true variants. Identify largest mm , if this case happens, increment by max_mm+1
+        max_mm = max(dataframe.max())
         for row in dataframe.itertuples(index=False):
                 my_list = [i for i in list(row) if i >= 0]
                 if len(my_list) > 0:
-                        run_sum += min(my_list)
+                    run_sum += min(my_list)
+                else:
+                    run_sum+=max_mm + 1
         run_sum += len(my_list)
         return run_sum
 
@@ -152,6 +149,7 @@ def Compute_obj_diff(predicted, true):
 ap = argparse.ArgumentParser()
 ap.add_argument("-g", "--gene", required = True,  help="name of gene")
 ap.add_argument("-l", "--numOfIter", required = False, default = 41, type=int)
+ap.add_argument("-o", "--outputFolder", required=True)
 args = vars(ap.parse_args())
 random.seed(a=1994) #set random seed
 true_ratios = []
@@ -321,4 +319,4 @@ plt.hist(total_var, bins='auto')
 plt.xlabel('Total Variation Distance in percentage')
 plt.ylabel('Frequency')
 #plt.show()
-plt.savefig("/home/glgan/Documents/Borrelia/simulated_stats/{0}_totalVarDist".format(gene))
+plt.savefig("/home/glgan/Documents/Borrelia/{0}/{1}_totalVarDist".format(args["outputFolder"], gene))
