@@ -108,8 +108,9 @@ path = args["path"]
 df = Generate_Matrix(path)
 df.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
 #predict variants
-pred_object_val,var_predicted,reads_cov = ilp.solver(df)
-print var_predicted
+pred_object_val,var_predicted,reads_cov, all_solutions = ilp.solver(df)
+#print var_predicted
+#print all_solutions
 df2 = df.loc[reads_cov,var_predicted]
 
 #write matrix to file
@@ -121,6 +122,11 @@ fig.savefig(args["gene"]+'_matrix_plots.png')
 #compute proportions
 prop = compute_proportions(df2)
 pred_prop = create_dictionary(var_predicted, prop)
+print len(all_solutions)
+for sol in all_solutions:
+    print sol
+    print(compute_proportions(df.loc[reads_cov, sol]))
+
 #write proportions to file
 w = csv.writer(open(args["gene"]+'_proportions.csv', "w"))
 for key, val in pred_prop.items():
