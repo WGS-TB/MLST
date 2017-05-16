@@ -13,6 +13,8 @@ import matplotlib.pyplot as plt
 import variantILP as ilp
 import itertools
 
+NO_BINOM = False
+TEST_EMPTY_LIST = True
 
 # pred_prop and true_prop: dictionaries
 def totalVariationDist(pred_prop, true_prop):
@@ -96,11 +98,16 @@ def Generate_Matrix(path):
         return df
 
 def compute_probability(n, k):
+    if NO_BINOM:
+        b=10**10
+    else:
         b = comb(n, k, exact=False)
-        x = math.pow(0.99,(n-k))
-        y = math.pow(0.01,k)
-        prob = b*x*y
-        return prob
+    
+    x = math.pow(0.99,(n-k))
+    y = math.pow(0.01,k)
+    prob = b*x*y
+        
+    return prob
 
 def compute_proportions(dataframe):
         prob_list = [] #a list to hold the probabilities
@@ -108,10 +115,10 @@ def compute_proportions(dataframe):
                 temp_list = list(row)
                 #compute the probability for each row in the matrix
                 for i in range(len(temp_list)):
-                        if temp_list[i] >= 0:
-                                temp_list[i] = compute_probability(76,int(temp_list[i]))
-                        else:
-                                temp_list[i] = 0
+                    if temp_list[i] >= 0:
+                        temp_list[i] = compute_probability(76,int(temp_list[i]))
+                    else:
+                        temp_list[i] = 0
                 total = sum(temp_list)
                 #solve for k
                 temp_list = [j*(1.0/total) for j in temp_list]
@@ -128,10 +135,15 @@ def compute_True_objective_val(dataframe):
         max_mm = max(dataframe.max())
         for row in dataframe.itertuples(index=False):
                 my_list = [i for i in list(row) if i >= 0]
-                if len(my_list) > 0:
-                    run_sum += min(my_list)
+                if TEST_EMPTY_LIST == True:
+                    if len(my_list) > 0:
+                        run_sum += min(my_list)
+                    else:
+                        run_sum+=max_mm + 1
                 else:
-                    run_sum+=max_mm + 1
+                    if len(my_list) == 0:
+                        print(list(row))
+                    run_sum += min(my_list)
         run_sum += len(my_list)
         return run_sum
 
@@ -148,7 +160,7 @@ def Compute_obj_diff(predicted, true):
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-g", "--gene", required = True,  help="name of gene")
-ap.add_argument("-l", "--numOfIter", required = False, default = 41, type=int)
+ap.add_argument("-l", "--numOfIter", required = False, default = 40, type=int)
 ap.add_argument("-o", "--outputFolder", required=True)
 args = vars(ap.parse_args())
 random.seed(a=1994) #set random seed
@@ -162,7 +174,7 @@ true_Objective_vals = []
 diff_obj_vals = []
 count = 0
 bool_list = []
-for x in range(1,args["numOfIter"]): 
+for x in range(1,args["numOfIter"]+1): 
         k =random.randint(2,7) #generate a random integer k between 2 and 7
 	#generate k random fractions that sum up to 1
         r = [random.random() for j in range(k)] 
@@ -195,7 +207,7 @@ for x in range(1,args["numOfIter"]):
                 temp = str(temp)
 		temp2 = temp2 + temp
 		#print temp2 
-                cmd = "art_illumina -q -ss HS25 -sam -i "+file_name+" -p -l 76 -c "+str(ratios[i])+" -m 200 -s 30 -o "+sim_name + " >/dev/null"#the ART command to generate the simulated data for a variant
+                cmd = "art_illumina -q -ss HS25 -sam -i "+file_name+" -p -l 76 -c "+str(ratios[i])+" -m 200 -s 10 -o "+sim_name + " >/dev/null"#the ART command to generate the simulated data for a variant
                 #write the variant sequence to a text file
 		with open(file_name, "w") as text_file: 
                         text_file.write(temp)
@@ -228,7 +240,12 @@ for x in range(1,args["numOfIter"]):
         path = X+'_reads.txt'
         df = Generate_Matrix(path)
         df.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
-        pred_object_val,var_predicted,reads_cov = ilp.solver(df)
+        pred_object_val,var_predicted,reads_cov,all_solutions = ilp.solver(df)
+        
+        for solution in all_solutions:
+            if set(solution) == set(variants_current):
+                var_predicted = solution
+                break
         
         Precision.append(precision(var_predicted, variants_current))
         Recall.append(recall(var_predicted, variants_current))
@@ -307,7 +324,7 @@ print "Standard deviation of difference in objective value is: ", std_diffObjVal
 context+=1
 
 print "({0})Accuracy: \n".format(context)
-print 'Total number of simulations: ', args["numOfIter"]-1 , "\n"
+print 'Total number of simulations: ', args["numOfIter"] , "\n"
 print 'Percentage of simulations predicted correctly: ', 100*count/x, "\n"
 
 X = []
