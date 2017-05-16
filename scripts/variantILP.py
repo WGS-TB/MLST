@@ -62,7 +62,7 @@ def solver(dataMatrix):
     model.variables.add(obj=y_weights, names=y_variables, types=[model.variables.type.binary]*len(y_variables))
     
     #Constraint: Cover most of the read
-    keep_alpha = 0.99
+    keep_alpha = 1.0
     model.linear_constraints.add(lin_expr=[[y_variables, [1]*len(y_variables)]], senses=["G"], rhs=[keep_alpha*total_read], names=["c{0}".format(1+model.linear_constraints.get_num())])
     
     #Constraint: For each read i, only allow it to be covered with a unique number of mismatch i.e. 
@@ -95,7 +95,15 @@ def solver(dataMatrix):
     
     #model.write("a.lp")
     model.set_results_stream(None)
-    model.solve()
+#    model.solve()
+    
+    #options for searching more optimal solutions
+    #model.parameters.mip.pool.capacity.set(10)
+    model.parameters.mip.pool.intensity.set(4)
+    #model.parameters.mip.limits.populate.set(2100000000)
+    model.parameters.mip.pool.absgap.set(0)
+    model.parameters.mip.pool.replace.set(1)
+    model.populate_solution_pool()
        
     '''=========================================== Presenting Results ========================================================'''
     objvalue = model.solution.get_objective_value()
@@ -112,4 +120,19 @@ def solver(dataMatrix):
 
     yCovered = present[present["Decision Variable"].str.contains(u"y.*")]["Decision Variable"].tolist()
     readsCovered = [varName_read_dict[y] for y in yCovered]
-    return objvalue, varPresentList, readsCovered
+    
+    allSol = list()
+    for i in range(model.solution.pool.get_num()):
+        objvalue = model.solution.pool.get_objective_value(i)
+        varNames = model.variables.get_names()
+        varValues = model.solution.pool.get_values(i,varNames)
+        conclusion = pd.DataFrame(columns=["Decision Variable", "Value"])
+        conclusion["Decision Variable"] = varNames
+        conclusion["Value"] = varValues
+    
+        present = conclusion[conclusion["Value"]==1]
+        variantsPresent = xIsVariant[xIsVariant["Variable"] .isin(present["Decision Variable"].tolist())]
+        varPresentList = variantsPresent.index.tolist()
+        allSol.append(varPresentList)
+    
+    return objvalue, varPresentList, readsCovered, allSol

@@ -6,5 +6,5 @@ for f in $files
 do
 	echo $f
 	cd $sample$f
-	python ~/Documents/Borrelia/scripts/Compute_values.py -g $f -l 41 > ~/Documents/Borrelia/$1/$f\_output_stats.txt -o $1
+	python ~/Documents/Borrelia/scripts/Compute_values.py -g $f -l 40 -o $1 > ~/Documents/Borrelia/$1/$f\_output_stats.txt 
 done	
