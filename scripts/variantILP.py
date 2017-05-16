@@ -67,7 +67,16 @@ def solver(dataMatrix):
     
     #Constraint: For each read i, only allow it to be covered with a unique number of mismatch i.e. 
     #only one of y_i0, y_i1, y_i2, y_i3 is =1
-    uniqueMMConstr = [[[mmName[1] for mmName in oneRead], [1]*len(mmName[1])] for oneRead in readAndMMVariable ]
+    uniqueMMConstr = list()
+    for oneRead in readAndMMVariable:
+        temp = list()
+        yVariable = list()
+        for i in range(len(oneRead)):
+            yVariable.append( (oneRead[i])[1] )
+        temp.append(yVariable)
+        temp.append([1]*len(yVariable))
+        uniqueMMConstr.append(temp)
+        
     model.linear_constraints.add(lin_expr=uniqueMMConstr, senses=["L"]*total_read, rhs=[1]*total_read, names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(total_read)])
     
     #Limit maximum number of variants
