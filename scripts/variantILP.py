@@ -131,6 +131,7 @@ def solver(dataMatrix):
     readsCovered = [varName_read_dict[y] for y in yCovered]
     
     allSol = list()
+    allObjValue = list()
     for i in range(model.solution.pool.get_num()):
         objvalue = model.solution.pool.get_objective_value(i)
         varNames = model.variables.get_names()
@@ -143,5 +144,6 @@ def solver(dataMatrix):
         variantsPresent = xIsVariant[xIsVariant["Variable"] .isin(present["Decision Variable"].tolist())]
         varPresentList = variantsPresent.index.tolist()
         allSol.append(varPresentList)
+        allObjValue.append(objvalue)
     
-    return objvalue, varPresentList, readsCovered, allSol
+    return objvalue, varPresentList, readsCovered, allSol, allObjValue
