@@ -12,8 +12,9 @@ import argparse
 import matplotlib.pyplot as plt
 import variantILP as ilp
 import itertools
+import sys
 
-NO_BINOM = False
+NO_BINOM = True
 TEST_EMPTY_LIST = True
 
 # pred_prop and true_prop: dictionaries
@@ -56,46 +57,50 @@ def predictedCorrectly(predicted, true):
 
 #function to generate matrix to be passed to 
 def Generate_Matrix(path):
-        var_list = [] #holds the variants
-        read_list = [] #holds the reads
-        mismatch_list = [] #holds the mismatches
-        with open(path) as inf:
-                for line in inf:
-                        parts = line.split('\t') # split line into parts
-                        if len(parts) > 1:   # if at least 2 parts/columns
-                                read_list.append(parts[0]) #append reads to a list
-                                var_list.append(parts[1])   #append vars to a list
-                                mismatch_list.append(parts[2]) #append mismatches to list
-                flag = True
-        if flag is True:
-                d = defaultdict(list) #dictionary holding all the variants that a read maps to
-                d_1 = defaultdict(list) #dictionary holding all the mismatches that a read has to its variants
-                d_2 = defaultdict(list) #dictionary holding indices for later use
+    var_list = [] #holds the variants
+    read_list = [] #holds the reads
+    mismatch_list = [] #holds the mismatches
+    with open(path) as inf:
+        for line in inf:
+            parts = line.split('\t') # split line into parts
+            if len(parts) > 1:   # if at least 2 parts/columns
+                read_list.append(parts[0]) #append reads to a list
+                var_list.append(parts[1])   #append vars to a list
+                mismatch_list.append(parts[2]) #append mismatches to list
+        flag = True
+    if flag is True:
+        d = defaultdict(list) #dictionary holding all the variants that a read maps to
+        d_1 = defaultdict(list) #dictionary holding all the mismatches that a read has to its variants
+        d_2 = defaultdict(list) #dictionary holding indices for later use
 
 
-                for i in range(len(read_list)):
-                        num_mismatch = mismatch_list[i].count('>') #count the number of mismatches for each read
-                        d[read_list[i]].append(var_list[i]) #append all the variants that read read_i maps to
-                        d_1[read_list[i]].append(num_mismatch) #append all the mismatches that each read_i has when it maps to a variants
-                        d_2[read_list[i]].append(i) #for testing purposes
+        for i in range(len(read_list)):
+            num_mismatch = mismatch_list[i].count('>') #count the number of mismatches for each read
+            if  i%2 == 0:    
+                read_list[i] = read_list[i]+'-1/2'
+            else:
+                read_list[i] = read_list[i]+'-2/2'
+            d[read_list[i]].append(var_list[i]) #append all the variants that read read_i maps to
+            d_1[read_list[i]].append(num_mismatch) #append all the mismatches that each read_i has when it maps to a variants
+            d_2[read_list[i]].append(i) #for testing purposes
 
-                var_list = set(var_list)
-                x = tree()
+        var_list = set(var_list)
+        x = tree()
  
-#               create a 2D dictionary that contains all the possible combinations of a read with a variant and the number of mismatches.
-                for var in var_list:
-                        for key in d:
-                                temp = d[key]
-                                if var in temp:
-                                        index = temp.index(var)
-                                        val = d_1[key][index]
-                                        #only for perfect matches.
-                                        #if val == 1:
-                                        #print val
-                                        x[key][var] = int(val)
+#       create a 2D dictionary that contains all the possible combinations of a read with a variant and the number of mismatches.
+        for var in var_list:
+            for key in d:   #key=read name
+                temp = d[key]   #list of variants that key maps to 
+                if var in temp:
+                    index = temp.index(var)
+                    val = d_1[key][index]
+                    #only for perfect matches.
+                    #if val == 1:
+                    #print val
+                    x[key][var] = int(val)
 
-                df = DataFrame(x).T.fillna(-1)
-        return df
+        df = DataFrame(x).T.fillna(-1)
+    return df
 
 def compute_probability(n, k):
     if NO_BINOM:
@@ -121,7 +126,7 @@ def compute_proportions(dataframe):
                         temp_list[i] = 0
                 total = sum(temp_list)
                 #solve for k
-                temp_list = [j*(1.0/total) for j in temp_list]
+                temp_list = [j*(100000000.0/(100000000*total)) for j in temp_list]
                 prob_list.append(temp_list)
         col_sums = [sum(k) for k in zip(*prob_list)]
         total_sum = sum(col_sums)
@@ -157,6 +162,31 @@ def create_dictionary(keys, vals):
 def Compute_obj_diff(predicted, true):
         diff = predicted - true
         return diff
+    
+def compute_likelihood(df):
+    numVar = df.shape[1]
+    likelihood_list = list()
+    max_mm = 2
+    
+    for row in df.itertuples(index=False):
+        read = list(row)
+        
+        temp = list()
+        for i in range(numVar):
+            if read[i] == -1:
+                prob = (0.01)**(max_mm+1) * (0.99)**(76 - max_mm -1)
+                temp.append(prob)
+            else:
+                prob = (0.01)**(read[i]) * (0.99)**(76 - read[i])
+                temp.append(prob)
+                
+        likelihood_list.append( sum(temp) )
+    
+    likelihood_list = [i/(2.0*76*numVar) for i in likelihood_list]
+    neg_log_likelihood = [-1.0*np.log10(j) for j in likelihood_list]
+    
+    score = sum(neg_log_likelihood)
+    return score
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-g", "--gene", required = True,  help="name of gene")
@@ -174,6 +204,10 @@ true_Objective_vals = []
 diff_obj_vals = []
 count = 0
 bool_list = []
+minNegLogLike_correct = 0
+minSizeOpt_count = 0
+minNegLogLike_hasTrue = 0
+
 for x in range(1,args["numOfIter"]+1): 
         k =random.randint(2,7) #generate a random integer k between 2 and 7
 	#generate k random fractions that sum up to 1
@@ -240,8 +274,9 @@ for x in range(1,args["numOfIter"]+1):
         path = X+'_reads.txt'
         df = Generate_Matrix(path)
         df.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
-        pred_object_val,var_predicted,reads_cov,all_solutions = ilp.solver(df)
+        pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = ilp.solver(df)
         
+        #If there is one solution among all optimal which matches true variants, assign to var_predicted
         for solution in all_solutions:
             if set(solution) == set(variants_current):
                 var_predicted = solution
@@ -262,6 +297,51 @@ for x in range(1,args["numOfIter"]+1):
         print 'Predicted variants are:', var_predicted, "\n"
         print 'True proportions are:', true_prop, "\n"
         print 'Predicted proportions are:', pred_prop, "\n"
+#        print 'Solution(s):', all_solutions, "\n"
+        
+        #Likelihood approach
+        score_list = list()
+        min_score = sys.maxint
+        print("Number of optimal solutions: {}".format(len(all_solutions)))
+        
+        #compute negative log likelihood score for each solution
+        for i in range(len(all_solutions)):
+            print("Solution:{}".format(all_solutions[i]))
+            print("Objective value: {}".format(all_objective[i]))
+            print("Proportions:{}".format(compute_proportions(df.loc[reads_cov, all_solutions[i]])))
+            score = compute_likelihood(df.loc[reads_cov, all_solutions[i]])
+            score_list.append(score)
+            
+            if score <= min_score:
+                min_score = score
+            
+            print("\nNegative log likelihood score:{}\n".format(score))
+        
+        #identify those solutions which have minimum negative log likelihood
+        min_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if score_list[i] == min_score]
+        min_sol = min_sol_list[0]
+        
+        #Observe whether minimum negative log likelihood really gives the true variants
+        for sol in min_sol_list:
+            if set(sol) == set(variants_current):
+                minNegLogLike_correct += 1
+                min_sol = sol
+                break
+        
+        #Observe whether minimum negative log likelihood solutions implies minimum number of variants
+        minVariants = min(map(len,all_solutions))
+        if len(min_sol) == minVariants:
+            minSizeOpt_count +=1
+            
+        #Count number of simulations where solution with minimum negative log likelihood contains true variants
+        for sol in min_sol_list:
+            if len(set(variants_current) - set(sol)) == 0:
+                minNegLogLike_hasTrue += 1
+                break
+            
+        print("Negative log likelihood score list:{}".format(score_list))
+        print("The solution which has minimum negative log likelihood is {0} and its score:{1}".format(min_sol, min_score))
+        
         true_Objective_val = compute_True_objective_val(df2)
         true_Objective_vals.append(true_Objective_val)
         diff_obj_vals.append(Compute_obj_diff(pred_object_val,true_Objective_val))
@@ -284,49 +364,57 @@ true_variance_totalVarDist = sum(true_variance_totalVarDist)/len(true_variance_t
 std_totalVarDist = math.sqrt(variance_totalVarDist)
 true_std_totalVarDist = math.sqrt(true_variance_totalVarDist)
 context=1
-print "({0})Total Variation Distance:\n".format(context)
-print "Total variation distances are:",total_var, "\n"
-print "The average of total variation distance is:", avg_totalVarDist, "\n"
-#print "The variance of total variation distance is:", variance_totalVarDist, "\n"
-print "The standard deviation of total variation distance is:",std_totalVarDist, "\n"
-context+=1
-print "({0})Total Variation Distance for variants which are predicted correctly:\n".format(context)
-print "Total variation distances are:",list(itertools.compress(total_var, bool_list)), "\n"
-print "The average of total variation distance is:", true_avg_totalVarDist, "\n"
-#print "The variance of total variation distance is:", variance_totalVarDist, "\n"
-print "The standard deviation of total variation distance is:",true_std_totalVarDist, "\n"
-context+=1
-
-avg_prec = sum(Precision)/len(Precision)
-std_prec = np.std(np.array(Precision))
-print "({0}) Precision: \n".format(context)
-print 'Precision is:', Precision, "\n"
-print "Average of precision is: ", avg_prec, "\n"
-print "Standard deviation of precision is: ", std_prec, "\n"
-context+=1
-
-avg_rec = sum(Recall)/len(Recall)
-std_rec = np.std(np.array(Recall))
-print "({0}) Recall : \n".format(context)
-print 'Recall is:', Recall, "\n"
-print "Average of recall is: ", avg_rec, "\n"
-print "Standard deviation of recall is: ", std_rec, "\n"
-context+=1
-
-avg_diffObjVal = sum(diff_obj_vals)/len(diff_obj_vals)
-std_diffObjVal = np.std(np.array(diff_obj_vals))
-print "({0}) Objective Value: \n".format(context)
-print 'Predicted objective values are:', pred_object_vals, "\n"
-print 'True objective values are:', true_Objective_vals, "\n"
-print 'The difference in objective values are:', diff_obj_vals, "\n"
-print "Average of difference in objective value is: ", avg_diffObjVal, "\n"
-print "Standard deviation of difference in objective value is: ", std_diffObjVal, "\n"
-context+=1
-
+#print "({0})Total Variation Distance:\n".format(context)
+#print "Total variation distances are:",total_var, "\n"
+#print "The average of total variation distance is:", avg_totalVarDist, "\n"
+##print "The variance of total variation distance is:", variance_totalVarDist, "\n"
+#print "The standard deviation of total variation distance is:",std_totalVarDist, "\n"
+#context+=1
+#print "({0})Total Variation Distance for variants which are predicted correctly:\n".format(context)
+#print "Total variation distances are:",list(itertools.compress(total_var, bool_list)), "\n"
+#print "The average of total variation distance is:", true_avg_totalVarDist, "\n"
+##print "The variance of total variation distance is:", variance_totalVarDist, "\n"
+#print "The standard deviation of total variation distance is:",true_std_totalVarDist, "\n"
+#context+=1
+#
+#avg_prec = sum(Precision)/len(Precision)
+#std_prec = np.std(np.array(Precision))
+#print "({0}) Precision: \n".format(context)
+#print 'Precision is:', Precision, "\n"
+#print "Average of precision is: ", avg_prec, "\n"
+#print "Standard deviation of precision is: ", std_prec, "\n"
+#context+=1
+#
+#avg_rec = sum(Recall)/len(Recall)
+#std_rec = np.std(np.array(Recall))
+#print "({0}) Recall : \n".format(context)
+#print 'Recall is:', Recall, "\n"
+#print "Average of recall is: ", avg_rec, "\n"
+#print "Standard deviation of recall is: ", std_rec, "\n"
+#context+=1
+#
+#avg_diffObjVal = sum(diff_obj_vals)/len(diff_obj_vals)
+#std_diffObjVal = np.std(np.array(diff_obj_vals))
+#print "({0}) Objective Value: \n".format(context)
+#print 'Predicted objective values are:', pred_object_vals, "\n"
+#print 'True objective values are:', true_Objective_vals, "\n"
+#print 'The difference in objective values are:', diff_obj_vals, "\n"
+#print "Average of difference in objective value is: ", avg_diffObjVal, "\n"
+#print "Standard deviation of difference in objective value is: ", std_diffObjVal, "\n"
+#context+=1
+#
 print "({0})Accuracy: \n".format(context)
 print 'Total number of simulations: ', args["numOfIter"] , "\n"
-print 'Percentage of simulations predicted correctly: ', 100*count/x, "\n"
+print("Number of simulations which are predicted correctly: {0}\n".format(count))
+print 'Percentage of simulations predicted correctly: ', 100*count/x, "%\n"
+context+=1
 
+print "({0})Numbers related to likelihood approach: \n".format(context)
+print 'Number of simulations where solution with minimum negative log likelihood is the true solution: ', minNegLogLike_correct, "\n"
+print('Out of the {0} simulations which are predicted correctly, {1} simulations have optimal solutions which do not have a minimum negative likelihood score.\n'.format(count, count-minNegLogLike_correct) )
+print('The percentage of minimum negative log likelihood score giving true solution: {}\n'.format(minNegLogLike_correct*100.0/count) )
+print 'Number of simulations where solution with minimum negative log likelihood has minimum number of variants: ', minSizeOpt_count, "\n"
+print("Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: {0}\n".format(minNegLogLike_hasTrue))
 X = []
 os.system("rm {0}_*.fa".format(gene))
 
