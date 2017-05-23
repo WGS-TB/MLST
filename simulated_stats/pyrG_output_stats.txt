@@ -1,452 +1,1712 @@
 ======================================== SIMULATION 1 ====================================================
 
-True variants are: ['pyrG_177', 'pyrG_179', 'pyrG_122', 'pyrG_99'] 
+True variants are: ['pyrG_7', 'pyrG_85', 'pyrG_194', 'pyrG_71'] 
 
-Predicted variants are: ['pyrG_122', 'pyrG_177', 'pyrG_179', 'pyrG_99'] 
+Predicted variants are: ['pyrG_194', 'pyrG_7', 'pyrG_71', 'pyrG_85'] 
 
-True proportions are: {'pyrG_122': 19.855123074064377, 'pyrG_177': 34.20562264767503, 'pyrG_179': 37.58032467379183, 'pyrG_99': 8.358929604468765} 
+True proportions are: {'pyrG_7': 34.20562264767503, 'pyrG_85': 37.58032467379183, 'pyrG_71': 8.358929604468765, 'pyrG_194': 19.855123074064377} 
 
-Predicted proportions are: {'pyrG_179': 37.878787878787882, 'pyrG_177': 33.259384879400926, 'pyrG_122': 20.275968655952607, 'pyrG_99': 8.5858585858585865} 
+Predicted proportions are: {'pyrG_7': 34.0, 'pyrG_85': 37.5, 'pyrG_71': 9.275204039991838, 'pyrG_194': 19.224795960008162} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_194', 'pyrG_7', 'pyrG_71', 'pyrG_85']
+Objective value: 35.0
+Proportions:[19.224795960008162, 34.0, 9.275204039991838, 37.5]
+
+Negative log likelihood score:1303.75071259
+
+Negative log likelihood score list:[1303.7507125942932]
+The solution which has minimum negative log likelihood is ['pyrG_194', 'pyrG_7', 'pyrG_71', 'pyrG_85'] and its score:1303.75071259
 ======================================== SIMULATION 2 ====================================================
 
-True variants are: ['pyrG_8', 'pyrG_90', 'pyrG_159'] 
+True variants are: ['pyrG_193', 'pyrG_132', 'pyrG_9'] 
 
-Predicted variants are: ['pyrG_159', 'pyrG_8', 'pyrG_90'] 
+Predicted variants are: ['pyrG_132', 'pyrG_193', 'pyrG_9'] 
 
-True proportions are: {'pyrG_90': 42.60525357967637, 'pyrG_159': 45.08987956590749, 'pyrG_8': 12.304866854416147} 
+True proportions are: {'pyrG_193': 12.304866854416147, 'pyrG_132': 42.60525357967637, 'pyrG_9': 45.08987956590749} 
 
-Predicted proportions are: {'pyrG_90': 42.748091603053432, 'pyrG_159': 44.299970855877802, 'pyrG_8': 12.951937541068773} 
+Predicted proportions are: {'pyrG_193': 13.671923272719033, 'pyrG_132': 41.37858177778602, 'pyrG_9': 44.949494949494955} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_132', 'pyrG_193', 'pyrG_9']
+Objective value: 42.0
+Proportions:[41.37858177778602, 13.671923272719033, 44.949494949494955]
+
+Negative log likelihood score:1257.2182414
+
+Negative log likelihood score list:[1257.2182413959333]
+The solution which has minimum negative log likelihood is ['pyrG_132', 'pyrG_193', 'pyrG_9'] and its score:1257.2182414
 ======================================== SIMULATION 3 ====================================================
 
-True variants are: ['pyrG_85', 'pyrG_164', 'pyrG_61', 'pyrG_79', 'pyrG_146', 'pyrG_144'] 
+True variants are: ['pyrG_130', 'pyrG_73', 'pyrG_116', 'pyrG_139', 'pyrG_49', 'pyrG_87'] 
 
-Predicted variants are: ['pyrG_144', 'pyrG_146', 'pyrG_164', 'pyrG_61', 'pyrG_79', 'pyrG_85'] 
+Predicted variants are: ['pyrG_116', 'pyrG_130', 'pyrG_139', 'pyrG_49', 'pyrG_73', 'pyrG_87'] 
 
-True proportions are: {'pyrG_164': 22.936649247655915, 'pyrG_144': 21.408318800362494, 'pyrG_146': 15.858755650497711, 'pyrG_61': 37.14874931688361, 'pyrG_85': 1.5847990271009047, 'pyrG_79': 1.0627279574993669} 
+True proportions are: {'pyrG_49': 15.858755650497711, 'pyrG_130': 1.5847990271009047, 'pyrG_73': 22.936649247655915, 'pyrG_139': 1.0627279574993669, 'pyrG_87': 21.408318800362494, 'pyrG_116': 37.14874931688361} 
 
-Predicted proportions are: {'pyrG_164': 22.387360682949964, 'pyrG_144': 22.107772340572531, 'pyrG_146': 15.392227659427466, 'pyrG_61': 36.25, 'pyrG_85': 1.9999999999999998, 'pyrG_79': 1.8626393170500355} 
+Predicted proportions are: {'pyrG_49': 12.473441857785884, 'pyrG_130': 9.013281738011347, 'pyrG_73': 19.472428348974667, 'pyrG_139': 1.6341481792453976, 'pyrG_87': 20.77303650964608, 'pyrG_116': 36.63366336633663} 
 
+Number of optimal solutions: 10
+Solution:['pyrG_116', 'pyrG_139', 'pyrG_41', 'pyrG_49', 'pyrG_59', 'pyrG_73', 'pyrG_87']
+Objective value: 45.0
+Proportions:[27.72999600000805, 1.6341481792453976, 8.903667366328554, 13.308198076639826, 9.54783529843549, 18.429842614631514, 20.446312464711163]
+
+Negative log likelihood score:1360.29116058
+
+Solution:['pyrG_116', 'pyrG_129', 'pyrG_139', 'pyrG_49', 'pyrG_73', 'pyrG_87']
+Objective value: 45.0
+Proportions:[36.63366336633663, 9.14669805771608, 1.6341481792453976, 12.327918644122981, 19.48201099255736, 20.77556076002156]
+
+Negative log likelihood score:1357.02114278
+
+Solution:['pyrG_116', 'pyrG_130', 'pyrG_139', 'pyrG_49', 'pyrG_73', 'pyrG_87']
+Objective value: 45.0
+Proportions:[36.63366336633663, 9.013281738011347, 1.6341481792453976, 12.473441857785884, 19.472428348974667, 20.77303650964608]
+
+Negative log likelihood score:1357.33919888
+
+Solution:['pyrG_116', 'pyrG_132', 'pyrG_139', 'pyrG_49', 'pyrG_73', 'pyrG_87']
+Objective value: 45.0
+Proportions:[36.63366336633663, 8.497321504838093, 1.6341481792453976, 12.952969527136494, 19.4967508606186, 20.78514656182479]
+
+Negative log likelihood score:1358.57358664
+
+Solution:['pyrG_116', 'pyrG_129', 'pyrG_139', 'pyrG_41', 'pyrG_49', 'pyrG_73', 'pyrG_87']
+Objective value: 45.0
+Proportions:[27.729996000008057, 9.14669805771608, 1.6341481792453978, 8.903667366328555, 12.327918644122983, 19.482010992557363, 20.775560760021563]
+
+Negative log likelihood score:1361.08047889
+
+Solution:['pyrG_116', 'pyrG_139', 'pyrG_41', 'pyrG_49', 'pyrG_73', 'pyrG_87']
+Objective value: 45.0
+Proportions:[27.729996000008065, 1.6957492081974588, 8.903667366328559, 18.06637338895497, 22.20992003768146, 21.39429399882949]
+
+Negative log likelihood score:1355.59813299
+
+Solution:['pyrG_116', 'pyrG_130', 'pyrG_139', 'pyrG_41', 'pyrG_49', 'pyrG_73', 'pyrG_87']
+Objective value: 45.0
+Proportions:[27.729996000008057, 9.013281738011349, 1.6341481792453978, 8.903667366328555, 12.473441857785886, 19.47242834897467, 20.773036509646083]
+
+Negative log likelihood score:1361.39851412
+
+Solution:['pyrG_116', 'pyrG_139', 'pyrG_49', 'pyrG_59', 'pyrG_73', 'pyrG_87']
+Objective value: 45.0
+Proportions:[36.63366336633662, 1.6341481792453971, 13.308198076639824, 9.547835298435489, 18.42984261463151, 20.44631246471116]
+
+Negative log likelihood score:1356.23182379
+
+Solution:['pyrG_116', 'pyrG_132', 'pyrG_139', 'pyrG_41', 'pyrG_49', 'pyrG_73', 'pyrG_87']
+Objective value: 45.0
+Proportions:[27.729996000008057, 8.497321504838094, 1.6341481792453978, 8.903667366328555, 12.952969527136498, 19.496750860618604, 20.785146561824792]
+
+Negative log likelihood score:1362.63289968
+
+Solution:['pyrG_116', 'pyrG_139', 'pyrG_49', 'pyrG_73', 'pyrG_87']
+Objective value: 45.0
+Proportions:[36.63366336633664, 1.6957492081974586, 18.06637338895497, 22.209920037681453, 21.394293998829486]
+
+Negative log likelihood score:1346.60259807
+
+Negative log likelihood score list:[1360.291160577802, 1357.0211427767929, 1357.3391988753829, 1358.5735866363311, 1361.0804788911316, 1355.5981329872725, 1361.398514120782, 1356.2318237944992, 1362.6328996825707, 1346.6025980665968]
+The solution which has minimum negative log likelihood is ['pyrG_116', 'pyrG_139', 'pyrG_49', 'pyrG_73', 'pyrG_87'] and its score:1346.60259807
 ======================================== SIMULATION 4 ====================================================
 
-True variants are: ['pyrG_28', 'pyrG_2', 'pyrG_152', 'pyrG_67', 'pyrG_93', 'pyrG_100', 'pyrG_73'] 
+True variants are: ['pyrG_57', 'pyrG_81', 'pyrG_174', 'pyrG_32', 'pyrG_158', 'pyrG_5', 'pyrG_171'] 
 
-Predicted variants are: ['pyrG_100', 'pyrG_152', 'pyrG_2', 'pyrG_28', 'pyrG_67', 'pyrG_73', 'pyrG_93'] 
+Predicted variants are: ['pyrG_158', 'pyrG_171', 'pyrG_174', 'pyrG_32', 'pyrG_5', 'pyrG_57', 'pyrG_81'] 
 
-True proportions are: {'pyrG_28': 17.644721677527055, 'pyrG_67': 18.23203092784311, 'pyrG_73': 11.970593270790749, 'pyrG_152': 16.34022694409831, 'pyrG_100': 18.34862963153467, 'pyrG_93': 13.469665293702949, 'pyrG_2': 3.994132254503168} 
+True proportions are: {'pyrG_32': 18.23203092784311, 'pyrG_174': 16.34022694409831, 'pyrG_57': 17.644721677527055, 'pyrG_5': 18.34862963153467, 'pyrG_171': 11.970593270790749, 'pyrG_81': 3.994132254503168, 'pyrG_158': 13.469665293702949} 
 
-Predicted proportions are: {'pyrG_2': 4.2837355549509768, 'pyrG_28': 15.334160697860661, 'pyrG_67': 18.181818181818173, 'pyrG_73': 15.841562914370055, 'pyrG_100': 18.49664848295388, 'pyrG_93': 13.522586548434298, 'pyrG_152': 14.339487619611957} 
+Predicted proportions are: {'pyrG_32': 14.794362257098916, 'pyrG_174': 15.236383529618157, 'pyrG_171': 11.720277481002746, 'pyrG_57': 17.499999999999993, 'pyrG_5': 18.49999999999999, 'pyrG_81': 8.748976732280203, 'pyrG_158': 13.499999999999993} 
 
+Number of optimal solutions: 9
+Solution:['pyrG_121', 'pyrG_158', 'pyrG_174', 'pyrG_30', 'pyrG_32', 'pyrG_5', 'pyrG_57']
+Objective value: 18.0
+Proportions:[9.220204148160773, 13.5, 15.257516080772296, 9.288667387961342, 16.73361238310559, 18.5, 17.5]
+
+Negative log likelihood score:1334.82157825
+
+Solution:['pyrG_158', 'pyrG_174', 'pyrG_29', 'pyrG_30', 'pyrG_32', 'pyrG_5', 'pyrG_57']
+Objective value: 18.0
+Proportions:[13.500000000000002, 15.542138154243665, 9.3058505129647, 7.5448509932733545, 18.10716033951828, 18.500000000000004, 17.500000000000004]
+
+Negative log likelihood score:1334.51101256
+
+Solution:['pyrG_158', 'pyrG_174', 'pyrG_29', 'pyrG_32', 'pyrG_40', 'pyrG_5', 'pyrG_57']
+Objective value: 18.0
+Proportions:[13.5, 15.80189665217338, 9.209540301720923, 17.747856181153384, 7.74070686495231, 18.5, 17.5]
+
+Negative log likelihood score:1334.03692887
+
+Solution:['pyrG_121', 'pyrG_158', 'pyrG_174', 'pyrG_32', 'pyrG_40', 'pyrG_5', 'pyrG_57']
+Objective value: 18.0
+Proportions:[9.221109402027524, 13.499999999999998, 15.37306140490471, 16.329686405816894, 9.576142787250872, 18.499999999999996, 17.499999999999996]
+
+Negative log likelihood score:1334.09153117
+
+Solution:['pyrG_158', 'pyrG_171', 'pyrG_174', 'pyrG_32', 'pyrG_40', 'pyrG_5', 'pyrG_57']
+Objective value: 18.0
+Proportions:[13.499999999999993, 12.253987972176311, 15.41199311829575, 15.28640632890205, 7.547612580625909, 18.49999999999999, 17.499999999999993]
+
+Negative log likelihood score:1326.87805999
+
+Solution:['pyrG_158', 'pyrG_174', 'pyrG_29', 'pyrG_32', 'pyrG_5', 'pyrG_57', 'pyrG_81']
+Objective value: 18.0
+Proportions:[13.499999999999996, 15.419998372924207, 9.196550696602694, 16.420796738535532, 18.499999999999993, 17.499999999999993, 9.462654191937565]
+
+Negative log likelihood score:1330.03211976
+
+Solution:['pyrG_158', 'pyrG_171', 'pyrG_174', 'pyrG_32', 'pyrG_5', 'pyrG_57', 'pyrG_81']
+Objective value: 18.0
+Proportions:[13.499999999999993, 11.720277481002746, 15.236383529618157, 14.794362257098916, 18.49999999999999, 17.499999999999993, 8.748976732280203]
+
+Negative log likelihood score:1324.38010187
+
+Solution:['pyrG_121', 'pyrG_158', 'pyrG_174', 'pyrG_32', 'pyrG_5', 'pyrG_57', 'pyrG_81']
+Objective value: 18.0
+Proportions:[8.687398413354455, 13.5, 15.197452801276132, 15.837642343963756, 18.5, 17.5, 10.77750644140567]
+
+Negative log likelihood score:1331.59357392
+
+Solution:['pyrG_158', 'pyrG_171', 'pyrG_174', 'pyrG_30', 'pyrG_32', 'pyrG_5', 'pyrG_57']
+Objective value: 18.0
+Proportions:[13.499999999999993, 12.253083215809061, 15.296446809114324, 7.2601376788358785, 15.690332296240758, 18.49999999999999, 17.499999999999993]
+
+Negative log likelihood score:1327.60810621
+
+Negative log likelihood score list:[1334.8215782533941, 1334.5110125586411, 1334.0369288675445, 1334.0915311708384, 1326.878059986713, 1330.0321197635315, 1324.3801018735937, 1331.5935739174392, 1327.6081062095486]
+The solution which has minimum negative log likelihood is ['pyrG_158', 'pyrG_171', 'pyrG_174', 'pyrG_32', 'pyrG_5', 'pyrG_57', 'pyrG_81'] and its score:1324.38010187
 ======================================== SIMULATION 5 ====================================================
 
-True variants are: ['pyrG_155', 'pyrG_29', 'pyrG_83', 'pyrG_47', 'pyrG_88', 'pyrG_6', 'pyrG_123'] 
+True variants are: ['pyrG_130', 'pyrG_77', 'pyrG_155', 'pyrG_137', 'pyrG_118', 'pyrG_2', 'pyrG_108'] 
 
-Predicted variants are: ['pyrG_123', 'pyrG_146', 'pyrG_29', 'pyrG_47', 'pyrG_6', 'pyrG_83', 'pyrG_88'] 
+Predicted variants are: ['pyrG_108', 'pyrG_118', 'pyrG_130', 'pyrG_137', 'pyrG_155', 'pyrG_2', 'pyrG_77'] 
 
-True proportions are: {'pyrG_29': 13.485323770018537, 'pyrG_47': 27.476638492363413, 'pyrG_6': 18.40627429368258, 'pyrG_155': 5.177289133607334, 'pyrG_88': 15.689789176017726, 'pyrG_123': 8.258206630334636, 'pyrG_83': 11.50647850397577} 
+True proportions are: {'pyrG_155': 11.50647850397577, 'pyrG_108': 8.258206630334636, 'pyrG_130': 5.177289133607334, 'pyrG_77': 13.485323770018537, 'pyrG_118': 15.689789176017726, 'pyrG_2': 18.40627429368258, 'pyrG_137': 27.476638492363413} 
 
-Predicted proportions are: {'pyrG_29': 13.457305525416189, 'pyrG_47': 19.232872203623831, 'pyrG_6': 18.341708542713565, 'pyrG_146': 9.4780489988360621, 'pyrG_88': 14.879008009067304, 'pyrG_123': 11.164255467265917, 'pyrG_83': 13.446801253077126} 
+Predicted proportions are: {'pyrG_77': 13.557188552239817, 'pyrG_108': 8.340904109678123, 'pyrG_130': 6.493217645918742, 'pyrG_155': 10.539063328978227, 'pyrG_118': 15.422885572139299, 'pyrG_2': 18.283556711443794, 'pyrG_137': 27.36318407960198} 
 
+Number of optimal solutions: 2
+Solution:['pyrG_108', 'pyrG_118', 'pyrG_130', 'pyrG_137', 'pyrG_155', 'pyrG_2', 'pyrG_77']
+Objective value: 60.0
+Proportions:[8.340904109678123, 15.422885572139299, 6.493217645918742, 27.36318407960198, 10.539063328978227, 18.283556711443794, 13.557188552239817]
+
+Negative log likelihood score:1445.81457731
+
+Solution:['pyrG_108', 'pyrG_118', 'pyrG_130', 'pyrG_137', 'pyrG_146', 'pyrG_2', 'pyrG_77']
+Objective value: 60.0
+Proportions:[8.340904109678123, 15.422885572139299, 6.736998740446105, 27.36318407960198, 10.295282234450864, 18.283556711443794, 13.557188552239817]
+
+Negative log likelihood score:1446.40790549
+
+Negative log likelihood score list:[1445.8145773065996, 1446.4079054939484]
+The solution which has minimum negative log likelihood is ['pyrG_108', 'pyrG_118', 'pyrG_130', 'pyrG_137', 'pyrG_155', 'pyrG_2', 'pyrG_77'] and its score:1445.81457731
 ======================================== SIMULATION 6 ====================================================
 
-True variants are: ['pyrG_128', 'pyrG_15', 'pyrG_76', 'pyrG_72', 'pyrG_98'] 
+True variants are: ['pyrG_174', 'pyrG_185', 'pyrG_39', 'pyrG_92', 'pyrG_31'] 
 
-Predicted variants are: ['pyrG_128', 'pyrG_133', 'pyrG_15', 'pyrG_76', 'pyrG_98'] 
+Predicted variants are: ['pyrG_174', 'pyrG_185', 'pyrG_31', 'pyrG_39', 'pyrG_92'] 
 
-True proportions are: {'pyrG_15': 11.901663120852664, 'pyrG_76': 11.999862760321065, 'pyrG_98': 61.447841072712514, 'pyrG_128': 9.767321979868104, 'pyrG_72': 4.883311066245648} 
+True proportions are: {'pyrG_39': 11.999862760321065, 'pyrG_174': 9.767321979868104, 'pyrG_31': 61.447841072712514, 'pyrG_185': 11.901663120852664, 'pyrG_92': 4.883311066245648} 
 
-Predicted proportions are: {'pyrG_133': 10.077408653284746, 'pyrG_76': 8.8857695466213507, 'pyrG_15': 11.502150780701557, 'pyrG_128': 8.9286104133317501, 'pyrG_98': 60.606060606060609} 
+Predicted proportions are: {'pyrG_31': 59.86479596000819, 'pyrG_174': 11.135255049989771, 'pyrG_39': 11.99994899000204, 'pyrG_185': 12.0, 'pyrG_92': 5.0} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_174', 'pyrG_185', 'pyrG_31', 'pyrG_39', 'pyrG_92']
+Objective value: 36.0
+Proportions:[11.135255049989771, 12.0, 59.86479596000819, 11.99994899000204, 5.0]
+
+Negative log likelihood score:1342.91321626
+
+Negative log likelihood score list:[1342.9132162593696]
+The solution which has minimum negative log likelihood is ['pyrG_174', 'pyrG_185', 'pyrG_31', 'pyrG_39', 'pyrG_92'] and its score:1342.91321626
 ======================================== SIMULATION 7 ====================================================
 
-True variants are: ['pyrG_164', 'pyrG_80', 'pyrG_163', 'pyrG_59', 'pyrG_69', 'pyrG_54'] 
+True variants are: ['pyrG_117', 'pyrG_181', 'pyrG_74', 'pyrG_199', 'pyrG_165', 'pyrG_21'] 
 
-Predicted variants are: ['pyrG_163', 'pyrG_164', 'pyrG_54', 'pyrG_59', 'pyrG_69', 'pyrG_80'] 
+Predicted variants are: ['pyrG_117', 'pyrG_165', 'pyrG_181', 'pyrG_199', 'pyrG_21', 'pyrG_74'] 
 
-True proportions are: {'pyrG_59': 12.460510114675014, 'pyrG_163': 24.19768321012748, 'pyrG_164': 1.9601170211533852, 'pyrG_54': 20.71288553979829, 'pyrG_69': 30.663173301079112, 'pyrG_80': 10.00563081316673} 
+True proportions are: {'pyrG_181': 10.00563081316673, 'pyrG_199': 12.460510114675014, 'pyrG_165': 30.663173301079112, 'pyrG_74': 24.19768321012748, 'pyrG_21': 20.71288553979829, 'pyrG_117': 1.9601170211533852} 
 
-Predicted proportions are: {'pyrG_59': 13.938296595927699, 'pyrG_163': 24.303797468354425, 'pyrG_164': 2.099452120904389, 'pyrG_54': 19.226260366097616, 'pyrG_69': 30.811940284158901, 'pyrG_80': 9.62025316455696} 
+Predicted proportions are: {'pyrG_181': 12.480412160783521, 'pyrG_199': 12.562814070351763, 'pyrG_21': 14.266280391961855, 'pyrG_74': 21.690442110573255, 'pyrG_165': 30.6532663316583, 'pyrG_117': 8.346784934671321} 
 
+Number of optimal solutions: 6
+Solution:['pyrG_107', 'pyrG_165', 'pyrG_181', 'pyrG_199', 'pyrG_21', 'pyrG_74']
+Objective value: 20.0
+Proportions:[4.653317597987899, 30.6532663316583, 12.480412160783521, 12.562814070351763, 17.959747728645276, 21.690442110573255]
+
+Negative log likelihood score:1313.25759017
+
+Solution:['pyrG_117', 'pyrG_165', 'pyrG_181', 'pyrG_199', 'pyrG_21', 'pyrG_74']
+Objective value: 20.0
+Proportions:[8.346784934671321, 30.6532663316583, 12.480412160783521, 12.562814070351763, 14.266280391961855, 21.690442110573255]
+
+Negative log likelihood score:1304.35774672
+
+Solution:['pyrG_117', 'pyrG_165', 'pyrG_181', 'pyrG_199', 'pyrG_57', 'pyrG_74']
+Objective value: 20.0
+Proportions:[9.577940713565795, 30.6532663316583, 12.480412160783521, 12.562814070351763, 13.035124613067383, 21.690442110573255]
+
+Negative log likelihood score:1307.32438985
+
+Solution:['pyrG_165', 'pyrG_181', 'pyrG_199', 'pyrG_21', 'pyrG_25', 'pyrG_74']
+Objective value: 20.0
+Proportions:[30.6532663316583, 12.480412160783521, 12.562814070351763, 16.236129638193017, 6.376935688440163, 21.690442110573255]
+
+Negative log likelihood score:1309.10437573
+
+Solution:['pyrG_165', 'pyrG_181', 'pyrG_199', 'pyrG_21', 'pyrG_26', 'pyrG_74']
+Objective value: 20.0
+Proportions:[30.6532663316583, 12.480412160783521, 12.562814070351763, 15.497436170856329, 7.115629155776848, 21.690442110573255]
+
+Negative log likelihood score:1307.32438985
+
+Solution:['pyrG_165', 'pyrG_181', 'pyrG_199', 'pyrG_21', 'pyrG_74']
+Objective value: 20.0
+Proportions:[30.6532663316583, 12.480412160783521, 12.562814070351763, 22.613065326633173, 21.690442110573255]
+
+Negative log likelihood score:1294.21007904
+
+Negative log likelihood score list:[1313.2575901671798, 1304.3577467238092, 1307.3243898537212, 1309.1043757316681, 1307.3243898537212, 1294.2100790377247]
+The solution which has minimum negative log likelihood is ['pyrG_165', 'pyrG_181', 'pyrG_199', 'pyrG_21', 'pyrG_74'] and its score:1294.21007904
 ======================================== SIMULATION 8 ====================================================
 
-True variants are: ['pyrG_73', 'pyrG_54', 'pyrG_159'] 
+True variants are: ['pyrG_88', 'pyrG_184', 'pyrG_94'] 
 
-Predicted variants are: ['pyrG_159', 'pyrG_54', 'pyrG_73'] 
+Predicted variants are: ['pyrG_184', 'pyrG_88', 'pyrG_94'] 
 
-True proportions are: {'pyrG_159': 46.79469784725909, 'pyrG_73': 27.358991263230624, 'pyrG_54': 25.84631088951029} 
+True proportions are: {'pyrG_184': 25.84631088951029, 'pyrG_94': 46.79469784725909, 'pyrG_88': 27.358991263230624} 
 
-Predicted proportions are: {'pyrG_73': 26.899517367128489, 'pyrG_159': 46.015562676262661, 'pyrG_54': 27.08491995660885} 
+Predicted proportions are: {'pyrG_88': 30.56318283838186, 'pyrG_94': 43.67924140404242, 'pyrG_184': 25.75757575757571} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_184', 'pyrG_88', 'pyrG_94']
+Objective value: 58.0
+Proportions:[25.75757575757571, 30.56318283838186, 43.67924140404242]
+
+Negative log likelihood score:1259.27281769
+
+Negative log likelihood score list:[1259.2728176901883]
+The solution which has minimum negative log likelihood is ['pyrG_184', 'pyrG_88', 'pyrG_94'] and its score:1259.27281769
 ======================================== SIMULATION 9 ====================================================
 
-True variants are: ['pyrG_96', 'pyrG_200', 'pyrG_163', 'pyrG_60', 'pyrG_153', 'pyrG_111', 'pyrG_169'] 
+True variants are: ['pyrG_21', 'pyrG_196', 'pyrG_37', 'pyrG_54', 'pyrG_64', 'pyrG_72', 'pyrG_151'] 
 
-Predicted variants are: ['pyrG_107', 'pyrG_111', 'pyrG_153', 'pyrG_163', 'pyrG_169', 'pyrG_200', 'pyrG_60'] 
+Predicted variants are: ['pyrG_151', 'pyrG_196', 'pyrG_21', 'pyrG_37', 'pyrG_54', 'pyrG_64', 'pyrG_72'] 
 
-True proportions are: {'pyrG_200': 1.3809343481401906, 'pyrG_163': 6.045761079436555, 'pyrG_60': 10.0678497337555, 'pyrG_169': 16.398286231640316, 'pyrG_153': 25.366157868844567, 'pyrG_96': 25.678043347573205, 'pyrG_111': 15.06296739060967} 
+True proportions are: {'pyrG_196': 1.3809343481401906, 'pyrG_37': 6.045761079436555, 'pyrG_54': 10.0678497337555, 'pyrG_64': 25.366157868844567, 'pyrG_72': 15.06296739060967, 'pyrG_21': 25.678043347573205, 'pyrG_151': 16.398286231640316} 
 
-Predicted proportions are: {'pyrG_169': 16.455696202531634, 'pyrG_163': 18.605751726795141, 'pyrG_60': 9.8734177215189796, 'pyrG_200': 1.5189873417721509, 'pyrG_153': 19.83615578990829, 'pyrG_111': 15.189873417721508, 'pyrG_107': 18.520117799752299} 
+Predicted proportions are: {'pyrG_196': 1.5075376884422111, 'pyrG_37': 8.046617852795384, 'pyrG_54': 9.267018706343027, 'pyrG_64': 25.12562814070352, 'pyrG_72': 13.84214233533396, 'pyrG_21': 23.695979899497473, 'pyrG_151': 18.515075376884422} 
 
+Number of optimal solutions: 2
+Solution:['pyrG_133', 'pyrG_151', 'pyrG_196', 'pyrG_21', 'pyrG_37', 'pyrG_54', 'pyrG_64']
+Objective value: 64.0
+Proportions:[13.842142335333964, 18.515075376884422, 1.5075376884422111, 23.695979899497473, 8.046617852795384, 9.267018706343027, 25.12562814070352]
+
+Negative log likelihood score:1402.33855353
+
+Solution:['pyrG_151', 'pyrG_196', 'pyrG_21', 'pyrG_37', 'pyrG_54', 'pyrG_64', 'pyrG_72']
+Objective value: 64.0
+Proportions:[18.515075376884422, 1.5075376884422111, 23.695979899497473, 8.046617852795384, 9.267018706343027, 25.12562814070352, 13.84214233533396]
+
+Negative log likelihood score:1402.33855353
+
+Negative log likelihood score list:[1402.3385535348914, 1402.3385535348914]
+The solution which has minimum negative log likelihood is ['pyrG_151', 'pyrG_196', 'pyrG_21', 'pyrG_37', 'pyrG_54', 'pyrG_64', 'pyrG_72'] and its score:1402.33855353
 ======================================== SIMULATION 10 ====================================================
 
-True variants are: ['pyrG_26', 'pyrG_8'] 
+True variants are: ['pyrG_98', 'pyrG_173'] 
 
-Predicted variants are: ['pyrG_26', 'pyrG_8'] 
+Predicted variants are: ['pyrG_173', 'pyrG_98'] 
 
-True proportions are: {'pyrG_26': 48.785390500723366, 'pyrG_8': 51.214609499276634} 
+True proportions are: {'pyrG_173': 51.214609499276634, 'pyrG_98': 48.785390500723366} 
 
-Predicted proportions are: {'pyrG_26': 49.109414758269729, 'pyrG_8': 50.890585241730278} 
+Predicted proportions are: {'pyrG_173': 51.01020406060194, 'pyrG_98': 48.989795939398064} 
 
+Number of optimal solutions: 4
+Solution:['pyrG_173', 'pyrG_98']
+Objective value: 52.0
+Proportions:[51.01020406060194, 48.989795939398064]
+
+Negative log likelihood score:1214.34322993
+
+Solution:['pyrG_142', 'pyrG_173', 'pyrG_22']
+Objective value: 52.0
+Proportions:[6.149711252496407, 44.86049280810555, 48.98979593939805]
+
+Negative log likelihood score:1268.14040959
+
+Solution:['pyrG_173', 'pyrG_22']
+Objective value: 52.0
+Proportions:[51.01020406060194, 48.989795939398064]
+
+Negative log likelihood score:1214.34322993
+
+Solution:['pyrG_142', 'pyrG_173', 'pyrG_98']
+Objective value: 52.0
+Proportions:[6.149711252496407, 44.86049280810555, 48.98979593939805]
+
+Negative log likelihood score:1268.14040959
+
+Negative log likelihood score list:[1214.3432299308531, 1268.1404095889513, 1214.3432299308531, 1268.1404095889513]
+The solution which has minimum negative log likelihood is ['pyrG_173', 'pyrG_98'] and its score:1214.34322993
 ======================================== SIMULATION 11 ====================================================
 
-True variants are: ['pyrG_9', 'pyrG_132', 'pyrG_163', 'pyrG_30', 'pyrG_119', 'pyrG_173', 'pyrG_143'] 
+True variants are: ['pyrG_83', 'pyrG_54', 'pyrG_154', 'pyrG_2', 'pyrG_52', 'pyrG_118', 'pyrG_194'] 
 
-Predicted variants are: ['pyrG_107', 'pyrG_132', 'pyrG_143', 'pyrG_163', 'pyrG_173', 'pyrG_30', 'pyrG_9'] 
+Predicted variants are: ['pyrG_118', 'pyrG_154', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83'] 
 
-True proportions are: {'pyrG_30': 18.5246455757157, 'pyrG_163': 3.0627989467787544, 'pyrG_173': 24.063884689236716, 'pyrG_119': 13.619497405054052, 'pyrG_132': 20.92816085505319, 'pyrG_143': 6.900458688403028, 'pyrG_9': 12.900553839758553} 
+True proportions are: {'pyrG_154': 3.0627989467787544, 'pyrG_194': 6.900458688403028, 'pyrG_52': 13.619497405054052, 'pyrG_54': 20.92816085505319, 'pyrG_118': 24.063884689236716, 'pyrG_2': 18.5246455757157, 'pyrG_83': 12.900553839758553} 
 
-Predicted proportions are: {'pyrG_30': 21.149913760662749, 'pyrG_163': 8.2478877906013555, 'pyrG_173': 21.227009491158647, 'pyrG_132': 15.954013738084702, 'pyrG_143': 12.02082180406375, 'pyrG_9': 12.562814070351758, 'pyrG_107': 8.8375393450770314} 
+Predicted proportions are: {'pyrG_194': 9.85870499790917, 'pyrG_52': 13.439436786171335, 'pyrG_54': 17.680336221720456, 'pyrG_154': 8.549827378106407, 'pyrG_2': 18.407960199004968, 'pyrG_118': 18.813356701495582, 'pyrG_83': 13.250377715592096} 
 
+Number of optimal solutions: 20
+Solution:['pyrG_118', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83', 'pyrG_85']
+Objective value: 35.0
+Proportions:[17.09452736318408, 9.858704997909168, 18.407960199004965, 13.439436786171331, 17.680336221720452, 13.250377715592094, 10.268656716417912]
+
+Negative log likelihood score:1343.86337128
+
+Solution:['pyrG_107', 'pyrG_194', 'pyrG_2', 'pyrG_24', 'pyrG_52', 'pyrG_54', 'pyrG_83']
+Objective value: 35.0
+Proportions:[10.146766169154233, 9.858704997909168, 18.407960199004965, 17.21641791044776, 13.439436786171331, 17.680336221720452, 13.250377715592094]
+
+Negative log likelihood score:1358.39980444
+
+Solution:['pyrG_117', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83', 'pyrG_85']
+Objective value: 35.0
+Proportions:[14.047263681592032, 9.85870499790917, 18.407960199004968, 13.439436786171335, 17.680336221720456, 13.250377715592096, 13.31592039800995]
+
+Negative log likelihood score:1351.2798662
+
+Solution:['pyrG_194', 'pyrG_2', 'pyrG_24', 'pyrG_52', 'pyrG_54', 'pyrG_83', 'pyrG_85']
+Objective value: 35.0
+Proportions:[9.85870499790917, 18.407960199004968, 14.169154228855714, 13.439436786171335, 17.680336221720456, 13.250377715592096, 13.19402985074627]
+
+Negative log likelihood score:1350.98330953
+
+Solution:['pyrG_118', 'pyrG_119', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83']
+Objective value: 35.0
+Proportions:[17.460199004975127, 9.902985074626868, 9.858704997909168, 18.407960199004965, 13.439436786171331, 17.680336221720452, 13.250377715592094]
+
+Negative log likelihood score:1344.75325613
+
+Solution:['pyrG_117', 'pyrG_119', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83']
+Objective value: 35.0
+Proportions:[14.412935323383078, 12.950248756218908, 9.85870499790917, 18.407960199004968, 13.439436786171335, 17.680336221720456, 13.250377715592096]
+
+Negative log likelihood score:1352.16975105
+
+Solution:['pyrG_119', 'pyrG_194', 'pyrG_2', 'pyrG_24', 'pyrG_52', 'pyrG_54', 'pyrG_83']
+Objective value: 35.0
+Proportions:[12.828358208955226, 9.85870499790917, 18.407960199004968, 14.534825870646756, 13.439436786171335, 17.680336221720456, 13.250377715592096]
+
+Negative log likelihood score:1351.87319438
+
+Solution:['pyrG_150', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83', 'pyrG_92']
+Objective value: 35.0
+Proportions:[11.962762701489494, 9.85870499790917, 18.407960199004968, 13.439436786171335, 17.680336221720456, 13.250377715592096, 15.400421378112496]
+
+Negative log likelihood score:1348.03820523
+
+Solution:['pyrG_117', 'pyrG_151', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83']
+Objective value: 35.0
+Proportions:[15.763630835822918, 11.599553243779066, 9.85870499790917, 18.407960199004968, 13.439436786171335, 17.680336221720456, 13.250377715592096]
+
+Negative log likelihood score:1355.45037967
+
+Solution:['pyrG_107', 'pyrG_163', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83']
+Objective value: 35.0
+Proportions:[10.14676616915423, 17.216417910447767, 9.858704997909168, 18.407960199004965, 13.439436786171331, 17.680336221720452, 13.250377715592094]
+
+Negative log likelihood score:1358.39969702
+
+Solution:['pyrG_151', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83', 'pyrG_90']
+Objective value: 35.0
+Proportions:[10.38064777114225, 9.858704997909168, 18.407960199004965, 13.439436786171331, 17.680336221720452, 13.250377715592094, 16.982536308459746]
+
+Negative log likelihood score:1352.48384616
+
+Solution:['pyrG_117', 'pyrG_154', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83']
+Objective value: 35.0
+Proportions:[15.766093019903535, 11.597091059698448, 9.85870499790917, 18.407960199004968, 13.439436786171335, 17.680336221720456, 13.250377715592096]
+
+Negative log likelihood score:1355.45470015
+
+Solution:['pyrG_118', 'pyrG_151', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83']
+Objective value: 35.0
+Proportions:[18.810894517414965, 8.552289562187022, 9.858704997909168, 18.407960199004965, 13.439436786171331, 17.680336221720452, 13.250377715592094]
+
+Negative log likelihood score:1348.03388475
+
+Solution:['pyrG_154', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83', 'pyrG_90']
+Objective value: 35.0
+Proportions:[10.378185587061633, 9.858704997909168, 18.407960199004965, 13.439436786171331, 17.680336221720452, 13.250377715592094, 16.984998492540367]
+
+Negative log likelihood score:1352.48816663
+
+Solution:['pyrG_118', 'pyrG_154', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83']
+Objective value: 35.0
+Proportions:[18.813356701495582, 8.549827378106407, 9.85870499790917, 18.407960199004968, 13.439436786171335, 17.680336221720456, 13.250377715592096]
+
+Negative log likelihood score:1348.03820523
+
+Solution:['pyrG_163', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83', 'pyrG_85']
+Objective value: 35.0
+Proportions:[14.169154228855714, 9.85870499790917, 18.407960199004968, 13.439436786171335, 17.680336221720456, 13.250377715592096, 13.194029850746269]
+
+Negative log likelihood score:1350.9832021
+
+Solution:['pyrG_166', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83', 'pyrG_92']
+Objective value: 35.0
+Proportions:[13.072139303482583, 9.85870499790917, 18.407960199004968, 13.439436786171335, 17.680336221720456, 13.250377715592096, 14.291044776119397]
+
+Negative log likelihood score:1345.34658432
+
+Solution:['pyrG_150', 'pyrG_194', 'pyrG_2', 'pyrG_26', 'pyrG_52', 'pyrG_54', 'pyrG_83']
+Objective value: 35.0
+Proportions:[15.010026383081529, 9.85870499790917, 18.407960199004968, 12.353157696520453, 13.439436786171335, 17.680336221720456, 13.250377715592096]
+
+Negative log likelihood score:1355.45470015
+
+Solution:['pyrG_107', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83', 'pyrG_93']
+Objective value: 35.0
+Proportions:[10.878109452736322, 9.858704997909168, 18.407960199004965, 13.439436786171331, 17.680336221720452, 13.250377715592094, 16.485074626865664]
+
+Negative log likelihood score:1360.17978901
+
+Solution:['pyrG_107', 'pyrG_118', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83']
+Objective value: 35.0
+Proportions:[7.221393034825871, 20.141791044776113, 9.85870499790917, 18.407960199004968, 13.439436786171335, 17.680336221720456, 13.250377715592096]
+
+Negative log likelihood score:1351.2798662
+
+Negative log likelihood score list:[1343.8633712786723, 1358.3998044440075, 1351.2798661958216, 1350.9833095268584, 1344.7532561349842, 1352.1697510521337, 1351.8731943831704, 1348.0382052282243, 1355.4503796711037, 1358.3996970192961, 1352.4838461590709, 1355.4547001453736, 1348.0338847539545, 1352.4881666333408, 1348.0382052282243, 1350.9832021021471, 1345.346584322333, 1355.4547001453736, 1360.1797890060539, 1351.2798661958216]
+The solution which has minimum negative log likelihood is ['pyrG_118', 'pyrG_194', 'pyrG_2', 'pyrG_52', 'pyrG_54', 'pyrG_83', 'pyrG_85'] and its score:1343.86337128
 ======================================== SIMULATION 12 ====================================================
 
-True variants are: ['pyrG_196', 'pyrG_75', 'pyrG_123', 'pyrG_188', 'pyrG_72', 'pyrG_53'] 
+True variants are: ['pyrG_47', 'pyrG_11', 'pyrG_45', 'pyrG_130', 'pyrG_140', 'pyrG_109'] 
 
-Predicted variants are: ['pyrG_123', 'pyrG_133', 'pyrG_188', 'pyrG_196', 'pyrG_53', 'pyrG_73'] 
+Predicted variants are: ['pyrG_109', 'pyrG_11', 'pyrG_130', 'pyrG_140', 'pyrG_45', 'pyrG_47'] 
 
-True proportions are: {'pyrG_196': 24.63724986067617, 'pyrG_188': 13.336632045318812, 'pyrG_75': 0.6489591385519777, 'pyrG_53': 9.156830201513188, 'pyrG_72': 23.41743826659583, 'pyrG_123': 28.802890487344023} 
+True proportions are: {'pyrG_11': 0.6489591385519777, 'pyrG_109': 9.156830201513188, 'pyrG_45': 28.802890487344023, 'pyrG_47': 24.63724986067617, 'pyrG_130': 13.336632045318812, 'pyrG_140': 23.41743826659583} 
 
-Predicted proportions are: {'pyrG_196': 24.623115577889433, 'pyrG_188': 12.873998215474227, 'pyrG_53': 9.4221115348807345, 'pyrG_133': 16.746073491722438, 'pyrG_73': 12.483290618027393, 'pyrG_123': 23.851410562005757} 
+Predicted proportions are: {'pyrG_11': 0.9950248756218902, 'pyrG_130': 15.54603654190823, 'pyrG_45': 28.35820895522387, 'pyrG_47': 20.989184704702094, 'pyrG_109': 10.728460345429497, 'pyrG_140': 23.38308457711442} 
 
+Number of optimal solutions: 20
+Solution:['pyrG_109', 'pyrG_130', 'pyrG_140', 'pyrG_45', 'pyrG_47', 'pyrG_7']
+Objective value: 70.0
+Proportions:[10.728460345429497, 15.54603654190823, 23.38308457711442, 28.35820895522387, 20.989184704702094, 0.9950248756218902]
+
+Negative log likelihood score:1417.65275451
+
+Solution:['pyrG_109', 'pyrG_11', 'pyrG_114', 'pyrG_130', 'pyrG_140', 'pyrG_45', 'pyrG_47']
+Objective value: 70.0
+Proportions:[7.075999378653974, 0.9950248756218907, 5.448844896975566, 15.095988693983168, 23.38308457711443, 28.358208955223883, 19.64284862242709]
+
+Negative log likelihood score:1430.97774189
+
+Solution:['pyrG_109', 'pyrG_114', 'pyrG_130', 'pyrG_140', 'pyrG_45', 'pyrG_47', 'pyrG_7']
+Objective value: 70.0
+Proportions:[7.075999378653974, 5.448844896975566, 15.095988693983168, 23.38308457711443, 28.358208955223883, 19.64284862242709, 0.9950248756218907]
+
+Negative log likelihood score:1430.97774189
+
+Solution:['pyrG_109', 'pyrG_11', 'pyrG_121', 'pyrG_130', 'pyrG_140', 'pyrG_45', 'pyrG_47']
+Objective value: 70.0
+Proportions:[9.20302226642436, 0.9950248756218906, 2.7381235845186804, 15.272252806984152, 23.383084577114428, 28.35820895522388, 20.0502829341126]
+
+Negative log likelihood score:1437.19287361
+
+Solution:['pyrG_109', 'pyrG_11', 'pyrG_124', 'pyrG_130', 'pyrG_140', 'pyrG_45', 'pyrG_47']
+Objective value: 70.0
+Proportions:[7.434315680938938, 0.9950248756218907, 4.801486165555821, 15.297135678253555, 23.38308457711443, 28.358208955223883, 19.730744067291482]
+
+Negative log likelihood score:1432.26663616
+
+Solution:['pyrG_109', 'pyrG_121', 'pyrG_130', 'pyrG_140', 'pyrG_45', 'pyrG_47', 'pyrG_7']
+Objective value: 70.0
+Proportions:[9.20302226642436, 2.7381235845186804, 15.272252806984152, 23.383084577114428, 28.35820895522388, 20.0502829341126, 0.9950248756218906]
+
+Negative log likelihood score:1437.19287361
+
+Solution:['pyrG_109', 'pyrG_11', 'pyrG_122', 'pyrG_130', 'pyrG_140', 'pyrG_45', 'pyrG_47']
+Objective value: 70.0
+Proportions:[7.369134708863706, 0.9950248756218907, 5.432511698725983, 15.032478247065784, 23.38308457711443, 28.358208955223883, 19.42955693738433]
+
+Negative log likelihood score:1431.08771047
+
+Solution:['pyrG_109', 'pyrG_122', 'pyrG_130', 'pyrG_140', 'pyrG_45', 'pyrG_47', 'pyrG_7']
+Objective value: 70.0
+Proportions:[7.369134708863706, 5.432511698725983, 15.032478247065784, 23.38308457711443, 28.358208955223883, 19.42955693738433, 0.9950248756218907]
+
+Negative log likelihood score:1431.08771047
+
+Solution:['pyrG_109', 'pyrG_11', 'pyrG_130', 'pyrG_131', 'pyrG_140', 'pyrG_45', 'pyrG_47']
+Objective value: 70.0
+Proportions:[9.655144215549509, 0.9950248756218903, 13.615956853565258, 5.983657693568769, 23.383084577114424, 28.358208955223876, 18.008922829356266]
+
+Negative log likelihood score:1430.08840564
+
+Solution:['pyrG_109', 'pyrG_124', 'pyrG_130', 'pyrG_140', 'pyrG_45', 'pyrG_47', 'pyrG_7']
+Objective value: 70.0
+Proportions:[7.434315680938938, 4.801486165555821, 15.297135678253555, 23.38308457711443, 28.358208955223883, 19.730744067291482, 0.9950248756218907]
+
+Negative log likelihood score:1432.26663616
+
+Solution:['pyrG_109', 'pyrG_130', 'pyrG_131', 'pyrG_140', 'pyrG_45', 'pyrG_47', 'pyrG_7']
+Objective value: 70.0
+Proportions:[9.655144215549509, 13.615956853565258, 5.983657693568769, 23.383084577114424, 28.358208955223876, 18.008922829356266, 0.9950248756218903]
+
+Negative log likelihood score:1430.08840564
+
+Solution:['pyrG_109', 'pyrG_11', 'pyrG_130', 'pyrG_140', 'pyrG_141', 'pyrG_45', 'pyrG_47']
+Objective value: 70.0
+Proportions:[6.553535114797304, 0.9950248756218907, 15.13480924266395, 23.38308457711443, 5.692986298897718, 28.358208955223883, 19.882350935680815]
+
+Negative log likelihood score:1430.4540051
+
+Solution:['pyrG_109', 'pyrG_11', 'pyrG_130', 'pyrG_140', 'pyrG_143', 'pyrG_45', 'pyrG_47']
+Objective value: 70.0
+Proportions:[10.21388422865913, 0.9950248756218902, 13.861210579493855, 23.38308457711442, 5.784169240963981, 28.35820895522387, 17.40441754292286]
+
+Negative log likelihood score:1430.29787225
+
+Solution:['pyrG_109', 'pyrG_130', 'pyrG_140', 'pyrG_141', 'pyrG_45', 'pyrG_47', 'pyrG_7']
+Objective value: 70.0
+Proportions:[6.553535114797304, 15.13480924266395, 23.38308457711443, 5.692986298897718, 28.358208955223883, 19.882350935680815, 0.9950248756218907]
+
+Negative log likelihood score:1430.4540051
+
+Solution:['pyrG_109', 'pyrG_130', 'pyrG_140', 'pyrG_143', 'pyrG_45', 'pyrG_47', 'pyrG_7']
+Objective value: 70.0
+Proportions:[10.21388422865913, 13.861210579493855, 23.38308457711442, 5.784169240963981, 28.35820895522387, 17.40441754292286, 0.9950248756218902]
+
+Negative log likelihood score:1430.29787225
+
+Solution:['pyrG_109', 'pyrG_11', 'pyrG_130', 'pyrG_140', 'pyrG_170', 'pyrG_45', 'pyrG_47']
+Objective value: 70.0
+Proportions:[8.56592858148367, 0.9950248756218907, 15.16328809925485, 23.38308457711443, 3.541468367231217, 28.358208955223883, 19.99299654407006]
+
+Negative log likelihood score:1435.5496197
+
+Solution:['pyrG_109', 'pyrG_130', 'pyrG_140', 'pyrG_170', 'pyrG_45', 'pyrG_47', 'pyrG_7']
+Objective value: 70.0
+Proportions:[8.56592858148367, 15.16328809925485, 23.38308457711443, 3.541468367231217, 28.358208955223883, 19.99299654407006, 0.9950248756218907]
+
+Negative log likelihood score:1435.5496197
+
+Solution:['pyrG_109', 'pyrG_121', 'pyrG_130', 'pyrG_140', 'pyrG_3', 'pyrG_45', 'pyrG_47']
+Objective value: 70.0
+Proportions:[9.20302226642436, 2.7381235845186804, 15.272252806984152, 23.383084577114428, 0.9950248756218906, 28.35820895522388, 20.0502829341126]
+
+Negative log likelihood score:1437.19287361
+
+Solution:['pyrG_109', 'pyrG_121', 'pyrG_130', 'pyrG_140', 'pyrG_4', 'pyrG_45', 'pyrG_47']
+Objective value: 70.0
+Proportions:[9.20302226642436, 2.7381235845186804, 15.272252806984152, 23.383084577114428, 0.9950248756218906, 28.35820895522388, 20.0502829341126]
+
+Negative log likelihood score:1437.19287361
+
+Solution:['pyrG_109', 'pyrG_11', 'pyrG_130', 'pyrG_140', 'pyrG_45', 'pyrG_47']
+Objective value: 70.0
+Proportions:[10.728460345429497, 0.9950248756218902, 15.54603654190823, 23.38308457711442, 28.35820895522387, 20.989184704702094]
+
+Negative log likelihood score:1417.65275451
+
+Negative log likelihood score list:[1417.6527545090214, 1430.9777418854096, 1430.9777418854096, 1437.1928736083255, 1432.2666361640393, 1437.1928736083255, 1431.0877104749352, 1431.0877104749352, 1430.0884056400023, 1432.2666361640393, 1430.0884056400023, 1430.4540050989178, 1430.2978722547159, 1430.4540050989178, 1430.2978722547159, 1435.5496197003574, 1435.5496197003574, 1437.1928736083255, 1437.1928736083255, 1417.6527545090214]
+The solution which has minimum negative log likelihood is ['pyrG_109', 'pyrG_11', 'pyrG_130', 'pyrG_140', 'pyrG_45', 'pyrG_47'] and its score:1417.65275451
 ======================================== SIMULATION 13 ====================================================
 
-True variants are: ['pyrG_20', 'pyrG_25', 'pyrG_130', 'pyrG_138', 'pyrG_103', 'pyrG_43'] 
+True variants are: ['pyrG_74', 'pyrG_103', 'pyrG_168', 'pyrG_134', 'pyrG_183', 'pyrG_170'] 
 
-Predicted variants are: ['pyrG_103', 'pyrG_107', 'pyrG_130', 'pyrG_138', 'pyrG_20', 'pyrG_43'] 
+Predicted variants are: ['pyrG_103', 'pyrG_134', 'pyrG_168', 'pyrG_170', 'pyrG_183', 'pyrG_74'] 
 
-True proportions are: {'pyrG_25': 22.38051740810347, 'pyrG_43': 26.0463275331353, 'pyrG_20': 14.944794132649191, 'pyrG_130': 1.5363847768470709, 'pyrG_138': 29.8037873758205, 'pyrG_103': 5.288188773444476} 
+True proportions are: {'pyrG_168': 1.5363847768470709, 'pyrG_183': 5.288188773444476, 'pyrG_170': 26.0463275331353, 'pyrG_74': 14.944794132649191, 'pyrG_134': 29.8037873758205, 'pyrG_103': 22.38051740810347} 
 
-Predicted proportions are: {'pyrG_43': 21.622974370008308, 'pyrG_20': 21.038585743987323, 'pyrG_130': 2.1342855160021954, 'pyrG_138': 29.396984924623116, 'pyrG_103': 5.5276381909547743, 'pyrG_107': 20.279531254424292} 
+Predicted proportions are: {'pyrG_168': 2.114453238804955, 'pyrG_183': 5.4726368159203975, 'pyrG_170': 26.152324990026397, 'pyrG_74': 14.925373134328359, 'pyrG_134': 29.071606363205394, 'pyrG_103': 22.263605457714487} 
 
+Number of optimal solutions: 4
+Solution:['pyrG_1', 'pyrG_103', 'pyrG_134', 'pyrG_170', 'pyrG_183', 'pyrG_74']
+Objective value: 56.0
+Proportions:[2.1144532388049555, 22.26360545771449, 29.0716063632054, 26.1523249900264, 5.472636815920399, 14.92537313432836]
+
+Negative log likelihood score:1412.15448761
+
+Solution:['pyrG_103', 'pyrG_12', 'pyrG_134', 'pyrG_170', 'pyrG_183', 'pyrG_74']
+Objective value: 56.0
+Proportions:[22.385496004978172, 2.11694714584477, 28.947240942159578, 26.152305956768718, 5.472636815920399, 14.92537313432836]
+
+Negative log likelihood score:1412.15012327
+
+Solution:['pyrG_103', 'pyrG_134', 'pyrG_170', 'pyrG_183', 'pyrG_2', 'pyrG_74']
+Objective value: 56.0
+Proportions:[22.26360545771449, 29.0716063632054, 26.1523249900264, 5.472636815920399, 2.1144532388049555, 14.92537313432836]
+
+Negative log likelihood score:1412.15448761
+
+Solution:['pyrG_103', 'pyrG_134', 'pyrG_168', 'pyrG_170', 'pyrG_183', 'pyrG_74']
+Objective value: 56.0
+Proportions:[22.263605457714487, 29.071606363205394, 2.114453238804955, 26.152324990026397, 5.4726368159203975, 14.925373134328359]
+
+Negative log likelihood score:1412.15448761
+
+Negative log likelihood score list:[1412.1544876092821, 1412.1501232681264, 1412.1544876092821, 1412.1544876092821]
+The solution which has minimum negative log likelihood is ['pyrG_103', 'pyrG_12', 'pyrG_134', 'pyrG_170', 'pyrG_183', 'pyrG_74'] and its score:1412.15012327
 ======================================== SIMULATION 14 ====================================================
 
-True variants are: ['pyrG_107', 'pyrG_50', 'pyrG_151', 'pyrG_190'] 
+True variants are: ['pyrG_63', 'pyrG_16', 'pyrG_49', 'pyrG_106'] 
 
-Predicted variants are: ['pyrG_151', 'pyrG_190', 'pyrG_50'] 
+Predicted variants are: ['pyrG_106', 'pyrG_16', 'pyrG_49', 'pyrG_63'] 
 
-True proportions are: {'pyrG_50': 32.68907431019603, 'pyrG_190': 40.41481963647745, 'pyrG_151': 25.914198308138815, 'pyrG_107': 0.9819077451877073} 
+True proportions are: {'pyrG_63': 0.9819077451877073, 'pyrG_106': 40.41481963647745, 'pyrG_49': 25.914198308138815, 'pyrG_16': 32.68907431019603} 
 
-Predicted proportions are: {'pyrG_50': 32.151898734177216, 'pyrG_190': 40.278198851544232, 'pyrG_151': 27.569902414278545} 
+Predicted proportions are: {'pyrG_16': 32.6607783869357, 'pyrG_63': 1.0050251256281406, 'pyrG_106': 40.20100502512562, 'pyrG_49': 26.133191462310535} 
 
+Number of optimal solutions: 2
+Solution:['pyrG_106', 'pyrG_16', 'pyrG_49', 'pyrG_67']
+Objective value: 54.0
+Proportions:[40.20100502512562, 32.6607783869357, 26.133191462310535, 1.0050251256281406]
+
+Negative log likelihood score:1339.70512666
+
+Solution:['pyrG_106', 'pyrG_16', 'pyrG_49', 'pyrG_63']
+Objective value: 54.0
+Proportions:[40.20100502512562, 32.6607783869357, 26.133191462310535, 1.0050251256281406]
+
+Negative log likelihood score:1339.70512666
+
+Negative log likelihood score list:[1339.7051266631602, 1339.7051266631602]
+The solution which has minimum negative log likelihood is ['pyrG_106', 'pyrG_16', 'pyrG_49', 'pyrG_63'] and its score:1339.70512666
 ======================================== SIMULATION 15 ====================================================
 
-True variants are: ['pyrG_163', 'pyrG_182', 'pyrG_87', 'pyrG_94'] 
+True variants are: ['pyrG_120', 'pyrG_12', 'pyrG_41', 'pyrG_162'] 
 
-Predicted variants are: ['pyrG_163', 'pyrG_182', 'pyrG_35', 'pyrG_87'] 
+Predicted variants are: ['pyrG_12', 'pyrG_120', 'pyrG_162', 'pyrG_41'] 
 
-True proportions are: {'pyrG_163': 24.953276542890364, 'pyrG_182': 8.931510239243016, 'pyrG_87': 50.16374601336656, 'pyrG_94': 15.951467204500048} 
+True proportions are: {'pyrG_162': 15.951467204500048, 'pyrG_41': 50.16374601336656, 'pyrG_12': 8.931510239243016, 'pyrG_120': 24.953276542890364} 
 
-Predicted proportions are: {'pyrG_163': 25.316455696202539, 'pyrG_182': 9.1139240506329156, 'pyrG_87': 36.398051590754989, 'pyrG_35': 29.171568662409548} 
+Predicted proportions are: {'pyrG_162': 16.08294020602913, 'pyrG_41': 49.746205522614105, 'pyrG_12': 9.349476929639007, 'pyrG_120': 24.821377341717763} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_12', 'pyrG_120', 'pyrG_162', 'pyrG_41']
+Objective value: 55.0
+Proportions:[9.349476929639007, 24.821377341717763, 16.08294020602913, 49.746205522614105]
+
+Negative log likelihood score:1339.08666163
+
+Negative log likelihood score list:[1339.0866616328262]
+The solution which has minimum negative log likelihood is ['pyrG_12', 'pyrG_120', 'pyrG_162', 'pyrG_41'] and its score:1339.08666163
 ======================================== SIMULATION 16 ====================================================
 
-True variants are: ['pyrG_16', 'pyrG_182', 'pyrG_202', 'pyrG_190', 'pyrG_165', 'pyrG_130', 'pyrG_127'] 
+True variants are: ['pyrG_37', 'pyrG_105', 'pyrG_5', 'pyrG_174', 'pyrG_100', 'pyrG_155', 'pyrG_62'] 
 
-Predicted variants are: ['pyrG_127', 'pyrG_13', 'pyrG_130', 'pyrG_165', 'pyrG_182', 'pyrG_190', 'pyrG_202', 'pyrG_66'] 
+Predicted variants are: ['pyrG_100', 'pyrG_105', 'pyrG_108', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62'] 
 
-True proportions are: {'pyrG_16': 0.31142755241984954, 'pyrG_182': 25.296546216548528, 'pyrG_190': 13.945484130973304, 'pyrG_202': 14.627350456132321, 'pyrG_165': 11.711652010320982, 'pyrG_130': 24.350558390719044, 'pyrG_127': 9.756981242885978} 
+True proportions are: {'pyrG_37': 0.31142755241984954, 'pyrG_174': 13.945484130973304, 'pyrG_155': 24.350558390719044, 'pyrG_62': 9.756981242885978, 'pyrG_5': 14.627350456132321, 'pyrG_100': 11.711652010320982, 'pyrG_105': 25.296546216548528} 
 
-Predicted proportions are: {'pyrG_202': 14.280162306010064, 'pyrG_182': 18.216936884947316, 'pyrG_190': 13.879773609530035, 'pyrG_13': 0.76393356347934882, 'pyrG_165': 11.868686868686867, 'pyrG_130': 20.814276168630027, 'pyrG_66': 7.035588367577934, 'pyrG_127': 13.140642231138408} 
+Predicted proportions are: {'pyrG_62': 10.000051009997964, 'pyrG_174': 15.156725226047978, 'pyrG_5': 14.623148257316638, 'pyrG_108': 2.0540538668724637, 'pyrG_146': 21.289220907079564, 'pyrG_100': 12.013301297640261, 'pyrG_105': 24.86349943504515} 
 
+Number of optimal solutions: 18
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_126', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.01330129764026, 24.863499435045146, 1.188129152234758, 21.35388945594096, 15.957981391824294, 14.623148257316634, 10.000051009997962]
+
+Negative log likelihood score:1363.87712653
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_109', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.01330129764026, 24.863499435045146, 1.8065774266673, 21.292897994462493, 15.400524578870211, 14.623148257316634, 10.000051009997962]
+
+Negative log likelihood score:1362.43786635
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_110', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.013301297640261, 24.86349943504515, 2.187848710990297, 21.284835492649034, 15.027315796360677, 14.623148257316638, 10.000051009997964]
+
+Negative log likelihood score:1361.52388753
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_111', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.010733409351944, 24.858546505902204, 0.9256977678622705, 21.321715945768585, 16.262650509530342, 14.62060485158669, 10.00005100999796]
+
+Negative log likelihood score:1364.5509311
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_114', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.013301297640261, 24.86349943504515, 1.8998587435814176, 21.251158702366304, 15.34898255405228, 14.623148257316638, 10.000051009997964]
+
+Negative log likelihood score:1362.24449539
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_121', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.01330129764026, 24.863499435045146, 0.7960996886765865, 21.44246369938855, 16.26143661193487, 14.623148257316634, 10.000051009997962]
+
+Negative log likelihood score:1364.78723129
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_123', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.01330129764026, 24.863499435045146, 1.5389392571946467, 21.43164319053495, 15.529417552270404, 14.623148257316634, 10.000051009997962]
+
+Negative log likelihood score:1362.99684616
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_124', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.013301297640258, 24.863499435045142, 1.017546385646988, 21.274448020369377, 16.208005593983643, 14.623148257316632, 10.00005100999796]
+
+Negative log likelihood score:1364.36006267
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.013301297640258, 24.863499435045142, 21.457219445011237, 17.04278055498878, 14.623148257316632, 10.00005100999796]
+
+Negative log likelihood score:1341.29721
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_127', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.01330129764026, 24.863499435045146, 1.5350801967625785, 21.432384594439114, 15.532535208798311, 14.623148257316634, 10.000051009997962]
+
+Negative log likelihood score:1363.00357404
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_128', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.013301297640261, 24.86349943504515, 1.5341398216633897, 21.30040466320106, 15.665455515135548, 14.623148257316638, 10.000051009997964]
+
+Negative log likelihood score:1363.07907111
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_109', 'pyrG_155', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.01330129764026, 24.863499435045146, 1.8065774266673, 21.415397994462488, 15.278024578870214, 14.623148257316634, 10.000051009997962]
+
+Negative log likelihood score:1362.14120225
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_141', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.013301297640261, 24.86349943504515, 1.8103822079046503, 21.292283470080427, 15.397334322014922, 14.623148257316638, 10.000051009997964]
+
+Negative log likelihood score:1362.4313169
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_142', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.010733409351944, 24.858546505902204, 0.6717903659775748, 21.449981889160934, 16.388291968022692, 14.62060485158669, 10.00005100999796]
+
+Negative log likelihood score:1365.08598881
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_144', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.01330129764026, 24.863499435045146, 1.5767478597293265, 21.344062777931484, 15.579189362339196, 14.623148257316634, 10.000051009997962]
+
+Negative log likelihood score:1362.95242613
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_144', 'pyrG_155', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.01330129764026, 24.863499435045146, 1.5767478597293265, 21.466562777931486, 15.456689362339196, 14.623148257316634, 10.000051009997962]
+
+Negative log likelihood score:1362.65576204
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_121', 'pyrG_155', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.01330129764026, 24.863499435045146, 0.7960996886765865, 21.564963699388553, 16.13893661193487, 14.623148257316634, 10.000051009997962]
+
+Negative log likelihood score:1364.4905672
+
+Solution:['pyrG_100', 'pyrG_105', 'pyrG_108', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62']
+Objective value: 31.0
+Proportions:[12.013301297640261, 24.86349943504515, 2.0540538668724637, 21.289220907079564, 15.156725226047978, 14.623148257316638, 10.000051009997964]
+
+Negative log likelihood score:1361.84020543
+
+Negative log likelihood score list:[1363.8771265250716, 1362.4378663451155, 1361.5238875254233, 1364.5509311000092, 1362.2444953877587, 1364.7872312942357, 1362.996846159821, 1364.3600626651403, 1341.2972100007059, 1363.0035740429662, 1363.0790711075811, 1362.141202251441, 1362.4313169048564, 1365.0859888057516, 1362.9524261297431, 1362.6557620360686, 1364.4905672005611, 1361.8402054251642]
+The solution which has minimum negative log likelihood is ['pyrG_100', 'pyrG_105', 'pyrG_146', 'pyrG_174', 'pyrG_5', 'pyrG_62'] and its score:1341.29721
 ======================================== SIMULATION 17 ====================================================
 
-True variants are: ['pyrG_61', 'pyrG_9', 'pyrG_134', 'pyrG_169', 'pyrG_100', 'pyrG_156'] 
+True variants are: ['pyrG_47', 'pyrG_131', 'pyrG_93', 'pyrG_146', 'pyrG_71', 'pyrG_143'] 
 
-Predicted variants are: ['pyrG_100', 'pyrG_156', 'pyrG_169', 'pyrG_194', 'pyrG_61', 'pyrG_9'] 
+Predicted variants are: ['pyrG_143', 'pyrG_146', 'pyrG_192', 'pyrG_24', 'pyrG_71'] 
 
-True proportions are: {'pyrG_169': 36.492439011567384, 'pyrG_156': 38.51647856135996, 'pyrG_61': 2.836690302025192, 'pyrG_134': 2.8183881819687366, 'pyrG_100': 13.088978731535574, 'pyrG_9': 6.247025211543162} 
+True proportions are: {'pyrG_47': 2.836690302025192, 'pyrG_131': 6.247025211543162, 'pyrG_146': 36.492439011567384, 'pyrG_71': 13.088978731535574, 'pyrG_143': 38.51647856135996, 'pyrG_93': 2.8183881819687366} 
 
-Predicted proportions are: {'pyrG_169': 30.470714280639257, 'pyrG_194': 6.5738291545197614, 'pyrG_156': 34.691993630290369, 'pyrG_61': 3.0379746835443044, 'pyrG_100': 13.724162700491021, 'pyrG_9': 11.501325550515288} 
+Predicted proportions are: {'pyrG_192': 14.518266314192733, 'pyrG_146': 33.31143756125316, 'pyrG_71': 19.789335330727198, 'pyrG_24': 3.0150753768844205, 'pyrG_143': 29.36588541694249} 
 
+Number of optimal solutions: 4
+Solution:['pyrG_143', 'pyrG_146', 'pyrG_192', 'pyrG_71', 'pyrG_93']
+Objective value: 36.0
+Proportions:[29.36588541694249, 33.31143756125316, 14.518266314192733, 19.789335330727198, 3.0150753768844205]
+
+Negative log likelihood score:1245.06848807
+
+Solution:['pyrG_131', 'pyrG_143', 'pyrG_146', 'pyrG_24', 'pyrG_71']
+Objective value: 36.0
+Proportions:[13.662509949027626, 30.87650445690771, 33.270717767591805, 3.0150753768844205, 19.175192449588454]
+
+Negative log likelihood score:1247.13551115
+
+Solution:['pyrG_131', 'pyrG_143', 'pyrG_146', 'pyrG_71', 'pyrG_93']
+Objective value: 36.0
+Proportions:[13.662509949027626, 30.87650445690771, 33.270717767591805, 19.175192449588454, 3.0150753768844205]
+
+Negative log likelihood score:1247.13551115
+
+Solution:['pyrG_143', 'pyrG_146', 'pyrG_192', 'pyrG_24', 'pyrG_71']
+Objective value: 36.0
+Proportions:[29.36588541694249, 33.31143756125316, 14.518266314192733, 3.0150753768844205, 19.789335330727198]
+
+Negative log likelihood score:1245.06848807
+
+Negative log likelihood score list:[1245.0684880673564, 1247.1355111508506, 1247.1355111508506, 1245.0684880673564]
+The solution which has minimum negative log likelihood is ['pyrG_143', 'pyrG_146', 'pyrG_192', 'pyrG_71', 'pyrG_93'] and its score:1245.06848807
 ======================================== SIMULATION 18 ====================================================
 
-True variants are: ['pyrG_202', 'pyrG_46', 'pyrG_118', 'pyrG_129'] 
+True variants are: ['pyrG_74', 'pyrG_120', 'pyrG_2', 'pyrG_111'] 
 
-Predicted variants are: ['pyrG_129', 'pyrG_175', 'pyrG_202', 'pyrG_60'] 
+Predicted variants are: ['pyrG_111', 'pyrG_120', 'pyrG_2', 'pyrG_74'] 
 
-True proportions are: {'pyrG_202': 41.928085158229834, 'pyrG_118': 1.1171932481429552, 'pyrG_46': 2.9948687843881534, 'pyrG_129': 53.95985280923905} 
+True proportions are: {'pyrG_74': 41.928085158229834, 'pyrG_111': 53.95985280923905, 'pyrG_2': 1.1171932481429552, 'pyrG_120': 2.9948687843881534} 
 
-Predicted proportions are: {'pyrG_175': 4.3037974683544329, 'pyrG_202': 41.518987341772174, 'pyrG_60': 13.853551636173773, 'pyrG_129': 40.32366355369961} 
+Predicted proportions are: {'pyrG_74': 41.70838891457902, 'pyrG_111': 53.77389447366891, 'pyrG_2': 1.5051663611493455, 'pyrG_120': 3.0125502506027333} 
 
+Number of optimal solutions: 8
+Solution:['pyrG_111', 'pyrG_112', 'pyrG_120', 'pyrG_74']
+Objective value: 41.0
+Proportions:[53.77391959291457, 1.0125625603017612, 3.5049751332158223, 41.70854271356784]
+
+Negative log likelihood score:1313.81826955
+
+Solution:['pyrG_111', 'pyrG_120', 'pyrG_169', 'pyrG_74']
+Objective value: 41.0
+Proportions:[53.77391959291457, 3.5049751332158223, 1.0125625603017612, 41.70854271356784]
+
+Negative log likelihood score:1313.81826955
+
+Solution:['pyrG_111', 'pyrG_113', 'pyrG_120', 'pyrG_74']
+Objective value: 41.0
+Proportions:[53.773907543366086, 1.3795192522048874, 3.138184289850006, 41.70838891457902]
+
+Negative log likelihood score:1312.93244095
+
+Solution:['pyrG_111', 'pyrG_120', 'pyrG_164', 'pyrG_74']
+Objective value: 41.0
+Proportions:[53.773907543366086, 3.138184289850006, 1.3795192522048874, 41.70838891457902]
+
+Negative log likelihood score:1312.93244095
+
+Solution:['pyrG_111', 'pyrG_120', 'pyrG_168', 'pyrG_74']
+Objective value: 41.0
+Proportions:[53.77389447366891, 3.0125502506027333, 1.5051663611493455, 41.70838891457902]
+
+Negative log likelihood score:1312.63139036
+
+Solution:['pyrG_111', 'pyrG_120', 'pyrG_2', 'pyrG_74']
+Objective value: 41.0
+Proportions:[53.77389447366891, 3.0125502506027333, 1.5051663611493455, 41.70838891457902]
+
+Negative log likelihood score:1312.63139036
+
+Solution:['pyrG_111', 'pyrG_120', 'pyrG_6', 'pyrG_74']
+Objective value: 41.0
+Proportions:[53.77389447366891, 3.0125502506027333, 1.5051663611493455, 41.70838891457902]
+
+Negative log likelihood score:1312.63139036
+
+Solution:['pyrG_1', 'pyrG_111', 'pyrG_120', 'pyrG_74']
+Objective value: 41.0
+Proportions:[1.5051663611493458, 53.77389447366891, 3.0125502506027333, 41.70838891457902]
+
+Negative log likelihood score:1312.63139036
+
+Negative log likelihood score list:[1313.8182695494093, 1313.8182695494093, 1312.9324409512963, 1312.9324409512963, 1312.6313903581022, 1312.6313903581022, 1312.6313903581022, 1312.6313903581022]
+The solution which has minimum negative log likelihood is ['pyrG_111', 'pyrG_120', 'pyrG_2', 'pyrG_74'] and its score:1312.63139036
 ======================================== SIMULATION 19 ====================================================
 
-True variants are: ['pyrG_188', 'pyrG_35', 'pyrG_77'] 
+True variants are: ['pyrG_32', 'pyrG_34', 'pyrG_139'] 
 
-Predicted variants are: ['pyrG_188', 'pyrG_35', 'pyrG_77'] 
+Predicted variants are: ['pyrG_139', 'pyrG_32', 'pyrG_34'] 
 
-True proportions are: {'pyrG_188': 41.05632044078559, 'pyrG_77': 35.712457763831814, 'pyrG_35': 23.2312217953826} 
+True proportions are: {'pyrG_139': 35.712457763831814, 'pyrG_32': 41.05632044078559, 'pyrG_34': 23.2312217953826} 
 
-Predicted proportions are: {'pyrG_188': 40.966921119592882, 'pyrG_77': 35.447300901726557, 'pyrG_35': 23.585777978680557} 
+Predicted proportions are: {'pyrG_139': 35.85858585858591, 'pyrG_32': 38.305169116177005, 'pyrG_34': 25.836245025237087} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_139', 'pyrG_32', 'pyrG_34']
+Objective value: 41.0
+Proportions:[35.85858585858591, 38.305169116177005, 25.836245025237087]
+
+Negative log likelihood score:1233.80428221
+
+Negative log likelihood score list:[1233.8042822113543]
+The solution which has minimum negative log likelihood is ['pyrG_139', 'pyrG_32', 'pyrG_34'] and its score:1233.80428221
 ======================================== SIMULATION 20 ====================================================
 
-True variants are: ['pyrG_44', 'pyrG_75', 'pyrG_5', 'pyrG_2'] 
+True variants are: ['pyrG_26', 'pyrG_115', 'pyrG_179', 'pyrG_40'] 
 
-Predicted variants are: ['pyrG_164', 'pyrG_4', 'pyrG_44', 'pyrG_75'] 
+Predicted variants are: ['pyrG_115', 'pyrG_179', 'pyrG_26', 'pyrG_40'] 
 
-True proportions are: {'pyrG_75': 9.708967038869583, 'pyrG_5': 51.53549895985818, 'pyrG_44': 34.06502605345349, 'pyrG_2': 4.690507947818759} 
+True proportions are: {'pyrG_26': 34.06502605345349, 'pyrG_40': 4.690507947818759, 'pyrG_179': 51.53549895985818, 'pyrG_115': 9.708967038869583} 
 
-Predicted proportions are: {'pyrG_75': 9.8484848484848477, 'pyrG_4': 28.705294705294683, 'pyrG_44': 34.343434343434346, 'pyrG_164': 27.10278610278613} 
+Predicted proportions are: {'pyrG_26': 33.99989798000408, 'pyrG_40': 5.000255049989798, 'pyrG_179': 51.0, 'pyrG_115': 9.99984697000612} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_115', 'pyrG_179', 'pyrG_26', 'pyrG_40']
+Objective value: 46.0
+Proportions:[9.99984697000612, 51.0, 33.99989798000408, 5.000255049989798]
+
+Negative log likelihood score:1330.06169243
+
+Negative log likelihood score list:[1330.061692432387]
+The solution which has minimum negative log likelihood is ['pyrG_115', 'pyrG_179', 'pyrG_26', 'pyrG_40'] and its score:1330.06169243
 ======================================== SIMULATION 21 ====================================================
 
-True variants are: ['pyrG_163', 'pyrG_202', 'pyrG_116', 'pyrG_40', 'pyrG_25', 'pyrG_170'] 
+True variants are: ['pyrG_46', 'pyrG_183', 'pyrG_100', 'pyrG_27', 'pyrG_155', 'pyrG_178'] 
 
-Predicted variants are: ['pyrG_116', 'pyrG_170', 'pyrG_202', 'pyrG_25', 'pyrG_40'] 
+Predicted variants are: ['pyrG_100', 'pyrG_155', 'pyrG_178', 'pyrG_183', 'pyrG_27', 'pyrG_46'] 
 
-True proportions are: {'pyrG_202': 29.336860593954107, 'pyrG_40': 22.259833033600934, 'pyrG_163': 0.40386442110028925, 'pyrG_25': 29.79545422859397, 'pyrG_170': 4.969195017954185, 'pyrG_116': 13.234792704796517} 
+True proportions are: {'pyrG_183': 29.336860593954107, 'pyrG_178': 4.969195017954185, 'pyrG_27': 22.259833033600934, 'pyrG_46': 0.40386442110028925, 'pyrG_155': 29.79545422859397, 'pyrG_100': 13.234792704796517} 
 
-Predicted proportions are: {'pyrG_40': 16.590334307544669, 'pyrG_202': 28.227531265919048, 'pyrG_25': 22.559329492989168, 'pyrG_116': 20.99354920942891, 'pyrG_170': 11.629255724118201} 
+Predicted proportions are: {'pyrG_183': 29.145728643216085, 'pyrG_178': 5.025125628140705, 'pyrG_27': 22.14826683919496, 'pyrG_46': 0.5025125628140704, 'pyrG_155': 29.610527130654287, 'pyrG_100': 13.567839195979902} 
 
+Number of optimal solutions: 2
+Solution:['pyrG_100', 'pyrG_123', 'pyrG_155', 'pyrG_178', 'pyrG_183', 'pyrG_46']
+Objective value: 36.0
+Proportions:[13.5678391959799, 22.148266839194957, 29.610527130654283, 5.025125628140704, 29.14572864321608, 0.5025125628140703]
+
+Negative log likelihood score:1369.84979678
+
+Solution:['pyrG_100', 'pyrG_155', 'pyrG_178', 'pyrG_183', 'pyrG_27', 'pyrG_46']
+Objective value: 36.0
+Proportions:[13.567839195979902, 29.610527130654287, 5.025125628140705, 29.145728643216085, 22.14826683919496, 0.5025125628140704]
+
+Negative log likelihood score:1369.84979678
+
+Negative log likelihood score list:[1369.8497967778742, 1369.8497967778742]
+The solution which has minimum negative log likelihood is ['pyrG_100', 'pyrG_155', 'pyrG_178', 'pyrG_183', 'pyrG_27', 'pyrG_46'] and its score:1369.84979678
 ======================================== SIMULATION 22 ====================================================
 
-True variants are: ['pyrG_46', 'pyrG_182', 'pyrG_104'] 
+True variants are: ['pyrG_100', 'pyrG_157', 'pyrG_132'] 
 
-Predicted variants are: ['pyrG_104', 'pyrG_182', 'pyrG_20'] 
+Predicted variants are: ['pyrG_100', 'pyrG_132', 'pyrG_157'] 
 
-True proportions are: {'pyrG_182': 73.20202249260387, 'pyrG_104': 25.442594729363243, 'pyrG_46': 1.3553827780328627} 
+True proportions are: {'pyrG_100': 1.3553827780328627, 'pyrG_157': 73.20202249260387, 'pyrG_132': 25.442594729363243} 
 
-Predicted proportions are: {'pyrG_182': 73.164556962025316, 'pyrG_104': 25.316455696202539, 'pyrG_20': 1.5189873417721522} 
+Predicted proportions are: {'pyrG_100': 1.5362809898618952, 'pyrG_157': 72.70614325256236, 'pyrG_132': 25.75757575757576} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_100', 'pyrG_132', 'pyrG_157']
+Objective value: 31.0
+Proportions:[1.5362809898618952, 25.75757575757576, 72.70614325256236]
+
+Negative log likelihood score:1240.12634544
+
+Negative log likelihood score list:[1240.1263454436539]
+The solution which has minimum negative log likelihood is ['pyrG_100', 'pyrG_132', 'pyrG_157'] and its score:1240.12634544
 ======================================== SIMULATION 23 ====================================================
 
-True variants are: ['pyrG_104', 'pyrG_57', 'pyrG_99', 'pyrG_94', 'pyrG_145', 'pyrG_48'] 
+True variants are: ['pyrG_6', 'pyrG_148', 'pyrG_7', 'pyrG_132', 'pyrG_17', 'pyrG_101'] 
 
-Predicted variants are: ['pyrG_104', 'pyrG_114', 'pyrG_145', 'pyrG_57', 'pyrG_94', 'pyrG_99'] 
+Predicted variants are: ['pyrG_101', 'pyrG_132', 'pyrG_148', 'pyrG_17', 'pyrG_6', 'pyrG_7'] 
 
-True proportions are: {'pyrG_48': 8.550929352111105, 'pyrG_57': 4.068773519217441, 'pyrG_145': 8.036564726987075, 'pyrG_99': 17.21502962155703, 'pyrG_94': 9.373012155312713, 'pyrG_104': 52.75569062481463} 
+True proportions are: {'pyrG_17': 8.036564726987075, 'pyrG_7': 17.21502962155703, 'pyrG_6': 52.75569062481463, 'pyrG_132': 9.373012155312713, 'pyrG_101': 8.550929352111105, 'pyrG_148': 4.068773519217441} 
 
-Predicted proportions are: {'pyrG_57': 4.5170325593347345, 'pyrG_145': 8.5610348460883987, 'pyrG_99': 16.350333451360854, 'pyrG_94': 10.388967943047726, 'pyrG_104': 50.750201348747517, 'pyrG_114': 9.4324298514207712} 
+Predicted proportions are: {'pyrG_17': 8.037688443518674, 'pyrG_7': 31.595464569698468, 'pyrG_6': 37.75124346417081, 'pyrG_132': 9.550276889446215, 'pyrG_101': 8.542713567839199, 'pyrG_148': 4.5226130653266345} 
 
+Number of optimal solutions: 2
+Solution:['pyrG_101', 'pyrG_132', 'pyrG_148', 'pyrG_17', 'pyrG_6', 'pyrG_7']
+Objective value: 57.0
+Proportions:[8.542713567839199, 9.550276889446215, 4.5226130653266345, 8.037688443518674, 37.75124346417081, 31.595464569698468]
+
+Negative log likelihood score:1343.24232926
+
+Solution:['pyrG_101', 'pyrG_132', 'pyrG_148', 'pyrG_17', 'pyrG_6', 'pyrG_8']
+Objective value: 57.0
+Proportions:[8.542713567839199, 9.550276889446215, 4.5226130653266345, 8.037701003141509, 44.03011922206028, 25.31657625218617]
+
+Negative log likelihood score:1358.37150016
+
+Negative log likelihood score list:[1343.2423292642029, 1358.37150016439]
+The solution which has minimum negative log likelihood is ['pyrG_101', 'pyrG_132', 'pyrG_148', 'pyrG_17', 'pyrG_6', 'pyrG_7'] and its score:1343.24232926
 ======================================== SIMULATION 24 ====================================================
 
-True variants are: ['pyrG_49', 'pyrG_33'] 
+True variants are: ['pyrG_5', 'pyrG_78'] 
 
-Predicted variants are: ['pyrG_33', 'pyrG_49'] 
+Predicted variants are: ['pyrG_5', 'pyrG_78'] 
 
-True proportions are: {'pyrG_49': 2.6162994615947124, 'pyrG_33': 97.38370053840528} 
+True proportions are: {'pyrG_5': 2.6162994615947124, 'pyrG_78': 97.38370053840528} 
 
-Predicted proportions are: {'pyrG_49': 17.234183133792452, 'pyrG_33': 82.765816866207558} 
+Predicted proportions are: {'pyrG_5': 3.156694469691818, 'pyrG_78': 96.8433055303082} 
 
+Number of optimal solutions: 3
+Solution:['pyrG_5', 'pyrG_78']
+Objective value: 51.0
+Proportions:[3.156694469691818, 96.8433055303082]
+
+Negative log likelihood score:1212.05939509
+
+Solution:['pyrG_7', 'pyrG_78']
+Objective value: 51.0
+Proportions:[3.156694469691818, 96.8433055303082]
+
+Negative log likelihood score:1212.05939509
+
+Solution:['pyrG_3', 'pyrG_78']
+Objective value: 51.0
+Proportions:[3.156694469691818, 96.8433055303082]
+
+Negative log likelihood score:1212.05939509
+
+Negative log likelihood score list:[1212.0593950932628, 1212.0593950932628, 1212.0593950932628]
+The solution which has minimum negative log likelihood is ['pyrG_5', 'pyrG_78'] and its score:1212.05939509
 ======================================== SIMULATION 25 ====================================================
 
-True variants are: ['pyrG_79', 'pyrG_142', 'pyrG_27', 'pyrG_71', 'pyrG_98', 'pyrG_45', 'pyrG_116'] 
+True variants are: ['pyrG_178', 'pyrG_121', 'pyrG_81', 'pyrG_187', 'pyrG_34', 'pyrG_199', 'pyrG_176'] 
 
-Predicted variants are: ['pyrG_116', 'pyrG_123', 'pyrG_142', 'pyrG_150', 'pyrG_153', 'pyrG_71', 'pyrG_79'] 
+Predicted variants are: ['pyrG_121', 'pyrG_176', 'pyrG_178', 'pyrG_187', 'pyrG_199', 'pyrG_34', 'pyrG_81'] 
 
-True proportions are: {'pyrG_27': 2.263243511767247, 'pyrG_45': 17.23338271186864, 'pyrG_71': 14.125120609567812, 'pyrG_142': 22.292590126767585, 'pyrG_98': 16.590689216502362, 'pyrG_79': 3.11916340999614, 'pyrG_116': 24.375810413530214} 
+True proportions are: {'pyrG_34': 16.590689216502362, 'pyrG_187': 14.125120609567812, 'pyrG_199': 17.23338271186864, 'pyrG_176': 24.375810413530214, 'pyrG_121': 22.292590126767585, 'pyrG_81': 2.263243511767247, 'pyrG_178': 3.11916340999614} 
 
-Predicted proportions are: {'pyrG_123': 8.8448925759943773, 'pyrG_71': 14.729892516939644, 'pyrG_142': 15.555649689674658, 'pyrG_150': 19.68014410451179, 'pyrG_153': 17.243637845559761, 'pyrG_79': 3.580562659846545, 'pyrG_116': 20.365220607473219} 
+Predicted proportions are: {'pyrG_34': 13.236103881771335, 'pyrG_187': 14.000000000000005, 'pyrG_199': 17.000000000000007, 'pyrG_176': 24.49994899000205, 'pyrG_121': 19.428137696059792, 'pyrG_81': 8.33580943216683, 'pyrG_178': 3.5000000000000013} 
 
+Number of optimal solutions: 3
+Solution:['pyrG_121', 'pyrG_176', 'pyrG_178', 'pyrG_187', 'pyrG_199', 'pyrG_34', 'pyrG_81']
+Objective value: 52.0
+Proportions:[19.428137696059792, 24.49994899000205, 3.5000000000000013, 14.000000000000005, 17.000000000000007, 13.236103881771335, 8.33580943216683]
+
+Negative log likelihood score:1406.26653642
+
+Solution:['pyrG_121', 'pyrG_176', 'pyrG_178', 'pyrG_187', 'pyrG_199', 'pyrG_34', 'pyrG_40']
+Objective value: 52.0
+Proportions:[19.79017063302183, 24.49989799041111, 3.5000000000000013, 14.000000000000005, 17.000000000000007, 13.239760774920976, 7.970170601646093]
+
+Negative log likelihood score:1407.14995655
+
+Solution:['pyrG_121', 'pyrG_176', 'pyrG_178', 'pyrG_187', 'pyrG_199', 'pyrG_30', 'pyrG_34']
+Objective value: 52.0
+Proportions:[19.74871472145557, 24.499897990411103, 3.500000000000001, 14.000000000000004, 17.000000000000004, 6.987903248905066, 14.26348403922825]
+
+Negative log likelihood score:1409.39584689
+
+Negative log likelihood score list:[1406.2665364185941, 1407.1499565523288, 1409.3958468883643]
+The solution which has minimum negative log likelihood is ['pyrG_121', 'pyrG_176', 'pyrG_178', 'pyrG_187', 'pyrG_199', 'pyrG_34', 'pyrG_81'] and its score:1406.26653642
 ======================================== SIMULATION 26 ====================================================
 
-True variants are: ['pyrG_34', 'pyrG_12'] 
+True variants are: ['pyrG_175', 'pyrG_81'] 
 
-Predicted variants are: ['pyrG_12', 'pyrG_34'] 
+Predicted variants are: ['pyrG_175', 'pyrG_81'] 
 
-True proportions are: {'pyrG_34': 31.369890818572067, 'pyrG_12': 68.63010918142794} 
+True proportions are: {'pyrG_175': 31.369890818572067, 'pyrG_81': 68.63010918142794} 
 
-Predicted proportions are: {'pyrG_12': 68.587644461017774, 'pyrG_34': 31.412355538982229} 
+Predicted proportions are: {'pyrG_175': 31.313131313131315, 'pyrG_81': 68.68686868686869} 
 
+Number of optimal solutions: 2
+Solution:['pyrG_170', 'pyrG_175', 'pyrG_81']
+Objective value: 54.0
+Proportions:[12.395227525200987, 31.3131313131313, 56.29164116166771]
+
+Negative log likelihood score:1257.26977067
+
+Solution:['pyrG_175', 'pyrG_81']
+Objective value: 54.0
+Proportions:[31.313131313131315, 68.68686868686869]
+
+Negative log likelihood score:1218.32603477
+
+Negative log likelihood score list:[1257.2697706694526, 1218.3260347727801]
+The solution which has minimum negative log likelihood is ['pyrG_175', 'pyrG_81'] and its score:1218.32603477
 ======================================== SIMULATION 27 ====================================================
 
-True variants are: ['pyrG_40', 'pyrG_60', 'pyrG_190', 'pyrG_146', 'pyrG_59', 'pyrG_118'] 
+True variants are: ['pyrG_20', 'pyrG_108', 'pyrG_177', 'pyrG_43', 'pyrG_9', 'pyrG_95'] 
 
-Predicted variants are: ['pyrG_118', 'pyrG_146', 'pyrG_190', 'pyrG_40', 'pyrG_59', 'pyrG_60'] 
+Predicted variants are: ['pyrG_108', 'pyrG_177', 'pyrG_20', 'pyrG_43', 'pyrG_9', 'pyrG_95'] 
 
-True proportions are: {'pyrG_59': 16.49297698238368, 'pyrG_190': 15.030791119732623, 'pyrG_40': 25.067803486144633, 'pyrG_146': 22.15920841201204, 'pyrG_60': 12.55197754761449, 'pyrG_118': 8.697242452112535} 
+True proportions are: {'pyrG_177': 15.030791119732623, 'pyrG_43': 22.15920841201204, 'pyrG_20': 25.067803486144633, 'pyrG_108': 12.55197754761449, 'pyrG_95': 8.697242452112535, 'pyrG_9': 16.49297698238368} 
 
-Predicted proportions are: {'pyrG_59': 20.318463918714471, 'pyrG_190': 14.711264357128151, 'pyrG_40': 23.854360960715912, 'pyrG_60': 13.809480954313427, 'pyrG_146': 18.4680459707442, 'pyrG_118': 8.838383838383832} 
+Predicted proportions are: {'pyrG_177': 14.999948990002045, 'pyrG_43': 20.62789430852009, 'pyrG_20': 20.526610437501784, 'pyrG_108': 12.500051009997962, 'pyrG_95': 14.845495253978124, 'pyrG_9': 16.500000000000004} 
 
+Number of optimal solutions: 8
+Solution:['pyrG_108', 'pyrG_117', 'pyrG_166', 'pyrG_177', 'pyrG_43', 'pyrG_9']
+Objective value: 53.0
+Proportions:[12.500051009997954, 14.407185512199938, 16.959976525366898, 14.999948990002034, 24.63283796243319, 16.499999999999993]
+
+Negative log likelihood score:1346.51293143
+
+Solution:['pyrG_108', 'pyrG_166', 'pyrG_177', 'pyrG_24', 'pyrG_43', 'pyrG_9']
+Objective value: 53.0
+Proportions:[12.500051009997954, 17.36616331368178, 14.999948990002034, 13.828902554469492, 24.804934131848743, 16.499999999999993]
+
+Negative log likelihood score:1347.8084784
+
+Solution:['pyrG_108', 'pyrG_118', 'pyrG_166', 'pyrG_177', 'pyrG_43', 'pyrG_9']
+Objective value: 53.0
+Proportions:[12.500051009997955, 18.100652848883335, 15.113242857025186, 14.999948990002038, 22.78610429409149, 16.499999999999993]
+
+Negative log likelihood score:1338.68752715
+
+Solution:['pyrG_108', 'pyrG_177', 'pyrG_20', 'pyrG_43', 'pyrG_9', 'pyrG_95']
+Objective value: 53.0
+Proportions:[12.500051009997962, 14.999948990002045, 20.526610437501784, 20.62789430852009, 16.500000000000004, 14.845495253978124]
+
+Negative log likelihood score:1334.57467273
+
+Solution:['pyrG_108', 'pyrG_166', 'pyrG_177', 'pyrG_25', 'pyrG_43', 'pyrG_9']
+Objective value: 53.0
+Proportions:[12.50005100999795, 18.856687804535003, 14.999948990002029, 15.869944853460707, 21.27336734200433, 16.499999999999986]
+
+Negative log likelihood score:1342.97849527
+
+Solution:['pyrG_108', 'pyrG_166', 'pyrG_177', 'pyrG_26', 'pyrG_43', 'pyrG_9']
+Objective value: 53.0
+Proportions:[12.50005100999795, 17.414650887275442, 14.999948990002029, 16.72322113586281, 21.862127976861778, 16.499999999999986]
+
+Negative log likelihood score:1340.9168414
+
+Solution:['pyrG_108', 'pyrG_166', 'pyrG_177', 'pyrG_43', 'pyrG_9', 'pyrG_90']
+Objective value: 53.0
+Proportions:[12.500051009997954, 17.08309210325634, 14.999948990002034, 24.755953540322636, 16.499999999999993, 14.160954356421044]
+
+Negative log likelihood score:1347.03483527
+
+Solution:['pyrG_108', 'pyrG_116', 'pyrG_177', 'pyrG_20', 'pyrG_43', 'pyrG_9']
+Objective value: 53.0
+Proportions:[12.500051009997964, 13.691430348667337, 14.999948990002048, 21.221901070893963, 21.08666858043869, 16.500000000000007]
+
+Negative log likelihood score:1337.08958833
+
+Negative log likelihood score list:[1346.5129314303422, 1347.8084784015302, 1338.6875271510514, 1334.5746727348696, 1342.9784952709595, 1340.9168413955697, 1347.0348352736044, 1337.0895883285848]
+The solution which has minimum negative log likelihood is ['pyrG_108', 'pyrG_177', 'pyrG_20', 'pyrG_43', 'pyrG_9', 'pyrG_95'] and its score:1334.57467273
 ======================================== SIMULATION 28 ====================================================
 
-True variants are: ['pyrG_36', 'pyrG_24', 'pyrG_41', 'pyrG_62'] 
+True variants are: ['pyrG_20', 'pyrG_21', 'pyrG_175', 'pyrG_200'] 
 
-Predicted variants are: ['pyrG_24', 'pyrG_36', 'pyrG_41', 'pyrG_62'] 
+Predicted variants are: ['pyrG_175', 'pyrG_20', 'pyrG_200', 'pyrG_21'] 
 
-True proportions are: {'pyrG_62': 47.467768652129344, 'pyrG_41': 20.809163504775444, 'pyrG_24': 24.05147869618433, 'pyrG_36': 7.671589146910883} 
+True proportions are: {'pyrG_175': 20.809163504775444, 'pyrG_200': 47.467768652129344, 'pyrG_20': 7.671589146910883, 'pyrG_21': 24.05147869618433} 
 
-Predicted proportions are: {'pyrG_62': 47.088607594936704, 'pyrG_41': 21.938016413965759, 'pyrG_24': 22.872110168312734, 'pyrG_36': 8.1012658227848107} 
+Predicted proportions are: {'pyrG_175': 17.182842750828986, 'pyrG_200': 47.23618090452256, 'pyrG_20': 16.31819812329663, 'pyrG_21': 19.262778221351812} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_175', 'pyrG_20', 'pyrG_200', 'pyrG_21']
+Objective value: 61.0
+Proportions:[17.182842750828986, 16.31819812329663, 47.23618090452256, 19.262778221351812]
+
+Negative log likelihood score:1280.91891907
+
+Negative log likelihood score list:[1280.9189190662837]
+The solution which has minimum negative log likelihood is ['pyrG_175', 'pyrG_20', 'pyrG_200', 'pyrG_21'] and its score:1280.91891907
 ======================================== SIMULATION 29 ====================================================
 
-True variants are: ['pyrG_102', 'pyrG_161', 'pyrG_75', 'pyrG_193', 'pyrG_3', 'pyrG_150'] 
+True variants are: ['pyrG_23', 'pyrG_102', 'pyrG_187', 'pyrG_72', 'pyrG_45', 'pyrG_94'] 
 
-Predicted variants are: ['pyrG_102', 'pyrG_150', 'pyrG_161', 'pyrG_193', 'pyrG_3', 'pyrG_75'] 
+Predicted variants are: ['pyrG_102', 'pyrG_187', 'pyrG_23', 'pyrG_45', 'pyrG_72', 'pyrG_94'] 
 
-True proportions are: {'pyrG_193': 13.4479569074538, 'pyrG_161': 11.402309568698621, 'pyrG_75': 20.651870115878594, 'pyrG_3': 25.0849957332001, 'pyrG_150': 12.021179305064585, 'pyrG_102': 17.391688369704294} 
+True proportions are: {'pyrG_187': 20.651870115878594, 'pyrG_23': 17.391688369704294, 'pyrG_45': 25.0849957332001, 'pyrG_72': 13.4479569074538, 'pyrG_102': 11.402309568698621, 'pyrG_94': 12.021179305064585} 
 
-Predicted proportions are: {'pyrG_193': 13.901681217045775, 'pyrG_161': 11.175910821774625, 'pyrG_75': 20.240649976602125, 'pyrG_3': 24.382296951966651, 'pyrG_150': 12.121212121212119, 'pyrG_102': 18.178248911398704} 
+Predicted proportions are: {'pyrG_187': 20.500000000000004, 'pyrG_23': 21.002525504998985, 'pyrG_45': 21.49747449500102, 'pyrG_72': 13.520051009997957, 'pyrG_102': 11.489948990002045, 'pyrG_94': 11.990000000000002} 
 
+Number of optimal solutions: 21
+Solution:['pyrG_102', 'pyrG_187', 'pyrG_23', 'pyrG_45', 'pyrG_72', 'pyrG_94']
+Objective value: 55.0
+Proportions:[11.489948990002045, 20.500000000000004, 21.002525504998985, 21.49747449500102, 13.520051009997957, 11.990000000000002]
+
+Negative log likelihood score:1365.55381476
+
+Solution:['pyrG_102', 'pyrG_175', 'pyrG_187', 'pyrG_23', 'pyrG_35', 'pyrG_72']
+Objective value: 55.0
+Proportions:[11.489948990002043, 21.497474495001015, 20.5, 21.00252550499898, 11.73747449500102, 13.772576514996937]
+
+Negative log likelihood score:1366.16028027
+
+Solution:['pyrG_102', 'pyrG_133', 'pyrG_150', 'pyrG_187', 'pyrG_23', 'pyrG_35']
+Objective value: 55.0
+Proportions:[11.489948990002045, 13.772576514996938, 15.12747449500102, 20.500000000000004, 27.372525504998972, 11.737474495001022]
+
+Negative log likelihood score:1381.58648076
+
+Solution:['pyrG_102', 'pyrG_133', 'pyrG_154', 'pyrG_187', 'pyrG_23', 'pyrG_35']
+Objective value: 55.0
+Proportions:[11.489948990002045, 13.772576514996938, 17.45497449500102, 20.500000000000004, 25.045025504998975, 11.737474495001022]
+
+Negative log likelihood score:1375.94985881
+
+Solution:['pyrG_102', 'pyrG_150', 'pyrG_187', 'pyrG_23', 'pyrG_35', 'pyrG_72']
+Objective value: 55.0
+Proportions:[11.489948990002047, 15.127474495001021, 20.500000000000007, 27.372525504998976, 11.737474495001024, 13.77257651499694]
+
+Negative log likelihood score:1381.58648076
+
+Solution:['pyrG_102', 'pyrG_154', 'pyrG_187', 'pyrG_23', 'pyrG_35', 'pyrG_72']
+Objective value: 55.0
+Proportions:[11.489948990002043, 17.454974495001018, 20.5, 25.04502550499897, 11.73747449500102, 13.772576514996937]
+
+Negative log likelihood score:1375.94985881
+
+Solution:['pyrG_102', 'pyrG_187', 'pyrG_191', 'pyrG_23', 'pyrG_35', 'pyrG_72']
+Objective value: 55.0
+Proportions:[11.489948990002047, 20.500000000000007, 15.739974495001018, 26.760025504998975, 11.737474495001024, 13.77257651499694]
+
+Negative log likelihood score:1380.10281541
+
+Solution:['pyrG_102', 'pyrG_133', 'pyrG_187', 'pyrG_191', 'pyrG_23', 'pyrG_35']
+Objective value: 55.0
+Proportions:[11.489948990002045, 13.772576514996938, 20.500000000000004, 15.739974495001016, 26.76002550499897, 11.737474495001022]
+
+Negative log likelihood score:1380.10281541
+
+Solution:['pyrG_102', 'pyrG_133', 'pyrG_187', 'pyrG_23', 'pyrG_35', 'pyrG_44']
+Objective value: 55.0
+Proportions:[11.489948990002043, 13.772576514996937, 20.5, 21.00252550499898, 11.73747449500102, 21.497474495001015]
+
+Negative log likelihood score:1366.16028027
+
+Solution:['pyrG_102', 'pyrG_187', 'pyrG_23', 'pyrG_35', 'pyrG_44', 'pyrG_72']
+Objective value: 55.0
+Proportions:[11.489948990002043, 20.5, 21.00252550499898, 11.73747449500102, 21.497474495001015, 13.772576514996937]
+
+Negative log likelihood score:1366.16028027
+
+Solution:['pyrG_102', 'pyrG_133', 'pyrG_187', 'pyrG_191', 'pyrG_23', 'pyrG_91']
+Objective value: 55.0
+Proportions:[11.489948990002047, 13.525051009997958, 20.500000000000007, 15.739974495001018, 26.760025504998975, 11.985000000000005]
+
+Negative log likelihood score:1379.50507858
+
+Solution:['pyrG_102', 'pyrG_150', 'pyrG_187', 'pyrG_23', 'pyrG_72', 'pyrG_91']
+Objective value: 55.0
+Proportions:[11.489948990002047, 15.127474495001021, 20.500000000000007, 27.372525504998976, 13.525051009997958, 11.985000000000005]
+
+Negative log likelihood score:1380.98874393
+
+Solution:['pyrG_102', 'pyrG_187', 'pyrG_23', 'pyrG_44', 'pyrG_72', 'pyrG_91']
+Objective value: 55.0
+Proportions:[11.489948990002045, 20.500000000000004, 21.002525504998985, 21.49747449500102, 13.525051009997956, 11.985000000000003]
+
+Negative log likelihood score:1365.56254344
+
+Solution:['pyrG_102', 'pyrG_175', 'pyrG_187', 'pyrG_23', 'pyrG_72', 'pyrG_91']
+Objective value: 55.0
+Proportions:[11.489948990002045, 21.49747449500102, 20.500000000000004, 21.002525504998985, 13.525051009997956, 11.985000000000003]
+
+Negative log likelihood score:1365.56254344
+
+Solution:['pyrG_102', 'pyrG_187', 'pyrG_191', 'pyrG_23', 'pyrG_72', 'pyrG_91']
+Objective value: 55.0
+Proportions:[11.489948990002047, 20.500000000000007, 15.739974495001018, 26.760025504998975, 13.525051009997958, 11.985000000000005]
+
+Negative log likelihood score:1379.50507858
+
+Solution:['pyrG_102', 'pyrG_187', 'pyrG_23', 'pyrG_35', 'pyrG_45', 'pyrG_72']
+Objective value: 55.0
+Proportions:[11.489948990002043, 20.5, 21.00252550499898, 11.73747449500102, 21.497474495001015, 13.772576514996937]
+
+Negative log likelihood score:1366.16028027
+
+Solution:['pyrG_102', 'pyrG_133', 'pyrG_154', 'pyrG_187', 'pyrG_23', 'pyrG_91']
+Objective value: 55.0
+Proportions:[11.489948990002045, 13.525051009997956, 17.45497449500102, 20.500000000000004, 25.045025504998975, 11.985000000000003]
+
+Negative log likelihood score:1375.35212198
+
+Solution:['pyrG_102', 'pyrG_154', 'pyrG_187', 'pyrG_23', 'pyrG_72', 'pyrG_91']
+Objective value: 55.0
+Proportions:[11.489948990002045, 17.45497449500102, 20.500000000000004, 25.045025504998975, 13.525051009997956, 11.985000000000003]
+
+Negative log likelihood score:1375.35212198
+
+Solution:['pyrG_102', 'pyrG_187', 'pyrG_23', 'pyrG_45', 'pyrG_72', 'pyrG_91']
+Objective value: 55.0
+Proportions:[11.489948990002045, 20.500000000000004, 21.002525504998985, 21.49747449500102, 13.525051009997956, 11.985000000000003]
+
+Negative log likelihood score:1365.56254344
+
+Solution:['pyrG_102', 'pyrG_133', 'pyrG_187', 'pyrG_23', 'pyrG_44', 'pyrG_91']
+Objective value: 55.0
+Proportions:[11.489948990002045, 13.525051009997956, 20.500000000000004, 21.002525504998985, 21.49747449500102, 11.985000000000003]
+
+Negative log likelihood score:1365.56254344
+
+Solution:['pyrG_102', 'pyrG_133', 'pyrG_175', 'pyrG_187', 'pyrG_23', 'pyrG_35']
+Objective value: 55.0
+Proportions:[11.489948990002043, 13.772576514996937, 21.497474495001015, 20.5, 21.00252550499898, 11.73747449500102]
+
+Negative log likelihood score:1366.16028027
+
+Negative log likelihood score list:[1365.5538147599514, 1366.1602802668851, 1381.5864807569658, 1375.9498588101333, 1381.5864807569658, 1375.9498588101333, 1380.1028154065489, 1380.1028154065489, 1366.1602802668851, 1366.1602802668851, 1379.5050785794408, 1380.9887439298577, 1365.5625434397771, 1365.5625434397771, 1379.5050785794408, 1366.1602802668851, 1375.3521219830252, 1375.3521219830252, 1365.5625434397771, 1365.5625434397771, 1366.1602802668851]
+The solution which has minimum negative log likelihood is ['pyrG_102', 'pyrG_187', 'pyrG_23', 'pyrG_45', 'pyrG_72', 'pyrG_94'] and its score:1365.55381476
 ======================================== SIMULATION 30 ====================================================
 
-True variants are: ['pyrG_60', 'pyrG_171', 'pyrG_104', 'pyrG_37', 'pyrG_187'] 
+True variants are: ['pyrG_197', 'pyrG_75', 'pyrG_12', 'pyrG_115', 'pyrG_57'] 
 
-Predicted variants are: ['pyrG_104', 'pyrG_108', 'pyrG_171', 'pyrG_187', 'pyrG_60'] 
+Predicted variants are: ['pyrG_115', 'pyrG_12', 'pyrG_197', 'pyrG_57', 'pyrG_75'] 
 
-True proportions are: {'pyrG_104': 20.142339556875186, 'pyrG_60': 21.699916237704908, 'pyrG_171': 20.154091537261078, 'pyrG_37': 17.07166605300989, 'pyrG_187': 20.931986615148933} 
+True proportions are: {'pyrG_75': 20.154091537261078, 'pyrG_57': 20.931986615148933, 'pyrG_197': 21.699916237704908, 'pyrG_12': 20.142339556875186, 'pyrG_115': 17.07166605300989} 
 
-Predicted proportions are: {'pyrG_108': 18.978192676596013, 'pyrG_171': 18.862456881340194, 'pyrG_60': 20.893527657253667, 'pyrG_104': 19.999999999999993, 'pyrG_187': 21.265822784810123} 
+Predicted proportions are: {'pyrG_75': 19.977355643966057, 'pyrG_57': 21.105527638190956, 'pyrG_197': 21.608040201005025, 'pyrG_12': 20.095443843000567, 'pyrG_115': 17.2136326738374} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_115', 'pyrG_12', 'pyrG_197', 'pyrG_57', 'pyrG_75']
+Objective value: 56.0
+Proportions:[17.2136326738374, 20.095443843000567, 21.608040201005025, 21.105527638190956, 19.977355643966057]
+
+Negative log likelihood score:1379.33499901
+
+Negative log likelihood score list:[1379.3349990092943]
+The solution which has minimum negative log likelihood is ['pyrG_115', 'pyrG_12', 'pyrG_197', 'pyrG_57', 'pyrG_75'] and its score:1379.33499901
 ======================================== SIMULATION 31 ====================================================
 
-True variants are: ['pyrG_16', 'pyrG_76', 'pyrG_149'] 
+True variants are: ['pyrG_171', 'pyrG_195', 'pyrG_131'] 
 
-Predicted variants are: ['pyrG_115', 'pyrG_149', 'pyrG_16', 'pyrG_30', 'pyrG_76'] 
+Predicted variants are: ['pyrG_131', 'pyrG_171', 'pyrG_195'] 
 
-True proportions are: {'pyrG_16': 43.92489157374517, 'pyrG_76': 28.73248279751507, 'pyrG_149': 27.342625628739754} 
+True proportions are: {'pyrG_131': 27.342625628739754, 'pyrG_171': 43.92489157374517, 'pyrG_195': 28.73248279751507} 
 
-Predicted proportions are: {'pyrG_16': 25.967737137389435, 'pyrG_76': 24.722126099101676, 'pyrG_149': 16.921388988821843, 'pyrG_115': 17.368458635175308, 'pyrG_30': 15.02028913951173} 
+Predicted proportions are: {'pyrG_131': 28.341347055538083, 'pyrG_171': 42.8733766969841, 'pyrG_195': 28.785276247477825} 
 
+Number of optimal solutions: 2
+Solution:['pyrG_131', 'pyrG_171', 'pyrG_195']
+Objective value: 68.0
+Proportions:[28.341347055538083, 42.8733766969841, 28.785276247477825]
+
+Negative log likelihood score:1298.66567935
+
+Solution:['pyrG_131', 'pyrG_171', 'pyrG_195', 'pyrG_36']
+Objective value: 68.0
+Proportions:[26.801773083840093, 34.85724179910979, 28.785224732739543, 9.555760384310586]
+
+Negative log likelihood score:1324.68877936
+
+Negative log likelihood score list:[1298.6656793501784, 1324.6887793610563]
+The solution which has minimum negative log likelihood is ['pyrG_131', 'pyrG_171', 'pyrG_195'] and its score:1298.66567935
 ======================================== SIMULATION 32 ====================================================
 
-True variants are: ['pyrG_113', 'pyrG_59', 'pyrG_102', 'pyrG_94'] 
+True variants are: ['pyrG_78', 'pyrG_121', 'pyrG_190', 'pyrG_202'] 
 
-Predicted variants are: ['pyrG_102', 'pyrG_113', 'pyrG_59', 'pyrG_94'] 
+Predicted variants are: ['pyrG_121', 'pyrG_190', 'pyrG_202', 'pyrG_78'] 
 
-True proportions are: {'pyrG_113': 26.731605015670517, 'pyrG_59': 36.68768054286684, 'pyrG_94': 18.77195353734593, 'pyrG_102': 17.808760904116703} 
+True proportions are: {'pyrG_202': 18.77195353734593, 'pyrG_190': 17.808760904116703, 'pyrG_78': 26.731605015670517, 'pyrG_121': 36.68768054286684} 
 
-Predicted proportions are: {'pyrG_113': 26.35414821863283, 'pyrG_102': 18.627590142268737, 'pyrG_94': 18.29224730100945, 'pyrG_59': 36.726014338088973} 
+Predicted proportions are: {'pyrG_202': 18.90855176142443, 'pyrG_190': 18.253651746199107, 'pyrG_78': 26.28957314212265, 'pyrG_121': 36.54822335025381} 
 
+Number of optimal solutions: 20
+Solution:['pyrG_121', 'pyrG_190', 'pyrG_202', 'pyrG_78', 'pyrG_81']
+Objective value: 37.0
+Proportions:[32.13661667498655, 18.25359944158346, 18.90588423392406, 26.289573142122666, 4.414326507383262]
+
+Negative log likelihood score:1319.48404661
+
+Solution:['pyrG_108', 'pyrG_121', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[5.218454847502403, 31.332488334867417, 18.25359944158346, 18.905884233924056, 26.289573142122663]
+
+Negative log likelihood score:1317.60456063
+
+Solution:['pyrG_109', 'pyrG_121', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[3.9169681520491686, 32.63397503032065, 18.253651228383422, 18.905832447124098, 26.289573142122666]
+
+Negative log likelihood score:1320.67061962
+
+Solution:['pyrG_110', 'pyrG_121', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[4.061431055610752, 32.48951212675906, 18.253651228383426, 18.9058324471241, 26.28957314212267]
+
+Negative log likelihood score:1320.33939123
+
+Solution:['pyrG_114', 'pyrG_121', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[5.175696040380264, 31.375247141989558, 18.253651228383422, 18.905832447124098, 26.289573142122666]
+
+Negative log likelihood score:1317.67811587
+
+Solution:['pyrG_121', 'pyrG_123', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[34.13345665763381, 2.4174344922350968, 18.253651484649893, 18.90588422335855, 26.289573142122663]
+
+Negative log likelihood score:1324.15981446
+
+Solution:['pyrG_121', 'pyrG_122', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[32.04244911682789, 4.505878324841502, 18.253651228383422, 18.908448187824522, 26.289573142122666]
+
+Negative log likelihood score:1319.24378566
+
+Solution:['pyrG_121', 'pyrG_124', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[31.397908533066357, 5.150418908603036, 18.253651228383422, 18.908448187824522, 26.289573142122666]
+
+Negative log likelihood score:1317.72153869
+
+Solution:['pyrG_121', 'pyrG_127', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[35.14889223122958, 1.4019989186393198, 18.25365148464989, 18.905884223358548, 26.28957314212266]
+
+Negative log likelihood score:1326.56839636
+
+Solution:['pyrG_121', 'pyrG_128', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[34.40560042118153, 2.1453427611882945, 18.25365122838342, 18.905832447124094, 26.289573142122663]
+
+Negative log likelihood score:1324.87638293
+
+Solution:['pyrG_121', 'pyrG_141', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[31.134052710520585, 5.41689047184924, 18.253651228383422, 18.905832447124098, 26.289573142122666]
+
+Negative log likelihood score:1317.09774825
+
+Solution:['pyrG_121', 'pyrG_142', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[33.83406835013418, 2.714362654569633, 18.25365122838342, 18.908344624790104, 26.289573142122663]
+
+Negative log likelihood score:1323.48365232
+
+Solution:['pyrG_121', 'pyrG_149', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[31.96687663436498, 4.584066548004832, 18.25359944158346, 18.905884233924056, 26.289573142122663]
+
+Negative log likelihood score:1319.10948571
+
+Solution:['pyrG_121', 'pyrG_171', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[28.347716761263364, 8.200610669840541, 18.253651228383415, 18.90844819839002, 26.28957314212266]
+
+Negative log likelihood score:1310.48912708
+
+Solution:['pyrG_121', 'pyrG_172', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[32.636487207986654, 3.9144559743831584, 18.253651228383422, 18.905832447124098, 26.289573142122666]
+
+Negative log likelihood score:1320.67494011
+
+Solution:['pyrG_121', 'pyrG_190', 'pyrG_202', 'pyrG_27', 'pyrG_78']
+Objective value: 37.0
+Proportions:[34.13089269316783, 18.25365148464989, 18.905884223358548, 2.419998456701066, 26.28957314212266]
+
+Negative log likelihood score:1324.15540625
+
+Solution:['pyrG_121', 'pyrG_190', 'pyrG_202', 'pyrG_29', 'pyrG_78']
+Objective value: 37.0
+Proportions:[30.626542070922536, 18.253651228383422, 18.908448198390026, 5.921785360181363, 26.289573142122666]
+
+Negative log likelihood score:1315.89825895
+
+Solution:['pyrG_121', 'pyrG_190', 'pyrG_202', 'pyrG_31', 'pyrG_78']
+Objective value: 37.0
+Proportions:[31.22570809629599, 18.25365122838342, 18.908448198390023, 5.322619334807903, 26.289573142122663]
+
+Negative log likelihood score:1317.34259024
+
+Solution:['pyrG_121', 'pyrG_190', 'pyrG_202', 'pyrG_33', 'pyrG_78']
+Objective value: 37.0
+Proportions:[34.25782213986731, 18.253651484649893, 18.90588422335855, 2.2930690100015947, 26.289573142122663]
+
+Negative log likelihood score:1324.45647899
+
+Solution:['pyrG_121', 'pyrG_190', 'pyrG_202', 'pyrG_78']
+Objective value: 37.0
+Proportions:[36.54822335025381, 18.253651746199107, 18.90855176142443, 26.28957314212265]
+
+Negative log likelihood score:1293.02837001
+
+Negative log likelihood score list:[1319.4840466118044, 1317.6045606284365, 1320.6706196226901, 1320.3393912253393, 1317.6781158655474, 1324.159814460598, 1319.2437856569168, 1317.7215386921973, 1326.5683963642321, 1324.8763829301793, 1317.097748250322, 1323.4836523201805, 1319.1094857056294, 1310.4891270825801, 1320.6749401058205, 1324.1554062549521, 1315.8982589533875, 1317.3425902428601, 1324.4564789929063, 1293.0283700091118]
+The solution which has minimum negative log likelihood is ['pyrG_121', 'pyrG_190', 'pyrG_202', 'pyrG_78'] and its score:1293.02837001
 ======================================== SIMULATION 33 ====================================================
 
-True variants are: ['pyrG_89', 'pyrG_124', 'pyrG_119'] 
+True variants are: ['pyrG_9', 'pyrG_19', 'pyrG_15'] 
 
-Predicted variants are: ['pyrG_119', 'pyrG_124', 'pyrG_89'] 
+Predicted variants are: ['pyrG_15', 'pyrG_19', 'pyrG_9'] 
 
-True proportions are: {'pyrG_124': 30.69998571662522, 'pyrG_119': 41.97182686906096, 'pyrG_89': 27.32818741431381} 
+True proportions are: {'pyrG_15': 41.97182686906096, 'pyrG_19': 30.69998571662522, 'pyrG_9': 27.32818741431381} 
 
-Predicted proportions are: {'pyrG_119': 42.239185750636125, 'pyrG_124': 29.644884377708873, 'pyrG_89': 28.115929871655009} 
+Predicted proportions are: {'pyrG_15': 38.97711815152128, 'pyrG_9': 27.272727272727312, 'pyrG_19': 33.75015457575141} 
 
+Number of optimal solutions: 4
+Solution:['pyrG_15', 'pyrG_19', 'pyrG_9']
+Objective value: 27.0
+Proportions:[38.97711815152128, 33.75015457575141, 27.272727272727312]
+
+Negative log likelihood score:1187.48713893
+
+Solution:['pyrG_14', 'pyrG_19', 'pyrG_9']
+Objective value: 27.0
+Proportions:[38.97711815152128, 33.75015457575141, 27.272727272727312]
+
+Negative log likelihood score:1187.48713893
+
+Solution:['pyrG_17', 'pyrG_19', 'pyrG_9']
+Objective value: 27.0
+Proportions:[29.696815121218375, 43.030457606054384, 27.27272727272725]
+
+Negative log likelihood score:1209.73692578
+
+Solution:['pyrG_13', 'pyrG_19', 'pyrG_9']
+Objective value: 27.0
+Proportions:[36.99732017172332, 35.729952555549374, 27.2727272727273]
+
+Negative log likelihood score:1192.23377846
+
+Negative log likelihood score list:[1187.487138926756, 1187.487138926756, 1209.7369257813525, 1192.2337784618508]
+The solution which has minimum negative log likelihood is ['pyrG_15', 'pyrG_19', 'pyrG_9'] and its score:1187.48713893
 ======================================== SIMULATION 34 ====================================================
 
-True variants are: ['pyrG_103', 'pyrG_31', 'pyrG_53', 'pyrG_146'] 
+True variants are: ['pyrG_86', 'pyrG_171', 'pyrG_198', 'pyrG_157'] 
 
-Predicted variants are: ['pyrG_103', 'pyrG_155', 'pyrG_31', 'pyrG_53'] 
+Predicted variants are: ['pyrG_157', 'pyrG_171', 'pyrG_198', 'pyrG_86'] 
 
-True proportions are: {'pyrG_31': 37.19917026724358, 'pyrG_53': 3.4289981431487453, 'pyrG_146': 34.17022166417124, 'pyrG_103': 25.201609925436436} 
+True proportions are: {'pyrG_157': 34.17022166417124, 'pyrG_86': 25.201609925436436, 'pyrG_198': 3.4289981431487453, 'pyrG_171': 37.19917026724358} 
 
-Predicted proportions are: {'pyrG_31': 37.447400497499942, 'pyrG_53': 3.5443037974683547, 'pyrG_155': 33.691840008829175, 'pyrG_103': 25.316455696202532} 
+Predicted proportions are: {'pyrG_157': 34.17085427135678, 'pyrG_86': 25.12562814070352, 'pyrG_198': 3.5175879396984926, 'pyrG_171': 37.185929648241206} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_157', 'pyrG_171', 'pyrG_198', 'pyrG_86']
+Objective value: 67.0
+Proportions:[34.17085427135678, 37.185929648241206, 3.5175879396984926, 25.12562814070352]
+
+Negative log likelihood score:1365.72375176
+
+Negative log likelihood score list:[1365.7237517615515]
+The solution which has minimum negative log likelihood is ['pyrG_157', 'pyrG_171', 'pyrG_198', 'pyrG_86'] and its score:1365.72375176
 ======================================== SIMULATION 35 ====================================================
 
-True variants are: ['pyrG_45', 'pyrG_55'] 
+True variants are: ['pyrG_186', 'pyrG_12'] 
 
-Predicted variants are: ['pyrG_45', 'pyrG_55'] 
+Predicted variants are: ['pyrG_12', 'pyrG_186'] 
 
-True proportions are: {'pyrG_45': 29.551238814314313, 'pyrG_55': 70.44876118568568} 
+True proportions are: {'pyrG_12': 70.44876118568568, 'pyrG_186': 29.551238814314313} 
 
-Predicted proportions are: {'pyrG_45': 29.770992366412212, 'pyrG_55': 70.229007633587784} 
+Predicted proportions are: {'pyrG_12': 70.20202020202021, 'pyrG_186': 29.7979797979798} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_12', 'pyrG_186']
+Objective value: 38.0
+Proportions:[70.20202020202021, 29.7979797979798]
+
+Negative log likelihood score:1186.41795662
+
+Negative log likelihood score list:[1186.4179566166524]
+The solution which has minimum negative log likelihood is ['pyrG_12', 'pyrG_186'] and its score:1186.41795662
 ======================================== SIMULATION 36 ====================================================
 
-True variants are: ['pyrG_160', 'pyrG_107', 'pyrG_103', 'pyrG_24', 'pyrG_125'] 
+True variants are: ['pyrG_48', 'pyrG_142', 'pyrG_62', 'pyrG_161', 'pyrG_126'] 
 
-Predicted variants are: ['pyrG_103', 'pyrG_107', 'pyrG_125', 'pyrG_160', 'pyrG_24'] 
+Predicted variants are: ['pyrG_126', 'pyrG_142', 'pyrG_161', 'pyrG_48', 'pyrG_62'] 
 
-True proportions are: {'pyrG_125': 28.98863167662926, 'pyrG_160': 13.001126134217552, 'pyrG_103': 14.857009692558169, 'pyrG_24': 29.801177860688, 'pyrG_107': 13.35205463590703} 
+True proportions are: {'pyrG_48': 13.001126134217552, 'pyrG_62': 14.857009692558169, 'pyrG_161': 29.801177860688, 'pyrG_126': 28.98863167662926, 'pyrG_142': 13.35205463590703} 
 
-Predicted proportions are: {'pyrG_24': 22.748362748362691, 'pyrG_160': 13.619769119769121, 'pyrG_103': 14.663059163059167, 'pyrG_125': 28.787878787878789, 'pyrG_107': 20.180930180930233} 
+Predicted proportions are: {'pyrG_126': 24.919366080255354, 'pyrG_48': 16.202988030576414, 'pyrG_161': 29.481646221109415, 'pyrG_142': 14.395999668058826, 'pyrG_62': 15.000000000000004} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_126', 'pyrG_142', 'pyrG_161', 'pyrG_48', 'pyrG_62']
+Objective value: 29.0
+Proportions:[24.919366080255354, 14.395999668058826, 29.481646221109415, 16.202988030576414, 15.000000000000004]
+
+Negative log likelihood score:1283.98793932
+
+Negative log likelihood score list:[1283.9879393238452]
+The solution which has minimum negative log likelihood is ['pyrG_126', 'pyrG_142', 'pyrG_161', 'pyrG_48', 'pyrG_62'] and its score:1283.98793932
 ======================================== SIMULATION 37 ====================================================
 
-True variants are: ['pyrG_133', 'pyrG_28', 'pyrG_151', 'pyrG_60', 'pyrG_27'] 
+True variants are: ['pyrG_174', 'pyrG_60', 'pyrG_100', 'pyrG_103', 'pyrG_129'] 
 
-Predicted variants are: ['pyrG_123', 'pyrG_151', 'pyrG_28', 'pyrG_60', 'pyrG_72', 'pyrG_82'] 
+Predicted variants are: ['pyrG_100', 'pyrG_103', 'pyrG_129', 'pyrG_174', 'pyrG_60'] 
 
-True proportions are: {'pyrG_27': 10.150461597164071, 'pyrG_133': 21.298060776473303, 'pyrG_60': 25.98011865128964, 'pyrG_151': 24.8334887275662, 'pyrG_28': 17.73787024750678} 
+True proportions are: {'pyrG_100': 24.8334887275662, 'pyrG_174': 21.298060776473303, 'pyrG_60': 17.73787024750678, 'pyrG_103': 25.98011865128964, 'pyrG_129': 10.150461597164071} 
 
-Predicted proportions are: {'pyrG_28': 17.026544743111497, 'pyrG_60': 19.640044301508762, 'pyrG_151': 24.681933842239186, 'pyrG_72': 20.767894053829853, 'pyrG_123': 11.138818370219154, 'pyrG_82': 6.7447646890915633} 
+Predicted proportions are: {'pyrG_100': 25.002551015150488, 'pyrG_174': 16.593002693718784, 'pyrG_60': 17.3198733662515, 'pyrG_103': 26.00754999495049, 'pyrG_129': 15.077022929928718} 
 
+Number of optimal solutions: 2
+Solution:['pyrG_100', 'pyrG_103', 'pyrG_129', 'pyrG_174', 'pyrG_60']
+Objective value: 56.0
+Proportions:[25.002551015150488, 26.00754999495049, 15.077022929928718, 16.593002693718784, 17.3198733662515]
+
+Negative log likelihood score:1292.13735769
+
+Solution:['pyrG_100', 'pyrG_103', 'pyrG_129', 'pyrG_156', 'pyrG_60']
+Objective value: 56.0
+Proportions:[25.00255101515051, 26.007549994950512, 21.534453781738097, 9.802254028308877, 17.653191179852]
+
+Negative log likelihood score:1308.21375935
+
+Negative log likelihood score list:[1292.1373576869546, 1308.2137593475954]
+The solution which has minimum negative log likelihood is ['pyrG_100', 'pyrG_103', 'pyrG_129', 'pyrG_174', 'pyrG_60'] and its score:1292.13735769
 ======================================== SIMULATION 38 ====================================================
 
-True variants are: ['pyrG_19', 'pyrG_53', 'pyrG_202', 'pyrG_175', 'pyrG_73'] 
+True variants are: ['pyrG_70', 'pyrG_138', 'pyrG_164', 'pyrG_17', 'pyrG_183'] 
 
-Predicted variants are: ['pyrG_175', 'pyrG_19', 'pyrG_201', 'pyrG_53', 'pyrG_73'] 
+Predicted variants are: ['pyrG_138', 'pyrG_164', 'pyrG_17', 'pyrG_183', 'pyrG_70'] 
 
-True proportions are: {'pyrG_53': 7.431617613023697, 'pyrG_202': 0.5314588953903085, 'pyrG_73': 23.215273661407863, 'pyrG_175': 26.701328309627137, 'pyrG_19': 42.12032152055101} 
+True proportions are: {'pyrG_17': 26.701328309627137, 'pyrG_138': 7.431617613023697, 'pyrG_183': 23.215273661407863, 'pyrG_70': 42.12032152055101, 'pyrG_164': 0.5314588953903085} 
 
-Predicted proportions are: {'pyrG_175': 17.552037835582148, 'pyrG_53': 16.625177354291274, 'pyrG_201': 1.0126582278481013, 'pyrG_73': 23.372849071492851, 'pyrG_19': 41.437277510785634} 
+Predicted proportions are: {'pyrG_17': 26.507717120595846, 'pyrG_138': 5.886883407037225, 'pyrG_183': 23.115577889447238, 'pyrG_70': 41.83399142211773, 'pyrG_164': 2.6558301608019694} 
 
+Number of optimal solutions: 2
+Solution:['pyrG_113', 'pyrG_138', 'pyrG_17', 'pyrG_183', 'pyrG_70']
+Objective value: 48.0
+Proportions:[2.6508563015034365, 5.89185726633576, 26.507717120595846, 23.115577889447238, 41.83399142211773]
+
+Negative log likelihood score:1358.91926222
+
+Solution:['pyrG_138', 'pyrG_164', 'pyrG_17', 'pyrG_183', 'pyrG_70']
+Objective value: 48.0
+Proportions:[5.886883407037225, 2.6558301608019694, 26.507717120595846, 23.115577889447238, 41.83399142211773]
+
+Negative log likelihood score:1358.91062126
+
+Negative log likelihood score list:[1358.9192622230632, 1358.9106212568026]
+The solution which has minimum negative log likelihood is ['pyrG_138', 'pyrG_164', 'pyrG_17', 'pyrG_183', 'pyrG_70'] and its score:1358.91062126
 ======================================== SIMULATION 39 ====================================================
 
-True variants are: ['pyrG_112', 'pyrG_128', 'pyrG_64', 'pyrG_102'] 
+True variants are: ['pyrG_145', 'pyrG_106', 'pyrG_111', 'pyrG_166'] 
 
-Predicted variants are: ['pyrG_102', 'pyrG_112', 'pyrG_128', 'pyrG_145', 'pyrG_64'] 
+Predicted variants are: ['pyrG_106', 'pyrG_111', 'pyrG_145', 'pyrG_166'] 
 
-True proportions are: {'pyrG_112': 30.411697524040765, 'pyrG_102': 15.4417808595263, 'pyrG_64': 32.289589431782936, 'pyrG_128': 21.85693218464998} 
+True proportions are: {'pyrG_145': 30.411697524040765, 'pyrG_111': 32.289589431782936, 'pyrG_166': 15.4417808595263, 'pyrG_106': 21.85693218464998} 
 
-Predicted proportions are: {'pyrG_112': 30.37974683544304, 'pyrG_102': 15.69620253164557, 'pyrG_64': 31.645569620253163, 'pyrG_128': 16.584053041539466, 'pyrG_145': 5.6944279711187615} 
+Predicted proportions are: {'pyrG_145': 30.39947185427235, 'pyrG_111': 31.919700522609002, 'pyrG_166': 15.577889447236181, 'pyrG_106': 22.10293817588247} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_106', 'pyrG_111', 'pyrG_145', 'pyrG_166']
+Objective value: 45.0
+Proportions:[22.10293817588247, 31.919700522609002, 30.39947185427235, 15.577889447236181]
+
+Negative log likelihood score:1310.04669229
+
+Negative log likelihood score list:[1310.0466922870635]
+The solution which has minimum negative log likelihood is ['pyrG_106', 'pyrG_111', 'pyrG_145', 'pyrG_166'] and its score:1310.04669229
 ======================================== SIMULATION 40 ====================================================
 
-True variants are: ['pyrG_38', 'pyrG_133'] 
+True variants are: ['pyrG_39', 'pyrG_84'] 
 
-Predicted variants are: ['pyrG_133', 'pyrG_38'] 
+Predicted variants are: ['pyrG_39', 'pyrG_84'] 
 
-True proportions are: {'pyrG_38': 32.53462343356601, 'pyrG_133': 67.46537656643399} 
+True proportions are: {'pyrG_39': 32.53462343356601, 'pyrG_84': 67.46537656643399} 
 
-Predicted proportions are: {'pyrG_38': 32.569974554707379, 'pyrG_133': 67.430025445292628} 
+Predicted proportions are: {'pyrG_39': 44.308080808080746, 'pyrG_84': 55.69191919191926} 
 
+Number of optimal solutions: 1
+Solution:['pyrG_39', 'pyrG_84']
+Objective value: 47.0
+Proportions:[44.308080808080746, 55.69191919191926]
+
+Negative log likelihood score:1118.99665966
+
+Negative log likelihood score list:[1118.9966596649726]
+The solution which has minimum negative log likelihood is ['pyrG_39', 'pyrG_84'] and its score:1118.99665966
 ======================================== PyrG: SUMMARY STATISTICS ====================================================
 
-(1)Total Variation Distance:
-
-Total variation distances are: [0.94623776827410389, 0.78990871002968532, 1.9145658726598029, 4.3615130501776775, 14.324420584868699, 10.077408653284737, 1.8720028223104337, 1.2386090670985617, 31.402477438746004, 0.324024257546359, 21.7682594895074, 29.494645443117388, 27.210673022427848, 1.6557041061397346, 29.717161627111622, 11.340217777675601, 12.664597843966451, 18.157349104528205, 0.35455618329796224, 56.226006907676933, 14.418817210796412, 1.5189873417721387, 11.421114798374399, 14.617883672197731, 46.834845683288165, 0.042464720410164247, 5.2241317293010283, 1.5585295850642389, 1.3403176674339159, 19.312028846257206, 32.38874777468704, 0.85716303337416555, 1.055101338916355, 34.170221664171237, 0.21975355209789882, 7.4475185305747775, 38.651477113140558, 10.363793379200668, 5.948849643238022, 0.035351121141363961] 
-
-The average of total variation distance is: 13.0816859534 
-
-The standard deviation of total variation distance is: 14.3964110177 
-
-(2)Total Variation Distance for variants which are predicted correctly:
-
-Total variation distances are: [0.94623776827410389, 0.78990871002968532, 1.9145658726598029, 4.3615130501776775, 1.8720028223104337, 1.2386090670985617, 0.324024257546359, 0.35455618329796224, 14.617883672197731, 0.042464720410164247, 5.2241317293010283, 1.5585295850642389, 1.3403176674339159, 0.85716303337416555, 1.055101338916355, 0.21975355209789882, 7.4475185305747775, 0.035351121141363961] 
-
-The average of total variation distance is: 2.45553514899 
-
-The standard deviation of total variation distance is: 3.52378870332 
-
-(3) Precision: 
-
-Precision is: [1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 0.8, 1.0, 1.0, 0.8571428571428571, 1.0, 0.8571428571428571, 0.6666666666666666, 0.8333333333333334, 1.0, 0.75, 0.75, 0.8333333333333334, 0.5, 1.0, 0.5, 1.0, 0.6666666666666666, 0.8333333333333334, 1.0, 0.5714285714285714, 1.0, 1.0, 1.0, 1.0, 0.8, 0.6, 1.0, 1.0, 0.75, 1.0, 1.0, 0.5, 0.8, 0.8, 1.0] 
-
-Average of precision is:  0.863154761905 
-
-Standard deviation of precision is:  0.162702853937 
-
-(4) Recall : 
-
-Recall is: [1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 0.8, 1.0, 1.0, 0.8571428571428571, 1.0, 0.8571428571428571, 0.6666666666666666, 0.8333333333333334, 0.75, 0.75, 0.8571428571428571, 0.8333333333333334, 0.5, 1.0, 0.5, 0.8333333333333334, 0.6666666666666666, 0.8333333333333334, 1.0, 0.5714285714285714, 1.0, 1.0, 1.0, 1.0, 0.8, 1.0, 1.0, 1.0, 0.75, 1.0, 1.0, 0.6, 0.8, 1.0, 1.0] 
-
-Average of recall is:  0.872916666667 
-
-Standard deviation of recall is:  0.151668430411 
-
-(5) Objective Value: 
-
-Predicted objective values are: [33.0, 45.0, 29.0, 20.0, 53.0, 51.0, 53.0, 20.0, 33.0, 62.0, 43.0, 48.0, 51.0, 40.0, 41.0, 34.0, 28.0, 56.0, 42.0, 37.0, 30.0, 55.0, 59.0, 41.0, 84.0, 49.0, 46.0, 46.0, 46.0, 46.0, 39.0, 47.0, 43.0, 40.0, 36.0, 44.0, 53.0, 29.0, 22.0, 47.0] 
-
-True objective values are: [30.0, 43.0, 24.0, 14.0, 50.0, 47.0, 48.0, 18.0, 29.0, 61.0, 37.0, 44.0, 48.0, 38.0, 39.0, 28.0, 23.0, 55.0, 40.0, 34.0, 27.0, 53.0, 54.0, 40.0, 80.0, 48.0, 43.0, 43.0, 41.0, 44.0, 37.0, 45.0, 42.0, 37.0, 35.0, 41.0, 50.0, 25.0, 19.0, 46.0] 
-
-The difference in objective values are: [3.0, 2.0, 5.0, 6.0, 3.0, 4.0, 5.0, 2.0, 4.0, 1.0, 6.0, 4.0, 3.0, 2.0, 2.0, 6.0, 5.0, 1.0, 2.0, 3.0, 3.0, 2.0, 5.0, 1.0, 4.0, 1.0, 3.0, 3.0, 5.0, 2.0, 2.0, 2.0, 1.0, 3.0, 1.0, 3.0, 3.0, 4.0, 3.0, 1.0] 
-
-Average of difference in objective value is:  3.025 
-
-Standard deviation of difference in objective value is:  1.49143387383 
-
-(6)Accuracy: 
+(1)Accuracy: 
 
 Total number of simulations:  40 
 
-Percentage of simulations predicted correctly:  45.0 
+Number of simulations which are predicted correctly: 38
+
+Percentage of simulations predicted correctly:  95.0 %
+
+(2)Numbers related to likelihood approach: 
+
+Number of simulations where solution with minimum negative log likelihood is the true solution:  34 
+
+Out of the 38 simulations which are predicted correctly, 4 simulations have optimal solutions which do not have a minimum negative likelihood score.
+
+The percentage of minimum negative log likelihood score giving true solution: 89.4736842105
+
+Number of simulations where solution with minimum negative log likelihood has minimum number of variants:  40 
+
+Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: 34
 

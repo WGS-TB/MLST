@@ -1,416 +1,176 @@
 ======================================== ClpA: SUMMARY STATISTICS ====================================================
 
-(1)Total Variation Distance:
-
-Total variation distances are: [0.23218554534409463, 0.30616455318484448, 38.314231614376439, 34.910610034331221, 24.856058433853455, 0.67641288895901619, 5.4330862214737552, 0.38698108511358065, 23.938008007943811, 0.18488159487094791, 4.2500305915562304, 17.29811754085247, 8.3853388200906611, 7.6241288508539391, 0.43347825245946048, 11.923242602720617, 15.080877642346763, 0.44489999278534553, 2.9791682124901655, 18.165781131341667, 16.333681590757081, 0.54379464450261938, 28.429838963266878, 0.071770199508196297, 30.707541865650626, 0.91632976445877645, 3.7889876005219199, 24.101148530073694, 18.482362168415847, 1.3137818980963338, 1.1009487173413941, 3.4313053188279916, 0.97567195572477594, 0.52934224580037337, 0.21975355209789882, 0.25572331523344971, 12.283722517147488, 23.155944316654068, 13.144411360078319, 0.21910180506728238] 
-
-The average of total variation distance is: 9.89572114865 
-
-The standard deviation of total variation distance is: 11.1550301518 
-
-(2)Total Variation Distance for variants which are predicted correctly:
-
-Total variation distances are: [0.23218554534409463, 0.30616455318484448, 0.67641288895901619, 5.4330862214737552, 0.38698108511358065, 0.18488159487094791, 4.2500305915562304, 0.43347825245946048, 15.080877642346763, 0.44489999278534553, 2.9791682124901655, 18.165781131341667, 16.333681590757081, 0.54379464450261938, 0.071770199508196297, 0.91632976445877645, 3.7889876005219199, 1.3137818980963338, 1.1009487173413941, 3.4313053188279916, 0.97567195572477594, 0.52934224580037337, 0.21975355209789882, 0.25572331523344971, 0.21910180506728238] 
-
-The average of total variation distance is: 3.13096561279 
-
-The standard deviation of total variation distance is: 5.17060275466 
-
-(3) Precision: 
-
-Precision is: [1.0, 1.0, 0.6666666666666666, 0.8333333333333334, 0.8571428571428571, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 0.8571428571428571, 0.8333333333333334, 0.6, 1.0, 0.8571428571428571, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 0.8571428571428571, 1.0, 1.0, 0.75, 0.75, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 0.8, 0.8, 1.0] 
-
-Average of precision is:  0.925238095238 
-
-Standard deviation of precision is:  0.107042016037 
-
-(4) Recall : 
-
-Recall is: [1.0, 1.0, 0.6666666666666666, 0.7142857142857143, 0.8571428571428571, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 1.0, 0.8333333333333334, 0.75, 1.0, 0.8571428571428571, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 0.75, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8, 1.0, 1.0] 
-
-Average of recall is:  0.948571428571 
-
-Standard deviation of recall is:  0.095047129973 
-
-(5) Objective Value: 
-
-Predicted objective values are: [71.0, 61.0, 20.0, 36.0, 27.0, 54.0, 26.0, 36.0, 41.0, 45.0, 40.0, 53.0, 68.0, 39.0, 54.0, 61.0, 45.0, 53.0, 48.0, 44.0, 31.0, 44.0, 58.0, 38.0, 42.0, 29.0, 34.0, 30.0, 57.0, 51.0, 38.0, 23.0, 47.0, 34.0, 48.0, 35.0, 63.0, 37.0, 44.0, 40.0] 
-
-True objective values are: [68.0, 59.0, 18.0, 31.0, 22.0, 50.0, 21.0, 34.0, 35.0, 44.0, 34.0, 48.0, 65.0, 36.0, 51.0, 56.0, 41.0, 50.0, 46.0, 41.0, 29.0, 42.0, 53.0, 37.0, 38.0, 28.0, 29.0, 28.0, 53.0, 47.0, 36.0, 20.0, 45.0, 31.0, 47.0, 31.0, 62.0, 33.0, 41.0, 39.0] 
-
-The difference in objective values are: [3.0, 2.0, 2.0, 5.0, 5.0, 4.0, 5.0, 2.0, 6.0, 1.0, 6.0, 5.0, 3.0, 3.0, 3.0, 5.0, 4.0, 3.0, 2.0, 3.0, 2.0, 2.0, 5.0, 1.0, 4.0, 1.0, 5.0, 2.0, 4.0, 4.0, 2.0, 3.0, 2.0, 3.0, 1.0, 4.0, 1.0, 4.0, 3.0, 1.0] 
-
-Average of difference in objective value is:  3.15 
-
-Standard deviation of difference in objective value is:  1.45859521458 
-
-(6)Accuracy: 
+(1)Accuracy: 
 
 Total number of simulations:  40 
 
-Percentage of simulations predicted correctly:  62.5 
+Number of simulations which are predicted correctly: 36
+
+Percentage of simulations predicted correctly:  90.0 %
+
+(2)Numbers related to likelihood approach: 
+
+Number of simulations where solution with minimum negative log likelihood is the true solution:  31 
+
+Out of the 36 simulations which are predicted correctly, 5 simulations have optimal solutions which do not have a minimum negative likelihood score.
+
+The percentage of minimum negative log likelihood score giving true solution: 86.1111111111
+
+Number of simulations where solution with minimum negative log likelihood has minimum number of variants:  39 
+
+Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: 34
 
 ======================================== ClpX: SUMMARY STATISTICS ====================================================
 
-(1)Total Variation Distance:
-
-Total variation distances are: [10.804699111729192, 43.865206129751776, 9.2802890587758835, 2.8437404213787891, 10.103856512832809, 20.365054200058914, 8.6677213031879425, 4.2799169035295854, 12.232529015206138, 0.57522331001832328, 4.6289320873516431, 7.6905128513513956, 3.1027279654066136, 0.53411202476461161, 19.521823784880944, 36.417658917483152, 7.1083117687720652, 26.046391655144557, 1.6280728214801776, 2.9205163543143771, 9.7850836238649066, 1.5189873417721387, 19.836299135648375, 0.43713565290910528, 36.946283185739993, 5.9196927066041738, 21.070076047945051, 19.001265419709419, 3.1181821382029806, 21.699916237704901, 44.715430515656315, 2.7715455910442639, 0.6493787284319108, 2.3248702121255782, 3.4160761251289973, 24.778590476071983, 6.9369060438897963, 24.092006831363801, 2.1811387629442223, 0.34043770516889893] 
-
-The average of total variation distance is: 12.103914967 
-
-The standard deviation of total variation distance is: 12.2704457656 
-
-(2)Total Variation Distance for variants which are predicted correctly:
-
-Total variation distances are: [2.8437404213787891, 10.103856512832809, 20.365054200058914, 4.2799169035295854, 12.232529015206138, 0.57522331001832328, 4.6289320873516431, 7.6905128513513956, 0.53411202476461161, 19.521823784880944, 7.1083117687720652, 1.6280728214801776, 2.9205163543143771, 19.836299135648375, 0.43713565290910528, 5.9196927066041738, 3.1181821382029806, 2.7715455910442639, 0.6493787284319108, 2.3248702121255782, 3.4160761251289973, 6.9369060438897963, 2.1811387629442223, 0.34043770516889893] 
-
-The average of total variation distance is: 5.93184436908 
-
-The standard deviation of total variation distance is: 6.08613264133 
-
-(3) Precision: 
-
-Precision is: [0.75, 0.6666666666666666, 0.8333333333333334, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 0.8, 1.0, 0.75, 1.0, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 0.6666666666666666, 1.0, 0.8333333333333334, 0.75, 1.0, 0.8, 0.5, 1.0, 1.0, 1.0, 1.0, 0.8, 1.0, 0.8, 1.0, 1.0] 
-
-Average of precision is:  0.907083333333 
-
-Standard deviation of precision is:  0.13196629936 
-
-(4) Recall : 
-
-Recall is: [0.75, 0.6666666666666666, 0.8333333333333334, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 0.5714285714285714, 1.0, 0.75, 1.0, 1.0, 0.8333333333333334, 0.6666666666666666, 1.0, 1.0, 0.8571428571428571, 1.0, 0.8333333333333334, 0.75, 1.0, 0.8, 0.6666666666666666, 1.0, 1.0, 1.0, 1.0, 0.8, 1.0, 0.8, 1.0, 1.0] 
-
-Average of recall is:  0.906130952381 
-
-Standard deviation of recall is:  0.125633189369 
-
-(5) Objective Value: 
-
-Predicted objective values are: [65.0, 32.0, 38.0, 60.0, 64.0, 47.0, 66.0, 54.0, 48.0, 50.0, 65.0, 58.0, 48.0, 30.0, 34.0, 53.0, 58.0, 40.0, 46.0, 45.0, 33.0, 42.0, 44.0, 57.0, 58.0, 32.0, 45.0, 37.0, 57.0, 54.0, 58.0, 46.0, 57.0, 56.0, 42.0, 46.0, 56.0, 35.0, 37.0, 44.0] 
-
-True objective values are: [63.0, 30.0, 33.0, 54.0, 58.0, 45.0, 62.0, 52.0, 43.0, 49.0, 61.0, 55.0, 43.0, 28.0, 32.0, 49.0, 53.0, 38.0, 44.0, 42.0, 33.0, 40.0, 40.0, 56.0, 55.0, 32.0, 40.0, 35.0, 53.0, 51.0, 56.0, 43.0, 55.0, 53.0, 42.0, 43.0, 52.0, 32.0, 35.0, 43.0] 
-
-The difference in objective values are: [2.0, 2.0, 5.0, 6.0, 6.0, 2.0, 4.0, 2.0, 5.0, 1.0, 4.0, 3.0, 5.0, 2.0, 2.0, 4.0, 5.0, 2.0, 2.0, 3.0, 0.0, 2.0, 4.0, 1.0, 3.0, 0.0, 5.0, 2.0, 4.0, 3.0, 2.0, 3.0, 2.0, 3.0, 0.0, 3.0, 4.0, 3.0, 2.0, 1.0] 
-
-Average of difference in objective value is:  2.85 
-
-Standard deviation of difference in objective value is:  1.54191439451 
-
-(6)Accuracy: 
+(1)Accuracy: 
 
 Total number of simulations:  40 
 
-Percentage of simulations predicted correctly:  60.0 
+Number of simulations which are predicted correctly: 34
+
+Percentage of simulations predicted correctly:  85.0 %
+
+(2)Numbers related to likelihood approach: 
+
+Number of simulations where solution with minimum negative log likelihood is the true solution:  32 
+
+Out of the 34 simulations which are predicted correctly, 2 simulations have optimal solutions which do not have a minimum negative likelihood score.
+
+The percentage of minimum negative log likelihood score giving true solution: 94.1176470588
+
+Number of simulations where solution with minimum negative log likelihood has minimum number of variants:  39 
+
+Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: 36
 
 ======================================== NifS: SUMMARY STATISTICS ====================================================
 
-(1)Total Variation Distance:
-
-Total variation distances are: [4.7601025490615312, 15.492446461063386, 4.0343772760392653, 21.110101702961536, 37.839462436864977, 22.258240314847427, 32.893484498667753, 0.13252815890492897, 6.3606783464156678, 0.20937864222825553, 10.593020754151762, 14.974727291121189, 19.99318929764312, 26.075853387654249, 29.484396969221791, 7.4091484925534941, 5.89337676152069, 0.44489999278534553, 0.16505360501593813, 14.578160465099355, 9.2225619537814474, 23.56536423383514, 19.344270823048156, 0.37308220607522657, 28.054098701275901, 0.32663382111659089, 44.265257092045864, 12.817532680770341, 1.6591089010981888, 1.2897153955093099, 28.632846509146837, 0.85707699922438074, 0.49599989705078684, 14.500950853564747, 0.28915230031940808, 8.4529983085145872, 25.19559484871375, 42.120321520551002, 4.4974609852352714, 0.28980404735002097] 
-
-The average of total variation distance is: 13.5238114871 
-
-The standard deviation of total variation distance is: 12.7556901035 
-
-(2)Total Variation Distance for variants which are predicted correctly:
-
-Total variation distances are: [4.7601025490615312, 0.13252815890492897, 0.20937864222825553, 7.4091484925534941, 0.44489999278534553, 0.16505360501593813, 14.578160465099355, 9.2225619537814474, 23.56536423383514, 0.37308220607522657, 0.32663382111659089, 1.2897153955093099, 0.85707699922438074, 0.49599989705078684, 0.28915230031940808, 8.4529983085145872, 4.4974609852352714, 0.28980404735002097] 
-
-The average of total variation distance is: 4.29772900298 
-
-The standard deviation of total variation distance is: 6.20490251435 
-
-(3) Precision: 
-
-Precision is: [1.0, 0.75, 0.8, 0.7142857142857143, 0.75, 0.6, 0.8333333333333334, 1.0, 0.8571428571428571, 1.0, 1.0, 0.6666666666666666, 0.8333333333333334, 0.6, 0.6, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 0.8333333333333334, 1.0, 0.5, 0.8, 0.8571428571428571, 1.0, 0.6, 1.0, 1.0, 0.75, 1.0, 1.0, 0.8, 0.8, 1.0, 1.0] 
-
-Average of precision is:  0.865297619048 
-
-Standard deviation of precision is:  0.148674116966 
-
-(4) Recall : 
-
-Recall is: [1.0, 1.0, 0.6666666666666666, 0.7142857142857143, 0.8571428571428571, 0.6, 0.8333333333333334, 1.0, 0.8571428571428571, 1.0, 0.8571428571428571, 0.6666666666666666, 0.8333333333333334, 0.75, 0.75, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 0.7142857142857143, 1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.75, 1.0, 1.0, 0.8, 0.8, 1.0, 1.0] 
-
-Average of recall is:  0.890416666667 
-
-Standard deviation of recall is:  0.137384756385 
-
-(5) Objective Value: 
-
-Predicted objective values are: [35.0, 50.0, 50.0, 38.0, 50.0, 37.0, 44.0, 37.0, 60.0, 19.0, 29.0, 43.0, 67.0, 36.0, 35.0, 48.0, 53.0, 44.0, 52.0, 44.0, 34.0, 39.0, 40.0, 44.0, 30.0, 53.0, 35.0, 33.0, 61.0, 17.0, 43.0, 42.0, 35.0, 35.0, 41.0, 31.0, 24.0, 34.0, 38.0, 37.0] 
-
-True objective values are: [32.0, 48.0, 46.0, 32.0, 51.0, 33.0, 40.0, 35.0, 55.0, 18.0, 27.0, 40.0, 62.0, 33.0, 34.0, 45.0, 48.0, 41.0, 50.0, 42.0, 29.0, 38.0, 35.0, 43.0, 25.0, 52.0, 32.0, 31.0, 56.0, 13.0, 41.0, 40.0, 33.0, 33.0, 40.0, 28.0, 21.0, 32.0, 35.0, 36.0] 
-
-The difference in objective values are: [3.0, 2.0, 4.0, 6.0, -1.0, 4.0, 4.0, 2.0, 5.0, 1.0, 2.0, 3.0, 5.0, 3.0, 1.0, 3.0, 5.0, 3.0, 2.0, 2.0, 5.0, 1.0, 5.0, 1.0, 5.0, 1.0, 3.0, 2.0, 5.0, 4.0, 2.0, 2.0, 2.0, 2.0, 1.0, 3.0, 3.0, 2.0, 3.0, 1.0] 
-
-Average of difference in objective value is:  2.8 
-
-Standard deviation of difference in objective value is:  1.53622914957 
-
-(6)Accuracy: 
+(1)Accuracy: 
 
 Total number of simulations:  40 
 
-Percentage of simulations predicted correctly:  45.0 
+Number of simulations which are predicted correctly: 36
+
+Percentage of simulations predicted correctly:  90.0 %
+
+(2)Numbers related to likelihood approach: 
+
+Number of simulations where solution with minimum negative log likelihood is the true solution:  33 
+
+Out of the 36 simulations which are predicted correctly, 3 simulations have optimal solutions which do not have a minimum negative likelihood score.
+
+The percentage of minimum negative log likelihood score giving true solution: 91.6666666667
+
+Number of simulations where solution with minimum negative log likelihood has minimum number of variants:  38 
+
+Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: 34
 
 ======================================== PepX: SUMMARY STATISTICS ====================================================
 
-(1)Total Variation Distance:
-
-Total variation distances are: [13.600458217415909, 0.41777945601642053, 16.900182513295032, 22.661367251903631, 6.1094004293161364, 0.72043110576085079, 8.9042511235991899, 3.2615619921585406, 21.755970122481397, 0.18421694665580191, 21.167937107302873, 0.94762666469579349, 7.7002463425648306, 4.4566490061172921, 1.8803653216792773, 9.2340306415115947, 2.4874643681355439, 48.371159511001288, 64.287542236168193, 7.4846885238573924, 0.68153017796105608, 2.7738627899387587, 52.75569062481464, 1.0579381484991477, 27.191170575458194, 0.072180894907935667, 11.002201623717321, 0.30368017564331495, 3.9282556660927845, 1.5820144701785495, 0.11616252441405805, 3.5218718756299943, 0.34327128083024405, 9.2234578574323649, 0.21975355209789171, 59.729523162716632, 2.8694166330200375, 10.356829528052431, 34.857727695418816, 0.28980404735002097] 
-
-The average of total variation distance is: 12.1352418046 
-
-The standard deviation of total variation distance is: 16.9657436233 
-
-(2)Total Variation Distance for variants which are predicted correctly:
-
-Total variation distances are: [13.600458217415909, 0.41777945601642053, 6.1094004293161364, 0.72043110576085079, 8.9042511235991899, 3.2615619921585406, 0.18421694665580191, 0.94762666469579349, 1.8803653216792773, 2.4874643681355439, 7.4846885238573924, 0.68153017796105608, 1.0579381484991477, 0.072180894907935667, 0.30368017564331495, 3.9282556660927845, 1.5820144701785495, 0.11616252441405805, 3.5218718756299943, 0.34327128083024405, 9.2234578574323649, 0.21975355209789171, 2.8694166330200375, 0.28980404735002097] 
-
-The average of total variation distance is: 2.92531589389 
-
-The standard deviation of total variation distance is: 3.53434748619 
-
-(3) Precision: 
-
-Precision is: [1.0, 1.0, 0.8333333333333334, 0.8571428571428571, 1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 0.8571428571428571, 1.0, 0.8333333333333334, 0.75, 1.0, 1.0, 1.0, 0.5, 0.3333333333333333, 1.0, 1.0, 0.6666666666666666, 0.8333333333333334, 1.0, 0.5714285714285714, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6, 1.0, 0.8, 0.75, 1.0] 
-
-Average of precision is:  0.901071428571 
-
-Standard deviation of precision is:  0.163348734176 
-
-(4) Recall : 
-
-Recall is: [1.0, 1.0, 0.8333333333333334, 0.8571428571428571, 1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 0.8571428571428571, 1.0, 0.8333333333333334, 0.75, 1.0, 0.8571428571428571, 1.0, 0.75, 0.3333333333333333, 1.0, 1.0, 0.6666666666666666, 0.8333333333333334, 1.0, 0.5714285714285714, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6, 1.0, 0.8, 0.75, 1.0] 
-
-Average of recall is:  0.899583333333 
-
-Standard deviation of recall is:  0.151338404853 
-
-(5) Objective Value: 
-
-Predicted objective values are: [43.0, 45.0, 62.0, 33.0, 33.0, 39.0, 40.0, 19.0, 13.0, 51.0, 40.0, 43.0, 41.0, 49.0, 35.0, 65.0, 58.0, 32.0, 60.0, 67.0, 38.0, 43.0, 35.0, 38.0, 75.0, 43.0, 38.0, 42.0, 36.0, 26.0, 47.0, 35.0, 35.0, 35.0, 43.0, 26.0, 60.0, 43.0, 35.0, 49.0] 
-
-True objective values are: [42.0, 43.0, 59.0, 27.0, 27.0, 35.0, 35.0, 17.0, 8.0, 50.0, 34.0, 38.0, 36.0, 46.0, 32.0, 60.0, 53.0, 30.0, 59.0, 65.0, 33.0, 41.0, 31.0, 37.0, 70.0, 42.0, 35.0, 39.0, 31.0, 23.0, 45.0, 32.0, 33.0, 32.0, 42.0, 23.0, 56.0, 40.0, 33.0, 48.0] 
-
-The difference in objective values are: [1.0, 2.0, 3.0, 6.0, 6.0, 4.0, 5.0, 2.0, 5.0, 1.0, 6.0, 5.0, 5.0, 3.0, 3.0, 5.0, 5.0, 2.0, 1.0, 2.0, 5.0, 2.0, 4.0, 1.0, 5.0, 1.0, 3.0, 3.0, 5.0, 3.0, 2.0, 3.0, 2.0, 3.0, 1.0, 3.0, 4.0, 3.0, 2.0, 1.0] 
-
-Average of difference in objective value is:  3.2 
-
-Standard deviation of difference in objective value is:  1.58429795178 
-
-(6)Accuracy: 
+(1)Accuracy: 
 
 Total number of simulations:  40 
 
-Percentage of simulations predicted correctly:  60.0 
+Number of simulations which are predicted correctly: 36
+
+Percentage of simulations predicted correctly:  90.0 %
+
+(2)Numbers related to likelihood approach: 
+
+Number of simulations where solution with minimum negative log likelihood is the true solution:  30 
+
+Out of the 36 simulations which are predicted correctly, 6 simulations have optimal solutions which do not have a minimum negative likelihood score.
+
+The percentage of minimum negative log likelihood score giving true solution: 83.3333333333
+
+Number of simulations where solution with minimum negative log likelihood has minimum number of variants:  39 
+
+Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: 33
 
 ======================================== PyrG: SUMMARY STATISTICS ====================================================
 
-(1)Total Variation Distance:
-
-Total variation distances are: [0.94623776827410389, 0.78990871002968532, 1.9145658726598029, 4.3615130501776775, 14.324420584868699, 10.077408653284737, 1.8720028223104337, 1.2386090670985617, 31.402477438746004, 0.324024257546359, 21.7682594895074, 29.494645443117388, 27.210673022427848, 1.6557041061397346, 29.717161627111622, 11.340217777675601, 12.664597843966451, 18.157349104528205, 0.35455618329796224, 56.226006907676933, 14.418817210796412, 1.5189873417721387, 11.421114798374399, 14.617883672197731, 46.834845683288165, 0.042464720410164247, 5.2241317293010283, 1.5585295850642389, 1.3403176674339159, 19.312028846257206, 32.38874777468704, 0.85716303337416555, 1.055101338916355, 34.170221664171237, 0.21975355209789882, 7.4475185305747775, 38.651477113140558, 10.363793379200668, 5.948849643238022, 0.035351121141363961] 
-
-The average of total variation distance is: 13.0816859534 
-
-The standard deviation of total variation distance is: 14.3964110177 
-
-(2)Total Variation Distance for variants which are predicted correctly:
-
-Total variation distances are: [0.94623776827410389, 0.78990871002968532, 1.9145658726598029, 4.3615130501776775, 1.8720028223104337, 1.2386090670985617, 0.324024257546359, 0.35455618329796224, 14.617883672197731, 0.042464720410164247, 5.2241317293010283, 1.5585295850642389, 1.3403176674339159, 0.85716303337416555, 1.055101338916355, 0.21975355209789882, 7.4475185305747775, 0.035351121141363961] 
-
-The average of total variation distance is: 2.45553514899 
-
-The standard deviation of total variation distance is: 3.52378870332 
-
-(3) Precision: 
-
-Precision is: [1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 0.8, 1.0, 1.0, 0.8571428571428571, 1.0, 0.8571428571428571, 0.6666666666666666, 0.8333333333333334, 1.0, 0.75, 0.75, 0.8333333333333334, 0.5, 1.0, 0.5, 1.0, 0.6666666666666666, 0.8333333333333334, 1.0, 0.5714285714285714, 1.0, 1.0, 1.0, 1.0, 0.8, 0.6, 1.0, 1.0, 0.75, 1.0, 1.0, 0.5, 0.8, 0.8, 1.0] 
-
-Average of precision is:  0.863154761905 
-
-Standard deviation of precision is:  0.162702853937 
-
-(4) Recall : 
-
-Recall is: [1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 0.8, 1.0, 1.0, 0.8571428571428571, 1.0, 0.8571428571428571, 0.6666666666666666, 0.8333333333333334, 0.75, 0.75, 0.8571428571428571, 0.8333333333333334, 0.5, 1.0, 0.5, 0.8333333333333334, 0.6666666666666666, 0.8333333333333334, 1.0, 0.5714285714285714, 1.0, 1.0, 1.0, 1.0, 0.8, 1.0, 1.0, 1.0, 0.75, 1.0, 1.0, 0.6, 0.8, 1.0, 1.0] 
-
-Average of recall is:  0.872916666667 
-
-Standard deviation of recall is:  0.151668430411 
-
-(5) Objective Value: 
-
-Predicted objective values are: [33.0, 45.0, 29.0, 20.0, 53.0, 51.0, 53.0, 20.0, 33.0, 62.0, 43.0, 48.0, 51.0, 40.0, 41.0, 34.0, 28.0, 56.0, 42.0, 37.0, 30.0, 55.0, 59.0, 41.0, 84.0, 49.0, 46.0, 46.0, 46.0, 46.0, 39.0, 47.0, 43.0, 40.0, 36.0, 44.0, 53.0, 29.0, 22.0, 47.0] 
-
-True objective values are: [30.0, 43.0, 24.0, 14.0, 50.0, 47.0, 48.0, 18.0, 29.0, 61.0, 37.0, 44.0, 48.0, 38.0, 39.0, 28.0, 23.0, 55.0, 40.0, 34.0, 27.0, 53.0, 54.0, 40.0, 80.0, 48.0, 43.0, 43.0, 41.0, 44.0, 37.0, 45.0, 42.0, 37.0, 35.0, 41.0, 50.0, 25.0, 19.0, 46.0] 
-
-The difference in objective values are: [3.0, 2.0, 5.0, 6.0, 3.0, 4.0, 5.0, 2.0, 4.0, 1.0, 6.0, 4.0, 3.0, 2.0, 2.0, 6.0, 5.0, 1.0, 2.0, 3.0, 3.0, 2.0, 5.0, 1.0, 4.0, 1.0, 3.0, 3.0, 5.0, 2.0, 2.0, 2.0, 1.0, 3.0, 1.0, 3.0, 3.0, 4.0, 3.0, 1.0] 
-
-Average of difference in objective value is:  3.025 
-
-Standard deviation of difference in objective value is:  1.49143387383 
-
-(6)Accuracy: 
+(1)Accuracy: 
 
 Total number of simulations:  40 
 
-Percentage of simulations predicted correctly:  45.0 
+Number of simulations which are predicted correctly: 33
+
+Percentage of simulations predicted correctly:  82.5 %
+
+(2)Numbers related to likelihood approach: 
+
+Number of simulations where solution with minimum negative log likelihood is the true solution:  28 
+
+Out of the 33 simulations which are predicted correctly, 5 simulations have optimal solutions which do not have a minimum negative likelihood score.
+
+The percentage of minimum negative log likelihood score giving true solution: 84.8484848485
+
+Number of simulations where solution with minimum negative log likelihood has minimum number of variants:  39 
+
+Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: 28
 
 ======================================== RecG: SUMMARY STATISTICS ====================================================
 
-(1)Total Variation Distance:
-
-Total variation distances are: [0.43507794474971551, 0.67526309471159163, 22.373845131604398, 11.396351132858818, 6.6991045733579488, 32.481010532427156, 6.1817512015850307, 13.367859273969334, 28.727394191286642, 1.1399522046868853, 32.725589635148161, 15.08163818265524, 11.744376199983137, 3.3209662447960806, 7.3016935814342938, 5.8982157837371947, 1.0798494296396379, 30.283030028068097, 0.34350102082926526, 0.47454383563496139, 14.328244072689625, 1.7777912857243892, 7.7350018282006534, 0.43713565290909795, 6.0085392876229813, 0.072180894907935667, 4.1921877076461049, 47.468614436921257, 0.74109051483203459, 26.802441379067226, 0.34545375505025966, 4.0945552778002074, 0.35617723619676944, 17.205928610822973, 15.6890760364423, 58.88854950977364, 11.972605163993361, 10.230593483138591, 0.67597050012750692, 0.28980404735001386] 
-
-The average of total variation distance is: 11.5260738476 
-
-The standard deviation of total variation distance is: 13.6788940099 
-
-(2)Total Variation Distance for variants which are predicted correctly:
-
-Total variation distances are: [0.43507794474971551, 0.67526309471159163, 6.6991045733579488, 1.1399522046868853, 3.3209662447960806, 7.3016935814342938, 1.0798494296396379, 30.283030028068097, 0.34350102082926526, 0.47454383563496139, 14.328244072689625, 7.7350018282006534, 0.43713565290909795, 6.0085392876229813, 0.072180894907935667, 4.1921877076461049, 0.74109051483203459, 0.34545375505025966, 4.0945552778002074, 0.35617723619676944, 15.6890760364423, 0.67597050012750692, 0.28980404735001386] 
-
-The average of total variation distance is: 4.63993038129 
-
-The standard deviation of total variation distance is: 6.97144011692 
-
-(3) Precision: 
-
-Precision is: [1.0, 1.0, 0.7142857142857143, 0.8571428571428571, 1.0, 0.8, 1.0, 0.75, 0.7142857142857143, 1.0, 0.7142857142857143, 0.8333333333333334, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.75, 1.0, 0.6666666666666666, 1.0, 1.0, 1.0, 0.75, 1.0, 0.6, 0.8333333333333334, 0.8, 1.0, 1.0] 
-
-Average of precision is:  0.915416666667 
-
-Standard deviation of precision is:  0.1225843542 
-
-(4) Recall : 
-
-Recall is: [1.0, 1.0, 0.8333333333333334, 0.8571428571428571, 1.0, 0.8, 0.8333333333333334, 1.0, 0.7142857142857143, 1.0, 0.7142857142857143, 0.8333333333333334, 0.8333333333333334, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 1.0, 1.0, 1.0, 0.75, 1.0, 0.8, 1.0, 1.0, 1.0, 0.75, 1.0, 0.6, 1.0, 0.8, 1.0, 1.0] 
-
-Average of recall is:  0.916071428571 
-
-Standard deviation of recall is:  0.117211736912 
-
-(5) Objective Value: 
-
-Predicted objective values are: [41.0, 32.0, 23.0, 48.0, 29.0, 50.0, 47.0, 44.0, 46.0, 41.0, 23.0, 32.0, 32.0, 44.0, 58.0, 27.0, 44.0, 39.0, 54.0, 30.0, 35.0, 55.0, 50.0, 46.0, 47.0, 32.0, 27.0, 48.0, 68.0, 44.0, 43.0, 35.0, 30.0, 34.0, 55.0, 66.0, 47.0, 44.0, 43.0, 28.0] 
-
-True objective values are: [38.0, 30.0, 20.0, 42.0, 23.0, 48.0, 43.0, 42.0, 41.0, 41.0, 18.0, 28.0, 28.0, 41.0, 55.0, 22.0, 39.0, 38.0, 52.0, 27.0, 31.0, 53.0, 45.0, 45.0, 41.0, 31.0, 22.0, 45.0, 63.0, 42.0, 41.0, 33.0, 28.0, 32.0, 55.0, 62.0, 43.0, 40.0, 40.0, 27.0] 
-
-The difference in objective values are: [3.0, 2.0, 3.0, 6.0, 6.0, 2.0, 4.0, 2.0, 5.0, 0.0, 5.0, 4.0, 4.0, 3.0, 3.0, 5.0, 5.0, 1.0, 2.0, 3.0, 4.0, 2.0, 5.0, 1.0, 6.0, 1.0, 5.0, 3.0, 5.0, 2.0, 2.0, 2.0, 2.0, 2.0, 0.0, 4.0, 4.0, 4.0, 3.0, 1.0] 
-
-Average of difference in objective value is:  3.15 
-
-Standard deviation of difference in objective value is:  1.62095650774 
-
-(6)Accuracy: 
+(1)Accuracy: 
 
 Total number of simulations:  40 
 
-Percentage of simulations predicted correctly:  57.5 
+Number of simulations which are predicted correctly: 34
+
+Percentage of simulations predicted correctly:  85.0 %
+
+(2)Numbers related to likelihood approach: 
+
+Number of simulations where solution with minimum negative log likelihood is the true solution:  31 
+
+Out of the 34 simulations which are predicted correctly, 3 simulations have optimal solutions which do not have a minimum negative likelihood score.
+
+The percentage of minimum negative log likelihood score giving true solution: 91.1764705882
+
+Number of simulations where solution with minimum negative log likelihood has minimum number of variants:  37 
+
+Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: 37
 
 ======================================== RplB: SUMMARY STATISTICS ====================================================
 
-(1)Total Variation Distance:
-
-Total variation distances are: [1.4698020549938207, 0.42081016850298081, 9.6572852151132089, 6.8145681018977875, 5.4547417373886349, 1.409575880432457, 11.885863774221253, 2.4624612070677454, 2.2251919267189137, 0.324024257546359, 6.6039361223239155, 9.9613518020094194, 20.46600748839278, 1.1604144168254942, 7.7660239525060186, 8.2319456487594582, 2.4991641449919535, 19.906795908160191, 17.099023073379534, 0.77792320228242051, 13.073468576112578, 3.5581796089472286, 6.8317758112672573, 38.151394854100545, 45.31642680023063, 0.18227203130071246, 2.1357710776181422, 2.1826424764889323, 4.6520904202622306, 5.1580512437651143, 18.102734470670136, 9.6304999600740153, 4.5739971449863059, 5.9353361444767447, 1.4531541815454343, 8.8891796956029747, 45.028724783187144, 8.7887890360561975, 9.6612240026250866, 41.308571293899732] 
-
-The average of total variation distance is: 10.2802798424 
-
-The standard deviation of total variation distance is: 11.9840518902 
-
-(2)Total Variation Distance for variants which are predicted correctly:
-
-Total variation distances are: [1.4698020549938207, 0.42081016850298081, 9.6572852151132089, 6.8145681018977875, 5.4547417373886349, 1.409575880432457, 2.4624612070677454, 2.2251919267189137, 0.324024257546359, 6.6039361223239155, 9.9613518020094194, 1.1604144168254942, 7.7660239525060186, 2.4991641449919535, 19.906795908160191, 0.77792320228242051, 13.073468576112578, 3.5581796089472286, 6.8317758112672573, 38.151394854100545, 0.18227203130071246, 2.1357710776181422, 2.1826424764889323, 4.6520904202622306, 9.6304999600740153, 4.5739971449863059, 5.9353361444767447, 1.4531541815454343, 8.8891796956029747, 8.7887890360561975] 
-
-The average of total variation distance is: 6.29842070392 
-
-The standard deviation of total variation distance is: 7.36313769275 
-
-(3) Precision: 
-
-Precision is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 0.75, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 0.75, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 0.8, 0.5] 
-
-Average of precision is:  0.937023809524 
-
-Standard deviation of precision is:  0.126760784493 
-
-(4) Recall : 
-
-Recall is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5714285714285714, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6, 1.0, 1.0, 0.5] 
-
-Average of recall is:  0.959047619048 
-
-Standard deviation of recall is:  0.119872381119 
-
-(5) Objective Value: 
-
-Predicted objective values are: [43.0, 53.0, 56.0, 34.0, 28.0, 46.0, 55.0, 45.0, 27.0, 40.0, 40.0, 41.0, 61.0, 39.0, 34.0, 55.0, 40.0, 30.0, 42.0, 51.0, 40.0, 34.0, 46.0, 40.0, 39.0, 46.0, 37.0, 36.0, 41.0, 50.0, 39.0, 47.0, 34.0, 42.0, 33.0, 33.0, 70.0, 68.0, 47.0, 41.0] 
-
-True objective values are: [40.0, 51.0, 53.0, 28.0, 22.0, 43.0, 51.0, 43.0, 21.0, 39.0, 34.0, 37.0, 58.0, 37.0, 32.0, 49.0, 35.0, 28.0, 40.0, 48.0, 37.0, 32.0, 41.0, 40.0, 35.0, 45.0, 32.0, 33.0, 37.0, 46.0, 37.0, 44.0, 33.0, 40.0, 32.0, 30.0, 70.0, 64.0, 45.0, 41.0] 
-
-The difference in objective values are: [3.0, 2.0, 3.0, 6.0, 6.0, 3.0, 4.0, 2.0, 6.0, 1.0, 6.0, 4.0, 3.0, 2.0, 2.0, 6.0, 5.0, 2.0, 2.0, 3.0, 3.0, 2.0, 5.0, 0.0, 4.0, 1.0, 5.0, 3.0, 4.0, 4.0, 2.0, 3.0, 1.0, 2.0, 1.0, 3.0, 0.0, 4.0, 2.0, 0.0] 
-
-Average of difference in objective value is:  3.0 
-
-Standard deviation of difference in objective value is:  1.70293863659 
-
-(6)Accuracy: 
+(1)Accuracy: 
 
 Total number of simulations:  40 
 
-Percentage of simulations predicted correctly:  75.0 
+Number of simulations which are predicted correctly: 32
+
+Percentage of simulations predicted correctly:  80.0 %
+
+(2)Numbers related to likelihood approach: 
+
+Number of simulations where solution with minimum negative log likelihood is the true solution:  27 
+
+Out of the 32 simulations which are predicted correctly, 5 simulations have optimal solutions which do not have a minimum negative likelihood score.
+
+The percentage of minimum negative log likelihood score giving true solution: 84.375
+
+Number of simulations where solution with minimum negative log likelihood has minimum number of variants:  35 
+
+Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: 35
 
 ======================================== UvrA: SUMMARY STATISTICS ====================================================
 
-(1)Total Variation Distance:
-
-Total variation distances are: [0.23218357118988742, 0.62052075524889094, 36.954804797109155, 18.324507306538159, 6.4437679311080087, 14.47526229128923, 13.413646314021252, 9.6880874542976834, 12.929451509195383, 0.6064979513341946, 4.2301551392643342, 47.642044672679283, 7.5282437708928605, 5.6084446678399145, 6.9368307826556839, 7.1864273197484518, 14.039606027776784, 0.40179409362919516, 1.4472972030311269, 13.796109469175688, 25.652977509705927, 2.9094450853709706, 1.0941577772533435, 0.43713565290909817, 16.597779044578211, 0.1822720313007089, 7.039781851382152, 24.480309587266341, 17.152160477859098, 23.440022686688053, 0.1161625244140545, 0.99058711153650414, 41.971826869060962, 34.521589329400499, 0.21975355209789171, 14.97853437560773, 10.106089732770542, 7.1859462245792116, 22.732846586944284, 0.035351121141371067] 
-
-The average of total variation distance is: 11.858760304 
-
-The standard deviation of total variation distance is: 12.1650710343 
-
-(2)Total Variation Distance for variants which are predicted correctly:
-
-Total variation distances are: [0.23218357118988742, 0.62052075524889094, 6.4437679311080087, 14.47526229128923, 13.413646314021252, 9.6880874542976834, 0.6064979513341946, 4.2301551392643342, 7.5282437708928605, 6.9368307826556839, 0.40179409362919516, 1.4472972030311269, 13.796109469175688, 1.0941577772533435, 0.43713565290909817, 16.597779044578211, 0.1822720313007089, 7.039781851382152, 0.1161625244140545, 0.99058711153650414, 0.21975355209789171, 7.1859462245792116, 0.035351121141371067] 
-
-The average of total variation distance is: 4.94431841819 
-
-The standard deviation of total variation distance is: 5.34792930731 
-
-(3) Precision: 
-
-Precision is: [1.0, 1.0, 0.5714285714285714, 1.0, 1.0, 1.0, 1.0, 1.0, 0.7142857142857143, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 1.0, 0.8571428571428571, 0.8333333333333334, 1.0, 1.0, 1.0, 0.8333333333333334, 0.6666666666666666, 1.0, 1.0, 1.0, 1.0, 1.0, 0.75, 0.8333333333333334, 0.8, 1.0, 1.0, 0.6666666666666666, 0.6, 1.0, 0.8333333333333334, 0.8333333333333334, 1.0, 0.75, 1.0] 
-
-Average of precision is:  0.905238095238 
-
-Standard deviation of precision is:  0.13451243104 
-
-(4) Recall : 
-
-Recall is: [1.0, 1.0, 0.6666666666666666, 0.8571428571428571, 1.0, 1.0, 1.0, 1.0, 0.7142857142857143, 1.0, 1.0, 0.6666666666666666, 1.0, 0.75, 1.0, 0.8571428571428571, 0.8333333333333334, 1.0, 1.0, 1.0, 0.8333333333333334, 0.6666666666666666, 1.0, 1.0, 1.0, 1.0, 1.0, 0.75, 0.8333333333333334, 0.8, 1.0, 1.0, 0.6666666666666666, 0.75, 1.0, 1.0, 1.0, 1.0, 0.75, 1.0] 
-
-Average of recall is:  0.909880952381 
-
-Standard deviation of recall is:  0.124033165688 
-
-(5) Objective Value: 
-
-Predicted objective values are: [29.0, 38.0, 40.0, 40.0, 32.0, 37.0, 34.0, 51.0, 43.0, 44.0, 73.0, 35.0, 56.0, 26.0, 57.0, 38.0, 47.0, 49.0, 40.0, 31.0, 43.0, 39.0, 54.0, 42.0, 39.0, 37.0, 45.0, 58.0, 70.0, 39.0, 33.0, 44.0, 37.0, 49.0, 41.0, 39.0, 52.0, 26.0, 46.0, 37.0] 
-
-True objective values are: [26.0, 36.0, 36.0, 34.0, 28.0, 34.0, 30.0, 49.0, 37.0, 43.0, 67.0, 32.0, 51.0, 24.0, 56.0, 32.0, 42.0, 46.0, 38.0, 28.0, 39.0, 37.0, 49.0, 41.0, 38.0, 36.0, 41.0, 55.0, 65.0, 36.0, 31.0, 41.0, 35.0, 46.0, 40.0, 35.0, 49.0, 22.0, 45.0, 36.0] 
-
-The difference in objective values are: [3.0, 2.0, 4.0, 6.0, 4.0, 3.0, 4.0, 2.0, 6.0, 1.0, 6.0, 3.0, 5.0, 2.0, 1.0, 6.0, 5.0, 3.0, 2.0, 3.0, 4.0, 2.0, 5.0, 1.0, 1.0, 1.0, 4.0, 3.0, 5.0, 3.0, 2.0, 3.0, 2.0, 3.0, 1.0, 4.0, 3.0, 4.0, 1.0, 1.0] 
-
-Average of difference in objective value is:  3.1 
-
-Standard deviation of difference in objective value is:  1.56204993518 
-
-(6)Accuracy: 
+(1)Accuracy: 
 
 Total number of simulations:  40 
 
-Percentage of simulations predicted correctly:  57.5 
+Number of simulations which are predicted correctly: 33
+
+Percentage of simulations predicted correctly:  82.5 %
+
+(2)Numbers related to likelihood approach: 
+
+Number of simulations where solution with minimum negative log likelihood is the true solution:  30 
+
+Out of the 33 simulations which are predicted correctly, 3 simulations have optimal solutions which do not have a minimum negative likelihood score.
+
+The percentage of minimum negative log likelihood score giving true solution: 90.9090909091
+
+Number of simulations where solution with minimum negative log likelihood has minimum number of variants:  39 
+
+Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: 31
 
