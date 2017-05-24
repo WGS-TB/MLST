@@ -5,7 +5,7 @@
 
 3) You will also need Bowtie. Please download it here: http://bowtie-bio.sourceforge.net/index.shtml. You will need both `bowtie` and `bowtie-build`, copy these into your bin file.
 
-4) Download the reads for each sample using command `fastq-dump --split-3 [--sample number]`, then place it in a folder named by the sample name and place this folder under `data`. For example, `/data/SRR2034333/` 
+4) Download the reads for each sample using command `fastq-dump --split-3 [--sample number]`. You will have something like: `SRR2034333_1.fastq` and `SRR2034333_2.fastq`. Place these in a folder named by the sample name and place this folder under `data`. For example, `/data/SRR2034333/SRR2034333_1.fastq` and `/data/SRR2034333/SRR2034333_2.fastq`.
 
 5) Once data are ready, run the following commands in the pipeline folder:
 ```
