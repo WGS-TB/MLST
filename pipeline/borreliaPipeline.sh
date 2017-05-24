@@ -1,11 +1,9 @@
 #!/bin/bash
-#1) data_path = path to directory which contains sample folders, where this folder contains reads info
-#2) lociDB_path = path to loci databases folder
-#3) ref_strains = path to reference strains
-data_path=$1
-lociDb_path=$2
-ref_strains=$3
+#Run this script by 'bash borreliaPipelin.sh' and it will create 2 folders, variantsAndProp and strainsAndProp
 currentPath=`pwd`
+data_path=$currentPath"/data/"
+lociDb_path=$currentPath"/loci_db/"
+ref_strains=$currentPath"/strain_ref.txt"
 
 samples=`ls $data_path`
 
