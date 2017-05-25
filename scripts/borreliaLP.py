@@ -62,7 +62,7 @@ def readData(dataFilePath, lociOrder):
         data["{}".format(folder)] = pd.DataFrame(columns=lociOrder)   #require column to be a specfic order based on lociOrder
         sampleFilePath = dataFilePath + "/{}".format(folder)
         dirs= os.listdir(sampleFilePath)
-        csvFiles = [i for i in dirs if i.endswith(".csv")]
+        csvFiles = [i for i in dirs if i.endswith("proportions.csv")]
         
         temp = re.compile('(.*)_proportions.csv')  #grab gene name
         for f in csvFiles:
@@ -349,7 +349,7 @@ numLoci = len(loci)
 
 #read data for samples and reference
 data, numSamples, startingSampleNum = readData(args.data,loci)
-reference = pd.read_csv(args.ref,usecols=range(1,numLoci+1))
+reference = pd.read_csv(args.ref,sep="\t", usecols=range(1,numLoci+1))
 lociNames = list(reference.columns.values)
 numReference = reference.shape[0]
 allSamples = data.keys()
