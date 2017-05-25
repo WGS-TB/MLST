@@ -100,7 +100,7 @@ def create_dictionary(keys, vals):
     my_dict = dict()
     if len(keys) == len(vals):
             for i in range(len(keys)):
-                    my_dict[keys[i]] = vals[i]*100
+                    my_dict[keys[i]] = vals[i]
     return my_dict 
 
 def compute_likelihood(df):
@@ -170,14 +170,14 @@ for i in range(len(all_solutions)):
     if score <= min_score:
         min_score = score
     
-    print("Negative log likelihood score:{}\n".format(score))
+#    print("Negative log likelihood score:{}\n".format(score))
     
 min_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if score_list[i] == min_score]
     
-print("**Summary**")
-print("Negative log likelihood score list:{}".format(score_list))
-print("Minimum negative log likelihood score: {}".format(min_score))
-print("Solution(s) which have minimum negative log likelihood: {}".format(min_sol_list))
+#print("**Summary**")
+#print("Negative log likelihood score list:{}".format(score_list))
+#print("Minimum negative log likelihood score: {}".format(min_score))
+#print("Solution(s) which have minimum negative log likelihood: {}".format(min_sol_list))
 
 #write proportions to file
 w = csv.writer(open(args["gene"]+'_proportions.csv', "w"))
