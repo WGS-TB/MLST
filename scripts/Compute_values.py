@@ -10,52 +10,64 @@ import random
 import os
 import argparse
 import matplotlib.pyplot as plt
-import variantILP as ilp
 import itertools
 import sys
 import cplex
+import linecache
 
 NO_BINOM = False
 TEST_EMPTY_LIST = True
 
-# pred_prop and true_prop: dictionaries
+'''
+Input: pred_prop and true_prop which are dictionaries
+Return: Total variation distance
+'''
 def totalVariationDist(pred_prop, true_prop):
-    common_keys = set.intersection(set(pred_prop.keys()), set(true_prop.keys()))
-    diff_keys_pred = set.difference(set(pred_prop.keys()), common_keys)
-    diff_keys_true = set.difference(set(true_prop.keys()), common_keys)
-    common_keys = list(common_keys)
-    diff_keys_pred = list(diff_keys_pred)
-    diff_keys_true = list(diff_keys_true)
+    common_variants = set.intersection(set(pred_prop.keys()), set(true_prop.keys()))
+    diff_vars_pred = set.difference(set(pred_prop.keys()), common_variants)
+    diff_vars_true = set.difference(set(true_prop.keys()), common_variants)
+    common_variants = list(common_variants)
+    diff_vars_pred = list(diff_vars_pred)
+    diff_vars_true = list(diff_vars_true)
     
     totalVarDist=0
-    for key in common_keys:
-        totalVarDist += abs(pred_prop[key] - true_prop[key])
+    for var in common_variants:
+        totalVarDist += abs(pred_prop[var] - true_prop[var])
         
-    for key in diff_keys_pred:
-        totalVarDist += pred_prop[key]
+    for var in diff_vars_pred:
+        totalVarDist += pred_prop[var]
         
-    for key in diff_keys_true:
-        totalVarDist += true_prop[key]
+    for var in diff_vars_true:
+        totalVarDist += true_prop[var]
         
     return totalVarDist/2
 
+#Return x with first letter being capital
 def upperfirst(x):
     return x[0].upper() + x[1:]
 
+#predicted and true are lists
 def precision(predicted, true):
     truePos = set.intersection(set(predicted), set(true))
     return float(len(truePos)/len(predicted))
-        
+       
+#predicted and true are lists 
 def recall(predicted, true):
     truePos = set.intersection(set(predicted), set(true))
     return float(len(truePos)/len(true))
 
+#What is this?
 def tree():
     return defaultdict(tree)
 
+#Return boolean whether predicted matches true
 def predictedCorrectly(predicted, true):
         return set(predicted) == set(true)
 
+'''
+Input: dataMatrix which is a dataframe with information about number of mismatches
+Output: Objective value, variants predicted(list), reads covered by these variants(list), all optimal solutions(list), objective values of optimal solutions (list)
+'''
 def solver(dataMatrix):
 #    data_matrix = returnDataMatrix("/home/glgan/Documents/Borrelia/data/simData/clpA_7_weighted.csv")
 #    data_matrix = returnDataMatrix(dataFile+fileName)
@@ -189,8 +201,11 @@ def solver(dataMatrix):
     
     return objvalue, varPresentList, readsCovered, allSol, allObjValue
 
-#function to generate matrix to be passed to 
-def Generate_Matrix(path):
+'''
+Input: Path to reads.txt file
+Output: Matrix with rows=reads, columns=variants and entries=mismatches information
+'''
+def generate_matrix(path):
     var_list = [] #holds the variants
     read_list = [] #holds the reads
     mismatch_list = [] #holds the mismatches
@@ -206,7 +221,6 @@ def Generate_Matrix(path):
         read_var_dict = defaultdict(list) #dictionary holding all the variants that a read maps to
         read_mismatch_dict = defaultdict(list) #dictionary holding all the mismatches that a read has to its variants
         d_2 = defaultdict(list) #dictionary holding indices for later use
-
 
         for i in range(len(read_list)):
             num_mismatch = mismatch_list[i].count('>') #count the number of mismatches for each read
@@ -238,8 +252,8 @@ def Generate_Matrix(path):
         df = pd.DataFrame(matrix_dict).T.fillna(-1) #convert 2-D dictionary to a matrix
     return df
 
+#compute the probability of read of length n mapping to a variant with k mismatches using the binomial distribution/without 
 def compute_probability(n, k):
-    #compute the probability of read of length n mapping to a variant with k mismatches using the binomial distribution
     if NO_BINOM:
         b=10**10
     else:
@@ -253,27 +267,27 @@ def compute_probability(n, k):
 
 def compute_proportions(dataframe):
     #computes the proportion of a set of variants given a set of reads uing probabilistic methods
-        prob_list = [] #a list to hold the probabilities
-        for row in dataframe.itertuples(index=False):
-                temp_list = list(row)
-                #compute the probability for each row in the matrix
-                for i in range(len(temp_list)):
-                    if temp_list[i] >= 0:
-                        temp_list[i] = compute_probability(76,int(temp_list[i]))
-                    else:
-                        temp_list[i] = 0
-                total = sum(temp_list)
-                #solve for k
-                try:
-                    temp_list = [j*(1.0/total) for j in temp_list]
-                except ZeroDivisionError:
-                    print(total)
-                    print(temp_list)
-                prob_list.append(temp_list)
-        col_sums = [sum(k) for k in zip(*prob_list)]
-        total_sum = sum(col_sums)
-        prop_list = [100.0*l*(1/total_sum) for l in col_sums]
-        return prop_list     
+    prob_list = [] #a list to hold the probabilities
+    for row in dataframe.itertuples(index=False):
+        temp_list = list(row)
+        #compute the probability for each row in the matrix
+        for i in range(len(temp_list)):
+            if temp_list[i] >= 0:
+                temp_list[i] = compute_probability(76,int(temp_list[i]))
+            else:
+                temp_list[i] = 0
+        total = sum(temp_list)
+        #solve for k
+        try:
+            temp_list = [j*(1.0/total) for j in temp_list]
+        except ZeroDivisionError:
+            print(total)
+            print(temp_list)
+        prob_list.append(temp_list)
+    col_sums = [sum(k) for k in zip(*prob_list)]
+    total_sum = sum(col_sums)
+    prop_list = [100.0*l*(1/total_sum) for l in col_sums]
+    return prop_list     
 
 def compute_True_objective_val(dataframe):
         run_sum = 0
@@ -337,9 +351,8 @@ def compute_likelihood(df):
 ap = argparse.ArgumentParser()
 ap.add_argument("-g", "--gene", required = True,  help="name of gene")
 ap.add_argument("-l", "--numOfIter", required = False, default = 40, type=int)
-ap.add_argument("-o", "--outputFolder", required=True)
+ap.add_argument("-o", "--outputFolderPath", required=True, help="output folder path")
 args = vars(ap.parse_args())
-random.seed(a=1994) #set random seed
 true_ratios = []
 true_variants = []
 total_var = []
@@ -354,75 +367,74 @@ minNegLogLike_correct = 0
 minSizeOpt_count = 0
 minNegLogLike_hasTrue = 0
 
+gene = args["gene"]
+seed = 1994
+random.seed(seed)
+
+variantsTxtPath = "/home/glgan/Documents/Borrelia/Test_Data/SRR2034333_old/{}/variants.txt".format(gene)
+num_variants = sum(1 for line in open(variantsTxtPath))
+
 for x in range(1,args["numOfIter"]+1):  
+    true_prop = dict()#dictionary to store the true proportions
     k =random.randint(2,7) #generate a random integer k between 2 and 7
     #generate k random fractions that sum up to 1
     fractions = [random.random() for j in range(k)] 
     s = sum(fractions)
     fractions = [ i/s for i in fractions ]
-	#run a bash sub command to sort the variants text file and return the first k variants
-    variants = (sh.head(sh.sort("variants.txt", "-R"), "-n", k))
-    variants = list(variants) #convert output from runningCommand to a list
-    #print variants #for testing purposes
-    ratios = [] #list to store the proprotions of reads to generate
-    true_prop = dict()#dictionary to store the true proportions
-    gene = args["gene"] #get the locus/gene of interest
-    gene = upperfirst(gene)
-    total_variant_seqs = "" #string for all the current variant sequences
-    file_name2 = gene+"_"+str(x)+".fas"
-    variants_current = [] #list to hold the variants randomly chosen
-    for i in range(len(fractions)):        
-        variant = str(variants[i]) 
+    #print fractions
+    variants = []
+    #randomly select variants to use for simulated data
+    randomVarIndex = random.sample(xrange(1,num_variants+1), k) #start from 1 to num_variants+1 because 0 index of linecache is ''
+    for index in randomVarIndex:
+        variant =linecache.getline('variants.txt',index) #extract the random variant
+        variant = str(variant) 
         variant = variant.rstrip() #remove the "\n" character that is returned by bash
         string1= variant.split(">")
-        variants_current.append(string1[1]) #append the variant to the list
-        sim_name = string1[1]+"_"+str(x)+"_" #name of simulation
-        file_name = sim_name+"reference.fa"
-        num_reads = math.ceil(fractions[i]*197) #compute the number of reads to generate for each variant
-        ratios.append(int(num_reads)) 
-        variant_seq = sh.grep(variant,"linear.txt","-w","-A1") #use bash to extract the variant sequence
-        variant_seq = variant_seq.rstrip() #remove the "\n" character that is returned by bash
-        variant_seq = str(variant_seq)
-        total_variant_seqs = total_variant_seqs + variant_seq
-        #print temp2 
-        cmd = "art_illumina -q -ss HS25 -sam -i "+file_name+" -p -l 76 -c "+str(ratios[i])+" -m 200 -s 10 -o "+sim_name + " >/dev/null"#the ART command to generate the simulated data for a variant
-        #write the variant sequence to a text file
-        with open(file_name, "w") as text_file: 
-            text_file.write(variant_seq)
-                #print sim_name #testing purposes
-                #print file_name #testing purposes
-                #print cmd #testing purposes
-        os.system(cmd) #run the ART command
-    with open(file_name2, "w") as text_file2:
-		text_file2.write(total_variant_seqs)
-    new_cmd = "cat *_1.fq > "+gene+"_"+str(x)+"_1.fa" #append all the first of the pairs together
-    new_cmd2 ="cat *_2.fq > "+gene+"_"+str(x)+"_2.fa" #append all the second of the pairs together
-    ref = upperfirst(gene)+"_bowtie"
-    new_cmd3 = "bash /home/glgan/Documents/Borrelia/scripts/temp.sh "+ gene+"_"+str(x) + " " + gene + "_" + str(x)+ " " + ref + " >/dev/null "
-    #print new_cmd3 
-    os.system(new_cmd) #run the command
-    os.system(new_cmd2) #run the command
-    os.system(new_cmd3)
-    os.system("rm "+args["gene"]+"*") #remove unneccessary files for the next iteration.
-    #print ratios #for testing purposes
-    X =  gene+"_"+str(x)
-    X = upperfirst(X)
-    #print X
+        variants.append(string1[1]) #append the variant to the list
+        
+    #print num
+    #print variants
     
+    #generate the reads using ART
+    total_variants_sequence = ''
+    for i in range(len(fractions)):
+        variant = variants[i]
+        simulation_name = variants[i] + '_' + str(x)+'_'
+        file_name = simulation_name + '_reference.fa'
+        number_of_reads = math.ceil((fractions[i]*200)) #compute the number of reads to generate
+        number_of_reads = int(number_of_reads)
+        variant_sequence = sh.grep(variant,"linear.txt","-w","-A1") #use bash to extract the variant sequence
+        variant_sequence = variant_sequence.rstrip() #remove the "\n" character that is returned by bash
+        variant_sequence = str(variant_sequence)
+        total_variants_sequence += variant_sequence
+        #write sequence to file
+        with open(file_name, "w") as sequence_file: 
+            sequence_file.write(variant_sequence)
+        #set the ART command, I have included a random seed for reproducibility, and a coverage parameter
+        ART_command = "art_illumina -k 0 -rs {} -q -ss HS25 -sam -i ".format(seed) +file_name+" -p -l 76 -c "+str(number_of_reads)+" -m 200 -s 10 -o "+simulation_name + ' >/dev/null 2>&1'
+        os.system(ART_command)
+    new_cmd = "cat *_1.fq > "+str(upperfirst(gene)) + "_"+str(x)+"_1.fa" #append all the first of the pairs together
+    new_cmd2 ="cat *_2.fq > "+str(upperfirst(gene))+"_"+str(x)+"_2.fa" #append all the second of the pairs together
+    os.system(new_cmd)
+    os.system(new_cmd2)
+    ref = upperfirst(gene)+"_bowtie"
+    new_cmd3 = "bash /home/glgan/Documents/Borrelia/scripts/temp.sh "+ upperfirst(gene)+"_"+str(x) + " " + upperfirst(gene) + "_" + str(x)+ " " + ref
+    os.system(new_cmd3)
+    os.system("rm {}*".format(gene)) #remove unneccessary files for the next iteration.    
     true_ratios.append(fractions)
-    true_variants.append(variants_current)
-    for j in range(0,len(variants_current)):
-            key = variants_current[j]
+    true_variants.append(variants)
+    for j in range(0,len(variants)):
+            key = variants[j]
             true_prop[key] = float(fractions[j])*100
     
-    path = X+'_reads.txt'
-    df = Generate_Matrix(path)
+    path = upperfirst(gene)+ '_'+str(x)+'_reads.txt' 
+    df = generate_matrix(path)
     df.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
     pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = solver(df)
     
 #    If there is one solution among all optimal which matches true variants, assign to var_predicted
     for solution in all_solutions:
-        if set(solution) == set(variants_current):
+        if set(solution) == set(variants):
             var_predicted = solution
             break
     
@@ -455,18 +467,18 @@ for x in range(1,args["numOfIter"]+1):
 #    print("Similar likelihood list: {}".format(similar_likelihood_sol_list))
 #    print("Similar likelihood score list: {}".format(similar_likelihood_score_list))
     
-    Precision.append(precision(var_predicted, variants_current))
-    Recall.append(recall(var_predicted, variants_current))
+    Precision.append(precision(var_predicted, variants))
+    Recall.append(recall(var_predicted, variants))
     pred_object_vals.append(pred_object_val)
     df1 = df[var_predicted]
-    df2 = df.loc[reads_cov,variants_current]
+    df2 = df.loc[reads_cov,variants]
     df3 = df.loc[reads_cov,var_predicted]
     prop = compute_proportions(df3)
     pred_prop = create_dictionary(var_predicted, prop)
     val = totalVariationDist(pred_prop, true_prop)
     total_var.append(val)
 
-    print 'True variants are:', variants_current, "\n"
+    print 'True variants are:', variants, "\n"
     print 'Predicted variants are:', var_predicted, "\n"
     print 'True proportions are:', true_prop, "\n"
     print 'Predicted proportions are:', pred_prop, "\n"
@@ -474,7 +486,7 @@ for x in range(1,args["numOfIter"]+1):
     
     #Observe whether minimum negative log likelihood really gives the true variants
 #    for sol in min_sol_list:
-#        if set(sol) == set(variants_current):
+#        if set(sol) == set(variants):
 #            minNegLogLike_correct += 1
 #            min_sol = sol
 #            break
@@ -486,7 +498,7 @@ for x in range(1,args["numOfIter"]+1):
         
     #Count number of simulations where solution with minimum negative log likelihood contains true variants
 #    for sol in min_sol_list:
-#        if len(set(variants_current) - set(sol)) == 0:
+#        if len(set(variants) - set(sol)) == 0:
 #            minNegLogLike_hasTrue += 1
 #            break
         
@@ -497,7 +509,7 @@ for x in range(1,args["numOfIter"]+1):
     true_Objective_vals.append(true_Objective_val)
     diff_obj_vals.append(Compute_obj_diff(pred_object_val,true_Objective_val))
     
-    if predictedCorrectly(var_predicted, variants_current):
+    if predictedCorrectly(var_predicted, variants):
             count += 1
             bool_list.append(True)
     else:
@@ -567,32 +579,28 @@ context+=1
 #print('The percentage of minimum negative log likelihood score giving true solution: {}\n'.format(minNegLogLike_correct*100.0/count) )
 #print 'Number of simulations where solution with minimum negative log likelihood has minimum number of variants: ', minSizeOpt_count, "\n"
 #print("Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: {0}\n".format(minNegLogLike_hasTrue))
-X = []
-os.system("rm {0}_*.fa".format(gene))
 
-for i in range(1,args["numOfIter"]):
-        X.append(i)
 plt.figure()
 plt.hist(total_var, bins=args["numOfIter"]-10)
 plt.xlabel('Total Variation Distance in %')
 plt.ylabel('Frequency')
 #plt.show()
-plt.savefig("/home/glgan/Documents/Borrelia/{0}/{1}_totalVarDist".format(args["outputFolder"], gene))
+plt.savefig("{0}{1}_totalVarDist".format(args["outputFolderPath"], gene))
 
 plt.figure()
 plt.hist(Precision, bins=args["numOfIter"]-10)
 plt.xlabel('Precision')
 plt.ylabel('Frequency')
-plt.savefig("/home/glgan/Documents/Borrelia/{0}/{1}_precision".format(args["outputFolder"], gene))
+plt.savefig("{0}{1}_precision".format(args["outputFolderPath"], gene))
 
 plt.figure()
 plt.hist(Recall, bins=args["numOfIter"]-10)
 plt.xlabel('Recall')
 plt.ylabel('Frequency')
-plt.savefig("/home/glgan/Documents/Borrelia/{0}/{1}_recall".format(args["outputFolder"], gene))
+plt.savefig("{0}{1}_recall".format(args["outputFolderPath"], gene))
 
 plt.figure()
 plt.hist(diff_obj_vals, bins=args["numOfIter"]-10)
 plt.xlabel('Difference in objective values: Predicted - True')
 plt.ylabel('Frequency')
-plt.savefig("/home/glgan/Documents/Borrelia/{0}/{1}_diffObjVals".format(args["outputFolder"], gene))
+plt.savefig("{0}{1}_diffObjVals".format(args["outputFolderPath"], gene))
