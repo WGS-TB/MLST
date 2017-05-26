@@ -13,7 +13,7 @@ import cplex
 
 
 ''' dataMatrix: data frame 
-    Return: Objective value, variants predicted and reads covered by these variants
+    Return: Objective value, variants predicted, reads covered by these variants, all optimal solutions, objective values of optimal solutions
 '''
 def solver(dataMatrix):
 #    data_matrix = returnDataMatrix("/home/glgan/Documents/Borrelia/data/simData/clpA_7_weighted.csv")
