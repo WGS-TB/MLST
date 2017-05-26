@@ -10,61 +10,67 @@ import pandas as pd
 import math
 import argparse
 import csv
-import variantILP as ilp
+import variantILP as varSolver
 import matplotlib.pyplot as plt
 import numpy as np
 import sys
 
-#Generate matrix of rows=reads and columns=number of mismatches
-def Generate_Matrix(path):
+'''
+Input: Path to reads.txt file
+Output: Matrix with rows=reads, columns=variants and entries=mismatches information
+'''
+def generate_matrix(path):
     var_list = [] #holds the variants
     read_list = [] #holds the reads
     mismatch_list = [] #holds the mismatches
     with open(path) as inf:
-            for line in inf:
-                    parts = line.split('\t') # split line into parts
-                    if len(parts) > 1:   # if at least 2 parts/columns
-                            read_list.append(parts[0]) #append reads to a list
-                            var_list.append(parts[1])   #append vars to a list
-                            mismatch_list.append(parts[2]) #append mismatches to list
-            flag = True
+        for line in inf:
+            parts = line.split('\t') # split line into parts
+            if len(parts) > 1:   # if at least 2 parts/columns
+                read_list.append(parts[0]) #append reads to a list
+                var_list.append(parts[1])   #append vars to a list
+                mismatch_list.append(parts[2]) #append mismatches to list
+        flag = True
+        
     if flag is True:
-            d = defaultdict(list) #dictionary holding all the variants that a read maps to
-            d_1 = defaultdict(list) #dictionary holding all the mismatches that a read has to its variants
-            d_2 = defaultdict(list) #dictionary holding indices for later use
+        d = defaultdict(list) #dictionary holding all the variants that a read maps to
+        d_1 = defaultdict(list) #dictionary holding all the mismatches that a read has to its variants
+        d_2 = defaultdict(list) #dictionary holding indices for later use
 
 
-            for i in range(len(read_list)):
-                    num_mismatch = mismatch_list[i].count('>') #count the number of mismatches for each read
-                    
-                    if  i%2 == 0:    
-                        read_list[i] = read_list[i]+'-1/2'
-                    else:
-                        read_list[i] = read_list[i]+'-2/2'
-                    
-                    d[read_list[i]].append(var_list[i]) #append all the variants that read read_i maps to
-                    d_1[read_list[i]].append(num_mismatch) #append all the mismatches that each read_i has when it maps to a variants
-                    d_2[read_list[i]].append(i) #for testing purposes
+        for i in range(len(read_list)):
+            num_mismatch = mismatch_list[i].count('>') #count the number of mismatches for each read
+            
+            #As paired reads both have the same name, this distinguishes 
+            if  i%2 == 0:    
+                read_list[i] = read_list[i]+'-1/2'
+            else:
+                read_list[i] = read_list[i]+'-2/2'
+            
+            d[read_list[i]].append(var_list[i]) #append all the variants that read read_i maps to
+            d_1[read_list[i]].append(num_mismatch) #append all the mismatches that each read_i has when it maps to a variants
+            d_2[read_list[i]].append(i) #for testing purposes
 
-            var_list = set(var_list)
-            x = tree()
+        var_list = set(var_list)
+        x = tree()
 
 #               create a 2D dictionary that contains all the possible combinations of a read with a variant and the number of mismatches.
-            for var in var_list:
-                    for key in d:
-                            temp = d[key]
-                            if var in temp:
-                                    index = temp.index(var)
-                                    val = d_1[key][index]
-                                    #only for perfect matches.
-                                    '''if val >3:
-                                    	x[key][var] = -1
-                                    '''
-                                    x[key][var] = int(val)
+        for var in var_list:
+            for key in d:
+                temp = d[key]
+                if var in temp:
+                    index = temp.index(var)
+                    val = d_1[key][index]
+                    #only for perfect matches.
+                    '''if val >3:
+                    	x[key][var] = -1
+                    '''
+                    x[key][var] = int(val)
 
-            df = pd.DataFrame(x).T.fillna(-1)
+        df = pd.DataFrame(x).T.fillna(-1)
     return df
 
+#what is this?
 def tree():
     return defaultdict(tree)
 
@@ -136,10 +142,10 @@ args = vars(ap.parse_args())
 path = args["path"]
 
 #generate matrix
-df = Generate_Matrix(path)
+df = generate_matrix(path)
 df.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
 #predict variants
-pred_object_val,var_predicted,reads_cov, all_solutions, all_objective = ilp.solver(df)
+pred_object_val,var_predicted,reads_cov, all_solutions, all_objective = varSolver.solver(df)
 #print var_predicted
 #print all_solutions
 df2 = df.loc[reads_cov,var_predicted]
