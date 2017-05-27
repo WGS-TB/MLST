@@ -1,13 +1,19 @@
 # Illuminating the diversity of Borrelia Burgdorferi in tick samples
+## Pre-requisites
+1) SRA toolkit: To download samples' reads. Please download the toolkit here: https://www.ncbi.nlm.nih.gov/sra/docs/toolkitsoft/. You will need `fastq-dump` to download the reads. Copy `fastq-dump` into your bin file.
+
+2) Bowtie: For read mapping. Please download it here: http://bowtie-bio.sourceforge.net/index.shtml. You will need both `bowtie` and `bowtie-build`, copy these into your bin file.
+
+3) CPLEX Python API: For solving ILP. You will need academic license to download CPLEX. Once you installed CPLEX, follow the instructions here to install CPLEX-Python modules: https://www.ibm.com/support/knowledgecenter/SSSA5P_12.5.1/ilog.odms.cplex.help/CPLEX/GettingStarted/topics/set_up/Python_setup.html 
+
+4) Python packages such as numpy and pandas. Please use `pip install` to install these packages.
+
+##Instructions to run the pipeline
 1) All required scripts and files are in pipeline folder (except for sample reads as the files are big). 
 
-2) You will need SRA toolkit to download the reads. Please download the toolkit here: https://www.ncbi.nlm.nih.gov/sra/docs/toolkitsoft/. You will need `fastq-dump` to download the reads. Copy `fastq-dump` into your bin file.
+2) Run `python download_samples.py` to download the samples' reads (downloaded samples are based on the SRR_Acc_List.txt)
 
-3) You will also need Bowtie. Please download it here: http://bowtie-bio.sourceforge.net/index.shtml. You will need both `bowtie` and `bowtie-build`, copy these into your bin file.
-
-4) Download the reads for each sample using command `fastq-dump --split-3 [--sample number]`. You will have something like: `SRR2034333_1.fastq` and `SRR2034333_2.fastq`. Place these in a folder named by the sample name and place this folder under `data`. For example, `/data/SRR2034333/SRR2034333_1.fastq` and `/data/SRR2034333/SRR2034333_2.fastq`.
-
-5) Once data are ready, run the following commands in the pipeline folder:
+3) Once data are ready, run the following commands in the pipeline folder:
 ```
 bash borreliaPipeline.sh
 ```
