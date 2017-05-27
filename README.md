@@ -8,7 +8,7 @@
 
 4) Python packages such as numpy and pandas. Please use `pip install` to install these packages.
 
-##Instructions to run the pipeline
+## Instructions to run the pipeline
 1) All required scripts and files are in pipeline folder (except for sample reads as the files are big). 
 
 2) Run `python download_samples.py` to download the samples' reads (downloaded samples are based on the SRR_Acc_List.txt)
