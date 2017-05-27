@@ -11,7 +11,7 @@ reference=$3
 #echo "Mapping "$sample" sequence to "$gene" done."
 #python /home/glgan/Documents/Borrelia/scripts/preprocess.py --path $sample'_'$gene'_reads.txt' --gene $gene #run the python script
 #echo "computing proportions of "$gene" done"
-bowtie -a -v 2 -p 8 $reference -1 ./$sample"_1.fa" -2 ./$sample"_2.fa" $gene".out"  >/dev/null 2>&1
+bowtie -a -v 3 -p 8 $reference -1 ./$sample"_1.fa" -2 ./$sample"_2.fa" $gene".out"  >/dev/null 2>&1
 awk '{print $1"\t"$3"\t"$8"\t"$5}' $gene".out" > $gene"_reads.txt" 
 #rm *.out
 echo ""
