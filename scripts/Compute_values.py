@@ -274,7 +274,7 @@ for x in range(1,args["numOfIter"]+1):
         with open(file_name, "w") as sequence_file: 
             sequence_file.write(variant_sequence)
         #set the ART command, I have included a random seed for reproducibility, and a coverage parameter
-        ART_command = "art_illumina -k 0 -rs {} -q -ss HS25 -sam -i ".format(seed) +file_name+" -p -l 76 -c "+str(number_of_reads)+" -m 200 -s 10 -o "+simulation_name + ' >/dev/null 2>&1'
+        ART_command = "art_illumina -k 3 -rs {} -q -ss HS25 -sam -i ".format(seed) +file_name+" -p -l 76 -c "+str(number_of_reads)+" -m 200 -s 10 -o "+simulation_name + ' >/dev/null 2>&1'
         os.system(ART_command)
     new_cmd = "cat *_1.fq > "+str(upperfirst(gene)) + "_"+str(x)+"_1.fa" #append all the first of the pairs together
     new_cmd2 ="cat *_2.fq > "+str(upperfirst(gene))+"_"+str(x)+"_2.fa" #append all the second of the pairs together
