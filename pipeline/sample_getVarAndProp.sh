@@ -32,7 +32,7 @@ do
 	#map the sample to the locus
 	echo ".... Mapping sample reads to variants ...."
 	echo ""
-	bowtie -a -v 2 -p 8 $l_i"_bowtie" -1 $sample_path"/"$sample"_1.fastq" -2 $sample_path"/"$sample"_2.fastq" $sample"_"$l_i".out" >/dev/null 
+	bowtie -a -v 3 -p 8 $l_i"_bowtie" -1 $sample_path"/"$sample"_1.fastq" -2 $sample_path"/"$sample"_2.fastq" $sample"_"$l_i".out" >/dev/null 
 	#create reads table
 	echo ".... Summarizing Bowtie mapping information into reads table ....."
 	echo ""
