@@ -122,8 +122,8 @@ def solver(dataMatrix):
     conclusion["Decision Variable"] = varNames
     conclusion["Value"] = varValues
 
-    #Python numerical instability, sometimes comparison to 1.0 gives false when the value is indeed 1. As all decision variables have max value =1, hence setting > 0.999 is the same as ==1
-    present = conclusion[conclusion["Value"]> 0.999]
+    #Python numerical instability, sometimes comparison to 1.0 gives false when the value is indeed 1. As all decision variables have max value =1, hence setting > 0.5 is the same as ==1
+    present = conclusion[conclusion["Value"]> 0.5]
     variantsPresent = xIsVariant[xIsVariant["Variable"] .isin(present["Decision Variable"].tolist())]
     varPresentList = variantsPresent.index.tolist()
 #    xPresentList = variantsPresent["Variable"].tolist()
