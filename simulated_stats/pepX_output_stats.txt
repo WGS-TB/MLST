@@ -2,38 +2,56 @@
 
 ======================================== SIMULATION 1 ====================================================
 
-Number of optimal solutions: 1
-True variants are: ['pepX_64', 'pepX_49', 'pepX_169', 'pepX_179'] 
+Number of optimal solutions: 5
+True variants are: ['pepX_5', 'pepX_75'] 
 
-Predicted variants are: ['pepX_169', 'pepX_179', 'pepX_49', 'pepX_64'] 
+Predicted variants are: ['pepX_5', 'pepX_75'] 
 
-True proportions are: {'pepX_64': 34.20562264767503, 'pepX_49': 37.58032467379183, 'pepX_179': 8.358929604468765, 'pepX_169': 19.855123074064377} 
+True proportions are: {'pepX_5': 38.17341616369404, 'pepX_75': 61.82658383630597} 
 
-Predicted proportions are: {'pepX_64': 34.461046831645348, 'pepX_49': 37.282091438001245, 'pepX_179': 8.415841584158418, 'pepX_169': 19.841020146194992} 
+Predicted proportions are: {'pepX_5': 38.308457711442777, 'pepX_75': 61.691542288557216} 
+
+All solutions: 
+{'sol_2': ['pepX_17', 'pepX_5', 'pepX_75'], 'sol_3': ['pepX_5', 'pepX_7', 'pepX_75'], 'sol_0': ['pepX_5', 'pepX_75'], 'sol_1': ['pepX_14', 'pepX_5', 'pepX_75'], 'sol_4': ['pepX_13', 'pepX_5', 'pepX_75']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1273.7233535181347, 'sol_3': 1275.2066794583659, 'sol_0': 1227.2590946857083, 'sol_1': 1266.0100592802416, 'sol_4': 1280.2543075002191}
 
 
 ======================================== SIMULATION 2 ====================================================
 
 Number of optimal solutions: 1
-True variants are: ['pepX_187', 'pepX_137', 'pepX_31', 'pepX_127', 'pepX_142', 'pepX_105'] 
+True variants are: ['pepX_105', 'pepX_143', 'pepX_93', 'pepX_183', 'pepX_33'] 
 
-Predicted variants are: ['pepX_105', 'pepX_127', 'pepX_137', 'pepX_142', 'pepX_187', 'pepX_31'] 
+Predicted variants are: ['pepX_105', 'pepX_143', 'pepX_183', 'pepX_33', 'pepX_93'] 
 
-True proportions are: {'pepX_31': 37.14874931688361, 'pepX_105': 21.408318800362494, 'pepX_142': 15.858755650497711, 'pepX_127': 1.0627279574993669, 'pepX_187': 1.5847990271009047, 'pepX_137': 22.936649247655915} 
+True proportions are: {'pepX_183': 20.35964632177263, 'pepX_105': 29.961905694594744, 'pepX_33': 22.716802079213068, 'pepX_143': 21.9850246896549, 'pepX_93': 4.976621214764667} 
 
-Predicted proportions are: {'pepX_31': 36.328453129704975, 'pepX_105': 21.182266009852217, 'pepX_142': 16.347627045924455, 'pepX_127': 1.5111119425971773, 'pepX_187': 1.9704433497536946, 'pepX_137': 22.660098522167491} 
+Predicted proportions are: {'pepX_183': 21.057215409082698, 'pepX_105': 29.507375475006221, 'pepX_33': 22.004816731215069, 'pepX_143': 22.112097212936053, 'pepX_93': 5.3184951717599516} 
+
+All solutions: 
+{'sol_0': ['pepX_105', 'pepX_143', 'pepX_183', 'pepX_33', 'pepX_93']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1388.6787886548245}
 
 
 ======================================== SIMULATION 3 ====================================================
 
-Number of optimal solutions: 5
-True variants are: ['pepX_99', 'pepX_117', 'pepX_53', 'pepX_103', 'pepX_31', 'pepX_37'] 
+Number of optimal solutions: 1
+True variants are: ['pepX_53', 'pepX_103', 'pepX_31', 'pepX_37'] 
 
-Predicted variants are: ['pepX_103', 'pepX_117', 'pepX_31', 'pepX_37', 'pepX_53', 'pepX_99'] 
+Predicted variants are: ['pepX_103', 'pepX_31', 'pepX_37', 'pepX_53'] 
 
-True proportions are: {'pepX_37': 27.10993497596725, 'pepX_53': 5.108192976476572, 'pepX_31': 11.352912916616257, 'pepX_103': 13.305348492199128, 'pepX_99': 14.53644431568418, 'pepX_117': 28.5871663230566} 
+True proportions are: {'pepX_37': 25.186755210310725, 'pepX_103': 37.59844913029921, 'pepX_53': 15.745221047358251, 'pepX_31': 21.46957461203181} 
 
-Predicted proportions are: {'pepX_37': 16.967562393196193, 'pepX_53': 15.69391854968109, 'pepX_31': 11.130962805111595, 'pepX_103': 13.663499769923639, 'pepX_99': 14.540889585344479, 'pepX_117': 28.003166896743014} 
+Predicted proportions are: {'pepX_37': 20.839244879339621, 'pepX_103': 37.623762376237629, 'pepX_53': 20.3557923396002, 'pepX_31': 21.181200404822555} 
+
+All solutions: 
+{'sol_0': ['pepX_103', 'pepX_31', 'pepX_37', 'pepX_53']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1356.446863713348}
 
 
 ======================================== SIMULATION 4 ====================================================
@@ -47,6 +65,12 @@ True proportions are: {'pepX_144': 39.8117742538673, 'pepX_60': 55.7571579994418
 
 Predicted proportions are: {'pepX_144': 39.406608813727466, 'pepX_60': 56.115779245974025, 'pepX_12': 4.4776119402985062} 
 
+All solutions: 
+{'sol_2': ['pepX_12', 'pepX_144', 'pepX_60', 'pepX_90'], 'sol_3': ['pepX_144', 'pepX_161', 'pepX_60', 'pepX_90'], 'sol_0': ['pepX_12', 'pepX_144', 'pepX_60'], 'sol_1': ['pepX_144', 'pepX_161', 'pepX_60'], 'sol_4': ['pepX_12', 'pepX_144', 'pepX_39', 'pepX_60'], 'sol_5': ['pepX_144', 'pepX_161', 'pepX_39', 'pepX_60']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1326.961979393378, 'sol_3': 1326.961979393378, 'sol_0': 1298.0388504879154, 'sol_1': 1298.0388504879154, 'sol_4': 1327.6377948250545, 'sol_5': 1327.6377948250545}
+
 
 ======================================== SIMULATION 5 ====================================================
 
@@ -58,6 +82,12 @@ Predicted variants are: ['pepX_103', 'pepX_175', 'pepX_187', 'pepX_190']
 True proportions are: {'pepX_175': 22.821031819153596, 'pepX_103': 38.13192513071833, 'pepX_190': 13.289037090029643, 'pepX_187': 25.75800596009843} 
 
 Predicted proportions are: {'pepX_175': 22.772277227722771, 'pepX_103': 38.118811881188108, 'pepX_190': 18.467817486024877, 'pepX_187': 20.64109340506424} 
+
+All solutions: 
+{'sol_0': ['pepX_103', 'pepX_175', 'pepX_187', 'pepX_190']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1360.9235668327167}
 
 
 ======================================== SIMULATION 6 ====================================================
@@ -71,6 +101,12 @@ True proportions are: {'pepX_103': 62.480407715401995, 'pepX_173': 37.5195922845
 
 Predicted proportions are: {'pepX_103': 62.189054726368148, 'pepX_173': 37.810945273631837} 
 
+All solutions: 
+{'sol_0': ['pepX_103', 'pepX_173']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1227.2590946857079}
+
 
 ======================================== SIMULATION 7 ====================================================
 
@@ -82,6 +118,12 @@ Predicted variants are: ['pepX_109', 'pepX_125', 'pepX_16', 'pepX_71', 'pepX_97'
 True proportions are: {'pepX_109': 1.4413177598507472, 'pepX_16': 28.596375936700273, 'pepX_97': 30.02030344865027, 'pepX_71': 28.412997102090248, 'pepX_125': 11.52900575270846} 
 
 Predicted proportions are: {'pepX_109': 1.7996201963630309, 'pepX_16': 28.249640887380821, 'pepX_71': 28.016470856601796, 'pepX_125': 16.602483574492076, 'pepX_97': 25.331784485162288} 
+
+All solutions: 
+{'sol_2': ['pepX_109', 'pepX_125', 'pepX_14', 'pepX_16', 'pepX_71', 'pepX_97'], 'sol_3': ['pepX_109', 'pepX_125', 'pepX_16', 'pepX_7', 'pepX_71', 'pepX_97'], 'sol_0': ['pepX_109', 'pepX_125', 'pepX_16', 'pepX_71', 'pepX_97'], 'sol_1': ['pepX_109', 'pepX_125', 'pepX_16', 'pepX_17', 'pepX_71', 'pepX_97'], 'sol_4': ['pepX_109', 'pepX_125', 'pepX_13', 'pepX_16', 'pepX_71', 'pepX_97']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1436.8348300298208, 'sol_3': 1436.9042632059541, 'sol_0': 1416.0547083250904, 'sol_1': 1435.7176024803534, 'sol_4': 1438.9982005572303}
 
 
 ======================================== SIMULATION 8 ====================================================
@@ -95,6 +137,12 @@ True proportions are: {'pepX_145': 1.3989274525364226, 'pepX_83': 53.10923775879
 
 Predicted proportions are: {'pepX_145': 1.4925373134328355, 'pepX_83': 49.541119377956335, 'pepX_179': 48.966343308610817} 
 
+All solutions: 
+{'sol_0': ['pepX_145', 'pepX_179', 'pepX_83']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1233.9738516420141}
+
 
 ======================================== SIMULATION 9 ====================================================
 
@@ -106,6 +154,12 @@ Predicted variants are: ['pepX_146', 'pepX_26', 'pepX_8']
 True proportions are: {'pepX_146': 23.327897412612778, 'pepX_8': 41.73750198309749, 'pepX_26': 34.934600604289734} 
 
 Predicted proportions are: {'pepX_146': 23.383084577114424, 'pepX_8': 41.791044776119392, 'pepX_26': 34.82587064676617} 
+
+All solutions: 
+{'sol_8': ['pepX_120', 'pepX_146', 'pepX_17', 'pepX_26'], 'sol_9': ['pepX_13', 'pepX_146', 'pepX_26', 'pepX_93'], 'sol_2': ['pepX_146', 'pepX_17', 'pepX_26', 'pepX_8'], 'sol_3': ['pepX_13', 'pepX_146', 'pepX_26', 'pepX_8'], 'sol_0': ['pepX_146', 'pepX_26', 'pepX_8'], 'sol_1': ['pepX_146', 'pepX_26', 'pepX_7', 'pepX_8'], 'sol_6': ['pepX_14', 'pepX_146', 'pepX_26', 'pepX_8'], 'sol_7': ['pepX_146', 'pepX_17', 'pepX_26', 'pepX_93'], 'sol_4': ['pepX_146', 'pepX_26', 'pepX_7', 'pepX_93'], 'sol_5': ['pepX_120', 'pepX_146', 'pepX_26', 'pepX_7'], 'sol_14': ['pepX_146', 'pepX_26', 'pepX_5', 'pepX_7'], 'sol_15': ['pepX_13', 'pepX_138', 'pepX_146', 'pepX_26'], 'sol_10': ['pepX_120', 'pepX_13', 'pepX_146', 'pepX_26'], 'sol_11': ['pepX_14', 'pepX_146', 'pepX_26', 'pepX_93'], 'sol_12': ['pepX_138', 'pepX_146', 'pepX_26', 'pepX_7'], 'sol_13': ['pepX_138', 'pepX_146', 'pepX_17', 'pepX_26']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 1329.9005029709604, 'sol_9': 1334.0538134015649, 'sol_2': 1321.2972134502775, 'sol_3': 1325.4505247492928, 'sol_0': 1318.0039271663047, 'sol_1': 1319.8138875211232, 'sol_6': 1329.3071721650933, 'sol_7': 1329.9005021025496, 'sol_4': 1328.4171761733955, 'sol_5': 1328.4171770418061, 'sol_14': 1342.9537255625044, 'sol_15': 1345.0433845865023, 'sol_10': 1334.0538142699756, 'sol_11': 1337.9104608173654, 'sol_12': 1339.406747358333, 'sol_13': 1340.890073287487}
 
 
 ======================================== SIMULATION 10 ====================================================
@@ -119,6 +173,12 @@ True proportions are: {'pepX_21': 19.127309311739072, 'pepX_37': 23.647863155425
 
 Predicted proportions are: {'pepX_21': 18.908599833943907, 'pepX_37': 23.645320197044335, 'pepX_114': 15.270935960591135, 'pepX_70': 40.880201179881418, 'pepX_57': 1.2949428285392075} 
 
+All solutions: 
+{'sol_0': ['pepX_114', 'pepX_21', 'pepX_37', 'pepX_57', 'pepX_70']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1420.0365641362948}
+
 
 ======================================== SIMULATION 11 ====================================================
 
@@ -130,6 +190,12 @@ Predicted variants are: ['pepX_13', 'pepX_140', 'pepX_161', 'pepX_170', 'pepX_28
 True proportions are: {'pepX_58': 11.711652010320982, 'pepX_13': 25.296546216548528, 'pepX_28': 14.627350456132321, 'pepX_140': 0.31142755241984954, 'pepX_170': 24.350558390719044, 'pepX_161': 13.945484130973304, 'pepX_90': 9.756981242885978} 
 
 Predicted proportions are: {'pepX_58': 12.249793450795069, 'pepX_13': 14.597772196802426, 'pepX_28': 14.621439053028938, 'pepX_140': 11.017991349995606, 'pepX_170': 24.137931034482762, 'pepX_161': 13.793103448275865, 'pepX_90': 9.5819694666193485} 
+
+All solutions: 
+{'sol_8': ['pepX_1', 'pepX_12', 'pepX_13', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_9': ['pepX_1', 'pepX_13', 'pepX_161', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_2': ['pepX_12', 'pepX_13', 'pepX_14', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_3': ['pepX_13', 'pepX_14', 'pepX_161', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_0': ['pepX_12', 'pepX_13', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_1': ['pepX_13', 'pepX_161', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_6': ['pepX_116', 'pepX_12', 'pepX_13', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_7': ['pepX_116', 'pepX_13', 'pepX_161', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_4': ['pepX_13', 'pepX_15', 'pepX_161', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_5': ['pepX_12', 'pepX_13', 'pepX_15', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_18': ['pepX_13', 'pepX_139', 'pepX_161', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_19': ['pepX_12', 'pepX_13', 'pepX_139', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_14': ['pepX_13', 'pepX_161', 'pepX_162', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_15': ['pepX_12', 'pepX_13', 'pepX_162', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_16': ['pepX_114', 'pepX_13', 'pepX_161', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_17': ['pepX_114', 'pepX_12', 'pepX_13', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_10': ['pepX_12', 'pepX_13', 'pepX_140', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_11': ['pepX_13', 'pepX_140', 'pepX_161', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_12': ['pepX_115', 'pepX_12', 'pepX_13', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90'], 'sol_13': ['pepX_115', 'pepX_13', 'pepX_161', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 1465.4952615739769, 'sol_9': 1465.4952615739769, 'sol_2': 1458.9211043666892, 'sol_3': 1458.9211043666892, 'sol_0': 1457.0335284208597, 'sol_1': 1457.0335284208597, 'sol_6': 1464.8716877641541, 'sol_7': 1464.8716877641541, 'sol_4': 1463.6763860550204, 'sol_5': 1463.6763860550204, 'sol_18': 1478.0548955435481, 'sol_19': 1478.0548955435481, 'sol_14': 1467.008873697235, 'sol_15': 1467.008873697235, 'sol_16': 1474.0509156528535, 'sol_17': 1474.0509156528535, 'sol_10': 1465.5083107853509, 'sol_11': 1465.5083107853509, 'sol_12': 1466.7122096035605, 'sol_13': 1466.7122096035605}
 
 
 ======================================== SIMULATION 12 ====================================================
@@ -143,6 +209,12 @@ True proportions are: {'pepX_13': 11.640030772931329, 'pepX_26': 14.657363837994
 
 Predicted proportions are: {'pepX_26': 14.46579963182921, 'pepX_13': 11.764705882352946, 'pepX_66': 3.122090497191278, 'pepX_69': 9.0994844762634752, 'pepX_91': 40.959684218245449, 'pepX_137': 20.588235294117649} 
 
+All solutions: 
+{'sol_8': ['pepX_13', 'pepX_137', 'pepX_149', 'pepX_185', 'pepX_26', 'pepX_66', 'pepX_69', 'pepX_90'], 'sol_9': ['pepX_13', 'pepX_137', 'pepX_185', 'pepX_26', 'pepX_39', 'pepX_66', 'pepX_69', 'pepX_91'], 'sol_2': ['pepX_13', 'pepX_137', 'pepX_26', 'pepX_66', 'pepX_69', 'pepX_91'], 'sol_3': ['pepX_13', 'pepX_137', 'pepX_26', 'pepX_39', 'pepX_66', 'pepX_69', 'pepX_91'], 'sol_0': ['pepX_13', 'pepX_137', 'pepX_26', 'pepX_66', 'pepX_69', 'pepX_90', 'pepX_91'], 'sol_1': ['pepX_13', 'pepX_137', 'pepX_149', 'pepX_26', 'pepX_66', 'pepX_69', 'pepX_90'], 'sol_6': ['pepX_13', 'pepX_137', 'pepX_26', 'pepX_39', 'pepX_66', 'pepX_79', 'pepX_91'], 'sol_7': ['pepX_13', 'pepX_137', 'pepX_185', 'pepX_26', 'pepX_66', 'pepX_69', 'pepX_91'], 'sol_4': ['pepX_13', 'pepX_137', 'pepX_149', 'pepX_26', 'pepX_66', 'pepX_79', 'pepX_90'], 'sol_5': ['pepX_13', 'pepX_137', 'pepX_26', 'pepX_66', 'pepX_79', 'pepX_91'], 'sol_10': ['pepX_13', 'pepX_137', 'pepX_185', 'pepX_26', 'pepX_66', 'pepX_79', 'pepX_91'], 'sol_11': ['pepX_13', 'pepX_137', 'pepX_149', 'pepX_185', 'pepX_26', 'pepX_66', 'pepX_79', 'pepX_90']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 1453.9815365411328, 'sol_9': 1456.2552768150974, 'sol_2': 1442.5722129379963, 'sol_3': 1444.498045183338, 'sol_0': 1439.8523204822491, 'sol_1': 1442.3564327160177, 'sol_6': 1447.4708987828808, 'sol_7': 1453.4971060207949, 'sol_4': 1445.3314630008977, 'sol_5': 1445.5472842400941, 'sol_10': 1456.4530002985989, 'sol_11': 1456.9373605668122}
+
 
 ======================================== SIMULATION 13 ====================================================
 
@@ -154,6 +226,12 @@ Predicted variants are: ['pepX_117', 'pepX_133', 'pepX_158', 'pepX_17', 'pepX_18
 True proportions are: {'pepX_158': 4.969195017954185, 'pepX_41': 0.40386442110028925, 'pepX_189': 13.234792704796517, 'pepX_4': 29.336860593954107, 'pepX_66': 22.259833033600934, 'pepX_133': 29.79545422859397} 
 
 Predicted proportions are: {'pepX_158': 4.8780109213929856, 'pepX_17': 12.357835111596378, 'pepX_189': 13.366336633663369, 'pepX_66': 22.243783542835512, 'pepX_117': 16.850085680482824, 'pepX_133': 30.30394811002893} 
+
+All solutions: 
+{'sol_2': ['pepX_133', 'pepX_158', 'pepX_17', 'pepX_189', 'pepX_4', 'pepX_66'], 'sol_3': ['pepX_117', 'pepX_133', 'pepX_158', 'pepX_17', 'pepX_189', 'pepX_66'], 'sol_0': ['pepX_133', 'pepX_158', 'pepX_189', 'pepX_4', 'pepX_66'], 'sol_1': ['pepX_133', 'pepX_14', 'pepX_158', 'pepX_189', 'pepX_4', 'pepX_66'], 'sol_4': ['pepX_133', 'pepX_158', 'pepX_189', 'pepX_4', 'pepX_66', 'pepX_7'], 'sol_5': ['pepX_13', 'pepX_133', 'pepX_158', 'pepX_189', 'pepX_4', 'pepX_66']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1439.84252790388, 'sol_3': 1440.4358582666803, 'sol_0': 1421.5942010183412, 'sol_1': 1436.8413138567605, 'sol_4': 1441.0291886294806, 'sol_5': 1443.1231259807566}
 
 
 ======================================== SIMULATION 14 ====================================================
@@ -167,6 +245,12 @@ True proportions are: {'pepX_24': 64.74726407468351, 'pepX_26': 35.2527359253164
 
 Predicted proportions are: {'pepX_24': 55.171929862085612, 'pepX_26': 44.828070137914395} 
 
+All solutions: 
+{'sol_0': ['pepX_24', 'pepX_26']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1187.5319867591049}
+
 
 ======================================== SIMULATION 15 ====================================================
 
@@ -178,6 +262,12 @@ Predicted variants are: ['pepX_188', 'pepX_20']
 True proportions are: {'pepX_188': 2.6162994615947124, 'pepX_20': 97.38370053840528} 
 
 Predicted proportions are: {'pepX_188': 2.9850746268656714, 'pepX_20': 97.014925373134332} 
+
+All solutions: 
+{'sol_2': ['pepX_17', 'pepX_188', 'pepX_20'], 'sol_3': ['pepX_188', 'pepX_20', 'pepX_7'], 'sol_0': ['pepX_188', 'pepX_20'], 'sol_1': ['pepX_14', 'pepX_188', 'pepX_20'], 'sol_4': ['pepX_13', 'pepX_188', 'pepX_20']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1224.1988671414613, 'sol_3': 1226.8774948266291, 'sol_0': 1219.2765556795857, 'sol_1': 1223.0366803231643, 'sol_4': 1237.8670667537474}
 
 
 ======================================== SIMULATION 16 ====================================================
@@ -191,6 +281,12 @@ True proportions are: {'pepX_49': 2.915919585626692, 'pepX_107': 18.198534811049
 
 Predicted proportions are: {'pepX_49': 2.9702970297029703, 'pepX_107': 18.679530893085602, 'pepX_186': 22.277227722772277, 'pepX_112': 3.9603960396039604, 'pepX_136': 21.072755974057806, 'pepX_93': 31.039792340777371} 
 
+All solutions: 
+{'sol_2': ['pepX_107', 'pepX_112', 'pepX_136', 'pepX_186', 'pepX_49', 'pepX_93'], 'sol_3': ['pepX_107', 'pepX_112', 'pepX_13', 'pepX_136', 'pepX_186', 'pepX_49', 'pepX_93'], 'sol_0': ['pepX_107', 'pepX_112', 'pepX_136', 'pepX_186', 'pepX_49', 'pepX_7', 'pepX_93'], 'sol_1': ['pepX_107', 'pepX_112', 'pepX_136', 'pepX_17', 'pepX_186', 'pepX_49', 'pepX_93'], 'sol_4': ['pepX_107', 'pepX_112', 'pepX_136', 'pepX_14', 'pepX_186', 'pepX_49', 'pepX_93']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1445.5733874542248, 'sol_3': 1447.8199086770917, 'sol_0': 1443.9632646042196, 'sol_1': 1445.4466790909848, 'sol_4': 1451.3624132494808}
+
 
 ======================================== SIMULATION 17 ====================================================
 
@@ -202,6 +298,12 @@ Predicted variants are: ['pepX_122', 'pepX_145', 'pepX_147', 'pepX_176', 'pepX_8
 True proportions are: {'pepX_145': 4.684510643768236, 'pepX_147': 18.669278862768497, 'pepX_176': 12.706721653008051, 'pepX_95': 14.686580028338591, 'pepX_122': 9.844871841452747, 'pepX_85': 28.985294080349323, 'pepX_80': 10.422742890314552} 
 
 Predicted proportions are: {'pepX_145': 7.4519662715564889, 'pepX_147': 17.966967669670698, 'pepX_176': 12.807881773399014, 'pepX_95': 14.763354259785253, 'pepX_122': 18.031362193547857, 'pepX_85': 20.209538085632857, 'pepX_80': 8.7689297464078351} 
+
+All solutions: 
+{'sol_2': ['pepX_122', 'pepX_145', 'pepX_147', 'pepX_176', 'pepX_80', 'pepX_86', 'pepX_95'], 'sol_3': ['pepX_122', 'pepX_135', 'pepX_145', 'pepX_147', 'pepX_176', 'pepX_86', 'pepX_95'], 'sol_0': ['pepX_122', 'pepX_145', 'pepX_147', 'pepX_176', 'pepX_80', 'pepX_85', 'pepX_95'], 'sol_1': ['pepX_122', 'pepX_135', 'pepX_145', 'pepX_147', 'pepX_176', 'pepX_85', 'pepX_95'], 'sol_4': ['pepX_101', 'pepX_122', 'pepX_145', 'pepX_147', 'pepX_176', 'pepX_80', 'pepX_95'], 'sol_5': ['pepX_101', 'pepX_122', 'pepX_135', 'pepX_145', 'pepX_147', 'pepX_176', 'pepX_95']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1434.7320867992705, 'sol_3': 1435.3298262627536, 'sol_0': 1432.0621004037096, 'sol_1': 1432.6598398671927, 'sol_4': 1435.9187429745919, 'sol_5': 1436.5164824380749}
 
 
 ======================================== SIMULATION 18 ====================================================
@@ -215,6 +317,12 @@ True proportions are: {'pepX_116': 17.07166605300989, 'pepX_122': 20.14233955687
 
 Predicted proportions are: {'pepX_116': 17.241379310344829, 'pepX_122': 20.324216757143624, 'pepX_53': 21.709319710003633, 'pepX_187': 20.197044334975367, 'pepX_88': 20.528039887532543} 
 
+All solutions: 
+{'sol_0': ['pepX_116', 'pepX_122', 'pepX_187', 'pepX_53', 'pepX_88']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1390.6628227333963}
+
 
 ======================================== SIMULATION 19 ====================================================
 
@@ -226,6 +334,12 @@ Predicted variants are: ['pepX_129', 'pepX_174', 'pepX_18', 'pepX_189', 'pepX_25
 True proportions are: {'pepX_189': 5.314326802177019, 'pepX_25': 19.61244831198223, 'pepX_18': 17.458401058250107, 'pepX_174': 28.849468472351337, 'pepX_129': 14.76138239666941, 'pepX_76': 14.003972958569886} 
 
 Predicted proportions are: {'pepX_189': 5.4187192118226593, 'pepX_25': 19.671154067255035, 'pepX_18': 17.241379310344829, 'pepX_174': 28.571428571428566, 'pepX_129': 14.5320197044335, 'pepX_76': 14.565299134715401} 
+
+All solutions: 
+{'sol_0': ['pepX_129', 'pepX_174', 'pepX_18', 'pepX_189', 'pepX_25', 'pepX_76']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1435.247968608109}
 
 
 ======================================== SIMULATION 20 ====================================================
@@ -239,6 +353,12 @@ True proportions are: {'pepX_101': 17.553254234993236, 'pepX_162': 26.4479040933
 
 Predicted proportions are: {'pepX_101': 17.821782178217823, 'pepX_157': 17.399216801379293, 'pepX_81': 38.19411055155183, 'pepX_162': 26.584890468851054} 
 
+All solutions: 
+{'sol_0': ['pepX_101', 'pepX_157', 'pepX_162', 'pepX_81']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1378.4026766715767}
+
 
 ======================================== SIMULATION 21 ====================================================
 
@@ -250,6 +370,12 @@ Predicted variants are: ['pepX_100', 'pepX_103', 'pepX_119', 'pepX_3', 'pepX_33'
 True proportions are: {'pepX_33': 14.251233950427588, 'pepX_65': 12.964327323386723, 'pepX_100': 23.803743895058265, 'pepX_103': 8.15524078750936, 'pepX_3': 19.95210545141952, 'pepX_119': 20.873348592198536} 
 
 Predicted proportions are: {'pepX_33': 18.785224676313767, 'pepX_65': 12.871287128712872, 'pepX_100': 19.333587204874352, 'pepX_103': 9.236766172514864, 'pepX_3': 19.880851953403681, 'pepX_119': 19.892282864180469} 
+
+All solutions: 
+{'sol_0': ['pepX_100', 'pepX_103', 'pepX_119', 'pepX_3', 'pepX_33', 'pepX_65'], 'sol_1': ['pepX_100', 'pepX_103', 'pepX_119', 'pepX_16', 'pepX_33', 'pepX_65']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1401.858545428262, 'sol_1': 1405.7151927864638}
 
 
 ======================================== SIMULATION 22 ====================================================
@@ -263,6 +389,12 @@ True proportions are: {'pepX_99': 27.244306554204083, 'pepX_142': 7.383262974484
 
 Predicted proportions are: {'pepX_179': 21.287128712871262, 'pepX_99': 33.551070383462637, 'pepX_135': 37.736058329408678, 'pepX_142': 7.4257425742574172} 
 
+All solutions: 
+{'sol_0': ['pepX_135', 'pepX_142', 'pepX_179', 'pepX_99']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1345.8448362915003}
+
 
 ======================================== SIMULATION 23 ====================================================
 
@@ -274,6 +406,12 @@ Predicted variants are: ['pepX_118', 'pepX_138', 'pepX_147', 'pepX_152', 'pepX_1
 True proportions are: {'pepX_25': 19.655049634422223, 'pepX_152': 4.036976128654941, 'pepX_147': 19.238037452759656, 'pepX_35': 18.46574917342312, 'pepX_138': 12.16308711363433, 'pepX_118': 20.432689851814175, 'pepX_181': 6.008410645291557} 
 
 Predicted proportions are: {'pepX_25': 19.464296138444929, 'pepX_152': 5.1242485943814513, 'pepX_147': 17.502561724699888, 'pepX_35': 13.777546944152428, 'pepX_138': 11.623350227304812, 'pepX_118': 20.017107060666675, 'pepX_181': 12.490889310349816} 
+
+All solutions: 
+{'sol_0': ['pepX_118', 'pepX_138', 'pepX_147', 'pepX_152', 'pepX_181', 'pepX_25', 'pepX_35']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1471.3114217273301}
 
 
 ======================================== SIMULATION 24 ====================================================
@@ -287,6 +425,12 @@ True proportions are: {'pepX_29': 6.936416109906056, 'pepX_51': 23.4682526081001
 
 Predicted proportions are: {'pepX_29': 6.965174129353235, 'pepX_51': 23.383084577114428, 'pepX_102': 69.651741293532325} 
 
+All solutions: 
+{'sol_0': ['pepX_102', 'pepX_29', 'pepX_51']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1296.0520366053352}
+
 
 ======================================== SIMULATION 25 ====================================================
 
@@ -298,6 +442,12 @@ Predicted variants are: ['pepX_106', 'pepX_43']
 True proportions are: {'pepX_43': 93.14340718829038, 'pepX_106': 6.856592811709612} 
 
 Predicted proportions are: {'pepX_43': 93.03482587064677, 'pepX_106': 6.9651741293532341} 
+
+All solutions: 
+{'sol_2': ['pepX_106', 'pepX_43', 'pepX_90'], 'sol_3': ['pepX_106', 'pepX_185', 'pepX_39', 'pepX_43'], 'sol_0': ['pepX_106', 'pepX_43'], 'sol_1': ['pepX_106', 'pepX_39', 'pepX_43'], 'sol_4': ['pepX_106', 'pepX_185', 'pepX_43', 'pepX_90'], 'sol_5': ['pepX_106', 'pepX_185', 'pepX_43']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1230.5729964351631, 'sol_3': 1252.7886528318543, 'sol_0': 1221.2721904311161, 'sol_1': 1226.6212983049315, 'sol_4': 1256.7116698787113, 'sol_5': 1259.2409331247418}
 
 
 ======================================== SIMULATION 26 ====================================================
@@ -311,6 +461,12 @@ True proportions are: {'pepX_38': 33.92583121729526, 'pepX_50': 4.05527840494338
 
 Predicted proportions are: {'pepX_38': 27.246197152601145, 'pepX_29': 18.452227575380274, 'pepX_50': 4.4334975369458114, 'pepX_172': 3.4482758620689649, 'pepX_180': 19.478806907378353, 'pepX_90': 26.940994965625457} 
 
+All solutions: 
+{'sol_2': ['pepX_172', 'pepX_180', 'pepX_29', 'pepX_50', 'pepX_90', 'pepX_97'], 'sol_3': ['pepX_172', 'pepX_182', 'pepX_29', 'pepX_38', 'pepX_50', 'pepX_90'], 'sol_0': ['pepX_172', 'pepX_180', 'pepX_29', 'pepX_38', 'pepX_50', 'pepX_90'], 'sol_1': ['pepX_172', 'pepX_180', 'pepX_29', 'pepX_38', 'pepX_39', 'pepX_50'], 'sol_6': ['pepX_172', 'pepX_182', 'pepX_29', 'pepX_50', 'pepX_90', 'pepX_97'], 'sol_7': ['pepX_172', 'pepX_182', 'pepX_29', 'pepX_39', 'pepX_50', 'pepX_97'], 'sol_4': ['pepX_172', 'pepX_180', 'pepX_29', 'pepX_39', 'pepX_50', 'pepX_97'], 'sol_5': ['pepX_172', 'pepX_182', 'pepX_29', 'pepX_38', 'pepX_39', 'pepX_50']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1376.3323441793264, 'sol_3': 1376.9256745421251, 'sol_0': 1367.7290582607652, 'sol_1': 1373.6623584151334, 'sol_6': 1385.5289604606864, 'sol_7': 1391.4622606150549, 'sol_4': 1382.2656443336948, 'sol_5': 1382.8589746964935}
+
 
 ======================================== SIMULATION 27 ====================================================
 
@@ -322,6 +478,12 @@ Predicted variants are: ['pepX_51', 'pepX_6', 'pepX_8']
 True proportions are: {'pepX_6': 12.909346904014111, 'pepX_51': 66.79977437358178, 'pepX_8': 20.290878722404106} 
 
 Predicted proportions are: {'pepX_6': 16.44715980536877, 'pepX_51': 66.666666666666671, 'pepX_8': 16.886173527964566} 
+
+All solutions: 
+{'sol_2': ['pepX_51', 'pepX_6', 'pepX_93'], 'sol_3': ['pepX_116', 'pepX_51', 'pepX_93'], 'sol_0': ['pepX_51', 'pepX_6', 'pepX_8'], 'sol_1': ['pepX_116', 'pepX_51', 'pepX_8'], 'sol_4': ['pepX_18', 'pepX_51', 'pepX_8']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1276.6963002344103, 'sol_3': 1276.7006207307866, 'sol_0': 1269.8730017777605, 'sol_1': 1269.8773222741368, 'sol_4': 1280.5529268387772}
 
 
 ======================================== SIMULATION 28 ====================================================
@@ -335,6 +497,12 @@ True proportions are: {'pepX_70': 61.7927327383341, 'pepX_118': 38.2072672616659
 
 Predicted proportions are: {'pepX_70': 61.691542288557216, 'pepX_118': 38.308457711442777} 
 
+All solutions: 
+{'sol_2': ['pepX_118', 'pepX_70', 'pepX_90'], 'sol_3': ['pepX_118', 'pepX_39', 'pepX_70'], 'sol_0': ['pepX_118', 'pepX_70'], 'sol_1': ['pepX_118', 'pepX_185', 'pepX_70'], 'sol_4': ['pepX_118', 'pepX_185', 'pepX_70', 'pepX_90'], 'sol_5': ['pepX_118', 'pepX_185', 'pepX_39', 'pepX_70']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1291.4390945703249, 'sol_3': 1291.4954807688168, 'sol_0': 1227.2590946857083, 'sol_1': 1289.4106674637351, 'sol_4': 1333.2329486411941, 'sol_5': 1333.2803266874387}
+
 
 ======================================== SIMULATION 29 ====================================================
 
@@ -346,6 +514,12 @@ Predicted variants are: ['pepX_115', 'pepX_188', 'pepX_38', 'pepX_57', 'pepX_77'
 True proportions are: {'pepX_38': 5.4027479103836376, 'pepX_57': 16.628824040740472, 'pepX_188': 18.90796437168259, 'pepX_77': 5.618134535860798, 'pepX_115': 26.071008391103174, 'pepX_83': 27.371320750229327} 
 
 Predicted proportions are: {'pepX_38': 5.6739480353066085, 'pepX_57': 16.571234915741574, 'pepX_188': 18.7192118226601, 'pepX_77': 5.8336347829419726, 'pepX_115': 26.108374384236448, 'pepX_83': 27.093596059113306} 
+
+All solutions: 
+{'sol_0': ['pepX_115', 'pepX_188', 'pepX_38', 'pepX_57', 'pepX_77', 'pepX_83'], 'sol_1': ['pepX_113', 'pepX_115', 'pepX_188', 'pepX_57', 'pepX_77', 'pepX_83']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1446.3063390503307, 'sol_1': 1446.3063390503307}
 
 
 ======================================== SIMULATION 30 ====================================================
@@ -359,6 +533,12 @@ True proportions are: {'pepX_152': 16.396878190614867, 'pepX_120': 27.8549350746
 
 Predicted proportions are: {'pepX_152': 15.997900281139914, 'pepX_120': 19.659593383539324, 'pepX_177': 34.473742614391242, 'pepX_56': 13.546059365806782, 'pepX_9': 16.322704355122749} 
 
+All solutions: 
+{'sol_8': ['pepX_120', 'pepX_152', 'pepX_157', 'pepX_17', 'pepX_177', 'pepX_56', 'pepX_9'], 'sol_9': ['pepX_120', 'pepX_13', 'pepX_152', 'pepX_157', 'pepX_177', 'pepX_56', 'pepX_9'], 'sol_2': ['pepX_120', 'pepX_152', 'pepX_177', 'pepX_56', 'pepX_7', 'pepX_9'], 'sol_3': ['pepX_120', 'pepX_152', 'pepX_17', 'pepX_177', 'pepX_56', 'pepX_9'], 'sol_0': ['pepX_120', 'pepX_152', 'pepX_177', 'pepX_56', 'pepX_9'], 'sol_1': ['pepX_120', 'pepX_14', 'pepX_152', 'pepX_177', 'pepX_56', 'pepX_9'], 'sol_6': ['pepX_120', 'pepX_14', 'pepX_152', 'pepX_157', 'pepX_177', 'pepX_56', 'pepX_9'], 'sol_7': ['pepX_120', 'pepX_152', 'pepX_157', 'pepX_177', 'pepX_56', 'pepX_7', 'pepX_9'], 'sol_4': ['pepX_120', 'pepX_13', 'pepX_152', 'pepX_177', 'pepX_56', 'pepX_9'], 'sol_5': ['pepX_120', 'pepX_152', 'pepX_157', 'pepX_177', 'pepX_56', 'pepX_9']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 1415.8958284294681, 'sol_9': 1416.9209908022549, 'sol_2': 1400.6543915488035, 'sol_3': 1401.5422101904001, 'sol_0': 1391.3337077844633, 'sol_1': 1399.7323116006767, 'sol_6': 1414.0859301420403, 'sol_7': 1415.008009794484, 'sol_4': 1402.567372710201, 'sol_5': 1410.6300358568653}
+
 
 ======================================== SIMULATION 31 ====================================================
 
@@ -370,6 +550,12 @@ Predicted variants are: ['pepX_147', 'pepX_148', 'pepX_58', 'pepX_64', 'pepX_69'
 True proportions are: {'pepX_58': 43.17472152204278, 'pepX_64': 7.582863843336016, 'pepX_147': 22.263414463553058, 'pepX_69': 6.156312608973016, 'pepX_148': 20.822687562095123} 
 
 Predicted proportions are: {'pepX_58': 33.627269320736872, 'pepX_64': 12.833218682508427, 'pepX_147': 22.167487684729053, 'pepX_69': 10.682369139611843, 'pepX_148': 20.689655172413783} 
+
+All solutions: 
+{'sol_2': ['pepX_147', 'pepX_148', 'pepX_58', 'pepX_64', 'pepX_69', 'pepX_90'], 'sol_3': ['pepX_147', 'pepX_148', 'pepX_39', 'pepX_58', 'pepX_64', 'pepX_69'], 'sol_0': ['pepX_147', 'pepX_148', 'pepX_58', 'pepX_64', 'pepX_69'], 'sol_1': ['pepX_147', 'pepX_148', 'pepX_58', 'pepX_64', 'pepX_79'], 'sol_4': ['pepX_147', 'pepX_148', 'pepX_58', 'pepX_64', 'pepX_79', 'pepX_90'], 'sol_5': ['pepX_147', 'pepX_148', 'pepX_39', 'pepX_58', 'pepX_64', 'pepX_79']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1407.5336234712142, 'sol_3': 1408.8047211065136, 'sol_0': 1386.0223033545019, 'sol_1': 1389.415581173711, 'sol_4': 1410.9261319371976, 'sol_5': 1412.197229572497}
 
 
 ======================================== SIMULATION 32 ====================================================
@@ -383,6 +569,12 @@ True proportions are: {'pepX_112': 1.5548669045002819, 'pepX_25': 16.61825300746
 
 Predicted proportions are: {'pepX_156': 3.4653465346534649, 'pepX_112': 37.230418190067084, 'pepX_25': 16.831683168316832, 'pepX_110': 42.472552106962617} 
 
+All solutions: 
+{'sol_8': ['pepX_110', 'pepX_156', 'pepX_25', 'pepX_39', 'pepX_43'], 'sol_9': ['pepX_110', 'pepX_156', 'pepX_25', 'pepX_42', 'pepX_90'], 'sol_2': ['pepX_110', 'pepX_156', 'pepX_25', 'pepX_41', 'pepX_90'], 'sol_3': ['pepX_110', 'pepX_112', 'pepX_156', 'pepX_25', 'pepX_39'], 'sol_0': ['pepX_110', 'pepX_112', 'pepX_156', 'pepX_25'], 'sol_1': ['pepX_110', 'pepX_112', 'pepX_156', 'pepX_25', 'pepX_90'], 'sol_6': ['pepX_110', 'pepX_156', 'pepX_25', 'pepX_39', 'pepX_41'], 'sol_7': ['pepX_110', 'pepX_112', 'pepX_156', 'pepX_185', 'pepX_25'], 'sol_4': ['pepX_110', 'pepX_156', 'pepX_25', 'pepX_43', 'pepX_90'], 'sol_5': ['pepX_110', 'pepX_156', 'pepX_25', 'pepX_42'], 'sol_18': ['pepX_110', 'pepX_156', 'pepX_185', 'pepX_25', 'pepX_42', 'pepX_90'], 'sol_19': ['pepX_110', 'pepX_156', 'pepX_185', 'pepX_25', 'pepX_39', 'pepX_42'], 'sol_14': ['pepX_110', 'pepX_156', 'pepX_185', 'pepX_25', 'pepX_43', 'pepX_90'], 'sol_15': ['pepX_110', 'pepX_156', 'pepX_185', 'pepX_25', 'pepX_39', 'pepX_41'], 'sol_16': ['pepX_110', 'pepX_156', 'pepX_185', 'pepX_25', 'pepX_42'], 'sol_17': ['pepX_110', 'pepX_156', 'pepX_185', 'pepX_25', 'pepX_39', 'pepX_43'], 'sol_10': ['pepX_110', 'pepX_112', 'pepX_156', 'pepX_185', 'pepX_25', 'pepX_90'], 'sol_11': ['pepX_110', 'pepX_156', 'pepX_25', 'pepX_39', 'pepX_42'], 'sol_12': ['pepX_110', 'pepX_156', 'pepX_185', 'pepX_25', 'pepX_41', 'pepX_90'], 'sol_13': ['pepX_110', 'pepX_112', 'pepX_156', 'pepX_185', 'pepX_25', 'pepX_39']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 1318.7776412292935, 'sol_9': 1323.2996616421497, 'sol_2': 1309.2392527161924, 'sol_3': 1310.7934955126636, 'sol_0': 1292.525453510566, 'sol_1': 1306.4202464799209, 'sol_6': 1315.3015530599641, 'sol_7': 1317.4256612680724, 'sol_4': 1311.3588618244244, 'sol_5': 1312.7248280641829, 'sol_18': 1342.7952385746607, 'sol_19': 1346.6037766143963, 'sol_14': 1331.702102779401, 'sol_15': 1335.6162451711054, 'sol_16': 1336.1571415781518, 'sol_17': 1337.7562155169198, 'sol_10': 1327.3311868300591, 'sol_11': 1327.6729106748926, 'sol_12': 1330.138042700198, 'sol_13': 1331.1397248697947}
+
 
 ======================================== SIMULATION 33 ====================================================
 
@@ -394,6 +586,12 @@ Predicted variants are: ['pepX_111', 'pepX_139', 'pepX_61']
 True proportions are: {'pepX_139': 67.70122528174595, 'pepX_61': 14.528076747789845, 'pepX_111': 17.770697970464223} 
 
 Predicted proportions are: {'pepX_139': 67.326732673267315, 'pepX_61': 16.248340768142747, 'pepX_111': 16.424926558589934} 
+
+All solutions: 
+{'sol_2': ['pepX_111', 'pepX_139', 'pepX_17', 'pepX_61'], 'sol_3': ['pepX_111', 'pepX_139', 'pepX_61', 'pepX_7'], 'sol_0': ['pepX_111', 'pepX_139', 'pepX_61'], 'sol_1': ['pepX_111', 'pepX_139', 'pepX_14', 'pepX_61'], 'sol_4': ['pepX_111', 'pepX_13', 'pepX_139', 'pepX_61']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1309.3836373182135, 'sol_3': 1311.4602936190295, 'sol_0': 1279.8543588358343, 'sol_1': 1296.317408955277, 'sol_4': 1319.7712375818037}
 
 
 ======================================== SIMULATION 34 ====================================================
@@ -407,6 +605,12 @@ True proportions are: {'pepX_138': 31.233265189342614, 'pepX_180': 40.2529038976
 
 Predicted proportions are: {'pepX_138': 31.086715264933122, 'pepX_180': 40.099009900990104, 'pepX_13': 28.814274834076791} 
 
+All solutions: 
+{'sol_2': ['pepX_13', 'pepX_138', 'pepX_180'], 'sol_0': ['pepX_138', 'pepX_180', 'pepX_7'], 'sol_1': ['pepX_138', 'pepX_17', 'pepX_180']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1294.4752395464798, 'sol_0': 1287.355276335988, 'sol_1': 1290.0252630284037}
+
 
 ======================================== SIMULATION 35 ====================================================
 
@@ -418,6 +622,12 @@ Predicted variants are: ['pepX_109', 'pepX_121', 'pepX_172', 'pepX_3', 'pepX_77'
 True proportions are: {'pepX_53': 1.0169349881506207, 'pepX_77': 20.590816302849923, 'pepX_172': 25.02934837673884, 'pepX_109': 13.898493797704486, 'pepX_121': 18.955395097847784, 'pepX_3': 20.50901143670834} 
 
 Predicted proportions are: {'pepX_109': 13.830379991303159, 'pepX_121': 18.555677480987168, 'pepX_3': 20.483345498892923, 'pepX_172': 24.999999999999996, 'pepX_77': 22.130597028816752} 
+
+All solutions: 
+{'sol_0': ['pepX_109', 'pepX_121', 'pepX_172', 'pepX_3', 'pepX_77']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1434.4439587736472}
 
 
 ======================================== SIMULATION 36 ====================================================
@@ -431,6 +641,12 @@ True proportions are: {'pepX_118': 15.72050647396529, 'pepX_167': 18.61872977938
 
 Predicted proportions are: {'pepX_118': 16.168597951274077, 'pepX_167': 18.347440099697483, 'pepX_188': 20.197044334975363, 'pepX_161': 14.252434855432377, 'pepX_88': 15.218178175787248, 'pepX_121': 15.816304582833435} 
 
+All solutions: 
+{'sol_0': ['pepX_118', 'pepX_12', 'pepX_121', 'pepX_167', 'pepX_188', 'pepX_88'], 'sol_1': ['pepX_118', 'pepX_121', 'pepX_161', 'pepX_167', 'pepX_188', 'pepX_88']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1435.5701453890651, 'sol_1': 1435.5701453890651}
+
 
 ======================================== SIMULATION 37 ====================================================
 
@@ -442,6 +658,12 @@ Predicted variants are: ['pepX_110', 'pepX_121', 'pepX_123', 'pepX_129', 'pepX_1
 True proportions are: {'pepX_141': 7.857541404716419, 'pepX_129': 3.9469539149665085, 'pepX_76': 31.937276072815703, 'pepX_123': 8.035706195685309, 'pepX_95': 25.5224702527941, 'pepX_121': 8.058357741992971, 'pepX_110': 14.641694417028974} 
 
 Predicted proportions are: {'pepX_141': 7.5391229900203225, 'pepX_129': 14.819134956386195, 'pepX_76': 19.7263787020153, 'pepX_123': 8.3333333333333321, 'pepX_95': 25.490196078431364, 'pepX_121': 7.7617224474819038, 'pepX_110': 16.330111492331593} 
+
+All solutions: 
+{'sol_2': ['pepX_121', 'pepX_123', 'pepX_129', 'pepX_141', 'pepX_40', 'pepX_76', 'pepX_95'], 'sol_3': ['pepX_121', 'pepX_123', 'pepX_129', 'pepX_40', 'pepX_48', 'pepX_76', 'pepX_95'], 'sol_0': ['pepX_110', 'pepX_121', 'pepX_123', 'pepX_129', 'pepX_141', 'pepX_76', 'pepX_95'], 'sol_1': ['pepX_110', 'pepX_121', 'pepX_123', 'pepX_129', 'pepX_48', 'pepX_76', 'pepX_95'], 'sol_6': ['pepX_121', 'pepX_123', 'pepX_129', 'pepX_141', 'pepX_185', 'pepX_40', 'pepX_76', 'pepX_95'], 'sol_7': ['pepX_121', 'pepX_123', 'pepX_129', 'pepX_185', 'pepX_40', 'pepX_48', 'pepX_76', 'pepX_95'], 'sol_4': ['pepX_110', 'pepX_121', 'pepX_123', 'pepX_129', 'pepX_141', 'pepX_185', 'pepX_76', 'pepX_95'], 'sol_5': ['pepX_110', 'pepX_121', 'pepX_123', 'pepX_129', 'pepX_185', 'pepX_48', 'pepX_76', 'pepX_95']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1412.2302718173885, 'sol_3': 1412.8236021757582, 'sol_0': 1407.4809486706854, 'sol_1': 1408.0742790290551, 'sol_6': 1426.4371514052523, 'sol_7': 1427.0304817591914, 'sol_4': 1421.8719830927016, 'sol_5': 1422.4653134466407}
 
 
 ======================================== SIMULATION 38 ====================================================
@@ -455,6 +677,12 @@ True proportions are: {'pepX_23': 12.042746219103142, 'pepX_73': 52.082657356419
 
 Predicted proportions are: {'pepX_73': 51.587542708360218, 'pepX_183': 10.857644928974121, 'pepX_41': 24.87340333168558, 'pepX_23': 12.68140903098009} 
 
+All solutions: 
+{'sol_0': ['pepX_183', 'pepX_23', 'pepX_41', 'pepX_73']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 1362.4862317080449}
+
 
 ======================================== SIMULATION 39 ====================================================
 
@@ -467,6 +695,12 @@ True proportions are: {'pepX_167': 7.6881833265634345, 'pepX_129': 54.6070831208
 
 Predicted proportions are: {'pepX_167': 25.582323131101226, 'pepX_129': 45.701263203270884, 'pepX_134': 28.716413665627897} 
 
+All solutions: 
+{'sol_2': ['pepX_129', 'pepX_134', 'pepX_167', 'pepX_39'], 'sol_3': ['pepX_129', 'pepX_134', 'pepX_167', 'pepX_185'], 'sol_0': ['pepX_129', 'pepX_134', 'pepX_167'], 'sol_1': ['pepX_129', 'pepX_134', 'pepX_167', 'pepX_90'], 'sol_4': ['pepX_129', 'pepX_134', 'pepX_167', 'pepX_185', 'pepX_90'], 'sol_5': ['pepX_129', 'pepX_134', 'pepX_167', 'pepX_185', 'pepX_39']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 1285.6376865746763, 'sol_3': 1290.1627516626274, 'sol_0': 1257.6899144671004, 'sol_1': 1283.2686104988431, 'sol_4': 1309.0335618690158, 'sol_5': 1310.7536112208277}
+
 ======================================== SIMULATION 40 ====================================================
 
 Number of optimal solutions: 9
@@ -478,23 +712,29 @@ True proportions are: {'pepX_2': 80.44879509305166, 'pepX_172': 19.5512049069483
 
 Predicted proportions are: {'pepX_2': 80.099502487562191, 'pepX_172': 19.900497512437806} 
 
+All solutions: 
+{'sol_8': ['pepX_17', 'pepX_172', 'pepX_9'], 'sol_2': ['pepX_11', 'pepX_14', 'pepX_172'], 'sol_3': ['pepX_17', 'pepX_172', 'pepX_2'], 'sol_0': ['pepX_14', 'pepX_172', 'pepX_2'], 'sol_1': ['pepX_172', 'pepX_2'], 'sol_6': ['pepX_140', 'pepX_17', 'pepX_172'], 'sol_7': ['pepX_13', 'pepX_172', 'pepX_2'], 'sol_4': ['pepX_1', 'pepX_17', 'pepX_172'], 'sol_5': ['pepX_172', 'pepX_2', 'pepX_7']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 1257.9768700261177, 'sol_2': 1233.6503254747431, 'sol_3': 1237.8036383244926, 'sol_0': 1221.7837190384107, 'sol_1': 1227.2590512673821, 'sol_6': 1241.3722615737988, 'sol_7': 1249.3822207826345, 'sol_4': 1238.3969687005849, 'sol_5': 1240.473625016908}
+
 ======================================== pepX: SUMMARY STATISTICS ====================================================
 
 (1)Total Variation Distance:
 
-Total variation distances are: [0.31233616365997019, 1.3228997031773391, 10.948322120589314, 0.40516544013983324, 5.1787803959952354, 0.29135298903383955, 5.4317802582958938, 3.5681183808375456, 0.10872995752355763, 0.82820035622187971, 11.244705238049839, 8.6009510107567166, 29.847958602381013, 9.5753342125979124, 0.36877516527095278, 0.66790504986021548, 11.131880331720986, 0.4039467276163915, 0.72442434106395881, 0.71282439877616355, 5.6155161108916758, 6.4874560426634282, 7.5697511307847707, 0.085168030985720566, 0.10858131764361678, 19.030347413611295, 3.5378129013546555, 0.10119044977688318, 0.524066365137414, 9.9642319521180589, 9.776411369811246, 35.888981446413773, 1.7202640203529116, 28.814274834076784, 1.5397807259668279, 3.0221064699900646, 12.858225254370314, 0.63866281187694263, 17.89413980453779, 0.34929260548946672] 
+Total variation distances are: [0.13504154774874522, 1.1665155675865142, 4.6358845381803642, 0.40516544013983324, 5.1787803959952354, 0.29135298903383955, 5.4317802582958938, 3.5681183808375456, 0.10872995752355763, 0.82820035622187971, 11.244705238049839, 8.6009510107567166, 29.847958602381013, 9.5753342125979124, 0.36877516527095278, 0.66790504986021548, 11.131880331720986, 0.4039467276163915, 0.72442434106395881, 0.71282439877616355, 5.6155161108916758, 6.4874560426634282, 7.5697511307847707, 0.085168030985720566, 0.10858131764361678, 19.030347413611295, 3.5378129013546555, 0.10119044977688318, 0.524066365137414, 9.9642319521180589, 9.776411369811246, 35.888981446413773, 1.7202640203529116, 28.814274834076784, 1.5397807259668279, 3.0221064699900646, 12.858225254370314, 0.63866281187694263, 17.89413980453779, 0.34929260548946672] 
 
-The average of total variation distance is: 6.68001629754 
+The average of total variation distance is: 6.51386338919 
 
-The standard deviation of total variation distance is: 8.7107472285 
+The standard deviation of total variation distance is: 8.69472511919 
 
 (2)Total Variation Distance for variants which are predicted correctly:
 
-Total variation distances are: [0.31233616365997019, 1.3228997031773391, 10.948322120589314, 0.40516544013983324, 5.1787803959952354, 0.29135298903383955, 5.4317802582958938, 3.5681183808375456, 0.10872995752355763, 0.82820035622187971, 11.244705238049839, 8.6009510107567166, 9.5753342125979124, 0.36877516527095278, 0.66790504986021548, 11.131880331720986, 0.4039467276163915, 0.72442434106395881, 0.71282439877616355, 5.6155161108916758, 6.4874560426634282, 7.5697511307847707, 0.085168030985720566, 0.10858131764361678, 19.030347413611295, 3.5378129013546555, 0.10119044977688318, 0.524066365137414, 9.9642319521180589, 9.776411369811246, 35.888981446413773, 1.7202640203529116, 3.0221064699900646, 12.858225254370314, 0.63866281187694263, 17.89413980453779, 0.34929260548946672] 
+Total variation distances are: [0.13504154774874522, 1.1665155675865142, 4.6358845381803642, 0.40516544013983324, 5.1787803959952354, 0.29135298903383955, 5.4317802582958938, 3.5681183808375456, 0.10872995752355763, 0.82820035622187971, 11.244705238049839, 8.6009510107567166, 9.5753342125979124, 0.36877516527095278, 0.66790504986021548, 11.131880331720986, 0.4039467276163915, 0.72442434106395881, 0.71282439877616355, 5.6155161108916758, 6.4874560426634282, 7.5697511307847707, 0.085168030985720566, 0.10858131764361678, 19.030347413611295, 3.5378129013546555, 0.10119044977688318, 0.524066365137414, 9.9642319521180589, 9.776411369811246, 35.888981446413773, 1.7202640203529116, 3.0221064699900646, 12.858225254370314, 0.63866281187694263, 17.89413980453779, 0.34929260548946672] 
 
-The average of total variation distance is: 5.59455777673 
+The average of total variation distance is: 5.41493301095 
 
-The standard deviation of total variation distance is: 7.23801818928 
+The standard deviation of total variation distance is: 7.18992721167 
 
 (3) Precision: 
 
@@ -514,9 +754,9 @@ Standard deviation of recall is:  0.0762625217405
 
 (5) Objective Value: 
 
-Predicted objective values are: [59.0, 66.0, 65.0, 51.0, 65.0, 50.0, 67.0, 50.0, 61.0, 63.0, 68.0, 60.0, 67.0, 52.0, 46.0, 64.0, 60.0, 66.0, 67.0, 64.0, 64.0, 57.0, 62.0, 50.0, 47.0, 61.0, 51.0, 50.0, 62.0, 63.0, 58.0, 49.0, 53.0, 61.0, 67.0, 67.0, 59.0, 56.0, 51.0, 50.0] 
+Predicted objective values are: [50.0, 65.0, 65.0, 51.0, 65.0, 50.0, 67.0, 50.0, 61.0, 63.0, 68.0, 60.0, 67.0, 52.0, 46.0, 64.0, 60.0, 66.0, 67.0, 64.0, 64.0, 57.0, 62.0, 50.0, 47.0, 61.0, 51.0, 50.0, 62.0, 63.0, 58.0, 49.0, 53.0, 61.0, 67.0, 67.0, 59.0, 56.0, 51.0, 50.0] 
 
-True objective values are: [59.0, 66.0, 65.0, 51.0, 65.0, 50.0, 67.0, 50.0, 61.0, 63.0, 68.0, 60.0, 68.0, 52.0, 46.0, 64.0, 60.0, 66.0, 67.0, 64.0, 64.0, 57.0, 62.0, 50.0, 47.0, 61.0, 51.0, 50.0, 62.0, 63.0, 58.0, 49.0, 53.0, 63.0, 68.0, 67.0, 59.0, 56.0, 51.0, 50.0] 
+True objective values are: [50.0, 65.0, 65.0, 51.0, 65.0, 50.0, 67.0, 50.0, 61.0, 63.0, 68.0, 60.0, 68.0, 52.0, 46.0, 64.0, 60.0, 66.0, 67.0, 64.0, 64.0, 57.0, 62.0, 50.0, 47.0, 61.0, 51.0, 50.0, 62.0, 63.0, 58.0, 49.0, 53.0, 63.0, 68.0, 67.0, 59.0, 56.0, 51.0, 50.0] 
 
 The difference in objective values are: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -2.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
 
