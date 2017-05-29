@@ -17,7 +17,9 @@ import linecache
 
 NO_BINOM = False
 TEST_EMPTY_LIST = True
-USER = "stanleygan"
+USER = "glgan"
+
+''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Function Definitions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
 
 '''
 Input: pred_prop and true_prop which are dictionaries
@@ -212,6 +214,8 @@ def compute_likelihood(df):
     score = sum(neg_log_likelihood)
     return score
 
+''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Defining some parameters ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ '''
+
 ap = argparse.ArgumentParser()
 ap.add_argument("-g", "--gene", required = True,  help="name of gene")
 ap.add_argument("-l", "--numOfIter", required = False, default = 40, type=int)
@@ -238,6 +242,8 @@ random.seed(seed)
 variantsTxtPath = "/home/{0}/Documents/Borrelia/Test_Data/SRR2034333_old/{1}/variants.txt".format(USER,gene)
 num_variants = sum(1 for line in open(variantsTxtPath))
 randomNum_negLogCharts = random.sample(xrange(1, args["numOfIter"]), 10)
+
+'''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Simulation starts here ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
 
 for x in range(1,args["numOfIter"]+1):  
     true_prop = dict()#dictionary to store the true proportions
@@ -332,7 +338,7 @@ for x in range(1,args["numOfIter"]+1):
         likelihood_score_dict["sol_{}".format(i)] = score_list[sortedIndex_score_list[i]]
         
     #identify those solutions which have minimum negative log likelihood
-#    min_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if score_list[i] == min_score]
+    min_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if score_list[i] == min_score]
 #    var_predicted = min_sol_list[0]
 #    similarity=0.001
 #    similar_likelihood_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if (score_list[i] <= (1+similarity)*min_score)]
@@ -393,16 +399,32 @@ for x in range(1,args["numOfIter"]+1):
             
     if len(bad_reads) != 0:
         print(df.loc[bad_reads,:])
+     
+    #Starting from solutions with minimum likelihood, red dots represent these solutions are needed to cover all true variants(minimum number of subsets to cover all true variants)
+    color_list = ["red"]
+    temp_union = all_solutions[sortedIndex_score_list[0]]
+    indexTrack = 1
+    while( ( indexTrack!= len(all_solutions) ) and ( len(set(variants) - set(temp_union)) != 0 ) ):
+        temp_union.extend(all_solutions[sortedIndex_score_list[indexTrack]])
+        color_list.append("red")
+        indexTrack += 1
+        
+    if len(color_list) != len(all_solutions):
+        color_list.extend(["blue"]*(len(all_solutions) - len(color_list)))
         
     #Choose a random simulation to plot negative log likelihood chart
     if x in randomNum_negLogCharts:
         plt.figure()
         sorted_solution_namelist = ["sol_{}".format(i) for i in range(len(all_solutions))]
         plt.xticks(range(len(all_solutions)), sorted_solution_namelist, rotation=20)
-        plt.scatter(range(len(all_solutions)), [likelihood_score_dict[name] for name in sorted_solution_namelist])
+        plt.scatter(range(len(all_solutions)), [likelihood_score_dict[name] for name in sorted_solution_namelist], color=color_list, s=50)
         plt.xlabel('Solution i ')
         plt.ylabel('Negative log likelihood')
         plt.savefig("{0}negLogLikelihood/{1}_sim{2}_sol_negLogLikelihood".format(args["outputFolderPath"], gene, x))
+
+  
+'''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Here is the summary ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
+
 
 print "======================================== {0}: SUMMARY STATISTICS ====================================================\n".format(gene)
 avg_totalVarDist = sum(total_var)/len(total_var)
