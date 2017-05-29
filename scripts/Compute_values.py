@@ -17,6 +17,7 @@ import linecache
 
 NO_BINOM = False
 TEST_EMPTY_LIST = True
+USER = "stanleygan"
 
 '''
 Input: pred_prop and true_prop which are dictionaries
@@ -189,7 +190,7 @@ def Compute_obj_diff(predicted, true):
 def compute_likelihood(df):
     numVar = df.shape[1]
     likelihood_list = list()
-    max_mm = 2
+    max_mm = 3
     
     for row in df.itertuples(index=False):
         read = list(row)
@@ -234,8 +235,9 @@ gene = args["gene"]
 seed = 1994
 random.seed(seed)
 
-variantsTxtPath = "/home/glgan/Documents/Borrelia/Test_Data/SRR2034333_old/{}/variants.txt".format(gene)
+variantsTxtPath = "/home/{0}/Documents/Borrelia/Test_Data/SRR2034333_old/{1}/variants.txt".format(USER,gene)
 num_variants = sum(1 for line in open(variantsTxtPath))
+randomNum_negLogCharts = random.sample(xrange(1, args["numOfIter"]), 10)
 
 for x in range(1,args["numOfIter"]+1):  
     true_prop = dict()#dictionary to store the true proportions
@@ -281,7 +283,7 @@ for x in range(1,args["numOfIter"]+1):
     os.system(new_cmd)
     os.system(new_cmd2)
     ref = upperfirst(gene)+"_bowtie"
-    new_cmd3 = "bash /home/glgan/Documents/Borrelia/scripts/temp.sh "+ upperfirst(gene)+"_"+str(x) + " " + upperfirst(gene) + "_" + str(x)+ " " + ref
+    new_cmd3 = "bash /home/{}/Documents/Borrelia/scripts/temp.sh ".format(USER)+ upperfirst(gene)+"_"+str(x) + " " + upperfirst(gene) + "_" + str(x)+ " " + ref
     os.system(new_cmd3)
     os.system("rm {}*".format(gene)) #remove unneccessary files for the next iteration.    
     true_ratios.append(fractions)
@@ -308,18 +310,27 @@ for x in range(1,args["numOfIter"]+1):
     print("Number of optimal solutions: {}".format(len(all_solutions)))
     
     #compute negative log likelihood score for each solution
-#    for i in range(len(all_solutions)):
+    for i in range(len(all_solutions)):
 #        print("Solution:{}".format(all_solutions[i]))
 #        print("Objective value: {}".format(all_objective[i]))
 #        print("Proportions:{}".format(compute_proportions(df.loc[reads_cov, all_solutions[i]])))
-#        score = compute_likelihood(df.loc[reads_cov, all_solutions[i]])
-#        score_list.append(score)
-#        
-#        if score <= min_score:
-#            min_score = score
+        score = compute_likelihood(df.loc[reads_cov, all_solutions[i]])
+        score_list.append(score)
+        
+        if score <= min_score:
+            min_score = score
         
 #        print("\nNegative log likelihood score:{}\n".format(score))
+
+    #Give some names to the solutions for further identifications
+    sortedIndex_score_list = np.argsort(score_list)
+    likelihood_score_dict = dict()
+    sol_name_dict = dict()
     
+    for i in range(len(all_solutions)):
+        sol_name_dict["sol_{}".format(i)] = all_solutions[sortedIndex_score_list[i]]
+        likelihood_score_dict["sol_{}".format(i)] = score_list[sortedIndex_score_list[i]]
+        
     #identify those solutions which have minimum negative log likelihood
 #    min_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if score_list[i] == min_score]
 #    var_predicted = min_sol_list[0]
@@ -345,6 +356,8 @@ for x in range(1,args["numOfIter"]+1):
     print 'Predicted variants are:', var_predicted, "\n"
     print 'True proportions are:', true_prop, "\n"
     print 'Predicted proportions are:', pred_prop, "\n"
+    print("All solutions: \n{}\n".format(sol_name_dict))
+    print("Solutions negative log likelihood score: \n{}\n".format(likelihood_score_dict))
     #print 'Solution(s):', all_solutions, "\n"
     
     #Observe whether minimum negative log likelihood really gives the true variants
@@ -380,6 +393,16 @@ for x in range(1,args["numOfIter"]+1):
             
     if len(bad_reads) != 0:
         print(df.loc[bad_reads,:])
+        
+    #Choose a random simulation to plot negative log likelihood chart
+    if x in randomNum_negLogCharts:
+        plt.figure()
+        sorted_solution_namelist = ["sol_{}".format(i) for i in range(len(all_solutions))]
+        plt.xticks(range(len(all_solutions)), sorted_solution_namelist, rotation=20)
+        plt.scatter(range(len(all_solutions)), [likelihood_score_dict[name] for name in sorted_solution_namelist])
+        plt.xlabel('Solution i ')
+        plt.ylabel('Negative log likelihood')
+        plt.savefig("{0}negLogLikelihood/{1}_sim{2}_sol_negLogLikelihood".format(args["outputFolderPath"], gene, x))
 
 print "======================================== {0}: SUMMARY STATISTICS ====================================================\n".format(gene)
 avg_totalVarDist = sum(total_var)/len(total_var)
