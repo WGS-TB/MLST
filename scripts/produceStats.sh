@@ -8,5 +8,5 @@ do
 	echo $f
 	cd $sample$f
 	rm *.out *reads.txt *.fa
-	python ~/Documents/Borrelia/scripts/Compute_values.py -g $f -l 40 -o $outputFolderPath > $outputFolderPath$f\_output_stats.txt 
+	python ~/Documents/Borrelia/scripts/Compute_values.py -g $f -i 40 -o $outputFolderPath > $outputFolderPath$f\_output_stats.txt 
 done	
