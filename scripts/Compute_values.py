@@ -15,6 +15,7 @@ import sys
 import variantILP as varSolver
 import linecache
 
+#Testing purposes and global variables
 NO_BINOM = False
 TEST_EMPTY_LIST = True
 USER = "glgan"
@@ -59,7 +60,7 @@ def recall(predicted, true):
     truePos = set.intersection(set(predicted), set(true))
     return float(len(truePos)/len(true))
 
-#What is this?
+#Return 2D dictionary
 def tree():
     return defaultdict(tree)
 
@@ -75,6 +76,8 @@ def generate_matrix(path):
     var_list = [] #holds the variants
     read_list = [] #holds the reads
     mismatch_list = [] #holds the mismatches
+    
+    #Split columns and append them into lists
     with open(path) as inf:
         for line in inf:
             parts = line.split('\t') # split line into parts
@@ -83,14 +86,16 @@ def generate_matrix(path):
                 var_list.append(parts[1])   #append vars to a list
                 mismatch_list.append(parts[2]) #append mismatches to list
         flag = True #makes sure all the previous steps completed successfully
+        
+        
     if flag is True:
         read_var_dict = defaultdict(list) #dictionary holding all the variants that a read maps to
         read_mismatch_dict = defaultdict(list) #dictionary holding all the mismatches that a read has to its variants
-        d_2 = defaultdict(list) #dictionary holding indices for later use
+        read_index_dict = defaultdict(list) #dictionary holding indices for later use
 
         for i in range(len(read_list)):
             num_mismatch = mismatch_list[i].count('>') #count the number of mismatches for each read
-            #append the appropraite suffix for paired reads
+            #append the appropriate suffix for paired reads
             '''if  i%2 == 0:    
                 read_list[i] = read_list[i]+'-1/2'
             else:
@@ -98,7 +103,7 @@ def generate_matrix(path):
             '''
             read_var_dict[read_list[i]].append(var_list[i]) #append all the variants that read read_i maps to
             read_mismatch_dict[read_list[i]].append(num_mismatch) #append all the mismatches that each read_i has when it maps to a variants
-            d_2[read_list[i]].append(i) #for testing purposes
+            read_index_dict[read_list[i]].append(i) #for testing purposes
 
         var_list = set(var_list) #removes duplicates
         matrix_dict = tree() #creates a 2-D dictionary object later used to generate the read-variant matrix datastructure
@@ -115,11 +120,12 @@ def generate_matrix(path):
                     #print val
                     matrix_dict[read][var] = int(mismatch) #add it to the matrix data structure
 
-        df = pd.DataFrame(matrix_dict).T.fillna(-1) #convert 2-D dictionary to a matrix
-    return df
+        matrixDF = pd.DataFrame(matrix_dict).T.fillna(-1) #convert 2-D dictionary to a matrix
+    return matrixDF
 
 #compute the probability of read of length n mapping to a variant with k mismatches using the binomial distribution/without 
 def compute_probability(n, k):
+    #NO_BINOM=True means not using binomial coefficient
     if NO_BINOM:
         b=10**10
     else:
@@ -131,6 +137,10 @@ def compute_probability(n, k):
         
     return prob
 
+'''
+Input: Dataframe with rows=reads, columns=variants
+Output: The proportions of variants (type list)
+'''
 def compute_proportions(dataframe):
     #computes the proportion of a set of variants given a set of reads uing probabilistic methods
     prob_list = [] #a list to hold the probabilities
@@ -144,51 +154,66 @@ def compute_proportions(dataframe):
                 temp_list[i] = 0
         total = sum(temp_list)
         #solve for k
+        #try except just in case when we encounter the weird issue where the decision variable for a predicted variant = 1 but was not output
         try:
             temp_list = [j*(1.0/total) for j in temp_list]
         except ZeroDivisionError:
             print(total)
             print(temp_list)
+            
         prob_list.append(temp_list)
     col_sums = [sum(k) for k in zip(*prob_list)]
     total_sum = sum(col_sums)
     prop_list = [100.0*l*(1/total_sum) for l in col_sums]
     return prop_list     
 
-def compute_True_objective_val(dataframe):
-        run_sum = 0
+'''
+Input: Dataframe with rows=reads, columns=variants
+Output: The objective value of these variants, reads which do not map to true variants if any
+'''
+def compute_true_objective_val(dataframe):
+        objective_val = 0
+        #To record reads which do not map to true variants
         bad_read = list()
         #Even no limit on mm, there are reads which are covered by predicted variants but not
         #true variants. Identify largest mm , if this case happens, increment by max_mm+1
         max_mm = max(dataframe.max())
         for row in dataframe.itertuples():
-            my_list = [i for i in list(row)[1:] if i >= 0]
+            mmInfo_list = [i for i in list(row)[1:] if i >= 0]
+            
+            #mmInfo_list will be empty if a read does not map back to the true variants
             if TEST_EMPTY_LIST == True:
-                if len(my_list) > 0:
-                    run_sum += min(my_list)
+                if len(mmInfo_list) > 0:
+                    objective_val += min(mmInfo_list)   #Increment by the minimum number of mismatches
                 else:
-                    run_sum+=max_mm + 1
+                    objective_val+=max_mm + 1
                     bad_read.append(list(row)[0])
                     print(list(row))
             else:
-                if len(my_list) == 0:
+                if len(mmInfo_list) == 0:
                     bad_read.append(list(row)[0])
                     print(list(row))
-                run_sum += min(my_list)
-        run_sum += len(dataframe.columns)
-        return run_sum, bad_read
+                    
+                objective_val += min(mmInfo_list)
+        objective_val += len(dataframe.columns)     #Increment by the number of variants used
+        return objective_val, bad_read
 
+#Create a dictionary given keys and values which are lists
 def create_dictionary(keys, vals):
         my_dict = dict()
         if len(keys) == len(vals):
-                for i in range(len(keys)):
-                        my_dict[keys[i]] = vals[i]
+            for i in range(len(keys)):
+                my_dict[keys[i]] = vals[i]
         return my_dict 
 
-def Compute_obj_diff(predicted, true):
+#Compute the difference between predicted and true objective values
+def compute_obj_diff(predicted, true):
         diff = predicted - true
         return diff
-    
+'''
+Input: A dataframe with rows=reads, columns=variants
+Output: Negative log likelihood score of this solution
+'''    
 def compute_likelihood(df):
     numVar = df.shape[1]
     likelihood_list = list()
@@ -199,7 +224,7 @@ def compute_likelihood(df):
         
         temp = list()
         for i in range(numVar):
-            if read[i] == -1:
+            if read[i] == -1:   #treat those reads which do not map having mm=max_mm+1
                 prob = (0.01)**(max_mm+1) * (0.99)**(76 - max_mm -1)
                 temp.append(prob)
             else:
@@ -208,6 +233,7 @@ def compute_likelihood(df):
                 
         likelihood_list.append( sum(temp) )
     
+    #Similar to method in GAML paper
     likelihood_list = [i/(2.0*76*numVar) for i in likelihood_list]
     neg_log_likelihood = [-1.0*np.log10(j) for j in likelihood_list]
     
@@ -218,23 +244,23 @@ def compute_likelihood(df):
 
 ap = argparse.ArgumentParser()
 ap.add_argument("-g", "--gene", required = True,  help="name of gene")
-ap.add_argument("-l", "--numOfIter", required = False, default = 40, type=int)
+ap.add_argument("-i", "--numOfIter", required = False, default = 40, type=int)
 ap.add_argument("-o", "--outputFolderPath", required=True, help="output folder path")
 args = vars(ap.parse_args())
-true_ratios = []
-true_variants = []
-total_var = []
-Precision = []
-Recall = []
+#Record true variants and their fractions for all simulations
+true_ratios_list = []
+true_variants_list = []
+totalVarDist = []
+precision_list = []
+recall_list = []
 pred_object_vals = []
 true_Objective_vals = []
 diff_obj_vals = []
-count = 0
-bool_list = []
+predictedCorrect_count = 0
+predCorrect_bool_list = []
 minNegLogLike_correct = 0
 minSizeOpt_count = 0
 minNegLogLike_hasTrue = 0
-
 gene = args["gene"]
 seed = 1994
 random.seed(seed)
@@ -292,8 +318,8 @@ for x in range(1,args["numOfIter"]+1):
     new_cmd3 = "bash /home/{}/Documents/Borrelia/scripts/temp.sh ".format(USER)+ upperfirst(gene)+"_"+str(x) + " " + upperfirst(gene) + "_" + str(x)+ " " + ref
     os.system(new_cmd3)
     os.system("rm {}*".format(gene)) #remove unneccessary files for the next iteration.    
-    true_ratios.append(fractions)
-    true_variants.append(variants)
+    true_ratios_list.append(fractions)
+    true_variants_list.append(variants)
     for j in range(0,len(variants)):
             key = variants[j]
             true_prop[key] = float(fractions[j])*100
@@ -347,8 +373,8 @@ for x in range(1,args["numOfIter"]+1):
 #    print("Similar likelihood list: {}".format(similar_likelihood_sol_list))
 #    print("Similar likelihood score list: {}".format(similar_likelihood_score_list))
     
-    Precision.append(precision(var_predicted, variants))
-    Recall.append(recall(var_predicted, variants))
+    precision_list.append(precision(var_predicted, variants))
+    recall_list.append(recall(var_predicted, variants))
     pred_object_vals.append(pred_object_val)
     df1 = df[var_predicted]
     df2 = df.loc[reads_cov,variants]
@@ -356,7 +382,7 @@ for x in range(1,args["numOfIter"]+1):
     prop = compute_proportions(df3)
     pred_prop = create_dictionary(var_predicted, prop)
     val = totalVariationDist(pred_prop, true_prop)
-    total_var.append(val)
+    totalVarDist.append(val)
 
     print 'True variants are:', variants, "\n"
     print 'Predicted variants are:', var_predicted, "\n"
@@ -387,15 +413,15 @@ for x in range(1,args["numOfIter"]+1):
 #    print("Negative log likelihood score list:{}".format(score_list))
 #    print("The solution which has minimum negative log likelihood is {0} and its score:{1}".format(min_sol, min_score))
     
-    true_Objective_val, bad_reads = compute_True_objective_val(df2)
+    true_Objective_val, bad_reads = compute_true_objective_val(df2)
     true_Objective_vals.append(true_Objective_val)
-    diff_obj_vals.append(Compute_obj_diff(pred_object_val,true_Objective_val))
+    diff_obj_vals.append(compute_obj_diff(pred_object_val,true_Objective_val))
     
     if predictedCorrectly(var_predicted, variants):
-            count += 1
-            bool_list.append(True)
+            predictedCorrect_count += 1
+            predCorrect_bool_list.append(True)
     else:
-            bool_list.append(False)
+            predCorrect_bool_list.append(False)
             
     if len(bad_reads) != 0:
         print(df.loc[bad_reads,:])
@@ -427,40 +453,40 @@ for x in range(1,args["numOfIter"]+1):
 
 
 print "======================================== {0}: SUMMARY STATISTICS ====================================================\n".format(gene)
-avg_totalVarDist = sum(total_var)/len(total_var)
-true_avg_totalVarDist = sum(list(itertools.compress(total_var, bool_list)))/sum(bool_list)
-variance_totalVarDist = map(lambda x: (x - avg_totalVarDist)**2, total_var)
-true_variance_totalVarDist = map(lambda x:(x - true_avg_totalVarDist)**2, list(itertools.compress(total_var, bool_list)))
+avg_totalVarDist = sum(totalVarDist)/len(totalVarDist)
+true_avg_totalVarDist = sum(list(itertools.compress(totalVarDist, predCorrect_bool_list)))/sum(predCorrect_bool_list)
+variance_totalVarDist = map(lambda x: (x - avg_totalVarDist)**2, totalVarDist)
+true_variance_totalVarDist = map(lambda x:(x - true_avg_totalVarDist)**2, list(itertools.compress(totalVarDist, predCorrect_bool_list)))
 variance_totalVarDist = sum(variance_totalVarDist)/len(variance_totalVarDist)
 true_variance_totalVarDist = sum(true_variance_totalVarDist)/len(true_variance_totalVarDist)
 std_totalVarDist = math.sqrt(variance_totalVarDist)
 true_std_totalVarDist = math.sqrt(true_variance_totalVarDist)
 context=1
 print "({0})Total Variation Distance:\n".format(context)
-print "Total variation distances are:",total_var, "\n"
+print "Total variation distances are:",totalVarDist, "\n"
 print "The average of total variation distance is:", avg_totalVarDist, "\n"
 #print "The variance of total variation distance is:", variance_totalVarDist, "\n"
 print "The standard deviation of total variation distance is:",std_totalVarDist, "\n"
 context+=1
 print "({0})Total Variation Distance for variants which are predicted correctly:\n".format(context)
-print "Total variation distances are:",list(itertools.compress(total_var, bool_list)), "\n"
+print "Total variation distances are:",list(itertools.compress(totalVarDist, predCorrect_bool_list)), "\n"
 print "The average of total variation distance is:", true_avg_totalVarDist, "\n"
 #print "The variance of total variation distance is:", variance_totalVarDist, "\n"
 print "The standard deviation of total variation distance is:",true_std_totalVarDist, "\n"
 context+=1
 
-avg_prec = sum(Precision)/len(Precision)
-std_prec = np.std(np.array(Precision))
+avg_prec = sum(precision_list)/len(precision_list)
+std_prec = np.std(np.array(precision_list))
 print "({0}) Precision: \n".format(context)
-print 'Precision is:', Precision, "\n"
+print 'Precision is:', precision_list, "\n"
 print "Average of precision is: ", avg_prec, "\n"
 print "Standard deviation of precision is: ", std_prec, "\n"
 context+=1
 
-avg_rec = sum(Recall)/len(Recall)
-std_rec = np.std(np.array(Recall))
+avg_rec = sum(recall_list)/len(recall_list)
+std_rec = np.std(np.array(recall_list))
 print "({0}) Recall : \n".format(context)
-print 'Recall is:', Recall, "\n"
+print 'Recall is:', recall_list, "\n"
 print "Average of recall is: ", avg_rec, "\n"
 print "Standard deviation of recall is: ", std_rec, "\n"
 context+=1
@@ -477,8 +503,8 @@ context+=1
 
 print "({0})Accuracy: \n".format(context)
 print 'Total number of simulations: ', args["numOfIter"] , "\n"
-print("Number of simulations which are predicted correctly: {0}\n".format(count))
-print 'Percentage of simulations predicted correctly: ', 100*count/x, "%\n"
+print("Number of simulations which are predicted correctly: {0}\n".format(predictedCorrect_count))
+print 'Percentage of simulations predicted correctly: ', 100*predictedCorrect_count/x, "%\n"
 context+=1
 
 #print "({0})Numbers related to likelihood approach: \n".format(context)
@@ -489,20 +515,20 @@ context+=1
 #print("Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: {0}\n".format(minNegLogLike_hasTrue))
 
 plt.figure()
-plt.hist(total_var, bins=int(args["numOfIter"]/2), edgecolor='black', linewidth=1.2, color="pink")
+plt.hist(totalVarDist, bins=int(args["numOfIter"]/2), edgecolor='black', linewidth=1.2, color="pink")
 plt.xlabel('Total Variation Distance in %')
 plt.ylabel('Frequency')
 #plt.show()
 plt.savefig("{0}{1}_totalVarDist".format(args["outputFolderPath"], gene))
 
 plt.figure()
-plt.hist(Precision, bins=int(args["numOfIter"]/2), edgecolor='black', linewidth=1.2, color="pink")
+plt.hist(precision_list, bins=int(args["numOfIter"]/2), edgecolor='black', linewidth=1.2, color="pink")
 plt.xlabel('Precision')
 plt.ylabel('Frequency')
 plt.savefig("{0}{1}_precision".format(args["outputFolderPath"], gene))
 
 plt.figure()
-plt.hist(Recall, bins=int(args["numOfIter"]/2), edgecolor='black', linewidth=1.2, color="pink")
+plt.hist(recall_list, bins=int(args["numOfIter"]/2), edgecolor='black', linewidth=1.2, color="pink")
 plt.xlabel('Recall')
 plt.ylabel('Frequency')
 plt.savefig("{0}{1}_recall".format(args["outputFolderPath"], gene))
