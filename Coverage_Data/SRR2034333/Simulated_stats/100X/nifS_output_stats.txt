@@ -1,0 +1,774 @@
+
+
+======================================== SIMULATION 1 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['nifS_5', 'nifS_65'] 
+
+Predicted variants are: ['nifS_5', 'nifS_65'] 
+
+True proportions are: {'nifS_65': 61.82658383630597, 'nifS_5': 38.17341616369404} 
+
+Predicted proportions are: {'nifS_65': 61.299435028248588, 'nifS_5': 38.700564971751405} 
+
+All solutions: 
+{'sol_0': ['nifS_65', 'nifS_9'], 'sol_1': ['nifS_5', 'nifS_65']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2142.4084626172521, 'sol_1': 2142.4084626172521}
+
+
+======================================== SIMULATION 2 ====================================================
+
+Number of optimal solutions: 13
+True variants are: ['nifS_91', 'nifS_124', 'nifS_81', 'nifS_159', 'nifS_29'] 
+
+Predicted variants are: ['nifS_124', 'nifS_159', 'nifS_34', 'nifS_81'] 
+
+True proportions are: {'nifS_124': 21.9850246896549, 'nifS_159': 20.35964632177263, 'nifS_81': 4.976621214764667, 'nifS_91': 29.961905694594744, 'nifS_29': 22.716802079213068} 
+
+Predicted proportions are: {'nifS_159': 21.565408637403625, 'nifS_81': 26.915639343004955, 'nifS_124': 24.718855937360662, 'nifS_34': 26.800096082230748} 
+
+All solutions: 
+{'sol_8': ['nifS_124', 'nifS_140', 'nifS_159', 'nifS_76', 'nifS_91'], 'sol_9': ['nifS_124', 'nifS_159', 'nifS_31', 'nifS_33', 'nifS_81'], 'sol_2': ['nifS_124', 'nifS_159', 'nifS_31', 'nifS_34', 'nifS_81'], 'sol_3': ['nifS_124', 'nifS_159', 'nifS_31', 'nifS_81', 'nifS_91'], 'sol_0': ['nifS_124', 'nifS_159', 'nifS_34', 'nifS_81'], 'sol_1': ['nifS_124', 'nifS_159', 'nifS_81', 'nifS_91'], 'sol_6': ['nifS_124', 'nifS_140', 'nifS_159', 'nifS_31', 'nifS_91'], 'sol_7': ['nifS_124', 'nifS_140', 'nifS_159', 'nifS_34', 'nifS_76'], 'sol_4': ['nifS_124', 'nifS_159', 'nifS_76', 'nifS_81', 'nifS_91'], 'sol_5': ['nifS_124', 'nifS_140', 'nifS_159', 'nifS_31', 'nifS_34'], 'sol_10': ['nifS_124', 'nifS_159', 'nifS_33', 'nifS_76', 'nifS_81'], 'sol_11': ['nifS_124', 'nifS_140', 'nifS_159', 'nifS_31', 'nifS_33'], 'sol_12': ['nifS_124', 'nifS_140', 'nifS_159', 'nifS_33', 'nifS_76']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 2260.5969807418765, 'sol_9': 2275.3959536023535, 'sol_2': 2255.5810799316041, 'sol_3': 2255.5867537962636, 'sol_0': 2249.7786324207273, 'sol_1': 2249.7843479654748, 'sol_6': 2260.2545589584324, 'sol_7': 2260.5912650917253, 'sol_4': 2255.929175579708, 'sol_5': 2260.2488850937725, 'sol_10': 2275.7383336003059, 'sol_11': 2280.0637587645224, 'sol_12': 2280.4061387624752}
+
+
+======================================== SIMULATION 3 ====================================================
+
+Number of optimal solutions: 12
+True variants are: ['nifS_46', 'nifS_90', 'nifS_27', 'nifS_32'] 
+
+Predicted variants are: ['nifS_107', 'nifS_27', 'nifS_31', 'nifS_32', 'nifS_46'] 
+
+True proportions are: {'nifS_46': 15.745221047358251, 'nifS_32': 25.186755210310725, 'nifS_90': 37.59844913029921, 'nifS_27': 21.46957461203181} 
+
+Predicted proportions are: {'nifS_46': 19.350912988430874, 'nifS_107': 13.3486134632603, 'nifS_31': 24.059334455755032, 'nifS_32': 24.964408663144692, 'nifS_27': 18.27673042940911} 
+
+All solutions: 
+{'sol_8': ['nifS_159', 'nifS_28', 'nifS_31', 'nifS_32', 'nifS_46'], 'sol_9': ['nifS_107', 'nifS_28', 'nifS_31', 'nifS_32', 'nifS_46'], 'sol_2': ['nifS_28', 'nifS_31', 'nifS_32', 'nifS_46'], 'sol_3': ['nifS_28', 'nifS_32', 'nifS_46', 'nifS_76'], 'sol_0': ['nifS_27', 'nifS_31', 'nifS_32', 'nifS_46'], 'sol_1': ['nifS_27', 'nifS_32', 'nifS_46', 'nifS_76'], 'sol_6': ['nifS_107', 'nifS_27', 'nifS_31', 'nifS_32', 'nifS_46'], 'sol_7': ['nifS_107', 'nifS_27', 'nifS_32', 'nifS_46', 'nifS_76'], 'sol_4': ['nifS_159', 'nifS_27', 'nifS_31', 'nifS_32', 'nifS_46'], 'sol_5': ['nifS_159', 'nifS_27', 'nifS_32', 'nifS_46', 'nifS_76'], 'sol_10': ['nifS_159', 'nifS_28', 'nifS_32', 'nifS_46', 'nifS_76'], 'sol_11': ['nifS_107', 'nifS_28', 'nifS_32', 'nifS_46', 'nifS_76']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 2297.1602342424894, 'sol_9': 2297.7401696482598, 'sol_2': 2257.7905198461931, 'sol_3': 2258.3794755586955, 'sol_0': 2238.0003223023168, 'sol_1': 2238.5892781206153, 'sol_6': 2282.5324219063123, 'sol_7': 2283.1228189588064, 'sol_4': 2281.8280351075377, 'sol_5': 2282.4184321600319, 'sol_10': 2297.7506313070744, 'sol_11': 2298.3305667128452}
+
+
+======================================== SIMULATION 4 ====================================================
+
+Number of optimal solutions: 20
+True variants are: ['nifS_11', 'nifS_52', 'nifS_125'] 
+
+Predicted variants are: ['nifS_11', 'nifS_125', 'nifS_52'] 
+
+True proportions are: {'nifS_52': 55.75715799944185, 'nifS_11': 4.431067746690846, 'nifS_125': 39.8117742538673} 
+
+Predicted proportions are: {'nifS_52': 55.669242689260571, 'nifS_11': 9.6397709629707542, 'nifS_125': 34.690986347768671} 
+
+All solutions: 
+{'sol_8': ['nifS_102', 'nifS_11', 'nifS_125', 'nifS_52'], 'sol_9': ['nifS_104', 'nifS_107', 'nifS_11', 'nifS_125', 'nifS_52'], 'sol_2': ['nifS_101', 'nifS_11', 'nifS_125', 'nifS_52'], 'sol_3': ['nifS_107', 'nifS_11', 'nifS_125', 'nifS_52'], 'sol_0': ['nifS_11', 'nifS_125', 'nifS_52'], 'sol_1': ['nifS_108', 'nifS_11', 'nifS_125', 'nifS_52'], 'sol_6': ['nifS_101', 'nifS_107', 'nifS_11', 'nifS_125', 'nifS_52'], 'sol_7': ['nifS_103', 'nifS_11', 'nifS_121', 'nifS_125'], 'sol_4': ['nifS_104', 'nifS_11', 'nifS_125', 'nifS_52'], 'sol_5': ['nifS_107', 'nifS_108', 'nifS_11', 'nifS_125', 'nifS_52'], 'sol_18': ['nifS_104', 'nifS_105', 'nifS_11', 'nifS_125', 'nifS_159'], 'sol_19': ['nifS_104', 'nifS_105', 'nifS_107', 'nifS_11', 'nifS_125'], 'sol_14': ['nifS_103', 'nifS_105', 'nifS_107', 'nifS_11', 'nifS_125'], 'sol_15': ['nifS_107', 'nifS_11', 'nifS_110', 'nifS_125', 'nifS_142'], 'sol_16': ['nifS_105', 'nifS_107', 'nifS_11', 'nifS_125', 'nifS_92'], 'sol_17': ['nifS_105', 'nifS_11', 'nifS_125', 'nifS_142', 'nifS_159'], 'sol_10': ['nifS_103', 'nifS_107', 'nifS_11', 'nifS_121', 'nifS_125'], 'sol_11': ['nifS_102', 'nifS_107', 'nifS_11', 'nifS_125', 'nifS_52'], 'sol_12': ['nifS_103', 'nifS_11', 'nifS_110', 'nifS_125', 'nifS_159'], 'sol_13': ['nifS_101', 'nifS_105', 'nifS_11', 'nifS_125', 'nifS_159']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 2305.9393881774599, 'sol_9': 2311.9587250008099, 'sol_2': 2281.350168462131, 'sol_3': 2287.5909937004985, 'sol_0': 2254.9667499938746, 'sol_1': 2277.1139751617307, 'sol_6': 2300.952520731606, 'sol_7': 2304.8310712438947, 'sol_4': 2287.9482379620545, 'sol_5': 2298.4763285517411, 'sol_18': 2345.1748868310556, 'sol_19': 2349.3294547417941, 'sol_14': 2336.4199780910071, 'sol_15': 2340.6421933338215, 'sol_16': 2341.2023719737927, 'sol_17': 2342.6535114766184, 'sol_10': 2321.846905557491, 'sol_11': 2323.4866136441728, 'sol_12': 2325.4384316260125, 'sol_13': 2332.9656139961689}
+
+
+======================================== SIMULATION 5 ====================================================
+
+Number of optimal solutions: 21
+True variants are: ['nifS_90', 'nifS_162', 'nifS_165', 'nifS_152'] 
+
+Predicted variants are: ['nifS_152', 'nifS_160', 'nifS_162', 'nifS_165', 'nifS_31'] 
+
+True proportions are: {'nifS_165': 13.289037090029643, 'nifS_90': 38.13192513071833, 'nifS_162': 25.75800596009843, 'nifS_152': 22.821031819153596} 
+
+Predicted proportions are: {'nifS_165': 18.80367228099669, 'nifS_31': 19.805359445024223, 'nifS_160': 18.462796979556785, 'nifS_162': 20.302472970399954, 'nifS_152': 22.625698324022345} 
+
+All solutions: 
+{'sol_8': ['nifS_152', 'nifS_159', 'nifS_162', 'nifS_165', 'nifS_76', 'nifS_91'], 'sol_9': ['nifS_107', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_31', 'nifS_34'], 'sol_2': ['nifS_141', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_76'], 'sol_3': ['nifS_152', 'nifS_160', 'nifS_162', 'nifS_165', 'nifS_31'], 'sol_0': ['nifS_152', 'nifS_162', 'nifS_165', 'nifS_31', 'nifS_32'], 'sol_1': ['nifS_141', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_31'], 'sol_6': ['nifS_152', 'nifS_159', 'nifS_162', 'nifS_165', 'nifS_31', 'nifS_34'], 'sol_7': ['nifS_152', 'nifS_159', 'nifS_162', 'nifS_165', 'nifS_34', 'nifS_76'], 'sol_4': ['nifS_152', 'nifS_159', 'nifS_162', 'nifS_165', 'nifS_31', 'nifS_90'], 'sol_5': ['nifS_107', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_31', 'nifS_90'], 'sol_20': ['nifS_107', 'nifS_152', 'nifS_160', 'nifS_162', 'nifS_165', 'nifS_76'], 'sol_18': ['nifS_152', 'nifS_159', 'nifS_160', 'nifS_162', 'nifS_165', 'nifS_76'], 'sol_19': ['nifS_107', 'nifS_152', 'nifS_160', 'nifS_162', 'nifS_165', 'nifS_31'], 'sol_14': ['nifS_141', 'nifS_152', 'nifS_159', 'nifS_162', 'nifS_165', 'nifS_31'], 'sol_15': ['nifS_107', 'nifS_141', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_31'], 'sol_16': ['nifS_107', 'nifS_141', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_76'], 'sol_17': ['nifS_152', 'nifS_159', 'nifS_160', 'nifS_162', 'nifS_165', 'nifS_31'], 'sol_10': ['nifS_152', 'nifS_159', 'nifS_162', 'nifS_165', 'nifS_31', 'nifS_32'], 'sol_11': ['nifS_152', 'nifS_159', 'nifS_162', 'nifS_165', 'nifS_32', 'nifS_76'], 'sol_12': ['nifS_107', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_31', 'nifS_32'], 'sol_13': ['nifS_107', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_32', 'nifS_76']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 2411.6649346636036, 'sol_9': 2411.729260755837, 'sol_2': 2379.4451431858456, 'sol_3': 2387.006865400524, 'sol_0': 2372.0498978775968, 'sol_1': 2379.1484780022301, 'sol_6': 2411.3682694822032, 'sol_7': 2411.6649346636036, 'sol_4': 2400.2180072135129, 'sol_5': 2400.5789984871467, 'sol_20': 2432.042450815778, 'sol_18': 2431.6983320373383, 'sol_19': 2431.7457856343776, 'sol_14': 2423.2759475714556, 'sol_15': 2423.6369160509321, 'sol_16': 2423.9335812323325, 'sol_17': 2431.4016668559379, 'sol_10': 2416.155943526599, 'sol_11': 2416.4526087079994, 'sol_12': 2416.5169348002328, 'sol_13': 2416.8135999816332}
+
+
+======================================== SIMULATION 6 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['nifS_150', 'nifS_89'] 
+
+Predicted variants are: ['nifS_150', 'nifS_89'] 
+
+True proportions are: {'nifS_89': 62.480407715401995, 'nifS_150': 37.519592284598005} 
+
+Predicted proportions are: {'nifS_89': 62.429378531073439, 'nifS_150': 37.570621468926554} 
+
+All solutions: 
+{'sol_0': ['nifS_150', 'nifS_24'], 'sol_1': ['nifS_150', 'nifS_89']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2140.4128278657208, 'sol_1': 2140.4128278657208}
+
+
+======================================== SIMULATION 7 ====================================================
+
+Number of optimal solutions: 7
+True variants are: ['nifS_95', 'nifS_14', 'nifS_84', 'nifS_62', 'nifS_109'] 
+
+Predicted variants are: ['nifS_109', 'nifS_14', 'nifS_62', 'nifS_84', 'nifS_95'] 
+
+True proportions are: {'nifS_95': 1.4413177598507472, 'nifS_14': 28.596375936700273, 'nifS_62': 28.412997102090248, 'nifS_84': 30.02030344865027, 'nifS_109': 11.52900575270846} 
+
+Predicted proportions are: {'nifS_95': 1.9337016574585641, 'nifS_14': 28.074370981099477, 'nifS_84': 30.194259614626432, 'nifS_62': 24.655909516689075, 'nifS_109': 15.141758230126449} 
+
+All solutions: 
+{'sol_2': ['nifS_109', 'nifS_14', 'nifS_159', 'nifS_62', 'nifS_84', 'nifS_95'], 'sol_3': ['nifS_107', 'nifS_109', 'nifS_14', 'nifS_52', 'nifS_84', 'nifS_95'], 'sol_0': ['nifS_109', 'nifS_14', 'nifS_62', 'nifS_84', 'nifS_95'], 'sol_1': ['nifS_107', 'nifS_109', 'nifS_14', 'nifS_62', 'nifS_84', 'nifS_95'], 'sol_6': ['nifS_105', 'nifS_107', 'nifS_109', 'nifS_14', 'nifS_84', 'nifS_95'], 'sol_4': ['nifS_107', 'nifS_109', 'nifS_121', 'nifS_14', 'nifS_84', 'nifS_95'], 'sol_5': ['nifS_107', 'nifS_109', 'nifS_14', 'nifS_158', 'nifS_84', 'nifS_95']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 2491.5781968954334, 'sol_3': 2497.0593395463843, 'sol_0': 2471.3434264922562, 'sol_1': 2489.3975293597196, 'sol_6': 2516.6413184505523, 'sol_4': 2501.3870718440858, 'sol_5': 2504.4645905776724}
+
+
+======================================== SIMULATION 8 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['nifS_155', 'nifS_72', 'nifS_126'] 
+
+Predicted variants are: ['nifS_126', 'nifS_155', 'nifS_72'] 
+
+True proportions are: {'nifS_155': 45.491834788669685, 'nifS_72': 53.10923775879388, 'nifS_126': 1.3989274525364226} 
+
+Predicted proportions are: {'nifS_155': 44.708044892020006, 'nifS_72': 53.331170794254504, 'nifS_126': 1.9607843137254901} 
+
+All solutions: 
+{'sol_0': ['nifS_126', 'nifS_155', 'nifS_72']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2294.9978699175117}
+
+
+======================================== SIMULATION 9 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['nifS_7', 'nifS_127', 'nifS_23'] 
+
+Predicted variants are: ['nifS_127', 'nifS_23', 'nifS_7'] 
+
+True proportions are: {'nifS_23': 34.934600604289734, 'nifS_7': 41.73750198309749, 'nifS_127': 23.327897412612778} 
+
+Predicted proportions are: {'nifS_23': 34.745762711864387, 'nifS_7': 39.397105275198832, 'nifS_127': 25.857132012936791} 
+
+All solutions: 
+{'sol_0': ['nifS_127', 'nifS_23', 'nifS_7']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2258.0039704564801}
+
+
+======================================== SIMULATION 10 ====================================================
+
+Number of optimal solutions: 9
+True variants are: ['nifS_61', 'nifS_50', 'nifS_18', 'nifS_99', 'nifS_32'] 
+
+Predicted variants are: ['nifS_18', 'nifS_32', 'nifS_50', 'nifS_61', 'nifS_99'] 
+
+True proportions are: {'nifS_50': 0.574542214917952, 'nifS_99': 15.163136217990509, 'nifS_61': 41.48714909992698, 'nifS_32': 23.647863155425483, 'nifS_18': 19.127309311739072} 
+
+Predicted proportions are: {'nifS_61': 38.626556695398818, 'nifS_32': 14.783887691308282, 'nifS_99': 14.498149844161405, 'nifS_18': 19.308728645418366, 'nifS_50': 12.78267712371313} 
+
+All solutions: 
+{'sol_8': ['nifS_18', 'nifS_32', 'nifS_48', 'nifS_61', 'nifS_76', 'nifS_99'], 'sol_2': ['nifS_104', 'nifS_18', 'nifS_32', 'nifS_61', 'nifS_99'], 'sol_3': ['nifS_18', 'nifS_31', 'nifS_32', 'nifS_50', 'nifS_61', 'nifS_99'], 'sol_0': ['nifS_18', 'nifS_32', 'nifS_50', 'nifS_61', 'nifS_99'], 'sol_1': ['nifS_18', 'nifS_32', 'nifS_48', 'nifS_61', 'nifS_99'], 'sol_6': ['nifS_18', 'nifS_31', 'nifS_32', 'nifS_48', 'nifS_61', 'nifS_99'], 'sol_7': ['nifS_104', 'nifS_18', 'nifS_32', 'nifS_61', 'nifS_76', 'nifS_99'], 'sol_4': ['nifS_18', 'nifS_32', 'nifS_50', 'nifS_61', 'nifS_76', 'nifS_99'], 'sol_5': ['nifS_104', 'nifS_18', 'nifS_31', 'nifS_32', 'nifS_61', 'nifS_99']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 2455.2803958472091, 'sol_2': 2428.5675782141971, 'sol_3': 2450.2744704862089, 'sol_0': 2422.9879472795592, 'sol_1': 2428.4272498379478, 'sol_6': 2455.1569169261033, 'sol_7': 2455.2483312349991, 'sol_4': 2450.3979494073146, 'sol_5': 2455.0751449680588}
+
+
+======================================== SIMULATION 11 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['nifS_122', 'nifS_11', 'nifS_24', 'nifS_140', 'nifS_50', 'nifS_148', 'nifS_79'] 
+
+Predicted variants are: ['nifS_11', 'nifS_122', 'nifS_140', 'nifS_148', 'nifS_24', 'nifS_50', 'nifS_79'] 
+
+True proportions are: {'nifS_122': 0.31142755241984954, 'nifS_24': 14.627350456132321, 'nifS_11': 25.296546216548528, 'nifS_140': 13.945484130973304, 'nifS_79': 9.756981242885978, 'nifS_50': 11.711652010320982, 'nifS_148': 24.350558390719044} 
+
+Predicted proportions are: {'nifS_122': 1.0986609542598029, 'nifS_24': 14.509879126503719, 'nifS_11': 25.138121546961319, 'nifS_140': 12.872245414948958, 'nifS_79': 9.4910171123878619, 'nifS_50': 12.580683579744964, 'nifS_148': 24.30939226519337} 
+
+All solutions: 
+{'sol_0': ['nifS_11', 'nifS_122', 'nifS_140', 'nifS_148', 'nifS_24', 'nifS_50', 'nifS_79'], 'sol_1': ['nifS_11', 'nifS_122', 'nifS_140', 'nifS_148', 'nifS_50', 'nifS_79', 'nifS_89']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2585.8251299167428, 'sol_1': 2585.8251299167428}
+
+
+======================================== SIMULATION 12 ====================================================
+
+Number of optimal solutions: 16
+True variants are: ['nifS_58', 'nifS_60', 'nifS_79', 'nifS_23', 'nifS_119', 'nifS_11'] 
+
+Predicted variants are: ['nifS_11', 'nifS_119', 'nifS_40', 'nifS_45', 'nifS_58', 'nifS_79'] 
+
+True proportions are: {'nifS_23': 14.657363837994147, 'nifS_11': 11.640030772931329, 'nifS_119': 20.57131723692035, 'nifS_58': 2.7400721466612548, 'nifS_79': 49.36907102283723, 'nifS_60': 1.0221449826557} 
+
+Predicted proportions are: {'nifS_45': 2.2147548091264526, 'nifS_40': 17.508346045752347, 'nifS_11': 11.602209944751378, 'nifS_119': 17.655000481977208, 'nifS_58': 4.0356559592125665, 'nifS_79': 46.984032759180053} 
+
+All solutions: 
+{'sol_8': ['nifS_11', 'nifS_119', 'nifS_56', 'nifS_58', 'nifS_79', 'nifS_80'], 'sol_9': ['nifS_11', 'nifS_119', 'nifS_45', 'nifS_58', 'nifS_79', 'nifS_80'], 'sol_2': ['nifS_11', 'nifS_119', 'nifS_24', 'nifS_56', 'nifS_58', 'nifS_79'], 'sol_3': ['nifS_11', 'nifS_119', 'nifS_23', 'nifS_45', 'nifS_58', 'nifS_79'], 'sol_0': ['nifS_11', 'nifS_119', 'nifS_23', 'nifS_56', 'nifS_58', 'nifS_79'], 'sol_1': ['nifS_11', 'nifS_119', 'nifS_40', 'nifS_56', 'nifS_58', 'nifS_79'], 'sol_6': ['nifS_11', 'nifS_119', 'nifS_24', 'nifS_45', 'nifS_58', 'nifS_79'], 'sol_7': ['nifS_11', 'nifS_119', 'nifS_39', 'nifS_45', 'nifS_58', 'nifS_79'], 'sol_4': ['nifS_11', 'nifS_115', 'nifS_119', 'nifS_45', 'nifS_58', 'nifS_79'], 'sol_5': ['nifS_11', 'nifS_119', 'nifS_40', 'nifS_45', 'nifS_58', 'nifS_79'], 'sol_14': ['nifS_11', 'nifS_116', 'nifS_119', 'nifS_45', 'nifS_58', 'nifS_79'], 'sol_15': ['nifS_11', 'nifS_119', 'nifS_157', 'nifS_45', 'nifS_58', 'nifS_79'], 'sol_10': ['nifS_11', 'nifS_119', 'nifS_22', 'nifS_56', 'nifS_58', 'nifS_79'], 'sol_11': ['nifS_11', 'nifS_119', 'nifS_22', 'nifS_45', 'nifS_58', 'nifS_79'], 'sol_12': ['nifS_11', 'nifS_119', 'nifS_146', 'nifS_56', 'nifS_58', 'nifS_79'], 'sol_13': ['nifS_11', 'nifS_119', 'nifS_146', 'nifS_45', 'nifS_58', 'nifS_79']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 2491.8701683072627, 'sol_9': 2495.4560739101908, 'sol_2': 2486.5301950420594, 'sol_3': 2489.2261059691964, 'sol_0': 2485.6402003662679, 'sol_1': 2486.2335307290687, 'sol_6': 2490.1161006449879, 'sol_7': 2490.7094310077882, 'sol_4': 2489.8194363319967, 'sol_5': 2489.8194363319967, 'sol_14': 2508.4960580299853, 'sol_15': 2509.0983950801506, 'sol_10': 2499.583482566672, 'sol_11': 2503.1693881696001, 'sol_12': 2504.0292986586101, 'sol_13': 2507.6152042615381}
+
+
+======================================== SIMULATION 13 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['nifS_36', 'nifS_4', 'nifS_164', 'nifS_57', 'nifS_116', 'nifS_137'] 
+
+Predicted variants are: ['nifS_116', 'nifS_137', 'nifS_164', 'nifS_36', 'nifS_4', 'nifS_57'] 
+
+True proportions are: {'nifS_137': 4.969195017954185, 'nifS_36': 0.40386442110028925, 'nifS_164': 13.234792704796517, 'nifS_4': 29.336860593954107, 'nifS_57': 22.259833033600934, 'nifS_116': 29.79545422859397} 
+
+Predicted proportions are: {'nifS_137': 5.932761668230607, 'nifS_36': 7.2934527481629923, 'nifS_164': 13.535911602209946, 'nifS_4': 29.005524861878456, 'nifS_57': 15.878048516545116, 'nifS_116': 28.354300602972884} 
+
+All solutions: 
+{'sol_0': ['nifS_116', 'nifS_137', 'nifS_164', 'nifS_36', 'nifS_4', 'nifS_57'], 'sol_1': ['nifS_116', 'nifS_164', 'nifS_36', 'nifS_4', 'nifS_51', 'nifS_57']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2541.9694994720521, 'sol_1': 2541.9694994720521}
+
+
+======================================== SIMULATION 14 ====================================================
+
+Number of optimal solutions: 7
+True variants are: ['nifS_21', 'nifS_23'] 
+
+Predicted variants are: ['nifS_21', 'nifS_23'] 
+
+True proportions are: {'nifS_21': 64.74726407468351, 'nifS_23': 35.25273592531647} 
+
+Predicted proportions are: {'nifS_21': 64.063370577145065, 'nifS_23': 35.936629422854935} 
+
+All solutions: 
+{'sol_2': ['nifS_20', 'nifS_21', 'nifS_23'], 'sol_3': ['nifS_147', 'nifS_21', 'nifS_23'], 'sol_0': ['nifS_21', 'nifS_23'], 'sol_1': ['nifS_19', 'nifS_21', 'nifS_23'], 'sol_6': ['nifS_21', 'nifS_23', 'nifS_94'], 'sol_4': ['nifS_20', 'nifS_23', 'nifS_97'], 'sol_5': ['nifS_19', 'nifS_23', 'nifS_97']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 2165.9243570334897, 'sol_3': 2173.9341829037367, 'sol_0': 2152.3555426969369, 'sol_1': 2165.9243570334897, 'sol_6': 2180.770687144769, 'sol_4': 2180.7575940758475, 'sol_5': 2180.7575940758475}
+
+
+======================================== SIMULATION 15 ====================================================
+
+Number of optimal solutions: 3
+True variants are: ['nifS_163', 'nifS_17'] 
+
+Predicted variants are: ['nifS_163', 'nifS_17'] 
+
+True proportions are: {'nifS_17': 97.38370053840528, 'nifS_163': 2.6162994615947124} 
+
+Predicted proportions are: {'nifS_17': 96.89265536723164, 'nifS_163': 3.1073446327683611} 
+
+All solutions: 
+{'sol_2': ['nifS_136', 'nifS_163', 'nifS_17'], 'sol_0': ['nifS_11', 'nifS_163', 'nifS_17'], 'sol_1': ['nifS_163', 'nifS_17']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 2162.3843336767986, 'sol_0': 2124.4111917779196, 'sol_1': 2150.3910450417002}
+
+
+======================================== SIMULATION 16 ====================================================
+
+Number of optimal solutions: 14
+True variants are: ['nifS_43', 'nifS_93', 'nifS_118', 'nifS_161', 'nifS_81', 'nifS_97'] 
+
+Predicted variants are: ['nifS_118', 'nifS_161', 'nifS_43', 'nifS_81', 'nifS_93', 'nifS_97'] 
+
+True proportions are: {'nifS_43': 2.915919585626692, 'nifS_118': 21.37512617352857, 'nifS_97': 3.9019320771751715, 'nifS_81': 31.405327191166833, 'nifS_93': 18.19853481104944, 'nifS_161': 22.2031601614533} 
+
+Predicted proportions are: {'nifS_43': 14.06787821525665, 'nifS_118': 19.677609180153926, 'nifS_97': 3.6857396705473815, 'nifS_81': 20.013283380846161, 'nifS_93': 20.17979894546114, 'nifS_161': 22.375690607734725} 
+
+All solutions: 
+{'sol_8': ['nifS_107', 'nifS_110', 'nifS_118', 'nifS_161', 'nifS_81', 'nifS_93', 'nifS_97'], 'sol_9': ['nifS_118', 'nifS_140', 'nifS_159', 'nifS_161', 'nifS_43', 'nifS_93', 'nifS_97'], 'sol_2': ['nifS_118', 'nifS_140', 'nifS_161', 'nifS_43', 'nifS_93', 'nifS_97'], 'sol_3': ['nifS_110', 'nifS_118', 'nifS_140', 'nifS_161', 'nifS_93', 'nifS_97'], 'sol_0': ['nifS_118', 'nifS_161', 'nifS_43', 'nifS_81', 'nifS_93', 'nifS_97'], 'sol_1': ['nifS_110', 'nifS_118', 'nifS_161', 'nifS_81', 'nifS_93', 'nifS_97'], 'sol_6': ['nifS_107', 'nifS_118', 'nifS_161', 'nifS_43', 'nifS_81', 'nifS_93', 'nifS_97'], 'sol_7': ['nifS_118', 'nifS_145', 'nifS_159', 'nifS_161', 'nifS_81', 'nifS_93', 'nifS_97'], 'sol_4': ['nifS_118', 'nifS_159', 'nifS_161', 'nifS_43', 'nifS_81', 'nifS_93', 'nifS_97'], 'sol_5': ['nifS_110', 'nifS_118', 'nifS_159', 'nifS_161', 'nifS_81', 'nifS_93', 'nifS_97'], 'sol_10': ['nifS_110', 'nifS_118', 'nifS_140', 'nifS_159', 'nifS_161', 'nifS_93', 'nifS_97'], 'sol_11': ['nifS_107', 'nifS_118', 'nifS_140', 'nifS_161', 'nifS_43', 'nifS_93', 'nifS_97'], 'sol_12': ['nifS_118', 'nifS_140', 'nifS_145', 'nifS_159', 'nifS_161', 'nifS_93', 'nifS_97'], 'sol_13': ['nifS_107', 'nifS_110', 'nifS_118', 'nifS_140', 'nifS_161', 'nifS_93', 'nifS_97']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 2375.6325044722958, 'sol_9': 2381.7397855727813, 'sol_2': 2346.0478478245841, 'sol_3': 2346.3021223295846, 'sol_0': 2337.9986421720423, 'sol_1': 2338.2529166770428, 'sol_6': 2375.3782298623555, 'sol_7': 2375.3968383486435, 'sol_4': 2374.771431823061, 'sol_5': 2375.0253419352525, 'sol_10': 2381.9936956849729, 'sol_11': 2382.3465836120763, 'sol_12': 2382.3651920983643, 'sol_13': 2382.6008582220161}
+
+
+======================================== SIMULATION 17 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['nifS_128', 'nifS_106', 'nifS_70', 'nifS_126', 'nifS_82', 'nifS_153', 'nifS_74'] 
+
+Predicted variants are: ['nifS_106', 'nifS_126', 'nifS_128', 'nifS_153', 'nifS_70', 'nifS_74', 'nifS_82'] 
+
+True proportions are: {'nifS_106': 9.844871841452747, 'nifS_126': 4.684510643768236, 'nifS_128': 18.669278862768497, 'nifS_82': 14.686580028338591, 'nifS_153': 12.706721653008051, 'nifS_74': 28.985294080349323, 'nifS_70': 10.422742890314552} 
+
+Predicted proportions are: {'nifS_106': 10.222296380759284, 'nifS_126': 5.1151112165492583, 'nifS_128': 15.32173514557897, 'nifS_82': 20.976033501871381, 'nifS_153': 12.777777777777782, 'nifS_74': 21.579447895147123, 'nifS_70': 14.007598082316219} 
+
+All solutions: 
+{'sol_0': ['nifS_106', 'nifS_126', 'nifS_128', 'nifS_153', 'nifS_70', 'nifS_74', 'nifS_82'], 'sol_1': ['nifS_106', 'nifS_126', 'nifS_128', 'nifS_153', 'nifS_74', 'nifS_82', 'nifS_83']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2525.6183791803796, 'sol_1': 2537.1881035022689}
+
+
+======================================== SIMULATION 18 ====================================================
+
+Number of optimal solutions: 8
+True variants are: ['nifS_46', 'nifS_162', 'nifS_106', 'nifS_101', 'nifS_76'] 
+
+Predicted variants are: ['nifS_101', 'nifS_106', 'nifS_162', 'nifS_46', 'nifS_76'] 
+
+True proportions are: {'nifS_46': 21.699916237704908, 'nifS_106': 20.142339556875186, 'nifS_76': 20.931986615148933, 'nifS_162': 20.154091537261078, 'nifS_101': 17.07166605300989} 
+
+Predicted proportions are: {'nifS_106': 19.871759820841948, 'nifS_46': 20.259410224835886, 'nifS_76': 19.517944260375106, 'nifS_162': 20.441988950276237, 'nifS_101': 19.908896743670816} 
+
+All solutions: 
+{'sol_2': ['nifS_101', 'nifS_106', 'nifS_162', 'nifS_34', 'nifS_46', 'nifS_76'], 'sol_3': ['nifS_101', 'nifS_106', 'nifS_162', 'nifS_46', 'nifS_76', 'nifS_91'], 'sol_0': ['nifS_101', 'nifS_106', 'nifS_162', 'nifS_46', 'nifS_76'], 'sol_1': ['nifS_101', 'nifS_106', 'nifS_162', 'nifS_46', 'nifS_76', 'nifS_90'], 'sol_6': ['nifS_101', 'nifS_106', 'nifS_162', 'nifS_33', 'nifS_46', 'nifS_76'], 'sol_7': ['nifS_101', 'nifS_106', 'nifS_160', 'nifS_162', 'nifS_46', 'nifS_76'], 'sol_4': ['nifS_101', 'nifS_106', 'nifS_162', 'nifS_32', 'nifS_46', 'nifS_76'], 'sol_5': ['nifS_101', 'nifS_106', 'nifS_141', 'nifS_162', 'nifS_46', 'nifS_76']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 2400.8875966708615, 'sol_3': 2400.8875966708615, 'sol_0': 2378.7239720411326, 'sol_1': 2392.3078350892742, 'sol_6': 2410.950696720522, 'sol_7': 2413.0467385972779, 'sol_4': 2403.4158911326563, 'sol_5': 2406.9692690711104}
+
+
+======================================== SIMULATION 19 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['nifS_151', 'nifS_66', 'nifS_112', 'nifS_165', 'nifS_16', 'nifS_21'] 
+
+Predicted variants are: ['nifS_112', 'nifS_151', 'nifS_16', 'nifS_165', 'nifS_21', 'nifS_66'] 
+
+True proportions are: {'nifS_21': 19.61244831198223, 'nifS_16': 17.458401058250107, 'nifS_151': 28.849468472351337, 'nifS_165': 5.314326802177019, 'nifS_66': 14.003972958569886, 'nifS_112': 14.76138239666941} 
+
+Predicted proportions are: {'nifS_21': 19.14948291618899, 'nifS_16': 17.403314917127069, 'nifS_151': 28.176795580110497, 'nifS_165': 5.8011049723756889, 'nifS_66': 14.809755414343535, 'nifS_112': 14.659546199854214} 
+
+All solutions: 
+{'sol_0': ['nifS_112', 'nifS_151', 'nifS_16', 'nifS_165', 'nifS_21', 'nifS_66']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2564.8034436500484}
+
+
+======================================== SIMULATION 20 ====================================================
+
+Number of optimal solutions: 6
+True variants are: ['nifS_70', 'nifS_141', 'nifS_137', 'nifS_88'] 
+
+Predicted variants are: ['nifS_137', 'nifS_141', 'nifS_70', 'nifS_88'] 
+
+True proportions are: {'nifS_88': 17.553254234993236, 'nifS_141': 26.44790409334048, 'nifS_137': 17.091906721338297, 'nifS_70': 38.906934950328} 
+
+Predicted proportions are: {'nifS_88': 27.184326846338021, 'nifS_141': 22.757102135836899, 'nifS_137': 21.376976076453602, 'nifS_70': 28.681594941371472} 
+
+All solutions: 
+{'sol_2': ['nifS_137', 'nifS_141', 'nifS_31', 'nifS_70', 'nifS_88'], 'sol_3': ['nifS_141', 'nifS_31', 'nifS_51', 'nifS_70', 'nifS_88'], 'sol_0': ['nifS_137', 'nifS_141', 'nifS_70', 'nifS_88'], 'sol_1': ['nifS_141', 'nifS_51', 'nifS_70', 'nifS_88'], 'sol_4': ['nifS_141', 'nifS_51', 'nifS_70', 'nifS_76', 'nifS_88'], 'sol_5': ['nifS_137', 'nifS_141', 'nifS_70', 'nifS_76', 'nifS_88']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 2334.4936921244994, 'sol_3': 2334.4936921244994, 'sol_0': 2301.8623043806024, 'sol_1': 2301.8623043806024, 'sol_4': 2334.8371336412993, 'sol_5': 2334.8371336412993}
+
+
+======================================== SIMULATION 21 ====================================================
+
+Number of optimal solutions: 14
+True variants are: ['nifS_29', 'nifS_3', 'nifS_103', 'nifS_90', 'nifS_56', 'nifS_87'] 
+
+Predicted variants are: ['nifS_160', 'nifS_26', 'nifS_3', 'nifS_56', 'nifS_87'] 
+
+True proportions are: {'nifS_103': 20.873348592198536, 'nifS_29': 14.251233950427588, 'nifS_90': 8.15524078750936, 'nifS_87': 23.803743895058265, 'nifS_3': 19.95210545141952, 'nifS_56': 12.964327323386723} 
+
+Predicted proportions are: {'nifS_3': 19.297538845144405, 'nifS_160': 19.205061008635013, 'nifS_87': 23.599397088003236, 'nifS_26': 25.351935028627537, 'nifS_56': 12.54606802958981} 
+
+All solutions: 
+{'sol_8': ['nifS_160', 'nifS_3', 'nifS_56', 'nifS_87', 'nifS_93'], 'sol_9': ['nifS_160', 'nifS_3', 'nifS_60', 'nifS_87', 'nifS_93'], 'sol_2': ['nifS_103', 'nifS_3', 'nifS_60', 'nifS_87', 'nifS_90'], 'sol_3': ['nifS_3', 'nifS_60', 'nifS_67', 'nifS_87', 'nifS_90'], 'sol_0': ['nifS_103', 'nifS_3', 'nifS_56', 'nifS_87', 'nifS_90'], 'sol_1': ['nifS_3', 'nifS_56', 'nifS_67', 'nifS_87', 'nifS_90'], 'sol_6': ['nifS_160', 'nifS_29', 'nifS_3', 'nifS_60', 'nifS_87'], 'sol_7': ['nifS_160', 'nifS_3', 'nifS_49', 'nifS_60', 'nifS_87'], 'sol_4': ['nifS_160', 'nifS_29', 'nifS_3', 'nifS_56', 'nifS_87'], 'sol_5': ['nifS_160', 'nifS_3', 'nifS_49', 'nifS_56', 'nifS_87'], 'sol_10': ['nifS_160', 'nifS_26', 'nifS_3', 'nifS_60', 'nifS_87'], 'sol_11': ['nifS_160', 'nifS_26', 'nifS_3', 'nifS_56', 'nifS_87'], 'sol_12': ['nifS_139', 'nifS_160', 'nifS_3', 'nifS_56', 'nifS_87'], 'sol_13': ['nifS_139', 'nifS_160', 'nifS_3', 'nifS_60', 'nifS_87']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 2468.1068328652636, 'sol_9': 2468.1068328652636, 'sol_2': 2446.0139922489111, 'sol_3': 2446.0139922489111, 'sol_0': 2446.0139922489111, 'sol_1': 2446.0139922489111, 'sol_6': 2467.2168386170315, 'sol_7': 2467.2168386170315, 'sol_4': 2467.2168386170315, 'sol_5': 2467.2168386170315, 'sol_10': 2468.1068328652636, 'sol_11': 2468.1068328652636, 'sol_12': 2469.2934949023402, 'sol_13': 2469.2934949023402}
+
+
+======================================== SIMULATION 22 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['nifS_117', 'nifS_156', 'nifS_123', 'nifS_86'] 
+
+Predicted variants are: ['nifS_117', 'nifS_123', 'nifS_156', 'nifS_86'] 
+
+True proportions are: {'nifS_86': 27.244306554204083, 'nifS_156': 21.148916099238924, 'nifS_123': 7.383262974484876, 'nifS_117': 44.2235143720721} 
+
+Predicted proportions are: {'nifS_123': 7.7562326869806073, 'nifS_86': 25.452902441399207, 'nifS_156': 23.123383741715653, 'nifS_117': 43.667481129904523} 
+
+All solutions: 
+{'sol_0': ['nifS_117', 'nifS_123', 'nifS_156', 'nifS_86']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2420.6795042126728}
+
+
+======================================== SIMULATION 23 ====================================================
+
+Number of optimal solutions: 15
+True variants are: ['nifS_31', 'nifS_132', 'nifS_128', 'nifS_103', 'nifS_157', 'nifS_120', 'nifS_22'] 
+
+Predicted variants are: ['nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_160', 'nifS_31', 'nifS_47'] 
+
+True proportions are: {'nifS_120': 12.16308711363433, 'nifS_132': 4.036976128654941, 'nifS_31': 18.46574917342312, 'nifS_103': 20.432689851814175, 'nifS_128': 19.238037452759656, 'nifS_22': 19.655049634422223, 'nifS_157': 6.008410645291557} 
+
+Predicted proportions are: {'nifS_120': 18.172773928942934, 'nifS_132': 10.972178641082323, 'nifS_31': 17.267385498055852, 'nifS_47': 9.4806133142453035, 'nifS_128': 18.646679483571926, 'nifS_157': 10.267243295133914, 'nifS_160': 15.193125838967735} 
+
+All solutions: 
+{'sol_8': ['nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_160', 'nifS_47', 'nifS_76'], 'sol_9': ['nifS_119', 'nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_160', 'nifS_31'], 'sol_2': ['nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_160', 'nifS_23', 'nifS_31'], 'sol_3': ['nifS_120', 'nifS_128', 'nifS_157', 'nifS_160', 'nifS_22', 'nifS_25', 'nifS_31'], 'sol_0': ['nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_160', 'nifS_22', 'nifS_31'], 'sol_1': ['nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_160', 'nifS_22', 'nifS_76'], 'sol_6': ['nifS_115', 'nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_160', 'nifS_76'], 'sol_7': ['nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_160', 'nifS_31', 'nifS_47'], 'sol_4': ['nifS_115', 'nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_160', 'nifS_31'], 'sol_5': ['nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_160', 'nifS_23', 'nifS_76'], 'sol_14': ['nifS_120', 'nifS_128', 'nifS_132', 'nifS_146', 'nifS_157', 'nifS_160', 'nifS_76'], 'sol_10': ['nifS_119', 'nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_160', 'nifS_76'], 'sol_11': ['nifS_116', 'nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_160', 'nifS_31'], 'sol_12': ['nifS_116', 'nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_160', 'nifS_76'], 'sol_13': ['nifS_120', 'nifS_128', 'nifS_132', 'nifS_146', 'nifS_157', 'nifS_160', 'nifS_31']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 2538.7451829253087, 'sol_9': 2541.4156374032787, 'sol_2': 2535.0982566933094, 'sol_3': 2535.0983014317962, 'sol_0': 2527.7308398634514, 'sol_1': 2528.3199032512466, 'sol_6': 2535.8612681895302, 'sol_7': 2538.1561195375134, 'sol_4': 2535.2722048017349, 'sol_5': 2535.6873200811046, 'sol_14': 2546.3570785957691, 'sol_10': 2542.0047007910739, 'sol_11': 2544.6475281114685, 'sol_12': 2545.2365914992638, 'sol_13': 2545.7680152079733}
+
+
+======================================== SIMULATION 24 ====================================================
+
+Number of optimal solutions: 7
+True variants are: ['nifS_25', 'nifS_44', 'nifS_89'] 
+
+Predicted variants are: ['nifS_25', 'nifS_44', 'nifS_89'] 
+
+True proportions are: {'nifS_44': 23.46825260810016, 'nifS_89': 69.5953312819938, 'nifS_25': 6.936416109906056} 
+
+Predicted proportions are: {'nifS_44': 23.739312539784272, 'nifS_89': 38.889632090392823, 'nifS_25': 37.371055369822905} 
+
+All solutions: 
+{'sol_2': ['nifS_25', 'nifS_44', 'nifS_80'], 'sol_3': ['nifS_132', 'nifS_44', 'nifS_89'], 'sol_0': ['nifS_24', 'nifS_25', 'nifS_44'], 'sol_1': ['nifS_25', 'nifS_44', 'nifS_89'], 'sol_6': ['nifS_132', 'nifS_44', 'nifS_80'], 'sol_4': ['nifS_132', 'nifS_24', 'nifS_44'], 'sol_5': ['nifS_25', 'nifS_44', 'nifS_95']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 2163.3515545379064, 'sol_3': 2181.4481071290529, 'sol_0': 2150.5949521032321, 'sol_1': 2150.5949521032321, 'sol_6': 2194.2047095637276, 'sol_4': 2181.4481071290529, 'sol_5': 2183.8214275479077}
+
+
+======================================== SIMULATION 25 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['nifS_37', 'nifS_92'] 
+
+Predicted variants are: ['nifS_37', 'nifS_92'] 
+
+True proportions are: {'nifS_37': 93.14340718829038, 'nifS_92': 6.856592811709612} 
+
+Predicted proportions are: {'nifS_37': 91.691451620050529, 'nifS_92': 8.3085483799494764} 
+
+All solutions: 
+{'sol_0': ['nifS_37', 'nifS_92'], 'sol_1': ['nifS_30', 'nifS_37']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2178.2048911448542, 'sol_1': 2178.2049358923814}
+
+
+======================================== SIMULATION 26 ====================================================
+
+Number of optimal solutions: 6
+True variants are: ['nifS_43', 'nifS_25', 'nifS_33', 'nifS_150', 'nifS_79', 'nifS_157'] 
+
+Predicted variants are: ['nifS_150', 'nifS_157', 'nifS_25', 'nifS_33', 'nifS_43', 'nifS_79'] 
+
+True proportions are: {'nifS_33': 33.92583121729526, 'nifS_43': 4.055278404943387, 'nifS_157': 31.82952025629553, 'nifS_150': 3.0313117378197942, 'nifS_79': 20.965336963626918, 'nifS_25': 6.192721420019106} 
+
+Predicted proportions are: {'nifS_33': 24.109653140733425, 'nifS_43': 14.177975676931871, 'nifS_157': 19.554371612189502, 'nifS_150': 3.8674033149171283, 'nifS_79': 20.206228334245317, 'nifS_25': 18.084367920982753} 
+
+All solutions: 
+{'sol_2': ['nifS_150', 'nifS_157', 'nifS_25', 'nifS_31', 'nifS_33', 'nifS_43', 'nifS_79'], 'sol_3': ['nifS_110', 'nifS_150', 'nifS_157', 'nifS_25', 'nifS_31', 'nifS_33', 'nifS_79'], 'sol_0': ['nifS_150', 'nifS_157', 'nifS_25', 'nifS_33', 'nifS_43', 'nifS_79'], 'sol_1': ['nifS_110', 'nifS_150', 'nifS_157', 'nifS_25', 'nifS_33', 'nifS_79'], 'sol_4': ['nifS_150', 'nifS_157', 'nifS_25', 'nifS_33', 'nifS_43', 'nifS_76', 'nifS_79'], 'sol_5': ['nifS_110', 'nifS_150', 'nifS_157', 'nifS_25', 'nifS_33', 'nifS_76', 'nifS_79']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 2492.3114490164467, 'sol_3': 2492.3136592657788, 'sol_0': 2476.9213759509898, 'sol_1': 2476.925785038607, 'sol_4': 2492.6080924869902, 'sol_5': 2492.6103242278609}
+
+
+======================================== SIMULATION 27 ====================================================
+
+Number of optimal solutions: 4
+True variants are: ['nifS_7', 'nifS_5', 'nifS_44'] 
+
+Predicted variants are: ['nifS_44', 'nifS_5', 'nifS_7'] 
+
+True proportions are: {'nifS_44': 66.79977437358178, 'nifS_5': 12.909346904014111, 'nifS_7': 20.290878722404106} 
+
+Predicted proportions are: {'nifS_44': 66.197183098591552, 'nifS_5': 16.420828485934145, 'nifS_7': 17.381988415474311} 
+
+All solutions: 
+{'sol_2': ['nifS_17', 'nifS_44', 'nifS_7'], 'sol_3': ['nifS_15', 'nifS_44', 'nifS_7'], 'sol_0': ['nifS_44', 'nifS_7', 'nifS_9'], 'sol_1': ['nifS_44', 'nifS_5', 'nifS_7']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 2267.8959544022732, 'sol_3': 2269.6759442279367, 'sol_0': 2254.2493561863539, 'sol_1': 2254.2493561863539}
+
+
+======================================== SIMULATION 28 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['nifS_61', 'nifS_102'] 
+
+Predicted variants are: ['nifS_102', 'nifS_61'] 
+
+True proportions are: {'nifS_102': 38.2072672616659, 'nifS_61': 61.7927327383341} 
+
+Predicted proportions are: {'nifS_102': 38.822610033412488, 'nifS_61': 61.177389966587498} 
+
+All solutions: 
+{'sol_0': ['nifS_102', 'nifS_61']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2142.0899282319897}
+
+
+======================================== SIMULATION 29 ====================================================
+
+Number of optimal solutions: 3
+True variants are: ['nifS_164', 'nifS_72', 'nifS_50', 'nifS_33', 'nifS_67', 'nifS_100'] 
+
+Predicted variants are: ['nifS_100', 'nifS_164', 'nifS_33', 'nifS_50', 'nifS_72'] 
+
+True proportions are: {'nifS_33': 5.4027479103836376, 'nifS_100': 26.071008391103174, 'nifS_164': 18.90796437168259, 'nifS_50': 16.628824040740472, 'nifS_67': 5.618134535860798, 'nifS_72': 27.371320750229327} 
+
+Predicted proportions are: {'nifS_164': 18.508287292817673, 'nifS_33': 14.575194722813627, 'nifS_72': 26.66152485748313, 'nifS_100': 19.961349201868522, 'nifS_50': 20.293643925017047} 
+
+All solutions: 
+{'sol_2': ['nifS_100', 'nifS_107', 'nifS_164', 'nifS_33', 'nifS_50', 'nifS_72'], 'sol_0': ['nifS_100', 'nifS_164', 'nifS_33', 'nifS_50', 'nifS_72'], 'sol_1': ['nifS_100', 'nifS_159', 'nifS_164', 'nifS_33', 'nifS_50', 'nifS_72']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 2477.4843447469211, 'sol_0': 2433.5496139627535, 'sol_1': 2474.8792040045587}
+
+
+======================================== SIMULATION 30 ====================================================
+
+Number of optimal solutions: 20
+True variants are: ['nifS_104', 'nifS_8', 'nifS_49', 'nifS_154', 'nifS_132'] 
+
+Predicted variants are: ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_49', 'nifS_8'] 
+
+True proportions are: {'nifS_154': 35.84365496592645, 'nifS_8': 7.724852322219434, 'nifS_104': 27.85493507464722, 'nifS_132': 16.396878190614867, 'nifS_49': 12.179679446592035} 
+
+Predicted proportions are: {'nifS_132': 16.608437205159557, 'nifS_104': 22.154386340111362, 'nifS_49': 21.537855724515349, 'nifS_8': 7.8389056090919498, 'nifS_154': 31.860415121121786} 
+
+All solutions: 
+{'sol_8': ['nifS_104', 'nifS_107', 'nifS_132', 'nifS_154', 'nifS_49', 'nifS_8'], 'sol_9': ['nifS_104', 'nifS_107', 'nifS_132', 'nifS_154', 'nifS_29', 'nifS_8'], 'sol_2': ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_26', 'nifS_8'], 'sol_3': ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_78', 'nifS_8'], 'sol_0': ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_49', 'nifS_8'], 'sol_1': ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_29', 'nifS_8'], 'sol_6': ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_159', 'nifS_29', 'nifS_8'], 'sol_7': ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_159', 'nifS_26', 'nifS_8'], 'sol_4': ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_8', 'nifS_90'], 'sol_5': ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_159', 'nifS_49', 'nifS_8'], 'sol_18': ['nifS_104', 'nifS_107', 'nifS_132', 'nifS_154', 'nifS_76', 'nifS_8'], 'sol_19': ['nifS_104', 'nifS_107', 'nifS_132', 'nifS_154', 'nifS_31', 'nifS_8'], 'sol_14': ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_159', 'nifS_8', 'nifS_90'], 'sol_15': ['nifS_104', 'nifS_107', 'nifS_132', 'nifS_154', 'nifS_8', 'nifS_90'], 'sol_16': ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_159', 'nifS_76', 'nifS_8'], 'sol_17': ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_159', 'nifS_31', 'nifS_8'], 'sol_10': ['nifS_104', 'nifS_107', 'nifS_132', 'nifS_154', 'nifS_8', 'nifS_93'], 'sol_11': ['nifS_104', 'nifS_107', 'nifS_132', 'nifS_154', 'nifS_26', 'nifS_8'], 'sol_12': ['nifS_104', 'nifS_107', 'nifS_132', 'nifS_154', 'nifS_78', 'nifS_8'], 'sol_13': ['nifS_104', 'nifS_107', 'nifS_132', 'nifS_154', 'nifS_8', 'nifS_98']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 2459.5465832064829, 'sol_9': 2459.5465832064829, 'sol_2': 2416.4296786885775, 'sol_3': 2427.1056603405623, 'sol_0': 2416.4209491002425, 'sol_1': 2416.4209491002425, 'sol_6': 2456.5650667613531, 'sol_7': 2456.5737954636456, 'sol_4': 2439.8837378682506, 'sol_5': 2456.5650667613531, 'sol_18': 2484.6210565980959, 'sol_19': 2484.6211226125042, 'sol_14': 2478.1218832107434, 'sol_15': 2481.103225986737, 'sol_16': 2481.6333120755253, 'sol_17': 2481.6333780943187, 'sol_10': 2459.5552680515902, 'sol_11': 2459.5553119131609, 'sol_12': 2467.6971490054916, 'sol_13': 2467.7058329645115}
+
+
+======================================== SIMULATION 31 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['nifS_60', 'nifS_128', 'nifS_50', 'nifS_55', 'nifS_57'] 
+
+Predicted variants are: ['nifS_128', 'nifS_50', 'nifS_55', 'nifS_57', 'nifS_60'] 
+
+True proportions are: {'nifS_128': 22.263414463553058, 'nifS_50': 20.822687562095123, 'nifS_60': 6.156312608973016, 'nifS_55': 43.17472152204278, 'nifS_57': 7.582863843336016} 
+
+Predicted proportions are: {'nifS_128': 22.3756906077348, 'nifS_50': 26.33014838134919, 'nifS_60': 7.9653784810934187, 'nifS_55': 35.924338993123889, 'nifS_57': 7.4044435366986896} 
+
+All solutions: 
+{'sol_0': ['nifS_128', 'nifS_50', 'nifS_55', 'nifS_57', 'nifS_60'], 'sol_1': ['nifS_128', 'nifS_50', 'nifS_55', 'nifS_56', 'nifS_57']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2460.3757746092642, 'sol_1': 2460.3757746092642}
+
+
+======================================== SIMULATION 32 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['nifS_22', 'nifS_95', 'nifS_97'] 
+
+Predicted variants are: ['nifS_22', 'nifS_95', 'nifS_97'] 
+
+True proportions are: {'nifS_95': 1.8647569289230375, 'nifS_22': 93.96638285347785, 'nifS_97': 4.168860217599113} 
+
+Predicted proportions are: {'nifS_95': 43.044974395498173, 'nifS_22': 51.366357714952393, 'nifS_97': 5.5886678895494404} 
+
+All solutions: 
+{'sol_0': ['nifS_22', 'nifS_95', 'nifS_97']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2157.3770598629781}
+
+
+======================================== SIMULATION 33 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['nifS_96', 'nifS_36', 'nifS_154', 'nifS_109', 'nifS_120', 'nifS_157'] 
+
+Predicted variants are: ['nifS_109', 'nifS_120', 'nifS_154', 'nifS_157', 'nifS_36', 'nifS_96'] 
+
+True proportions are: {'nifS_120': 28.48512791969749, 'nifS_36': 35.43510659539096, 'nifS_109': 9.301258200827323, 'nifS_154': 7.604056588954513, 'nifS_157': 12.37588212901418, 'nifS_96': 6.798568566115535} 
+
+Predicted proportions are: {'nifS_120': 26.398677145148714, 'nifS_36': 33.768620967104034, 'nifS_109': 12.368164489354372, 'nifS_154': 7.4804739321932452, 'nifS_157': 10.119202746265726, 'nifS_96': 9.8648607199339082} 
+
+All solutions: 
+{'sol_0': ['nifS_109', 'nifS_120', 'nifS_154', 'nifS_157', 'nifS_36', 'nifS_96']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2504.419256971983}
+
+
+======================================== SIMULATION 34 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['nifS_119', 'nifS_157'] 
+
+Predicted variants are: ['nifS_119', 'nifS_157'] 
+
+True proportions are: {'nifS_119': 49.20165678359731, 'nifS_157': 50.798343216402685} 
+
+Predicted proportions are: {'nifS_119': 49.981436642453389, 'nifS_157': 50.018563357546618} 
+
+All solutions: 
+{'sol_0': ['nifS_119', 'nifS_157']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2026.0445658197934}
+
+
+======================================== SIMULATION 35 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['nifS_128', 'nifS_106'] 
+
+Predicted variants are: ['nifS_106', 'nifS_128'] 
+
+True proportions are: {'nifS_128': 59.70202431656912, 'nifS_106': 40.297975683430884} 
+
+Predicted proportions are: {'nifS_106': 40.677966101694913, 'nifS_128': 59.322033898305087} 
+
+All solutions: 
+{'sol_0': ['nifS_106', 'nifS_128']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2150.3909582050474}
+
+
+======================================== SIMULATION 36 ====================================================
+
+Number of optimal solutions: 16
+True variants are: ['nifS_124', 'nifS_95', 'nifS_137', 'nifS_85', 'nifS_103', 'nifS_105', 'nifS_145'] 
+
+Predicted variants are: ['nifS_103', 'nifS_105', 'nifS_124', 'nifS_137', 'nifS_145', 'nifS_85', 'nifS_95'] 
+
+True proportions are: {'nifS_105': 18.490623406751034, 'nifS_137': 16.602047065253945, 'nifS_103': 23.249876672120283, 'nifS_145': 21.54119574000834, 'nifS_95': 11.71756805846322, 'nifS_85': 0.3829883379715405, 'nifS_124': 8.01570071943163} 
+
+Predicted proportions are: {'nifS_105': 17.161996618395523, 'nifS_137': 18.431636870233614, 'nifS_103': 18.469358684608981, 'nifS_145': 17.442887544544512, 'nifS_95': 11.27419899982034, 'nifS_85': 1.0928961748633872, 'nifS_124': 16.12702510753363} 
+
+All solutions: 
+{'sol_8': ['nifS_105', 'nifS_124', 'nifS_51', 'nifS_65', 'nifS_67', 'nifS_85', 'nifS_95'], 'sol_9': ['nifS_105', 'nifS_106', 'nifS_124', 'nifS_137', 'nifS_67', 'nifS_85', 'nifS_95'], 'sol_2': ['nifS_105', 'nifS_124', 'nifS_145', 'nifS_51', 'nifS_67', 'nifS_85', 'nifS_95'], 'sol_3': ['nifS_103', 'nifS_105', 'nifS_124', 'nifS_137', 'nifS_145', 'nifS_85', 'nifS_95'], 'sol_0': ['nifS_105', 'nifS_124', 'nifS_137', 'nifS_145', 'nifS_67', 'nifS_85', 'nifS_95'], 'sol_1': ['nifS_103', 'nifS_105', 'nifS_124', 'nifS_145', 'nifS_51', 'nifS_85', 'nifS_95'], 'sol_6': ['nifS_103', 'nifS_105', 'nifS_110', 'nifS_124', 'nifS_51', 'nifS_85', 'nifS_95'], 'sol_7': ['nifS_105', 'nifS_110', 'nifS_124', 'nifS_51', 'nifS_67', 'nifS_85', 'nifS_95'], 'sol_4': ['nifS_103', 'nifS_105', 'nifS_110', 'nifS_124', 'nifS_137', 'nifS_85', 'nifS_95'], 'sol_5': ['nifS_105', 'nifS_110', 'nifS_124', 'nifS_137', 'nifS_67', 'nifS_85', 'nifS_95'], 'sol_14': ['nifS_105', 'nifS_124', 'nifS_137', 'nifS_53', 'nifS_67', 'nifS_85', 'nifS_95'], 'sol_15': ['nifS_105', 'nifS_124', 'nifS_51', 'nifS_53', 'nifS_67', 'nifS_85', 'nifS_95'], 'sol_10': ['nifS_103', 'nifS_105', 'nifS_106', 'nifS_124', 'nifS_137', 'nifS_85', 'nifS_95'], 'sol_11': ['nifS_103', 'nifS_105', 'nifS_106', 'nifS_124', 'nifS_51', 'nifS_85', 'nifS_95'], 'sol_12': ['nifS_105', 'nifS_106', 'nifS_124', 'nifS_51', 'nifS_67', 'nifS_85', 'nifS_95'], 'sol_13': ['nifS_103', 'nifS_105', 'nifS_124', 'nifS_51', 'nifS_53', 'nifS_85', 'nifS_95']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 2421.7551302394377, 'sol_9': 2426.0013918129707, 'sol_2': 2411.0412101249135, 'sol_3': 2411.0412101249135, 'sol_0': 2411.0412101249135, 'sol_1': 2411.0412101249135, 'sol_6': 2413.5920452843579, 'sol_7': 2413.5920452843579, 'sol_4': 2413.5920452843579, 'sol_5': 2413.5920452843579, 'sol_14': 2427.1381509778939, 'sol_15': 2427.1381509778939, 'sol_10': 2426.0013918129707, 'sol_11': 2426.0013918129707, 'sol_12': 2426.0013918129707, 'sol_13': 2427.1381509778939}
+
+
+======================================== SIMULATION 37 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['nifS_122', 'nifS_38', 'nifS_39', 'nifS_105', 'nifS_113', 'nifS_96', 'nifS_66'] 
+
+Predicted variants are: ['nifS_105', 'nifS_113', 'nifS_122', 'nifS_38', 'nifS_39', 'nifS_66', 'nifS_96'] 
+
+True proportions are: {'nifS_122': 24.080520056475287, 'nifS_105': 5.692073373114489, 'nifS_39': 23.220345972248495, 'nifS_38': 11.317745459182364, 'nifS_96': 10.34225602744684, 'nifS_113': 2.7879565543753753, 'nifS_66': 22.55910255715715} 
+
+Predicted proportions are: {'nifS_122': 23.932214047314467, 'nifS_105': 11.425856943712343, 'nifS_39': 17.009118235728721, 'nifS_38': 10.981008420841066, 'nifS_96': 16.625550997449761, 'nifS_113': 3.0054644808743163, 'nifS_66': 17.020786874079331} 
+
+All solutions: 
+{'sol_0': ['nifS_105', 'nifS_113', 'nifS_122', 'nifS_38', 'nifS_39', 'nifS_66', 'nifS_96'], 'sol_1': ['nifS_105', 'nifS_113', 'nifS_122', 'nifS_157', 'nifS_38', 'nifS_66', 'nifS_96']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2561.0541782200144, 'sol_1': 2578.8541230760975}
+
+
+======================================== SIMULATION 38 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['nifS_25', 'nifS_118', 'nifS_28', 'nifS_36'] 
+
+Predicted variants are: ['nifS_118', 'nifS_25', 'nifS_28', 'nifS_36'] 
+
+True proportions are: {'nifS_28': 18.06524213954517, 'nifS_118': 30.673073863602184, 'nifS_25': 35.11398183269936, 'nifS_36': 16.147702164153284} 
+
+Predicted proportions are: {'nifS_28': 17.368078383273918, 'nifS_118': 31.27756656249645, 'nifS_25': 34.468255577171682, 'nifS_36': 16.886099477057954} 
+
+All solutions: 
+{'sol_0': ['nifS_118', 'nifS_25', 'nifS_28', 'nifS_36']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2416.2243671649162}
+
+
+======================================== SIMULATION 39 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['nifS_145', 'nifS_117', 'nifS_1', 'nifS_70', 'nifS_17', 'nifS_150', 'nifS_25'] 
+
+Predicted variants are: ['nifS_1', 'nifS_117', 'nifS_145', 'nifS_150', 'nifS_17', 'nifS_25', 'nifS_70'] 
+
+True proportions are: {'nifS_25': 29.53918913930934, 'nifS_17': 2.955865702129442, 'nifS_150': 14.496289172892768, 'nifS_145': 16.672129287711837, 'nifS_1': 10.082435483708027, 'nifS_117': 5.259377998643551, 'nifS_70': 20.994713215605046} 
+
+Predicted proportions are: {'nifS_25': 28.713181155046627, 'nifS_17': 6.8151950925185973, 'nifS_150': 14.600550964187326, 'nifS_145': 16.843760049605223, 'nifS_1': 7.2876094282166486, 'nifS_117': 5.6827282168357458, 'nifS_70': 20.056975093589827} 
+
+All solutions: 
+{'sol_0': ['nifS_1', 'nifS_117', 'nifS_145', 'nifS_150', 'nifS_17', 'nifS_25', 'nifS_70']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 2598.7088277024277}
+
+======================================== SIMULATION 40 ====================================================
+
+Number of optimal solutions: 22
+True variants are: ['nifS_81', 'nifS_142'] 
+
+Predicted variants are: ['nifS_142', 'nifS_81'] 
+
+True proportions are: {'nifS_142': 2.5737606881380755, 'nifS_81': 97.42623931186193} 
+
+Predicted proportions are: {'nifS_142': 45.161258925708445, 'nifS_81': 54.838741074291555} 
+
+All solutions: 
+{'sol_8': ['nifS_100', 'nifS_105', 'nifS_142', 'nifS_81'], 'sol_9': ['nifS_100', 'nifS_110', 'nifS_144', 'nifS_81'], 'sol_2': ['nifS_110', 'nifS_142', 'nifS_81'], 'sol_3': ['nifS_105', 'nifS_142', 'nifS_81'], 'sol_0': ['nifS_142', 'nifS_81'], 'sol_1': ['nifS_100', 'nifS_142', 'nifS_81'], 'sol_6': ['nifS_100', 'nifS_110', 'nifS_142', 'nifS_81'], 'sol_7': ['nifS_105', 'nifS_140', 'nifS_142'], 'sol_4': ['nifS_107', 'nifS_142', 'nifS_81'], 'sol_5': ['nifS_100', 'nifS_121', 'nifS_142', 'nifS_81'], 'sol_18': ['nifS_105', 'nifS_107', 'nifS_140', 'nifS_142'], 'sol_19': ['nifS_100', 'nifS_105', 'nifS_107', 'nifS_140', 'nifS_142'], 'sol_14': ['nifS_105', 'nifS_107', 'nifS_142', 'nifS_81'], 'sol_15': ['nifS_100', 'nifS_107', 'nifS_121', 'nifS_142', 'nifS_81'], 'sol_16': ['nifS_100', 'nifS_107', 'nifS_110', 'nifS_142', 'nifS_81'], 'sol_17': ['nifS_100', 'nifS_105', 'nifS_107', 'nifS_142', 'nifS_81'], 'sol_10': ['nifS_100', 'nifS_110', 'nifS_140', 'nifS_142'], 'sol_11': ['nifS_100', 'nifS_107', 'nifS_142', 'nifS_81'], 'sol_12': ['nifS_100', 'nifS_105', 'nifS_140', 'nifS_142'], 'sol_13': ['nifS_107', 'nifS_110', 'nifS_142', 'nifS_81'], 'sol_21': ['nifS_100', 'nifS_105', 'nifS_107', 'nifS_140', 'nifS_144'], 'sol_20': ['nifS_100', 'nifS_144', 'nifS_159', 'nifS_65', 'nifS_81']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 2125.9554120679782, 'sol_9': 2131.7921348299351, 'sol_2': 2092.4332037136237, 'sol_3': 2097.9637907346478, 'sol_0': 2019.866564108004, 'sol_1': 2067.6251768142561, 'sol_6': 2120.1708580178133, 'sol_7': 2123.129722170926, 'sol_4': 2118.5022858023945, 'sol_5': 2119.0089935653587, 'sol_18': 2187.3437298464123, 'sol_19': 2191.8697149135742, 'sol_14': 2167.6934302908676, 'sol_15': 2174.0399474500641, 'sol_16': 2175.0885541460343, 'sol_17': 2179.4208839438529, 'sol_10': 2135.2953386774043, 'sol_11': 2137.7411372086594, 'sol_12': 2140.7144540472464, 'sol_13': 2163.62170587132, 'sol_21': 2203.4963661085994, 'sol_20': 2196.0245179882313}
+
+======================================== nifS: SUMMARY STATISTICS ====================================================
+
+(1)Total Variation Distance:
+
+Total variation distances are: [0.52714880805737252, 52.678707773807801, 41.013639860087949, 5.2087032162799076, 43.782791615548057, 0.051029184328552191, 4.2790925410019671, 0.7837898966496849, 2.529234600324008, 12.389554242474469, 1.6562649712639403, 21.018684667430119, 8.1542738747525547, 0.68389349753845607, 0.49104517117364366, 13.305753210323093, 10.753389902391739, 3.1251281036760865, 1.2925606259723161, 13.916141966460099, 44.556996037262543, 2.3474373549724579, 41.877461130791389, 30.705699191600967, 1.4519555682398586, 22.850435350049466, 3.5114815819200302, 0.61534277174659735, 12.837266696706562, 9.6837885793405185, 7.4288028355562146, 42.60002513852546, 6.1331984423454244, 0.77977985885607382, 0.37999041826403257, 10.650822029973519, 12.234586467099714, 1.3428900117989322, 4.5585721617693018, 42.587498237570372] 
+
+The average of total variation distance is: 13.4193714398 
+
+The standard deviation of total variation distance is: 15.714090391 
+
+(2)Total Variation Distance for variants which are predicted correctly:
+
+Total variation distances are: [0.52714880805737252, 5.2087032162799076, 0.051029184328552191, 4.2790925410019671, 0.7837898966496849, 2.529234600324008, 12.389554242474469, 1.6562649712639403, 8.1542738747525547, 0.68389349753845607, 0.49104517117364366, 13.305753210323093, 10.753389902391739, 3.1251281036760865, 1.2925606259723161, 13.916141966460099, 2.3474373549724579, 30.705699191600967, 1.4519555682398586, 22.850435350049466, 3.5114815819200302, 0.61534277174659735, 9.6837885793405185, 7.4288028355562146, 42.60002513852546, 6.1331984423454244, 0.77977985885607382, 0.37999041826403257, 10.650822029973519, 12.234586467099714, 1.3428900117989322, 4.5585721617693018, 42.587498237570372] 
+
+The average of total variation distance is: 8.45482757007 
+
+The standard deviation of total variation distance is: 11.0120941013 
+
+(3) Precision: 
+
+Precision is: [1.0, 0.75, 0.6, 1.0, 0.6, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6, 1.0, 0.7142857142857143, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
+
+Average of precision is:  0.948273809524 
+
+Standard deviation of precision is:  0.125321567669 
+
+(4) Recall : 
+
+Recall is: [1.0, 0.6, 0.75, 1.0, 0.75, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 0.7142857142857143, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
+
+Average of recall is:  0.945357142857 
+
+Standard deviation of recall is:  0.126103912358 
+
+(5) Objective Value: 
+
+Predicted objective values are: [77.0, 87.0, 83.0, 72.0, 84.0, 76.0, 86.0, 83.0, 76.0, 94.0, 96.0, 95.0, 88.0, 82.0, 81.0, 89.0, 100.0, 101.0, 97.0, 92.0, 102.0, 94.0, 106.0, 92.0, 96.0, 84.0, 90.0, 77.0, 89.0, 88.0, 95.0, 91.0, 91.0, 91.0, 81.0, 102.0, 94.0, 86.0, 95.0, 83.0] 
+
+True objective values are: [77.0, 88.0, 85.0, 72.0, 84.0, 76.0, 86.0, 83.0, 76.0, 94.0, 96.0, 95.0, 88.0, 82.0, 81.0, 89.0, 100.0, 101.0, 97.0, 92.0, 103.0, 94.0, 107.0, 92.0, 96.0, 84.0, 90.0, 77.0, 90.0, 88.0, 95.0, 91.0, 91.0, 91.0, 81.0, 102.0, 94.0, 86.0, 95.0, 83.0] 
+
+The difference in objective values are: [0.0, -1.0, -2.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+
+Average of difference in objective value is:  -0.15 
+
+Standard deviation of difference in objective value is:  0.421307488659 
+
+(6)Accuracy: 
+
+Total number of simulations:  40 
+
+Number of simulations which are predicted correctly: 33
+
+Percentage of simulations predicted correctly:  82.5 %
+
