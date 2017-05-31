@@ -27,4 +27,4 @@ bash borreliaPipeline.sh
 
 2) You only have to run `run_sim.py`. The script has few arguments which are optional: `python run_sim.py -i [number of simulations to run on each gene] -f [output folder name to store results]`. By default, -i has value 40 and -f has value "simulation_results". 
 
-3) Run `python run\_sim.py` to use default settings. If you would like to change the number of iterations on each gene or would like to output a different folder, an example would be this: `python run\_sim.py -i 20 -f newSimulationResults`. 
+3) Run `python run_sim.py` to use default settings. If you would like to change the number of iterations on each gene or would like to output a different folder, an example would be this: `python run_sim.py -i 20 -f newSimulationResults`. 
