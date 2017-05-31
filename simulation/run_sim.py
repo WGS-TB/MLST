@@ -7,6 +7,7 @@ Created on Mon May 29 13:15:44 2017
 """
 
 import os
+import sys
 import argparse
 import simulation_functions as sim
 
@@ -14,15 +15,17 @@ genes = os.listdir("sim_data")
 originalPath=os.getcwd()
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--numOfIter", required = False, default = 40, type=int)
+ap.add_argument("-f", "--simulationResultFolder", required=False, default="simulation_results")
 args = vars(ap.parse_args())
 
 #Make directory for simulation results
 directoriesHere = [d for d in os.listdir(".") if os.path.isdir(d)]
-if "simulation_results" not in directoriesHere:
-    os.mkdir("simulation_results")
+if args["simulationResultFolder"] not in directoriesHere:
+    os.mkdir(args["simulationResultFolder"])
 
 #Run the simulation
 os.chdir("sim_data")
+originalSTDOut = sys.stdout
 for locus in genes:
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Simulating locus {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(locus))
     os.chdir(locus)
@@ -48,12 +51,13 @@ for locus in genes:
         print("==== Removed previous .fa files ====")
     
     #Function to run simulation imported    
-    sim.simulation(locus,args["numOfIter"],originalPath)
+    sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"])
+    sys.stdout = originalSTDOut
     
     os.chdir("..")
 
 #Summarize the results for all genes
-os.chdir("{}/simulation_results/".format(originalPath))
+os.chdir("{0}/{1}/".format(originalPath, args["simulationResultFolder"]))
 if "allGenes_summary_stats.txt" in os.listdir("."):
     os.remove("allGenes_summary_stats.txt")
 
