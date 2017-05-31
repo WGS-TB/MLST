@@ -11,7 +11,7 @@
 5) Python packages such as numpy and pandas. Please use `pip install` to install these packages.
 
 ## Instructions to run the pipeline
-1) All required scripts and files are in `pipeline` folder (except for sample reads as the files are big). 
+1) The required scripts and files are in `pipeline` folder (except for sample reads as the files are big). 
 
 2) Run `python download_samples.py` to download the samples' reads (downloaded samples are based on the SRR_Acc_List.txt)
 
@@ -22,8 +22,8 @@ bash borreliaPipeline.sh
 
 4) After the script is done, two folders will be created i.e. variantsAndProp and strainsAndProp. The variantsAndProp folder contains the variants identified and their proportions for each sample. The strainsAndProp folder contains the strains identified and their proportions for each sample
 
-## Instructions to run the simulated data and generate statistics, graphs
-1) All required scripts and files to run simulated data and generate statistics, graphs are in the `simulation` folder.
+## Instructions to run the simulation and to generate statistics, graphs
+1) The required scripts and files to run the simulation and to generate statistics, graphs are in the `simulation` folder.
 
 2) You only have to run `run_sim.py`. The script has few arguments which are optional: `python run_sim.py -i [number of simulations to run on each gene] -f [output folder name to store results]`. By default, -i has value 40 and -f has value "simulation_results". 
 
