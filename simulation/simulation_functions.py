@@ -17,7 +17,7 @@ import linecache
 #Testing purposes and global variables
 NO_BINOM = False
 TEST_EMPTY_LIST = True
-USER = "glgan"
+UNION = True
 
 ''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Function Definitions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
 
@@ -359,12 +359,10 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder):
         #Run the ILP solver
         pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = varSolver.solver(dataMatrix)
         
+        
+        '''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Statistics and Calculations start here ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
+        
         print "======================================== SIMULATION " + str(iteration) + " ====================================================" +  "\n"    
-        #If there is one solution among all optimal which matches true variants, assign to var_predicted to generate statistics
-        for solution in all_solutions:
-            if set(solution) == set(true_variants):
-                var_predicted = solution
-                break
         
         #Keep the likelihood scores of all optimal solutions
         score_list = list()
@@ -392,6 +390,77 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder):
         for i in range(len(all_solutions)):
             sol_name_dict["sol_{}".format(i)] = all_solutions[sortedIndex_score_list[i]]
             likelihood_score_dict["sol_{}".format(i)] = score_list[sortedIndex_score_list[i]]
+            
+        '''
+        #Identify those solutions which have minimum negative log likelihood
+        min_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if score_list[i] == min_score]
+        var_predicted = min_sol_list[0]
+        similarity=0.001
+        similar_likelihood_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if (score_list[i] <= (1+similarity)*min_score)]
+        similar_likelihood_score_list = [score_list[i] for i in range(len(all_solutions)) if (score_list[i] <= (1+similarity)*min_score)]
+        var_predicted = list(set().union(*similar_likelihood_sol_list))
+        print("Similar likelihood list: {}".format(similar_likelihood_sol_list))
+        print("Similar likelihood score list: {}".format(similar_likelihood_score_list))
+        
+        #Observe whether minimum negative log likelihood really gives the true variants
+        for sol in min_sol_list:
+            if set(sol) == set(true_variants):
+                minNegLogLike_correct += 1
+                min_sol = sol
+                break
+        
+        #Observe whether minimum negative log likelihood solutions implies minimum number of variants
+        minVariants = min(map(len,all_solutions))
+        if len(min_sol) == minVariants:
+            minSizeOpt_count +=1
+            
+        #Count number of simulations where solution with minimum negative log likelihood contains true variants
+        for sol in min_sol_list:
+            if len(set(true_variants) - set(sol)) == 0:
+                minNegLogLike_hasTrue += 1
+                break
+            
+        print("Negative log likelihood score list:{}".format(score_list))
+        print("The solution which has minimum negative log likelihood is {0} and its score:{1}".format(min_sol, min_score))
+        '''
+        
+        #Observe the patterns in negative log likelihood for all optimal solutions
+        #Starting from solutions with minimum likelihood, red dots represent these solutions are needed to cover all true variants(minimum number of subsets to cover all true variants)
+        color_list = ["red"]
+        temp_union = all_solutions[sortedIndex_score_list[0]]
+        indexTrack = 1
+        while( ( indexTrack!= len(all_solutions) ) and ( len(set(true_variants) - set(temp_union)) != 0 ) ):
+            temp_union.extend(all_solutions[sortedIndex_score_list[indexTrack]])
+            color_list.append("red")
+            indexTrack += 1
+        
+        if len(color_list) != len(all_solutions):
+            color_list.extend(["blue"]*(len(all_solutions) - len(color_list)))
+        
+        #If the union of all solutions do not cover the true variants, then print all as green dots
+        if len(set(true_variants) - set(temp_union)) != 0:
+            color_list = ["green"]*len(all_solutions)
+            
+        #Choose a random simulation to plot negative log likelihood chart
+        if iteration in randomNum_negLogCharts:
+            plt.figure()
+            sorted_solution_namelist = ["sol_{}".format(i) for i in range(len(all_solutions))]
+            plt.xticks(range(len(all_solutions)), sorted_solution_namelist, rotation=20)
+            plt.scatter(range(len(all_solutions)), [likelihood_score_dict[name] for name in sorted_solution_namelist], color=color_list, s=50)
+            plt.xlabel('Solution i ')
+            plt.ylabel('Negative log likelihood')
+            
+            #If likelihoodCharts folder not created, create it
+            if "likelihoodCharts" not in [name for name in os.listdir(outputFolderPath)]:
+                os.mkdir("{}likelihoodCharts".format(outputFolderPath))
+            
+            plt.savefig("{0}likelihoodCharts/{1}_sim{2}_sol_likelihood".format(outputFolderPath, gene, iteration))
+            
+        #If there is one solution among all optimal which matches true variants, assign to var_predicted to generate statistics
+        for solution in all_solutions:
+            if set(solution) == set(true_variants):
+                var_predicted = solution
+                break
                     
         #Keep track of precision and recall for all simulations
         precision_list.append(precision(var_predicted, true_variants))
@@ -431,70 +500,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder):
                 predCorrect_bool_list.append(False)
                 
         if len(bad_reads) != 0:
-            print(dataMatrix.loc[bad_reads,:])
-         
-        '''
-        #Identify those solutions which have minimum negative log likelihood
-        min_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if score_list[i] == min_score]
-        var_predicted = min_sol_list[0]
-        similarity=0.001
-        similar_likelihood_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if (score_list[i] <= (1+similarity)*min_score)]
-        similar_likelihood_score_list = [score_list[i] for i in range(len(all_solutions)) if (score_list[i] <= (1+similarity)*min_score)]
-        var_predicted = list(set().union(*similar_likelihood_sol_list))
-        print("Similar likelihood list: {}".format(similar_likelihood_sol_list))
-        print("Similar likelihood score list: {}".format(similar_likelihood_score_list))
-        
-        #Observe whether minimum negative log likelihood really gives the true variants
-        for sol in min_sol_list:
-            if set(sol) == set(true_variants):
-                minNegLogLike_correct += 1
-                min_sol = sol
-                break
-        
-        #Observe whether minimum negative log likelihood solutions implies minimum number of variants
-        minVariants = min(map(len,all_solutions))
-        if len(min_sol) == minVariants:
-            minSizeOpt_count +=1
-            
-        #Count number of simulations where solution with minimum negative log likelihood contains true variants
-        for sol in min_sol_list:
-            if len(set(true_variants) - set(sol)) == 0:
-                minNegLogLike_hasTrue += 1
-                break
-            
-        print("Negative log likelihood score list:{}".format(score_list))
-        print("The solution which has minimum negative log likelihood is {0} and its score:{1}".format(min_sol, min_score))
-        '''
-        
-        #Observe the patterns in negative log likelihood for all optimal solutions
-        #Choose a random simulation to plot negative log likelihood chart
-        if iteration in randomNum_negLogCharts:
-            #Starting from solutions with minimum likelihood, red dots represent these solutions are needed to cover all true variants(minimum number of subsets to cover all true variants)
-            color_list = ["red"]
-            temp_union = all_solutions[sortedIndex_score_list[0]]
-            indexTrack = 1
-            while( ( indexTrack!= len(all_solutions) ) and ( len(set(true_variants) - set(temp_union)) != 0 ) ):
-                temp_union.extend(all_solutions[sortedIndex_score_list[indexTrack]])
-                color_list.append("red")
-                indexTrack += 1
-            
-            if len(color_list) != len(all_solutions):
-                color_list.extend(["blue"]*(len(all_solutions) - len(color_list)))
-            
-            plt.figure()
-            sorted_solution_namelist = ["sol_{}".format(i) for i in range(len(all_solutions))]
-            plt.xticks(range(len(all_solutions)), sorted_solution_namelist, rotation=20)
-            plt.scatter(range(len(all_solutions)), [likelihood_score_dict[name] for name in sorted_solution_namelist], color=color_list, s=50)
-            plt.xlabel('Solution i ')
-            plt.ylabel('Negative log likelihood')
-            
-            #If likelihoodCharts folder not created, create it
-            if "likelihoodCharts" not in [name for name in os.listdir(outputFolderPath)]:
-                os.mkdir("{}likelihoodCharts".format(outputFolderPath))
-            
-            plt.savefig("{0}likelihoodCharts/{1}_sim{2}_sol_likelihood".format(outputFolderPath, gene, iteration))
-    
-    
+            print(dataMatrix.loc[bad_reads,:])    
     
     '''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Here is the summary ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
     
