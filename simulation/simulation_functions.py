@@ -239,7 +239,7 @@ def compute_likelihood(df):
     score = sum(neg_log_likelihood)
     return score
 
-def simulation(gene, numOfIter, originalPath):
+def simulation(gene, numOfIter, originalPath, simulation_result_folder):
     ''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Defining some parameters ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ '''
     #Record true variants and their fractions for all simulations
     true_ratios_list = []
@@ -262,12 +262,12 @@ def simulation(gene, numOfIter, originalPath):
     random.seed(seed)
     
     #Handling some output files
-    outputFolderPath = "{}/simulation_results/".format(originalPath)
-    outputResultTxtFile = "{0}/simulation_results/{1}_output_stats.txt"
-    sys.stdout = outputResultTxtFile        #Write print codes to outputResultTxtFile
+    outputFolderPath = "{0}/{1}/".format(originalPath, simulation_result_folder)
+    outputResultTxtFile = "{0}/{1}/{2}_output_stats.txt".format(originalPath, simulation_result_folder, gene)
+    sys.stdout = open(outputResultTxtFile, "w")        #Write print codes to outputResultTxtFile
     
     #Count the number of variants for this gene
-    variantsTxtPath = "{}/sim_data/{}/variants.txt".format(originalPath,gene)
+    variantsTxtPath = "{0}/sim_data/{1}/variants.txt".format(originalPath,gene)
     num_variants = sum(1 for line in open(variantsTxtPath))
     
     #Randomly choose some simulations to plot the likelihood graphs
@@ -287,13 +287,14 @@ def simulation(gene, numOfIter, originalPath):
         #randomly select variants to use for simulated data
         randomVarIndex = random.sample(xrange(1,num_variants+1), k) #start from 1 to num_variants+1 because 0 index of linecache is ''
         for index in randomVarIndex:
-            variant =linecache.getline('variants.txt',index) #extract the random variant
+            variant =linecache.getline(variantsTxtPath,index) #extract the random variant
+            #print variant
             variant = str(variant) 
             variant = variant.rstrip() #remove the "\n" character that is returned by bash
             string1= variant.split(">")
             true_variants.append(string1[1]) #append the variant to the list          
         #print num
-        #print variants
+        #print true_variants
         
         '''======== Generate the reads using ART ========'''
         total_variants_sequence = ''
@@ -303,7 +304,7 @@ def simulation(gene, numOfIter, originalPath):
             file_name = simulation_name + '_reference.fa'
             number_of_reads = math.ceil((fractions[i]*200)) #compute the number of reads to generate
             number_of_reads = int(number_of_reads)
-            variant_sequence = sh.grep(variant,"linear.txt","-w","-A1") #use bash to extract the variant sequence
+            variant_sequence = sh.grep(variant,"{0}/sim_data/{1}/linear.txt".format(originalPath, gene),"-w","-A1") #use bash to extract the variant sequence
             variant_sequence = variant_sequence.rstrip() #remove the "\n" character that is returned by bash
             variant_sequence = str(variant_sequence)
             total_variants_sequence += variant_sequence
@@ -323,12 +324,22 @@ def simulation(gene, numOfIter, originalPath):
         os.system(appendSecond_cmd)
         ref = upperfirst(gene)+"_bowtie"
         mapping_cmd = "bowtie -a -v 3 -p 8 {0} -1 ./{1}_{2}_1.fa -2 ./{1}_{2}_2.fa {1}_{2}.out >/dev/null 2>&1".format(ref, upperfirst(gene), str(iteration))
-        tabulate_cmd = "awk \'{print $1\"\t\"$3\"\t\"$8\"\t\"$5}\' {0}_{1}.out > {0}_{1}_reads.txt".format(upperfirst(gene), str(iteration))
-        
-        #Execute commands for bowtie mapping and tabulate results
+#        mapAndTabulate = "bash "
+        #Execute commands for bowtie mapping
         os.system(mapping_cmd)
-        os.system(tabulate_cmd)
-        os.system("echo ''")
+        
+        #Tabulate results same as awk as before
+        readDotOutFile = open("{0}_{1}.out".format(upperfirst(gene), str(iteration)))
+        writefile = open("{0}_{1}_reads.txt".format(upperfirst(gene), str(iteration)), "w")
+        for line in readDotOutFile:
+            fields = line.strip("\t").split()
+            if len(fields) < 8:
+                mm_info = ""
+            else:
+                mm_info = fields[7]
+            writefile.write(fields[0] + "\t" + fields[2] + "\t" + mm_info + "\t" + fields[4] + "\n")
+        readDotOutFile.close()
+        writefile.close()
         
         #Remove unneccessary files for the next iteration.    
         os.system("rm {}*".format(gene))
@@ -478,8 +489,8 @@ def simulation(gene, numOfIter, originalPath):
             plt.ylabel('Negative log likelihood')
             
             #If likelihoodCharts folder not created, create it
-            if "likelihoodCharts" not in [name for name in os.listdir(outputFolderPath) if os.path.isdir(name)]:
-                os.mkdir("{}likelihoodCharts")
+            if "likelihoodCharts" not in [name for name in os.listdir(outputFolderPath)]:
+                os.mkdir("{}likelihoodCharts".format(outputFolderPath))
             
             plt.savefig("{0}likelihoodCharts/{1}_sim{2}_sol_likelihood".format(outputFolderPath, gene, iteration))
     
@@ -573,3 +584,6 @@ def simulation(gene, numOfIter, originalPath):
     plt.xlabel('Difference in objective values: Predicted - True')
     plt.ylabel('Frequency')
     plt.savefig("{0}{1}_diffObjVals".format(outputFolderPath, gene))
+    
+    plt.close('all')
+    sys.stdout.close()
