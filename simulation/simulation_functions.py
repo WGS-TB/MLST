@@ -75,15 +75,25 @@ def generate_matrix(path):
     var_list = [] #holds the variants
     read_list = [] #holds the reads
     mismatch_list = [] #holds the mismatches
+    first=True      #first read
+    all_var = set()     #the set of all variants
     
     #Split columns and append them into lists
     with open(path) as inf:
         for line in inf:
-            parts = line.split('\t') # split line into parts
-            if len(parts) > 1:   # if at least 2 parts/columns
-                read_list.append(parts[0]) #append reads to a list
-                var_list.append(parts[1])   #append vars to a list
-                mismatch_list.append(parts[2]) #append mismatches to list
+            if first:
+                prevParts = line.split('\t')
+            else:
+                parts = line.split('\t')
+            if len(prevParts)>1 and not first:
+                temp = parts[0].split('-')
+                all_var.update([temp[0]])
+                temp2 = '-'.join(parts[0].split('-',2)[:2])
+                temp2 = temp2.split('/')
+                read_list.append(temp2[0])
+                var_list.append(parts[1])
+                mismatch_list.append(prevParts[2] + parts[2])
+            first = not first
         flag = True #makes sure all the previous steps completed successfully
         
         
@@ -138,6 +148,27 @@ def compute_probability(n, k):
 
 '''
 Input: Dataframe with rows=reads, columns=variants
+Output: The proportions of variants (type list) based on counting method
+'''
+def count_compute_proportions(dataframe):
+    prob_list = [0.0]*dataframe.shape[1]
+    
+    for row in dataframe.itertuples(index=False):
+        mmInfo = [i for i in list(row) if i>=0]
+        min_mm = min(mmInfo)
+        numOfVar_minMm = len([i for i in list(row) if i== min_mm])
+        
+        for i in range(len(list(row))):
+            if list(row)[i] == min_mm:
+                prob_list[i] += 1/numOfVar_minMm
+                
+    normalize_term = 1.0/(sum(prob_list))
+    prob_list = [100.0*normalize_term * i for i in prob_list]
+    return prob_list
+        
+
+'''
+Input: Dataframe with rows=reads, columns=variants
 Output: The proportions of variants (type list)
 '''
 def compute_proportions(dataframe):
@@ -148,7 +179,7 @@ def compute_proportions(dataframe):
         #compute the probability for each row in the matrix
         for i in range(len(temp_list)):
             if temp_list[i] >= 0:
-                temp_list[i] = compute_probability(76,int(temp_list[i]))
+                temp_list[i] = compute_probability(152,int(temp_list[i]))
             else:
                 temp_list[i] = 0
         total = sum(temp_list)
@@ -224,22 +255,22 @@ def compute_likelihood(df):
         temp = list()
         for i in range(numVar):
             if read[i] == -1:   #treat those reads which do not map having mm=max_mm+1
-                prob = (0.01)**(max_mm+1) * (0.99)**(76 - max_mm -1)
+                prob = (0.01)**(max_mm+1) * (0.99)**(152 - max_mm -1)
                 temp.append(prob)
             else:
-                prob = (0.01)**(read[i]) * (0.99)**(76 - read[i])
+                prob = (0.01)**(read[i]) * (0.99)**(152 - read[i])
                 temp.append(prob)
                 
         likelihood_list.append( sum(temp) )
     
     #Similar to method in GAML paper
-    likelihood_list = [i/(2.0*76*numVar) for i in likelihood_list]
+    likelihood_list = [i/(2.0*152*numVar) for i in likelihood_list]
     neg_log_likelihood = [-1.0*np.log10(j) for j in likelihood_list]
     
     score = sum(neg_log_likelihood)
     return score
 
-def simulation(gene, numOfIter, originalPath, simulation_result_folder):
+def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage):
     ''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Defining some parameters ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ '''
     #Record true variants and their fractions for all simulations
     true_ratios_list = []
@@ -251,6 +282,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder):
     pred_object_vals = []
     true_Objective_vals = []
     diff_obj_vals = []
+    likelihoodCalibration = []
     #Some counts
     predictedCorrect_count = 0
     predCorrect_bool_list = []
@@ -302,8 +334,8 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder):
             variant = true_variants[i]
             simulation_name = true_variants[i] + '_' + str(iteration)+'_'
             file_name = simulation_name + '_reference.fa'
-            number_of_reads = math.ceil((fractions[i]*200)) #compute the number of reads to generate
-            number_of_reads = int(number_of_reads)
+            covOfThisVar = math.ceil((fractions[i]*coverage)) #compute the number of reads to generate
+            covOfThisVar = int(covOfThisVar)
             variant_sequence = sh.grep(variant,"{0}/sim_data/{1}/linear.txt".format(originalPath, gene),"-w","-A1") #use bash to extract the variant sequence
             variant_sequence = variant_sequence.rstrip() #remove the "\n" character that is returned by bash
             variant_sequence = str(variant_sequence)
@@ -314,7 +346,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder):
                 sequence_file.write(variant_sequence)
             
             #Set the ART command, I have included a random seed for reproducibility, and a coverage parameter
-            ART_command = "art_illumina -k 3 -rs {} -q -ss HS25 -sam -i ".format(seed) +file_name+" -p -l 76 -c "+str(number_of_reads)+" -m 200 -s 10 -o "+simulation_name + ' >/dev/null 2>&1'
+            ART_command = "art_illumina -k 3 -rs {} -q -ss HS25 -sam -i ".format(seed) +file_name+" -p -l 76 -f "+str(covOfThisVar)+" -m 200 -s 10 -o "+simulation_name + ' >/dev/null 2>&1'
             os.system(ART_command)
         
         #Putting the pairs together for all variants
@@ -427,19 +459,26 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder):
         #Observe the patterns in negative log likelihood for all optimal solutions
         #Starting from solutions with minimum likelihood, red dots represent these solutions are needed to cover all true variants(minimum number of subsets to cover all true variants)
         color_list = ["red"]
+        union_likelihood = [ score_list[sortedIndex_score_list[0]] ]    #Keep track the likelihood of the solutions which cover true variants, produce some statistics later on
         temp_union = all_solutions[sortedIndex_score_list[0]]
         indexTrack = 1
+        unionCalibration = True
         while( ( indexTrack!= len(all_solutions) ) and ( len(set(true_variants) - set(temp_union)) != 0 ) ):
-            temp_union.extend(all_solutions[sortedIndex_score_list[indexTrack]])
+            temp_union = temp_union + all_solutions[sortedIndex_score_list[indexTrack]]
             color_list.append("red")
             indexTrack += 1
         
         if len(color_list) != len(all_solutions):
             color_list.extend(["blue"]*(len(all_solutions) - len(color_list)))
+            
+            for i in range(1, len(color_list)):
+                union_likelihood.append(score_list[sortedIndex_score_list[i]])
         
         #If the union of all solutions do not cover the true variants, then print all as green dots
         if len(set(true_variants) - set(temp_union)) != 0:
             color_list = ["green"]*len(all_solutions)
+            #Do not calibrate if the union of all solutions do not cover true variants
+            unionCalibration = False
             
         #Choose a random simulation to plot negative log likelihood chart
         if iteration in randomNum_negLogCharts:
@@ -455,6 +494,14 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder):
                 os.mkdir("{}likelihoodCharts".format(outputFolderPath))
             
             plt.savefig("{0}likelihoodCharts/{1}_sim{2}_sol_likelihood".format(outputFolderPath, gene, iteration))
+        
+        #Only calculate calibration if solutions do cover true variants
+        if unionCalibration:
+            max_score_inUnion = max(union_likelihood)
+            percentage = 100.0 *( (max_score_inUnion - min_score)/min_score )
+            likelihoodCalibration.append(percentage)
+        else:
+            likelihoodCalibration.append(np.nan)
             
         #If there is one solution among all optimal which matches true variants, assign to var_predicted to generate statistics
         for solution in all_solutions:
@@ -470,7 +517,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder):
         #Construct dataframe of true variants and predicted variants
         true_DF = dataMatrix.loc[reads_cov,true_variants]
         predicted_DF = dataMatrix.loc[reads_cov,var_predicted]
-        prop = compute_proportions(predicted_DF)
+        prop = count_compute_proportions(predicted_DF)
         pred_prop = create_dictionary(var_predicted, prop)
         val = totalVariationDist(pred_prop, true_prop)
         totalVarDist.append(val)
@@ -557,6 +604,11 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder):
     print 'Total number of simulations: ', numOfIter , "\n"
     print("Number of simulations which are predicted correctly: {0}\n".format(predictedCorrect_count))
     print 'Percentage of simulations predicted correctly: ', 100*predictedCorrect_count/iteration, "%\n"
+    context+=1
+    
+    print "({0}) Likelihood Calibration: \n".format(context)
+    print("Percentage by which the score of the solution having largest negative log likelihood in the union pool differ from the one with the minimum: \n{0}".format(likelihoodCalibration))
+    print("The mean of these percentages: {0}\n".format(np.nanmean(likelihoodCalibration)))
     context+=1
     
     #print "({0})Numbers related to likelihood approach: \n".format(context)
