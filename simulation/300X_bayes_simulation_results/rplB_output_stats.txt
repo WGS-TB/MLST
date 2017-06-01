@@ -1,0 +1,740 @@
+======================================== SIMULATION 1 ====================================================
+
+Number of optimal solutions: 8
+True variants are: ['rplB_5', 'rplB_68']
+
+Predicted variants are: ['rplB_11', 'rplB_166', 'rplB_5', 'rplB_68']
+
+True proportions are: {'rplB_68': 61.82658383630597, 'rplB_5': 38.17341616369404}
+
+Predicted proportions are: {'rplB_166': 32.518893614795616, 'rplB_11': 19.758369529206014, 'rplB_68': 28.654518826501246, 'rplB_5': 19.068218029497114}
+
+All solutions: 
+{'sol_2': ['rplB_166', 'rplB_4', 'rplB_68', 'rplB_8'], 'sol_3': ['rplB_166', 'rplB_6', 'rplB_68', 'rplB_8'], 'sol_0': ['rplB_166', 'rplB_5', 'rplB_68'], 'sol_1': ['rplB_166', 'rplB_5', 'rplB_68', 'rplB_8'], 'sol_6': ['rplB_11', 'rplB_166', 'rplB_4', 'rplB_68', 'rplB_8'], 'sol_7': ['rplB_11', 'rplB_166', 'rplB_6', 'rplB_68', 'rplB_8'], 'sol_4': ['rplB_11', 'rplB_166', 'rplB_5', 'rplB_68'], 'sol_5': ['rplB_11', 'rplB_166', 'rplB_5', 'rplB_68', 'rplB_8']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 4904.6993766372225, 'sol_3': 4922.3222201128456, 'sol_0': 4831.6234780222994, 'sol_1': 4891.6461108454732, 'sol_6': 4989.4847702445668, 'sol_7': 5003.7353123923167, 'sol_4': 4936.8675671785022, 'sol_5': 4976.5253670107077}
+
+======================================== SIMULATION 2 ====================================================
+
+Number of optimal solutions: 20
+True variants are: ['rplB_96', 'rplB_130', 'rplB_85', 'rplB_167', 'rplB_30']
+
+Predicted variants are: ['rplB_130', 'rplB_167', 'rplB_30', 'rplB_85', 'rplB_96']
+
+True proportions are: {'rplB_30': 22.716802079213068, 'rplB_167': 20.35964632177263, 'rplB_96': 29.961905694594744, 'rplB_85': 4.976621214764667, 'rplB_130': 21.9850246896549}
+
+Predicted proportions are: {'rplB_167': 21.142878021786622, 'rplB_96': 26.657915130630609, 'rplB_130': 21.854304635761594, 'rplB_85': 6.1973678033939654, 'rplB_30': 24.147534408427216}
+
+All solutions: 
+{'sol_8': ['rplB_130', 'rplB_166', 'rplB_167', 'rplB_30', 'rplB_85', 'rplB_96'], 'sol_9': ['rplB_130', 'rplB_153', 'rplB_167', 'rplB_30', 'rplB_85', 'rplB_96'], 'sol_2': ['rplB_130', 'rplB_167', 'rplB_30', 'rplB_65', 'rplB_85', 'rplB_96'], 'sol_3': ['rplB_113', 'rplB_130', 'rplB_167', 'rplB_30', 'rplB_85', 'rplB_96'], 'sol_0': ['rplB_130', 'rplB_167', 'rplB_30', 'rplB_85', 'rplB_96'], 'sol_1': ['rplB_11', 'rplB_130', 'rplB_167', 'rplB_30', 'rplB_85', 'rplB_96'], 'sol_6': ['rplB_11', 'rplB_113', 'rplB_130', 'rplB_167', 'rplB_30', 'rplB_85', 'rplB_96'], 'sol_7': ['rplB_130', 'rplB_167', 'rplB_30', 'rplB_38', 'rplB_85', 'rplB_96'], 'sol_4': ['rplB_110', 'rplB_130', 'rplB_167', 'rplB_30', 'rplB_85', 'rplB_96'], 'sol_5': ['rplB_130', 'rplB_167', 'rplB_30', 'rplB_52', 'rplB_85', 'rplB_96'], 'sol_18': ['rplB_11', 'rplB_111', 'rplB_130', 'rplB_167', 'rplB_30', 'rplB_85', 'rplB_96'], 'sol_19': ['rplB_11', 'rplB_130', 'rplB_167', 'rplB_26', 'rplB_30', 'rplB_85', 'rplB_96'], 'sol_14': ['rplB_11', 'rplB_130', 'rplB_167', 'rplB_30', 'rplB_38', 'rplB_85', 'rplB_96'], 'sol_15': ['rplB_130', 'rplB_167', 'rplB_26', 'rplB_30', 'rplB_85', 'rplB_96'], 'sol_16': ['rplB_11', 'rplB_130', 'rplB_166', 'rplB_167', 'rplB_30', 'rplB_85', 'rplB_96'], 'sol_17': ['rplB_11', 'rplB_130', 'rplB_153', 'rplB_167', 'rplB_30', 'rplB_85', 'rplB_96'], 'sol_10': ['rplB_11', 'rplB_110', 'rplB_130', 'rplB_167', 'rplB_30', 'rplB_85', 'rplB_96'], 'sol_11': ['rplB_130', 'rplB_167', 'rplB_30', 'rplB_64', 'rplB_85', 'rplB_96'], 'sol_12': ['rplB_111', 'rplB_130', 'rplB_167', 'rplB_30', 'rplB_85', 'rplB_96'], 'sol_13': ['rplB_130', 'rplB_167', 'rplB_30', 'rplB_43', 'rplB_85', 'rplB_96']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 5314.7411118683476, 'sol_9': 5315.3887391952348, 'sol_2': 5281.533669926227, 'sol_3': 5293.4775943439254, 'sol_0': 5237.378783074133, 'sol_1': 5266.8777723501589, 'sol_6': 5308.2430935301845, 'sol_7': 5309.6442460232402, 'sol_4': 5300.7286854647427, 'sol_5': 5303.3245250610435, 'sol_18': 5336.2684608209283, 'sol_19': 5339.3577657064288, 'sol_14': 5324.3825118263467, 'sol_15': 5324.6336762199489, 'sol_16': 5329.4808183694549, 'sol_17': 5330.1181816850258, 'sol_10': 5315.4941181588465, 'sol_11': 5315.5819913163723, 'sol_12': 5321.5440878491945, 'sol_13': 5324.3168339597987}
+
+======================================== SIMULATION 3 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['rplB_48', 'rplB_94', 'rplB_28', 'rplB_34']
+
+Predicted variants are: ['rplB_28', 'rplB_34', 'rplB_48', 'rplB_94']
+
+True proportions are: {'rplB_34': 25.186755210310725, 'rplB_28': 21.46957461203181, 'rplB_48': 15.745221047358251, 'rplB_94': 37.59844913029921}
+
+Predicted proportions are: {'rplB_34': 24.865053518872635, 'rplB_28': 23.586645957418224, 'rplB_48': 15.687504354892086, 'rplB_94': 35.860796168817053}
+
+All solutions: 
+{'sol_0': ['rplB_28', 'rplB_34', 'rplB_48', 'rplB_94'], 'sol_1': ['rplB_11', 'rplB_28', 'rplB_34', 'rplB_48', 'rplB_94']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 5094.7041943901486, 'sol_1': 5111.6940192314314}
+
+======================================== SIMULATION 4 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['rplB_11', 'rplB_55', 'rplB_131']
+
+Predicted variants are: ['rplB_11', 'rplB_127', 'rplB_131', 'rplB_55']
+
+True proportions are: {'rplB_11': 4.431067746690846, 'rplB_131': 39.8117742538673, 'rplB_55': 55.75715799944185}
+
+Predicted proportions are: {'rplB_11': 4.8554675570766346, 'rplB_55': 55.629139072847686, 'rplB_131': 19.139765147748843, 'rplB_127': 20.375628222326839}
+
+All solutions: 
+{'sol_0': ['rplB_11', 'rplB_127', 'rplB_131', 'rplB_55']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 5035.8360352094187}
+
+======================================== SIMULATION 5 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['rplB_94', 'rplB_170', 'rplB_173', 'rplB_160']
+
+Predicted variants are: ['rplB_160', 'rplB_170', 'rplB_173', 'rplB_94']
+
+True proportions are: {'rplB_170': 25.75800596009843, 'rplB_173': 13.289037090029643, 'rplB_160': 22.821031819153596, 'rplB_94': 38.13192513071833}
+
+Predicted proportions are: {'rplB_170': 25.827814569536425, 'rplB_173': 13.245033112582782, 'rplB_160': 22.847682119205299, 'rplB_94': 38.079470198675494}
+
+All solutions: 
+{'sol_0': ['rplB_160', 'rplB_170', 'rplB_173', 'rplB_94'], 'sol_1': ['rplB_11', 'rplB_160', 'rplB_170', 'rplB_173', 'rplB_94']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 5104.7441595346017, 'sol_1': 5119.6136042433591}
+
+======================================== SIMULATION 6 ====================================================
+
+Number of optimal solutions: 8
+True variants are: ['rplB_158', 'rplB_94']
+
+Predicted variants are: ['rplB_158', 'rplB_94']
+
+True proportions are: {'rplB_158': 37.519592284598005, 'rplB_94': 62.480407715401995}
+
+Predicted proportions are: {'rplB_158': 37.541528239202655, 'rplB_94': 62.458471760797345}
+
+All solutions: 
+{'sol_2': ['rplB_11', 'rplB_158', 'rplB_171', 'rplB_94'], 'sol_3': ['rplB_158', 'rplB_171', 'rplB_94'], 'sol_0': ['rplB_158', 'rplB_94'], 'sol_1': ['rplB_11', 'rplB_158', 'rplB_94'], 'sol_6': ['rplB_11', 'rplB_120', 'rplB_158', 'rplB_171', 'rplB_94'], 'sol_7': ['rplB_120', 'rplB_158', 'rplB_171', 'rplB_94'], 'sol_4': ['rplB_11', 'rplB_120', 'rplB_158', 'rplB_94'], 'sol_5': ['rplB_120', 'rplB_158', 'rplB_94']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 4850.6958530732027, 'sol_3': 4863.9666791206591, 'sol_0': 4671.4655030237936, 'sol_1': 4719.77992337461, 'sol_6': 4961.1946040271241, 'sol_7': 5004.8881937289507, 'sol_4': 4864.025177444928, 'sol_5': 4873.9745403847137}
+
+======================================== SIMULATION 7 ====================================================
+
+Number of optimal solutions: 16
+True variants are: ['rplB_99', 'rplB_15', 'rplB_88', 'rplB_65', 'rplB_114']
+
+Predicted variants are: ['rplB_114', 'rplB_15', 'rplB_65', 'rplB_88', 'rplB_99']
+
+True proportions are: {'rplB_88': 30.02030344865027, 'rplB_99': 1.4413177598507472, 'rplB_65': 28.412997102090248, 'rplB_15': 28.596375936700273, 'rplB_114': 11.52900575270846}
+
+Predicted proportions are: {'rplB_88': 28.444119734574322, 'rplB_99': 3.5844772124413629, 'rplB_114': 17.68802288680148, 'rplB_15': 27.522375671648241, 'rplB_65': 22.761004494534589}
+
+All solutions: 
+{'sol_8': ['rplB_114', 'rplB_15', 'rplB_16', 'rplB_167', 'rplB_65', 'rplB_88', 'rplB_99'], 'sol_9': ['rplB_114', 'rplB_15', 'rplB_167', 'rplB_17', 'rplB_65', 'rplB_88', 'rplB_99'], 'sol_2': ['rplB_113', 'rplB_114', 'rplB_15', 'rplB_167', 'rplB_88', 'rplB_99'], 'sol_3': ['rplB_114', 'rplB_14', 'rplB_15', 'rplB_65', 'rplB_88', 'rplB_99'], 'sol_0': ['rplB_114', 'rplB_15', 'rplB_65', 'rplB_88', 'rplB_99'], 'sol_1': ['rplB_114', 'rplB_15', 'rplB_167', 'rplB_65', 'rplB_88', 'rplB_99'], 'sol_6': ['rplB_110', 'rplB_114', 'rplB_15', 'rplB_167', 'rplB_88', 'rplB_99'], 'sol_7': ['rplB_114', 'rplB_15', 'rplB_17', 'rplB_65', 'rplB_88', 'rplB_99'], 'sol_4': ['rplB_114', 'rplB_14', 'rplB_15', 'rplB_167', 'rplB_65', 'rplB_88', 'rplB_99'], 'sol_5': ['rplB_114', 'rplB_15', 'rplB_16', 'rplB_65', 'rplB_88', 'rplB_99'], 'sol_14': ['rplB_110', 'rplB_114', 'rplB_15', 'rplB_16', 'rplB_167', 'rplB_88', 'rplB_99'], 'sol_15': ['rplB_110', 'rplB_114', 'rplB_15', 'rplB_167', 'rplB_17', 'rplB_88', 'rplB_99'], 'sol_10': ['rplB_113', 'rplB_114', 'rplB_14', 'rplB_15', 'rplB_167', 'rplB_88', 'rplB_99'], 'sol_11': ['rplB_113', 'rplB_114', 'rplB_15', 'rplB_16', 'rplB_167', 'rplB_88', 'rplB_99'], 'sol_12': ['rplB_113', 'rplB_114', 'rplB_15', 'rplB_167', 'rplB_17', 'rplB_88', 'rplB_99'], 'sol_13': ['rplB_110', 'rplB_114', 'rplB_14', 'rplB_15', 'rplB_167', 'rplB_88', 'rplB_99']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 5320.1402706373337, 'sol_9': 5322.7558733520746, 'sol_2': 5295.2544223422783, 'sol_3': 5300.1435622490781, 'sol_0': 5253.5486728136948, 'sol_1': 5277.9188596447748, 'sol_6': 5310.8863648392244, 'sol_7': 5313.2014588906313, 'sol_4': 5309.6979824566715, 'sol_5': 5310.5858531345339, 'sol_14': 5353.1076613736259, 'sol_15': 5355.7232640883676, 'sol_10': 5327.0335202645992, 'sol_11': 5337.4758084452615, 'sol_12': 5340.091411377105, 'sol_13': 5342.6653731929646}
+
+======================================== SIMULATION 8 ====================================================
+
+Number of optimal solutions: 4
+True variants are: ['rplB_163', 'rplB_76', 'rplB_132']
+
+Predicted variants are: ['rplB_132', 'rplB_163', 'rplB_76']
+
+True proportions are: {'rplB_132': 1.3989274525364226, 'rplB_163': 45.491834788669685, 'rplB_76': 53.10923775879388}
+
+Predicted proportions are: {'rplB_76': 50.264015774380674, 'rplB_163': 41.856262529669323, 'rplB_132': 7.8797216959499981}
+
+All solutions: 
+{'sol_2': ['rplB_132', 'rplB_163', 'rplB_76', 'rplB_8'], 'sol_3': ['rplB_132', 'rplB_163', 'rplB_164', 'rplB_76', 'rplB_8'], 'sol_0': ['rplB_132', 'rplB_163', 'rplB_76'], 'sol_1': ['rplB_132', 'rplB_163', 'rplB_164', 'rplB_76']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 5006.1777618856113, 'sol_3': 5055.5239297804865, 'sol_0': 4905.8264911426049, 'sol_1': 4989.0109794736991}
+
+======================================== SIMULATION 9 ====================================================
+
+Number of optimal solutions: 4
+True variants are: ['rplB_7', 'rplB_133', 'rplB_24']
+
+Predicted variants are: ['rplB_133', 'rplB_143', 'rplB_24', 'rplB_7']
+
+True proportions are: {'rplB_7': 41.73750198309749, 'rplB_24': 34.934600604289734, 'rplB_133': 23.327897412612778}
+
+Predicted proportions are: {'rplB_143': 19.349596015122849, 'rplB_7': 39.060474719483906, 'rplB_24': 17.338336261397231, 'rplB_133': 24.251593003996021}
+
+All solutions: 
+{'sol_2': ['rplB_11', 'rplB_133', 'rplB_143', 'rplB_24', 'rplB_7'], 'sol_3': ['rplB_11', 'rplB_133', 'rplB_143', 'rplB_165', 'rplB_24', 'rplB_7'], 'sol_0': ['rplB_133', 'rplB_143', 'rplB_24', 'rplB_7'], 'sol_1': ['rplB_133', 'rplB_143', 'rplB_165', 'rplB_24', 'rplB_7']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 5089.1290757859288, 'sol_3': 5119.7245378335474, 'sol_0': 4999.4799092189805, 'sol_1': 5048.1350260411155}
+
+======================================== SIMULATION 10 ====================================================
+
+Number of optimal solutions: 8
+True variants are: ['rplB_64', 'rplB_52', 'rplB_19', 'rplB_104', 'rplB_33']
+
+Predicted variants are: ['rplB_104', 'rplB_19', 'rplB_33', 'rplB_52', 'rplB_64']
+
+True proportions are: {'rplB_104': 15.163136217990509, 'rplB_64': 41.48714909992698, 'rplB_19': 19.127309311739072, 'rplB_52': 0.574542214917952, 'rplB_33': 23.647863155425483}
+
+Predicted proportions are: {'rplB_104': 19.827851293363537, 'rplB_64': 20.784123058340125, 'rplB_19': 18.411320017535513, 'rplB_52': 20.032947298367123, 'rplB_33': 20.943758332393692}
+
+All solutions: 
+{'sol_2': ['rplB_104', 'rplB_19', 'rplB_33', 'rplB_46', 'rplB_52', 'rplB_64'], 'sol_3': ['rplB_104', 'rplB_167', 'rplB_19', 'rplB_33', 'rplB_52', 'rplB_64'], 'sol_0': ['rplB_104', 'rplB_19', 'rplB_33', 'rplB_52', 'rplB_64'], 'sol_1': ['rplB_104', 'rplB_19', 'rplB_33', 'rplB_52', 'rplB_64', 'rplB_92'], 'sol_6': ['rplB_104', 'rplB_19', 'rplB_30', 'rplB_46', 'rplB_52', 'rplB_64'], 'sol_7': ['rplB_104', 'rplB_167', 'rplB_19', 'rplB_30', 'rplB_46', 'rplB_52', 'rplB_64'], 'sol_4': ['rplB_104', 'rplB_167', 'rplB_19', 'rplB_33', 'rplB_52', 'rplB_64', 'rplB_92'], 'sol_5': ['rplB_104', 'rplB_167', 'rplB_19', 'rplB_33', 'rplB_46', 'rplB_52', 'rplB_64']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 5172.6778243205399, 'sol_3': 5175.5089407065743, 'sol_0': 5112.3978366776346, 'sol_1': 5170.0825055274236, 'sol_6': 5232.897127914719, 'sol_7': 5281.2382746148924, 'sol_4': 5219.2457178869963, 'sol_5': 5221.0204446086473}
+
+======================================== SIMULATION 11 ====================================================
+
+Number of optimal solutions: 4
+True variants are: ['rplB_128', 'rplB_12', 'rplB_26', 'rplB_147', 'rplB_53', 'rplB_155', 'rplB_82']
+
+Predicted variants are: ['rplB_12', 'rplB_128', 'rplB_147', 'rplB_155', 'rplB_26', 'rplB_53', 'rplB_82']
+
+True proportions are: {'rplB_82': 9.756981242885978, 'rplB_53': 11.711652010320982, 'rplB_155': 24.350558390719044, 'rplB_147': 13.945484130973304, 'rplB_12': 25.296546216548528, 'rplB_26': 14.627350456132321, 'rplB_128': 0.31142755241984954}
+
+Predicted proportions are: {'rplB_82': 10.564072794850469, 'rplB_53': 11.886110551597783, 'rplB_155': 24.113888468158137, 'rplB_147': 13.019847782886046, 'rplB_12': 23.266764922913509, 'rplB_26': 8.5435554741586088, 'rplB_128': 8.6057600054354459}
+
+All solutions: 
+{'sol_2': ['rplB_12', 'rplB_128', 'rplB_147', 'rplB_155', 'rplB_167', 'rplB_26', 'rplB_53', 'rplB_82'], 'sol_3': ['rplB_11', 'rplB_12', 'rplB_128', 'rplB_147', 'rplB_155', 'rplB_167', 'rplB_26', 'rplB_53', 'rplB_82'], 'sol_0': ['rplB_12', 'rplB_128', 'rplB_147', 'rplB_155', 'rplB_26', 'rplB_53', 'rplB_82'], 'sol_1': ['rplB_11', 'rplB_12', 'rplB_128', 'rplB_147', 'rplB_155', 'rplB_26', 'rplB_53', 'rplB_82']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 5442.9833399272347, 'sol_3': 5449.6104878916231, 'sol_0': 5377.5495698005216, 'sol_1': 5392.4571426184521}
+
+======================================== SIMULATION 12 ====================================================
+
+Number of optimal solutions: 4
+True variants are: ['rplB_61', 'rplB_63', 'rplB_83', 'rplB_24', 'rplB_125', 'rplB_12']
+
+Predicted variants are: ['rplB_12', 'rplB_125', 'rplB_24', 'rplB_61', 'rplB_63', 'rplB_83']
+
+True proportions are: {'rplB_83': 49.36907102283723, 'rplB_12': 11.640030772931329, 'rplB_63': 1.0221449826557, 'rplB_61': 2.7400721466612548, 'rplB_24': 14.657363837994147, 'rplB_125': 20.57131723692035}
+
+Predicted proportions are: {'rplB_83': 47.888154587169019, 'rplB_12': 13.007650336779168, 'rplB_63': 1.5468830870069437, 'rplB_61': 2.8573169520502777, 'rplB_24': 14.665988860562084, 'rplB_125': 20.034006176432502}
+
+All solutions: 
+{'sol_2': ['rplB_12', 'rplB_125', 'rplB_24', 'rplB_61', 'rplB_63', 'rplB_71', 'rplB_83'], 'sol_3': ['rplB_12', 'rplB_125', 'rplB_143', 'rplB_24', 'rplB_61', 'rplB_63', 'rplB_71', 'rplB_83'], 'sol_0': ['rplB_12', 'rplB_125', 'rplB_24', 'rplB_61', 'rplB_63', 'rplB_83'], 'sol_1': ['rplB_12', 'rplB_125', 'rplB_143', 'rplB_24', 'rplB_61', 'rplB_63', 'rplB_83']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 5387.4945119526446, 'sol_3': 5427.117037234083, 'sol_0': 5317.0986232839923, 'sol_1': 5367.5742132212754}
+
+======================================== SIMULATION 13 ====================================================
+
+Number of optimal solutions: 20
+True variants are: ['rplB_37', 'rplB_4', 'rplB_172', 'rplB_60', 'rplB_121', 'rplB_144']
+
+Predicted variants are: ['rplB_121', 'rplB_144', 'rplB_172', 'rplB_37', 'rplB_4', 'rplB_60']
+
+True proportions are: {'rplB_144': 4.969195017954185, 'rplB_60': 22.259833033600934, 'rplB_37': 0.40386442110028925, 'rplB_121': 29.79545422859397, 'rplB_4': 29.336860593954107, 'rplB_172': 13.234792704796517}
+
+Predicted proportions are: {'rplB_144': 6.893020596424245, 'rplB_60': 22.09595829973988, 'rplB_37': 3.6683404649014468, 'rplB_121': 28.833616814966625, 'rplB_4': 25.296842519260949, 'rplB_172': 13.212221304706857}
+
+All solutions: 
+{'sol_8': ['rplB_121', 'rplB_172', 'rplB_30', 'rplB_6', 'rplB_60', 'rplB_8', 'rplB_81'], 'sol_9': ['rplB_121', 'rplB_172', 'rplB_30', 'rplB_37', 'rplB_6', 'rplB_60', 'rplB_8'], 'sol_2': ['rplB_121', 'rplB_172', 'rplB_30', 'rplB_4', 'rplB_60', 'rplB_81'], 'sol_3': ['rplB_121', 'rplB_172', 'rplB_30', 'rplB_37', 'rplB_4', 'rplB_60'], 'sol_0': ['rplB_121', 'rplB_144', 'rplB_172', 'rplB_37', 'rplB_4', 'rplB_60'], 'sol_1': ['rplB_121', 'rplB_144', 'rplB_172', 'rplB_23', 'rplB_4', 'rplB_60'], 'sol_6': ['rplB_121', 'rplB_140', 'rplB_172', 'rplB_30', 'rplB_4', 'rplB_60'], 'sol_7': ['rplB_121', 'rplB_144', 'rplB_172', 'rplB_37', 'rplB_6', 'rplB_60', 'rplB_8'], 'sol_4': ['rplB_121', 'rplB_172', 'rplB_23', 'rplB_30', 'rplB_4', 'rplB_60'], 'sol_5': ['rplB_121', 'rplB_140', 'rplB_144', 'rplB_172', 'rplB_4', 'rplB_60'], 'sol_18': ['rplB_11', 'rplB_121', 'rplB_140', 'rplB_172', 'rplB_30', 'rplB_4', 'rplB_60'], 'sol_19': ['rplB_11', 'rplB_121', 'rplB_140', 'rplB_144', 'rplB_172', 'rplB_6', 'rplB_60', 'rplB_8'], 'sol_14': ['rplB_11', 'rplB_121', 'rplB_144', 'rplB_172', 'rplB_23', 'rplB_4', 'rplB_60'], 'sol_15': ['rplB_11', 'rplB_121', 'rplB_172', 'rplB_30', 'rplB_37', 'rplB_4', 'rplB_60'], 'sol_16': ['rplB_11', 'rplB_121', 'rplB_172', 'rplB_23', 'rplB_30', 'rplB_4', 'rplB_60'], 'sol_17': ['rplB_11', 'rplB_121', 'rplB_140', 'rplB_144', 'rplB_172', 'rplB_4', 'rplB_60'], 'sol_10': ['rplB_121', 'rplB_172', 'rplB_23', 'rplB_30', 'rplB_6', 'rplB_60', 'rplB_8'], 'sol_11': ['rplB_121', 'rplB_140', 'rplB_144', 'rplB_172', 'rplB_6', 'rplB_60', 'rplB_8'], 'sol_12': ['rplB_11', 'rplB_121', 'rplB_144', 'rplB_172', 'rplB_4', 'rplB_60', 'rplB_81'], 'sol_13': ['rplB_11', 'rplB_121', 'rplB_144', 'rplB_172', 'rplB_37', 'rplB_4', 'rplB_60']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 5364.0205469087869, 'sol_9': 5364.0205469132625, 'sol_2': 5329.8334533922371, 'sol_3': 5329.8334533967118, 'sol_0': 5329.8331279454424, 'sol_1': 5329.8331283839898, 'sol_6': 5329.8772785635065, 'sol_7': 5364.02022523291, 'sol_4': 5329.8334538352583, 'sol_5': 5329.8769491651001, 'sol_18': 5367.7116790057144, 'sol_19': 5398.7724518034165, 'sol_14': 5367.6679378974613, 'sol_15': 5367.6682881626157, 'sol_16': 5367.6682885967321, 'sol_17': 5367.7113244374632, 'sol_10': 5364.0205471303088, 'sol_11': 5364.063612007767, 'sol_12': 5367.6679374588693, 'sol_13': 5367.667937463345}
+
+======================================== SIMULATION 14 ====================================================
+
+Number of optimal solutions: 4
+True variants are: ['rplB_22', 'rplB_24']
+
+Predicted variants are: ['rplB_143', 'rplB_22', 'rplB_24']
+
+True proportions are: {'rplB_22': 64.74726407468351, 'rplB_24': 35.25273592531647}
+
+Predicted proportions are: {'rplB_22': 32.204127608040842, 'rplB_143': 34.308987795525788, 'rplB_24': 33.486884596433377}
+
+All solutions: 
+{'sol_2': ['rplB_120', 'rplB_143', 'rplB_22', 'rplB_24'], 'sol_3': ['rplB_120', 'rplB_143', 'rplB_165', 'rplB_22', 'rplB_24'], 'sol_0': ['rplB_143', 'rplB_22', 'rplB_24'], 'sol_1': ['rplB_143', 'rplB_165', 'rplB_22', 'rplB_24']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 4630.1514401482991, 'sol_3': 4661.9052092967031, 'sol_0': 4577.9861846829381, 'sol_1': 4628.5467266514661}
+
+======================================== SIMULATION 15 ====================================================
+
+Number of optimal solutions: 3
+True variants are: ['rplB_171', 'rplB_18']
+
+Predicted variants are: ['rplB_171', 'rplB_18']
+
+True proportions are: {'rplB_171': 2.6162994615947124, 'rplB_18': 97.38370053840528}
+
+Predicted proportions are: {'rplB_171': 2.660016625103907, 'rplB_18': 97.339983374896093}
+
+All solutions: 
+{'sol_2': ['rplB_171', 'rplB_18', 'rplB_19'], 'sol_0': ['rplB_13', 'rplB_171', 'rplB_18'], 'sol_1': ['rplB_171', 'rplB_18']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 4788.5017198257328, 'sol_0': 4665.680335132618, 'sol_1': 4676.0047041590688}
+
+======================================== SIMULATION 16 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['rplB_45', 'rplB_98', 'rplB_124', 'rplB_169', 'rplB_85', 'rplB_102']
+
+Predicted variants are: ['rplB_102', 'rplB_124', 'rplB_169', 'rplB_45', 'rplB_85', 'rplB_98']
+
+True proportions are: {'rplB_45': 2.915919585626692, 'rplB_85': 31.405327191166833, 'rplB_98': 18.19853481104944, 'rplB_169': 22.2031601614533, 'rplB_124': 21.37512617352857, 'rplB_102': 3.9019320771751715}
+
+Predicted proportions are: {'rplB_45': 11.774061390877723, 'rplB_85': 30.926454517837161, 'rplB_98': 11.191113412912133, 'rplB_169': 12.806953185574631, 'rplB_124': 19.960875296165735, 'rplB_102': 13.340542196632617}
+
+All solutions: 
+{'sol_0': ['rplB_102', 'rplB_124', 'rplB_169', 'rplB_45', 'rplB_85', 'rplB_98'], 'sol_1': ['rplB_102', 'rplB_124', 'rplB_143', 'rplB_169', 'rplB_45', 'rplB_85', 'rplB_98']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 5279.1920210152693, 'sol_1': 5330.8751541170641}
+
+======================================== SIMULATION 17 ====================================================
+
+Number of optimal solutions: 8
+True variants are: ['rplB_134', 'rplB_111', 'rplB_73', 'rplB_132', 'rplB_86', 'rplB_160', 'rplB_77']
+
+Predicted variants are: ['rplB_111', 'rplB_132', 'rplB_134', 'rplB_160', 'rplB_73', 'rplB_77', 'rplB_86']
+
+True proportions are: {'rplB_73': 10.422742890314552, 'rplB_86': 14.686580028338591, 'rplB_160': 12.706721653008051, 'rplB_77': 28.985294080349323, 'rplB_134': 18.669278862768497, 'rplB_132': 4.684510643768236, 'rplB_111': 9.844871841452747}
+
+Predicted proportions are: {'rplB_73': 11.18613352828779, 'rplB_160': 12.786885245901638, 'rplB_77': 25.919933910421719, 'rplB_134': 17.726716212238554, 'rplB_86': 14.485919728251982, 'rplB_132': 6.0017525492207815, 'rplB_111': 11.892658825677556}
+
+All solutions: 
+{'sol_2': ['rplB_111', 'rplB_132', 'rplB_134', 'rplB_143', 'rplB_160', 'rplB_73', 'rplB_77', 'rplB_86'], 'sol_3': ['rplB_111', 'rplB_132', 'rplB_134', 'rplB_160', 'rplB_167', 'rplB_73', 'rplB_77', 'rplB_86'], 'sol_0': ['rplB_111', 'rplB_132', 'rplB_134', 'rplB_160', 'rplB_73', 'rplB_77', 'rplB_86'], 'sol_1': ['rplB_111', 'rplB_127', 'rplB_132', 'rplB_134', 'rplB_160', 'rplB_73', 'rplB_77', 'rplB_86'], 'sol_6': ['rplB_111', 'rplB_132', 'rplB_134', 'rplB_143', 'rplB_160', 'rplB_167', 'rplB_73', 'rplB_77', 'rplB_86'], 'sol_7': ['rplB_111', 'rplB_127', 'rplB_132', 'rplB_134', 'rplB_143', 'rplB_160', 'rplB_167', 'rplB_73', 'rplB_77', 'rplB_86'], 'sol_4': ['rplB_111', 'rplB_127', 'rplB_132', 'rplB_134', 'rplB_143', 'rplB_160', 'rplB_73', 'rplB_77', 'rplB_86'], 'sol_5': ['rplB_111', 'rplB_127', 'rplB_132', 'rplB_134', 'rplB_160', 'rplB_167', 'rplB_73', 'rplB_77', 'rplB_86']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 5506.4977893752857, 'sol_3': 5510.7788884402571, 'sol_0': 5444.2408730457091, 'sol_1': 5489.6080048528211, 'sol_6': 5564.6940614242121, 'sol_7': 5595.1386829560397, 'sol_4': 5543.5231834368587, 'sol_5': 5547.8031219511768}
+
+======================================== SIMULATION 18 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['rplB_48', 'rplB_170', 'rplB_111', 'rplB_106', 'rplB_80']
+
+Predicted variants are: ['rplB_111', 'rplB_127', 'rplB_170', 'rplB_48', 'rplB_80']
+
+True proportions are: {'rplB_80': 20.931986615148933, 'rplB_170': 20.154091537261078, 'rplB_106': 17.07166605300989, 'rplB_48': 21.699916237704908, 'rplB_111': 20.142339556875186}
+
+Predicted proportions are: {'rplB_80': 18.745281045544445, 'rplB_170': 20.132013201320149, 'rplB_48': 21.582892971719197, 'rplB_127': 22.267333460256673, 'rplB_111': 17.272479321159544}
+
+All solutions: 
+{'sol_0': ['rplB_111', 'rplB_127', 'rplB_170', 'rplB_48', 'rplB_80'], 'sol_1': ['rplB_111', 'rplB_127', 'rplB_167', 'rplB_170', 'rplB_48', 'rplB_80']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 5209.7423062323023, 'sol_1': 5294.1664605727156}
+
+======================================== SIMULATION 19 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['rplB_158', 'rplB_70', 'rplB_117', 'rplB_173', 'rplB_16', 'rplB_159']
+
+Predicted variants are: ['rplB_117', 'rplB_158', 'rplB_159', 'rplB_16', 'rplB_173', 'rplB_70']
+
+True proportions are: {'rplB_70': 14.003972958569886, 'rplB_159': 19.61244831198223, 'rplB_158': 28.849468472351337, 'rplB_16': 17.458401058250107, 'rplB_117': 14.76138239666941, 'rplB_173': 5.314326802177019}
+
+Predicted proportions are: {'rplB_70': 14.172297794326278, 'rplB_159': 19.470610787361718, 'rplB_158': 28.714207694486458, 'rplB_16': 17.510870522505407, 'rplB_117': 14.851485148514847, 'rplB_173': 5.2805280528052796}
+
+All solutions: 
+{'sol_0': ['rplB_117', 'rplB_158', 'rplB_159', 'rplB_16', 'rplB_173', 'rplB_70'], 'sol_1': ['rplB_117', 'rplB_158', 'rplB_159', 'rplB_16', 'rplB_171', 'rplB_173', 'rplB_70']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 5355.1054376721195, 'sol_1': 5423.4649399879918}
+
+======================================== SIMULATION 20 ====================================================
+
+Number of optimal solutions: 16
+True variants are: ['rplB_100', 'rplB_65']
+
+Predicted variants are: ['rplB_100', 'rplB_65']
+
+True proportions are: {'rplB_65': 70.44876118568568, 'rplB_100': 29.551238814314313}
+
+Predicted proportions are: {'rplB_65': 70.776210274205056, 'rplB_100': 29.223789725794958}
+
+All solutions: 
+{'sol_8': ['rplB_100', 'rplB_49', 'rplB_65'], 'sol_9': ['rplB_100', 'rplB_110', 'rplB_166', 'rplB_167'], 'sol_2': ['rplB_100', 'rplB_113', 'rplB_167'], 'sol_3': ['rplB_100', 'rplB_110', 'rplB_167'], 'sol_0': ['rplB_100', 'rplB_65'], 'sol_1': ['rplB_100', 'rplB_167', 'rplB_65'], 'sol_6': ['rplB_100', 'rplB_167', 'rplB_49', 'rplB_65'], 'sol_7': ['rplB_100', 'rplB_113', 'rplB_166', 'rplB_167'], 'sol_4': ['rplB_100', 'rplB_166', 'rplB_65'], 'sol_5': ['rplB_100', 'rplB_166', 'rplB_167', 'rplB_65'], 'sol_14': ['rplB_100', 'rplB_113', 'rplB_166', 'rplB_167', 'rplB_49'], 'sol_15': ['rplB_100', 'rplB_110', 'rplB_166', 'rplB_167', 'rplB_49'], 'sol_10': ['rplB_100', 'rplB_113', 'rplB_167', 'rplB_49'], 'sol_11': ['rplB_100', 'rplB_166', 'rplB_167', 'rplB_49', 'rplB_65'], 'sol_12': ['rplB_100', 'rplB_110', 'rplB_167', 'rplB_49'], 'sol_13': ['rplB_100', 'rplB_166', 'rplB_49', 'rplB_65']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 4870.0030421260353, 'sol_9': 4892.5495764955222, 'sol_2': 4771.9875093068349, 'sol_3': 4804.7784090977111, 'sol_0': 4687.9785587630176, 'sol_1': 4727.1075760991025, 'sol_6': 4848.2791858536066, 'sol_7': 4859.993271120542, 'sol_4': 4814.9451559438303, 'sol_5': 4815.1270166047561, 'sol_14': 4949.9447026561338, 'sol_15': 4982.4888612174254, 'sol_10': 4893.1590669726002, 'sol_11': 4905.0785002050579, 'sol_12': 4925.9376369477995, 'sol_13': 4938.0672206772551}
+
+======================================== SIMULATION 21 ====================================================
+
+Number of optimal solutions: 20
+True variants are: ['rplB_123', 'rplB_102', 'rplB_143', 'rplB_150']
+
+Predicted variants are: ['rplB_102', 'rplB_123', 'rplB_140', 'rplB_143', 'rplB_150']
+
+True proportions are: {'rplB_123': 16.100950423203585, 'rplB_143': 31.415778216507977, 'rplB_150': 20.186914474396804, 'rplB_102': 32.29635688589163}
+
+Predicted proportions are: {'rplB_140': 16.04966094827844, 'rplB_123': 22.51777211003132, 'rplB_143': 14.569409759000441, 'rplB_150': 23.635704074264545, 'rplB_102': 23.227453108425237}
+
+All solutions: 
+{'sol_8': ['rplB_102', 'rplB_123', 'rplB_124', 'rplB_143', 'rplB_150'], 'sol_9': ['rplB_102', 'rplB_123', 'rplB_141', 'rplB_143', 'rplB_150'], 'sol_2': ['rplB_102', 'rplB_123', 'rplB_140', 'rplB_143', 'rplB_150'], 'sol_3': ['rplB_102', 'rplB_123', 'rplB_143', 'rplB_150', 'rplB_24'], 'sol_0': ['rplB_102', 'rplB_123', 'rplB_143', 'rplB_150', 'rplB_23'], 'sol_1': ['rplB_102', 'rplB_123', 'rplB_143', 'rplB_150', 'rplB_37'], 'sol_6': ['rplB_102', 'rplB_119', 'rplB_123', 'rplB_143', 'rplB_150'], 'sol_7': ['rplB_102', 'rplB_123', 'rplB_127', 'rplB_143', 'rplB_150', 'rplB_23'], 'sol_4': ['rplB_102', 'rplB_123', 'rplB_143', 'rplB_150', 'rplB_165'], 'sol_5': ['rplB_102', 'rplB_123', 'rplB_132', 'rplB_143', 'rplB_150'], 'sol_18': ['rplB_102', 'rplB_123', 'rplB_127', 'rplB_141', 'rplB_143', 'rplB_150'], 'sol_19': ['rplB_102', 'rplB_123', 'rplB_127', 'rplB_143', 'rplB_150', 'rplB_82', 'rplB_91'], 'sol_14': ['rplB_102', 'rplB_123', 'rplB_127', 'rplB_132', 'rplB_143', 'rplB_150'], 'sol_15': ['rplB_102', 'rplB_119', 'rplB_123', 'rplB_127', 'rplB_143', 'rplB_150'], 'sol_16': ['rplB_102', 'rplB_123', 'rplB_127', 'rplB_143', 'rplB_150', 'rplB_91'], 'sol_17': ['rplB_102', 'rplB_123', 'rplB_124', 'rplB_127', 'rplB_143', 'rplB_150'], 'sol_10': ['rplB_102', 'rplB_123', 'rplB_127', 'rplB_143', 'rplB_150', 'rplB_37'], 'sol_11': ['rplB_102', 'rplB_123', 'rplB_127', 'rplB_140', 'rplB_143', 'rplB_150'], 'sol_12': ['rplB_102', 'rplB_123', 'rplB_127', 'rplB_143', 'rplB_150', 'rplB_24'], 'sol_13': ['rplB_102', 'rplB_123', 'rplB_127', 'rplB_143', 'rplB_150', 'rplB_165']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 4978.1868588743782, 'sol_9': 4978.8148956427713, 'sol_2': 4952.2671077884452, 'sol_3': 4959.6858155890732, 'sol_0': 4949.0037626099293, 'sol_1': 4952.2670778973134, 'sol_6': 4969.4784544224003, 'sol_7': 4977.2040570777172, 'sol_4': 4968.1867709914495, 'sol_5': 4968.9061122117182, 'sol_18': 5007.0144192257158, 'sol_19': 5034.9353353216138, 'sol_14': 4997.1063596503109, 'sol_15': 4997.649072284903, 'sol_16': 4998.5176687766825, 'sol_17': 5006.3863432322487, 'sol_10': 4980.4673716155839, 'sol_11': 4980.4673944144824, 'sol_12': 4987.8853646211392, 'sol_13': 4996.3863036505072}
+
+======================================== SIMULATION 22 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['rplB_108', 'rplB_94', 'rplB_59', 'rplB_91']
+
+Predicted variants are: ['rplB_108', 'rplB_59', 'rplB_91', 'rplB_94']
+
+True proportions are: {'rplB_91': 0.7277910411225654, 'rplB_108': 31.414736472353383, 'rplB_59': 10.177014190034651, 'rplB_94': 57.6804582964894}
+
+Predicted proportions are: {'rplB_91': 5.5499481034770755, 'rplB_108': 31.753261596106817, 'rplB_59': 10.19852258058784, 'rplB_94': 52.498267719828256}
+
+All solutions: 
+{'sol_0': ['rplB_108', 'rplB_11', 'rplB_59', 'rplB_91', 'rplB_94'], 'sol_1': ['rplB_108', 'rplB_59', 'rplB_91', 'rplB_94']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 5034.5145326652719, 'sol_1': 5063.8939243282884}
+
+======================================== SIMULATION 23 ====================================================
+
+Number of optimal solutions: 16
+True variants are: ['rplB_123', 'rplB_163', 'rplB_129', 'rplB_90']
+
+Predicted variants are: ['rplB_123', 'rplB_129', 'rplB_163', 'rplB_90']
+
+True proportions are: {'rplB_90': 27.244306554204083, 'rplB_123': 44.2235143720721, 'rplB_129': 7.383262974484876, 'rplB_163': 21.148916099238924}
+
+Predicted proportions are: {'rplB_90': 28.053088044803047, 'rplB_123': 43.975734191904785, 'rplB_129': 7.7944996405494491, 'rplB_163': 20.176678122742718}
+
+All solutions: 
+{'sol_8': ['rplB_123', 'rplB_129', 'rplB_143', 'rplB_163', 'rplB_165', 'rplB_90'], 'sol_9': ['rplB_123', 'rplB_127', 'rplB_129', 'rplB_143', 'rplB_163', 'rplB_90'], 'sol_2': ['rplB_123', 'rplB_129', 'rplB_163', 'rplB_82', 'rplB_90'], 'sol_3': ['rplB_123', 'rplB_129', 'rplB_143', 'rplB_163', 'rplB_90'], 'sol_0': ['rplB_123', 'rplB_129', 'rplB_163', 'rplB_90'], 'sol_1': ['rplB_123', 'rplB_129', 'rplB_163', 'rplB_165', 'rplB_90'], 'sol_6': ['rplB_123', 'rplB_127', 'rplB_129', 'rplB_163', 'rplB_165', 'rplB_90'], 'sol_7': ['rplB_123', 'rplB_129', 'rplB_143', 'rplB_163', 'rplB_82', 'rplB_90'], 'sol_4': ['rplB_123', 'rplB_127', 'rplB_129', 'rplB_163', 'rplB_90'], 'sol_5': ['rplB_123', 'rplB_129', 'rplB_163', 'rplB_165', 'rplB_82', 'rplB_90'], 'sol_14': ['rplB_123', 'rplB_127', 'rplB_129', 'rplB_143', 'rplB_163', 'rplB_82', 'rplB_90'], 'sol_15': ['rplB_123', 'rplB_127', 'rplB_129', 'rplB_143', 'rplB_163', 'rplB_165', 'rplB_82', 'rplB_90'], 'sol_10': ['rplB_123', 'rplB_127', 'rplB_129', 'rplB_163', 'rplB_82', 'rplB_90'], 'sol_11': ['rplB_123', 'rplB_129', 'rplB_143', 'rplB_163', 'rplB_165', 'rplB_82', 'rplB_90'], 'sol_12': ['rplB_123', 'rplB_127', 'rplB_129', 'rplB_163', 'rplB_165', 'rplB_82', 'rplB_90'], 'sol_13': ['rplB_123', 'rplB_127', 'rplB_129', 'rplB_143', 'rplB_163', 'rplB_165', 'rplB_90']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 5221.4226355990604, 'sol_9': 5232.1922621941821, 'sol_2': 5168.8387352013533, 'sol_3': 5176.4296947759967, 'sol_0': 5108.7587336380766, 'sol_1': 5157.2976158034726, 'sol_6': 5213.0602078604661, 'sol_7': 5215.0936567034069, 'sol_4': 5185.9218362053343, 'sol_5': 5195.9616023674762, 'sol_14': 5265.4427187145457, 'sol_15': 5284.8446913779435, 'sol_10': 5233.9512406777167, 'sol_11': 5245.3076363191567, 'sol_12': 5246.3106890120289, 'sol_13': 5262.411458077283}
+
+======================================== SIMULATION 24 ====================================================
+
+Number of optimal solutions: 8
+True variants are: ['rplB_32', 'rplB_138', 'rplB_134', 'rplB_108', 'rplB_164', 'rplB_126', 'rplB_23']
+
+Predicted variants are: ['rplB_108', 'rplB_126', 'rplB_134', 'rplB_138', 'rplB_164', 'rplB_23', 'rplB_32']
+
+True proportions are: {'rplB_164': 6.008410645291557, 'rplB_23': 19.655049634422223, 'rplB_134': 19.238037452759656, 'rplB_126': 12.16308711363433, 'rplB_32': 18.46574917342312, 'rplB_108': 20.432689851814175, 'rplB_138': 4.036976128654941}
+
+Predicted proportions are: {'rplB_164': 6.6172567320473989, 'rplB_134': 18.307987306779104, 'rplB_23': 18.216264043459425, 'rplB_126': 16.374675408235024, 'rplB_32': 16.849519586288299, 'rplB_108': 19.378851056182569, 'rplB_138': 4.2554458670081745}
+
+All solutions: 
+{'sol_2': ['rplB_108', 'rplB_126', 'rplB_134', 'rplB_138', 'rplB_140', 'rplB_143', 'rplB_164', 'rplB_32'], 'sol_3': ['rplB_108', 'rplB_126', 'rplB_134', 'rplB_138', 'rplB_143', 'rplB_164', 'rplB_32', 'rplB_81'], 'sol_0': ['rplB_108', 'rplB_126', 'rplB_134', 'rplB_138', 'rplB_164', 'rplB_23', 'rplB_32'], 'sol_1': ['rplB_108', 'rplB_126', 'rplB_134', 'rplB_138', 'rplB_143', 'rplB_164', 'rplB_23', 'rplB_32'], 'sol_6': ['rplB_108', 'rplB_126', 'rplB_134', 'rplB_138', 'rplB_143', 'rplB_164', 'rplB_32', 'rplB_90'], 'sol_7': ['rplB_108', 'rplB_119', 'rplB_126', 'rplB_134', 'rplB_138', 'rplB_143', 'rplB_164', 'rplB_32'], 'sol_4': ['rplB_108', 'rplB_126', 'rplB_134', 'rplB_138', 'rplB_143', 'rplB_164', 'rplB_32', 'rplB_37'], 'sol_5': ['rplB_108', 'rplB_126', 'rplB_134', 'rplB_138', 'rplB_143', 'rplB_164', 'rplB_24', 'rplB_32']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 5414.2914351501695, 'sol_3': 5414.8847460746083, 'sol_0': 5388.9184135911, 'sol_1': 5412.8081559366601, 'sol_6': 5422.8946151563468, 'sol_7': 5424.9603586608273, 'sol_4': 5414.8891283376897, 'sol_5': 5419.3346356379316}
+
+======================================== SIMULATION 25 ====================================================
+
+Number of optimal solutions: 12
+True variants are: ['rplB_26', 'rplB_46', 'rplB_93']
+
+Predicted variants are: ['rplB_26', 'rplB_46', 'rplB_93']
+
+True proportions are: {'rplB_93': 69.5953312819938, 'rplB_46': 23.46825260810016, 'rplB_26': 6.936416109906056}
+
+Predicted proportions are: {'rplB_93': 49.354443826131515, 'rplB_46': 39.746313824900632, 'rplB_26': 10.899242348967862}
+
+All solutions: 
+{'sol_8': ['rplB_147', 'rplB_26', 'rplB_38', 'rplB_46', 'rplB_93'], 'sol_9': ['rplB_145', 'rplB_167', 'rplB_26', 'rplB_38', 'rplB_46', 'rplB_93'], 'sol_2': ['rplB_147', 'rplB_26', 'rplB_46', 'rplB_93'], 'sol_3': ['rplB_145', 'rplB_167', 'rplB_26', 'rplB_46', 'rplB_93'], 'sol_0': ['rplB_26', 'rplB_46', 'rplB_93'], 'sol_1': ['rplB_145', 'rplB_26', 'rplB_46', 'rplB_93'], 'sol_6': ['rplB_26', 'rplB_38', 'rplB_46', 'rplB_93'], 'sol_7': ['rplB_147', 'rplB_167', 'rplB_26', 'rplB_46', 'rplB_93'], 'sol_4': ['rplB_145', 'rplB_26', 'rplB_38', 'rplB_46', 'rplB_93'], 'sol_5': ['rplB_167', 'rplB_26', 'rplB_46', 'rplB_93'], 'sol_10': ['rplB_167', 'rplB_26', 'rplB_38', 'rplB_46', 'rplB_93'], 'sol_11': ['rplB_147', 'rplB_167', 'rplB_26', 'rplB_38', 'rplB_46', 'rplB_93']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 5005.5724790936338, 'sol_9': 5055.8389415217734, 'sol_2': 4895.2687535092555, 'sol_3': 4965.0648296828149, 'sol_0': 4837.8823803739051, 'sol_1': 4857.2268340378741, 'sol_6': 4981.8985727240706, 'sol_7': 4999.0359042007094, 'sol_4': 4968.3270569767483, 'sol_5': 4975.3174534878426, 'sol_10': 5086.9745004453225, 'sol_11': 5089.3793594713934}
+
+======================================== SIMULATION 26 ====================================================
+
+Number of optimal solutions: 6
+True variants are: ['rplB_39', 'rplB_96']
+
+Predicted variants are: ['rplB_39', 'rplB_96']
+
+True proportions are: {'rplB_39': 93.14340718829038, 'rplB_96': 6.856592811709612}
+
+Predicted proportions are: {'rplB_39': 87.564250778048219, 'rplB_96': 12.435749221951772}
+
+All solutions: 
+{'sol_2': ['rplB_39', 'rplB_92', 'rplB_96'], 'sol_3': ['rplB_39', 'rplB_82', 'rplB_96'], 'sol_0': ['rplB_39', 'rplB_96'], 'sol_1': ['rplB_39', 'rplB_46', 'rplB_96'], 'sol_4': ['rplB_39', 'rplB_46', 'rplB_82', 'rplB_96'], 'sol_5': ['rplB_39', 'rplB_82', 'rplB_92', 'rplB_96']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 4778.0163705056857, 'sol_3': 4795.7783163036802, 'sol_0': 4667.4688239458892, 'sol_1': 4755.0938750410132, 'sol_4': 4831.997958830525, 'sol_5': 4846.1069756379884}
+
+======================================== SIMULATION 27 ====================================================
+
+Number of optimal solutions: 4
+True variants are: ['rplB_46', 'rplB_26', 'rplB_34', 'rplB_157', 'rplB_82', 'rplB_164']
+
+Predicted variants are: ['rplB_157', 'rplB_164', 'rplB_26', 'rplB_34', 'rplB_46', 'rplB_82']
+
+True proportions are: {'rplB_164': 31.82952025629553, 'rplB_157': 3.0313117378197942, 'rplB_46': 4.055278404943387, 'rplB_34': 33.92583121729526, 'rplB_26': 6.192721420019106, 'rplB_82': 20.965336963626918}
+
+Predicted proportions are: {'rplB_164': 30.633501406797457, 'rplB_157': 3.3003300330033003, 'rplB_46': 13.171226090519584, 'rplB_34': 33.448616500190937, 'rplB_26': 6.5232471699691024, 'rplB_82': 12.923078799519617}
+
+All solutions: 
+{'sol_2': ['rplB_157', 'rplB_164', 'rplB_167', 'rplB_26', 'rplB_34', 'rplB_46', 'rplB_82'], 'sol_3': ['rplB_127', 'rplB_157', 'rplB_164', 'rplB_167', 'rplB_26', 'rplB_34', 'rplB_46', 'rplB_82'], 'sol_0': ['rplB_157', 'rplB_164', 'rplB_26', 'rplB_34', 'rplB_46', 'rplB_82'], 'sol_1': ['rplB_127', 'rplB_157', 'rplB_164', 'rplB_26', 'rplB_34', 'rplB_46', 'rplB_82']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 5422.0893163229766, 'sol_3': 5469.4167482530002, 'sol_0': 5343.9742810114185, 'sol_1': 5402.1541675343424}
+
+======================================== SIMULATION 28 ====================================================
+
+Number of optimal solutions: 6
+True variants are: ['rplB_8', 'rplB_5', 'rplB_46']
+
+Predicted variants are: ['rplB_46', 'rplB_5', 'rplB_8']
+
+True proportions are: {'rplB_46': 66.79977437358178, 'rplB_8': 20.290878722404106, 'rplB_5': 12.909346904014111}
+
+Predicted proportions are: {'rplB_46': 62.906505974761764, 'rplB_8': 18.333702572979647, 'rplB_5': 18.759791452258586}
+
+All solutions: 
+{'sol_2': ['rplB_46', 'rplB_6', 'rplB_8'], 'sol_3': ['rplB_46', 'rplB_5', 'rplB_8', 'rplB_82'], 'sol_0': ['rplB_46', 'rplB_5', 'rplB_8'], 'sol_1': ['rplB_4', 'rplB_46', 'rplB_8'], 'sol_4': ['rplB_4', 'rplB_46', 'rplB_8', 'rplB_82'], 'sol_5': ['rplB_46', 'rplB_6', 'rplB_8', 'rplB_82']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 4845.3009871696422, 'sol_3': 4950.2465065591359, 'sol_0': 4817.9674194057898, 'sol_1': 4829.8340708022279, 'sol_4': 4962.1131569940344, 'sol_5': 4977.5800704008125}
+
+======================================== SIMULATION 29 ====================================================
+
+Number of optimal solutions: 12
+True variants are: ['rplB_64', 'rplB_107']
+
+Predicted variants are: ['rplB_107', 'rplB_64']
+
+True proportions are: {'rplB_64': 61.7927327383341, 'rplB_107': 38.2072672616659}
+
+Predicted proportions are: {'rplB_64': 54.016665004500062, 'rplB_107': 45.983334995499924}
+
+All solutions: 
+{'sol_8': ['rplB_107', 'rplB_46', 'rplB_64', 'rplB_82'], 'sol_9': ['rplB_107', 'rplB_64', 'rplB_82', 'rplB_92'], 'sol_2': ['rplB_107', 'rplB_167', 'rplB_64'], 'sol_3': ['rplB_107', 'rplB_64', 'rplB_92'], 'sol_0': ['rplB_107', 'rplB_64'], 'sol_1': ['rplB_107', 'rplB_46', 'rplB_64'], 'sol_6': ['rplB_107', 'rplB_167', 'rplB_64', 'rplB_92'], 'sol_7': ['rplB_107', 'rplB_167', 'rplB_64', 'rplB_82'], 'sol_4': ['rplB_107', 'rplB_64', 'rplB_82'], 'sol_5': ['rplB_107', 'rplB_167', 'rplB_46', 'rplB_64'], 'sol_10': ['rplB_107', 'rplB_167', 'rplB_46', 'rplB_64', 'rplB_82'], 'sol_11': ['rplB_107', 'rplB_167', 'rplB_64', 'rplB_82', 'rplB_92']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 4965.9507344191452, 'sol_9': 4966.8635323398776, 'sol_2': 4850.2427672484528, 'sol_3': 4851.205907321113, 'sol_0': 4685.178474246457, 'sol_1': 4847.0841652384624, 'sol_6': 4954.7564828764835, 'sol_7': 4965.0626609582769, 'sol_4': 4861.5851054134855, 'sol_5': 4950.566761168734, 'sol_10': 5035.6876056974925, 'sol_11': 5036.6678253511}
+
+======================================== SIMULATION 30 ====================================================
+
+Number of optimal solutions: 20
+True variants are: ['rplB_171', 'rplB_76', 'rplB_52', 'rplB_35', 'rplB_70', 'rplB_105']
+
+Predicted variants are: ['rplB_105', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76']
+
+True proportions are: {'rplB_70': 5.618134535860798, 'rplB_52': 16.628824040740472, 'rplB_76': 27.371320750229327, 'rplB_35': 5.4027479103836376, 'rplB_171': 18.90796437168259, 'rplB_105': 26.071008391103174}
+
+Predicted proportions are: {'rplB_70': 6.386123775657218, 'rplB_52': 18.821614911939303, 'rplB_76': 24.947957170431902, 'rplB_35': 5.8053552540599238, 'rplB_171': 18.811881188118839, 'rplB_105': 25.227067699792784}
+
+All solutions: 
+{'sol_8': ['rplB_105', 'rplB_158', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_9': ['rplB_127', 'rplB_151', 'rplB_167', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_2': ['rplB_106', 'rplB_127', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_3': ['rplB_102', 'rplB_127', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_0': ['rplB_105', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_1': ['rplB_105', 'rplB_127', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_6': ['rplB_105', 'rplB_127', 'rplB_167', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_7': ['rplB_106', 'rplB_127', 'rplB_167', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_4': ['rplB_127', 'rplB_151', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_5': ['rplB_127', 'rplB_171', 'rplB_27', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_18': ['rplB_127', 'rplB_151', 'rplB_158', 'rplB_167', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_19': ['rplB_127', 'rplB_158', 'rplB_167', 'rplB_171', 'rplB_27', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_14': ['rplB_105', 'rplB_158', 'rplB_167', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_15': ['rplB_105', 'rplB_127', 'rplB_158', 'rplB_167', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_16': ['rplB_127', 'rplB_158', 'rplB_171', 'rplB_27', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_17': ['rplB_106', 'rplB_127', 'rplB_158', 'rplB_167', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_10': ['rplB_105', 'rplB_127', 'rplB_158', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_11': ['rplB_106', 'rplB_127', 'rplB_158', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_12': ['rplB_127', 'rplB_151', 'rplB_158', 'rplB_171', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76'], 'sol_13': ['rplB_127', 'rplB_167', 'rplB_171', 'rplB_27', 'rplB_35', 'rplB_52', 'rplB_70', 'rplB_76']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 5429.6791875611907, 'sol_9': 5430.3779482294967, 'sol_2': 5379.2050426883543, 'sol_3': 5382.5073335785446, 'sol_0': 5357.6321433897892, 'sol_1': 5376.2384840911072, 'sol_6': 5421.7315886278466, 'sol_7': 5424.6981483149466, 'sol_4': 5384.8848656554255, 'sol_5': 5414.2083291392564, 'sol_18': 5483.2827386251665, 'sol_19': 5511.583297400467, 'sol_14': 5473.8814510703696, 'sol_15': 5474.6364014371384, 'sol_16': 5475.4022805832974, 'sol_17': 5477.6029606678831, 'sol_10': 5437.4324852078289, 'sol_11': 5440.3990433487215, 'sol_12': 5446.0788443552283, 'sol_13': 5458.6785340566084}
+
+======================================== SIMULATION 31 ====================================================
+
+Number of optimal solutions: 20
+True variants are: ['rplB_109', 'rplB_8', 'rplB_51', 'rplB_161', 'rplB_139']
+
+Predicted variants are: ['rplB_109', 'rplB_139', 'rplB_161', 'rplB_51', 'rplB_8']
+
+True proportions are: {'rplB_8': 7.724852322219434, 'rplB_139': 16.396878190614867, 'rplB_109': 27.85493507464722, 'rplB_51': 12.179679446592035, 'rplB_161': 35.84365496592645}
+
+Predicted proportions are: {'rplB_8': 10.465569316558721, 'rplB_139': 15.01307435871516, 'rplB_109': 26.749579011800691, 'rplB_51': 12.128212956489774, 'rplB_161': 35.643564356435661}
+
+All solutions: 
+{'sol_8': ['rplB_109', 'rplB_139', 'rplB_161', 'rplB_168', 'rplB_51', 'rplB_8'], 'sol_9': ['rplB_104', 'rplB_109', 'rplB_139', 'rplB_161', 'rplB_51', 'rplB_8'], 'sol_2': ['rplB_109', 'rplB_139', 'rplB_161', 'rplB_33', 'rplB_51', 'rplB_8'], 'sol_3': ['rplB_109', 'rplB_122', 'rplB_139', 'rplB_161', 'rplB_51', 'rplB_8'], 'sol_0': ['rplB_109', 'rplB_139', 'rplB_161', 'rplB_51', 'rplB_8'], 'sol_1': ['rplB_109', 'rplB_139', 'rplB_161', 'rplB_42', 'rplB_51', 'rplB_8'], 'sol_6': ['rplB_102', 'rplB_109', 'rplB_139', 'rplB_161', 'rplB_51', 'rplB_8'], 'sol_7': ['rplB_109', 'rplB_139', 'rplB_151', 'rplB_161', 'rplB_51', 'rplB_8'], 'sol_4': ['rplB_106', 'rplB_109', 'rplB_139', 'rplB_161', 'rplB_51', 'rplB_8'], 'sol_5': ['rplB_105', 'rplB_109', 'rplB_139', 'rplB_161', 'rplB_51', 'rplB_8'], 'sol_18': ['rplB_109', 'rplB_139', 'rplB_161', 'rplB_51', 'rplB_8', 'rplB_82'], 'sol_19': ['rplB_109', 'rplB_139', 'rplB_161', 'rplB_29', 'rplB_51', 'rplB_8'], 'sol_14': ['rplB_109', 'rplB_139', 'rplB_146', 'rplB_161', 'rplB_51', 'rplB_8'], 'sol_15': ['rplB_109', 'rplB_139', 'rplB_161', 'rplB_51', 'rplB_75', 'rplB_8'], 'sol_16': ['rplB_109', 'rplB_123', 'rplB_139', 'rplB_161', 'rplB_51', 'rplB_8'], 'sol_17': ['rplB_109', 'rplB_139', 'rplB_161', 'rplB_27', 'rplB_51', 'rplB_8'], 'sol_10': ['rplB_103', 'rplB_109', 'rplB_139', 'rplB_161', 'rplB_51', 'rplB_8'], 'sol_11': ['rplB_109', 'rplB_139', 'rplB_161', 'rplB_39', 'rplB_51', 'rplB_8'], 'sol_12': ['rplB_107', 'rplB_109', 'rplB_139', 'rplB_161', 'rplB_51', 'rplB_8'], 'sol_13': ['rplB_109', 'rplB_139', 'rplB_161', 'rplB_28', 'rplB_51', 'rplB_8']}
+
+Solutions negative log likelihood score: 
+{'sol_8': 5298.1027080952517, 'sol_9': 5301.8352685327245, 'sol_2': 5289.746924035574, 'sol_3': 5292.7784898693899, 'sol_0': 5233.1973006660728, 'sol_1': 5287.6704199523092, 'sol_6': 5295.9275901637584, 'sol_7': 5296.2631362867523, 'sol_4': 5295.5703494436393, 'sol_5': 5295.6050458571244, 'sol_18': 5324.6347349434172, 'sol_19': 5325.7369139506482, 'sol_14': 5312.6414022309727, 'sol_15': 5312.8245558068138, 'sol_16': 5316.976640695545, 'sol_17': 5322.0001785979894, 'sol_10': 5304.1869197391461, 'sol_11': 5304.6022798296572, 'sol_12': 5305.1911408004235, 'sol_13': 5305.6188583820385}
+
+======================================== SIMULATION 32 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['rplB_63', 'rplB_134', 'rplB_135', 'rplB_53', 'rplB_58']
+
+Predicted variants are: ['rplB_134', 'rplB_135', 'rplB_53', 'rplB_58', 'rplB_63']
+
+True proportions are: {'rplB_135': 20.822687562095123, 'rplB_134': 22.263414463553058, 'rplB_53': 43.17472152204278, 'rplB_63': 6.156312608973016, 'rplB_58': 7.582863843336016}
+
+Predicted proportions are: {'rplB_135': 21.285282155637713, 'rplB_134': 21.677317032068913, 'rplB_53': 26.738604392300726, 'rplB_63': 21.11667450606582, 'rplB_58': 9.1821219139268333}
+
+All solutions: 
+{'sol_0': ['rplB_134', 'rplB_135', 'rplB_53', 'rplB_58', 'rplB_63']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 5162.244796499901}
+
+======================================== SIMULATION 33 ====================================================
+
+Number of optimal solutions: 8
+True variants are: ['rplB_23', 'rplB_100', 'rplB_102', 'rplB_142']
+
+Predicted variants are: ['rplB_100', 'rplB_102', 'rplB_142', 'rplB_23']
+
+True proportions are: {'rplB_23': 16.618253007469868, 'rplB_142': 3.476068479110734, 'rplB_100': 78.35081160891912, 'rplB_102': 1.5548669045002819}
+
+Predicted proportions are: {'rplB_23': 16.878971691117496, 'rplB_142': 3.6388918716405549, 'rplB_100': 76.850279450469657, 'rplB_102': 2.6318569867722799}
+
+All solutions: 
+{'sol_2': ['rplB_100', 'rplB_102', 'rplB_140', 'rplB_142', 'rplB_143'], 'sol_3': ['rplB_100', 'rplB_102', 'rplB_142', 'rplB_143', 'rplB_81'], 'sol_0': ['rplB_100', 'rplB_102', 'rplB_142', 'rplB_23'], 'sol_1': ['rplB_100', 'rplB_102', 'rplB_142', 'rplB_143', 'rplB_23'], 'sol_6': ['rplB_100', 'rplB_102', 'rplB_142', 'rplB_143', 'rplB_90'], 'sol_7': ['rplB_100', 'rplB_102', 'rplB_119', 'rplB_142', 'rplB_143'], 'sol_4': ['rplB_100', 'rplB_102', 'rplB_142', 'rplB_143', 'rplB_37'], 'sol_5': ['rplB_100', 'rplB_102', 'rplB_142', 'rplB_143', 'rplB_24']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 5130.7115309938818, 'sol_3': 5131.0081966295138, 'sol_0': 5053.0954925821206, 'sol_1': 5129.8215354519843, 'sol_6': 5138.1281597630323, 'sol_7': 5139.6159118864152, 'sol_4': 5131.0125166827347, 'sol_5': 5135.161508576085}
+
+======================================== SIMULATION 34 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['rplB_127', 'rplB_55', 'rplB_101']
+
+Predicted variants are: ['rplB_101', 'rplB_127', 'rplB_55']
+
+True proportions are: {'rplB_55': 14.528076747789845, 'rplB_127': 67.70122528174595, 'rplB_101': 17.770697970464223}
+
+Predicted proportions are: {'rplB_55': 14.569536423841059, 'rplB_101': 17.86572768341982, 'rplB_127': 67.564735892739122}
+
+All solutions: 
+{'sol_0': ['rplB_101', 'rplB_127', 'rplB_55']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 4897.9805067562274}
+
+======================================== SIMULATION 35 ====================================================
+
+Number of optimal solutions: 4
+True variants are: ['rplB_164', 'rplB_7', 'rplB_126']
+
+Predicted variants are: ['rplB_126', 'rplB_164', 'rplB_7']
+
+True proportions are: {'rplB_126': 31.233265189342614, 'rplB_164': 40.252903897613265, 'rplB_7': 28.513830913044124}
+
+Predicted proportions are: {'rplB_7': 30.284343638153622, 'rplB_164': 37.168368428205966, 'rplB_126': 32.547287933640405}
+
+All solutions: 
+{'sol_2': ['rplB_11', 'rplB_126', 'rplB_164', 'rplB_7'], 'sol_3': ['rplB_11', 'rplB_126', 'rplB_163', 'rplB_164', 'rplB_7'], 'sol_0': ['rplB_126', 'rplB_164', 'rplB_7'], 'sol_1': ['rplB_126', 'rplB_163', 'rplB_164', 'rplB_7']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 5079.7894008314179, 'sol_3': 5134.2803352599358, 'sol_0': 4947.2161557840709, 'sol_1': 5035.4227282421216}
+
+======================================== SIMULATION 36 ====================================================
+
+Number of optimal solutions: 2
+True variants are: ['rplB_111', 'rplB_157', 'rplB_48', 'rplB_70', 'rplB_99', 'rplB_3']
+
+Predicted variants are: ['rplB_111', 'rplB_157', 'rplB_3', 'rplB_48', 'rplB_70', 'rplB_99']
+
+True proportions are: {'rplB_70': 20.590816302849923, 'rplB_157': 25.02934837673884, 'rplB_99': 13.898493797704486, 'rplB_48': 1.0169349881506207, 'rplB_3': 20.50901143670834, 'rplB_111': 18.955395097847784}
+
+Predicted proportions are: {'rplB_70': 19.417926623059998, 'rplB_157': 25.082508250825082, 'rplB_99': 14.511738591572026, 'rplB_48': 2.3959006587373124, 'rplB_3': 20.410476326351645, 'rplB_111': 18.181449549453941}
+
+All solutions: 
+{'sol_0': ['rplB_111', 'rplB_157', 'rplB_3', 'rplB_48', 'rplB_70', 'rplB_99'], 'sol_1': ['rplB_111', 'rplB_157', 'rplB_167', 'rplB_3', 'rplB_48', 'rplB_70', 'rplB_99']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 5330.7371006591175, 'sol_1': 5402.8612609884294}
+
+======================================== SIMULATION 37 ====================================================
+
+Number of optimal solutions: 8
+True variants are: ['rplB_108', 'rplB_110', 'rplB_152', 'rplB_147', 'rplB_171', 'rplB_81']
+
+Predicted variants are: ['rplB_108', 'rplB_110', 'rplB_147', 'rplB_152', 'rplB_171', 'rplB_81']
+
+True proportions are: {'rplB_152': 18.618729779388012, 'rplB_147': 14.172998301079515, 'rplB_108': 15.72050647396529, 'rplB_171': 20.450099187013343, 'rplB_81': 12.72359973745884, 'rplB_110': 18.314066521095}
+
+Predicted proportions are: {'rplB_152': 16.898055239175715, 'rplB_147': 16.761584069467155, 'rplB_108': 15.998182761321248, 'rplB_171': 20.462046204620474, 'rplB_81': 12.280169526405885, 'rplB_110': 17.599962199009539}
+
+All solutions: 
+{'sol_2': ['rplB_108', 'rplB_110', 'rplB_147', 'rplB_152', 'rplB_167', 'rplB_171', 'rplB_81'], 'sol_3': ['rplB_108', 'rplB_110', 'rplB_147', 'rplB_152', 'rplB_158', 'rplB_171', 'rplB_81'], 'sol_0': ['rplB_108', 'rplB_110', 'rplB_147', 'rplB_152', 'rplB_171', 'rplB_81'], 'sol_1': ['rplB_108', 'rplB_110', 'rplB_143', 'rplB_147', 'rplB_152', 'rplB_171', 'rplB_81'], 'sol_6': ['rplB_108', 'rplB_110', 'rplB_147', 'rplB_152', 'rplB_158', 'rplB_167', 'rplB_171', 'rplB_81'], 'sol_7': ['rplB_108', 'rplB_110', 'rplB_143', 'rplB_147', 'rplB_152', 'rplB_158', 'rplB_167', 'rplB_171', 'rplB_81'], 'sol_4': ['rplB_108', 'rplB_110', 'rplB_143', 'rplB_147', 'rplB_152', 'rplB_167', 'rplB_171', 'rplB_81'], 'sol_5': ['rplB_108', 'rplB_110', 'rplB_143', 'rplB_147', 'rplB_152', 'rplB_158', 'rplB_171', 'rplB_81']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 5290.6292047059414, 'sol_3': 5309.1204474313245, 'sol_0': 5237.9854345669646, 'sol_1': 5288.5417739523464, 'sol_6': 5350.9110839693194, 'sol_7': 5382.3482229033207, 'sol_4': 5330.3555055856978, 'sol_5': 5348.8237388796306}
+
+======================================== SIMULATION 38 ====================================================
+
+Number of optimal solutions: 4
+True variants are: ['rplB_110', 'rplB_118', 'rplB_100', 'rplB_69', 'rplB_86', 'rplB_128', 'rplB_112']
+
+Predicted variants are: ['rplB_100', 'rplB_110', 'rplB_112', 'rplB_118', 'rplB_128', 'rplB_69', 'rplB_86']
+
+True proportions are: {'rplB_86': 25.5224702527941, 'rplB_69': 31.937276072815703, 'rplB_118': 3.9469539149665085, 'rplB_128': 7.857541404716419, 'rplB_100': 14.641694417028974, 'rplB_112': 8.035706195685309, 'rplB_110': 8.058357741992971}
+
+Predicted proportions are: {'rplB_86': 25.116225644959091, 'rplB_69': 28.133865508248419, 'rplB_118': 7.1450008331199113, 'rplB_128': 8.1344044884585021, 'rplB_100': 14.252023752483469, 'rplB_112': 8.6438707674980453, 'rplB_110': 8.5746090052325723}
+
+All solutions: 
+{'sol_2': ['rplB_100', 'rplB_110', 'rplB_112', 'rplB_118', 'rplB_128', 'rplB_167', 'rplB_69', 'rplB_86'], 'sol_3': ['rplB_100', 'rplB_112', 'rplB_118', 'rplB_128', 'rplB_167', 'rplB_38', 'rplB_69', 'rplB_86'], 'sol_0': ['rplB_100', 'rplB_110', 'rplB_112', 'rplB_118', 'rplB_128', 'rplB_69', 'rplB_86'], 'sol_1': ['rplB_100', 'rplB_112', 'rplB_118', 'rplB_128', 'rplB_38', 'rplB_69', 'rplB_86']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 5421.3712212491218, 'sol_3': 5427.5391227191831, 'sol_0': 5367.5487689019583, 'sol_1': 5375.2122645149766}
+
+======================================== SIMULATION 39 ====================================================
+
+Number of optimal solutions: 1
+True variants are: ['rplB_38', 'rplB_167', 'rplB_66', 'rplB_21']
+
+Predicted variants are: ['rplB_167', 'rplB_21', 'rplB_38', 'rplB_66']
+
+True proportions are: {'rplB_66': 52.082657356419794, 'rplB_167': 10.988521287876566, 'rplB_21': 12.042746219103142, 'rplB_38': 24.886075136600496}
+
+Predicted proportions are: {'rplB_66': 32.599236159163183, 'rplB_167': 26.300063030851128, 'rplB_21': 12.009329344959895, 'rplB_38': 29.091371465025809}
+
+All solutions: 
+{'sol_0': ['rplB_167', 'rplB_21', 'rplB_38', 'rplB_66']}
+
+Solutions negative log likelihood score: 
+{'sol_0': 4978.615739509728}
+
+======================================== SIMULATION 40 ====================================================
+
+Number of optimal solutions: 6
+True variants are: ['rplB_117', 'rplB_152', 'rplB_122']
+
+Predicted variants are: ['rplB_117', 'rplB_122', 'rplB_152']
+
+True proportions are: {'rplB_117': 54.60708312083092, 'rplB_152': 7.6881833265634345, 'rplB_122': 37.704733552605646}
+
+Predicted proportions are: {'rplB_117': 54.304635761589402, 'rplB_122': 22.298318749318266, 'rplB_152': 23.397045489092342}
+
+All solutions: 
+{'sol_2': ['rplB_117', 'rplB_122', 'rplB_152', 'rplB_46'], 'sol_3': ['rplB_117', 'rplB_122', 'rplB_152', 'rplB_82'], 'sol_0': ['rplB_117', 'rplB_122', 'rplB_152'], 'sol_1': ['rplB_117', 'rplB_122', 'rplB_152', 'rplB_92'], 'sol_4': ['rplB_117', 'rplB_122', 'rplB_152', 'rplB_82', 'rplB_92'], 'sol_5': ['rplB_117', 'rplB_122', 'rplB_152', 'rplB_46', 'rplB_82']}
+
+Solutions negative log likelihood score: 
+{'sol_2': 4927.1222150334688, 'sol_3': 4940.1006836085735, 'sol_0': 4823.833976209974, 'sol_1': 4926.7115935944385, 'sol_4': 5009.759411543404, 'sol_5': 5013.1168275703894}
+
+======================================== rplB: SUMMARY STATISTICS ====================================================
+
+(1)Total Variation Distance:
+
+Total variation distances are: [52.277263144001637, 3.4347106178574398, 2.1170713453864121, 20.800028032712625, 0.096458909489697042, 0.021935954604650476, 8.3021765866836379, 6.4807942434135724, 20.273291606506088, 24.123120158822204, 9.2758825462568915, 2.0182274961560518, 5.1883016222712186, 34.30898779552578, 0.043717163509190193, 18.296751924708481, 4.2085831205441684, 22.267333460256665, 0.31089705185713035, 0.32744908851936394, 25.915272234973926, 5.1821905766611378, 1.2200181566635306, 5.0389041197097741, 20.240887455862278, 5.5791564102421614, 9.7154917307096973, 5.8504445482444769, 7.7760677338340329, 3.3633874546715505, 2.7407169943392846, 17.022214561226207, 1.5005321584494533, 0.13648938900681884, 3.0845354694072942, 2.0453703385404691, 2.8782090733507211, 4.5993258369478109, 19.516838071399867, 15.708862162528904] 
+
+The average of total variation distance is: 9.83219740865 
+
+The standard deviation of total variation distance is: 11.0661449505 
+
+(2)Total Variation Distance for variants which are predicted correctly:
+
+Total variation distances are: [3.4347106178574398, 2.1170713453864121, 0.096458909489697042, 0.021935954604650476, 8.3021765866836379, 6.4807942434135724, 24.123120158822204, 9.2758825462568915, 2.0182274961560518, 5.1883016222712186, 0.043717163509190193, 18.296751924708481, 4.2085831205441684, 0.31089705185713035, 0.32744908851936394, 5.1821905766611378, 1.2200181566635306, 5.0389041197097741, 20.240887455862278, 5.5791564102421614, 9.7154917307096973, 5.8504445482444769, 7.7760677338340329, 3.3633874546715505, 2.7407169943392846, 17.022214561226207, 1.5005321584494533, 0.13648938900681884, 3.0845354694072942, 2.0453703385404691, 2.8782090733507211, 4.5993258369478109, 19.516838071399867, 15.708862162528904] 
+
+The average of total variation distance is: 6.39546235506 
+
+The standard deviation of total variation distance is: 6.53834617159 
+
+(3) Precision: 
+
+Precision is: [0.5, 1.0, 1.0, 0.75, 1.0, 1.0, 1.0, 1.0, 0.75, 1.0, 1.0, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 1.0, 0.8, 1.0, 1.0, 0.8, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
+
+Average of precision is:  0.956666666667 
+
+Standard deviation of precision is:  0.110792599031 
+
+(4) Recall : 
+
+Recall is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
+
+Average of recall is:  0.995 
+
+Standard deviation of recall is:  0.031224989992 
+
+(5) Objective Value: 
+
+Predicted objective values are: [264.0, 306.0, 288.0, 276.0, 293.0, 263.0, 305.0, 268.0, 291.0, 304.0, 290.0, 287.0, 299.0, 270.0, 267.0, 302.0, 295.0, 300.0, 306.0, 273.0, 302.0, 270.0, 295.0, 302.0, 276.0, 261.0, 304.0, 271.0, 270.0, 308.0, 292.0, 287.0, 269.0, 264.0, 296.0, 294.0, 289.0, 293.0, 277.0, 267.0] 
+
+True objective values are: [265.0, 306.0, 288.0, 277.0, 293.0, 263.0, 305.0, 268.0, 292.0, 304.0, 290.0, 287.0, 299.0, 271.0, 267.0, 302.0, 295.0, 301.0, 306.0, 273.0, 303.0, 270.0, 295.0, 302.0, 276.0, 261.0, 304.0, 271.0, 270.0, 308.0, 292.0, 287.0, 269.0, 264.0, 296.0, 294.0, 289.0, 293.0, 277.0, 267.0] 
+
+The difference in objective values are: [-1.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+
+Average of difference in objective value is:  -0.15 
+
+Standard deviation of difference in objective value is:  0.357071421427 
+
+(6)Accuracy: 
+
+Total number of simulations:  40 
+
+Number of simulations which are predicted correctly: 34
+
+Percentage of simulations predicted correctly:  85.0 %
+
+(7) Likelihood Calibration: 
+
+Percentage by which the score of the solution having largest negative log likelihood in the union pool differ from the one with the minimum: 
+[3.5621946774806803, 1.9471378117974922, 0.33348010390849708, 0.0, 0.29128677645841067, 7.1374323644118913, 1.9448680813296846, 3.0514213845140667, 2.4051427508056831, 3.3025684489175271, 1.3400326144046044, 2.0691437519761515, 1.2934612060649835, 1.8330991232464171, 2.6324431995108761, 0.97899703015264217, 2.7716960624835982, nan, 1.2765295307721969, 6.2822450820278082, 1.736340824003886, 0.58355957605038689, 3.4467464000687231, 0.66881593491613867, 5.1984930455884886, 3.8273025151366316, 2.3473628547823022, 3.3128628133128406, 7.5021549987201928, 2.8734924289384387, 1.7683188301116999, 0.0, 1.7122260885689862, 0.0, 3.7812008528707106, 1.3529866314434111, 2.7560746424315106, 1.1176489753533629, 0.0, 3.9239089134061071]
+The mean of these percentages: 2.36827375195
+
