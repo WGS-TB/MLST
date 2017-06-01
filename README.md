@@ -25,6 +25,6 @@ bash borreliaPipeline.sh
 ## Instructions to run the simulation and to generate statistics, graphs
 1) The required scripts and files to run the simulation and to generate statistics, graphs are in the `simulation` folder.
 
-2) You only have to run `run_sim.py`. The script has few arguments which are optional: `python run_sim.py -i [number of simulations to run on each gene] -f [output folder name to store results]`. By default, -i has value 40 and -f has value "simulation_results". 
+2) You only have to run `run_sim.py`. The script has few arguments which are optional: `python run_sim.py -i [number of simulations to run on each gene] -f [output folder name to store results] -c [coverage]`. By default, -i has value 40, -f has value "simulation_results" and -c has value 30. 
 
-3) Run `python run_sim.py` to use default settings. If you would like to change the number of iterations on each gene or would like to output a different folder, an example would be this: `python run_sim.py -i 20 -f newSimulationResults`. 
+3) Run `python run_sim.py` to use default settings. If you would like to change the number of iterations on each gene, would like to output a different folder or simulate on different coverage, an example would be this: `python run_sim.py -i 20 -f newSimulationResults -c 100`. 

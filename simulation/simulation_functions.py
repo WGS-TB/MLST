@@ -270,7 +270,7 @@ def compute_likelihood(df):
     score = sum(neg_log_likelihood)
     return score
 
-def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage):
+def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage, proportion_method):
     ''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Defining some parameters ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ '''
     #Record true variants and their fractions for all simulations
     true_ratios_list = []
@@ -517,7 +517,10 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         #Construct dataframe of true variants and predicted variants
         true_DF = dataMatrix.loc[reads_cov,true_variants]
         predicted_DF = dataMatrix.loc[reads_cov,var_predicted]
-        prop = count_compute_proportions(predicted_DF)
+        if proportion_method == "count":
+            prop = count_compute_proportions(predicted_DF)
+        elif proportion_method == "bayes":
+            prop = compute_proportions(predicted_DF)
         pred_prop = create_dictionary(var_predicted, prop)
         val = totalVariationDist(pred_prop, true_prop)
         totalVarDist.append(val)
@@ -619,26 +622,26 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     #print("Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: {0}\n".format(minNegLogLike_hasTrue))
     
     plt.figure()
-    plt.hist(totalVarDist, bins=int(numOfIter/2), edgecolor='black', linewidth=1.2, color="pink")
+    plt.hist(totalVarDist, bins=np.arange(0,int(max(totalVarDist)) + 10)-0.5, edgecolor='black', linewidth=1.2, color="pink")
     plt.xlabel('Total Variation Distance in %')
     plt.ylabel('Frequency')
     #plt.show()
     plt.savefig("{0}{1}_totalVarDist".format(outputFolderPath, gene))
     
     plt.figure()
-    plt.hist(precision_list, bins=int(numOfIter/2), edgecolor='black', linewidth=1.2, color="pink")
+    plt.hist(precision_list, bins=np.linspace(0,1), edgecolor='black', linewidth=1.2, color="pink")
     plt.xlabel('Precision')
     plt.ylabel('Frequency')
     plt.savefig("{0}{1}_precision".format(outputFolderPath, gene))
     
     plt.figure()
-    plt.hist(recall_list, bins=int(numOfIter/2), edgecolor='black', linewidth=1.2, color="pink")
+    plt.hist(recall_list, bins=np.linspace(0,1), edgecolor='black', linewidth=1.2, color="pink")
     plt.xlabel('Recall')
     plt.ylabel('Frequency')
     plt.savefig("{0}{1}_recall".format(outputFolderPath, gene))
     
     plt.figure()
-    plt.hist(diff_obj_vals, bins=int(numOfIter/2), edgecolor='black', linewidth=1.2, color="pink")
+    plt.hist(diff_obj_vals, bins=np.arange(-12,12)-0.5, edgecolor='black', linewidth=1.2, color="pink")
     plt.xlabel('Difference in objective values: Predicted - True')
     plt.ylabel('Frequency')
     plt.savefig("{0}{1}_diffObjVals".format(outputFolderPath, gene))
