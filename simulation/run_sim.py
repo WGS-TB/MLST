@@ -17,7 +17,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--numOfIter", required = False, default = 40, type=int)
 ap.add_argument("-f", "--simulationResultFolder", required=False, default="simulation_results")
 ap.add_argument("-c", "--coverage", required=False, default=30,type=int)
-ap.add_argument("-p", "--proportionMethod", required=True)
+#ap.add_argument("-p", "--proportionMethod", required=True)
 args = vars(ap.parse_args())
 
 #Make directory for simulation results
@@ -53,7 +53,7 @@ for locus in genes:
         print("==== Removed previous .fa files ====")
     
     #Function to run simulation imported    
-    sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"], args["proportionMethod"])
+    sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"])
     sys.stdout = originalSTDOut
     
     os.chdir("..")
