@@ -167,58 +167,58 @@ def compute_likelihood(df):
     score = sum(neg_log_likelihood)
     return score
 
-ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--path", required = True, help = "Path to data table")
-ap.add_argument("-g", "--gene", required = True,  help="Name of gene")
-args = vars(ap.parse_args())
-
-path = args["path"]
-
-#generate matrix
-dataMatrixDF = generate_matrix(path)
-dataMatrixDF.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
-#predict variants
-pred_object_val,var_predicted,reads_cov, all_solutions, all_objective = varSolver.solver(dataMatrixDF)
-#print var_predicted
-#print all_solutions
-dataMatrix_pred = dataMatrixDF.loc[reads_cov,var_predicted]
-
-#write matrix to file
-dataMatrix_pred.to_csv(args["gene"]+'_predicted_matrix.csv', sep='\t')
-fig, ax = plt.subplots()
-dataMatrix_pred.hist(bins=np.histogram(dataMatrix_pred.values.ravel())[1],ax=ax)
-fig.savefig(args["gene"]+'_matrix_plots.png')
-
-#compute proportions
-prop = compute_proportions(dataMatrix_pred)
-pred_prop = create_dictionary(var_predicted, prop)
-
-#score list and proportions
-score_list = list()
-min_score = sys.maxint
-min_sol_list = list()
-#print("Total number of optimal solutions: {}".format(len(all_solutions)))
-
-for i in range(len(all_solutions)):
-#    print("Solution: {}".format(all_solutions[i]))
-#    print("Objective value: {}".format(all_objective[i]))
-#    print("Proportion: {}".format(compute_proportions(df.loc[reads_cov, all_solutions[i]])))
-    score = compute_likelihood(dataMatrixDF.loc[reads_cov, all_solutions[i]])
-    score_list.append(score)
+def getVarAndProp(gene, tablePath):
+    #generate matrix
+    dataMatrixDF = generate_matrix(tablePath)
+    dataMatrixDF.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
+    #predict variants
+    pred_object_val,var_predicted,reads_cov, all_solutions, all_objective = varSolver.solver(dataMatrixDF)
+    numOfOptSol = len(all_solutions)
+    #print var_predicted
+    #print all_solutions
+    dataMatrix_pred = dataMatrixDF.loc[reads_cov,var_predicted]
     
-    if score <= min_score:
-        min_score = score
+    #write matrix to file
+    dataMatrix_pred.to_csv(gene+'_predicted_matrix.csv', sep='\t')
+    fig, ax = plt.subplots()
+    dataMatrix_pred.hist(bins=np.histogram(dataMatrix_pred.values.ravel())[1],ax=ax)
+    fig.savefig(gene+'_matrix_plots.png')
     
-#    print("Negative log likelihood score:{}\n".format(score))
+    #compute proportions
+    prop = compute_proportions(dataMatrix_pred)
+    pred_prop = create_dictionary(var_predicted, prop)
     
-min_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if score_list[i] == min_score]
+    #score list and proportions
+    score_list = list()
+    min_score = sys.maxint
+    min_sol_list = list()
+    #print("Total number of optimal solutions: {}".format(len(all_solutions)))
     
-#print("**Summary**")
-#print("Negative log likelihood score list:{}".format(score_list))
-#print("Minimum negative log likelihood score: {}".format(min_score))
-#print("Solution(s) which have minimum negative log likelihood: {}".format(min_sol_list))
-
-#write proportions to file
-w = csv.writer(open(args["gene"]+'_proportions.csv', "w"))
-for key, val in pred_prop.items():
-    w.writerow([key, val])
+    for i in range(len(all_solutions)):
+        print("Solution: {}".format(all_solutions[i]))
+        print("Objective value: {}".format(all_objective[i]))
+        print("Proportion: {}".format(compute_proportions(dataMatrixDF.loc[reads_cov, all_solutions[i]])))
+        score = compute_likelihood(dataMatrixDF.loc[reads_cov, all_solutions[i]])
+        score_list.append(score)
+        
+        if score <= min_score:
+            min_score = score
+        
+    #    print("Negative log likelihood score:{}\n".format(score))
+        
+    min_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if score_list[i] == min_score]
+        
+    print("**Summary**")
+    print("Negative log likelihood score list:{}".format(score_list))
+    print("Minimum negative log likelihood score: {}".format(min_score))
+    print("Number of solutions having minimum negative log likelihood:{}".format(len(min_sol_list)))
+    print("Solution(s) which have minimum negative log likelihood: {}".format(min_sol_list))
+    
+    #write proportions to file
+    w = csv.writer(open(gene+'_proportions.csv', "w"))
+    for key, val in pred_prop.items():
+        w.writerow([key, val])
+        
+    plt.close('all')
+        
+    return numOfOptSol
