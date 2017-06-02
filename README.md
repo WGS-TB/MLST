@@ -17,7 +17,7 @@
 
 3) Once data are ready, run the following commands in the pipeline folder:
 ```
-bash borreliaPipeline.sh
+python borreliaPipeline.py
 ```
 
 4) After the script is done, two folders will be created i.e. variantsAndProp and strainsAndProp. The variantsAndProp folder contains the variants identified and their proportions for each sample. The strainsAndProp folder contains the strains identified and their proportions for each sample
