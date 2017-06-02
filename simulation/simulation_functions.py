@@ -664,7 +664,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     plt.xlabel('Total Variation Distance in % using Bayes\' method')
     plt.ylabel('Frequency')
     #plt.show()
-    plt.savefig("{0}{1}_totalVarDist_counting".format(outputFolderPath, gene))
+    plt.savefig("{0}{1}_totalVarDist_bayes".format(outputFolderPath, gene))
     
     plt.figure()
     plt.hist(precision_list, bins=np.linspace(0,1), edgecolor='black', linewidth=1.2, color="pink")
