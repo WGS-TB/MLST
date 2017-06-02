@@ -171,7 +171,7 @@ def count_compute_proportions(dataframe):
 Input: Dataframe with rows=reads, columns=variants
 Output: The proportions of variants (type list)
 '''
-def compute_proportions(dataframe):
+def bayes_compute_proportions(dataframe):
     #computes the proportion of a set of variants given a set of reads uing probabilistic methods
     prob_list = [] #a list to hold the probabilities
     for row in dataframe.itertuples(index=False):
@@ -270,19 +270,21 @@ def compute_likelihood(df):
     score = sum(neg_log_likelihood)
     return score
 
-def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage, proportion_method):
+def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage):
     ''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Defining some parameters ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ '''
     #Record true variants and their fractions for all simulations
     true_ratios_list = []
     true_variants_list = []
     #Statistics list to output
-    totalVarDist = []
+    totalVarDist_count = []
+    totalVarDist_bayes = []
     precision_list = []
     recall_list = []
     pred_object_vals = []
     true_Objective_vals = []
     diff_obj_vals = []
     likelihoodCalibration = []
+    numOfOptimalSol = list()
     #Some counts
     predictedCorrect_count = 0
     predCorrect_bool_list = []
@@ -400,6 +402,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         score_list = list()
         min_score = sys.maxint
         print("Number of optimal solutions: {}".format(len(all_solutions)))
+        numOfOptimalSol.append(len(all_solutions))
         
         #Compute negative log likelihood score for each solution
         for i in range(len(all_solutions)):
@@ -517,19 +520,25 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         #Construct dataframe of true variants and predicted variants
         true_DF = dataMatrix.loc[reads_cov,true_variants]
         predicted_DF = dataMatrix.loc[reads_cov,var_predicted]
-        if proportion_method == "count":
-            prop = count_compute_proportions(predicted_DF)
-        elif proportion_method == "bayes":
-            prop = compute_proportions(predicted_DF)
-        pred_prop = create_dictionary(var_predicted, prop)
-        val = totalVariationDist(pred_prop, true_prop)
-        totalVarDist.append(val)
-    
+        prop_count = count_compute_proportions(predicted_DF)
+        prop_bayes = bayes_compute_proportions(predicted_DF)
+#        if proportion_method == "count":
+#            prop = count_compute_proportions(predicted_DF)
+#        elif proportion_method == "bayes":
+#            prop = bayes_compute_proportions(predicted_DF)
+        pred_prop_count = create_dictionary(var_predicted, prop_count)
+        pred_prop_bayes = create_dictionary(var_predicted, prop_bayes)
+        val_count = totalVariationDist(pred_prop_count, true_prop)
+        val_bayes = totalVariationDist(pred_prop_bayes, true_prop)
+        totalVarDist_count.append(val_count)
+        totalVarDist_bayes.append(val_bayes)
+        
         #Print true and predicted variants
         print("True variants are: {}\n".format(true_variants))
         print("Predicted variants are: {}\n".format(var_predicted))
         print("True proportions are: {}\n".format(true_prop))
-        print("Predicted proportions are: {}\n".format(pred_prop))
+        print("Predicted proportions using Bayes method are: {}\n".format(pred_prop_bayes))
+        print("Predicted proportions using Counting method are: {}\n".format(pred_prop_count))
         
         #Print all solutions and their likelihood score
         print("All solutions: \n{}\n".format(sol_name_dict))
@@ -555,26 +564,43 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     '''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Here is the summary ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
     
     print "======================================== {0}: SUMMARY STATISTICS ====================================================\n".format(gene)
-    avg_totalVarDist = sum(totalVarDist)/len(totalVarDist)
-    true_avg_totalVarDist = sum(list(itertools.compress(totalVarDist, predCorrect_bool_list)))/sum(predCorrect_bool_list)
-    variance_totalVarDist = map(lambda x: (x - avg_totalVarDist)**2, totalVarDist)
-    true_variance_totalVarDist = map(lambda x:(x - true_avg_totalVarDist)**2, list(itertools.compress(totalVarDist, predCorrect_bool_list)))
-    variance_totalVarDist = sum(variance_totalVarDist)/len(variance_totalVarDist)
-    true_variance_totalVarDist = sum(true_variance_totalVarDist)/len(true_variance_totalVarDist)
-    std_totalVarDist = math.sqrt(variance_totalVarDist)
-    true_std_totalVarDist = math.sqrt(true_variance_totalVarDist)
+    avg_totalVarDist_bayes = sum(totalVarDist_bayes)/len(totalVarDist_bayes)
+    true_avg_totalVarDist_bayes = sum(list(itertools.compress(totalVarDist_bayes, predCorrect_bool_list)))/sum(predCorrect_bool_list)
+    variance_totalVarDist_bayes = map(lambda x: (x - avg_totalVarDist_bayes)**2, totalVarDist_bayes)
+    true_variance_totalVarDist_bayes = map(lambda x:(x - true_avg_totalVarDist_bayes)**2, list(itertools.compress(totalVarDist_bayes, predCorrect_bool_list)))
+    variance_totalVarDist_bayes = sum(variance_totalVarDist_bayes)/len(variance_totalVarDist_bayes)
+    true_variance_totalVarDist_bayes = sum(true_variance_totalVarDist_bayes)/len(true_variance_totalVarDist_bayes)
+    std_totalVarDist_bayes = math.sqrt(variance_totalVarDist_bayes)
+    true_std_totalVarDist_bayes = math.sqrt(true_variance_totalVarDist_bayes)
+    
+    avg_totalVarDist_count = sum(totalVarDist_count)/len(totalVarDist_count)
+    true_avg_totalVarDist_count = sum(list(itertools.compress(totalVarDist_count, predCorrect_bool_list)))/sum(predCorrect_bool_list)
+    variance_totalVarDist_count = map(lambda x: (x - avg_totalVarDist_count)**2, totalVarDist_count)
+    true_variance_totalVarDist_count = map(lambda x:(x - true_avg_totalVarDist_count)**2, list(itertools.compress(totalVarDist_count, predCorrect_bool_list)))
+    variance_totalVarDist_count = sum(variance_totalVarDist_count)/len(variance_totalVarDist_count)
+    true_variance_totalVarDist_count = sum(true_variance_totalVarDist_count)/len(true_variance_totalVarDist_count)
+    std_totalVarDist_count = math.sqrt(variance_totalVarDist_count)
+    true_std_totalVarDist_count = math.sqrt(true_variance_totalVarDist_count)
+    
     context=1
     print "({0})Total Variation Distance:\n".format(context)
-    print "Total variation distances are:",totalVarDist, "\n"
-    print "The average of total variation distance is:", avg_totalVarDist, "\n"
+    print "Counting Method ~ Total variation distances are:",totalVarDist_count, "\n"
+    print "Bayes' Method ~ Total variation distances are:",totalVarDist_bayes, "\n"
+    print "Counting Method ~ The average of total variation distance is:", avg_totalVarDist_count, "\n"
+    print "Bayes' Method ~ The average of total variation distance is:", avg_totalVarDist_bayes, "\n"
     #print "The variance of total variation distance is:", variance_totalVarDist, "\n"
-    print "The standard deviation of total variation distance is:",std_totalVarDist, "\n"
+    print "Counting Method ~ The standard deviation of total variation distance is:",std_totalVarDist_count, "\n"
+    print "Bayes' Method ~ The standard deviation of total variation distance is:",std_totalVarDist_bayes, "\n"
     context+=1
+    
     print "({0})Total Variation Distance for variants which are predicted correctly:\n".format(context)
-    print "Total variation distances are:",list(itertools.compress(totalVarDist, predCorrect_bool_list)), "\n"
-    print "The average of total variation distance is:", true_avg_totalVarDist, "\n"
+    print "Counting Method ~ Total variation distances are:",list(itertools.compress(totalVarDist_count, predCorrect_bool_list)), "\n"
+    print "Bayes' Method ~ Total variation distances are:",list(itertools.compress(totalVarDist_bayes, predCorrect_bool_list)), "\n"
+    print "Counting Method ~ The average of total variation distance is:", true_avg_totalVarDist_count, "\n"
+    print "Bayes' Method ~ The average of total variation distance is:", true_avg_totalVarDist_bayes, "\n"
     #print "The variance of total variation distance is:", variance_totalVarDist, "\n"
-    print "The standard deviation of total variation distance is:",true_std_totalVarDist, "\n"
+    print "Counting Method ~ The standard deviation of total variation distance is:",true_std_totalVarDist_count, "\n"
+    print "Bayes' Method ~ The standard deviation of total variation distance is:",true_std_totalVarDist_bayes, "\n"
     context+=1
     
     avg_prec = sum(precision_list)/len(precision_list)
@@ -609,6 +635,11 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     print 'Percentage of simulations predicted correctly: ', 100*predictedCorrect_count/iteration, "%\n"
     context+=1
     
+    print "({0})Optimal solutions: \n".format(context)
+    print("Number of optimal solutions: {0}\n".format(numOfOptimalSol))
+    print("Average number of optimal solutions: {0}\n".format(np.mean(numOfOptimalSol)))
+    context+=1
+    
     print "({0}) Likelihood Calibration: \n".format(context)
     print("Percentage by which the score of the solution having largest negative log likelihood in the union pool differ from the one with the minimum: \n{0}".format(likelihoodCalibration))
     print("The mean of these percentages: {0}\n".format(np.nanmean(likelihoodCalibration)))
@@ -622,11 +653,18 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     #print("Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: {0}\n".format(minNegLogLike_hasTrue))
     
     plt.figure()
-    plt.hist(totalVarDist, bins=np.arange(0,int(max(totalVarDist)) + 10)-0.5, edgecolor='black', linewidth=1.2, color="pink")
-    plt.xlabel('Total Variation Distance in %')
+    plt.hist(totalVarDist_count, bins=np.arange(0,int(max(totalVarDist_count)) + 10)-0.5, edgecolor='black', linewidth=1.2, color="pink")
+    plt.xlabel('Total Variation Distance in % using counting method')
     plt.ylabel('Frequency')
     #plt.show()
-    plt.savefig("{0}{1}_totalVarDist".format(outputFolderPath, gene))
+    plt.savefig("{0}{1}_totalVarDist_counting".format(outputFolderPath, gene))
+    
+    plt.figure()
+    plt.hist(totalVarDist_bayes, bins=np.arange(0,int(max(totalVarDist_bayes)) + 10)-0.5, edgecolor='black', linewidth=1.2, color="pink")
+    plt.xlabel('Total Variation Distance in % using Bayes\' method')
+    plt.ylabel('Frequency')
+    #plt.show()
+    plt.savefig("{0}{1}_totalVarDist_counting".format(outputFolderPath, gene))
     
     plt.figure()
     plt.hist(precision_list, bins=np.linspace(0,1), edgecolor='black', linewidth=1.2, color="pink")
