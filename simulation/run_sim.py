@@ -10,8 +10,43 @@ import os
 import sys
 import argparse
 import simulation_functions as sim
+import matplotlib.pyplot as plt
+import pandas as pd
 
-genes = os.listdir("sim_data")
+
+def construct_boxPlot(csv,type_of_data,name,coverage):
+    if type_of_data == 'Recall':
+        label = type_of_data
+        limit = [0,2]
+    elif  type_of_data == 'Precision':
+        label = type_of_data
+        limit = [0,2]
+    elif type_of_data == 'DiffObjVal':
+        label="Difference in Objective Value: Predicted - True"
+        limit = [-10, 10]
+    else:
+        label = 'Total Variation Distance'
+        limit = [-20,100]
+    #read in the dataframe
+    df = pd.read_csv(csv, sep='\t')
+    df.drop(df.columns[[0]], axis=1,inplace=True)
+    #create a plot object
+    plt.figure()
+    #plot the data
+    ax = df.plot(kind='box',xlim=[0,9],ylim=limit,title="{}X Simulation".format(coverage))
+    ax.set_xlabel('Loci')
+    ax.set_ylabel(label)
+    plt.xticks([1,2,3,4,5,6,7,8],['clpA','clpX','nifS','pepX','pyrG','recG','rplB','uvrA'])
+    plt.savefig(name)
+    plt.close('all')
+
+def writeToCsv(fileName, simulationFolderPath, outputFolderName, dataList):
+    dataDF = pd.DataFrame(dataList)
+    dataDF = dataDF.T
+    
+    dataDF.to_csv("{0}/{1}/{2}".format(simulationFolderPath, outputFolderName, fileName), sep='\t')
+    
+genes = sorted(os.listdir("sim_data"))
 originalPath=os.getcwd()
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--numOfIter", required = False, default = 40, type=int)
@@ -24,10 +59,17 @@ args = vars(ap.parse_args())
 directoriesHere = [d for d in os.listdir(".") if os.path.isdir(d)]
 if args["simulationResultFolder"] not in directoriesHere:
     os.mkdir(args["simulationResultFolder"])
-
+    
 #Run the simulation
 os.chdir("sim_data")
 originalSTDOut = sys.stdout
+
+#Output statistics as csv file
+precision_list = list()
+recall_list = list()
+diffObjVal_list = list()
+totalVarDist_list = list()
+
 for locus in genes:
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Simulating locus {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(locus))
     os.chdir(locus)
@@ -53,11 +95,26 @@ for locus in genes:
         print("==== Removed previous .fa files ====")
     
     #Function to run simulation imported    
-    sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"])
-    sys.stdout = originalSTDOut
+    precision, recall, diff_obj_vals, totalVarDist_count, totalVarDist_bayes = sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"])
+    precision_list.append(precision)
+    recall_list.append(recall)
+    diffObjVal_list.append(diff_obj_vals)
+    totalVarDist_list.append(totalVarDist_count)
     
+    sys.stdout = originalSTDOut
+
     os.chdir("..")
     print("")
+    
+#Write these statiscs as csv file and plot it
+writeToCsv("{0}X_precision.csv".format(args["coverage"]), originalPath, args["simulationResultFolder"], precision_list)
+construct_boxPlot("{0}/{1}/{2}X_precision.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "Precision", "{0}/{1}/{2}X_precision.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"] )
+writeToCsv("{0}X_recall.csv".format(args["coverage"]), originalPath, args["simulationResultFolder"], recall_list)
+construct_boxPlot("{0}/{1}/{2}X_recall.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "Recall", "{0}/{1}/{2}X_recall.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"] )
+writeToCsv("{0}X_diffObjVal.csv".format(args["coverage"]), originalPath, args["simulationResultFolder"], diffObjVal_list)
+construct_boxPlot("{0}/{1}/{2}X_diffObjVal.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "DiffObjVal", "{0}/{1}/{2}_diffObjValX.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"] )
+writeToCsv("{0}X_totalVarDist.csv".format(args["coverage"]), originalPath, args["simulationResultFolder"], totalVarDist_list)
+construct_boxPlot("{0}/{1}/{2}X_totalVarDist.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "TotalVarDist", "{0}/{1}/{2}X_totalVarDist.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"] )
 
 #Summarize the results for all genes
 os.chdir("{0}/{1}/".format(originalPath, args["simulationResultFolder"]))
