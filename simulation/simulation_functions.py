@@ -4,6 +4,7 @@ from collections import defaultdict
 from scipy.special import comb
 import pandas as pd
 import sh
+import csv
 import math
 import numpy as np
 import random
@@ -17,7 +18,6 @@ import linecache
 #Testing purposes and global variables
 NO_BINOM = False
 TEST_EMPTY_LIST = True
-UNION = True
 
 ''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Function Definitions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
 
@@ -247,7 +247,7 @@ Output: Negative log likelihood score of this solution
 def compute_likelihood(df):
     numVar = df.shape[1]
     likelihood_list = list()
-    max_mm = 3
+    max_mm = 6  #because now it is paired
     
     for row in df.itertuples(index=False):
         read = list(row)
@@ -640,10 +640,10 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     print("Average number of optimal solutions: {0}\n".format(np.mean(numOfOptimalSol)))
     context+=1
     
-    print "({0}) Likelihood Calibration: \n".format(context)
-    print("Percentage by which the score of the solution having largest negative log likelihood in the union pool differ from the one with the minimum: \n{0}".format(likelihoodCalibration))
-    print("The mean of these percentages: {0}\n".format(np.nanmean(likelihoodCalibration)))
-    context+=1
+#    print "({0}) Likelihood Calibration: \n".format(context)
+#    print("Percentage by which the score of the solution having largest negative log likelihood in the union pool differ from the one with the minimum: \n{0}".format(likelihoodCalibration))
+#    print("The mean of these percentages: {0}\n".format(np.nanmean(likelihoodCalibration)))
+#    context+=1
     
     #print "({0})Numbers related to likelihood approach: \n".format(context)
     #print 'Number of simulations where solution with minimum negative log likelihood is the true solution: ', minNegLogLike_correct, "\n"
@@ -652,37 +652,38 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     #print 'Number of simulations where solution with minimum negative log likelihood has minimum number of variants: ', minSizeOpt_count, "\n"
     #print("Number of simulations where solution with minimum negative log likelihood CONTAINS true variants: {0}\n".format(minNegLogLike_hasTrue))
     
-    plt.figure()
-    plt.hist(totalVarDist_count, bins=np.arange(0,int(max(totalVarDist_count)) + 10)-0.5, edgecolor='black', linewidth=1.2, color="pink")
-    plt.xlabel('Total Variation Distance in % using counting method')
-    plt.ylabel('Frequency')
-    #plt.show()
-    plt.savefig("{0}{1}_totalVarDist_counting".format(outputFolderPath, gene))
-    
-    plt.figure()
-    plt.hist(totalVarDist_bayes, bins=np.arange(0,int(max(totalVarDist_bayes)) + 10)-0.5, edgecolor='black', linewidth=1.2, color="pink")
-    plt.xlabel('Total Variation Distance in % using Bayes\' method')
-    plt.ylabel('Frequency')
-    #plt.show()
-    plt.savefig("{0}{1}_totalVarDist_bayes".format(outputFolderPath, gene))
-    
-    plt.figure()
-    plt.hist(precision_list, bins=np.linspace(0,1), edgecolor='black', linewidth=1.2, color="pink")
-    plt.xlabel('Precision')
-    plt.ylabel('Frequency')
-    plt.savefig("{0}{1}_precision".format(outputFolderPath, gene))
-    
-    plt.figure()
-    plt.hist(recall_list, bins=np.linspace(0,1), edgecolor='black', linewidth=1.2, color="pink")
-    plt.xlabel('Recall')
-    plt.ylabel('Frequency')
-    plt.savefig("{0}{1}_recall".format(outputFolderPath, gene))
-    
-    plt.figure()
-    plt.hist(diff_obj_vals, bins=np.arange(-12,12)-0.5, edgecolor='black', linewidth=1.2, color="pink")
-    plt.xlabel('Difference in objective values: Predicted - True')
-    plt.ylabel('Frequency')
-    plt.savefig("{0}{1}_diffObjVals".format(outputFolderPath, gene))
-    
-    plt.close('all')
+#    plt.figure()
+#    plt.hist(totalVarDist_count, bins=np.arange(0,int(max(totalVarDist_count)) + 10)-0.5, edgecolor='black', linewidth=1.2, color="pink")
+#    plt.xlabel('Total Variation Distance in % using counting method')
+#    plt.ylabel('Frequency')
+#    #plt.show()
+#    plt.savefig("{0}{1}_totalVarDist_counting".format(outputFolderPath, gene))
+#    
+#    plt.figure()
+#    plt.hist(totalVarDist_bayes, bins=np.arange(0,int(max(totalVarDist_bayes)) + 10)-0.5, edgecolor='black', linewidth=1.2, color="pink")
+#    plt.xlabel('Total Variation Distance in % using Bayes\' method')
+#    plt.ylabel('Frequency')
+#    #plt.show()
+#    plt.savefig("{0}{1}_totalVarDist_bayes".format(outputFolderPath, gene))
+#    
+#    plt.figure()
+#    plt.hist(precision_list, bins=np.linspace(0,1), edgecolor='black', linewidth=1.2, color="pink")
+#    plt.xlabel('Precision')
+#    plt.ylabel('Frequency')
+#    plt.savefig("{0}{1}_precision".format(outputFolderPath, gene))
+#    
+#    plt.figure()
+#    plt.hist(recall_list, bins=np.linspace(0,1), edgecolor='black', linewidth=1.2, color="pink")
+#    plt.xlabel('Recall')
+#    plt.ylabel('Frequency')
+#    plt.savefig("{0}{1}_recall".format(outputFolderPath, gene))
+#    
+#    plt.figure()
+#    plt.hist(diff_obj_vals, bins=np.arange(-12,12)-0.5, edgecolor='black', linewidth=1.2, color="pink")
+#    plt.xlabel('Difference in objective values: Predicted - True')
+#    plt.ylabel('Frequency')
+#    plt.savefig("{0}{1}_diffObjVals".format(outputFolderPath, gene))
+#    
+#    plt.close('all')
     sys.stdout.close()
+    return precision_list, recall_list, diff_obj_vals, totalVarDist_count, totalVarDist_bayes
