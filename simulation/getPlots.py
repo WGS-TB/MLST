@@ -30,7 +30,7 @@ def construct_boxPlot(csv,type_of_data,name,coverage):
     #create a plot object
     plt.figure()
     #plot the data
-    ax = df.plot(kind='box',xlim=[0,9],ylim=limit,title="{}X Simulation".format(coverage))
+    ax = df.plot(kind='box',xlim=[0,9],ylim=limit,title="{}X Simulation".format(coverage), grid=True)
     ax.set_xlabel('Loci')
     ax.set_ylabel(label)
     plt.xticks([1,2,3,4,5,6,7,8],['clpA','clpX','nifS','pepX','pyrG','recG','rplB','uvrA'])
