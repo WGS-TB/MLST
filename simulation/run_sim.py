@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-def construct_boxPlot(csv,type_of_data,name,coverage):
+def construct_boxPlot(csv,type_of_data,name,coverage, iteration):
     if type_of_data == 'Recall':
         label = type_of_data
         limit = [0,2]
@@ -33,7 +33,7 @@ def construct_boxPlot(csv,type_of_data,name,coverage):
     #create a plot object
     plt.figure()
     #plot the data
-    ax = df.plot(kind='box',xlim=[0,9],ylim=limit,title="{}X Simulation".format(coverage))
+    ax = df.plot(kind='box',xlim=[0,9],ylim=limit,title="{0}X Coverage Simulation: {1} simulations each gene".format(coverage, iteration), grid=True)
     ax.set_xlabel('Loci')
     ax.set_ylabel(label)
     plt.xticks([1,2,3,4,5,6,7,8],['clpA','clpX','nifS','pepX','pyrG','recG','rplB','uvrA'])
@@ -68,7 +68,8 @@ originalSTDOut = sys.stdout
 precision_list = list()
 recall_list = list()
 diffObjVal_list = list()
-totalVarDist_list = list()
+totalVarDist_count_list = list()
+totalVarDist_bayes_list = list()
 
 for locus in genes:
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Simulating locus {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(locus))
@@ -99,7 +100,8 @@ for locus in genes:
     precision_list.append(precision)
     recall_list.append(recall)
     diffObjVal_list.append(diff_obj_vals)
-    totalVarDist_list.append(totalVarDist_count)
+    totalVarDist_count_list.append(totalVarDist_count)
+    totalVarDist_bayes_list.append(totalVarDist_bayes)
     
     sys.stdout = originalSTDOut
 
@@ -108,13 +110,15 @@ for locus in genes:
     
 #Write these statiscs as csv file and plot it
 writeToCsv("{0}X_precision.csv".format(args["coverage"]), originalPath, args["simulationResultFolder"], precision_list)
-construct_boxPlot("{0}/{1}/{2}X_precision.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "Precision", "{0}/{1}/{2}X_precision.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"] )
+construct_boxPlot("{0}/{1}/{2}X_precision.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "Precision", "{0}/{1}/{2}X_precision.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"], args["numOfIter"] )
 writeToCsv("{0}X_recall.csv".format(args["coverage"]), originalPath, args["simulationResultFolder"], recall_list)
-construct_boxPlot("{0}/{1}/{2}X_recall.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "Recall", "{0}/{1}/{2}X_recall.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"] )
+construct_boxPlot("{0}/{1}/{2}X_recall.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "Recall", "{0}/{1}/{2}X_recall.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"], args["numOfIter"] )
 writeToCsv("{0}X_diffObjVal.csv".format(args["coverage"]), originalPath, args["simulationResultFolder"], diffObjVal_list)
-construct_boxPlot("{0}/{1}/{2}X_diffObjVal.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "DiffObjVal", "{0}/{1}/{2}_diffObjValX.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"] )
-writeToCsv("{0}X_totalVarDist.csv".format(args["coverage"]), originalPath, args["simulationResultFolder"], totalVarDist_list)
-construct_boxPlot("{0}/{1}/{2}X_totalVarDist.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "TotalVarDist", "{0}/{1}/{2}X_totalVarDist.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"] )
+construct_boxPlot("{0}/{1}/{2}X_diffObjVal.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "DiffObjVal", "{0}/{1}/{2}X_diffObjVal.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"], args["numOfIter"] )
+writeToCsv("{0}X_totalVarDist_count.csv".format(args["coverage"]), originalPath, args["simulationResultFolder"], totalVarDist_count_list)
+construct_boxPlot("{0}/{1}/{2}X_totalVarDist_count.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "TotalVarDist", "{0}/{1}/{2}X_totalVarDist_count.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"], args["numOfIter"] )
+writeToCsv("{0}X_totalVarDist_bayes.csv".format(args["coverage"]), originalPath, args["simulationResultFolder"], totalVarDist_bayes_list)
+construct_boxPlot("{0}/{1}/{2}X_totalVarDist_bayes.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "TotalVarDist", "{0}/{1}/{2}X_totalVarDist_bayes.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"], args["numOfIter"] )
 
 #Summarize the results for all genes
 os.chdir("{0}/{1}/".format(originalPath, args["simulationResultFolder"]))
