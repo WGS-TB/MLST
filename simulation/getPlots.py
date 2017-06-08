@@ -30,7 +30,7 @@ def construct_boxPlot(csv,type_of_data,name,coverage):
     #create a plot object
     plt.figure()
     #plot the data
-    ax = df.plot(kind='box',xlim=[0,9],ylim=limit,title="{}X Simulation".format(coverage), grid=True)
+    ax = df.plot(kind='box',xlim=[0,9],ylim=limit,title="{}X Coverage Simulation".format(coverage), grid=True)
     ax.set_xlabel('Loci')
     ax.set_ylabel(label)
     plt.xticks([1,2,3,4,5,6,7,8],['clpA','clpX','nifS','pepX','pyrG','recG','rplB','uvrA'])
@@ -50,8 +50,10 @@ csvfiles = [f for f in os.listdir("{0}/{1}".format(currentPath, args["simulation
 
 for csv in csvfiles:
     coverage = csv.split("_")[0][:-1]
-    if "totalVarDist" in csv:
-        construct_boxPlot(currentPath+"/"+args["simulationFolder"]+ "/"+csv, "TotalVarDist", "{0}/{1}X_totalVarDist.png".format(args["outputFolderPath"], int(coverage)), int(coverage))
+    if "totalVarDist_bayes" in csv:
+        construct_boxPlot(currentPath+"/"+args["simulationFolder"]+ "/"+csv, "TotalVarDist", "{0}/{1}X_totalVarDist_bayes.png".format(args["outputFolderPath"], int(coverage)), int(coverage))
+    elif "totalVarDist_count" in csv:
+        construct_boxPlot(currentPath+"/"+args["simulationFolder"]+ "/"+csv, "TotalVarDist", "{0}/{1}X_totalVarDist_count.png".format(args["outputFolderPath"], int(coverage)), int(coverage))
     elif "precision" in csv:
         construct_boxPlot(currentPath+"/"+args["simulationFolder"]+ "/"+csv, "Precision", "{0}/{1}X_precision.png".format(args["outputFolderPath"], int(coverage)), int(coverage))
     elif "recall" in csv:
