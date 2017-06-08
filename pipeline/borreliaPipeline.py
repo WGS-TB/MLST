@@ -10,6 +10,9 @@ import os
 import getVariantAndProp as gvp
 import getStrAndProp as gsp
 import numpy as np
+import itertools
+import pandas as pd
+import csv
 
 #currentpath = /pipeline/
 currentPath = os.getcwd()
@@ -17,8 +20,12 @@ data_path = currentPath +"/data/"
 lociDb_path = currentPath + "/loci_db/"
 ref_strains = currentPath + "/strain_ref.txt"
 loci = ["clpA", "clpX", "nifS", "pepX", "pyrG", "recG", "rplB", "uvrA"]
+reference = pd.read_csv(currentPath+"/strain_ref.txt",sep="\t",usecols=range(1,len(loci)+1))
+for name in loci:
+    reference["%s" %name] = name + "_" + reference["%s" %name].astype(str)
 
-samples = [i for i in os.listdir(data_path)]
+#samples = [i for i in os.listdir(data_path)]
+samples = ["SRR2034333"]
 
 if not os.path.exists("variantsAndProp"):
     os.mkdir("variantsAndProp")
@@ -26,8 +33,7 @@ if not os.path.exists("variantsAndProp"):
 #currentpath= /pipeline/variantsAndProp
 os.chdir("variantsAndProp")
 
-'''Predicting Variant and Proportions'''
-numOfOptSol_list = list()    
+''' $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$4 Predicting Variant and Proportions $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$''' 
 for samp in samples:
     if not os.path.exists(samp):
         os.mkdir(samp)
@@ -39,6 +45,8 @@ for samp in samples:
     print("============================= Now processing {} =================================".format(samp))
     print("===========================================================================================")
     
+    #Key=gene, value=dictionary which contains the information about multiple optimal solution
+    gene_solProp_dict = dict()
     for gene in loci:
         print("")
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~ Gene {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(gene))
@@ -72,20 +80,51 @@ for samp in samples:
         #Generate matrix, predict variants and their proportions
         print("..... Predicting variants and computing their proportions .....")
         print("")
-        numOfOptSol = gvp.getVarAndProp(gene,"{0}_{1}_reads.txt".format(samp, gene) )
-        numOfOptSol_list.append(numOfOptSol)
+        solutionsAndProp_dict = gvp.getVarAndProp(gene,"{0}_{1}_reads.txt".format(samp, gene) )
+        gene_solProp_dict[gene] = solutionsAndProp_dict
     
+    #Remove intermediate files
     filesRemove = [f for f in os.listdir(".") if (f.endswith(".ebwt") or f.endswith(".out"))]
-    
     for f in filesRemove:
         os.remove(f)
     
+    #Choose an optimal solution which maximizes number of existing strains, similar flavour as 2nd ILP
+    print(''' Picking a good set of variants among the multiple optimal solutions ''')
+    #gene_keys = [[0,1], [0,1,2],...] indices of solutions in each gene
+    gene_keys = [gene_solProp_dict[gene].keys() for gene in loci ]
+    #Combination of multiple optimal solutions across all genes
+    combinationsTuple = [comb for comb in itertools.product(*gene_keys)]
+    objValue_list = list()
+    for comb in combinationsTuple:
+        comb_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, comb)}
+        objval = gvp.maxExistingStr(samp, loci, comb_dict, reference)
+        objValue_list.append(objval)
+    
+    print("Objective Value: {}".format(objValue_list))
+    #Choose the combination which has the lowest objective value
+    minObjValIndex_list = np.argwhere(objValue_list == np.amin(objValue_list))
+    minObjValIndex_list = minObjValIndex_list.flatten().tolist()
+    if len(minObjValIndex_list) > 1:
+        print("You have more than 1 solution having same objective value")
+    
+    minObjValIndex = minObjValIndex_list[0]
+    comb_minObjVal = combinationsTuple[minObjValIndex]
+    comb_minObjVal_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, comb_minObjVal)}
+    
+    #Print and write to file
+    for gene in comb_minObjVal_dict.keys():
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Gene {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(gene))
+        print("Variants and proportions: \n{}".format(comb_minObjVal_dict[gene]))
+        #write proportions to file
+        with open(gene+'_proportions.csv', "wb") as writeFile:
+            writer = csv.writer(writeFile)
+            for (key, val) in (comb_minObjVal_dict[gene]).items():
+                writer.writerow([key, val])
     #currentpath=/pipeline/variantsAndProp
     os.chdir("..")
 
-print("Number of ILP needed to solve for 2nd stage: {}".format(np.prod(np.array(numOfOptSol_list))))
 
-'''Predict strains and their proportions'''
+''' $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Predict strains and their proportions $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'''
 #currentpath=/pipeline/
 os.chdir("..")
 if not os.path.exists("strainsAndProp"):

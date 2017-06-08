@@ -8,12 +8,11 @@ from collections import defaultdict
 from scipy.special import comb
 import pandas as pd
 import math
-import argparse
-import csv
 import variantILP as varSolver
-import matplotlib.pyplot as plt
 import numpy as np
-import sys
+import getStrAndProp as gsp
+import itertools
+import cplex
 
 NO_BINOM = False
 '''
@@ -105,29 +104,20 @@ Output: The proportions of variants (type list)
 '''
 def compute_proportions(dataframe):
     #computes the proportion of a set of variants given a set of reads uing probabilistic methods
-    prob_list = [] #a list to hold the probabilities
+    prob_list = [0.0]*dataframe.shape[1]
+    
     for row in dataframe.itertuples(index=False):
-        temp_list = list(row)
-        #compute the probability for each row in the matrix
-        for i in range(len(temp_list)):
-            if temp_list[i] >= 0:
-                temp_list[i] = compute_probability(152,int(temp_list[i]))
-            else:
-                temp_list[i] = 0
-        total = sum(temp_list)
-        #solve for k
-        #try except just in case when we encounter the weird issue where the decision variable for a predicted variant = 1 but was not output
-        try:
-            temp_list = [j*(1.0/total) for j in temp_list]
-        except ZeroDivisionError:
-            print(total)
-            print(temp_list)
-            
-        prob_list.append(temp_list)
-    col_sums = [sum(k) for k in zip(*prob_list)]
-    total_sum = sum(col_sums)
-    prop_list = [100.0*l*(1/total_sum) for l in col_sums]
-    return prop_list    
+        mmInfo = [i for i in list(row) if i>=0]
+        min_mm = min(mmInfo)
+        numOfVar_minMm = len([i for i in list(row) if i== min_mm])
+        
+        for i in range(len(list(row))):
+            if list(row)[i] == min_mm:
+                prob_list[i] += 1/numOfVar_minMm
+                
+    normalize_term = 1.0/(sum(prob_list))
+    prob_list = [100.0*normalize_term * i for i in prob_list]
+    return prob_list 
 
 #Create a dictionary given keys and values which are lists
 def create_dictionary(keys, vals):
@@ -173,52 +163,224 @@ def getVarAndProp(gene, tablePath):
     dataMatrixDF.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
     #predict variants
     pred_object_val,var_predicted,reads_cov, all_solutions, all_objective = varSolver.solver(dataMatrixDF)
-    numOfOptSol = len(all_solutions)
     #print var_predicted
     #print all_solutions
     dataMatrix_pred = dataMatrixDF.loc[reads_cov,var_predicted]
     
     #write matrix to file
-    dataMatrix_pred.to_csv(gene+'_predicted_matrix.csv', sep='\t')
-    fig, ax = plt.subplots()
-    dataMatrix_pred.hist(bins=np.histogram(dataMatrix_pred.values.ravel())[1],ax=ax)
-    fig.savefig(gene+'_matrix_plots.png')
+#    dataMatrix_pred.to_csv(gene+'_predicted_matrix.csv', sep='\t')
+#    fig, ax = plt.subplots()
+#    dataMatrix_pred.hist(bins=np.histogram(dataMatrix_pred.values.ravel())[1],ax=ax)
+#    fig.savefig(gene+'_matrix_plots.png')
     
     #compute proportions
-    prop = compute_proportions(dataMatrix_pred)
-    pred_prop = create_dictionary(var_predicted, prop)
-    
-    #score list and proportions
-    score_list = list()
-    min_score = sys.maxint
-    min_sol_list = list()
-    #print("Total number of optimal solutions: {}".format(len(all_solutions)))
-    
-    for i in range(len(all_solutions)):
-        print("Solution: {}".format(all_solutions[i]))
-        print("Objective value: {}".format(all_objective[i]))
-        print("Proportion: {}".format(compute_proportions(dataMatrixDF.loc[reads_cov, all_solutions[i]])))
-        score = compute_likelihood(dataMatrixDF.loc[reads_cov, all_solutions[i]])
-        score_list.append(score)
-        
-        if score <= min_score:
-            min_score = score
-        
-    #    print("Negative log likelihood score:{}\n".format(score))
-        
-    min_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if score_list[i] == min_score]
-        
-    print("**Summary**")
-    print("Negative log likelihood score list:{}".format(score_list))
-    print("Minimum negative log likelihood score: {}".format(min_score))
-    print("Number of solutions having minimum negative log likelihood:{}".format(len(min_sol_list)))
-    print("Solution(s) which have minimum negative log likelihood: {}".format(min_sol_list))
+    #solutionsAndProp_dict is a dictionary in which the keys are just indices and values are dictionaries, with variant as key and proportion as value
+    solutionsAndProp_dict = dict()
+    track=0
+    for sol in all_solutions:
+        dataMatrix_pred = dataMatrixDF.loc[reads_cov, sol]
+        prop = compute_proportions(dataMatrix_pred)
+        pred_prop = create_dictionary(sol, prop)
+        solutionsAndProp_dict[track] = pred_prop
+        track += 1
     
     #write proportions to file
-    w = csv.writer(open(gene+'_proportions.csv', "w"))
-    for key, val in pred_prop.items():
-        w.writerow([key, val])
+#    w = csv.writer(open(gene+'_proportions.csv', "w"))
+#    for key, val in pred_prop.items():
+#        w.writerow([key, val])
         
-    plt.close('all')
+#    plt.close('all')        
+    return solutionsAndProp_dict
+
+def maxExistingStr(sample, loci, gene_solProp_dict, reference):
+    genesDF = pd.DataFrame(columns=loci)
+    
+    for gene in loci:
+        genesDF[gene] = [gene_solProp_dict[gene]]
+    
+    data = dict()
+    data[sample] = genesDF
+    
+    ''' ============================================== Data handling ====================================================== '''
+    #paramaters
+    propFormat = 100    #proportion in percentage or fraction
+    #loci = ['clpA', 'clpX', 'nifS']
+    numLoci = len(loci)
+    
+    #read data for samples and reference
+    allSamples = data.keys()
         
-    return numOfOptSol
+    #Get proportions of variants at different locus for each sample
+    varAndProp = gsp.returnVarAndProportions(data)
+    
+    #Get the combinations at all loci across all samples
+    strainAndNumComb = gsp.returnCombinationsAndNumComb(data, numLoci, loci)
+    strains = strainAndNumComb[0]
+#    numOfComb = strainAndNumComb[1]
+    uniqueStrains = strains.drop_duplicates(loci)
+    uniqueStrains = (uniqueStrains[loci]).reset_index(drop=True)
+    uniqueStrains["ST"] = uniqueStrains.index.values + 1    #assign indices for strains or each unique combinations
+    strains = strains.merge(uniqueStrains, indicator=True, how="left")    #assign the index to the combinations(as strain data frame contains duplicated rows)
+    strains = strains.drop("_merge",1)
+    
+    #For each variants, get a mapping of which strains it maps to
+    varSampToST = gsp.mapVarAndSampleToStrain(strains, loci, allSamples)
+    
+    #weights and decision variables for proportion of strains. weight=0 if the strain is in reference, otherwise =1. Notice there will be duplications of strain types
+    #here because for proportions, we consider sample by sample rather than unique strain types
+    proportionWeightDecVarDF = strains.merge(reference, indicator=True, how="left")
+    proportionWeightDecVarDF["_merge"] = proportionWeightDecVarDF["_merge"].where(proportionWeightDecVarDF['_merge'] == "left_only", 0)
+    proportionWeightDecVarDF["_merge"] = proportionWeightDecVarDF["_merge"].where(proportionWeightDecVarDF['_merge'] == 0, 1)
+    proportionWeightDecVarDF = proportionWeightDecVarDF.rename(columns = {"_merge":"Weights"})
+    
+    #Add proportion decision variable names
+    proportionWeightDecVarDF["Decision Variable"] = np.nan
+    
+    for samp in allSamples:
+        thisSample = (proportionWeightDecVarDF.loc[proportionWeightDecVarDF['Sample'] == samp])['Sample']
+        propNameTemp = ["pi_%s_%d" %t for t in itertools.izip(thisSample, range(1,1+thisSample.shape[0]))]
+        #shorter name as CPLEX can't hold name with >16 char. Use last 3 digits of sample name to name decision variables i.e. SRR2034333 -> use 333
+        propNameTemp = [ele.replace("pi_{}".format(samp), "pi_s{}".format(samp[-3:])) for ele in propNameTemp]   
+        proportionWeightDecVarDF.loc[proportionWeightDecVarDF['Sample'] == samp, 'Decision Variable'] = propNameTemp
+        
+    #weights and decision variables for unique strain types, weight=0 if strain is in reference, otherwise=1. no duplications
+    strainWeightDecVarDF = proportionWeightDecVarDF.drop_duplicates(loci)
+    retainCol = loci + ['Weights', 'ST']
+    strainWeightDecVarDF = strainWeightDecVarDF[retainCol].reset_index(drop=True)
+    strainWeightDecVarDF["Decision Variable"] = ["a{}".format(i) for i in range(1, strainWeightDecVarDF.shape[0] + 1)]
+    
+    '''==================================== Forming ILP here ================================================'''
+    #Form a CPLEX model
+    model = cplex.Cplex()
+    #minimize problem
+    model.objective.set_sense(model.objective.sense.minimize)
+    #add the decision variables for unqiue strain types
+    model.variables.add(obj=strainWeightDecVarDF['Weights'].values.tolist(), names=strainWeightDecVarDF['Decision Variable'], types = [model.variables.type.binary]* len(strainWeightDecVarDF['Weights'].values.tolist()))
+    #add proportions decision variables
+    model.variables.add(obj=proportionWeightDecVarDF['Weights'].values.tolist(),ub=[propFormat]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))
+    
+    #add linear constraints such that for each sample, the sum of the proportions of its variants combination = 1
+    propVarSumTo1 = list()
+    
+    for samp in allSamples:
+        temp = (proportionWeightDecVarDF.loc[proportionWeightDecVarDF['Sample'] == samp])['Decision Variable'].tolist()        
+        propVarSumTo1.append([temp, [1]* len(temp)])
+        
+    model.linear_constraints.add(lin_expr=propVarSumTo1, rhs=[propFormat]*len(propVarSumTo1), senses=["E"]*len(propVarSumTo1), names=["c{0}".format(i+1) for i in range(len(propVarSumTo1))])
+    
+    #add linear constraints such that for each sample, sum of pi_ik \dot V_ik (proportion \dot matrix representation) across all combinations = Proportion matrix
+    piDotComb = list()
+    propConstrRHS = list()
+    for locusName in varSampToST:
+        temp=list()
+        varSampToSTDict = varSampToST[locusName][0]
+        for (var, sample) in varSampToSTDict:
+            strainTypes = varSampToSTDict[(var, sample)]
+            propDecVar = proportionWeightDecVarDF[(proportionWeightDecVarDF["ST"].isin(strainTypes)) & (proportionWeightDecVarDF["Sample"] == "{}".format(sample))]["Decision Variable"]
+            propConstrRHS.append(  float( ( (data["{}".format(sample)])[locusName][0] )[var] )  )
+            piDotComb.append([propDecVar.tolist(), [1]*len(propDecVar)])
+           
+    model.linear_constraints.add(lin_expr=piDotComb, rhs=propConstrRHS, senses=["E"]*len(propConstrRHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(propConstrRHS))])                                                                         
+    
+    #add linear constraints such that each decision variable a_i must be at least pi_jk in which pi_jk is the proportion of V_jk and V_jk=a_i
+    #By this, if we use any of the pi, we force a_i to be 1
+    indicLargerPropDF = pd.DataFrame(columns=["ST","Indicator"])
+    indicLargerPropDF["ST"] = strainWeightDecVarDF["ST"]
+    indicLargerPropDF["Indicator"] = strainWeightDecVarDF["Decision Variable"]
+    indicLargerPropDF = (indicLargerPropDF.merge(proportionWeightDecVarDF, indicator=True, how="left", on="ST"))[["ST","Indicator","Decision Variable"]]
+    indicLargerPropDF.rename(columns={"Decision Variable": "Proportion Variable"}, inplace=True)
+    indicMinusProp = list()
+    for i,pi in itertools.izip(indicLargerPropDF["Indicator"].tolist(), indicLargerPropDF["Proportion Variable"].tolist()):
+        indicMinusProp.append([[i, pi],[propFormat, -1]])  
+    
+    model.linear_constraints.add(lin_expr=indicMinusProp, rhs=[0]*len(indicMinusProp), senses=["G"]*len(indicMinusProp), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusProp))] )
+    
+    #Also, add linear constraints such that a_i - average of pi_jk <= 0.999. Otherwise will have case that a_i=1 and for all pi_jk, pi_jk=0
+    indicMinusAvgPropLess1_DF = indicLargerPropDF.groupby("Indicator")["Proportion Variable"].apply(list).reset_index()
+    indic = indicMinusAvgPropLess1_DF["Indicator"].tolist()
+    pV = indicMinusAvgPropLess1_DF["Proportion Variable"].tolist()
+    indicMinusAvgPropLess1_LHS = list()
+    
+    for i in range(len(indic)):
+        a_i = indic[i]
+        pi_i = pV[i]
+        temp = list()
+        size = len(pi_i)
+        temp.append(a_i)
+        coef = list()
+        coef.append(propFormat)
+        
+        for j in range(size):
+            temp.append(pi_i[j])
+            coef.append(-1.0/size)
+            
+        indicMinusAvgPropLess1_LHS.append([temp, coef])
+    
+    tolerance = 0.01     #how much tolerance we set for the upper bound    
+    model.linear_constraints.add(lin_expr=indicMinusAvgPropLess1_LHS, rhs=[propFormat - tolerance]*len(indicMinusAvgPropLess1_LHS), senses=["L"]*len(indicMinusAvgPropLess1_LHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusAvgPropLess1_LHS))])
+    model.linear_constraints.add(lin_expr=indicMinusAvgPropLess1_LHS, rhs=[0]*len(indicMinusAvgPropLess1_LHS), senses=["G"]*len(indicMinusAvgPropLess1_LHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusAvgPropLess1_LHS))])
+    
+    #add error variables and linear constraints related to error terms
+    #create error variable names
+    varAndProp["Decision Variable"] = ["d_s{}_".format(samp[-3:]) for samp in varAndProp["Sample"].tolist() ]
+    varAndProp["Decision Variable"] = varAndProp["Decision Variable"] + varAndProp["Variant"]
+              
+    #add error variable
+    #model.variables.add(lb=(-1*varAndProp["Proportion"]).tolist(), ub=(1-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
+    model.variables.add(obj=[1]*varAndProp.shape[0], lb=(-1*varAndProp["Proportion"]).tolist(), ub=(propFormat-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
+    
+    #add the constraints whereby for each sample, at each locus, the sum of the error of all variants=0
+    errorSumTo0 = list()
+    for samp, loc in list(set(itertools.izip(varAndProp["Sample"].tolist(), varAndProp["Locus"].tolist()))):
+        temp = (varAndProp[(varAndProp["Sample"] == samp) & (varAndProp["Locus"] == loc)])["Decision Variable"].tolist()
+        errorSumTo0.append([temp, [1]*len(temp)])
+        
+    model.linear_constraints.add(lin_expr=errorSumTo0, rhs=[0]*len(errorSumTo0), senses=["E"]*len(errorSumTo0), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(errorSumTo0))])
+    
+    #add the constraints which bound the error terms
+    errLessSumMinProp = list()
+    errLessSumMinPropRHS = list()
+    errLessPropMinSum = list()
+    errLessPropMinSumRHS = list()
+    
+    for index, row in varAndProp.iterrows():
+        samp = row["Sample"]
+        var = row["Variant"]
+        loc = row["Locus"]
+        
+        err = row["Decision Variable"]
+        pi = proportionWeightDecVarDF[( proportionWeightDecVarDF["Sample"]  == samp ) & (proportionWeightDecVarDF[loc] == var )]["Decision Variable"].tolist()
+        prop = row["Proportion"]
+        
+        errLessSumMinProp.append( [[err] + pi, [i for i in itertools.chain([1],[-1]*len(pi))]] )
+        errLessSumMinPropRHS.append(-1*prop)
+        
+        errLessPropMinSum.append( [[err] + pi, [i for i in itertools.chain([1],[1]*len(pi))]] )
+        errLessPropMinSumRHS.append(prop)
+    
+    model.linear_constraints.add(lin_expr=errLessSumMinProp, rhs=errLessSumMinPropRHS, senses=["L"]*len(errLessSumMinProp), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(errLessSumMinProp))])  
+    model.linear_constraints.add(lin_expr=errLessPropMinSum, rhs=errLessPropMinSumRHS, senses=["L"]*len(errLessPropMinSum), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(errLessPropMinSum))])
+    
+    #Add a known optimal objective value as constraint
+    #model.linear_constraints.add(lin_expr=[ [model.variables.get_names(), [1]*len(model.variables.get_names())] ], rhs=[10], senses=["L"])
+    
+    #Export some info for MATLAB use
+    #writeInfoToCsv()
+    
+    ''' ================================== Solve ILP ========================================== '''
+    #model.write("borreliaLP.lp")
+    model.set_results_stream(None)
+    model.solve()
+    
+    #options for searching more optimal solutions
+    #model.parameters.mip.pool.capacity.set(10)
+#    model.parameters.mip.pool.intensity.set(4)
+    #model.parameters.mip.limits.populate.set(2100000000)
+#    model.parameters.mip.pool.absgap.set(0)
+#    model.parameters.mip.pool.replace.set(1)
+#    model.populate_solution_pool()
+    
+    objvalue = model.solution.get_objective_value()
+    return objvalue
+    
+    
