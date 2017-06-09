@@ -157,6 +157,7 @@ def compute_likelihood(df):
     score = sum(neg_log_likelihood)
     return score
 
+#Only return solutions with minimum number of variants
 def getVarAndProp(gene, tablePath):
     #generate matrix
     dataMatrixDF = generate_matrix(tablePath)
@@ -166,6 +167,7 @@ def getVarAndProp(gene, tablePath):
     #print var_predicted
     #print all_solutions
     dataMatrix_pred = dataMatrixDF.loc[reads_cov,var_predicted]
+    minVar_solutions = [sol for sol in all_solutions if len(sol) == min(map(len,all_solutions))]
     
     #write matrix to file
 #    dataMatrix_pred.to_csv(gene+'_predicted_matrix.csv', sep='\t')
@@ -177,7 +179,7 @@ def getVarAndProp(gene, tablePath):
     #solutionsAndProp_dict is a dictionary in which the keys are just indices and values are dictionaries, with variant as key and proportion as value
     solutionsAndProp_dict = dict()
     track=0
-    for sol in all_solutions:
+    for sol in minVar_solutions:
         dataMatrix_pred = dataMatrixDF.loc[reads_cov, sol]
         prop = compute_proportions(dataMatrix_pred)
         pred_prop = create_dictionary(sol, prop)
@@ -369,7 +371,7 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
     
     ''' ================================== Solve ILP ========================================== '''
     #model.write("borreliaLP.lp")
-    model.set_results_stream(None)
+#    model.set_results_stream(None)
     model.solve()
     
     #options for searching more optimal solutions
