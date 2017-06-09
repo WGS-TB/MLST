@@ -24,8 +24,8 @@ reference = pd.read_csv(currentPath+"/strain_ref.txt",sep="\t",usecols=range(1,l
 for name in loci:
     reference["%s" %name] = name + "_" + reference["%s" %name].astype(str)
 
-#samples = [i for i in os.listdir(data_path)]
-samples = ["SRR2034333"]
+samples = [i for i in os.listdir(data_path)]
+#samples = ["SRR2034333"]
 
 if not os.path.exists("variantsAndProp"):
     os.mkdir("variantsAndProp")
@@ -95,10 +95,13 @@ for samp in samples:
     #Combination of multiple optimal solutions across all genes
     combinationsTuple = [comb for comb in itertools.product(*gene_keys)]
     objValue_list = list()
+    track = 0
     for comb in combinationsTuple:
+        print("xxxxxxxxxxxxxxxxx Combination : {} xxxxxxxxxxxxxxxxxxxxxxxxxxxx".format(track))
         comb_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, comb)}
         objval = gvp.maxExistingStr(samp, loci, comb_dict, reference)
         objValue_list.append(objval)
+        track += 1
     
     print("Objective Value: {}".format(objValue_list))
     #Choose the combination which has the lowest objective value
