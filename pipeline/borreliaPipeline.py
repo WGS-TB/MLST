@@ -13,6 +13,9 @@ import numpy as np
 import itertools
 import pandas as pd
 import csv
+import time
+
+start_time = time.time()
 
 #currentpath = /pipeline/
 currentPath = os.getcwd()
@@ -25,19 +28,12 @@ for name in loci:
     reference["%s" %name] = name + "_" + reference["%s" %name].astype(str)
 
 samples = [i for i in os.listdir(data_path)]
-#samples = ["SRR2034333"]
-
-if not os.path.exists("variantsAndProp"):
-    os.mkdir("variantsAndProp")
 
 #currentpath= /pipeline/variantsAndProp
 os.chdir("variantsAndProp")
 
 ''' $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$4 Predicting Variant and Proportions $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$''' 
 for samp in samples:
-    if not os.path.exists(samp):
-        os.mkdir(samp)
-    
     #currentpath=/pipeline/variantsAndProp/samp
     os.chdir(samp)
     print("")
@@ -51,42 +47,12 @@ for samp in samples:
         print("")
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~ Gene {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(gene))
         print("")
-        #building index for gene
-        buildIndexCmd = "bowtie-build {0}{1}.fas {1}_bowtie >/dev/null".format(lociDb_path, gene)
-        os.system(buildIndexCmd)
-        print("..... Done building index .....")
-        
-        #map sample to locus
-        print("..... Mapping sample reads to variants .....")
-        print("")
-        bowtieMapCmd = "bowtie -a -v 3 -p 8 {0}_bowtie -1 {1}{2}_1.fastq -2 {1}{2}_2.fastq {2}_{0}.out >/dev/null".format(gene, data_path+samp+"/", samp)
-        os.system(bowtieMapCmd)
-        
-        #create reads table
-        print("..... Summarizing Bowtie mapping information into reads table .....")
-        print("")
-        readDotOutFile = open("{0}_{1}.out".format(samp, gene))
-        writefile = open("{0}_{1}_reads.txt".format(samp, gene), "w")
-        for line in readDotOutFile:
-            fields = line.strip("\t").split()
-            if len(fields) < 10:
-                mm_info = ""
-            else:
-                mm_info = fields[9]
-            writefile.write(fields[0] + "\t" + fields[4] + "\t" + mm_info + "\n")
-        readDotOutFile.close()
-        writefile.close()
         
         #Generate matrix, predict variants and their proportions
         print("..... Predicting variants and computing their proportions .....")
         print("")
         solutionsAndProp_dict = gvp.getVarAndProp(gene,"{0}_{1}_reads.txt".format(samp, gene) )
         gene_solProp_dict[gene] = solutionsAndProp_dict
-    
-    #Remove intermediate files
-    filesRemove = [f for f in os.listdir(".") if (f.endswith(".ebwt") or f.endswith(".out"))]
-    for f in filesRemove:
-        os.remove(f)
     
     #Choose an optimal solution which maximizes number of existing strains, similar flavour as 2nd ILP
     print(''' Picking a good set of variants among the multiple optimal solutions ''')
@@ -142,4 +108,5 @@ print("")
 print("Script done.")
 print("Created folder variantsAndProp which contains variants identified and their proportions for each sample")
 print("Created folder strainsAndProp which contains strains and their proportions for each sample")
+print("Time taken : {} hr(s)".format((time.time() - start_time)/3600))
     
