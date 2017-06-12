@@ -5,7 +5,7 @@ It outputs identified variants at that gene and their proportions.
 '''
 from __future__ import division
 from collections import defaultdict
-from scipy.special import comb
+from scipy.misc import comb
 import pandas as pd
 import math
 import variantILP as varSolver
@@ -231,8 +231,8 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
     #weights and decision variables for proportion of strains. weight=0 if the strain is in reference, otherwise =1. Notice there will be duplications of strain types
     #here because for proportions, we consider sample by sample rather than unique strain types
     proportionWeightDecVarDF = strains.merge(reference, indicator=True, how="left")
-    proportionWeightDecVarDF["_merge"] = proportionWeightDecVarDF["_merge"].where(proportionWeightDecVarDF['_merge'] == "left_only", 0)
-    proportionWeightDecVarDF["_merge"] = proportionWeightDecVarDF["_merge"].where(proportionWeightDecVarDF['_merge'] == 0, 1)
+    proportionWeightDecVarDF["_merge"].replace(to_replace="both", value=0, inplace=True)
+    proportionWeightDecVarDF["_merge"].replace(to_replace="left_only", value=1, inplace=True)
     proportionWeightDecVarDF = proportionWeightDecVarDF.rename(columns = {"_merge":"Weights"})
     
     #Add proportion decision variable names
