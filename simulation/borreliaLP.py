@@ -541,7 +541,7 @@ conclusion["Decision Variable"] = varNames
 conclusion["Value"] = varValues
 strainInfo = conclusion.merge(strainWeightDecVarDF[strainWeightDecVarDF["Decision Variable"].isin(varNames)])
 strainInfo["New/Existing"] = ["Existing" if w==0 else "New" for w in strainInfo["Weights"].tolist()]
-strainsNeeded = (strainInfo[strainInfo["Value"] == 1][loci + ["ST", "New/Existing"]])
+strainsNeeded = (strainInfo[strainInfo["Value"] == >0][loci + ["ST", "New/Existing"]])
 
 #output indices of all strains (New/Existing)
 allStr = strainWeightDecVarDF[["ST", "Weights"] + loci]
