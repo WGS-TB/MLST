@@ -514,19 +514,19 @@ def strainSolver(dataPath, refStrains, outputPath, loci):
     
     ''' ================================== Solve ILP ========================================== '''
     #model.write("borreliaLP.lp")
-    #model.solve()
+    model.solve()
     
     #options for searching more optimal solutions
     #model.parameters.mip.pool.capacity.set(10)
-    model.parameters.mip.pool.intensity.set(0)
+#    model.parameters.mip.pool.intensity.set(0)
     #model.parameters.mip.limits.populate.set(2100000000)
-    model.parameters.mip.pool.absgap.set(0)
-    model.parameters.mip.pool.replace.set(1)
-    model.populate_solution_pool()
+#    model.parameters.mip.pool.absgap.set(0)
+#    model.parameters.mip.pool.replace.set(1)
+#    model.populate_solution_pool()
     
-    objvalue = model.solution.pool.get_objective_value(0)
+    objvalue = model.solution.get_objective_value()
     varNames = model.variables.get_names()
-    varValues = model.solution.pool.get_values(0,varNames)
+    varValues = model.solution.get_values(varNames)
     conclusion = pd.DataFrame(columns=["Decision Variable", "Value"])
     conclusion["Decision Variable"] = varNames
     conclusion["Value"] = varValues
@@ -542,7 +542,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci):
     
     for samp in allSamples:
         output = proportionWeightDecVarDF[proportionWeightDecVarDF["Sample"] == samp].merge(strainsNeeded).drop(["Weights", "Sample"],1)
-        output["Proportion"] = model.solution.pool.get_values(0, output["Decision Variable"].tolist())
+        output["Proportion"] = model.solution.get_values(output["Decision Variable"].tolist())
         output.drop("Decision Variable", axis=1, inplace=True)
         output = output[["ST", "New/Existing"]+loci+["Proportion"]]
         output.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, samp))
