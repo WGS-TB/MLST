@@ -270,6 +270,38 @@ def compute_likelihood(df):
     score = sum(neg_log_likelihood)
     return score
 
+#def outputDataForML(trueProp, dataMatrix, csvfile):
+#    var_mm_probDict = {(var, i):0 for (var,i) in itertools.product(dataMatrix.columns.tolist(), range(7))}
+#    variants = dataMatrix.columns.tolist()
+#    
+#    for row in dataMatrix.itertuples(index=False):
+#        temp_index = list()
+#        temp_mm = list()
+#        for i in range(len(list(row))):
+#            if list(row)[i] >= 0:
+#                temp_index.append(i)
+#                temp_mm.append(list(row)[i])
+#                
+#        for j in range(len(temp_index)):
+#            var_mm_probDict[(variants[temp_index[j]], temp_mm[j])] += 1
+#                            
+#    for (var,mm) in var_mm_probDict.keys():
+#        var_mm_probDict[(var,mm)] = var_mm_probDict[(var,mm)] * compute_probability(152, mm)
+#    
+#    data = list()
+#    for var in variants:
+#        temp_list = list()
+#        
+#        for i in range(7):
+#            temp_list.append(var_mm_probDict[(var, i)])
+#            
+#        temp_list.append(trueProp[var])
+#        data.append(temp_list)
+#    
+#    with open(csvfile, "a") as f:
+#        writer = csv.writer(f)
+#        writer.writerows(data)
+
 def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage):
     ''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Defining some parameters ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ '''
     #Record true variants and their fractions for all simulations
@@ -288,15 +320,15 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     #Some counts
     predictedCorrect_count = 0
     predCorrect_bool_list = []
-    minNegLogLike_correct = 0
-    minSizeOpt_count = 0
-    minNegLogLike_hasTrue = 0
+#    minNegLogLike_correct = 0
+#    minSizeOpt_count = 0
+#    minNegLogLike_hasTrue = 0
     #Reproducible results, set seed
     seed = 1994
     random.seed(seed)
     
     #Handling some output files
-    outputFolderPath = "{0}/{1}/".format(originalPath, simulation_result_folder)
+#    outputFolderPath = "{0}/{1}/".format(originalPath, simulation_result_folder)
     outputResultTxtFile = "{0}/{1}/{2}_output_stats.txt".format(originalPath, simulation_result_folder, gene)
     sys.stdout = open(outputResultTxtFile, "w")        #Write print codes to outputResultTxtFile
     
@@ -305,7 +337,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     num_variants = sum(1 for line in open(variantsTxtPath))
     
     #Randomly choose some simulations to plot the likelihood graphs
-    randomNum_negLogCharts = random.sample(xrange(1, numOfIter), 10)
+#    randomNum_negLogCharts = random.sample(xrange(1, numOfIter), 10)
     
     '''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Simulation starts here ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
     
@@ -484,19 +516,19 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
             unionCalibration = False
             
         #Choose a random simulation to plot negative log likelihood chart
-        if iteration in randomNum_negLogCharts:
-            plt.figure()
-            sorted_solution_namelist = ["sol_{}".format(i) for i in range(len(all_solutions))]
-            plt.xticks(range(len(all_solutions)), sorted_solution_namelist, rotation=20)
-            plt.scatter(range(len(all_solutions)), [likelihood_score_dict[name] for name in sorted_solution_namelist], color=color_list, s=50)
-            plt.xlabel('Solution i ')
-            plt.ylabel('Negative log likelihood')
-            
-            #If likelihoodCharts folder not created, create it
-            if "likelihoodCharts" not in [name for name in os.listdir(outputFolderPath)]:
-                os.mkdir("{}likelihoodCharts".format(outputFolderPath))
-            
-            plt.savefig("{0}likelihoodCharts/{1}_sim{2}_sol_likelihood".format(outputFolderPath, gene, iteration))
+#        if iteration in randomNum_negLogCharts:
+#            plt.figure()
+#            sorted_solution_namelist = ["sol_{}".format(i) for i in range(len(all_solutions))]
+#            plt.xticks(range(len(all_solutions)), sorted_solution_namelist, rotation=20)
+#            plt.scatter(range(len(all_solutions)), [likelihood_score_dict[name] for name in sorted_solution_namelist], color=color_list, s=50)
+#            plt.xlabel('Solution i ')
+#            plt.ylabel('Negative log likelihood')
+#            
+#            #If likelihoodCharts folder not created, create it
+#            if "likelihoodCharts" not in [name for name in os.listdir(outputFolderPath)]:
+#                os.mkdir("{}likelihoodCharts".format(outputFolderPath))
+#            
+#            plt.savefig("{0}likelihoodCharts/{1}_sim{2}_sol_likelihood".format(outputFolderPath, gene, iteration))
         
         #Only calculate calibration if solutions do cover true variants
         if unionCalibration:
@@ -559,7 +591,11 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
                 predCorrect_bool_list.append(False)
                 
         if len(bad_reads) != 0:
-            print(dataMatrix.loc[bad_reads,:])    
+            print(dataMatrix.loc[bad_reads,:])   
+            
+        #Output file for learning weights of Bayes method
+#        outputDataForML(true_prop, true_DF, originalPath+"/dataForML.csv")
+
     
     '''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Here is the summary ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
     
