@@ -7,6 +7,9 @@ sampleNumbersTxt = open("SRR_Acc_List.txt", "r")
 
 for samp in sampleNumbersTxt:
     sample.append(samp[:-1])    #Without \n character
+
+if not os.path.exists("data"):
+    os.mkdir("data")
     
 os.chdir("data")
 
