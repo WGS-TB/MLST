@@ -374,8 +374,8 @@ def strainSolver(dataPath, refStrains, outputPath, loci):
     #weights and decision variables for proportion of strains. weight=0 if the strain is in reference, otherwise =1. Notice there will be duplications of strain types
     #here because for proportions, we consider sample by sample rather than unique strain types
     proportionWeightDecVarDF = strains.merge(reference, indicator=True, how="left")
-    proportionWeightDecVarDF["_merge"] = proportionWeightDecVarDF["_merge"].where(proportionWeightDecVarDF['_merge'] == "left_only", 0)
-    proportionWeightDecVarDF["_merge"] = proportionWeightDecVarDF["_merge"].where(proportionWeightDecVarDF['_merge'] == 0, 1)
+    proportionWeightDecVarDF["_merge"].replace(to_replace="both", value=0, inplace=True)
+    proportionWeightDecVarDF["_merge"].replace(to_replace="left_only", value=1, inplace=True)
     proportionWeightDecVarDF = proportionWeightDecVarDF.rename(columns = {"_merge":"Weights"})
     
     #Add proportion decision variable names
@@ -518,7 +518,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci):
     
     #options for searching more optimal solutions
     #model.parameters.mip.pool.capacity.set(10)
-    model.parameters.mip.pool.intensity.set(4)
+    model.parameters.mip.pool.intensity.set(0)
     #model.parameters.mip.limits.populate.set(2100000000)
     model.parameters.mip.pool.absgap.set(0)
     model.parameters.mip.pool.replace.set(1)
