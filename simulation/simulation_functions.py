@@ -1,7 +1,7 @@
 #!/usr/bin/python
 from __future__ import division
 from collections import defaultdict
-from scipy.special import comb
+from scipy.misc import comb
 import pandas as pd
 import sh
 import csv
