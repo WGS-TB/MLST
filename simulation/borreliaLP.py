@@ -28,14 +28,14 @@ import itertools
 import numpy as np
 import cplex
 import sys
-import argparse
+#import argparse
 
 #Can set config from command line
-parser = argparse.ArgumentParser()
-parser.add_argument("--data", help="path to data directory", default="/home/glgan/Documents/Borrelia/data/randEx")
-parser.add_argument("--ref", help="path to reference.csv", default='~/Documents/Borrelia/data/randEx/reference.csv')
-parser.add_argument("--output", help="path to store conclusion", required=True)
-args = parser.parse_args()
+#parser = argparse.ArgumentParser()
+#parser.add_argument("--data", help="path to data directory", default="/home/glgan/Documents/Borrelia/data/randEx")
+#parser.add_argument("--ref", help="path to reference.csv", default='~/Documents/Borrelia/data/randEx/reference.csv')
+#parser.add_argument("--output", help="path to store conclusion", required=True)
+#args = parser.parse_args()
 
 ''' ====================================== Function Definition ======================================================= '''
 
@@ -182,7 +182,7 @@ Input
 data: dictionary, information of all samples preloaded previously
 numLoci: number of loci
 '''
-def returnCombinationsAndNumComb(data, numLoci):
+def returnCombinationsAndNumComb(data,loci):
     strains = list()
     numOfComb = dict()
     previousNum = 0
@@ -348,8 +348,8 @@ def strainSolver(dataPath, refStrains, outputPath, loci):
     numLoci = len(loci)
     
     #read data for samples and reference
-    data, numSamples, startingSampleNum = readData(args.data,loci)
-    reference = pd.read_csv(args.ref,sep="\t", usecols=range(1,numLoci+1))
+    data, numSamples, startingSampleNum = readData(dataPath,loci)
+    reference = pd.read_csv(refStrains,sep="\t", usecols=range(1,numLoci+1))
     lociNames = list(reference.columns.values)
     numReference = reference.shape[0]
     allSamples = data.keys()
@@ -368,7 +368,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci):
     varAndProp = returnVarAndProportions(data)
     
     #Get the combinations at all loci across all samples
-    strainAndNumComb = returnCombinationsAndNumComb(data, numLoci)
+    strainAndNumComb = returnCombinationsAndNumComb(data, loci)
     strains = strainAndNumComb[0]
     numOfComb = strainAndNumComb[1]
     uniqueStrains = strains.drop_duplicates(loci)
@@ -547,7 +547,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci):
     allStr = strainWeightDecVarDF[["ST", "Weights"] + loci]
     allStr["New/Existing"] = ["Existing" if w==0 else "New" for w in allStr["Weights"].tolist()]
     allStr.drop("Weights", 1, inplace=True)
-    allStr.to_csv("{0}/indexedStrains.csv".format(args.output))
+    allStr.to_csv("{0}/indexedStrains.csv".format(outputPath))
     
     output = proportionWeightDecVarDF[proportionWeightDecVarDF["Sample"] == allSamples[0]].merge(strainsNeeded).drop(["Weights", "Sample"],1)
     output["Proportion"] = model.solution.get_values(output["Decision Variable"].tolist())
