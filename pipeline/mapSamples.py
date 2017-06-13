@@ -75,5 +75,8 @@ for samp in samples:
     for f in filesRemove:
         os.remove(f)
         
+    #currentpath=/pipeline/variantsAndProp
+    os.chdir("..")
+        
 print("Time taken for Bowtie mapping: {} hr(s)".format((time.time() - start_time)/3600))
     
