@@ -56,8 +56,8 @@ def Compute_Prec_and_rec(strain_dict, strain_df):
         predicted_dict[temp_key] = float(row[8])
     print ('The True strains are {}'.format(strain_dict.keys()))
     print ('The True proportions are {}'.format(strain_dict.values()))
-    print ('The Predicted strains are {}'.format(strain_dict.keys()))
-    print ('The Predicted proportions are {}'.format(strain_dict.values()))
+    print ('The Predicted strains are {}'.format(predicted_dict.keys()))
+    print ('The Predicted proportions are {}'.format(predicted_dict.values()))
         
     for key in predicted_dict.keys():
         if key in strain_dict.keys():
