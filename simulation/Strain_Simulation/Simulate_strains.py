@@ -10,46 +10,121 @@ We are also looking to introduce new strains as errors
 
 from __future__ import division
 from collections import defaultdict
-from scipy.special import comb
 import pandas as pd
-import sh
 import csv
-import math
 import numpy as np
 import random
 import os
 import matplotlib.pyplot as plt
-import itertools
-import sys
 import returnStrAndProp as rsp
 import argparse
 
-def Generate_Random_strain():
-    loci = ['clpA','clpX','nifS','pepX','pyrG','recG','rplB','uvrA']
-    random_strain = []
-    vals = random.sample(xrange(250,300),len(loci))
+#set seed for reproducibility
+seed = 1994
+random.seed(seed)
+
+def Mutate_strain(reference,hamming_dist,loci):
+    '''
+        A function that takes a given strain and mutates it according to a given
+        hamming distance 
+        
+        reference: The reference database table of all the currrently known strains
+        
+        hamming_dist: The hamming distance/number of mutations to subject a given strain to
+        
+        loci: A list containing all the loci
+    '''
+    #pick a random strain to mutate
+    k = random.randint(1,reference.shape[0])
+    strain = reference.iloc[k,:].tolist()
+    #pick random positions on the strain to mutate
+    random_index = random.sample(xrange(0,7),hamming_dist)
+    temp = defaultdict(list)
+    #list to hold the new strain
+    new_strain = [None]*8
+    #generate a random strain by selecting a random allele for a selected gene from the database and replacing it
+    for index in random_index:
+        locus = reference[loci[index]].tolist()
+        locus = list(set(locus))
+        locus.remove(strain[index])
+        new_allele = random.choice(locus)
+        temp[index] = new_allele
+    #update the strains
     for i in range(len(loci)):
-        temp = loci[i]+'_'+str(vals[i])
-        random_strain.append(temp)
-    return random_strain
+        if i in random_index:
+            new_strain[i] = temp[i]
+        else:
+            new_strain[i] = strain[i]
+    #return both the random strain and its mutated counterpart 
+    return [new_strain, strain]
+
+
+
+def Recomb_strains(reference):
+    '''
+        This function takes the reference database, picks two strains and randomly
+        recombine them both to create and new and third strain not in the database.
+        
+        Reference: The reference database table of all the currrently known strains
+    '''
+    #randomly pick two strains from the reference database
+    randomStrainIndex = random.sample(xrange(1,731),2)
+    strains = []
+    new_strain = []
+    #get the new strains
+    for num in range(len(randomStrainIndex)):
+        strains.append(reference.iloc[randomStrainIndex[num],:].tolist())
+    #randomly choose which allele to include in the new strain with equal probability
+    for i in range(1,9):
+        val = np.random.choice(np.arange(1, 3), p=[0.5,0.5])
+        if val == 1:
+            new_strain.append(strains[0][i-1])
+        else:
+            new_strain.append(strains[1][i-1])
+    #return the new strain
+    return [new_strain,strains[0],strains[1]]
         
     
 def Compute_Variant_proportions(strain,strain_prop):
+    '''
+        A function that takes in a strain, its proportion and computes the proportions
+        of its alleles
+        
+        strain: The current strain under scrutiny
+        
+        strain_prop: The proportions to be assigned to its alleles
+    '''
     variant_proportions = defaultdict(list)
     for gene in strain:
         variant_proportions[gene] = strain_prop*100
     return variant_proportions
     
 def Dict_to_csv(gene_dict, filename):
+    '''
+        A function that takes in a dictionary and writes it to a csv file with the given name
+        
+        gene_dict: The dictionary to be written
+        
+        filename: The name of the file
+    '''
     with open(filename+'_proportions.csv', 'wb') as csv_file: 
         writer = csv.writer(csv_file)
         for key, value in gene_dict.items():
             writer.writerow([key, value])
             
 def Compute_Prec_and_rec(strain_dict, strain_df):
+    '''
+        A function to compute the precision and recall after a simulation.
+        
+        strain_dict: A dictionary containing the true strains
+        
+        strain_df: A dataframe containing the strains predicted by the ILP
+        
+    '''
     count = 0
     total_var_dist = 0
     predicted_dict = defaultdict(list)
+    #convert the dataframe into a dictionary
     for i in range(strain_df.shape[0]):
         row = strain_df.iloc[i].tolist()
         temp_key = tuple(row[0:8])
@@ -58,32 +133,47 @@ def Compute_Prec_and_rec(strain_dict, strain_df):
     print ('The True proportions are {}'.format(strain_dict.values()))
     print ('The Predicted strains are {}'.format(predicted_dict.keys()))
     print ('The Predicted proportions are {}'.format(predicted_dict.values()))
-        
+    #Compute the total variation distance 
     for key in predicted_dict.keys():
-        if key in strain_dict.keys():
-            
+        if key in strain_dict.keys(): 
             total_var_dist += abs(round(strain_dict[key],3)-predicted_dict[key])
             count += 1
         else:
             total_var_dist += predicted_dict[key]
+    #compute the precision
     precision = count/strain_df.shape[0]
+    #compute the recall
     recall = count/len(strain_dict)
     return precision, recall, total_var_dist/2.0
 
-def Simulate_strains(numStrains, numIter,strainRef,sampleDir,outputDir,samplesDir):
+def Simulate_strains(numIter,strainRef,sampleDir,outputDir,samplesDir,sim_type):
+    '''
+        numIter: The number of simulation iterations
+        
+        strainRef: The reference database table of all the currrently known strains
+        
+        sampleDir: The directory where the temporary files for the current sample will be stored
+        
+        outputDir: The Directory where the outputs will be stored
+        
+        samplesDIr: The directory containing all the samples
+        
+        sim_type: The type of simulation being run
+    '''
     
-    true_proportions_list = [] #list to hold the true proportions
-    true_strains_list = [] #list to hold the true strains
-    
-    seed = 1994
-    random.seed(seed)
-    
-    
+    print ('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~You have chosen to run {0} type simulation. Now running simulation based on {1}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format(sim_type,sim_type))
+    if sim_type == 'Mutation':
+        numStrains = 2
+    if sim_type == 'Recombination':
+        numStrains = 3
+    #loci used to generate strains
     loci = ['clpA','clpX','nifS','pepX','pyrG','recG','rplB','uvrA']
     precision = []
     recall = []
     total_var_dist = []
+    #read in the current know strain database
     reference = pd.read_csv(strainRef,sep="\t",usecols=range(1,len(loci)+1))
+    #parse the database
     for name in loci:
         reference["%s" %name] = name + "_" + reference["%s" %name].astype(str)
     for iteration in range(1,numIter+1):
@@ -103,184 +193,103 @@ def Simulate_strains(numStrains, numIter,strainRef,sampleDir,outputDir,samplesDi
         dict_list = [clpA,clpX,nifS,pepX,pyrG,recG,rplB,uvrA]
         #dictionary to hold the strains randomly simulated
         strain_dict = defaultdict(list)
-        strains = []
         #generate random proportions for the strains
         proportions = [random.random() for j in range(numStrains)]
         prop_sum = sum(proportions)
         proportions = [i/prop_sum for i in proportions]
-        true_proportions_list.append(proportions)
-        #pick a random number of unique strains to create
-        num_unique = random.randint(1,math.ceil(numStrains/2))
-        known = numStrains - num_unique
-        #randomly select strains to use for simulation
-        randomStrainIndex = random.sample(xrange(1,731),known)
-        for num in range(len(randomStrainIndex)):
-            index = randomStrainIndex[num]
-            strain = reference.iloc[index,:].tolist()
-            strains.append(strain)
-            tup_strain = tuple(strain)
-            strain_dict[tup_strain] = proportions[num]*100
-            strain_var_proportions = Compute_Variant_proportions(strain,proportions[num])
-            #update the variant dictionaries
-            #for clpA
-            for key in strain_var_proportions.keys():
-                if 'clpA' in key:
-                    if key not in clpA:
-                        clpA[key] = strain_var_proportions[key]
+        #define a dictionary of dictionaries to hold all the strains and their respective proportions.
+        strain_var_proportions = defaultdict(dict)
+        #mutate the strain to generate a new strain
+        if sim_type == 'Mutation':
+            strain_list = Mutate_strain(reference,2,loci)
+        #recombine two strains to generate a third(new) one
+        if sim_type == 'Recombination':
+            strain_list = Recomb_strains(reference)
+        #update the proportions of each gene allele in the strains
+        for i in range(len(strain_list)):
+            strain_dict[tuple(strain_list[i])] = proportions[i]*100
+            strain_var_proportions[tuple(strain_list[i])] = Compute_Variant_proportions(strain_list[i],proportions[i])
+        #update the gene dictionaries with the appropraite proportions
+        for strain_key in strain_var_proportions.keys():
+            #define a dictionary to hold the current strain and its proportions
+            gene_dict = strain_var_proportions[strain_key]
+            for gene_key in gene_dict:
+                #for clpA
+                if 'clpA' in gene_key:
+                    if gene_key not in clpA:
+                        clpA[gene_key] = gene_dict[gene_key]
                     else:
-                        clpA[key] = clpA[key] + strain_var_proportions[key]
-            #for clpX
-            for key in strain_var_proportions.keys():
-                if 'clpX' in key:
-                    if key not in clpX:
-                        clpX[key] = strain_var_proportions[key]
+                        clpA[gene_key] += gene_dict[gene_key]
+                #for clpX
+                if 'clpX' in gene_key:
+                    if gene_key not in clpX:    
+                        clpX[gene_key] = gene_dict[gene_key]
                     else:
-                        clpX[key] = clpX[key] + strain_var_proportions[key]
-            #for nifS
-            for key in strain_var_proportions.keys():
-                if 'nifS' in key:
-                    if key not in nifS:
-                        nifS[key] = strain_var_proportions[key]
+                        clpX[gene_key] += gene_dict[gene_key]
+                #for nifS
+                if 'nifS' in gene_key:
+                    if gene_key not in nifS:
+                        nifS[gene_key] = gene_dict[gene_key]
                     else:
-                        nifS[key] = nifS[key] + strain_var_proportions[key]
-            #for pepX
-            for key in strain_var_proportions.keys():
-                if 'pepX' in key:
-                    if key not in pepX:
-                        pepX[key] = strain_var_proportions[key]
+                        nifS[gene_key] += gene_dict[gene_key]
+                #for pepX
+                if 'pepX' in gene_key:
+                    if gene_key not in pepX:
+                        pepX[gene_key] = gene_dict[gene_key]
                     else:
-                        pepX[key] = pepX[key] + strain_var_proportions[key]
-            #for pyrG
-            for key in strain_var_proportions.keys():
-                if 'pyrG' in key:
-                    if key not in pyrG:
-                        pyrG[key] = strain_var_proportions[key]
+                        pepX[gene_key] += gene_dict[gene_key]
+                #for pyrG
+                if 'pyrG' in gene_key:
+                    if gene_key not in pyrG:
+                        pyrG[gene_key] = gene_dict[gene_key]
                     else:
-                        pyrG[key] = pyrG[key] + strain_var_proportions[key]
-            #for recG
-            for key in strain_var_proportions.keys():
-                if 'recG' in key:
-                    if key not in recG:
-                        recG[key] = strain_var_proportions[key]
+                        pyrG[gene_key] += gene_dict[gene_key]
+                #for recG
+                if 'recG' in gene_key:
+                    if gene_key not in recG:
+                        recG[gene_key] = gene_dict[gene_key]
                     else:
-                        recG[key] = recG[key] + strain_var_proportions[key]
-            #for rplB
-            for key in strain_var_proportions.keys():
-                if 'rplB' in key:
-                    if key not in rplB:
-                        rplB[key] = strain_var_proportions[key]
+                        recG[gene_key] += gene_dict[gene_key]
+                #for rplB
+                if 'rplB' in gene_key:
+                    if gene_key not in rplB:
+                        rplB[gene_key] = gene_dict[gene_key]
                     else:
-                        rplB[key] = rplB[key] + strain_var_proportions[key]
-            #for uvrA
-            for key in strain_var_proportions.keys():
-                if 'uvrA' in key:
-                    if key not in uvrA:
-                        uvrA[key] = strain_var_proportions[key]
+                        rplB[gene_key] += gene_dict[gene_key]
+                #for uvrA
+                if 'uvrA' in gene_key:
+                    if gene_key not in uvrA:
+                        uvrA[gene_key] = gene_dict[gene_key]
                     else:
-                        uvrA[key] = uvrA[key] + strain_var_proportions[key]
-        #generate unique strains and use it for simulation
-        for i in range(num_unique):
-            strain = Generate_Random_strain()
-            strains.append(strain)
-            tup_strain = tuple(strain)
-            strain_dict[tup_strain] = proportions[i+known]*100
-            strain_var_proportions = Compute_Variant_proportions(strain,proportions[i+known])
-            for key in strain_var_proportions.keys():
-                if 'clpA' in key:
-                    if key not in clpA:
-                        clpA[key] = strain_var_proportions[key]
-                    else:
-                        clpA[key] = clpA[key] + strain_var_proportions[key]
-            #update the variant dictionaries
-            #for clpX
-            for key in strain_var_proportions.keys():
-                if 'clpX' in key:
-                    if key not in clpX:
-                        clpX[key] = strain_var_proportions[key]
-                    else:
-                        clpX[key] = clpX[key] + strain_var_proportions[key]
-            #for nifS
-            for key in strain_var_proportions.keys():
-                if 'nifS' in key:
-                    if key not in nifS:
-                        nifS[key] = strain_var_proportions[key]
-                    else:
-                        nifS[key] = nifS[key] + strain_var_proportions[key]
-            #for pepX
-            for key in strain_var_proportions.keys():
-                if 'pepX' in key:
-                    if key not in pepX:
-                        pepX[key] = strain_var_proportions[key]
-                    else:
-                        pepX[key] = pepX[key] + strain_var_proportions[key]
-            #for pyrG
-            for key in strain_var_proportions.keys():
-                if 'pyrG' in key:
-                    if key not in pyrG:
-                        pyrG[key] = strain_var_proportions[key]
-                    else:
-                        pyrG[key] = pyrG[key] + strain_var_proportions[key]
-            #for recG
-            for key in strain_var_proportions.keys():
-                if 'recG' in key:
-                    if key not in recG:
-                        recG[key] = strain_var_proportions[key]
-                    else:
-                        recG[key] = recG[key] + strain_var_proportions[key]
-            #for rplB
-            for key in strain_var_proportions.keys():
-                if 'rplB' in key:
-                    if key not in rplB:
-                        rplB[key] = strain_var_proportions[key]
-                    else:
-                        rplB[key] = rplB[key] + strain_var_proportions[key]
-            #for uvrA
-            for key in strain_var_proportions.keys():
-                if 'uvrA' in key:
-                    if key not in uvrA:
-                        uvrA[key] = strain_var_proportions[key]
-                    else:
-                        uvrA[key] = uvrA[key] + strain_var_proportions[key]
-                
-            #strain_var_proportions[strain] = Compute_Variant_proportions(strain,proportions[i+known])
-            
-        true_strains_list.append(strains)
-    
-    #write the dictionaries to a csv file
+                        uvrA[gene_key] += gene_dict[gene_key] 
+        #write the dictionaries to a csv file
         for i in range(len(dict_list)):
             locus = dict_list[i]
             Dict_to_csv(locus,loci[i])
         
+        #Compute the simulation statistics
         os.chdir(samplesDir)
         strain_df = rsp.strainSolver(samplesDir,strainRef,outputDir,loci) 
         pre,rec,tvd = Compute_Prec_and_rec(strain_dict,strain_df)
         precision.append(pre)
         recall.append(rec)
         total_var_dist.append(tvd)
-        
-        
-        
-        
-    
     return precision,recall,total_var_dist
     
     
-    
-
 
 def main():
     #get and parse the arguments
     ap = argparse.ArgumentParser()
-    ap.add_argument("-i", "--numOfStrains", required = False, default = 2, type=int, help="Number of strains to simulate. Default = 2")
     ap.add_argument("-n", "--numOfiter", required=False, default=40, type=int, help="The number of simulation iterations default = 40")
     ap.add_argument("-d", "--masterDir", required=False, default=os.getcwd(), help="The master directory to run the simulation and store the results")
     ap.add_argument("-r", "--strainRef", required=True, help="The absolute path to the text file containing the reference strains")
-    #ap.add_argument("-p", "--proportionMethod", required=True)
+    ap.add_argument("-t", "--Sim_Type", required=False, default='Mutation', type=str, help="The type of simulation you would like to run (Mutation or Recombination). Default = Mutation")
     args = vars(ap.parse_args())
     
-    outputDir = "Simulation_Output"
-    sampleDir = "Simulation_Samples"
-    sample = "Simulation_001"
+    outputDir = "{}_Simulation_Output".format(args['Sim_Type'])
+    sampleDir = "{}_Simulation_Samples".format(args['Sim_Type'])
+    sample = "{}_Simulation_001".format(args['Sim_Type'])
     
     
     os.chdir(args["masterDir"]) #change into the master directory
@@ -292,28 +301,27 @@ def main():
         os.mkdir(sample) #make a directory for the current simulation sample
     
     #run the simulation
-    precision,recall,total_var_dist = Simulate_strains(args["numOfStrains"],args["numOfiter"],args["strainRef"],args["masterDir"]+'/'+sampleDir+"/"+sample,args["masterDir"]+'/'+outputDir,args["masterDir"]+'/'+sampleDir)
+    precision,recall,total_var_dist = Simulate_strains(args["numOfiter"],args["strainRef"],args["masterDir"]+'/'+sampleDir+"/"+sample,args["masterDir"]+'/'+outputDir,args["masterDir"]+'/'+sampleDir,args['Sim_Type'])
     #plot the results
-    #for recall
     print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Creating plots ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    
+    #for recall
     plt.figure()
     plt.hist(recall, bins=np.linspace(0,2))
-    plt.title("Plot of simulation recall")
+    plt.title("Plot of simulation recall for {}".format(args['Sim_Type']))
     plt.xlabel("Recall")
     plt.ylabel("Frequency")
     plt.savefig(args["masterDir"]+'/'+outputDir+'/recall_plot')
     #for precision
     plt.figure()
     plt.hist(precision, bins=np.linspace(0,2))
-    plt.title("Plot of simulation precision")
+    plt.title("Plot of simulation precision for {}".format(args['Sim_Type']))
     plt.xlabel("Precision")
     plt.ylabel("Frequency")
     plt.savefig(args["masterDir"]+'/'+outputDir+'/Precision_plot')
     #for total variation distance
     plt.figure()
     plt.hist(total_var_dist,bins=np.linspace(-1,1))
-    plt.title("Plot of simulation Total variation distance")
+    plt.title("Plot of simulation Total variation distance for {}".format(args['Sim_Type']))
     plt.xlabel("Total Variation Distance")
     plt.ylabel("Frequency")
     plt.savefig(args["masterDir"]+'/'+outputDir+'/Total_variation_Distance_plot')
