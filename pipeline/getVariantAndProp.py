@@ -13,6 +13,8 @@ import numpy as np
 import getStrAndProp as gsp
 import itertools
 import cplex
+import sys
+import matplotlib.pyplot as plt
 
 NO_BINOM = False
 '''
@@ -158,7 +160,7 @@ def compute_likelihood(df):
     return score
 
 #Only return solutions with minimum number of variants
-def getVarAndProp(gene, tablePath):
+def getVarAndProp(gene, tablePath, samp):
     #generate matrix
     dataMatrixDF = generate_matrix(tablePath)
     dataMatrixDF.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
@@ -169,17 +171,50 @@ def getVarAndProp(gene, tablePath):
     dataMatrix_pred = dataMatrixDF.loc[reads_cov,var_predicted]
     minVar_solutions = [sol for sol in all_solutions if len(sol) == min(map(len,all_solutions))]
     
-    #write matrix to file
-#    dataMatrix_pred.to_csv(gene+'_predicted_matrix.csv', sep='\t')
-#    fig, ax = plt.subplots()
-#    dataMatrix_pred.hist(bins=np.histogram(dataMatrix_pred.values.ravel())[1],ax=ax)
-#    fig.savefig(gene+'_matrix_plots.png')
+    ''' Likelihood '''
+    #compute proportions
+    prop = compute_proportions(dataMatrix_pred)
+    pred_prop = create_dictionary(var_predicted, prop)
+    
+    #score list and proportions
+    score_list = list()
+    min_score = sys.maxint
+    min_sol_list = list()
+    
+    for i in range(len(minVar_solutions)):
+        score = compute_likelihood(dataMatrixDF.loc[reads_cov, minVar_solutions[i]])
+        score_list.append(score)
+        
+        if score <= min_score:
+            min_score = score
+            
+    #Give some names to the solutions for further identifications and get the indices for sorted likelihood list
+    sortedIndex_score_list = np.argsort(score_list)
+    likelihood_score_dict = dict()
+    sol_name_dict = dict()
+    
+    for i in range(len(minVar_solutions)):
+        sol_name_dict["sol_{}".format(i)] = minVar_solutions[sortedIndex_score_list[i]]
+        likelihood_score_dict["sol_{}".format(i)] = score_list[sortedIndex_score_list[i]]
+            
+    plt.figure()
+    sorted_solution_namelist = ["sol_{}".format(i) for i in range(len(minVar_solutions))]
+    plt.xticks(range(len(minVar_solutions)), sorted_solution_namelist, rotation=20)
+    plt.scatter(range(len(minVar_solutions)), [likelihood_score_dict[name] for name in sorted_solution_namelist], s=50)
+    plt.xlabel('Solution i ')
+    plt.ylabel('Negative log likelihood')
+    plt.savefig("{0}_{1}_sol_likelihood".format(samp, gene))
+    
+#    minVar_minNegLog_solutions = [minVar_solutions[i] for i in range(len(minVar_solutions)) if min_score <= score_list[i] <= 1.01*min_score]
+    minVar_minNegLog_solutions = minVar_solutions
+    
+    ''' ====== '''
     
     #compute proportions
     #solutionsAndProp_dict is a dictionary in which the keys are just indices and values are dictionaries, with variant as key and proportion as value
     solutionsAndProp_dict = dict()
     track=0
-    for sol in minVar_solutions:
+    for sol in minVar_minNegLog_solutions:
         dataMatrix_pred = dataMatrixDF.loc[reads_cov, sol]
         prop = compute_proportions(dataMatrix_pred)
         pred_prop = create_dictionary(sol, prop)
@@ -191,8 +226,8 @@ def getVarAndProp(gene, tablePath):
 #    for key, val in pred_prop.items():
 #        w.writerow([key, val])
         
-#    plt.close('all')        
-    return solutionsAndProp_dict
+    plt.close('all')        
+    return solutionsAndProp_dict, len(minVar_solutions)
 
 def maxExistingStr(sample, loci, gene_solProp_dict, reference):
     genesDF = pd.DataFrame(columns=loci)
