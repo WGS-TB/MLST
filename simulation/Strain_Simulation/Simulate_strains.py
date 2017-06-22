@@ -19,9 +19,6 @@ import matplotlib.pyplot as plt
 import returnStrAndProp as rsp
 import argparse
 
-#set seed for reproducibility
-seed = 1994
-random.seed(seed)
 
 def Mutate_strain(reference,hamming_dist,loci):
     '''
@@ -146,7 +143,10 @@ def Compute_Prec_and_rec(strain_dict, strain_df):
     recall = count/len(strain_dict)
     return precision, recall, total_var_dist/2.0
 
-def Simulate_strains(numIter,strainRef,sampleDir,outputDir,samplesDir,sim_type):
+def Simulate_strains(numIter,strainRef,sampleDir,outputDir,samplesDir,simFilesDir,sim_type,hamming_dist):
+    #set seed for reproducibility
+    seed = 1994
+    random.seed(seed)
     '''
         numIter: The number of simulation iterations
         
@@ -159,6 +159,10 @@ def Simulate_strains(numIter,strainRef,sampleDir,outputDir,samplesDir,sim_type):
         samplesDIr: The directory containing all the samples
         
         sim_type: The type of simulation being run
+        
+        hamming_dist: The number of mutations to introduce into the new strain
+        
+        simFilesDir: The directory to store the intermediate files generated
     '''
     
     print ('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~You have chosen to run {0} type simulation. Now running simulation based on {1}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format(sim_type,sim_type))
@@ -180,6 +184,7 @@ def Simulate_strains(numIter,strainRef,sampleDir,outputDir,samplesDir,sim_type):
         print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Running Simulation {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(iteration))
         #Go to the current sample directory
         os.chdir(sampleDir)
+        
         #define dictionaries to hold each of the variants being used in the simulated strains
         clpA = defaultdict(list)
         clpX = defaultdict(list)
@@ -201,7 +206,7 @@ def Simulate_strains(numIter,strainRef,sampleDir,outputDir,samplesDir,sim_type):
         strain_var_proportions = defaultdict(dict)
         #mutate the strain to generate a new strain
         if sim_type == 'Mutation':
-            strain_list = Mutate_strain(reference,2,loci)
+            strain_list = Mutate_strain(reference,hamming_dist,loci)
         #recombine two strains to generate a third(new) one
         if sim_type == 'Recombination':
             strain_list = Recomb_strains(reference)
@@ -261,11 +266,15 @@ def Simulate_strains(numIter,strainRef,sampleDir,outputDir,samplesDir,sim_type):
                     if gene_key not in uvrA:
                         uvrA[gene_key] = gene_dict[gene_key]
                     else:
-                        uvrA[gene_key] += gene_dict[gene_key] 
+                        uvrA[gene_key] += gene_dict[gene_key]
+                        
+        filesHere = [d for d in os.listdir(".") if os.path.isfile(d)]
+        for csv_file in filesHere:
+            os.rename(csv_file,simFilesDir+'/'+csv_file)
         #write the dictionaries to a csv file
         for i in range(len(dict_list)):
             locus = dict_list[i]
-            Dict_to_csv(locus,loci[i])
+            Dict_to_csv(locus,loci[i]+"_Simulation_{}".format(iteration))
         
         #Compute the simulation statistics
         os.chdir(samplesDir)
@@ -274,34 +283,53 @@ def Simulate_strains(numIter,strainRef,sampleDir,outputDir,samplesDir,sim_type):
         precision.append(pre)
         recall.append(rec)
         total_var_dist.append(tvd)
+        os.chdir(sampleDir)
+        filesHere = [d for d in os.listdir(".") if os.path.isfile(d)]
+        for csv_file in filesHere:
+            os.rename(csv_file,simFilesDir+'/'+csv_file)
+        
     return precision,recall,total_var_dist
     
     
 
 def main():
+    
     #get and parse the arguments
     ap = argparse.ArgumentParser()
     ap.add_argument("-n", "--numOfiter", required=False, default=40, type=int, help="The number of simulation iterations default = 40")
     ap.add_argument("-d", "--masterDir", required=False, default=os.getcwd(), help="The master directory to run the simulation and store the results")
     ap.add_argument("-r", "--strainRef", required=True, help="The absolute path to the text file containing the reference strains")
     ap.add_argument("-t", "--Sim_Type", required=False, default='Mutation', type=str, help="The type of simulation you would like to run (Mutation or Recombination). Default = Mutation")
+    ap.add_argument("-hd", "--HammingDist", required=False, default=2, type=int, help="The total number of mutations you would like to make to a strain. Default = 2")
     args = vars(ap.parse_args())
     
-    outputDir = "{}_Simulation_Output".format(args['Sim_Type'])
-    sampleDir = "{}_Simulation_Samples".format(args['Sim_Type'])
-    sample = "{}_Simulation_001".format(args['Sim_Type'])
-    
+    if args["Sim_Type"] == "Mutation":
+        outputDir = "{0}_{1}_Simulation_Output".format(args['Sim_Type'],args["HammingDist"])
+        sampleDir = "{0}_{1}_Simulation_Samples".format(args['Sim_Type'],args["HammingDist"])
+        sample = "{0}_{1}_Simulation_001".format(args['Sim_Type'],args["HammingDist"])
+        tempDir = "{0}_{1}_Simulation_files".format(args["Sim_Type"],args["HammingDist"])
+    elif args["Sim_Type"] == "Recombination":
+        outputDir = "{}_Simulation_Output".format(args['Sim_Type'])
+        sampleDir = "{}_Simulation_Samples".format(args['Sim_Type'])
+        sample = "{}_Simulation_001".format(args['Sim_Type'])
+        tempDir = "{}_Simulation_files".format(args["Sim_Type"])
     
     os.chdir(args["masterDir"]) #change into the master directory
     directoriesHere = [d for d in os.listdir(".") if os.path.isdir(d)]
-    if sampleDir not in directoriesHere and sample not in directoriesHere and outputDir not in directoriesHere:
+    if sampleDir not in directoriesHere and sample not in directoriesHere and outputDir not in directoriesHere and tempDir not in directoriesHere:
         os.mkdir(sampleDir) #make a directory containing all the samples
         os.mkdir(outputDir) #Make a directory for the outputs
+        os.mkdir(tempDir) #directory to hold all the simulation files
         os.chdir(sampleDir)
         os.mkdir(sample) #make a directory for the current simulation sample
+    else:
+        os.chdir(tempDir)
+        filesHere = [d for d in os.listdir(".") if os.path.isfile(d)]
+        for old_file in filesHere:
+            os.remove(old_file)
     
     #run the simulation
-    precision,recall,total_var_dist = Simulate_strains(args["numOfiter"],args["strainRef"],args["masterDir"]+'/'+sampleDir+"/"+sample,args["masterDir"]+'/'+outputDir,args["masterDir"]+'/'+sampleDir,args['Sim_Type'])
+    precision,recall,total_var_dist = Simulate_strains(args["numOfiter"],args["strainRef"],args["masterDir"]+'/'+sampleDir+"/"+sample,args["masterDir"]+'/'+outputDir,args["masterDir"]+'/'+sampleDir,args["masterDir"]+'/'+tempDir,args['Sim_Type'],args["HammingDist"])
     #plot the results
     print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Creating plots ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     #for recall

@@ -56,7 +56,7 @@ def readData(dataFilePath, lociOrder):
         dirs= os.listdir(sampleFilePath)
         csvFiles = [i for i in dirs if i.endswith("proportions.csv")]
         
-        temp = re.compile('(.*)_proportions.csv')  #grab gene name
+        temp = re.compile('(.*)_Simulation*')  #grab gene name
         for f in csvFiles:
             gene = temp.findall(f)
             reader = csv.reader(open(sampleFilePath+"/"+f, 'r'))
@@ -127,9 +127,15 @@ def checkProp(data, propFormat):
     for sample in data:
         sampleDF = data[sample]
         
+        
         for column in sampleDF.values[0]:
             match = re.search("(.*)_", (column.keys())[0])
+            #print column
+            temp = (column.keys()[0]).split('_')
+            #locus = temp[0]
+            #print locus
             locus = match.group(1)  #get locus name
+            
             prop = column.values()
             prop = [float(p) for p in prop]
             
