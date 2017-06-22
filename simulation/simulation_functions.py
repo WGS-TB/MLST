@@ -431,6 +431,8 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         print "======================================== SIMULATION " + str(iteration) + " ====================================================" +  "\n"    
         
         #Keep the likelihood scores of all optimal solutions
+#        minVar_solutions = [sol for sol in all_solutions if len(sol) == min(map(len,all_solutions))]
+#        all_solutions = minVar_solutions
         score_list = list()
         min_score = sys.maxint
         print("Number of optimal solutions: {}".format(len(all_solutions)))
@@ -450,13 +452,13 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
 #            print("\nNegative log likelihood score:{}\n".format(score))
     
         #Give some names to the solutions for further identifications and get the indices for sorted likelihood list
-        sortedIndex_score_list = np.argsort(score_list)
-        likelihood_score_dict = dict()
-        sol_name_dict = dict()
-        
-        for i in range(len(all_solutions)):
-            sol_name_dict["sol_{}".format(i)] = all_solutions[sortedIndex_score_list[i]]
-            likelihood_score_dict["sol_{}".format(i)] = score_list[sortedIndex_score_list[i]]
+#        sortedIndex_score_list = np.argsort(score_list)
+#        likelihood_score_dict = dict()
+#        sol_name_dict = dict()
+#        
+#        for i in range(len(all_solutions)):
+#            sol_name_dict["sol_{}".format(i)] = all_solutions[sortedIndex_score_list[i]]
+#            likelihood_score_dict["sol_{}".format(i)] = score_list[sortedIndex_score_list[i]]
             
         '''
         #Identify those solutions which have minimum negative log likelihood
@@ -493,27 +495,27 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         
         #Observe the patterns in negative log likelihood for all optimal solutions
         #Starting from solutions with minimum likelihood, red dots represent these solutions are needed to cover all true variants(minimum number of subsets to cover all true variants)
-        color_list = ["red"]
-        union_likelihood = [ score_list[sortedIndex_score_list[0]] ]    #Keep track the likelihood of the solutions which cover true variants, produce some statistics later on
-        temp_union = all_solutions[sortedIndex_score_list[0]]
-        indexTrack = 1
-        unionCalibration = True
-        while( ( indexTrack!= len(all_solutions) ) and ( len(set(true_variants) - set(temp_union)) != 0 ) ):
-            temp_union = temp_union + all_solutions[sortedIndex_score_list[indexTrack]]
-            color_list.append("red")
-            indexTrack += 1
-        
-        if len(color_list) != len(all_solutions):
-            color_list.extend(["blue"]*(len(all_solutions) - len(color_list)))
+#        color_list = ["red"]
+#        union_likelihood = [ score_list[sortedIndex_score_list[0]] ]    #Keep track the likelihood of the solutions which cover true variants, produce some statistics later on
+#        temp_union = all_solutions[sortedIndex_score_list[0]]
+#        indexTrack = 1
+#        unionCalibration = True
+#        while( ( indexTrack!= len(all_solutions) ) and ( len(set(true_variants) - set(temp_union)) != 0 ) ):
+#            temp_union = temp_union + all_solutions[sortedIndex_score_list[indexTrack]]
+#            color_list.append("red")
+#            indexTrack += 1
+#        
+#        if len(color_list) != len(all_solutions):
+#            color_list.extend(["blue"]*(len(all_solutions) - len(color_list)))
             
-            for i in range(1, len(color_list)):
-                union_likelihood.append(score_list[sortedIndex_score_list[i]])
+#            for i in range(1, len(color_list)):
+#                union_likelihood.append(score_list[sortedIndex_score_list[i]])
         
         #If the union of all solutions do not cover the true variants, then print all as green dots
-        if len(set(true_variants) - set(temp_union)) != 0:
-            color_list = ["green"]*len(all_solutions)
+#        if len(set(true_variants) - set(temp_union)) != 0:
+#            color_list = ["green"]*len(all_solutions)
             #Do not calibrate if the union of all solutions do not cover true variants
-            unionCalibration = False
+#            unionCalibration = False
             
         #Choose a random simulation to plot negative log likelihood chart
 #        if iteration in randomNum_negLogCharts:
@@ -531,19 +533,34 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
 #            plt.savefig("{0}likelihoodCharts/{1}_sim{2}_sol_likelihood".format(outputFolderPath, gene, iteration))
         
         #Only calculate calibration if solutions do cover true variants
-        if unionCalibration:
-            max_score_inUnion = max(union_likelihood)
-            percentage = 100.0 *( (max_score_inUnion - min_score)/min_score )
-            likelihoodCalibration.append(percentage)
-        else:
-            likelihoodCalibration.append(np.nan)
+#        if unionCalibration:
+#            max_score_inUnion = max(union_likelihood)
+#            percentage = 100.0 *( (max_score_inUnion - min_score)/min_score )
+#            likelihoodCalibration.append(percentage)
+#        else:
+#            likelihoodCalibration.append(np.nan)
             
         #If there is one solution among all optimal which matches true variants, assign to var_predicted to generate statistics
-        for solution in all_solutions:
-            if set(solution) == set(true_variants):
-                var_predicted = solution
+#        for solution in all_solutions:
+#            if set(solution) == set(true_variants):
+#                var_predicted = solution
+#                break
+        track_bool = True
+        diff_numVar = list()
+        for i in range(len(all_solutions)):
+            diff_numVar.append(len(set(all_solutions[i])^set(true_variants)))
+            if set(all_solutions[i]) == set(true_variants):
+                track_bool = False
                 break
-                    
+            
+        if track_bool:
+            true_likelihood = compute_likelihood(dataMatrix.loc[reads_cov, true_variants])
+            minDiffIndex_list = np.argwhere(diff_numVar == np.amin(diff_numVar))
+            minDiffIndex_list = minDiffIndex_list.flatten().tolist()
+            temp_score_list = [score_list[i] for i in minDiffIndex_list]
+            avg_score = np.mean(temp_score_list)
+            likelihoodCalibration.append(100.0*(abs(avg_score-true_likelihood))/true_likelihood)
+            
         #Keep track of precision and recall for all simulations
         precision_list.append(precision(var_predicted, true_variants))
         recall_list.append(recall(var_predicted, true_variants))
@@ -573,8 +590,8 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         print("Predicted proportions using Counting method are: {}\n".format(pred_prop_count))
         
         #Print all solutions and their likelihood score
-        print("All solutions: \n{}\n".format(sol_name_dict))
-        print("Solutions negative log likelihood score: \n{}\n".format(likelihood_score_dict))
+#        print("All solutions: \n{}\n".format(sol_name_dict))
+#        print("Solutions negative log likelihood score: \n{}\n".format(likelihood_score_dict))
         
         #Compute objective value of true variants
         true_Objective_val, bad_reads = compute_true_objective_val(true_DF)
@@ -676,10 +693,11 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     print("Average number of optimal solutions: {0}\n".format(np.mean(numOfOptimalSol)))
     context+=1
     
-#    print "({0}) Likelihood Calibration: \n".format(context)
-#    print("Percentage by which the score of the solution having largest negative log likelihood in the union pool differ from the one with the minimum: \n{0}".format(likelihoodCalibration))
-#    print("The mean of these percentages: {0}\n".format(np.nanmean(likelihoodCalibration)))
-#    context+=1
+    if likelihoodCalibration:
+        print "({0}) Likelihood Calibration: \n".format(context)
+        print("Percentage by which the score of the true solution differ from the one with the minimum: \n{0}".format(likelihoodCalibration))
+        print("The mean of these percentages: {0}\n".format(np.mean(likelihoodCalibration)))
+        context+=1
     
     #print "({0})Numbers related to likelihood approach: \n".format(context)
     #print 'Number of simulations where solution with minimum negative log likelihood is the true solution: ', minNegLogLike_correct, "\n"
@@ -722,4 +740,4 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
 #    
 #    plt.close('all')
     sys.stdout.close()
-    return precision_list, recall_list, diff_obj_vals, totalVarDist_count, totalVarDist_bayes
+    return precision_list, recall_list, diff_obj_vals, totalVarDist_count, totalVarDist_bayes, likelihoodCalibration
