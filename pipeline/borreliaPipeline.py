@@ -14,6 +14,7 @@ import itertools
 import pandas as pd
 import csv
 import time
+import argparse
 
 start_time = time.time()
 
@@ -27,9 +28,13 @@ reference = pd.read_csv(currentPath+"/strain_ref.txt",sep="\t",usecols=range(1,l
 for name in loci:
     reference["%s" %name] = name + "_" + reference["%s" %name].astype(str)
 
-samples = [i for i in os.listdir(data_path)]
+#samples = [i for i in os.listdir(data_path)]
 #samples = ["SRR203433{}".format(i) for i in range(3,7)]
 #samples = ["SRR2034333", "SRR2034334", "SRR2034335"]
+ap = argparse.ArgumentParser()
+ap.add_argument("-s", "--sample", required = True)
+args = vars(ap.parse_args())
+samples = [args["sample"]]
 
 #currentpath= /pipeline/variantsAndProp
 os.chdir("variantsAndProp")
@@ -40,12 +45,11 @@ for samp in samples:
     os.chdir(samp)
     print("")
     print("===========================================================================================")
-    print("============================= Now processing {} =================================".format(samp))
+    print("============================= Now processing {} ==================================".format(samp))
     print("===========================================================================================")
     
     #Key=gene, value=dictionary which contains the information about multiple optimal solution
     gene_solProp_dict = dict()
-    minVar_list = list()
     for gene in loci:
         print("")
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~ Gene {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(gene))
@@ -54,32 +58,22 @@ for samp in samples:
         #Generate matrix, predict variants and their proportions
         print("..... Predicting variants and computing their proportions .....")
         print("")
-        solutionsAndProp_dict, num_minVar_solutions = gvp.getVarAndProp(gene,"{0}_{1}_reads.txt".format(samp, gene), samp )
+        solutionsAndProp_dict = gvp.getVarAndProp(gene,"{0}_{1}_reads.txt".format(samp, gene), samp )
         print(solutionsAndProp_dict)
         gene_solProp_dict[gene] = solutionsAndProp_dict
-        minVar_list.append(num_minVar_solutions)
     
     #Choose an optimal solution which maximizes number of existing strains, similar flavour as 2nd ILP
-    print(''' Picking a good set of variants among the multiple optimal solutions ''')
+    print(''' \nPicking a good set of variants among the multiple optimal solutions ''')
     #gene_keys = [[0,1], [0,1,2],...] indices of solutions in each gene
     gene_keys = [gene_solProp_dict[gene].keys() for gene in loci ]
     #Combination of multiple optimal solutions across all genes
     combinationsTuple = [comb for comb in itertools.product(*gene_keys)]
-#    objValue_list = list()
-    track = 1
-#    for comb in combinationsTuple:
-#        print("xxxxxxxxxxxxxxxxx Combination : {} xxxxxxxxxxxxxxxxxxxxxxxxxxxx".format(track))
-#        comb_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, comb)}
-#        objval = gvp.maxExistingStr(samp, loci, comb_dict, reference)
-#        objValue_list.append(objval)
-#        track += 1
-#    score_list = list()
-    print("Number of combinations using minimum variants only: {}".format(np.prod(minVar_list)))
-    print("Number of combinations using minimum variants+likelihood: {}".format(len(combinationsTuple)))
+
+#    print("Number of combinations using minimum variants only: {}".format(np.prod(minVar_list)))
+#    print("Number of combinations using minimum variants+likelihood: {}".format(len(combinationsTuple)))
     compatible_tuples = list()
     for comb in combinationsTuple:
-        print("xxxxxxxxxxxxxxxxxxxxxxxxx Combination : {} xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx".format(track))
-        track += 1
+#        print("xxxxxxxxxxxxxxxxxxxxxxxxx Combination : {} xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx".format(track))
         comb_list = [gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, comb)]
         comb_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, comb)}
         
@@ -93,45 +87,51 @@ for samp in samples:
             compatible_tuples.append(comb)
     
 #    print compatible_tuples
-    print("Number of compatible combinations: {}".format(len(compatible_tuples)))
-            
-#        sol_combinations = list(itertools.product(*comb_list))
-#        existing = 0
-#        for strain in sol_combinations:
-#            existing += sum(reference.isin(strain).all(1))
-#        score_list.append(100.0 * (len(sol_combinations) - existing)/(len(sol_combinations)))
-#        track += 1
+#    print("Number of compatible combinations: {}".format(len(compatible_tuples)))
+    objValue_list = list()
+    objStr = list()
+    track = 1
+    del comb_dict
+    check_tuples = list()
+    if len(compatible_tuples) == 0:
+        check_tuples = combinationsTuple
+    else:
+        check_tuples = compatible_tuples
+    
+    print("\nNumber of combinations to run: {}\n".format(len(check_tuples)))
+    for comb in check_tuples:
+        print("\nxxxxxxxxxxxxxxxxx Combination : {} xxxxxxxxxxxxxxxxxxxxxxxxxxxx\n".format(track))
+        comb_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, comb)}
+        sum_str, sum_prop, sum_err = gvp.maxExistingStr(samp, loci, comb_dict, reference)
+        objValue_list.append(sum_str+sum_prop+sum_err)
+        objStr.append(sum_str)
+        track += 1
         
-#    print("Objective Value: {}".format(objValue_list))
+    print("Objective Value: {}".format(objValue_list))
     #Choose the combination which has the lowest objective value
-#    minObjValIndex_list = np.argwhere(objValue_list == np.amin(objValue_list))
-#    minObjValIndex_list = minObjValIndex_list.flatten().tolist()
-#    if len(minObjValIndex_list) > 1:
-#        print("You have more than 1 solution having same objective value")
-#    
-#    minObjValIndex = minObjValIndex_list[0]
-#    comb_minObjVal = combinationsTuple[minObjValIndex]
-#    comb_minObjVal_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, comb_minObjVal)}
+    minObjValIndex_list = np.argwhere(objValue_list == np.amin(objValue_list))
+    minObjValIndex_list = minObjValIndex_list.flatten().tolist()
+    if len(minObjValIndex_list) > 1:
+        print("@@@@@@@@@@@@@@@@@@@@@@@ You have more than 1 distribution having same objective value @@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
     
-#    print("Score list:{}\n".format(score_list))
-#    minScore_list = np.argwhere(score_list == np.amin(score_list))
-#    minScore_list = minScore_list.flatten().tolist()
-#    if len(minScore_list) > 1:
-#        print("You have more than 1 solution having same score")
+    minObjValIndex = minObjValIndex_list[0]
+    comb_minObjVal = check_tuples[minObjValIndex]
+    comb_minObjVal_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, comb_minObjVal)}
     
-#    minObjValIndex = minScore_list[0]
-#    comb_minObjVal = combinationsTuple[minObjValIndex]
-#    comb_minObjVal_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, comb_minObjVal)}
+    print("Strain component: {}".format(objStr))
+    minStrIndex_list = np.argwhere(objStr == np.amin(objStr))
+    minStrIndex_list = minStrIndex_list.flatten().tolist()
+    print("@@@@ {0} out of {1} distributions having same number of new strains @@@@".format(len(minStrIndex_list), len(check_tuples)))
     
-    #Print and write to file
-#    for gene in comb_minObjVal_dict.keys():
-#        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Gene {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(gene))
-#        print("Variants and proportions: \n{}".format(comb_minObjVal_dict[gene]))
-#        #write proportions to file
-#        with open(gene+'_proportions.csv', "wb") as writeFile:
-#            writer = csv.writer(writeFile)
-#            for (key, val) in (comb_minObjVal_dict[gene]).items():
-#                writer.writerow([key, val])
+#    Print and write to file
+    for gene in comb_minObjVal_dict.keys():
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Gene {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(gene))
+        print("Variants and proportions: \n{}".format(comb_minObjVal_dict[gene]))
+        #write proportions to file
+        with open(gene+'_proportions.csv', "wb") as writeFile:
+            writer = csv.writer(writeFile)
+            for (key, val) in (comb_minObjVal_dict[gene]).items():
+                writer.writerow([key, val])
     #currentpath=/pipeline/variantsAndProp
     os.chdir("..")
 
@@ -150,6 +150,6 @@ print("")
 print("")
 print("Script done.")
 print("Created folder variantsAndProp which contains variants identified and their proportions for each sample")
-print("Created folder strainsAndProp which contains strains and their proportions for each sample")
+#print("Created folder strainsAndProp which contains strains and their proportions for each sample")
 print("Time taken : {} hr(s)".format((time.time() - start_time)/3600))
     
