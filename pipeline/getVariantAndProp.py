@@ -205,8 +205,7 @@ def getVarAndProp(gene, tablePath, samp):
     plt.ylabel('Negative log likelihood')
     plt.savefig("{0}_{1}_sol_likelihood".format(samp, gene))
     
-#    minVar_minNegLog_solutions = [minVar_solutions[i] for i in range(len(minVar_solutions)) if min_score <= score_list[i] <= 1.01*min_score]
-    minVar_minNegLog_solutions = minVar_solutions
+    minVar_minNegLog_solutions = [minVar_solutions[i] for i in range(len(minVar_solutions)) if min_score <= score_list[i] <= 1.01*min_score]
     
     ''' ====== '''
     
@@ -227,7 +226,7 @@ def getVarAndProp(gene, tablePath, samp):
 #        w.writerow([key, val])
         
     plt.close('all')        
-    return solutionsAndProp_dict, len(minVar_solutions)
+    return solutionsAndProp_dict
 
 def maxExistingStr(sample, loci, gene_solProp_dict, reference):
     genesDF = pd.DataFrame(columns=loci)
@@ -237,6 +236,7 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
     
     data = dict()
     data[sample] = genesDF
+#    data = gsp.roundProp(data)
     
     ''' ============================================== Data handling ====================================================== '''
     #paramaters
@@ -406,7 +406,7 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
     
     ''' ================================== Solve ILP ========================================== '''
     #model.write("borreliaLP.lp")
-#    model.set_results_stream(None)
+    model.set_results_stream(None)
     model.solve()
     
     #options for searching more optimal solutions
@@ -418,6 +418,34 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
 #    model.populate_solution_pool()
     
     objvalue = model.solution.get_objective_value()
-    return objvalue
+    varNames = model.variables.get_names()
+    varValues = model.solution.get_values(varNames)
+    conclusion = pd.DataFrame(columns=["Decision Variable", "Value"])
+    conclusion["Decision Variable"] = varNames
+    conclusion["Value"] = varValues
+    error = conclusion[conclusion["Decision Variable"].str.contains("d_")]
+    nonZero_error = error[(error["Value"] <= -0.001) | (error["Value"] >= 0.001)]
+    if nonZero_error.shape[0] != 0:
+        print("^^^^^^^^^^^^^^^^^^^^^^^^^^^ error ^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
+        print nonZero_error
+        
+    objStr = conclusion[conclusion["Decision Variable"].str.contains("^a")]["Decision Variable"].tolist()
+    objProp = conclusion[conclusion["Decision Variable"].str.contains("^pi")]["Decision Variable"].tolist()
+    objErr = conclusion[conclusion["Decision Variable"].str.contains("^d")]["Decision Variable"].tolist()
+    
+    objStr_coeff = model.objective.get_linear(objStr)
+    objProp_coeff = model.objective.get_linear(objProp)
+    objErr_coeff = model.objective.get_linear(objErr)
+    
+    sum_str = sum([val*coeff for val, coeff in itertools.izip(model.solution.get_values(objStr), objStr_coeff)])
+    sum_prop = sum([val*coeff for val, coeff in itertools.izip(model.solution.get_values(objProp), objProp_coeff)] )
+    sum_err = sum([val*coeff for val, coeff in itertools.izip(model.solution.get_values(objErr), objErr_coeff)] )
+    print("Objective value: {}".format(objvalue))
+    print("Strain componenet: {}".format(sum_str))
+    print("Prop componenet: {}".format(sum_prop))
+    print("Error componenet: {}".format(sum_err))
+    print("Sum :{}".format(sum_str+sum_prop+sum_err))
+    
+    return sum_str, sum_prop, sum_err
     
     

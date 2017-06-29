@@ -124,6 +124,7 @@ data: dictionary, data file loaded previously
 def checkProp(data, propFormat):
     print("....Checking sum of proportions at each locus for each sample are equal to 1....")
     report = list()
+    
     for sample in data:
         sampleDF = data[sample]
         
