@@ -90,6 +90,8 @@ for samp in samples:
 #    print("Number of compatible combinations: {}".format(len(compatible_tuples)))
     objValue_list = list()
     objStr = list()
+    objProp = list()
+    objErr = list()
     track = 1
     del comb_dict
     check_tuples = list()
@@ -105,6 +107,8 @@ for samp in samples:
         sum_str, sum_prop, sum_err = gvp.maxExistingStr(samp, loci, comb_dict, reference)
         objValue_list.append(sum_str+sum_prop+sum_err)
         objStr.append(sum_str)
+        objErr.append(sum_err)
+        objProp.append(sum_prop)
         track += 1
         
     print("Objective Value: {}".format(objValue_list))
@@ -134,8 +138,18 @@ for samp in samples:
                 writer.writerow([key, val])
     #currentpath=/pipeline/variantsAndProp
     os.chdir("..")
-
-
+    
+    #Write objective function component to csv file
+    objComponent = pd.DataFrame(columns=["Strain", "Proportion", "Error"])
+    objComponent["Strain"] = objStr
+    objComponent["Proportion"] = objProp
+    objComponent["Error"] = objErr
+    
+    if len(minObjValIndex_list) == 1:
+        objComponent.to_csv("{0}/objectiveComponent/{1}_objComponent.csv".format(currentPath, samples[0]))
+    else:
+        objComponent.to_csv("{0}/objectiveComponent/multOptDist_{1}_objComponent.csv".format(currentPath, samples[0]))
+        
 ''' $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Predict strains and their proportions $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'''
 #currentpath=/pipeline/
 os.chdir("..")
