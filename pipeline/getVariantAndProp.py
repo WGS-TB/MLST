@@ -446,6 +446,6 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
     print("Error component: {}".format(sum_err))
     print("Sum :{}".format(sum_str+sum_prop+sum_err))
     
-    return sum_str, sum_prop, sum_err
+    return np.round(sum_str, 3), np.round(sum_prop,3), np.round(sum_err,3)
     
     
