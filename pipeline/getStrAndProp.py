@@ -335,7 +335,7 @@ def mapVarAndSampleToStrain(strain, loci, allSamples):
 def strainSolver(dataPath, refStrains, outputPath, loci):
     ''' ============================================== Data handling ====================================================== '''
     #paramaters
-    propFormat = 100    #proportion in percentage or fraction
+    propFormat = 1    #proportion in percentage or fraction
     #loci = ['clpA', 'clpX', 'nifS']
     numLoci = len(loci)
     
