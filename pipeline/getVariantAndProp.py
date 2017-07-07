@@ -118,8 +118,8 @@ def compute_proportions(dataframe):
                 prob_list[i] += 1/numOfVar_minMm
                 
     normalize_term = 1.0/(sum(prob_list))
-    prob_list = [100.0*normalize_term * i for i in prob_list]
-    return prob_list 
+    prob_list = [normalize_term * i for i in prob_list]
+    return np.round(prob_list,10) 
 
 #Create a dictionary given keys and values which are lists
 def create_dictionary(keys, vals):
@@ -236,11 +236,11 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
     
     data = dict()
     data[sample] = genesDF
-#    data = gsp.roundProp(data)
+    data = gsp.roundProp(data)
     
     ''' ============================================== Data handling ====================================================== '''
     #paramaters
-    propFormat = 100    #proportion in percentage or fraction
+    propFormat = 1    #proportion in percentage or fraction
     #loci = ['clpA', 'clpX', 'nifS']
     numLoci = len(loci)
     
@@ -353,7 +353,7 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
             
         indicMinusAvgPropLess1_LHS.append([temp, coef])
     
-    tolerance = 0.01     #how much tolerance we set for the upper bound    
+    tolerance = 0.01*propFormat*0.01     #how much tolerance we set for the upper bound    
     model.linear_constraints.add(lin_expr=indicMinusAvgPropLess1_LHS, rhs=[propFormat - tolerance]*len(indicMinusAvgPropLess1_LHS), senses=["L"]*len(indicMinusAvgPropLess1_LHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusAvgPropLess1_LHS))])
     model.linear_constraints.add(lin_expr=indicMinusAvgPropLess1_LHS, rhs=[0]*len(indicMinusAvgPropLess1_LHS), senses=["G"]*len(indicMinusAvgPropLess1_LHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusAvgPropLess1_LHS))])
     
@@ -406,7 +406,7 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
     
     ''' ================================== Solve ILP ========================================== '''
     #model.write("borreliaLP.lp")
-    model.set_results_stream(None)
+#    model.set_results_stream(None)
     model.solve()
     
     #options for searching more optimal solutions
@@ -441,9 +441,9 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
     sum_prop = sum([val*coeff for val, coeff in itertools.izip(model.solution.get_values(objProp), objProp_coeff)] )
     sum_err = sum([val*coeff for val, coeff in itertools.izip(model.solution.get_values(objErr), objErr_coeff)] )
     print("Objective value: {}".format(objvalue))
-    print("Strain componenet: {}".format(sum_str))
-    print("Prop componenet: {}".format(sum_prop))
-    print("Error componenet: {}".format(sum_err))
+    print("Strain component: {}".format(sum_str))
+    print("Prop component: {}".format(sum_prop))
+    print("Error component: {}".format(sum_err))
     print("Sum :{}".format(sum_str+sum_prop+sum_err))
     
     return sum_str, sum_prop, sum_err
