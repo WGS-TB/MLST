@@ -1,792 +1,632 @@
 ======================================== SIMULATION 1 ====================================================
 
-Number of optimal solutions: 2
-True variants are: ['clpA_6', 'clpA_85']
+Number of optimal solutions: 1
+[['clpA_193', 'clpA_204', 'clpA_56', 'clpA_73']]
+True variants are: ['clpA_73', 'clpA_56', 'clpA_193', 'clpA_204']
 
-Predicted variants are: ['clpA_6', 'clpA_85']
+Predicted variants are: ['clpA_193', 'clpA_204', 'clpA_56', 'clpA_73']
 
-True proportions are: {'clpA_6': 38.17341616369404, 'clpA_85': 61.82658383630597}
+True proportions are: {'clpA_193': 19.855123074064377, 'clpA_56': 37.58032467379183, 'clpA_73': 34.20562264767503, 'clpA_204': 8.358929604468765}
 
-Predicted proportions using Bayes method are: {'clpA_6': 38.532110091743121, 'clpA_85': 61.467889908256886}
+Predicted proportions using Bayes method are: {'clpA_193': 20.902536695878894, 'clpA_56': 34.750834206243965, 'clpA_73': 35.745494882376214, 'clpA_204': 8.6011342155009416}
 
-Predicted proportions using Counting method are: {'clpA_6': 38.53211009174312, 'clpA_85': 61.467889908256886}
+Predicted proportions using Counting method are: {'clpA_193': 19.84877126654064, 'clpA_56': 37.19281663516068, 'clpA_73': 34.35727788279773, 'clpA_204': 8.601134215500945}
 
-All solutions: 
-{'sol_0': ['clpA_14', 'clpA_85'], 'sol_1': ['clpA_6', 'clpA_85']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 429.6437363024632, 'sol_1': 429.6437363024632}
-
+average Qscores are: [513350.0]
 ======================================== SIMULATION 2 ====================================================
 
 Number of optimal solutions: 1
-True variants are: ['clpA_120', 'clpA_163', 'clpA_107', 'clpA_209', 'clpA_38']
+[['clpA_120', 'clpA_145', 'clpA_157', 'clpA_162', 'clpA_214', 'clpA_36']]
+True variants are: ['clpA_214', 'clpA_157', 'clpA_36', 'clpA_145', 'clpA_162', 'clpA_120']
 
-Predicted variants are: ['clpA_107', 'clpA_120', 'clpA_163', 'clpA_209', 'clpA_38']
+Predicted variants are: ['clpA_120', 'clpA_145', 'clpA_157', 'clpA_162', 'clpA_214', 'clpA_36']
 
-True proportions are: {'clpA_163': 21.9850246896549, 'clpA_209': 20.35964632177263, 'clpA_38': 22.716802079213068, 'clpA_120': 29.961905694594744, 'clpA_107': 4.976621214764667}
+True proportions are: {'clpA_214': 1.5847990271009047, 'clpA_36': 37.14874931688361, 'clpA_162': 15.858755650497711, 'clpA_157': 22.936649247655915, 'clpA_145': 1.0627279574993669, 'clpA_120': 21.408318800362494}
 
-Predicted proportions using Bayes method are: {'clpA_163': 21.9298245614035, 'clpA_209': 21.929824561403507, 'clpA_38': 21.929824561403521, 'clpA_120': 28.07017543859649, 'clpA_107': 6.140350877192982}
+Predicted proportions using Bayes method are: {'clpA_214': 1.6949152542372881, 'clpA_36': 25.584863168987059, 'clpA_162': 27.14294101479668, 'clpA_157': 22.787193973634643, 'clpA_145': 1.3211600346719958, 'clpA_120': 21.468926553672322}
 
-Predicted proportions using Counting method are: {'clpA_163': 21.929824561403507, 'clpA_209': 21.929824561403507, 'clpA_38': 21.929824561403507, 'clpA_120': 28.07017543859649, 'clpA_107': 6.140350877192982}
+Predicted proportions using Counting method are: {'clpA_214': 1.694915254237288, 'clpA_36': 34.55743879472693, 'clpA_162': 18.173258003766477, 'clpA_157': 22.78719397363465, 'clpA_145': 1.3182674199623352, 'clpA_120': 21.468926553672315}
 
-All solutions: 
-{'sol_0': ['clpA_107', 'clpA_120', 'clpA_163', 'clpA_209', 'clpA_38']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 492.18305261645946}
-
+average Qscores are: [919591.0]
 ======================================== SIMULATION 3 ====================================================
 
-Number of optimal solutions: 2
-True variants are: ['clpA_60', 'clpA_118', 'clpA_35', 'clpA_43']
+Number of optimal solutions: 3
+[['clpA_113', 'clpA_118', 'clpA_133', 'clpA_43', 'clpA_55', 'clpA_60'], ['clpA_113', 'clpA_118', 'clpA_133', 'clpA_35', 'clpA_43', 'clpA_60'], ['clpA_113', 'clpA_118', 'clpA_133', 'clpA_43', 'clpA_54', 'clpA_60']]
+True variants are: ['clpA_113', 'clpA_133', 'clpA_60', 'clpA_118', 'clpA_35', 'clpA_43']
 
-Predicted variants are: ['clpA_118', 'clpA_35', 'clpA_43', 'clpA_60']
+Predicted variants are: ['clpA_113', 'clpA_118', 'clpA_133', 'clpA_35', 'clpA_43', 'clpA_60']
 
-True proportions are: {'clpA_43': 25.186755210310725, 'clpA_60': 15.745221047358251, 'clpA_118': 37.59844913029921, 'clpA_35': 21.46957461203181}
+True proportions are: {'clpA_35': 11.352912916616257, 'clpA_43': 27.10993497596725, 'clpA_60': 5.108192976476572, 'clpA_133': 28.5871663230566, 'clpA_118': 13.305348492199128, 'clpA_113': 14.53644431568418}
 
-Predicted proportions using Bayes method are: {'clpA_43': 24.311252962385851, 'clpA_60': 16.396711639384055, 'clpA_118': 37.168141592920357, 'clpA_35': 22.123893805309734}
+Predicted proportions using Bayes method are: {'clpA_35': 13.24649744088067, 'clpA_43': 23.079243431194431, 'clpA_60': 9.2607345971586419, 'clpA_133': 28.359003805499491, 'clpA_118': 13.193572360303872, 'clpA_113': 12.860948364962882}
 
-Predicted proportions using Counting method are: {'clpA_43': 24.778761061946902, 'clpA_60': 15.92920353982301, 'clpA_118': 37.16814159292036, 'clpA_35': 22.123893805309734}
+Predicted proportions using Counting method are: {'clpA_35': 12.111215834118756, 'clpA_43': 27.049952874646557, 'clpA_60': 5.27803958529689, 'clpA_133': 28.36946277097078, 'clpA_118': 13.195098963242224, 'clpA_113': 13.996229971724787}
 
-All solutions: 
-{'sol_0': ['clpA_118', 'clpA_35', 'clpA_43', 'clpA_60'], 'sol_1': ['clpA_118', 'clpA_43', 'clpA_54', 'clpA_60']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 473.45826820084221, 'sol_1': 473.45826820084221}
-
+average Qscores are: [945876.0, 943141.0, 943795.0]
 ======================================== SIMULATION 4 ====================================================
 
-Number of optimal solutions: 3
+Number of optimal solutions: 1
+[['clpA_14', 'clpA_164', 'clpA_68']]
 True variants are: ['clpA_14', 'clpA_68', 'clpA_164']
 
 Predicted variants are: ['clpA_14', 'clpA_164', 'clpA_68']
 
 True proportions are: {'clpA_68': 55.75715799944185, 'clpA_14': 4.431067746690846, 'clpA_164': 39.8117742538673}
 
-Predicted proportions using Bayes method are: {'clpA_68': 55.045871559633028, 'clpA_14': 6.4220183486238538, 'clpA_164': 38.532110091743121}
+Predicted proportions using Bayes method are: {'clpA_68': 55.629139072847686, 'clpA_14': 4.6416629945243697, 'clpA_164': 39.729197932627947}
 
-Predicted proportions using Counting method are: {'clpA_68': 55.04587155963303, 'clpA_14': 6.422018348623854, 'clpA_164': 38.53211009174312}
+Predicted proportions using Counting method are: {'clpA_68': 55.629139072847686, 'clpA_14': 4.635761589403974, 'clpA_164': 39.735099337748345}
 
-All solutions: 
-{'sol_2': ['clpA_14', 'clpA_164', 'clpA_68'], 'sol_0': ['clpA_164', 'clpA_6', 'clpA_68'], 'sol_1': ['clpA_1', 'clpA_164', 'clpA_68']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 448.83768353943049, 'sol_0': 448.83768353943049, 'sol_1': 448.83768353943049}
-
+average Qscores are: [393653.0]
 ======================================== SIMULATION 5 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_118', 'clpA_200', 'clpA_213', 'clpA_217']]
 True variants are: ['clpA_118', 'clpA_213', 'clpA_217', 'clpA_200']
 
 Predicted variants are: ['clpA_118', 'clpA_200', 'clpA_213', 'clpA_217']
 
 True proportions are: {'clpA_118': 38.13192513071833, 'clpA_213': 25.75800596009843, 'clpA_200': 22.821031819153596, 'clpA_217': 13.289037090029643}
 
-Predicted proportions using Bayes method are: {'clpA_118': 38.532110091743121, 'clpA_213': 25.688073394495415, 'clpA_200': 22.935779816513762, 'clpA_217': 12.844036697247708}
+Predicted proportions using Bayes method are: {'clpA_118': 38.089206308395468, 'clpA_213': 25.803402646502835, 'clpA_200': 22.873345935727787, 'clpA_217': 13.234045109373906}
 
-Predicted proportions using Counting method are: {'clpA_118': 38.53211009174312, 'clpA_213': 25.688073394495415, 'clpA_200': 22.93577981651376, 'clpA_217': 12.844036697247708}
+Predicted proportions using Counting method are: {'clpA_118': 38.09073724007561, 'clpA_213': 25.803402646502835, 'clpA_200': 22.873345935727787, 'clpA_217': 13.232514177693762}
 
-All solutions: 
-{'sol_0': ['clpA_118', 'clpA_200', 'clpA_213', 'clpA_217']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 462.45600582931883}
-
+average Qscores are: [590761.0]
 ======================================== SIMULATION 6 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_117', 'clpA_197']]
 True variants are: ['clpA_197', 'clpA_117']
 
 Predicted variants are: ['clpA_117', 'clpA_197']
 
 True proportions are: {'clpA_117': 62.480407715401995, 'clpA_197': 37.519592284598005}
 
-Predicted proportions using Bayes method are: {'clpA_197': 38.532110091743121, 'clpA_117': 61.467889908256886}
+Predicted proportions using Bayes method are: {'clpA_197': 37.571157495256166, 'clpA_117': 62.428842504743834}
 
-Predicted proportions using Counting method are: {'clpA_197': 38.53211009174312, 'clpA_117': 61.467889908256886}
+Predicted proportions using Counting method are: {'clpA_197': 37.571157495256166, 'clpA_117': 62.428842504743834}
 
-All solutions: 
-{'sol_0': ['clpA_117', 'clpA_197']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 429.64373630246342}
-
+average Qscores are: [196438.0]
 ======================================== SIMULATION 7 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_110', 'clpA_124', 'clpA_143', 'clpA_19', 'clpA_81']]
 True variants are: ['clpA_124', 'clpA_19', 'clpA_110', 'clpA_81', 'clpA_143']
 
 Predicted variants are: ['clpA_110', 'clpA_124', 'clpA_143', 'clpA_19', 'clpA_81']
 
 True proportions are: {'clpA_124': 1.4413177598507472, 'clpA_110': 30.02030344865027, 'clpA_81': 28.412997102090248, 'clpA_19': 28.596375936700273, 'clpA_143': 11.52900575270846}
 
-Predicted proportions using Bayes method are: {'clpA_124': 3.41880341880342, 'clpA_110': 29.861215511006318, 'clpA_81': 27.403741753950936, 'clpA_19': 27.35042735042736, 'clpA_143': 11.965811965811969}
+Predicted proportions using Bayes method are: {'clpA_124': 1.7364846815461705, 'clpA_110': 29.810170801259435, 'clpA_81': 28.571086723647237, 'clpA_19': 28.300336889592323, 'clpA_143': 11.581920903954819}
 
-Predicted proportions using Counting method are: {'clpA_124': 3.418803418803419, 'clpA_110': 29.91452991452992, 'clpA_81': 27.350427350427353, 'clpA_19': 27.350427350427353, 'clpA_143': 11.965811965811966}
+Predicted proportions using Counting method are: {'clpA_124': 1.694915254237288, 'clpA_110': 30.037664783427495, 'clpA_81': 28.342749529190208, 'clpA_19': 28.342749529190208, 'clpA_143': 11.581920903954803}
 
-All solutions: 
-{'sol_0': ['clpA_110', 'clpA_124', 'clpA_143', 'clpA_19', 'clpA_81']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 505.77718174654052}
-
+average Qscores are: [811504.0]
 ======================================== SIMULATION 8 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_166', 'clpA_204', 'clpA_95']]
 True variants are: ['clpA_204', 'clpA_95', 'clpA_166']
 
 Predicted variants are: ['clpA_166', 'clpA_204', 'clpA_95']
 
 True proportions are: {'clpA_95': 53.10923775879388, 'clpA_166': 1.3989274525364226, 'clpA_204': 45.491834788669685}
 
-Predicted proportions using Bayes method are: {'clpA_95': 46.781373745746635, 'clpA_166': 8.2644978138863827, 'clpA_204': 44.954128440366972}
+Predicted proportions using Bayes method are: {'clpA_95': 46.0597493169128, 'clpA_166': 8.5716306452801074, 'clpA_204': 45.368620037807084}
 
-Predicted proportions using Counting method are: {'clpA_95': 51.37614678899083, 'clpA_166': 3.669724770642202, 'clpA_204': 44.95412844036697}
+Predicted proportions using Counting method are: {'clpA_95': 52.93005671077505, 'clpA_166': 1.7013232514177694, 'clpA_204': 45.36862003780718}
 
-All solutions: 
-{'sol_0': ['clpA_166', 'clpA_204', 'clpA_95']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 454.8245867808422}
-
+average Qscores are: [399951.0]
 ======================================== SIMULATION 9 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_166', 'clpA_30', 'clpA_9']]
 True variants are: ['clpA_9', 'clpA_166', 'clpA_30']
 
 Predicted variants are: ['clpA_166', 'clpA_30', 'clpA_9']
 
 True proportions are: {'clpA_30': 34.934600604289734, 'clpA_166': 23.327897412612778, 'clpA_9': 41.73750198309749}
 
-Predicted proportions using Bayes method are: {'clpA_30': 35.454545454545453, 'clpA_166': 22.727272727272727, 'clpA_9': 41.818181818181813}
+Predicted proportions using Bayes method are: {'clpA_30': 34.932365612558613, 'clpA_166': 23.244781783681216, 'clpA_9': 41.822852603760168}
 
-Predicted proportions using Counting method are: {'clpA_30': 35.45454545454545, 'clpA_166': 22.727272727272727, 'clpA_9': 41.81818181818182}
+Predicted proportions using Counting method are: {'clpA_30': 34.9146110056926, 'clpA_166': 23.244781783681216, 'clpA_9': 41.84060721062619}
 
-All solutions: 
-{'sol_0': ['clpA_166', 'clpA_30', 'clpA_9']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 452.46112879875261}
-
+average Qscores are: [394005.0]
 ======================================== SIMULATION 10 ====================================================
 
-Number of optimal solutions: 4
+Number of optimal solutions: 1
+[['clpA_130', 'clpA_24', 'clpA_42', 'clpA_65', 'clpA_80']]
 True variants are: ['clpA_80', 'clpA_65', 'clpA_24', 'clpA_130', 'clpA_42']
 
 Predicted variants are: ['clpA_130', 'clpA_24', 'clpA_42', 'clpA_65', 'clpA_80']
 
 True proportions are: {'clpA_130': 15.163136217990509, 'clpA_24': 19.127309311739072, 'clpA_80': 41.48714909992698, 'clpA_42': 23.647863155425483, 'clpA_65': 0.574542214917952}
 
-Predicted proportions using Bayes method are: {'clpA_130': 13.873140934233533, 'clpA_24': 17.948717948717949, 'clpA_80': 39.316239316239319, 'clpA_42': 18.257112722046003, 'clpA_65': 10.604789078763206}
+Predicted proportions using Bayes method are: {'clpA_130': 14.16767706949048, 'clpA_24': 19.187145557655967, 'clpA_80': 41.39886578449908, 'clpA_42': 15.892023268752467, 'clpA_65': 9.3542883196020021}
 
-Predicted proportions using Counting method are: {'clpA_130': 14.95726495726496, 'clpA_24': 17.94871794871795, 'clpA_80': 39.31623931623932, 'clpA_42': 23.931623931623932, 'clpA_65': 3.8461538461538467}
+Predicted proportions using Counting method are: {'clpA_130': 14.508506616257089, 'clpA_24': 19.187145557655956, 'clpA_80': 41.39886578449906, 'clpA_42': 23.534971644612476, 'clpA_65': 1.3705103969754253}
 
-All solutions: 
-{'sol_2': ['clpA_130', 'clpA_187', 'clpA_24', 'clpA_65', 'clpA_80'], 'sol_3': ['clpA_130', 'clpA_24', 'clpA_42', 'clpA_65', 'clpA_80'], 'sol_0': ['clpA_130', 'clpA_187', 'clpA_24', 'clpA_40', 'clpA_80'], 'sol_1': ['clpA_130', 'clpA_24', 'clpA_40', 'clpA_42', 'clpA_80']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 494.83401366903342, 'sol_3': 494.83401366903342, 'sol_0': 494.82969316357077, 'sol_1': 494.82969316357077}
-
+average Qscores are: [740487.0]
 ======================================== SIMULATION 11 ====================================================
 
-Number of optimal solutions: 4
+Number of optimal solutions: 2
+[['clpA_103', 'clpA_15', 'clpA_159', 'clpA_183', 'clpA_194', 'clpA_32', 'clpA_66'], ['clpA_103', 'clpA_15', 'clpA_160', 'clpA_183', 'clpA_194', 'clpA_32', 'clpA_66']]
 True variants are: ['clpA_160', 'clpA_15', 'clpA_32', 'clpA_183', 'clpA_66', 'clpA_194', 'clpA_103']
 
 Predicted variants are: ['clpA_103', 'clpA_15', 'clpA_160', 'clpA_183', 'clpA_194', 'clpA_32', 'clpA_66']
 
 True proportions are: {'clpA_15': 25.296546216548528, 'clpA_183': 13.945484130973304, 'clpA_194': 24.350558390719044, 'clpA_160': 0.31142755241984954, 'clpA_32': 14.627350456132321, 'clpA_66': 11.711652010320982, 'clpA_103': 9.756981242885978}
 
-Predicted proportions using Bayes method are: {'clpA_15': 17.867902327703288, 'clpA_183': 14.87603305785124, 'clpA_194': 15.227030054689743, 'clpA_160': 8.5783786640322504, 'clpA_32': 14.87603305785124, 'clpA_66': 14.334557144504073, 'clpA_103': 14.240065693368161}
+Predicted proportions using Bayes method are: {'clpA_15': 16.805902496099783, 'clpA_183': 13.854853911404325, 'clpA_194': 15.239036716315228, 'clpA_160': 8.6417883615815967, 'clpA_32': 14.505859652098874, 'clpA_66': 15.673512581671046, 'clpA_103': 15.279046280829133}
 
-Predicted proportions using Counting method are: {'clpA_15': 23.140495867768596, 'clpA_183': 14.87603305785124, 'clpA_194': 18.457300275482094, 'clpA_160': 3.3057851239669422, 'clpA_32': 14.87603305785124, 'clpA_66': 13.498622589531683, 'clpA_103': 11.845730027548212}
+Predicted proportions using Counting method are: {'clpA_15': 24.78793590951931, 'clpA_183': 13.854853911404328, 'clpA_194': 20.07540056550426, 'clpA_160': 0.6597549481621109, 'clpA_32': 14.51460885956644, 'clpA_66': 13.477851083883122, 'clpA_103': 12.629594721960403}
 
-All solutions: 
-{'sol_2': ['clpA_103', 'clpA_108', 'clpA_15', 'clpA_159', 'clpA_183', 'clpA_194', 'clpA_32'], 'sol_3': ['clpA_103', 'clpA_108', 'clpA_15', 'clpA_160', 'clpA_183', 'clpA_194', 'clpA_32'], 'sol_0': ['clpA_103', 'clpA_15', 'clpA_160', 'clpA_183', 'clpA_194', 'clpA_32', 'clpA_66'], 'sol_1': ['clpA_103', 'clpA_15', 'clpA_159', 'clpA_183', 'clpA_194', 'clpA_32', 'clpA_66']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 515.93360355442712, 'sol_3': 515.93360355442712, 'sol_0': 514.75119879303043, 'sol_1': 514.75119879303043}
-
+average Qscores are: [1041524.0, 1041123.0]
 ======================================== SIMULATION 12 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_103', 'clpA_15', 'clpA_156', 'clpA_30', 'clpA_76', 'clpA_79']]
 True variants are: ['clpA_76', 'clpA_79', 'clpA_103', 'clpA_30', 'clpA_156', 'clpA_15']
 
 Predicted variants are: ['clpA_103', 'clpA_15', 'clpA_156', 'clpA_30', 'clpA_76', 'clpA_79']
 
 True proportions are: {'clpA_30': 14.657363837994147, 'clpA_15': 11.640030772931329, 'clpA_156': 20.57131723692035, 'clpA_76': 2.7400721466612548, 'clpA_103': 49.36907102283723, 'clpA_79': 1.0221449826557}
 
-Predicted proportions using Bayes method are: {'clpA_30': 15.254237288135593, 'clpA_15': 16.719312227887944, 'clpA_156': 16.331535229739174, 'clpA_76': 3.3898305084745761, 'clpA_103': 44.915254237288138, 'clpA_79': 3.3898305084745761}
+Predicted proportions using Bayes method are: {'clpA_30': 14.500941619585687, 'clpA_15': 16.554310066701262, 'clpA_156': 15.460755846669734, 'clpA_76': 2.0961011398644622, 'clpA_103': 49.152542372881356, 'clpA_79': 2.2353489542974958}
 
-Predicted proportions using Counting method are: {'clpA_30': 15.254237288135592, 'clpA_15': 13.135593220338983, 'clpA_156': 19.915254237288135, 'clpA_76': 3.389830508474576, 'clpA_103': 44.91525423728813, 'clpA_79': 3.389830508474576}
+Predicted proportions using Counting method are: {'clpA_30': 14.500941619585687, 'clpA_15': 13.418079096045197, 'clpA_156': 18.5969868173258, 'clpA_76': 3.0131826741996233, 'clpA_103': 49.152542372881356, 'clpA_79': 1.3182674199623352}
 
-All solutions: 
-{'sol_0': ['clpA_103', 'clpA_15', 'clpA_156', 'clpA_30', 'clpA_76', 'clpA_79']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 500.95190785369397}
-
+average Qscores are: [930905.0]
 ======================================== SIMULATION 13 ====================================================
 
-Number of optimal solutions: 2
+Number of optimal solutions: 1
+[['clpA_152', 'clpA_180', 'clpA_215', 'clpA_4', 'clpA_47', 'clpA_75']]
 True variants are: ['clpA_47', 'clpA_4', 'clpA_215', 'clpA_75', 'clpA_152', 'clpA_180']
 
 Predicted variants are: ['clpA_152', 'clpA_180', 'clpA_215', 'clpA_4', 'clpA_47', 'clpA_75']
 
 True proportions are: {'clpA_180': 4.969195017954185, 'clpA_215': 13.234792704796517, 'clpA_47': 0.40386442110028925, 'clpA_75': 22.259833033600934, 'clpA_4': 29.336860593954107, 'clpA_152': 29.79545422859397}
 
-Predicted proportions using Bayes method are: {'clpA_180': 6.140350877192982, 'clpA_215': 12.280701754385964, 'clpA_47': 3.5087719298245612, 'clpA_75': 21.929824561403507, 'clpA_4': 28.07017543859649, 'clpA_152': 28.07017543859649}
+Predicted proportions using Bayes method are: {'clpA_180': 4.9905838041431263, 'clpA_215': 13.182674199623351, 'clpA_47': 0.6591337099811676, 'clpA_75': 22.128060263653484, 'clpA_4': 29.378531073446325, 'clpA_152': 29.66101694915254}
 
-Predicted proportions using Counting method are: {'clpA_180': 6.140350877192982, 'clpA_215': 12.280701754385964, 'clpA_47': 3.508771929824561, 'clpA_75': 21.929824561403507, 'clpA_4': 28.07017543859649, 'clpA_152': 28.07017543859649}
+Predicted proportions using Counting method are: {'clpA_180': 4.990583804143126, 'clpA_215': 13.182674199623351, 'clpA_47': 0.6591337099811676, 'clpA_75': 22.128060263653484, 'clpA_4': 29.378531073446325, 'clpA_152': 29.661016949152543}
 
-All solutions: 
-{'sol_0': ['clpA_152', 'clpA_180', 'clpA_215', 'clpA_4', 'clpA_46', 'clpA_75'], 'sol_1': ['clpA_152', 'clpA_180', 'clpA_215', 'clpA_4', 'clpA_47', 'clpA_75']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 499.27669414714438, 'sol_1': 499.27669414714438}
-
+average Qscores are: [987925.0]
 ======================================== SIMULATION 14 ====================================================
 
 Number of optimal solutions: 2
+[['clpA_29', 'clpA_30'], ['clpA_28', 'clpA_30']]
 True variants are: ['clpA_28', 'clpA_30']
 
 Predicted variants are: ['clpA_28', 'clpA_30']
 
 True proportions are: {'clpA_30': 35.25273592531647, 'clpA_28': 64.74726407468351}
 
-Predicted proportions using Bayes method are: {'clpA_30': 50.589555764481837, 'clpA_28': 49.41044423551817}
+Predicted proportions using Bayes method are: {'clpA_30': 50.520876645221819, 'clpA_28': 49.479123354778189}
 
-Predicted proportions using Counting method are: {'clpA_30': 44.95412844036697, 'clpA_28': 55.04587155963303}
+Predicted proportions using Counting method are: {'clpA_30': 47.53320683111954, 'clpA_28': 52.46679316888046}
 
-All solutions: 
-{'sol_0': ['clpA_28', 'clpA_30'], 'sol_1': ['clpA_29', 'clpA_30']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 403.65476615129586, 'sol_1': 411.16212633267412}
-
+average Qscores are: [29510.0, 9574.0]
 ======================================== SIMULATION 15 ====================================================
 
-Number of optimal solutions: 2
+Number of optimal solutions: 1
+[['clpA_214', 'clpA_22']]
 True variants are: ['clpA_214', 'clpA_22']
 
 Predicted variants are: ['clpA_214', 'clpA_22']
 
 True proportions are: {'clpA_22': 97.38370053840528, 'clpA_214': 2.6162994615947124}
 
-Predicted proportions using Bayes method are: {'clpA_22': 96.33027522935781, 'clpA_214': 3.669724770642202}
+Predicted proportions using Bayes method are: {'clpA_22': 97.343453510436433, 'clpA_214': 2.6565464895635675}
 
-Predicted proportions using Counting method are: {'clpA_22': 96.33027522935781, 'clpA_214': 3.669724770642202}
+Predicted proportions using Counting method are: {'clpA_22': 97.34345351043643, 'clpA_214': 2.6565464895635675}
 
-All solutions: 
-{'sol_0': ['clpA_214', 'clpA_22'], 'sol_1': ['clpA_157', 'clpA_214', 'clpA_22']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 417.66992513497036, 'sol_1': 428.22748907534742}
-
+average Qscores are: [196395.0]
 ======================================== SIMULATION 16 ====================================================
 
-Number of optimal solutions: 2
+Number of optimal solutions: 1
+[['clpA_106', 'clpA_123', 'clpA_127', 'clpA_155', 'clpA_212', 'clpA_56']]
 True variants are: ['clpA_56', 'clpA_123', 'clpA_155', 'clpA_212', 'clpA_106', 'clpA_127']
 
 Predicted variants are: ['clpA_106', 'clpA_123', 'clpA_127', 'clpA_155', 'clpA_212', 'clpA_56']
 
 True proportions are: {'clpA_212': 22.2031601614533, 'clpA_56': 2.915919585626692, 'clpA_155': 21.37512617352857, 'clpA_127': 3.9019320771751715, 'clpA_123': 18.19853481104944, 'clpA_106': 31.405327191166833}
 
-Predicted proportions using Bayes method are: {'clpA_212': 21.36752136752137, 'clpA_56': 3.4188034188034191, 'clpA_155': 25.525804676366104, 'clpA_127': 5.9829059829059839, 'clpA_123': 17.948717948717949, 'clpA_106': 25.756246605685181}
+Predicted proportions using Bayes method are: {'clpA_212': 22.107243650047039, 'clpA_56': 3.0103480714957667, 'clpA_155': 26.23209299875823, 'clpA_127': 4.4612246028835649, 'clpA_123': 17.690491655822992, 'clpA_106': 26.498599020992415}
 
-Predicted proportions using Counting method are: {'clpA_212': 21.36752136752137, 'clpA_56': 3.418803418803419, 'clpA_155': 23.504273504273506, 'clpA_127': 5.982905982905983, 'clpA_123': 17.94871794871795, 'clpA_106': 27.77777777777778}
+Predicted proportions using Counting method are: {'clpA_212': 22.107243650047035, 'clpA_56': 3.0103480714957667, 'clpA_155': 23.94167450611477, 'clpA_127': 3.951081843838194, 'clpA_123': 18.156161806208843, 'clpA_106': 28.83349012229539}
 
-All solutions: 
-{'sol_0': ['clpA_106', 'clpA_123', 'clpA_127', 'clpA_155', 'clpA_212', 'clpA_57'], 'sol_1': ['clpA_106', 'clpA_123', 'clpA_127', 'clpA_155', 'clpA_212', 'clpA_56']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 495.28772725194085, 'sol_1': 495.28772725194085}
-
+average Qscores are: [917667.0]
 ======================================== SIMULATION 17 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_108', 'clpA_139', 'clpA_165', 'clpA_168', 'clpA_201', 'clpA_92', 'clpA_96']]
 True variants are: ['clpA_168', 'clpA_139', 'clpA_92', 'clpA_165', 'clpA_108', 'clpA_201', 'clpA_96']
 
 Predicted variants are: ['clpA_108', 'clpA_139', 'clpA_165', 'clpA_168', 'clpA_201', 'clpA_92', 'clpA_96']
 
 True proportions are: {'clpA_168': 18.669278862768497, 'clpA_201': 12.706721653008051, 'clpA_165': 4.684510643768236, 'clpA_108': 14.686580028338591, 'clpA_139': 9.844871841452747, 'clpA_96': 28.985294080349323, 'clpA_92': 10.422742890314552}
 
-Predicted proportions using Bayes method are: {'clpA_168': 14.508488659993986, 'clpA_201': 11.965811965811968, 'clpA_165': 8.0597601877005225, 'clpA_108': 12.890424539737399, 'clpA_139': 13.259275330516809, 'clpA_96': 27.297112946903763, 'clpA_92': 12.019126369335554}
+Predicted proportions using Bayes method are: {'clpA_168': 15.589245130694856, 'clpA_201': 12.803738317757011, 'clpA_165': 8.165623301795236, 'clpA_108': 11.782288952185285, 'clpA_139': 12.687141680745174, 'clpA_96': 28.485895361031531, 'clpA_92': 10.486067255790902}
 
-Predicted proportions using Counting method are: {'clpA_168': 17.94871794871795, 'clpA_201': 11.965811965811966, 'clpA_165': 5.982905982905983, 'clpA_108': 12.820512820512821, 'clpA_139': 11.965811965811966, 'clpA_96': 27.350427350427353, 'clpA_92': 11.965811965811966}
+Predicted proportions using Counting method are: {'clpA_168': 18.691588785046733, 'clpA_201': 12.803738317757011, 'clpA_165': 4.953271028037384, 'clpA_108': 13.504672897196263, 'clpA_139': 11.074766355140188, 'clpA_96': 28.504672897196265, 'clpA_92': 10.46728971962617}
 
-All solutions: 
-{'sol_0': ['clpA_108', 'clpA_139', 'clpA_165', 'clpA_168', 'clpA_201', 'clpA_92', 'clpA_96']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 493.41164412020453}
-
+average Qscores are: [1126040.0]
 ======================================== SIMULATION 18 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_100', 'clpA_133', 'clpA_139', 'clpA_213', 'clpA_60']]
 True variants are: ['clpA_60', 'clpA_213', 'clpA_139', 'clpA_133', 'clpA_100']
 
 Predicted variants are: ['clpA_100', 'clpA_133', 'clpA_139', 'clpA_213', 'clpA_60']
 
 True proportions are: {'clpA_139': 20.142339556875186, 'clpA_100': 20.931986615148933, 'clpA_60': 21.699916237704908, 'clpA_213': 20.154091537261078, 'clpA_133': 17.07166605300989}
 
-Predicted proportions using Bayes method are: {'clpA_100': 20.66115702479339, 'clpA_139': 20.765767688341793, 'clpA_133': 17.355371900826448, 'clpA_213': 20.66115702479339, 'clpA_60': 20.55654636124498}
+Predicted proportions using Bayes method are: {'clpA_100': 20.803919222963973, 'clpA_139': 21.041028362281136, 'clpA_133': 17.127717085409031, 'clpA_213': 20.150659133709979, 'clpA_60': 20.87667619563587}
 
-Predicted proportions using Counting method are: {'clpA_100': 20.66115702479339, 'clpA_139': 20.66115702479339, 'clpA_133': 17.355371900826448, 'clpA_213': 20.66115702479339, 'clpA_60': 20.66115702479339}
+Predicted proportions using Counting method are: {'clpA_100': 20.80979284369115, 'clpA_139': 20.15065913370998, 'clpA_133': 17.137476459510356, 'clpA_213': 20.15065913370998, 'clpA_60': 21.75141242937853}
 
-All solutions: 
-{'sol_0': ['clpA_100', 'clpA_133', 'clpA_139', 'clpA_213', 'clpA_60']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 519.16254224754084}
-
+average Qscores are: [780986.0]
 ======================================== SIMULATION 19 ====================================================
 
-Number of optimal solutions: 2
+Number of optimal solutions: 3
+[['clpA_147', 'clpA_198', 'clpA_199', 'clpA_20', 'clpA_216', 'clpA_87'], ['clpA_147', 'clpA_198', 'clpA_199', 'clpA_20', 'clpA_216', 'clpA_53', 'clpA_87'], ['clpA_147', 'clpA_162', 'clpA_198', 'clpA_199', 'clpA_20', 'clpA_216', 'clpA_87']]
 True variants are: ['clpA_198', 'clpA_87', 'clpA_147', 'clpA_216', 'clpA_20', 'clpA_199']
 
 Predicted variants are: ['clpA_147', 'clpA_198', 'clpA_199', 'clpA_20', 'clpA_216', 'clpA_87']
 
 True proportions are: {'clpA_216': 5.314326802177019, 'clpA_199': 19.61244831198223, 'clpA_198': 28.849468472351337, 'clpA_20': 17.458401058250107, 'clpA_147': 14.76138239666941, 'clpA_87': 14.003972958569886}
 
-Predicted proportions using Bayes method are: {'clpA_216': 5.9829059829059839, 'clpA_199': 17.948717948717949, 'clpA_198': 27.350427350427353, 'clpA_20': 17.948717948717949, 'clpA_147': 15.38461538461538, 'clpA_87': 15.384615384615392}
+Predicted proportions using Bayes method are: {'clpA_216': 5.2681091251175918, 'clpA_199': 19.47318908748824, 'clpA_198': 28.68638228121403, 'clpA_20': 17.497648165569146, 'clpA_147': 14.503836627986088, 'clpA_87': 14.570834712624912}
 
-Predicted proportions using Counting method are: {'clpA_216': 5.982905982905983, 'clpA_199': 17.94871794871795, 'clpA_198': 27.350427350427353, 'clpA_20': 17.94871794871795, 'clpA_147': 15.384615384615387, 'clpA_87': 15.384615384615387}
+Predicted proportions using Counting method are: {'clpA_216': 5.268109125117592, 'clpA_199': 19.47318908748824, 'clpA_198': 28.692380056444026, 'clpA_20': 17.497648165569142, 'clpA_147': 14.722483537158984, 'clpA_87': 14.346190028222013}
 
-All solutions: 
-{'sol_0': ['clpA_147', 'clpA_198', 'clpA_199', 'clpA_20', 'clpA_216', 'clpA_87'], 'sol_1': ['clpA_147', 'clpA_199', 'clpA_20', 'clpA_216', 'clpA_36', 'clpA_87']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 485.61394353384838, 'sol_1': 485.61394353384838}
-
+average Qscores are: [944801.0, 1101363.0, 1104678.0]
 ======================================== SIMULATION 20 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_125', 'clpA_81']]
 True variants are: ['clpA_125', 'clpA_81']
 
 Predicted variants are: ['clpA_125', 'clpA_81']
 
 True proportions are: {'clpA_125': 29.551238814314313, 'clpA_81': 70.44876118568568}
 
-Predicted proportions using Bayes method are: {'clpA_125': 29.357798165137616, 'clpA_81': 70.642201834862391}
+Predicted proportions using Bayes method are: {'clpA_125': 29.601518026565465, 'clpA_81': 70.398481973434542}
 
-Predicted proportions using Counting method are: {'clpA_125': 29.357798165137616, 'clpA_81': 70.64220183486239}
+Predicted proportions using Counting method are: {'clpA_125': 29.601518026565465, 'clpA_81': 70.39848197343454}
 
-All solutions: 
-{'sol_0': ['clpA_125', 'clpA_81']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 429.64373630246342}
-
+average Qscores are: [196347.0]
 ======================================== SIMULATION 21 ====================================================
 
-Number of optimal solutions: 2
+Number of optimal solutions: 1
+[['clpA_128', 'clpA_154', 'clpA_179', 'clpA_187']]
 True variants are: ['clpA_154', 'clpA_128', 'clpA_179', 'clpA_187']
 
 Predicted variants are: ['clpA_128', 'clpA_154', 'clpA_179', 'clpA_187']
 
 True proportions are: {'clpA_154': 16.100950423203585, 'clpA_179': 31.415778216507977, 'clpA_128': 32.29635688589163, 'clpA_187': 20.186914474396804}
 
-Predicted proportions using Bayes method are: {'clpA_154': 15.493262869189314, 'clpA_179': 30.812380898859661, 'clpA_128': 30.973451327433629, 'clpA_187': 22.720904904517386}
+Predicted proportions using Bayes method are: {'clpA_154': 16.046775069342381, 'clpA_179': 31.412505101089074, 'clpA_128': 32.105760151085931, 'clpA_187': 20.43495967848262}
 
-Predicted proportions using Counting method are: {'clpA_154': 15.92920353982301, 'clpA_179': 30.97345132743363, 'clpA_128': 30.97345132743363, 'clpA_187': 22.123893805309734}
+Predicted proportions using Counting method are: {'clpA_154': 16.241737488196414, 'clpA_179': 31.444759206798867, 'clpA_128': 32.10576015108593, 'clpA_187': 20.20774315391879}
 
-All solutions: 
-{'sol_0': ['clpA_128', 'clpA_154', 'clpA_179', 'clpA_42'], 'sol_1': ['clpA_128', 'clpA_154', 'clpA_179', 'clpA_187']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 473.45377366043124, 'sol_1': 473.45377366043124}
-
+average Qscores are: [590141.0]
 ======================================== SIMULATION 22 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_114', 'clpA_118', 'clpA_136', 'clpA_74']]
 True variants are: ['clpA_136', 'clpA_118', 'clpA_74', 'clpA_114']
 
 Predicted variants are: ['clpA_114', 'clpA_118', 'clpA_136', 'clpA_74']
 
 True proportions are: {'clpA_74': 10.177014190034651, 'clpA_118': 57.6804582964894, 'clpA_114': 0.7277910411225654, 'clpA_136': 31.414736472353383}
 
-Predicted proportions using Bayes method are: {'clpA_136': 22.884072583303837, 'clpA_74': 19.357306727040996, 'clpA_118': 54.310344827586206, 'clpA_114': 3.4482758620689653}
+Predicted proportions using Bayes method are: {'clpA_136': 20.910852416781662, 'clpA_74': 20.708733270600629, 'clpA_118': 57.344632768361578, 'clpA_114': 1.0357815442561205}
 
-Predicted proportions using Counting method are: {'clpA_136': 28.01724137931034, 'clpA_74': 14.224137931034482, 'clpA_118': 54.310344827586206, 'clpA_114': 3.4482758620689653}
+Predicted proportions using Counting method are: {'clpA_136': 29.09604519774011, 'clpA_74': 12.523540489642183, 'clpA_118': 57.34463276836158, 'clpA_114': 1.0357815442561205}
 
-All solutions: 
-{'sol_0': ['clpA_114', 'clpA_118', 'clpA_136', 'clpA_74']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 484.76317239339727}
-
+average Qscores are: [543934.0]
 ======================================== SIMULATION 23 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_113', 'clpA_154', 'clpA_162', 'clpA_204']]
 True variants are: ['clpA_154', 'clpA_204', 'clpA_162', 'clpA_113']
 
 Predicted variants are: ['clpA_113', 'clpA_154', 'clpA_162', 'clpA_204']
 
 True proportions are: {'clpA_162': 7.383262974484876, 'clpA_113': 27.244306554204083, 'clpA_154': 44.2235143720721, 'clpA_204': 21.148916099238924}
 
-Predicted proportions using Bayes method are: {'clpA_113': 18.908795899718633, 'clpA_162': 17.843340852418123, 'clpA_154': 41.880341880341888, 'clpA_204': 21.36752136752137}
+Predicted proportions using Bayes method are: {'clpA_113': 17.009915956362988, 'clpA_162': 17.772692739289194, 'clpA_154': 44.045368620037806, 'clpA_204': 21.172022684310019}
 
-Predicted proportions using Counting method are: {'clpA_113': 26.06837606837607, 'clpA_162': 10.683760683760685, 'clpA_154': 41.88034188034188, 'clpA_204': 21.36752136752137}
+Predicted proportions using Counting method are: {'clpA_113': 25.378071833648395, 'clpA_162': 9.40453686200378, 'clpA_154': 44.045368620037806, 'clpA_204': 21.17202268431002}
 
-All solutions: 
-{'sol_0': ['clpA_113', 'clpA_154', 'clpA_162', 'clpA_204']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 498.84136726030272}
-
+average Qscores are: [547807.0]
 ======================================== SIMULATION 24 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_135', 'clpA_158', 'clpA_168', 'clpA_173', 'clpA_206', 'clpA_29', 'clpA_40']]
 True variants are: ['clpA_40', 'clpA_173', 'clpA_168', 'clpA_135', 'clpA_206', 'clpA_158', 'clpA_29']
 
 Predicted variants are: ['clpA_135', 'clpA_158', 'clpA_168', 'clpA_173', 'clpA_206', 'clpA_29', 'clpA_40']
 
 True proportions are: {'clpA_168': 19.238037452759656, 'clpA_206': 6.008410645291557, 'clpA_29': 19.655049634422223, 'clpA_40': 18.46574917342312, 'clpA_173': 4.036976128654941, 'clpA_135': 20.432689851814175, 'clpA_158': 12.16308711363433}
 
-Predicted proportions using Bayes method are: {'clpA_168': 16.657390844733836, 'clpA_206': 13.424583924629339, 'clpA_29': 18.103448275862068, 'clpA_40': 16.188815017655678, 'clpA_173': 9.3951734479553028, 'clpA_135': 14.161622971922387, 'clpA_158': 12.068965517241379}
+Predicted proportions using Bayes method are: {'clpA_168': 16.0199714329801, 'clpA_206': 14.104246985928576, 'clpA_29': 19.41101546817087, 'clpA_40': 16.724120505447765, 'clpA_173': 9.0007485869004604, 'clpA_135': 12.537404045966346, 'clpA_158': 12.202492974605871}
 
-Predicted proportions using Counting method are: {'clpA_168': 18.103448275862068, 'clpA_206': 8.189655172413792, 'clpA_29': 18.103448275862068, 'clpA_40': 18.103448275862068, 'clpA_173': 6.0344827586206895, 'clpA_135': 19.39655172413793, 'clpA_158': 12.068965517241379}
+Predicted proportions using Counting method are: {'clpA_168': 19.04315196998124, 'clpA_206': 7.692307692307692, 'clpA_29': 19.41838649155722, 'clpA_40': 18.339587242026266, 'clpA_173': 4.362101313320825, 'clpA_135': 18.94934333958724, 'clpA_158': 12.195121951219512}
 
-All solutions: 
-{'sol_0': ['clpA_135', 'clpA_158', 'clpA_168', 'clpA_173', 'clpA_206', 'clpA_29', 'clpA_40']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 487.34613803788051}
-
+average Qscores are: [1131650.0]
 ======================================== SIMULATION 25 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_116', 'clpA_33', 'clpA_58']]
 True variants are: ['clpA_33', 'clpA_58', 'clpA_116']
 
 Predicted variants are: ['clpA_116', 'clpA_33', 'clpA_58']
 
 True proportions are: {'clpA_33': 6.936416109906056, 'clpA_58': 23.46825260810016, 'clpA_116': 69.5953312819938}
 
-Predicted proportions using Bayes method are: {'clpA_33': 9.8167850089342199, 'clpA_58': 34.134780763819847, 'clpA_116': 56.048434227245927}
+Predicted proportions using Bayes method are: {'clpA_33': 7.0258484419086038, 'clpA_58': 36.972892792115786, 'clpA_116': 56.001258765975621}
 
-Predicted proportions using Counting method are: {'clpA_33': 9.734513274336283, 'clpA_58': 27.433628318584073, 'clpA_116': 62.83185840707965}
+Predicted proportions using Counting method are: {'clpA_33': 7.0142180094786735, 'clpA_58': 24.928909952606638, 'clpA_116': 68.0568720379147}
 
-All solutions: 
-{'sol_0': ['clpA_116', 'clpA_33', 'clpA_58']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 459.68801338230361}
-
+average Qscores are: [366975.0]
 ======================================== SIMULATION 26 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_120', 'clpA_49']]
 True variants are: ['clpA_49', 'clpA_120']
 
 Predicted variants are: ['clpA_120', 'clpA_49']
 
 True proportions are: {'clpA_49': 93.14340718829038, 'clpA_120': 6.856592811709612}
 
-Predicted proportions using Bayes method are: {'clpA_49': 89.908256880733944, 'clpA_120': 10.091743119266056}
+Predicted proportions using Bayes method are: {'clpA_49': 92.977590393057312, 'clpA_120': 7.0224096069426869}
 
-Predicted proportions using Counting method are: {'clpA_49': 89.90825688073394, 'clpA_120': 10.091743119266056}
+Predicted proportions using Counting method are: {'clpA_49': 92.97912713472486, 'clpA_120': 7.020872865275143}
 
-All solutions: 
-{'sol_0': ['clpA_120', 'clpA_49']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 417.66992513497036}
-
+average Qscores are: [196448.0]
 ======================================== SIMULATION 27 ====================================================
 
-Number of optimal solutions: 6
+Number of optimal solutions: 3
+[['clpA_103', 'clpA_196', 'clpA_206', 'clpA_33', 'clpA_43', 'clpA_57'], ['clpA_103', 'clpA_192', 'clpA_196', 'clpA_206', 'clpA_33', 'clpA_57'], ['clpA_103', 'clpA_112', 'clpA_196', 'clpA_206', 'clpA_33', 'clpA_57']]
 True variants are: ['clpA_57', 'clpA_33', 'clpA_43', 'clpA_196', 'clpA_103', 'clpA_206']
 
 Predicted variants are: ['clpA_103', 'clpA_196', 'clpA_206', 'clpA_33', 'clpA_43', 'clpA_57']
 
 True proportions are: {'clpA_33': 6.192721420019106, 'clpA_196': 3.0313117378197942, 'clpA_43': 33.92583121729526, 'clpA_57': 4.055278404943387, 'clpA_103': 20.965336963626918, 'clpA_206': 31.82952025629553}
 
-Predicted proportions using Bayes method are: {'clpA_33': 5.986867823056123, 'clpA_196': 20.360150942427008, 'clpA_43': 18.61987604796261, 'clpA_57': 7.2254430636123663, 'clpA_103': 17.893132208411966, 'clpA_206': 29.914529914529918}
+Predicted proportions using Bayes method are: {'clpA_33': 6.3105904206050205, 'clpA_196': 20.567152339142972, 'clpA_43': 17.813713775032916, 'clpA_57': 6.3298011906487481, 'clpA_103': 17.340324195474345, 'clpA_206': 31.638418079096009}
 
-Predicted proportions using Counting method are: {'clpA_33': 5.982905982905983, 'clpA_196': 4.558404558404558, 'clpA_43': 28.06267806267806, 'clpA_57': 5.982905982905983, 'clpA_103': 25.498575498575498, 'clpA_206': 29.91452991452992}
+Predicted proportions using Counting method are: {'clpA_33': 6.308851224105456, 'clpA_196': 7.187696170747006, 'clpA_43': 26.208411801632153, 'clpA_57': 4.331450094161955, 'clpA_103': 24.32517263025741, 'clpA_206': 31.638418079096017}
 
-All solutions: 
-{'sol_2': ['clpA_103', 'clpA_112', 'clpA_196', 'clpA_206', 'clpA_33', 'clpA_57'], 'sol_3': ['clpA_103', 'clpA_112', 'clpA_196', 'clpA_206', 'clpA_33', 'clpA_56'], 'sol_0': ['clpA_103', 'clpA_196', 'clpA_206', 'clpA_33', 'clpA_43', 'clpA_57'], 'sol_1': ['clpA_103', 'clpA_196', 'clpA_206', 'clpA_33', 'clpA_43', 'clpA_56'], 'sol_4': ['clpA_103', 'clpA_192', 'clpA_196', 'clpA_206', 'clpA_33', 'clpA_57'], 'sol_5': ['clpA_103', 'clpA_192', 'clpA_196', 'clpA_206', 'clpA_33', 'clpA_56']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 492.04384581014176, 'sol_3': 492.0438458101645, 'sol_0': 490.27665559446751, 'sol_1': 490.27665559449025, 'sol_4': 495.57822600561002, 'sol_5': 495.57822600563276}
-
+average Qscores are: [797248.0, 802817.0, 803898.0]
 ======================================== SIMULATION 28 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_58', 'clpA_7', 'clpA_9']]
 True variants are: ['clpA_9', 'clpA_7', 'clpA_58']
 
 Predicted variants are: ['clpA_58', 'clpA_7', 'clpA_9']
 
 True proportions are: {'clpA_7': 12.909346904014111, 'clpA_58': 66.79977437358178, 'clpA_9': 20.290878722404106}
 
-Predicted proportions using Bayes method are: {'clpA_7': 16.144912090034005, 'clpA_58': 65.486725663716811, 'clpA_9': 18.368362246249184}
+Predicted proportions using Bayes method are: {'clpA_7': 15.511410138053586, 'clpA_58': 66.72985781990522, 'clpA_9': 17.758732042041206}
 
-Predicted proportions using Counting method are: {'clpA_7': 12.831858407079647, 'clpA_58': 65.48672566371681, 'clpA_9': 21.681415929203542}
+Predicted proportions using Counting method are: {'clpA_7': 13.554502369668247, 'clpA_58': 66.72985781990522, 'clpA_9': 19.71563981042654}
 
-All solutions: 
-{'sol_0': ['clpA_58', 'clpA_7', 'clpA_9']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 457.80805647312081}
-
+average Qscores are: [368254.0]
 ======================================== SIMULATION 29 ====================================================
 
-Number of optimal solutions: 1
+Number of optimal solutions: 3
+[['clpA_134', 'clpA_53', 'clpA_80'], ['clpA_134', 'clpA_80'], ['clpA_134', 'clpA_162', 'clpA_80']]
 True variants are: ['clpA_80', 'clpA_134']
 
 Predicted variants are: ['clpA_134', 'clpA_80']
 
 True proportions are: {'clpA_80': 61.7927327383341, 'clpA_134': 38.2072672616659}
 
-Predicted proportions using Bayes method are: {'clpA_80': 61.467889908256886, 'clpA_134': 38.532110091743121}
+Predicted proportions using Bayes method are: {'clpA_80': 61.764705882352942, 'clpA_134': 38.235294117647058}
 
-Predicted proportions using Counting method are: {'clpA_80': 61.467889908256886, 'clpA_134': 38.53211009174312}
+Predicted proportions using Counting method are: {'clpA_80': 61.76470588235294, 'clpA_134': 38.23529411764706}
 
-All solutions: 
-{'sol_0': ['clpA_134', 'clpA_80']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 429.6437363024632}
-
+average Qscores are: [341040.0, 196438.0, 345192.0]
 ======================================== SIMULATION 30 ====================================================
 
-Number of optimal solutions: 2
+Number of optimal solutions: 1
+[['clpA_131', 'clpA_215', 'clpA_43', 'clpA_65', 'clpA_88', 'clpA_95']]
 True variants are: ['clpA_215', 'clpA_95', 'clpA_65', 'clpA_43', 'clpA_88', 'clpA_131']
 
 Predicted variants are: ['clpA_131', 'clpA_215', 'clpA_43', 'clpA_65', 'clpA_88', 'clpA_95']
 
 True proportions are: {'clpA_215': 18.90796437168259, 'clpA_43': 5.4027479103836376, 'clpA_131': 26.071008391103174, 'clpA_88': 5.618134535860798, 'clpA_65': 16.628824040740472, 'clpA_95': 27.371320750229327}
 
-Predicted proportions using Bayes method are: {'clpA_215': 18.584070796460178, 'clpA_43': 13.67347383252284, 'clpA_131': 24.778761061946902, 'clpA_88': 12.55399274195894, 'clpA_65': 12.623307680469061, 'clpA_95': 17.78639388664207}
+Predicted proportions using Bayes method are: {'clpA_215': 18.814675446848533, 'clpA_43': 14.549145833107703, 'clpA_131': 26.058325493885221, 'clpA_88': 11.685772806200482, 'clpA_65': 13.46636505661913, 'clpA_95': 15.425715363338927}
 
-Predicted proportions using Counting method are: {'clpA_215': 18.58407079646018, 'clpA_43': 6.1946902654867255, 'clpA_131': 24.778761061946902, 'clpA_88': 9.439528023598825, 'clpA_65': 13.864306784660771, 'clpA_95': 27.13864306784661}
+Predicted proportions using Counting method are: {'clpA_215': 18.814675446848543, 'clpA_43': 7.149576669802446, 'clpA_131': 26.05832549388523, 'clpA_88': 7.7453747256193095, 'clpA_65': 15.130134838507383, 'clpA_95': 25.1019128253371}
 
-All solutions: 
-{'sol_0': ['clpA_131', 'clpA_215', 'clpA_43', 'clpA_65', 'clpA_88', 'clpA_95'], 'sol_1': ['clpA_109', 'clpA_215', 'clpA_43', 'clpA_65', 'clpA_88', 'clpA_95']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 479.04496304290484, 'sol_1': 479.04496304290484}
-
+average Qscores are: [887722.0]
 ======================================== SIMULATION 31 ====================================================
 
-Number of optimal solutions: 3
+Number of optimal solutions: 1
+[['clpA_10', 'clpA_137', 'clpA_173', 'clpA_202', 'clpA_64']]
 True variants are: ['clpA_137', 'clpA_10', 'clpA_64', 'clpA_202', 'clpA_173']
 
 Predicted variants are: ['clpA_10', 'clpA_137', 'clpA_173', 'clpA_202', 'clpA_64']
 
 True proportions are: {'clpA_202': 35.84365496592645, 'clpA_173': 16.396878190614867, 'clpA_64': 12.179679446592035, 'clpA_137': 27.85493507464722, 'clpA_10': 7.724852322219434}
 
-Predicted proportions using Bayes method are: {'clpA_64': 12.799242427943865, 'clpA_202': 34.210526315789473, 'clpA_173': 15.27093301065262, 'clpA_137': 18.494697822931887, 'clpA_10': 19.224600422682141}
+Predicted proportions using Bayes method are: {'clpA_64': 13.130085297859262, 'clpA_202': 35.626767200754003, 'clpA_173': 15.616380300632729, 'clpA_137': 17.59908236392619, 'clpA_10': 18.027684836827813}
 
-Predicted proportions using Counting method are: {'clpA_64': 12.280701754385964, 'clpA_202': 34.21052631578947, 'clpA_173': 15.789473684210526, 'clpA_137': 22.807017543859647, 'clpA_10': 14.912280701754385}
+Predicted proportions using Counting method are: {'clpA_64': 12.252591894439208, 'clpA_202': 35.626767200754, 'clpA_173': 16.49387370405278, 'clpA_137': 24.12818096135721, 'clpA_10': 11.498586239396795}
 
-All solutions: 
-{'sol_2': ['clpA_10', 'clpA_173', 'clpA_202', 'clpA_23', 'clpA_64'], 'sol_0': ['clpA_10', 'clpA_173', 'clpA_202', 'clpA_3', 'clpA_64'], 'sol_1': ['clpA_10', 'clpA_137', 'clpA_173', 'clpA_202', 'clpA_64']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 478.18974702237881, 'sol_0': 478.18974702237881, 'sol_1': 478.18974702237881}
-
+average Qscores are: [740806.0]
 ======================================== SIMULATION 32 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_168', 'clpA_169', 'clpA_66', 'clpA_72', 'clpA_79']]
 True variants are: ['clpA_79', 'clpA_168', 'clpA_169', 'clpA_66', 'clpA_72']
 
 Predicted variants are: ['clpA_168', 'clpA_169', 'clpA_66', 'clpA_72', 'clpA_79']
 
 True proportions are: {'clpA_66': 43.17472152204278, 'clpA_168': 22.263414463553058, 'clpA_169': 20.822687562095123, 'clpA_79': 6.156312608973016, 'clpA_72': 7.582863843336016}
 
-Predicted proportions using Bayes method are: {'clpA_79': 6.1403508771929829, 'clpA_168': 20.095586577267671, 'clpA_169': 21.92982456140351, 'clpA_66': 34.01238523685155, 'clpA_72': 17.821852747284296}
+Predicted proportions using Bayes method are: {'clpA_79': 6.3267233238904543, 'clpA_168': 20.349154489263157, 'clpA_169': 20.862853838326451, 'clpA_66': 33.226294024403927, 'clpA_72': 19.234974324115996}
 
-Predicted proportions using Counting method are: {'clpA_79': 6.140350877192982, 'clpA_168': 21.929824561403507, 'clpA_169': 21.929824561403507, 'clpA_66': 40.35087719298245, 'clpA_72': 9.649122807017543}
+Predicted proportions using Counting method are: {'clpA_79': 6.326723323890463, 'clpA_168': 21.34088762983947, 'clpA_169': 20.868744098205855, 'clpA_66': 42.965061378659115, 'clpA_72': 8.498583569405099}
 
-All solutions: 
-{'sol_0': ['clpA_168', 'clpA_169', 'clpA_66', 'clpA_72', 'clpA_79']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 486.98425782387801}
-
+average Qscores are: [736007.0]
 ======================================== SIMULATION 33 ====================================================
 
-Number of optimal solutions: 4
+Number of optimal solutions: 1
+[['clpA_125', 'clpA_128', 'clpA_178', 'clpA_28']]
 True variants are: ['clpA_28', 'clpA_125', 'clpA_128', 'clpA_178']
 
 Predicted variants are: ['clpA_125', 'clpA_128', 'clpA_178', 'clpA_28']
 
 True proportions are: {'clpA_125': 78.35081160891912, 'clpA_128': 1.5548669045002819, 'clpA_28': 16.618253007469868, 'clpA_178': 3.476068479110734}
 
-Predicted proportions using Bayes method are: {'clpA_28': 15.929203539823009, 'clpA_125': 74.336283185840713, 'clpA_178': 6.1946902654867255, 'clpA_128': 3.5398230088495577}
+Predicted proportions using Bayes method are: {'clpA_28': 16.539111790437058, 'clpA_125': 78.043429644933909, 'clpA_178': 3.6862003780718338, 'clpA_128': 1.731258186557193}
 
-Predicted proportions using Counting method are: {'clpA_28': 15.92920353982301, 'clpA_125': 74.33628318584071, 'clpA_178': 6.1946902654867255, 'clpA_128': 3.5398230088495577}
+Predicted proportions using Counting method are: {'clpA_28': 16.5406427221172, 'clpA_125': 78.0718336483932, 'clpA_178': 3.6862003780718338, 'clpA_128': 1.7013232514177694}
 
-All solutions: 
-{'sol_2': ['clpA_125', 'clpA_137', 'clpA_178', 'clpA_28'], 'sol_3': ['clpA_125', 'clpA_128', 'clpA_178', 'clpA_28'], 'sol_0': ['clpA_125', 'clpA_178', 'clpA_23', 'clpA_28'], 'sol_1': ['clpA_125', 'clpA_178', 'clpA_28', 'clpA_3']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 463.48009545193912, 'sol_3': 463.48009545198477, 'sol_0': 463.48009545193912, 'sol_1': 463.48009545193912}
-
+average Qscores are: [591878.0]
 ======================================== SIMULATION 34 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_126', 'clpA_159', 'clpA_69']]
 True variants are: ['clpA_159', 'clpA_69', 'clpA_126']
 
 Predicted variants are: ['clpA_126', 'clpA_159', 'clpA_69']
 
 True proportions are: {'clpA_126': 17.770697970464223, 'clpA_69': 14.528076747789845, 'clpA_159': 67.70122528174595}
 
-Predicted proportions using Bayes method are: {'clpA_126': 18.584070796460178, 'clpA_69': 15.929203539823009, 'clpA_159': 65.486725663716811}
+Predicted proportions using Bayes method are: {'clpA_126': 17.888456602259186, 'clpA_69': 14.569536423841059, 'clpA_159': 67.542006973899746}
 
-Predicted proportions using Counting method are: {'clpA_126': 18.58407079646018, 'clpA_69': 15.92920353982301, 'clpA_159': 65.48672566371681}
+Predicted proportions using Counting method are: {'clpA_126': 17.880794701986755, 'clpA_69': 14.56953642384106, 'clpA_159': 67.54966887417218}
 
-All solutions: 
-{'sol_0': ['clpA_126', 'clpA_159', 'clpA_69']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 451.35765340994374}
-
+average Qscores are: [394242.0]
 ======================================== SIMULATION 35 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_157', 'clpA_206', 'clpA_9']]
 True variants are: ['clpA_206', 'clpA_9', 'clpA_157']
 
 Predicted variants are: ['clpA_157', 'clpA_206', 'clpA_9']
 
 True proportions are: {'clpA_157': 31.233265189342614, 'clpA_206': 40.252903897613265, 'clpA_9': 28.513830913044124}
 
-Predicted proportions using Bayes method are: {'clpA_157': 29.631373682737927, 'clpA_206': 40.707964601769909, 'clpA_9': 29.660661715492161}
+Predicted proportions using Bayes method are: {'clpA_157': 29.847901285966412, 'clpA_206': 40.227703984819719, 'clpA_9': 29.924394729213859}
 
-Predicted proportions using Counting method are: {'clpA_157': 30.97345132743363, 'clpA_206': 40.707964601769916, 'clpA_9': 28.31858407079646}
+Predicted proportions using Counting method are: {'clpA_157': 31.119544592030362, 'clpA_206': 40.22770398481973, 'clpA_9': 28.652751423149905}
 
-All solutions: 
-{'sol_0': ['clpA_157', 'clpA_206', 'clpA_9']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 467.41077384255323}
-
+average Qscores are: [328321.0]
 ======================================== SIMULATION 36 ====================================================
 
-Number of optimal solutions: 3
+Number of optimal solutions: 1
+[['clpA_124', 'clpA_138', 'clpA_197', 'clpA_3', 'clpA_60', 'clpA_88']]
 True variants are: ['clpA_138', 'clpA_197', 'clpA_60', 'clpA_88', 'clpA_124', 'clpA_3']
 
 Predicted variants are: ['clpA_124', 'clpA_138', 'clpA_197', 'clpA_3', 'clpA_60', 'clpA_88']
 
 True proportions are: {'clpA_3': 20.50901143670834, 'clpA_197': 25.02934837673884, 'clpA_60': 1.0169349881506207, 'clpA_88': 20.590816302849923, 'clpA_138': 18.955395097847784, 'clpA_124': 13.898493797704486}
 
-Predicted proportions using Bayes method are: {'clpA_3': 20.661157024793386, 'clpA_197': 15.386678276004261, 'clpA_60': 13.358830000555727, 'clpA_88': 18.7746908516554, 'clpA_138': 16.942610789139977, 'clpA_124': 14.876033057851236}
+Predicted proportions using Bayes method are: {'clpA_3': 20.433239320118414, 'clpA_197': 13.997026971858384, 'clpA_60': 15.490420666427681, 'clpA_88': 18.636511737824978, 'clpA_138': 17.568783319459147, 'clpA_124': 13.874017984311392}
 
-Predicted proportions using Counting method are: {'clpA_3': 20.66115702479339, 'clpA_197': 22.31404958677686, 'clpA_60': 4.132231404958678, 'clpA_88': 19.834710743801654, 'clpA_138': 18.181818181818183, 'clpA_124': 14.87603305785124}
+Predicted proportions using Counting method are: {'clpA_3': 20.452403393025445, 'clpA_197': 24.222431668237512, 'clpA_60': 2.120640904806786, 'clpA_88': 20.452403393025445, 'clpA_138': 18.89726672950047, 'clpA_124': 13.854853911404335}
 
-All solutions: 
-{'sol_2': ['clpA_124', 'clpA_137', 'clpA_138', 'clpA_197', 'clpA_60', 'clpA_88'], 'sol_0': ['clpA_124', 'clpA_138', 'clpA_197', 'clpA_23', 'clpA_60', 'clpA_88'], 'sol_1': ['clpA_124', 'clpA_138', 'clpA_197', 'clpA_3', 'clpA_60', 'clpA_88']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 518.30382845712245, 'sol_0': 518.30382845712245, 'sol_1': 518.30382845712245}
-
+average Qscores are: [945382.0]
 ======================================== SIMULATION 37 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_101', 'clpA_135', 'clpA_138', 'clpA_184', 'clpA_191', 'clpA_214']]
 True variants are: ['clpA_135', 'clpA_138', 'clpA_191', 'clpA_184', 'clpA_214', 'clpA_101']
 
 Predicted variants are: ['clpA_101', 'clpA_135', 'clpA_138', 'clpA_184', 'clpA_191', 'clpA_214']
 
 True proportions are: {'clpA_191': 18.618729779388012, 'clpA_184': 14.172998301079515, 'clpA_135': 15.72050647396529, 'clpA_101': 12.72359973745884, 'clpA_138': 18.314066521095, 'clpA_214': 20.450099187013343}
 
-Predicted proportions using Bayes method are: {'clpA_191': 17.948717948717956, 'clpA_184': 15.384615384615387, 'clpA_135': 15.384615384615387, 'clpA_138': 17.948717948717949, 'clpA_101': 11.965811965811968, 'clpA_214': 21.36752136752137}
+Predicted proportions using Bayes method are: {'clpA_191': 18.439168097136825, 'clpA_184': 14.218455743879472, 'clpA_135': 15.819209039548022, 'clpA_138': 18.220805532506624, 'clpA_101': 12.86921657751286, 'clpA_214': 20.433145009416194}
 
-Predicted proportions using Counting method are: {'clpA_191': 17.94871794871795, 'clpA_184': 15.384615384615387, 'clpA_135': 15.384615384615387, 'clpA_138': 17.94871794871795, 'clpA_101': 11.965811965811966, 'clpA_214': 21.36752136752137}
+Predicted proportions using Counting method are: {'clpA_191': 18.361581920903955, 'clpA_184': 14.218455743879472, 'clpA_135': 15.819209039548022, 'clpA_138': 18.267419962335214, 'clpA_101': 12.900188323917137, 'clpA_214': 20.433145009416194}
 
-All solutions: 
-{'sol_0': ['clpA_101', 'clpA_135', 'clpA_138', 'clpA_184', 'clpA_191', 'clpA_214']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 484.65880474933664}
-
+average Qscores are: [943198.0]
 ======================================== SIMULATION 38 ====================================================
 
-Number of optimal solutions: 2
+Number of optimal solutions: 1
+[['clpA_108', 'clpA_126', 'clpA_138', 'clpA_140', 'clpA_148', 'clpA_160', 'clpA_87']]
 True variants are: ['clpA_138', 'clpA_148', 'clpA_126', 'clpA_87', 'clpA_108', 'clpA_160', 'clpA_140']
 
 Predicted variants are: ['clpA_108', 'clpA_126', 'clpA_138', 'clpA_140', 'clpA_148', 'clpA_160', 'clpA_87']
 
 True proportions are: {'clpA_160': 7.857541404716419, 'clpA_108': 25.5224702527941, 'clpA_140': 8.035706195685309, 'clpA_126': 14.641694417028974, 'clpA_138': 8.058357741992971, 'clpA_87': 31.937276072815703, 'clpA_148': 3.9469539149665085}
 
-Predicted proportions using Bayes method are: {'clpA_160': 9.0909090909090917, 'clpA_108': 17.542301062315463, 'clpA_140': 10.27605481885827, 'clpA_126': 14.87603305785124, 'clpA_138': 16.635543824404593, 'clpA_87': 17.073705286407293, 'clpA_148': 14.505452859254044}
+Predicted proportions using Bayes method are: {'clpA_160': 7.9096045197740112, 'clpA_108': 16.182273147057508, 'clpA_140': 11.151907874323543, 'clpA_126': 14.500941619585687, 'clpA_138': 17.906783259110572, 'clpA_87': 16.535056112427554, 'clpA_148': 15.813433467721124}
 
-Predicted proportions using Counting method are: {'clpA_160': 9.090909090909092, 'clpA_108': 22.31404958677686, 'clpA_140': 9.50413223140496, 'clpA_126': 14.87603305785124, 'clpA_138': 9.50413223140496, 'clpA_87': 26.446280991735538, 'clpA_148': 8.264462809917356}
+Predicted proportions using Counting method are: {'clpA_160': 7.909604519774011, 'clpA_108': 24.529190207156308, 'clpA_140': 8.709981167608285, 'clpA_126': 14.500941619585687, 'clpA_138': 8.757062146892656, 'clpA_87': 28.2015065913371, 'clpA_148': 7.391713747645951}
 
-All solutions: 
-{'sol_0': ['clpA_108', 'clpA_126', 'clpA_138', 'clpA_140', 'clpA_148', 'clpA_160', 'clpA_87'], 'sol_1': ['clpA_108', 'clpA_126', 'clpA_138', 'clpA_140', 'clpA_148', 'clpA_159', 'clpA_87']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 519.92057915030989, 'sol_1': 519.92057915030989}
-
+average Qscores are: [1061280.0]
 ======================================== SIMULATION 39 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_209', 'clpA_27', 'clpA_47', 'clpA_83']]
 True variants are: ['clpA_47', 'clpA_209', 'clpA_83', 'clpA_27']
 
 Predicted variants are: ['clpA_209', 'clpA_27', 'clpA_47', 'clpA_83']
 
 True proportions are: {'clpA_27': 12.042746219103142, 'clpA_209': 10.988521287876566, 'clpA_83': 52.082657356419794, 'clpA_47': 24.886075136600496}
 
-Predicted proportions using Bayes method are: {'clpA_27': 12.5, 'clpA_209': 17.106381996026386, 'clpA_83': 50.0, 'clpA_47': 20.393618003973614}
+Predicted proportions using Bayes method are: {'clpA_27': 12.269841562594655, 'clpA_209': 17.35034991358074, 'clpA_83': 51.935788479697834, 'clpA_47': 18.444020044126781}
 
-Predicted proportions using Counting method are: {'clpA_27': 12.5, 'clpA_209': 12.5, 'clpA_83': 50.0, 'clpA_47': 25.0}
+Predicted proportions using Counting method are: {'clpA_27': 12.275731822474032, 'clpA_209': 11.378659112370162, 'clpA_83': 51.935788479697834, 'clpA_47': 24.409820585457982}
 
-All solutions: 
-{'sol_0': ['clpA_209', 'clpA_27', 'clpA_47', 'clpA_83']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 467.06813689920699}
-
+average Qscores are: [560190.0]
 ======================================== SIMULATION 40 ====================================================
 
 Number of optimal solutions: 1
+[['clpA_147', 'clpA_153', 'clpA_191']]
 True variants are: ['clpA_147', 'clpA_191', 'clpA_153']
 
 Predicted variants are: ['clpA_147', 'clpA_153', 'clpA_191']
 
 True proportions are: {'clpA_191': 7.6881833265634345, 'clpA_147': 54.60708312083092, 'clpA_153': 37.704733552605646}
 
-Predicted proportions using Bayes method are: {'clpA_191': 18.227552032832264, 'clpA_147': 43.28221760708665, 'clpA_153': 38.490230360081064}
+Predicted proportions using Bayes method are: {'clpA_191': 19.966567653235042, 'clpA_147': 42.2775656913566, 'clpA_153': 37.755866655408369}
 
-Predicted proportions using Counting method are: {'clpA_191': 9.734513274336283, 'clpA_147': 53.53982300884956, 'clpA_153': 36.72566371681416}
+Predicted proportions using Counting method are: {'clpA_191': 7.9470198675496695, 'clpA_147': 54.02081362346263, 'clpA_153': 38.0321665089877}
 
-All solutions: 
-{'sol_0': ['clpA_147', 'clpA_153', 'clpA_191']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 463.70193706901091}
-
+average Qscores are: [293402.0]
 ======================================== clpA: SUMMARY STATISTICS ====================================================
 
 (1)Total Variation Distance:
 
-Counting Method ~ Total variation distances are: [0.35869392804908173, 2.7339079020592, 0.838301685742679, 1.9909506019330045, 0.5149329583849536, 1.0125178071451124, 2.4142918720561726, 2.270797318105772, 0.6006246853400512, 3.5553724074343394, 8.049308464016882, 5.109879785181306, 4.276063367963074, 9.701392515050493, 1.0534253090474794, 4.713005069652476, 4.962404538994377, 1.3095888032670686, 3.1627714851882747, 0.19344064917670245, 1.9369793309129282, 6.767608561946232, 3.519102977558244, 4.178751157087988, 6.763472874914143, 3.2351503075564407, 7.987958933495939, 1.3905372067994364, 0.3248428300772197, 4.613335842841108, 7.288450687328885, 3.1733959629899124, 4.703577890725263, 2.214499618029129, 0.455060704156649, 4.244981265039855, 2.1290392640438958, 8.699415747097415, 2.082657356419795, 2.046329947772848] 
+Counting Method ~ Total variation distances are: [0.393859846154883, 2.7407657961779424, 0.9281495263228128, 0.20469384271312396, 0.09771080297859758, 0.05156521065816122, 0.3238739804101064, 0.30239579888134094, 0.10310522752869922, 0.8558044279743537, 4.987139948378843, 2.3472812879588796, 0.3183285545620408, 12.280470905803064, 0.04024702796885049, 2.7101265851183003, 1.6625283142953942, 0.1256261750088825, 0.381464176971158, 0.05027921225114618, 0.1905967348057036, 2.6545168027410897, 2.044380472589992, 2.0410570692672048, 1.5384592440790947, 0.1642800535655251, 7.908521592862622, 0.6451554656541321, 0.02802685598116028, 3.8740689491773126, 3.9436418784624516, 1.1321869770972577, 0.3565882458785873, 0.15155640757375544, 0.1389205101057822, 1.1037059166561671, 0.32074859484098894, 4.869802324559689, 0.6231234278644804, 0.5862694973682907] 
 
-Bayes' Method ~ Total variation distances are: [0.35869392804908173, 2.7339079020591965, 1.3058097853037269, 1.9909506019330045, 0.51493295838495357, 1.0125178071451124, 2.4142918720561801, 6.8655703613499597, 0.60062468534004765, 10.030246863845248, 16.552172224874536, 8.6935987927302634, 4.276063367963074, 15.336819839165354, 1.0534253090474794, 6.734536241745074, 8.3860365120173483, 1.4141994668154751, 3.1627714851882742, 0.19344064917670245, 2.5339904301205864, 11.900777357952741, 10.678683146215679, 12.77437059863815, 13.546897054747859, 3.2351503075564407, 20.499003863276201, 3.235565186019894, 0.3248428300772197, 15.206584128237347, 12.119311081814546, 11.346125903256659, 4.7035778907252652, 2.2144996180291283, 1.6018915066046837, 13.471579860636908, 2.1290392640438913, 22.843739976887051, 6.5751144890466771, 11.32486551374426] 
+Bayes' Method ~ Total variation distances are: [2.8294904675478714, 11.713341421917816, 6.0461261449464834, 0.21059524783352046, 0.097710802978597577, 0.05156521065816122, 0.5061716944987783, 7.1727031927436835, 0.085350620662682175, 8.8395823506009457, 17.81428641845498, 6.1274832654117377, 0.31832855456204256, 15.268140719905336, 0.040247027968850491, 5.5106878368071275, 6.4837235275447389, 0.95473983780509464, 0.60610886137405551, 0.050279212251146177, 0.24804520408581254, 10.839709583699538, 10.412536349875403, 13.099014659854088, 13.594072516018175, 0.16581679523307224, 19.92823238761445, 2.6020632340394689, 0.028026855981160281, 15.214036193063752, 11.25323836587561, 11.862687471928751, 0.38652318101801397, 0.1592183078461904, 1.4105638161697414, 14.473485678277061, 0.28977684843671092, 24.883169863568035, 6.5889239691956814, 12.329517429474325] 
 
-Counting Method ~ The average of total variation distance is: 3.41442049051 
+Counting Method ~ The average of total variation distance is: 1.63052559173 
 
-Bayes' Method ~ The average of total variation distance is: 6.89740551655 
+Bayes' Method ~ The average of total variation distance is: 6.51238302819 
 
-Counting Method ~ The standard deviation of total variation distance is: 2.52064423412 
+Counting Method ~ The standard deviation of total variation distance is: 2.41509785254 
 
-Bayes' Method ~ The standard deviation of total variation distance is: 6.04820528522 
+Bayes' Method ~ The standard deviation of total variation distance is: 6.68670965064 
 
 (2)Total Variation Distance for variants which are predicted correctly:
 
-Counting Method ~ Total variation distances are: [0.35869392804908173, 2.7339079020592, 0.838301685742679, 1.9909506019330045, 0.5149329583849536, 1.0125178071451124, 2.4142918720561726, 2.270797318105772, 0.6006246853400512, 3.5553724074343394, 8.049308464016882, 5.109879785181306, 4.276063367963074, 9.701392515050493, 1.0534253090474794, 4.713005069652476, 4.962404538994377, 1.3095888032670686, 3.1627714851882747, 0.19344064917670245, 1.9369793309129282, 6.767608561946232, 3.519102977558244, 4.178751157087988, 6.763472874914143, 3.2351503075564407, 7.987958933495939, 1.3905372067994364, 0.3248428300772197, 4.613335842841108, 7.288450687328885, 3.1733959629899124, 4.703577890725263, 2.214499618029129, 0.455060704156649, 4.244981265039855, 2.1290392640438958, 8.699415747097415, 2.082657356419795, 2.046329947772848] 
+Counting Method ~ Total variation distances are: [0.393859846154883, 2.7407657961779424, 0.9281495263228128, 0.20469384271312396, 0.09771080297859758, 0.05156521065816122, 0.3238739804101064, 0.30239579888134094, 0.10310522752869922, 0.8558044279743537, 4.987139948378843, 2.3472812879588796, 0.3183285545620408, 12.280470905803064, 0.04024702796885049, 2.7101265851183003, 1.6625283142953942, 0.1256261750088825, 0.381464176971158, 0.05027921225114618, 0.1905967348057036, 2.6545168027410897, 2.044380472589992, 2.0410570692672048, 1.5384592440790947, 0.1642800535655251, 7.908521592862622, 0.6451554656541321, 0.02802685598116028, 3.8740689491773126, 3.9436418784624516, 1.1321869770972577, 0.3565882458785873, 0.15155640757375544, 0.1389205101057822, 1.1037059166561671, 0.32074859484098894, 4.869802324559689, 0.6231234278644804, 0.5862694973682907] 
 
-Bayes' Method ~ Total variation distances are: [0.35869392804908173, 2.7339079020591965, 1.3058097853037269, 1.9909506019330045, 0.51493295838495357, 1.0125178071451124, 2.4142918720561801, 6.8655703613499597, 0.60062468534004765, 10.030246863845248, 16.552172224874536, 8.6935987927302634, 4.276063367963074, 15.336819839165354, 1.0534253090474794, 6.734536241745074, 8.3860365120173483, 1.4141994668154751, 3.1627714851882742, 0.19344064917670245, 2.5339904301205864, 11.900777357952741, 10.678683146215679, 12.77437059863815, 13.546897054747859, 3.2351503075564407, 20.499003863276201, 3.235565186019894, 0.3248428300772197, 15.206584128237347, 12.119311081814546, 11.346125903256659, 4.7035778907252652, 2.2144996180291283, 1.6018915066046837, 13.471579860636908, 2.1290392640438913, 22.843739976887051, 6.5751144890466771, 11.32486551374426] 
+Bayes' Method ~ Total variation distances are: [2.8294904675478714, 11.713341421917816, 6.0461261449464834, 0.21059524783352046, 0.097710802978597577, 0.05156521065816122, 0.5061716944987783, 7.1727031927436835, 0.085350620662682175, 8.8395823506009457, 17.81428641845498, 6.1274832654117377, 0.31832855456204256, 15.268140719905336, 0.040247027968850491, 5.5106878368071275, 6.4837235275447389, 0.95473983780509464, 0.60610886137405551, 0.050279212251146177, 0.24804520408581254, 10.839709583699538, 10.412536349875403, 13.099014659854088, 13.594072516018175, 0.16581679523307224, 19.92823238761445, 2.6020632340394689, 0.028026855981160281, 15.214036193063752, 11.25323836587561, 11.862687471928751, 0.38652318101801397, 0.1592183078461904, 1.4105638161697414, 14.473485678277061, 0.28977684843671092, 24.883169863568035, 6.5889239691956814, 12.329517429474325] 
 
-Counting Method ~ The average of total variation distance is: 3.41442049051 
+Counting Method ~ The average of total variation distance is: 1.63052559173 
 
-Bayes' Method ~ The average of total variation distance is: 6.89740551655 
+Bayes' Method ~ The average of total variation distance is: 6.51238302819 
 
-Counting Method ~ The standard deviation of total variation distance is: 2.52064423412 
+Counting Method ~ The standard deviation of total variation distance is: 2.41509785254 
 
-Bayes' Method ~ The standard deviation of total variation distance is: 6.04820528522 
+Bayes' Method ~ The standard deviation of total variation distance is: 6.68670965064 
 
 (3) Precision: 
 
@@ -806,9 +646,9 @@ Standard deviation of recall is:  0.0
 
 (5) Objective Value: 
 
-Predicted objective values are: [29.0, 32.0, 29.0, 30.0, 31.0, 29.0, 33.0, 33.0, 30.0, 28.0, 27.0, 27.0, 32.0, 29.0, 23.0, 30.0, 23.0, 32.0, 22.0, 29.0, 29.0, 31.0, 35.0, 20.0, 30.0, 23.0, 30.0, 28.0, 29.0, 27.0, 28.0, 30.0, 24.0, 24.0, 33.0, 29.0, 20.0, 28.0, 28.0, 31.0] 
+Predicted objective values are: [12.0, 11.0, 10.0, 11.0, 10.0, 10.0, 12.0, 10.0, 11.0, 12.0, 9.0, 10.0, 11.0, 9.0, 9.0, 12.0, 11.0, 10.0, 11.0, 8.0, 12.0, 11.0, 9.0, 11.0, 7.0, 8.0, 13.0, 7.0, 10.0, 11.0, 11.0, 10.0, 8.0, 8.0, 12.0, 10.0, 10.0, 11.0, 9.0, 10.0] 
 
-True objective values are: [29.0, 32.0, 29.0, 30.0, 31.0, 29.0, 33.0, 33.0, 30.0, 28.0, 27.0, 27.0, 32.0, 29.0, 23.0, 30.0, 23.0, 32.0, 22.0, 29.0, 29.0, 31.0, 35.0, 20.0, 30.0, 23.0, 30.0, 28.0, 29.0, 27.0, 28.0, 30.0, 24.0, 24.0, 33.0, 29.0, 20.0, 28.0, 28.0, 31.0] 
+True objective values are: [12.0, 11.0, 10.0, 11.0, 10.0, 10.0, 12.0, 10.0, 11.0, 12.0, 9.0, 10.0, 11.0, 9.0, 9.0, 12.0, 11.0, 10.0, 11.0, 8.0, 12.0, 11.0, 9.0, 11.0, 7.0, 8.0, 13.0, 7.0, 10.0, 11.0, 11.0, 10.0, 8.0, 8.0, 12.0, 10.0, 10.0, 11.0, 9.0, 10.0] 
 
 The difference in objective values are: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
 
@@ -826,7 +666,7 @@ Percentage of simulations predicted correctly:  100.0 %
 
 (7)Optimal solutions: 
 
-Number of optimal solutions: [2, 1, 2, 3, 1, 1, 1, 1, 1, 4, 4, 1, 2, 2, 2, 2, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 6, 1, 1, 2, 3, 1, 4, 1, 1, 3, 1, 2, 1, 1]
+Number of optimal solutions: [1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 3, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
-Average number of optimal solutions: 1.75
+Average number of optimal solutions: 1.25
 
