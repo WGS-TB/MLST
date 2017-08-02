@@ -153,14 +153,22 @@ Output: The proportions of variants (type list) based on counting method
 def count_compute_proportions(dataframe):
     prob_list = [0.0]*dataframe.shape[1]
     
+#    weightage = dataframe[dataframe.loc[:, dataframe.columns.tolist()] == 0.0].count(axis=0).tolist()
+    
     for row in dataframe.itertuples(index=False):
         mmInfo = [i for i in list(row) if i>=0]
         min_mm = min(mmInfo)
         numOfVar_minMm = len([i for i in list(row) if i== min_mm])
+        indexOfVar_minMm = [i for i in range(len(list(row))) if list(row)[i] == min_mm]
         
-        for i in range(len(list(row))):
-            if list(row)[i] == min_mm:
-                prob_list[i] += 1/numOfVar_minMm
+#        weights = [weightage[i] for i in indexOfVar_minMm]
+#        weights = [i/sum(weights) for i in weights]
+        
+        track=0
+        for i in indexOfVar_minMm:
+#            prob_list[i] += (1/numOfVar_minMm) * weights[track]
+            prob_list[i] += (1/numOfVar_minMm)
+            track += 1
                 
     normalize_term = 1.0/(sum(prob_list))
     prob_list = [100.0*normalize_term * i for i in prob_list]
@@ -302,6 +310,34 @@ def compute_likelihood(df):
 #        writer = csv.writer(f)
 #        writer.writerows(data)
 
+def outputDataForML(dataMatrix, csvfile, varProp_dict):
+    mm = range(7)
+    matrixForML = list()
+    variants = varProp_dict.keys()
+    print(variants)
+    proportions = varProp_dict.values()
+    print(proportions)
+    
+    track=0
+    for v in variants:
+        temp_array = list()
+        temp = dataMatrix.loc[:, v].value_counts()
+        
+        for i in mm:
+            if i in temp.index:
+                temp_array.append(temp[i])
+            else:
+                temp_array.append(0)
+                
+        temp_array.append(proportions[track])
+        track += 1
+        matrixForML.append(temp_array)
+
+    with open(csvfile, "a") as f:
+        writer = csv.writer(f)
+        writer.writerows(matrixForML)
+            
+        
 def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage):
     ''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Defining some parameters ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ '''
     #Record true variants and their fractions for all simulations
@@ -370,7 +406,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
             file_name = simulation_name + '_reference.fa'
             covOfThisVar = math.ceil((fractions[i]*coverage)) #compute the number of reads to generate
             covOfThisVar = int(covOfThisVar)
-            variant_sequence = sh.grep(variant,"{0}/sim_data/{1}/linear.txt".format(originalPath, gene),"-w","-A1") #use bash to extract the variant sequence
+            variant_sequence = sh.grep(variant,"{0}/sim_data/{1}/newLinear.txt".format(originalPath, gene),"-w","-A1") #use bash to extract the variant sequence
             variant_sequence = variant_sequence.rstrip() #remove the "\n" character that is returned by bash
             variant_sequence = str(variant_sequence)
             total_variants_sequence += variant_sequence
@@ -430,137 +466,16 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         
         print "======================================== SIMULATION " + str(iteration) + " ====================================================" +  "\n"    
         
-        #Keep the likelihood scores of all optimal solutions
-#        minVar_solutions = [sol for sol in all_solutions if len(sol) == min(map(len,all_solutions))]
-#        all_solutions = minVar_solutions
-        score_list = list()
-        min_score = sys.maxint
         print("Number of optimal solutions: {}".format(len(all_solutions)))
         numOfOptimalSol.append(len(all_solutions))
-        
-        #Compute negative log likelihood score for each solution
-        for i in range(len(all_solutions)):
-#            print("Solution:{}".format(all_solutions[i]))
-#            print("Objective value: {}".format(all_objective[i]))
-#            print("Proportions:{}".format(compute_proportions(dataMatrix.loc[reads_cov, all_solutions[i]])))
-            score = compute_likelihood(dataMatrix.loc[reads_cov, all_solutions[i]])
-            score_list.append(score)
             
-            if score <= min_score:
-                min_score = score
             
-#            print("\nNegative log likelihood score:{}\n".format(score))
+#        If there is one solution among all optimal which matches true variants, assign to var_predicted to generate statistics
+        for solution in all_solutions:
+            if set(solution) == set(true_variants):
+                var_predicted = solution
+                break
     
-        #Give some names to the solutions for further identifications and get the indices for sorted likelihood list
-#        sortedIndex_score_list = np.argsort(score_list)
-#        likelihood_score_dict = dict()
-#        sol_name_dict = dict()
-#        
-#        for i in range(len(all_solutions)):
-#            sol_name_dict["sol_{}".format(i)] = all_solutions[sortedIndex_score_list[i]]
-#            likelihood_score_dict["sol_{}".format(i)] = score_list[sortedIndex_score_list[i]]
-            
-        '''
-        #Identify those solutions which have minimum negative log likelihood
-        min_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if score_list[i] == min_score]
-        var_predicted = min_sol_list[0]
-        similarity=0.001
-        similar_likelihood_sol_list = [all_solutions[i] for i in range(len(all_solutions)) if (score_list[i] <= (1+similarity)*min_score)]
-        similar_likelihood_score_list = [score_list[i] for i in range(len(all_solutions)) if (score_list[i] <= (1+similarity)*min_score)]
-        var_predicted = list(set().union(*similar_likelihood_sol_list))
-        print("Similar likelihood list: {}".format(similar_likelihood_sol_list))
-        print("Similar likelihood score list: {}".format(similar_likelihood_score_list))
-        
-        #Observe whether minimum negative log likelihood really gives the true variants
-        for sol in min_sol_list:
-            if set(sol) == set(true_variants):
-                minNegLogLike_correct += 1
-                min_sol = sol
-                break
-        
-        #Observe whether minimum negative log likelihood solutions implies minimum number of variants
-        minVariants = min(map(len,all_solutions))
-        if len(min_sol) == minVariants:
-            minSizeOpt_count +=1
-            
-        #Count number of simulations where solution with minimum negative log likelihood contains true variants
-        for sol in min_sol_list:
-            if len(set(true_variants) - set(sol)) == 0:
-                minNegLogLike_hasTrue += 1
-                break
-            
-        print("Negative log likelihood score list:{}".format(score_list))
-        print("The solution which has minimum negative log likelihood is {0} and its score:{1}".format(min_sol, min_score))
-        '''
-        
-        #Observe the patterns in negative log likelihood for all optimal solutions
-        #Starting from solutions with minimum likelihood, red dots represent these solutions are needed to cover all true variants(minimum number of subsets to cover all true variants)
-#        color_list = ["red"]
-#        union_likelihood = [ score_list[sortedIndex_score_list[0]] ]    #Keep track the likelihood of the solutions which cover true variants, produce some statistics later on
-#        temp_union = all_solutions[sortedIndex_score_list[0]]
-#        indexTrack = 1
-#        unionCalibration = True
-#        while( ( indexTrack!= len(all_solutions) ) and ( len(set(true_variants) - set(temp_union)) != 0 ) ):
-#            temp_union = temp_union + all_solutions[sortedIndex_score_list[indexTrack]]
-#            color_list.append("red")
-#            indexTrack += 1
-#        
-#        if len(color_list) != len(all_solutions):
-#            color_list.extend(["blue"]*(len(all_solutions) - len(color_list)))
-            
-#            for i in range(1, len(color_list)):
-#                union_likelihood.append(score_list[sortedIndex_score_list[i]])
-        
-        #If the union of all solutions do not cover the true variants, then print all as green dots
-#        if len(set(true_variants) - set(temp_union)) != 0:
-#            color_list = ["green"]*len(all_solutions)
-            #Do not calibrate if the union of all solutions do not cover true variants
-#            unionCalibration = False
-            
-        #Choose a random simulation to plot negative log likelihood chart
-#        if iteration in randomNum_negLogCharts:
-#            plt.figure()
-#            sorted_solution_namelist = ["sol_{}".format(i) for i in range(len(all_solutions))]
-#            plt.xticks(range(len(all_solutions)), sorted_solution_namelist, rotation=20)
-#            plt.scatter(range(len(all_solutions)), [likelihood_score_dict[name] for name in sorted_solution_namelist], color=color_list, s=50)
-#            plt.xlabel('Solution i ')
-#            plt.ylabel('Negative log likelihood')
-#            
-#            #If likelihoodCharts folder not created, create it
-#            if "likelihoodCharts" not in [name for name in os.listdir(outputFolderPath)]:
-#                os.mkdir("{}likelihoodCharts".format(outputFolderPath))
-#            
-#            plt.savefig("{0}likelihoodCharts/{1}_sim{2}_sol_likelihood".format(outputFolderPath, gene, iteration))
-        
-        #Only calculate calibration if solutions do cover true variants
-#        if unionCalibration:
-#            max_score_inUnion = max(union_likelihood)
-#            percentage = 100.0 *( (max_score_inUnion - min_score)/min_score )
-#            likelihoodCalibration.append(percentage)
-#        else:
-#            likelihoodCalibration.append(np.nan)
-            
-        #If there is one solution among all optimal which matches true variants, assign to var_predicted to generate statistics
-#        for solution in all_solutions:
-#            if set(solution) == set(true_variants):
-#                var_predicted = solution
-#                break
-        track_bool = True
-        diff_numVar = list()
-        for i in range(len(all_solutions)):
-            diff_numVar.append(len(set(all_solutions[i])^set(true_variants)))
-            if set(all_solutions[i]) == set(true_variants):
-                track_bool = False
-                break
-            
-        if track_bool:
-            true_likelihood = compute_likelihood(dataMatrix.loc[reads_cov, true_variants])
-            minDiffIndex_list = np.argwhere(diff_numVar == np.amin(diff_numVar))
-            minDiffIndex_list = minDiffIndex_list.flatten().tolist()
-            temp_score_list = [score_list[i] for i in minDiffIndex_list]
-            avg_score = np.mean(temp_score_list)
-            likelihoodCalibration.append(100.0*(abs(avg_score-true_likelihood))/true_likelihood)
-            
         #Keep track of precision and recall for all simulations
         precision_list.append(precision(var_predicted, true_variants))
         recall_list.append(recall(var_predicted, true_variants))
@@ -571,10 +486,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         predicted_DF = dataMatrix.loc[reads_cov,var_predicted]
         prop_count = count_compute_proportions(predicted_DF)
         prop_bayes = bayes_compute_proportions(predicted_DF)
-#        if proportion_method == "count":
-#            prop = count_compute_proportions(predicted_DF)
-#        elif proportion_method == "bayes":
-#            prop = bayes_compute_proportions(predicted_DF)
+        
         pred_prop_count = create_dictionary(var_predicted, prop_count)
         pred_prop_bayes = create_dictionary(var_predicted, prop_bayes)
         val_count = totalVariationDist(pred_prop_count, true_prop)
@@ -588,10 +500,6 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         print("True proportions are: {}\n".format(true_prop))
         print("Predicted proportions using Bayes method are: {}\n".format(pred_prop_bayes))
         print("Predicted proportions using Counting method are: {}\n".format(pred_prop_count))
-        
-        #Print all solutions and their likelihood score
-#        print("All solutions: \n{}\n".format(sol_name_dict))
-#        print("Solutions negative log likelihood score: \n{}\n".format(likelihood_score_dict))
         
         #Compute objective value of true variants
         true_Objective_val, bad_reads = compute_true_objective_val(true_DF)
@@ -693,12 +601,6 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     print("Average number of optimal solutions: {0}\n".format(np.mean(numOfOptimalSol)))
     context+=1
     
-    if likelihoodCalibration:
-        print "({0}) Likelihood Calibration: \n".format(context)
-        print("Percentage by which the score of the true solution differ from the one with the minimum: \n{0}".format(likelihoodCalibration))
-        print("The mean of these percentages: {0}\n".format(np.mean(likelihoodCalibration)))
-        context+=1
-    
     #print "({0})Numbers related to likelihood approach: \n".format(context)
     #print 'Number of simulations where solution with minimum negative log likelihood is the true solution: ', minNegLogLike_correct, "\n"
     #print('Out of the {0} simulations which are predicted correctly, {1} simulations have optimal solutions which do not have a minimum negative likelihood score.\n'.format(predictedCorrect_count, predictedCorrect_count-minNegLogLike_correct) )
@@ -740,4 +642,4 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
 #    
 #    plt.close('all')
     sys.stdout.close()
-    return precision_list, recall_list, diff_obj_vals, totalVarDist_count, totalVarDist_bayes, likelihoodCalibration
+    return precision_list, recall_list, diff_obj_vals, totalVarDist_count, totalVarDist_bayes
