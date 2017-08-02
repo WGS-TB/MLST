@@ -33,6 +33,8 @@ for name in loci:
 #samples = ["SRR2034333", "SRR2034334", "SRR2034335"]
 ap = argparse.ArgumentParser()
 ap.add_argument("-s", "--sample", required = True)
+ap.add_argument("-cl", "--objectiveComponent_local", default="all", required=False)
+ap.add_argument("-cg", "--objectiveComponent_global", default="all", required=False)
 args = vars(ap.parse_args())
 samples = [args["sample"]]
 
@@ -59,11 +61,13 @@ for samp in samples:
         print("..... Predicting variants and computing their proportions .....")
         print("")
         solutionsAndProp_dict = gvp.getVarAndProp(gene,"{0}_{1}_reads.txt".format(samp, gene), samp )
+        print("Proportions: ")
         print(solutionsAndProp_dict)
         gene_solProp_dict[gene] = solutionsAndProp_dict
     
+    '''
     #Choose an optimal solution which maximizes number of existing strains, similar flavour as 2nd ILP
-    print(''' \nPicking a good set of variants among the multiple optimal solutions ''')
+    print("... \nPicking a good set of variants among the multiple optimal solutions ...")
     #gene_keys = [[0,1], [0,1,2],...] indices of solutions in each gene
     gene_keys = [gene_solProp_dict[gene].keys() for gene in loci ]
     #Combination of multiple optimal solutions across all genes
@@ -104,7 +108,7 @@ for samp in samples:
     for comb in check_tuples:
         print("\nxxxxxxxxxxxxxxxxx Combination : {} xxxxxxxxxxxxxxxxxxxxxxxxxxxx\n".format(track))
         comb_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, comb)}
-        sum_str, sum_prop, sum_err = gvp.maxExistingStr(samp, loci, comb_dict, reference)
+        sum_str, sum_prop, sum_err = gvp.maxExistingStr(samp, loci, comb_dict, reference, args["objectiveComponent_local"])
         objValue_list.append(sum_str+sum_prop+sum_err)
         objStr.append(sum_str)
         objErr.append(sum_err)
@@ -145,10 +149,10 @@ for samp in samples:
     objComponent["Proportion"] = objProp
     objComponent["Error"] = objErr
     
-    if len(minObjValIndex_list) == 1:
-        objComponent.to_csv("{0}/objectiveComponent/{1}_objComponent.csv".format(currentPath, samples[0]))
-    else:
-        objComponent.to_csv("{0}/objectiveComponent/multOptDist_{1}_objComponent.csv".format(currentPath, samples[0]))
+#    if len(minObjValIndex_list) == 1:
+#        objComponent.to_csv("{0}/objectiveComponent/{1}_objComponent.csv".format(currentPath, samples[0]))
+#    else:
+#        objComponent.to_csv("{0}/objectiveComponent/multOptDist_{1}_objComponent.csv".format(currentPath, samples[0]))'''
         
 ''' $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Predict strains and their proportions $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'''
 #currentpath=/pipeline/
@@ -159,7 +163,7 @@ if not os.path.exists("strainsAndProp"):
 print("")
 print("******************** Solving ILP to find strains and their proportions in each sample **************************")
 print("")
-#gsp.strainSolver(currentPath+"/variantsAndProp", currentPath+"/strain_ref.txt", currentPath+"/strainsAndProp", loci)
+#gsp.strainSolver(currentPath+"/variantsAndProp", currentPath+"/strain_ref.txt", currentPath+"/strainsAndProp", loci, args["objectiveComponent_global"])
 
 print("")
 print("Script done.")
