@@ -332,7 +332,7 @@ def mapVarAndSampleToStrain(strain, loci, allSamples):
 #    piDotCombDF.to_csv('piDotComb.csv')
 #    pd.DataFrame(propConstrRHS).to_csv('propConstrRHS.csv')
 
-def strainSolver(dataPath, refStrains, outputPath, loci):
+def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption):
     ''' ============================================== Data handling ====================================================== '''
     #paramaters
     propFormat = 1    #proportion in percentage or fraction
@@ -403,8 +403,11 @@ def strainSolver(dataPath, refStrains, outputPath, loci):
     #add the decision variables for unqiue strain types
     model.variables.add(obj=strainWeightDecVarDF['Weights'].values.tolist(), names=strainWeightDecVarDF['Decision Variable'], types = [model.variables.type.binary]* len(strainWeightDecVarDF['Weights'].values.tolist()))
     #add proportions decision variables
-    model.variables.add(obj=proportionWeightDecVarDF['Weights'].values.tolist(),ub=[propFormat]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))
-    
+    if objectiveOption == "noPropAndErr":
+        model.variables.add(ub=[propFormat]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))
+    else:
+        model.variables.add(obj=proportionWeightDecVarDF['Weights'].values.tolist(),ub=[propFormat]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))
+        
     #add linear constraints such that for each sample, the sum of the proportions of its variants combination = 1
     propVarSumTo1 = list()
     
@@ -462,7 +465,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci):
             
         indicMinusAvgPropLess1_LHS.append([temp, coef])
     
-    tolerance = 0.01     #how much tolerance we set for the upper bound    
+    tolerance = 0.01*propFormat*0.01     #how much tolerance we set for the upper bound    
     model.linear_constraints.add(lin_expr=indicMinusAvgPropLess1_LHS, rhs=[propFormat - tolerance]*len(indicMinusAvgPropLess1_LHS), senses=["L"]*len(indicMinusAvgPropLess1_LHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusAvgPropLess1_LHS))])
     model.linear_constraints.add(lin_expr=indicMinusAvgPropLess1_LHS, rhs=[0]*len(indicMinusAvgPropLess1_LHS), senses=["G"]*len(indicMinusAvgPropLess1_LHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusAvgPropLess1_LHS))])
     
@@ -473,7 +476,10 @@ def strainSolver(dataPath, refStrains, outputPath, loci):
               
     #add error variable
     #model.variables.add(lb=(-1*varAndProp["Proportion"]).tolist(), ub=(1-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
-    model.variables.add(obj=[1]*varAndProp.shape[0], lb=(-1*varAndProp["Proportion"]).tolist(), ub=(propFormat-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
+    if objectiveOption == "noPropAndErr" or objectiveOption == "noErr":
+        model.variables.add(lb=(-1*varAndProp["Proportion"]).tolist(), ub=(1-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
+    else:
+        model.variables.add(obj=[1]*varAndProp.shape[0], lb=(-1*varAndProp["Proportion"]).tolist(), ub=(propFormat-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
     
     #add the constraints whereby for each sample, at each locus, the sum of the error of all variants=0
     errorSumTo0 = list()
@@ -482,6 +488,19 @@ def strainSolver(dataPath, refStrains, outputPath, loci):
         errorSumTo0.append([temp, [1]*len(temp)])
         
     model.linear_constraints.add(lin_expr=errorSumTo0, rhs=[0]*len(errorSumTo0), senses=["E"]*len(errorSumTo0), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(errorSumTo0))])
+    
+    #Limit all error to be within 10% i.e. +-5% from observed proportions
+#    if objectiveOption == "noPropAndErr" or objectiveOption == "noErr":
+#        temp_prop = varAndProp["Proportion"].tolist()
+#        errorUpBound = [np.round(i*1.05,3) for i in temp_prop]
+#        for i in range(len(errorUpBound)):
+#            if errorUpBound > propFormat*1.0:
+#                errorUpBound[i] = propFormat*1.0
+#        errorLowBound = [np.round(i*0.95,3) for i in temp_prop]
+#        errVars = [[[i], [1]] for i in varAndProp["Decision Variable"].tolist()]
+#        
+#        model.linear_constraints.add(lin_expr=errVars, rhs=errorUpBound, senses=["L"]*len(errVars), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(errVars))])
+#        model.linear_constraints.add(lin_expr=errVars, rhs=errorLowBound, senses=["G"]*len(errVars), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(errVars))])
     
     #add the constraints which bound the error terms
     errLessSumMinProp = list()
