@@ -22,6 +22,7 @@ lociDb_path = currentPath + "/loci_db/"
 loci = ["clpA", "clpX", "nifS", "pepX", "pyrG", "recG", "rplB", "uvrA"]
 
 samples = [i for i in os.listdir(data_path)]
+samples=["SRR2034333"]
 
 #currentpath= /pipeline/variantsAndProp
 if not os.path.exists("variantsAndProp"):
@@ -45,7 +46,7 @@ for samp in samples:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~ Gene {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(gene))
         print("")
         #building index for gene
-        buildIndexCmd = "bowtie-build {0}{1}.fas {1}_bowtie >/dev/null".format(lociDb_path, gene)
+        buildIndexCmd = "bowtie-build {0}extended_{1}.fas {1}_bowtie >/dev/null".format(lociDb_path, gene)
         os.system(buildIndexCmd)
         print("..... Done building index .....")
         
@@ -64,9 +65,11 @@ for samp in samples:
             fields = line.strip("\t").split()
             if len(fields) < 10:
                 mm_info = ""
+                ascii = fields[len(fields)-2]
             else:
+                ascii = fields[len(fields)-3]
                 mm_info = fields[9]
-            writefile.write(fields[0] + "\t" + fields[4] + "\t" + mm_info + "\n")
+            writefile.write(fields[0] + "\t" + fields[4] + "\t" + mm_info + "\t" + ascii + "\n")
         readDotOutFile.close()
         writefile.close()
     
