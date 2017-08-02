@@ -10,9 +10,11 @@ import os
 import sys
 import argparse
 import simulation_functions as sim
+import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+matplotlib.style.use('ggplot')
 
 
 def construct_boxPlot(csv,type_of_data,name,coverage, iteration):
@@ -48,6 +50,7 @@ def writeToCsv(fileName, simulationFolderPath, outputFolderName, dataList):
     dataDF.to_csv("{0}/{1}/{2}".format(simulationFolderPath, outputFolderName, fileName), sep='\t')
     
 genes = sorted(os.listdir("sim_data"))
+genes = ['clpA','clpX','nifS','pepX','pyrG','recG','rplB','uvrA']
 originalPath=os.getcwd()
 ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--numOfIter", required = False, default = 40, type=int)
@@ -71,7 +74,6 @@ recall_list = list()
 diffObjVal_list = list()
 totalVarDist_count_list = list()
 totalVarDist_bayes_list = list()
-likeCalib_list = list()
 
 for locus in genes:
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Simulating locus {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(locus))
@@ -98,14 +100,12 @@ for locus in genes:
         print("==== Removed previous .fa files ====")
     
     #Function to run simulation imported    
-    precision, recall, diff_obj_vals, totalVarDist_count, totalVarDist_bayes, likeCalib = sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"])
+    precision, recall, diff_obj_vals, totalVarDist_count, totalVarDist_bayes = sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"])
     precision_list.append(precision)
     recall_list.append(recall)
     diffObjVal_list.append(diff_obj_vals)
     totalVarDist_count_list.append(totalVarDist_count)
     totalVarDist_bayes_list.append(totalVarDist_bayes)
-    if likeCalib:
-        likeCalib_list.append(np.mean(likeCalib))
     
     sys.stdout = originalSTDOut
 
@@ -123,8 +123,6 @@ writeToCsv("{0}X_totalVarDist_count.csv".format(args["coverage"]), originalPath,
 construct_boxPlot("{0}/{1}/{2}X_totalVarDist_count.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "TotalVarDist", "{0}/{1}/{2}X_totalVarDist_count.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"], args["numOfIter"] )
 writeToCsv("{0}X_totalVarDist_bayes.csv".format(args["coverage"]), originalPath, args["simulationResultFolder"], totalVarDist_bayes_list)
 construct_boxPlot("{0}/{1}/{2}X_totalVarDist_bayes.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "TotalVarDist", "{0}/{1}/{2}X_totalVarDist_bayes.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"], args["numOfIter"] )
-print("Likelihood Calibration: {}".format(likeCalib_list))
-print("Mean: {}".format(np.mean(likeCalib_list)))
 
 #Summarize the results for all genes
 os.chdir("{0}/{1}/".format(originalPath, args["simulationResultFolder"]))
