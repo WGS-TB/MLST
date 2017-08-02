@@ -15,8 +15,107 @@ import itertools
 import cplex
 import sys
 import matplotlib.pyplot as plt
+import re
 
 NO_BINOM = False
+
+def ConvertAscii(Qscore):
+    result = []
+    for char in Qscore:
+        #subtract 33 for predefined offset
+        result.append(ord(char)-33)
+    return result
+
+def compute_QAvg(Qmatrix):
+    Qavg = Qmatrix.sum()
+    nonZero = Qmatrix.astype(bool).sum(axis=1).sum()
+    Qavg = Qavg.sum()/nonZero
+    return Qavg
+
+def compute_QSum(Qmatrix):
+    return (Qmatrix.sum()).sum()
+
+def Generate_Qmatrix(DataPath):
+    var_list = []
+    read_list = []
+    mismatch = []
+    Qscores = []
+    
+    first = True
+    
+    with open(DataPath) as inf:
+        for line in inf:
+            if first:    
+                prevParts = line.split('\t')
+            else:
+                parts = line.split('\t')
+            if len(prevParts) > 1 and not first:
+                temp2 = '-'.join(parts[0].split('-',2)[:2])
+                temp3 = temp2.split('/')
+                read_list.append(temp3[0])
+                var_list.append(parts[1])
+                #convert the read qualities from ascii to decimal integers
+                
+                Converted_scores = ConvertAscii(prevParts[3])
+                Converted_scores_2 = ConvertAscii(parts[3])
+                MisMatch_pos = re.findall(r'\d+',prevParts[2])
+                MisMatch_pos_2 = re.findall(r'\d+',parts[2])
+                Qsum = 0
+                Qsum2 = 0
+                #if a read maps perfectly to a variant, then assign a perfect quality score to it
+                if len(MisMatch_pos) == 0:
+                    Qsum = 0
+                else:
+                    for pos in MisMatch_pos:
+                        Qsum += Converted_scores[int(pos)-1]
+#                        Qsum = Qsum/len(MisMatch_pos)
+                if len(MisMatch_pos_2) == 0 :
+                    Qsum2 = 0
+                else:
+                    for pos in MisMatch_pos_2:
+                        Qsum2 += Converted_scores_2[int(pos)-1]
+#                        Qsum2 = Qsum2/len(MisMatch_pos_2)
+                
+                Qscores.append(Qsum+Qsum2)
+            first = not first
+            
+    flag = True
+    
+    if flag is True:
+        read_var_dict = defaultdict(list) #dictionary holding all the variants that a read maps to
+        read_mismatch_dict = defaultdict(list) #dictionary holding all the mismatches that a read has to its variants
+        read_index_dict = defaultdict(list) #dictionary holding indices for later use
+    
+        for i in range(len(read_list)):
+            num_mismatch = Qscores[i] #count the number of mismatches for each read
+            #append the appropriate suffix for paired reads
+            '''if  i%2 == 0:    
+                read_list[i] = read_list[i]+'-1/2'
+            else:
+                read_list[i] = read_list[i]+'-2/2'
+            '''
+            read_var_dict[read_list[i]].append(var_list[i]) #append all the variants that read read_i maps to
+            read_mismatch_dict[read_list[i]].append(num_mismatch) #append all the mismatches that each read_i has when it maps to a variants
+            read_index_dict[read_list[i]].append(i) #for testing purposes
+    
+        var_list = set(var_list) #removes duplicates
+        matrix_dict = tree() #creates a 2-D dictionary object later used to generate the read-variant matrix datastructure
+     
+    #       create a 2D dictionary that contains all the possible combinations of a read with a variant and the number of mismatches.
+        for var in var_list:
+            for read in read_var_dict:   #key=read name
+                temp_var_list = read_var_dict[read]   #list of variants that key maps to 
+                if var in temp_var_list:
+                    index = temp_var_list.index(var)
+                    mismatch = read_mismatch_dict[read][index] #get the number of mismatches
+                    #only for perfect matches.
+                    #if val == 1:
+                    #print val
+                    matrix_dict[read][var] = int(mismatch) #add it to the matrix data structure
+    
+        QmatrixDF = pd.DataFrame(matrix_dict).T.fillna(60) #convert 2-D dictionary to a matrix
+        return QmatrixDF
+
 '''
 Input: Path to reads.txt file
 Output: Matrix with rows=reads, columns=variants and entries=mismatches information
@@ -164,14 +263,42 @@ def getVarAndProp(gene, tablePath, samp):
     #generate matrix
     dataMatrixDF = generate_matrix(tablePath)
     dataMatrixDF.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
+    
+    #Generate quality matrix
+    Qmatrix = Generate_Qmatrix(tablePath)
+    Qmatrix.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
+    
     #predict variants
     pred_object_val,var_predicted,reads_cov, all_solutions, all_objective = varSolver.solver(dataMatrixDF)
-    #print var_predicted
-    #print all_solutions
+    
+    #Calculate quality scores of solutions
+    Qscores = list()
+    minVar_Qscores = list()
+    for i in range(len(all_solutions)):
+        Qscores.append(compute_QSum(Qmatrix.loc[reads_cov,all_solutions[i]]))
+        
+    print("Quality scores for all solutions: {}".format(Qscores))
+    print("Solutions: {}".format(all_solutions))
+    
+    #The required alleles
     dataMatrix_pred = dataMatrixDF.loc[reads_cov,var_predicted]
     minVar_solutions = [sol for sol in all_solutions if len(sol) == min(map(len,all_solutions))]
     
-    ''' Likelihood '''
+    #Calculate quality scores for minimum alleles
+    for i in range(len(minVar_solutions)):
+        minVar_Qscores.append(compute_QSum(Qmatrix.loc[reads_cov, minVar_solutions[i]]))
+        
+    print("Quality scores for solutions with minimum alleles: {}".format(minVar_Qscores))
+    print("Minimum alleles solutions: {}".format(minVar_solutions))
+    
+    #Return solutions with minimum quality scores
+    min_qscore = min(minVar_Qscores)
+    minQscore_sol = [minVar_solutions[i] for i in range(len(minVar_solutions)) if minVar_Qscores[i] == min_qscore]
+    print("Min quality score: {}".format(min_qscore))
+    print("Solutions with minimum variants and minimum quality score: {}".format(minQscore_sol))
+    
+    #Likelihood approach 
+    ''' 
     #compute proportions
     prop = compute_proportions(dataMatrix_pred)
     pred_prop = create_dictionary(var_predicted, prop)
@@ -179,7 +306,6 @@ def getVarAndProp(gene, tablePath, samp):
     #score list and proportions
     score_list = list()
     min_score = sys.maxint
-    min_sol_list = list()
     
     for i in range(len(minVar_solutions)):
         score = compute_likelihood(dataMatrixDF.loc[reads_cov, minVar_solutions[i]])
@@ -189,46 +315,52 @@ def getVarAndProp(gene, tablePath, samp):
             min_score = score
             
     #Give some names to the solutions for further identifications and get the indices for sorted likelihood list
+    #Sort quality score and produce some graphs
     sortedIndex_score_list = np.argsort(score_list)
+    sortedIndex_qscore_minVarSol = np.argsort(Qscores)
     likelihood_score_dict = dict()
+    qscores_minVarSol_dict = dict()
     sol_name_dict = dict()
     
     for i in range(len(minVar_solutions)):
         sol_name_dict["sol_{}".format(i)] = minVar_solutions[sortedIndex_score_list[i]]
         likelihood_score_dict["sol_{}".format(i)] = score_list[sortedIndex_score_list[i]]
+        qscores_minVarSol_dict["sol_{}".format(i)] = Qscores[sortedIndex_qscore_minVarSol[i]]
             
-    plt.figure()
-    sorted_solution_namelist = ["sol_{}".format(i) for i in range(len(minVar_solutions))]
-    plt.xticks(range(len(minVar_solutions)), sorted_solution_namelist, rotation=20)
-    plt.scatter(range(len(minVar_solutions)), [likelihood_score_dict[name] for name in sorted_solution_namelist], s=50)
-    plt.xlabel('Solution i ')
-    plt.ylabel('Negative log likelihood')
-    plt.savefig("{0}_{1}_sol_likelihood".format(samp, gene))
+#    plt.figure()
+#    sorted_solution_namelist = ["sol_{}".format(i) for i in range(len(minVar_solutions))]
+#    plt.xticks(range(len(minVar_solutions)), sorted_solution_namelist, rotation=20)
+#    plt.scatter(range(len(minVar_solutions)), [likelihood_score_dict[name] for name in sorted_solution_namelist], s=50)
+#    plt.xlabel('Solution i ')
+#    plt.ylabel('Negative log likelihood')
+#    plt.savefig("{0}_{1}_sol_likelihood".format(samp, gene))
     
-    minVar_minNegLog_solutions = [minVar_solutions[i] for i in range(len(minVar_solutions)) if min_score <= score_list[i] <= 1.01*min_score]
+#    plt.figure()
+#    plt.xticks(range(len(minVar_solutions)), sorted_solution_namelist, rotation=20)
+#    plt.scatter(range(len(minVar_solutions)), [qscores_minVarSol_dict[name] for name in sorted_solution_namelist], s=50)
+#    plt.xlabel('Solution i ')
+#    plt.ylabel('Average quality score')
+#    plt.savefig("{0}_{1}_minVarSol_avgQscore".format(samp, gene))
+    
+#    minVar_minNegLog_solutions = [minVar_solutions[i] for i in range(len(minVar_solutions)) if min_score <= score_list[i] <= 1.01*min_score]
+    '''
     
     ''' ====== '''
-    
     #compute proportions
     #solutionsAndProp_dict is a dictionary in which the keys are just indices and values are dictionaries, with variant as key and proportion as value
     solutionsAndProp_dict = dict()
     track=0
-    for sol in minVar_minNegLog_solutions:
+    for sol in minQscore_sol:
         dataMatrix_pred = dataMatrixDF.loc[reads_cov, sol]
         prop = compute_proportions(dataMatrix_pred)
         pred_prop = create_dictionary(sol, prop)
         solutionsAndProp_dict[track] = pred_prop
         track += 1
-    
-    #write proportions to file
-#    w = csv.writer(open(gene+'_proportions.csv', "w"))
-#    for key, val in pred_prop.items():
-#        w.writerow([key, val])
         
-    plt.close('all')        
+#    plt.close('all')        
     return solutionsAndProp_dict
 
-def maxExistingStr(sample, loci, gene_solProp_dict, reference):
+def maxExistingStr(sample, loci, gene_solProp_dict, reference, objectiveOption):
     genesDF = pd.DataFrame(columns=loci)
     
     for gene in loci:
@@ -292,9 +424,12 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
     #minimize problem
     model.objective.set_sense(model.objective.sense.minimize)
     #add the decision variables for unqiue strain types
-    model.variables.add(obj=strainWeightDecVarDF['Weights'].values.tolist(), names=strainWeightDecVarDF['Decision Variable'], types = [model.variables.type.binary]* len(strainWeightDecVarDF['Weights'].values.tolist()))
+    model.variables.add(obj=[i for i in strainWeightDecVarDF['Weights'].values.tolist()], names=strainWeightDecVarDF['Decision Variable'], types = [model.variables.type.binary]* len(strainWeightDecVarDF['Weights'].values.tolist()))
     #add proportions decision variables
-    model.variables.add(obj=proportionWeightDecVarDF['Weights'].values.tolist(),ub=[propFormat]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))
+    if objectiveOption == "noPropAndErr":
+        model.variables.add(ub=[propFormat]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))
+    else:
+        model.variables.add(obj=proportionWeightDecVarDF['Weights'].values.tolist(),ub=[propFormat]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))
     
     #add linear constraints such that for each sample, the sum of the proportions of its variants combination = 1
     propVarSumTo1 = list()
@@ -356,7 +491,7 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
     tolerance = 0.01*propFormat*0.01     #how much tolerance we set for the upper bound    
     model.linear_constraints.add(lin_expr=indicMinusAvgPropLess1_LHS, rhs=[propFormat - tolerance]*len(indicMinusAvgPropLess1_LHS), senses=["L"]*len(indicMinusAvgPropLess1_LHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusAvgPropLess1_LHS))])
     model.linear_constraints.add(lin_expr=indicMinusAvgPropLess1_LHS, rhs=[0]*len(indicMinusAvgPropLess1_LHS), senses=["G"]*len(indicMinusAvgPropLess1_LHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(indicMinusAvgPropLess1_LHS))])
-    
+
     #add error variables and linear constraints related to error terms
     #create error variable names
     varAndProp["Decision Variable"] = ["d_s{}_".format(samp[-3:]) for samp in varAndProp["Sample"].tolist() ]
@@ -364,7 +499,23 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
               
     #add error variable
     #model.variables.add(lb=(-1*varAndProp["Proportion"]).tolist(), ub=(1-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
-    model.variables.add(obj=[1]*varAndProp.shape[0], lb=(-1*varAndProp["Proportion"]).tolist(), ub=(propFormat-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
+    if objectiveOption == "noPropAndErr" or objectiveOption == "noErr":
+        model.variables.add(lb=(-1*varAndProp["Proportion"]).tolist(), ub=(1-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
+    else:
+        model.variables.add(obj=[1]*varAndProp.shape[0], lb=(-1*varAndProp["Proportion"]).tolist(), ub=(propFormat-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
+    
+    #Limit all error to be within 10% i.e. +-5% from observed proportions
+#    if objectiveOption == "noPropAndErr" or objectiveOption == "noErr":
+#        temp_prop = varAndProp["Proportion"].tolist()
+#        errorUpBound = [np.round(i*1.05,3) for i in temp_prop]
+#        for i in range(len(errorUpBound)):
+#            if errorUpBound > propFormat*1.0:
+#                errorUpBound[i] = propFormat*1.0
+#        errorLowBound = [np.round(i*0.95,3) for i in temp_prop]
+#        errVars = [[[i],[1]] for i in varAndProp["Decision Variable"].tolist()]
+#        
+#        model.linear_constraints.add(lin_expr=errVars, rhs=errorUpBound, senses=["L"]*len(errVars), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(errVars))])
+#        model.linear_constraints.add(lin_expr=errVars, rhs=errorLowBound, senses=["G"]*len(errVars), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(errVars))])
     
     #add the constraints whereby for each sample, at each locus, the sum of the error of all variants=0
     errorSumTo0 = list()
@@ -408,6 +559,7 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
     #model.write("borreliaLP.lp")
 #    model.set_results_stream(None)
     model.solve()
+#    model.write("{}.lp".format(sample))
     
     #options for searching more optimal solutions
     #model.parameters.mip.pool.capacity.set(10)
@@ -447,5 +599,94 @@ def maxExistingStr(sample, loci, gene_solProp_dict, reference):
     print("Sum :{}".format(sum_str+sum_prop+sum_err))
     
     return np.round(sum_str, 3), np.round(sum_prop,3), np.round(sum_err,3)
+
+def maxExistingStr_only(sample, loci, gene_solProp_dict, reference):
+    genesDF = pd.DataFrame(columns=loci)
+    
+    for gene in loci:
+        genesDF[gene] = [gene_solProp_dict[gene]]
+    
+    data = dict()
+    data[sample] = genesDF
+    data = gsp.roundProp(data)
+    
+    ''' ============================================== Data handling ====================================================== '''
+    numLoci = len(loci)
+    
+    #read data for samples and reference
+    allSamples = data.keys()
+        
+    #Get proportions of variants at different locus for each sample
+    varAndProp = gsp.returnVarAndProportions(data)
+    
+    #Get the combinations at all loci across all samples
+    strainAndNumComb = gsp.returnCombinationsAndNumComb(data, numLoci, loci)
+    strains = strainAndNumComb[0]
+#    numOfComb = strainAndNumComb[1]
+    uniqueStrains = strains.drop_duplicates(loci)
+    uniqueStrains = (uniqueStrains[loci]).reset_index(drop=True)
+    uniqueStrains["ST"] = uniqueStrains.index.values + 1    #assign indices for strains or each unique combinations
+    strains = strains.merge(uniqueStrains, indicator=True, how="left")    #assign the index to the combinations(as strain data frame contains duplicated rows)
+    strains = strains.drop("_merge",1)
+    
+    #For each variants, get a mapping of which strains it maps to
+    varSampToST = gsp.mapVarAndSampleToStrain(strains, loci, allSamples)
+    
+    #weights and decision variables for proportion of strains. weight=0 if the strain is in reference, otherwise =1. Notice there will be duplications of strain types
+    #here because for proportions, we consider sample by sample rather than unique strain types
+    proportionWeightDecVarDF = strains.merge(reference, indicator=True, how="left")
+    proportionWeightDecVarDF["_merge"].replace(to_replace="both", value=0, inplace=True)
+    proportionWeightDecVarDF["_merge"].replace(to_replace="left_only", value=1, inplace=True)
+    proportionWeightDecVarDF = proportionWeightDecVarDF.rename(columns = {"_merge":"Weights"})
+    
+    #Add proportion decision variable names
+    proportionWeightDecVarDF["Decision Variable"] = np.nan
+    
+    for samp in allSamples:
+        thisSample = (proportionWeightDecVarDF.loc[proportionWeightDecVarDF['Sample'] == samp])['Sample']
+        propNameTemp = ["pi_%s_%d" %t for t in itertools.izip(thisSample, range(1,1+thisSample.shape[0]))]
+        #shorter name as CPLEX can't hold name with >16 char. Use last 3 digits of sample name to name decision variables i.e. SRR2034333 -> use 333
+        propNameTemp = [ele.replace("pi_{}".format(samp), "pi_s{}".format(samp[-3:])) for ele in propNameTemp]   
+        proportionWeightDecVarDF.loc[proportionWeightDecVarDF['Sample'] == samp, 'Decision Variable'] = propNameTemp
+        
+    #weights and decision variables for unique strain types, weight=0 if strain is in reference, otherwise=1. no duplications
+    strainWeightDecVarDF = proportionWeightDecVarDF.drop_duplicates(loci)
+    retainCol = loci + ['Weights', 'ST']
+    strainWeightDecVarDF = strainWeightDecVarDF[retainCol].reset_index(drop=True)
+    strainWeightDecVarDF["Decision Variable"] = ["a{}".format(i) for i in range(1, strainWeightDecVarDF.shape[0] + 1)]
+    
+    '''==================================== Forming ILP here ================================================'''
+    #Form a CPLEX model
+    model = cplex.Cplex()
+    #minimize problem
+    model.objective.set_sense(model.objective.sense.minimize)
+    #add the decision variables for unqiue strain types
+    model.variables.add(obj=strainWeightDecVarDF['Weights'].values.tolist(), names=strainWeightDecVarDF['Decision Variable'], types = [model.variables.type.binary]* len(strainWeightDecVarDF['Weights'].values.tolist()))                                     
+    
+    ''' ================================== Solve ILP ========================================== '''
+    #model.write("borreliaLP.lp")
+#    model.set_results_stream(None)
+    model.solve()
+    model.write("{}.lp".format(sample))
+    
+    #options for searching more optimal solutions
+    #model.parameters.mip.pool.capacity.set(10)
+#    model.parameters.mip.pool.intensity.set(4)
+    #model.parameters.mip.limits.populate.set(2100000000)
+#    model.parameters.mip.pool.absgap.set(0)
+#    model.parameters.mip.pool.replace.set(1)
+#    model.populate_solution_pool()
+    
+    objvalue = model.solution.get_objective_value()
+    varNames = model.variables.get_names()
+    varValues = model.solution.get_values(varNames)
+    conclusion = pd.DataFrame(columns=["Decision Variable", "Value"])
+    conclusion["Decision Variable"] = varNames
+    conclusion["Value"] = varValues
+    chosenStrainVariable = conclusion[ conclusion["Value"]>0.5 ]
+    chosenStrain_DF = strainWeightDecVarDF[strainWeightDecVarDF["Decision Variable"].isin(chosenStrainVariable["Decision Variable"].values.tolist())]
+    
+    return np.round(objvalue,3), chosenStrain_DF[loci]
+    
     
     
