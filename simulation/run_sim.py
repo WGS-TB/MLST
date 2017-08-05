@@ -16,6 +16,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+import time
 matplotlib.style.use('ggplot')
 
 
@@ -51,6 +52,7 @@ def writeToCsv(fileName, simulationFolderPath, outputFolderName, dataList):
     
     dataDF.to_csv("{0}/{1}/{2}".format(simulationFolderPath, outputFolderName, fileName), sep='\t')
     
+start = time.time()
 genes = sorted(os.listdir("sim_data"))
 genes = ['clpA','clpX','nifS','pepX','pyrG','recG','rplB','uvrA']
 originalPath=os.getcwd()
@@ -102,12 +104,12 @@ for locus in genes:
         print("==== Removed previous .fa files ====")
     
     #Function to run simulation imported    
-    precision, recall, diff_obj_vals, totalVarDist_count, totalVarDist_bayes = sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"])
+    precision, recall, diff_obj_vals, totalVarDist_count= sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"])
     precision_list.append(precision)
     recall_list.append(recall)
     diffObjVal_list.append(diff_obj_vals)
     totalVarDist_count_list.append(totalVarDist_count)
-    totalVarDist_bayes_list.append(totalVarDist_bayes)
+#    totalVarDist_bayes_list.append(totalVarDist_bayes)
     
     sys.stdout = originalSTDOut
 
@@ -123,8 +125,8 @@ writeToCsv("{0}X_diffObjVal.csv".format(args["coverage"]), originalPath, args["s
 construct_boxPlot("{0}/{1}/{2}X_diffObjVal.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "DiffObjVal", "{0}/{1}/{2}X_diffObjVal.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"], args["numOfIter"] )
 writeToCsv("{0}X_totalVarDist_count.csv".format(args["coverage"]), originalPath, args["simulationResultFolder"], totalVarDist_count_list)
 construct_boxPlot("{0}/{1}/{2}X_totalVarDist_count.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "TotalVarDist", "{0}/{1}/{2}X_totalVarDist_count.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"], args["numOfIter"] )
-writeToCsv("{0}X_totalVarDist_bayes.csv".format(args["coverage"]), originalPath, args["simulationResultFolder"], totalVarDist_bayes_list)
-construct_boxPlot("{0}/{1}/{2}X_totalVarDist_bayes.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "TotalVarDist", "{0}/{1}/{2}X_totalVarDist_bayes.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"], args["numOfIter"] )
+#writeToCsv("{0}X_totalVarDist_bayes.csv".format(args["coverage"]), originalPath, args["simulationResultFolder"], totalVarDist_bayes_list)
+#construct_boxPlot("{0}/{1}/{2}X_totalVarDist_bayes.csv".format(originalPath, args["simulationResultFolder"], args["coverage"]), "TotalVarDist", "{0}/{1}/{2}X_totalVarDist_bayes.png".format(originalPath, args["simulationResultFolder"], args["coverage"]), args["coverage"], args["numOfIter"] )
 
 #Summarize the results for all genes
 os.chdir("{0}/{1}/".format(originalPath, args["simulationResultFolder"]))
@@ -137,4 +139,5 @@ for file in geneOutputTxt:
     summarize_cmd = "sed '/SUMMARY STATISTICS*/,$!d' {0} >> allGenes_summary_stats.txt".format(file)    
     os.system(summarize_cmd)
 
-os.chdir(originalPath)    
+os.chdir(originalPath)  
+print("Time taken: {} min".format( (time.time() - start)/60 ))
