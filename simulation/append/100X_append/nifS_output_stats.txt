@@ -1,0 +1,1035 @@
+======================================== SIMULATION 1 ====================================================
+
+Number of optimal solutions: 1
+[['nifS_147', 'nifS_156', 'nifS_159', 'nifS_43', 'nifS_50', 'nifS_56']]
+Qscores are: [450801.0]
+Minimum q score is :450801.0
+True variants are: ['nifS_56', 'nifS_43', 'nifS_147', 'nifS_156']
+
+Predicted variants are: ['nifS_147', 'nifS_156', 'nifS_159', 'nifS_43', 'nifS_50', 'nifS_56']
+
+True proportions are: {'nifS_147': 19.855123074064377, 'nifS_156': 8.358929604468765, 'nifS_43': 37.58032467379183, 'nifS_56': 34.20562264767503}
+
+Predicted proportions using Counting method are: {'nifS_43': 26.306856754921913, 'nifS_156': 8.55397148676171, 'nifS_147': 19.551934826883908, 'nifS_50': 3.903598099117447, 'nifS_159': 7.196198234894774, 'nifS_56': 34.48744059742023}
+
+This sim is not predicted correctly based on quality score.
+             nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                   
+nifS_43-280    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_43-60     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_43-32     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                  ...               
+nifS_43-280      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_43-60       -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_43-32        3.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                         
+nifS_43-280     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_43-60      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_43-32      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             nifS_98  nifS_99  
+Read                           
+nifS_43-280     -1.0     -1.0  
+nifS_43-60      -1.0     -1.0  
+nifS_43-32      -1.0     -1.0  
+
+[3 rows x 154 columns]
+======================================== SIMULATION 2 ====================================================
+
+Number of optimal solutions: 2
+[['nifS_111', 'nifS_120', 'nifS_123', 'nifS_159', 'nifS_163', 'nifS_27', 'nifS_50', 'nifS_91'], ['nifS_111', 'nifS_120', 'nifS_123', 'nifS_159', 'nifS_163', 'nifS_27', 'nifS_34', 'nifS_50']]
+Qscores are: [570498.0, 570584.0]
+Minimum q score is :570498.0
+True variants are: ['nifS_163', 'nifS_120', 'nifS_27', 'nifS_111', 'nifS_123', 'nifS_91']
+
+Predicted variants are: ['nifS_111', 'nifS_120', 'nifS_123', 'nifS_159', 'nifS_163', 'nifS_27', 'nifS_50', 'nifS_91']
+
+True proportions are: {'nifS_120': 22.936649247655915, 'nifS_123': 15.858755650497711, 'nifS_27': 37.14874931688361, 'nifS_91': 21.408318800362494, 'nifS_111': 1.0627279574993669, 'nifS_163': 1.5847990271009047}
+
+Predicted proportions using Counting method are: {'nifS_120': 21.017402945113787, 'nifS_123': 15.662650602409636, 'nifS_27': 31.459170013386892, 'nifS_91': 20.548862115127168, 'nifS_111': 1.8072289156626504, 'nifS_50': 4.68540829986613, 'nifS_159': 3.012048192771085, 'nifS_163': 1.8072289156626504}
+
+This sim is not predicted correctly based on quality score.
+             nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                   
+nifS_27-280    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_27-60     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_27-32     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                  ...               
+nifS_27-280      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_27-60       -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_27-32        3.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                         
+nifS_27-280     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_27-60      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_27-32      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             nifS_98  nifS_99  
+Read                           
+nifS_27-280     -1.0     -1.0  
+nifS_27-60      -1.0     -1.0  
+nifS_27-32      -1.0     -1.0  
+
+[3 rows x 156 columns]
+======================================== SIMULATION 3 ====================================================
+
+Number of optimal solutions: 1
+[['nifS_101', 'nifS_27', 'nifS_32', 'nifS_46', 'nifS_86', 'nifS_90']]
+Qscores are: [410943.0]
+Minimum q score is :410943.0
+True variants are: ['nifS_86', 'nifS_101', 'nifS_46', 'nifS_90', 'nifS_27', 'nifS_32']
+
+Predicted variants are: ['nifS_101', 'nifS_27', 'nifS_32', 'nifS_46', 'nifS_86', 'nifS_90']
+
+True proportions are: {'nifS_46': 5.108192976476572, 'nifS_32': 27.10993497596725, 'nifS_27': 11.352912916616257, 'nifS_101': 28.5871663230566, 'nifS_86': 14.53644431568418, 'nifS_90': 13.305348492199128}
+
+Predicted proportions using Counting method are: {'nifS_46': 6.600000000000001, 'nifS_32': 23.599999999999994, 'nifS_27': 11.333333333333336, 'nifS_101': 26.033333333333324, 'nifS_86': 14.600000000000003, 'nifS_90': 17.833333333333332}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 4 ====================================================
+
+Number of optimal solutions: 9
+[['nifS_11', 'nifS_125', 'nifS_159', 'nifS_52'], ['nifS_11', 'nifS_125', 'nifS_138', 'nifS_159', 'nifS_52'], ['nifS_11', 'nifS_125', 'nifS_144', 'nifS_159', 'nifS_52'], ['nifS_11', 'nifS_125', 'nifS_159', 'nifS_160', 'nifS_52'], ['nifS_11', 'nifS_125', 'nifS_159', 'nifS_30', 'nifS_52'], ['nifS_11', 'nifS_125', 'nifS_159', 'nifS_48', 'nifS_52'], ['nifS_11', 'nifS_125', 'nifS_159', 'nifS_50', 'nifS_52'], ['nifS_11', 'nifS_125', 'nifS_159', 'nifS_52', 'nifS_67'], ['nifS_103', 'nifS_11', 'nifS_125', 'nifS_159', 'nifS_52']]
+Qscores are: [265447.0, 322345.0, 334637.0, 338990.0, 333280.0, 329653.0, 329634.0, 328342.0, 328186.0]
+Minimum q score is :265447.0
+True variants are: ['nifS_11', 'nifS_52', 'nifS_125']
+
+Predicted variants are: ['nifS_11', 'nifS_125', 'nifS_159', 'nifS_52']
+
+True proportions are: {'nifS_52': 55.75715799944185, 'nifS_11': 4.431067746690846, 'nifS_125': 39.8117742538673}
+
+Predicted proportions using Counting method are: {'nifS_159': 12.164948453608249, 'nifS_52': 43.09278350515464, 'nifS_11': 4.742268041237113, 'nifS_125': 40.0}
+
+This sim is not predicted correctly based on quality score.
+             nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                   
+nifS_52-258    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_52-478    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                  ...               
+nifS_52-258      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_52-478      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                         
+nifS_52-258     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_52-478     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             nifS_98  nifS_99  
+Read                           
+nifS_52-258     -1.0     -1.0  
+nifS_52-478     -1.0     -1.0  
+
+[2 rows x 154 columns]
+======================================== SIMULATION 5 ====================================================
+
+Number of optimal solutions: 20
+[['nifS_101', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_90', 'nifS_92'], ['nifS_101', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_90'], ['nifS_101', 'nifS_105', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_90'], ['nifS_105', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_90'], ['nifS_106', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_90'], ['nifS_101', 'nifS_106', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_90'], ['nifS_101', 'nifS_121', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_90'], ['nifS_101', 'nifS_124', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_90'], ['nifS_121', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_90'], ['nifS_124', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_90'], ['nifS_101', 'nifS_145', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_90'], ['nifS_145', 'nifS_152', 'nifS_162', 'nifS_165', 'nifS_90'], ['nifS_101', 'nifS_152', 'nifS_158', 'nifS_162', 'nifS_165', 'nifS_90'], ['nifS_152', 'nifS_158', 'nifS_162', 'nifS_165', 'nifS_90'], ['nifS_152', 'nifS_162', 'nifS_165', 'nifS_41', 'nifS_90'], ['nifS_152', 'nifS_162', 'nifS_165', 'nifS_43', 'nifS_90'], ['nifS_152', 'nifS_162', 'nifS_165', 'nifS_46', 'nifS_90'], ['nifS_152', 'nifS_162', 'nifS_165', 'nifS_52', 'nifS_90'], ['nifS_152', 'nifS_162', 'nifS_165', 'nifS_54', 'nifS_90'], ['nifS_152', 'nifS_162', 'nifS_165', 'nifS_90']]
+Qscores are: [334236.0, 270330.0, 341919.0, 282038.0, 288336.0, 348217.0, 340171.0, 351608.0, 280290.0, 291727.0, 347255.0, 287374.0, 337751.0, 277870.0, 294768.0, 283813.0, 292987.0, 276140.0, 293499.0, 210449.0]
+Minimum q score is :210449.0
+True variants are: ['nifS_90', 'nifS_162', 'nifS_165', 'nifS_152']
+
+Predicted variants are: ['nifS_152', 'nifS_162', 'nifS_165', 'nifS_90']
+
+True proportions are: {'nifS_165': 13.289037090029643, 'nifS_90': 38.13192513071833, 'nifS_162': 25.75800596009843, 'nifS_152': 22.821031819153596}
+
+Predicted proportions using Counting method are: {'nifS_165': 16.734279918864097, 'nifS_90': 38.33671399594321, 'nifS_162': 22.210953346855984, 'nifS_152': 22.718052738336713}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 6 ====================================================
+
+Number of optimal solutions: 4
+[['nifS_150', 'nifS_89', 'nifS_95'], ['nifS_150', 'nifS_80', 'nifS_89'], ['nifS_150', 'nifS_24', 'nifS_89'], ['nifS_150', 'nifS_24']]
+Qscores are: [114039.0, 110491.0, 107468.0, 78153.0]
+Minimum q score is :78153.0
+True variants are: ['nifS_150', 'nifS_89']
+
+Predicted variants are: ['nifS_150', 'nifS_24']
+
+True proportions are: {'nifS_89': 62.480407715401995, 'nifS_150': 37.519592284598005}
+
+Predicted proportions using Counting method are: {'nifS_24': 62.57668711656443, 'nifS_150': 37.423312883435585}
+
+This sim is not predicted correctly based on quality score.
+             nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                   
+nifS_89-151    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_89-307    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                  ...               
+nifS_89-151      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_89-307      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                         
+nifS_89-151     -1.0     -1.0     -1.0     -1.0      3.0     -1.0     -1.0   
+nifS_89-307     -1.0     -1.0     -1.0     -1.0      3.0     -1.0     -1.0   
+
+             nifS_98  nifS_99  
+Read                           
+nifS_89-151     -1.0     -1.0  
+nifS_89-307     -1.0     -1.0  
+
+[2 rows x 156 columns]
+======================================== SIMULATION 7 ====================================================
+
+Number of optimal solutions: 20
+[['nifS_109', 'nifS_14', 'nifS_159', 'nifS_62', 'nifS_67', 'nifS_75', 'nifS_84', 'nifS_95'], ['nifS_10', 'nifS_109', 'nifS_159', 'nifS_4', 'nifS_48', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_103', 'nifS_109', 'nifS_14', 'nifS_159', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_10', 'nifS_103', 'nifS_109', 'nifS_159', 'nifS_4', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_109', 'nifS_138', 'nifS_14', 'nifS_159', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_10', 'nifS_109', 'nifS_138', 'nifS_159', 'nifS_4', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_109', 'nifS_14', 'nifS_144', 'nifS_159', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_10', 'nifS_109', 'nifS_144', 'nifS_159', 'nifS_4', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_10', 'nifS_109', 'nifS_159', 'nifS_160', 'nifS_4', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_109', 'nifS_14', 'nifS_159', 'nifS_160', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_109', 'nifS_14', 'nifS_144', 'nifS_159', 'nifS_4', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_10', 'nifS_109', 'nifS_159', 'nifS_30', 'nifS_4', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_109', 'nifS_138', 'nifS_14', 'nifS_159', 'nifS_4', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_109', 'nifS_14', 'nifS_159', 'nifS_30', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_109', 'nifS_14', 'nifS_159', 'nifS_4', 'nifS_48', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_109', 'nifS_14', 'nifS_159', 'nifS_160', 'nifS_4', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_10', 'nifS_109', 'nifS_159', 'nifS_4', 'nifS_62', 'nifS_67', 'nifS_84', 'nifS_95'], ['nifS_103', 'nifS_109', 'nifS_14', 'nifS_159', 'nifS_4', 'nifS_62', 'nifS_84', 'nifS_95'], ['nifS_109', 'nifS_14', 'nifS_159', 'nifS_4', 'nifS_62', 'nifS_67', 'nifS_84', 'nifS_95'], ['nifS_109', 'nifS_14', 'nifS_159', 'nifS_48', 'nifS_62', 'nifS_84', 'nifS_95']]
+Qscores are: [537168.0, 547988.0, 469184.0, 544606.0, 465700.0, 541122.0, 471375.0, 546797.0, 553063.0, 477641.0, 535671.0, 546648.0, 529996.0, 471226.0, 536862.0, 541937.0, 544606.0, 533480.0, 533480.0, 472566.0]
+Minimum q score is :465700.0
+True variants are: ['nifS_95', 'nifS_14', 'nifS_84', 'nifS_62', 'nifS_109']
+
+Predicted variants are: ['nifS_109', 'nifS_138', 'nifS_14', 'nifS_159', 'nifS_62', 'nifS_84', 'nifS_95']
+
+True proportions are: {'nifS_95': 1.4413177598507472, 'nifS_14': 28.596375936700273, 'nifS_62': 28.412997102090248, 'nifS_84': 30.02030344865027, 'nifS_109': 11.52900575270846}
+
+Predicted proportions using Counting method are: {'nifS_14': 28.22580645161291, 'nifS_138': 3.7970430107526894, 'nifS_109': 11.223118279569901, 'nifS_95': 1.8145161290322585, 'nifS_84': 30.241935483870975, 'nifS_159': 5.846774193548384, 'nifS_62': 18.85080645161288}
+
+This sim is not predicted correctly based on quality score.
+             nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                   
+nifS_62-181    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                  ...               
+nifS_62-181      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                         
+nifS_62-181     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             nifS_98  nifS_99  
+Read                           
+nifS_62-181     -1.0     -1.0  
+
+[1 rows x 154 columns]
+======================================== SIMULATION 8 ====================================================
+
+Number of optimal solutions: 2
+[['nifS_126', 'nifS_155', 'nifS_61', 'nifS_72'], ['nifS_126', 'nifS_155', 'nifS_59', 'nifS_72']]
+Qscores are: [275074.0, 273860.0]
+Minimum q score is :273860.0
+True variants are: ['nifS_155', 'nifS_72', 'nifS_126']
+
+Predicted variants are: ['nifS_126', 'nifS_155', 'nifS_59', 'nifS_72']
+
+True proportions are: {'nifS_155': 45.491834788669685, 'nifS_72': 53.10923775879388, 'nifS_126': 1.3989274525364226}
+
+Predicted proportions using Counting method are: {'nifS_155': 45.21384928716904, 'nifS_59': 4.786150712830957, 'nifS_72': 48.16700610997963, 'nifS_126': 1.8329938900203664}
+
+This sim is not predicted correctly based on quality score.
+Allele       nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                   
+nifS_72-52     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_72-208    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+Allele       nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                  ...               
+nifS_72-52       -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_72-208      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+Allele       nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                         
+nifS_72-52      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_72-208     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+Allele       nifS_98  nifS_99  
+Read                           
+nifS_72-52      -1.0     -1.0  
+nifS_72-208     -1.0     -1.0  
+
+[2 rows x 154 columns]
+======================================== SIMULATION 9 ====================================================
+
+Number of optimal solutions: 1
+[['nifS_127', 'nifS_23', 'nifS_7']]
+Qscores are: [188020.0]
+Minimum q score is :188020.0
+True variants are: ['nifS_7', 'nifS_127', 'nifS_23']
+
+Predicted variants are: ['nifS_127', 'nifS_23', 'nifS_7']
+
+True proportions are: {'nifS_23': 34.934600604289734, 'nifS_7': 41.73750198309749, 'nifS_127': 23.327897412612778}
+
+Predicted proportions using Counting method are: {'nifS_23': 34.69387755102041, 'nifS_7': 41.42857142857143, 'nifS_127': 23.877551020408163}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 10 ====================================================
+
+Number of optimal solutions: 3
+[['nifS_104', 'nifS_18', 'nifS_32', 'nifS_61', 'nifS_99'], ['nifS_18', 'nifS_32', 'nifS_50', 'nifS_61', 'nifS_99'], ['nifS_18', 'nifS_32', 'nifS_48', 'nifS_61', 'nifS_99']]
+Qscores are: [357061.0, 352765.0, 359325.0]
+Minimum q score is :352765.0
+True variants are: ['nifS_61', 'nifS_50', 'nifS_18', 'nifS_99', 'nifS_32']
+
+Predicted variants are: ['nifS_18', 'nifS_32', 'nifS_50', 'nifS_61', 'nifS_99']
+
+True proportions are: {'nifS_50': 0.574542214917952, 'nifS_99': 15.163136217990509, 'nifS_61': 41.48714909992698, 'nifS_32': 23.647863155425483, 'nifS_18': 19.127309311739072}
+
+Predicted proportions using Counting method are: {'nifS_61': 40.54776219104877, 'nifS_32': 21.30928523714094, 'nifS_99': 14.863059452237811, 'nifS_18': 19.238476953907814, 'nifS_50': 4.041416165664662}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 11 ====================================================
+
+Number of optimal solutions: 2
+[['nifS_11', 'nifS_122', 'nifS_140', 'nifS_148', 'nifS_24', 'nifS_50', 'nifS_79'], ['nifS_11', 'nifS_122', 'nifS_140', 'nifS_148', 'nifS_50', 'nifS_79', 'nifS_89']]
+Qscores are: [483803.0, 483803.0]
+Minimum q score is :483803.0
+True variants are: ['nifS_122', 'nifS_11', 'nifS_24', 'nifS_140', 'nifS_50', 'nifS_148', 'nifS_79']
+
+Predicted variants are: ['nifS_11', 'nifS_122', 'nifS_140', 'nifS_148', 'nifS_24', 'nifS_50', 'nifS_79']
+
+True proportions are: {'nifS_122': 0.31142755241984954, 'nifS_24': 14.627350456132321, 'nifS_11': 25.296546216548528, 'nifS_140': 13.945484130973304, 'nifS_79': 9.756981242885978, 'nifS_50': 11.711652010320982, 'nifS_148': 24.350558390719044}
+
+Predicted proportions using Counting method are: {'nifS_122': 1.0101010101010102, 'nifS_24': 14.747474747474747, 'nifS_11': 24.949494949494948, 'nifS_140': 13.434343434343434, 'nifS_79': 9.797979797979798, 'nifS_50': 11.616161616161616, 'nifS_148': 24.444444444444443}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 12 ====================================================
+
+Number of optimal solutions: 7
+[['nifS_11', 'nifS_115', 'nifS_119', 'nifS_58', 'nifS_60', 'nifS_79'], ['nifS_11', 'nifS_119', 'nifS_23', 'nifS_58', 'nifS_60', 'nifS_79'], ['nifS_11', 'nifS_119', 'nifS_24', 'nifS_58', 'nifS_60', 'nifS_79'], ['nifS_11', 'nifS_119', 'nifS_39', 'nifS_58', 'nifS_60', 'nifS_79'], ['nifS_11', 'nifS_119', 'nifS_40', 'nifS_58', 'nifS_60', 'nifS_79'], ['nifS_11', 'nifS_119', 'nifS_58', 'nifS_60', 'nifS_79', 'nifS_89'], ['nifS_11', 'nifS_119', 'nifS_58', 'nifS_60', 'nifS_79', 'nifS_80']]
+Qscores are: [436174.0, 435969.0, 436050.0, 435968.0, 436166.0, 436050.0, 437444.0]
+Minimum q score is :435968.0
+True variants are: ['nifS_58', 'nifS_60', 'nifS_79', 'nifS_23', 'nifS_119', 'nifS_11']
+
+Predicted variants are: ['nifS_11', 'nifS_119', 'nifS_39', 'nifS_58', 'nifS_60', 'nifS_79']
+
+True proportions are: {'nifS_23': 14.657363837994147, 'nifS_11': 11.640030772931329, 'nifS_119': 20.57131723692035, 'nifS_58': 2.7400721466612548, 'nifS_79': 49.36907102283723, 'nifS_60': 1.0221449826557}
+
+Predicted proportions using Counting method are: {'nifS_39': 16.328600405679513, 'nifS_11': 11.967545638945234, 'nifS_119': 19.168356997971603, 'nifS_58': 2.231237322515213, 'nifS_79': 48.275862068965516, 'nifS_60': 2.028397565922921}
+
+This sim is not predicted correctly based on quality score.
+======================================== SIMULATION 13 ====================================================
+
+Number of optimal solutions: 12
+[['nifS_116', 'nifS_137', 'nifS_16', 'nifS_164', 'nifS_36', 'nifS_4', 'nifS_57'], ['nifS_116', 'nifS_164', 'nifS_36', 'nifS_4', 'nifS_51', 'nifS_57'], ['nifS_116', 'nifS_137', 'nifS_164', 'nifS_36', 'nifS_4', 'nifS_57'], ['nifS_116', 'nifS_137', 'nifS_164', 'nifS_2', 'nifS_36', 'nifS_4', 'nifS_57'], ['nifS_116', 'nifS_164', 'nifS_2', 'nifS_36', 'nifS_4', 'nifS_51', 'nifS_57'], ['nifS_116', 'nifS_137', 'nifS_164', 'nifS_2', 'nifS_4', 'nifS_57', 'nifS_74'], ['nifS_116', 'nifS_164', 'nifS_4', 'nifS_51', 'nifS_57', 'nifS_74'], ['nifS_116', 'nifS_137', 'nifS_16', 'nifS_164', 'nifS_4', 'nifS_57', 'nifS_74'], ['nifS_116', 'nifS_137', 'nifS_164', 'nifS_4', 'nifS_57', 'nifS_74'], ['nifS_116', 'nifS_164', 'nifS_2', 'nifS_4', 'nifS_51', 'nifS_57', 'nifS_74'], ['nifS_116', 'nifS_16', 'nifS_164', 'nifS_4', 'nifS_51', 'nifS_57', 'nifS_74'], ['nifS_116', 'nifS_16', 'nifS_164', 'nifS_36', 'nifS_4', 'nifS_51', 'nifS_57']]
+Qscores are: [500342.0, 427226.0, 427226.0, 500888.0, 500888.0, 502176.0, 428514.0, 501630.0, 428514.0, 502176.0, 501630.0, 500342.0]
+Minimum q score is :427226.0
+True variants are: ['nifS_36', 'nifS_4', 'nifS_164', 'nifS_57', 'nifS_116', 'nifS_137']
+
+Predicted variants are: ['nifS_116', 'nifS_137', 'nifS_164', 'nifS_36', 'nifS_4', 'nifS_57']
+
+True proportions are: {'nifS_137': 4.969195017954185, 'nifS_36': 0.40386442110028925, 'nifS_164': 13.234792704796517, 'nifS_4': 29.336860593954107, 'nifS_57': 22.259833033600934, 'nifS_116': 29.79545422859397}
+
+Predicted proportions using Counting method are: {'nifS_137': 4.646464646464646, 'nifS_36': 2.525252525252525, 'nifS_164': 13.535353535353535, 'nifS_4': 29.09090909090909, 'nifS_57': 21.11111111111111, 'nifS_116': 29.09090909090909}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 14 ====================================================
+
+Number of optimal solutions: 1
+[['nifS_21', 'nifS_23']]
+Qscores are: [105130.0]
+Minimum q score is :105130.0
+True variants are: ['nifS_21', 'nifS_23']
+
+Predicted variants are: ['nifS_21', 'nifS_23']
+
+True proportions are: {'nifS_21': 64.74726407468351, 'nifS_23': 35.25273592531647}
+
+Predicted proportions using Counting method are: {'nifS_21': 64.41717791411044, 'nifS_23': 35.582822085889575}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 15 ====================================================
+
+Number of optimal solutions: 1
+[['nifS_163', 'nifS_17', 'nifS_9']]
+Qscores are: [91594.0]
+Minimum q score is :91594.0
+True variants are: ['nifS_163', 'nifS_17']
+
+Predicted variants are: ['nifS_163', 'nifS_17', 'nifS_9']
+
+True proportions are: {'nifS_17': 97.38370053840528, 'nifS_163': 2.6162994615947124}
+
+Predicted proportions using Counting method are: {'nifS_9': 36.41078838174274, 'nifS_17': 61.09958506224067, 'nifS_163': 2.4896265560165975}
+
+This sim is not predicted correctly based on quality score.
+======================================== SIMULATION 16 ====================================================
+
+Number of optimal solutions: 20
+[['nifS_110', 'nifS_118', 'nifS_139', 'nifS_161', 'nifS_81', 'nifS_97'], ['nifS_100', 'nifS_101', 'nifS_110', 'nifS_118', 'nifS_161', 'nifS_81', 'nifS_97'], ['nifS_101', 'nifS_110', 'nifS_118', 'nifS_139', 'nifS_161', 'nifS_81', 'nifS_97'], ['nifS_100', 'nifS_101', 'nifS_118', 'nifS_161', 'nifS_43', 'nifS_81', 'nifS_97'], ['nifS_101', 'nifS_118', 'nifS_139', 'nifS_161', 'nifS_43', 'nifS_81', 'nifS_97'], ['nifS_100', 'nifS_118', 'nifS_161', 'nifS_43', 'nifS_81', 'nifS_97'], ['nifS_118', 'nifS_139', 'nifS_161', 'nifS_43', 'nifS_81', 'nifS_97'], ['nifS_101', 'nifS_118', 'nifS_161', 'nifS_43', 'nifS_81', 'nifS_97', 'nifS_99'], ['nifS_101', 'nifS_118', 'nifS_141', 'nifS_161', 'nifS_43', 'nifS_81', 'nifS_97'], ['nifS_101', 'nifS_118', 'nifS_142', 'nifS_161', 'nifS_43', 'nifS_81', 'nifS_97'], ['nifS_101', 'nifS_110', 'nifS_118', 'nifS_161', 'nifS_81', 'nifS_97', 'nifS_99'], ['nifS_101', 'nifS_110', 'nifS_118', 'nifS_141', 'nifS_161', 'nifS_81', 'nifS_97'], ['nifS_110', 'nifS_118', 'nifS_161', 'nifS_81', 'nifS_97', 'nifS_99'], ['nifS_118', 'nifS_161', 'nifS_43', 'nifS_81', 'nifS_97', 'nifS_99'], ['nifS_101', 'nifS_118', 'nifS_161', 'nifS_26', 'nifS_43', 'nifS_81', 'nifS_97'], ['nifS_101', 'nifS_110', 'nifS_118', 'nifS_142', 'nifS_161', 'nifS_81', 'nifS_97'], ['nifS_101', 'nifS_118', 'nifS_161', 'nifS_29', 'nifS_43', 'nifS_81', 'nifS_97'], ['nifS_101', 'nifS_118', 'nifS_161', 'nifS_31', 'nifS_43', 'nifS_81', 'nifS_97'], ['nifS_101', 'nifS_118', 'nifS_161', 'nifS_32', 'nifS_43', 'nifS_81', 'nifS_97'], ['nifS_100', 'nifS_110', 'nifS_118', 'nifS_161', 'nifS_81', 'nifS_97']]
+Qscores are: [311491.0, 364940.0, 353427.0, 364510.0, 352997.0, 322574.0, 311061.0, 366660.0, 385768.0, 368314.0, 367090.0, 386198.0, 325154.0, 324724.0, 352013.0, 368744.0, 351148.0, 367003.0, 382868.0, 323004.0]
+Minimum q score is :311061.0
+True variants are: ['nifS_43', 'nifS_93', 'nifS_118', 'nifS_161', 'nifS_81', 'nifS_97']
+
+Predicted variants are: ['nifS_118', 'nifS_139', 'nifS_161', 'nifS_43', 'nifS_81', 'nifS_97']
+
+True proportions are: {'nifS_43': 2.915919585626692, 'nifS_118': 21.37512617352857, 'nifS_97': 3.9019320771751715, 'nifS_81': 31.405327191166833, 'nifS_93': 18.19853481104944, 'nifS_161': 22.2031601614533}
+
+Predicted proportions using Counting method are: {'nifS_43': 5.813172043010756, 'nifS_139': 20.060483870967726, 'nifS_118': 22.11021505376344, 'nifS_97': 3.427419354838713, 'nifS_81': 26.008064516129004, 'nifS_161': 22.580645161290345}
+
+This sim is not predicted correctly based on quality score.
+======================================== SIMULATION 17 ====================================================
+
+Number of optimal solutions: 1
+[['nifS_106', 'nifS_126', 'nifS_128', 'nifS_153', 'nifS_70', 'nifS_74', 'nifS_82']]
+Qscores are: [454127.0]
+Minimum q score is :454127.0
+True variants are: ['nifS_128', 'nifS_106', 'nifS_70', 'nifS_126', 'nifS_82', 'nifS_153', 'nifS_74']
+
+Predicted variants are: ['nifS_106', 'nifS_126', 'nifS_128', 'nifS_153', 'nifS_70', 'nifS_74', 'nifS_82']
+
+True proportions are: {'nifS_106': 9.844871841452747, 'nifS_126': 4.684510643768236, 'nifS_128': 18.669278862768497, 'nifS_82': 14.686580028338591, 'nifS_153': 12.706721653008051, 'nifS_74': 28.985294080349323, 'nifS_70': 10.422742890314552}
+
+Predicted proportions using Counting method are: {'nifS_106': 9.572301425661914, 'nifS_126': 4.684317718940936, 'nifS_128': 18.024439918533602, 'nifS_82': 18.228105906313644, 'nifS_153': 12.627291242362524, 'nifS_74': 25.152749490835028, 'nifS_70': 11.710794297352342}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 18 ====================================================
+
+Number of optimal solutions: 8
+[['nifS_101', 'nifS_103', 'nifS_106', 'nifS_159', 'nifS_162', 'nifS_31', 'nifS_46'], ['nifS_101', 'nifS_106', 'nifS_138', 'nifS_159', 'nifS_162', 'nifS_31', 'nifS_46'], ['nifS_101', 'nifS_106', 'nifS_144', 'nifS_159', 'nifS_162', 'nifS_31', 'nifS_46'], ['nifS_101', 'nifS_106', 'nifS_159', 'nifS_160', 'nifS_162', 'nifS_31', 'nifS_46'], ['nifS_101', 'nifS_106', 'nifS_159', 'nifS_162', 'nifS_30', 'nifS_31', 'nifS_46'], ['nifS_101', 'nifS_106', 'nifS_159', 'nifS_162', 'nifS_31', 'nifS_46', 'nifS_50'], ['nifS_101', 'nifS_106', 'nifS_159', 'nifS_162', 'nifS_31', 'nifS_46', 'nifS_67'], ['nifS_101', 'nifS_106', 'nifS_159', 'nifS_162', 'nifS_31', 'nifS_46', 'nifS_48']]
+Qscores are: [466401.0, 456684.0, 474679.0, 481043.0, 470321.0, 475811.0, 466401.0, 474251.0]
+Minimum q score is :456684.0
+True variants are: ['nifS_46', 'nifS_162', 'nifS_106', 'nifS_101', 'nifS_76']
+
+Predicted variants are: ['nifS_101', 'nifS_106', 'nifS_138', 'nifS_159', 'nifS_162', 'nifS_31', 'nifS_46']
+
+True proportions are: {'nifS_46': 21.699916237704908, 'nifS_106': 20.142339556875186, 'nifS_76': 20.931986615148933, 'nifS_162': 20.154091537261078, 'nifS_101': 17.07166605300989}
+
+Predicted proportions using Counting method are: {'nifS_106': 15.647410358565736, 'nifS_46': 20.179282868525885, 'nifS_31': 16.656706507304126, 'nifS_101': 14.08698539176628, 'nifS_138': 8.177290836653386, 'nifS_159': 4.933598937582998, 'nifS_162': 20.31872509960159}
+
+This sim is not predicted correctly based on quality score.
+             nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                   
+nifS_106-93    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_46-104    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_76-93     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                  ...               
+nifS_106-93      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_46-104      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_76-93       -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                         
+nifS_106-93     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_46-104     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_76-93      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             nifS_98  nifS_99  
+Read                           
+nifS_106-93     -1.0     -1.0  
+nifS_46-104     -1.0     -1.0  
+nifS_76-93      -1.0     -1.0  
+
+[3 rows x 154 columns]
+======================================== SIMULATION 19 ====================================================
+
+Number of optimal solutions: 1
+[['nifS_112', 'nifS_151', 'nifS_159', 'nifS_16', 'nifS_165', 'nifS_21', 'nifS_66']]
+Qscores are: [470276.0]
+Minimum q score is :470276.0
+True variants are: ['nifS_151', 'nifS_66', 'nifS_112', 'nifS_165', 'nifS_16', 'nifS_21']
+
+Predicted variants are: ['nifS_112', 'nifS_151', 'nifS_159', 'nifS_16', 'nifS_165', 'nifS_21', 'nifS_66']
+
+True proportions are: {'nifS_21': 19.61244831198223, 'nifS_16': 17.458401058250107, 'nifS_151': 28.849468472351337, 'nifS_165': 5.314326802177019, 'nifS_66': 14.003972958569886, 'nifS_112': 14.76138239666941}
+
+Predicted proportions using Counting method are: {'nifS_21': 19.238476953907814, 'nifS_16': 17.83567134268537, 'nifS_151': 28.056112224448896, 'nifS_165': 5.611222444889779, 'nifS_66': 13.226452905811621, 'nifS_112': 14.629258517034067, 'nifS_159': 1.4028056112224447}
+
+This sim is not predicted correctly based on quality score.
+Allele      nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  nifS_104  \
+Read                                                                            
+nifS_66-27    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0      -1.0   
+
+Allele      nifS_105  nifS_106  nifS_107   ...     nifS_90  nifS_91  nifS_92  \
+Read                                       ...                                 
+nifS_66-27      -1.0      -1.0      -1.0   ...        -1.0     -1.0     -1.0   
+
+Allele      nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  nifS_98  nifS_99  
+Read                                                                       
+nifS_66-27     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0  
+
+[1 rows x 160 columns]
+======================================== SIMULATION 20 ====================================================
+
+Number of optimal solutions: 2
+[['nifS_141', 'nifS_51', 'nifS_70', 'nifS_88'], ['nifS_137', 'nifS_141', 'nifS_70', 'nifS_88']]
+Qscores are: [196837.0, 196837.0]
+Minimum q score is :196837.0
+True variants are: ['nifS_70', 'nifS_141', 'nifS_137', 'nifS_88']
+
+Predicted variants are: ['nifS_137', 'nifS_141', 'nifS_70', 'nifS_88']
+
+True proportions are: {'nifS_88': 17.553254234993236, 'nifS_141': 26.44790409334048, 'nifS_137': 17.091906721338297, 'nifS_70': 38.906934950328}
+
+Predicted proportions using Counting method are: {'nifS_88': 21.88755020080321, 'nifS_141': 24.69879518072289, 'nifS_137': 19.477911646586342, 'nifS_70': 33.93574297188754}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 21 ====================================================
+
+Number of optimal solutions: 20
+[['nifS_103', 'nifS_108', 'nifS_3', 'nifS_56', 'nifS_87', 'nifS_90'], ['nifS_138', 'nifS_3', 'nifS_56', 'nifS_67', 'nifS_87', 'nifS_90'], ['nifS_103', 'nifS_137', 'nifS_3', 'nifS_56', 'nifS_87', 'nifS_90'], ['nifS_137', 'nifS_3', 'nifS_56', 'nifS_67', 'nifS_87', 'nifS_90'], ['nifS_103', 'nifS_138', 'nifS_3', 'nifS_56', 'nifS_87', 'nifS_90'], ['nifS_103', 'nifS_139', 'nifS_3', 'nifS_56', 'nifS_87', 'nifS_90'], ['nifS_139', 'nifS_3', 'nifS_56', 'nifS_67', 'nifS_87', 'nifS_90'], ['nifS_143', 'nifS_3', 'nifS_56', 'nifS_67', 'nifS_87', 'nifS_90'], ['nifS_103', 'nifS_143', 'nifS_3', 'nifS_56', 'nifS_87', 'nifS_90'], ['nifS_103', 'nifS_26', 'nifS_3', 'nifS_56', 'nifS_87', 'nifS_90'], ['nifS_26', 'nifS_3', 'nifS_56', 'nifS_67', 'nifS_87', 'nifS_90'], ['nifS_29', 'nifS_3', 'nifS_56', 'nifS_67', 'nifS_87', 'nifS_90'], ['nifS_103', 'nifS_29', 'nifS_3', 'nifS_56', 'nifS_87', 'nifS_90'], ['nifS_3', 'nifS_49', 'nifS_56', 'nifS_67', 'nifS_87', 'nifS_90'], ['nifS_103', 'nifS_3', 'nifS_49', 'nifS_56', 'nifS_87', 'nifS_90'], ['nifS_3', 'nifS_51', 'nifS_56', 'nifS_67', 'nifS_87', 'nifS_90'], ['nifS_3', 'nifS_56', 'nifS_67', 'nifS_73', 'nifS_87', 'nifS_90'], ['nifS_103', 'nifS_3', 'nifS_51', 'nifS_56', 'nifS_87', 'nifS_90'], ['nifS_103', 'nifS_3', 'nifS_56', 'nifS_73', 'nifS_87', 'nifS_90'], ['nifS_108', 'nifS_3', 'nifS_56', 'nifS_67', 'nifS_87', 'nifS_90']]
+Qscores are: [374315.0, 370428.0, 374980.0, 374980.0, 370428.0, 370463.0, 370463.0, 378866.0, 378866.0, 369706.0, 369706.0, 369436.0, 369436.0, 369436.0, 369436.0, 374980.0, 373276.0, 374980.0, 373276.0, 374315.0]
+Minimum q score is :369436.0
+True variants are: ['nifS_29', 'nifS_3', 'nifS_103', 'nifS_90', 'nifS_56', 'nifS_87']
+
+Predicted variants are: ['nifS_103', 'nifS_29', 'nifS_3', 'nifS_56', 'nifS_87', 'nifS_90']
+
+True proportions are: {'nifS_103': 20.873348592198536, 'nifS_29': 14.251233950427588, 'nifS_90': 8.15524078750936, 'nifS_87': 23.803743895058265, 'nifS_3': 19.95210545141952, 'nifS_56': 12.964327323386723}
+
+Predicted proportions using Counting method are: {'nifS_103': 18.635437881873727, 'nifS_29': 13.747454175152754, 'nifS_87': 23.62525458248472, 'nifS_3': 19.551934826883908, 'nifS_56': 12.627291242362524, 'nifS_90': 11.812627291242366}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 22 ====================================================
+
+Number of optimal solutions: 1
+[['nifS_117', 'nifS_123', 'nifS_156', 'nifS_86']]
+Qscores are: [249341.0]
+Minimum q score is :249341.0
+True variants are: ['nifS_117', 'nifS_156', 'nifS_123', 'nifS_86']
+
+Predicted variants are: ['nifS_117', 'nifS_123', 'nifS_156', 'nifS_86']
+
+True proportions are: {'nifS_86': 27.244306554204083, 'nifS_156': 21.148916099238924, 'nifS_123': 7.383262974484876, 'nifS_117': 44.2235143720721}
+
+Predicted proportions using Counting method are: {'nifS_123': 7.2434607645875255, 'nifS_86': 27.06237424547284, 'nifS_156': 21.629778672032195, 'nifS_117': 44.06438631790745}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 23 ====================================================
+
+Number of optimal solutions: 4
+[['nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_22', 'nifS_67', 'nifS_76'], ['nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_22', 'nifS_31', 'nifS_67'], ['nifS_103', 'nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_22', 'nifS_76'], ['nifS_103', 'nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_22', 'nifS_31']]
+Qscores are: [423685.0, 423585.0, 423685.0, 423585.0]
+Minimum q score is :423585.0
+True variants are: ['nifS_31', 'nifS_132', 'nifS_128', 'nifS_103', 'nifS_157', 'nifS_120', 'nifS_22']
+
+Predicted variants are: ['nifS_103', 'nifS_120', 'nifS_128', 'nifS_132', 'nifS_157', 'nifS_22', 'nifS_31']
+
+True proportions are: {'nifS_120': 12.16308711363433, 'nifS_132': 4.036976128654941, 'nifS_31': 18.46574917342312, 'nifS_103': 20.432689851814175, 'nifS_128': 19.238037452759656, 'nifS_22': 19.655049634422223, 'nifS_157': 6.008410645291557}
+
+Predicted proportions using Counting method are: {'nifS_120': 14.52145214521452, 'nifS_132': 9.075907590759085, 'nifS_22': 11.947194719471957, 'nifS_103': 18.877887788778867, 'nifS_128': 19.009900990099005, 'nifS_31': 17.491749174917487, 'nifS_157': 9.075907590759076}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 24 ====================================================
+
+Number of optimal solutions: 3
+[['nifS_159', 'nifS_25', 'nifS_44', 'nifS_89', 'nifS_95'], ['nifS_159', 'nifS_25', 'nifS_44', 'nifS_80', 'nifS_89'], ['nifS_159', 'nifS_24', 'nifS_25', 'nifS_44', 'nifS_89']]
+Qscores are: [230815.0, 227114.0, 223428.0]
+Minimum q score is :223428.0
+True variants are: ['nifS_25', 'nifS_44', 'nifS_89']
+
+Predicted variants are: ['nifS_159', 'nifS_24', 'nifS_25', 'nifS_44', 'nifS_89']
+
+True proportions are: {'nifS_44': 23.46825260810016, 'nifS_89': 69.5953312819938, 'nifS_25': 6.936416109906056}
+
+Predicted proportions using Counting method are: {'nifS_24': 28.537414965986382, 'nifS_44': 23.367346938775544, 'nifS_89': 28.537414965986382, 'nifS_159': 0.3061224489795923, 'nifS_25': 19.251700680272098}
+
+This sim is not predicted correctly based on quality score.
+             nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                   
+nifS_44-126    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_89-228    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_89-384    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                  ...               
+nifS_44-126      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_89-228      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_89-384      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                         
+nifS_44-126     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_89-228     -1.0     -1.0     -1.0     -1.0      3.0     -1.0     -1.0   
+nifS_89-384     -1.0     -1.0     -1.0     -1.0      3.0     -1.0     -1.0   
+
+             nifS_98  nifS_99  
+Read                           
+nifS_44-126     -1.0     -1.0  
+nifS_89-228     -1.0     -1.0  
+nifS_89-384     -1.0     -1.0  
+
+[3 rows x 154 columns]
+======================================== SIMULATION 25 ====================================================
+
+Number of optimal solutions: 4
+[['nifS_30', 'nifS_37', 'nifS_59'], ['nifS_37', 'nifS_61', 'nifS_92'], ['nifS_30', 'nifS_37', 'nifS_61'], ['nifS_37', 'nifS_59', 'nifS_92']]
+Qscores are: [213624.0, 213003.0, 213003.0, 213624.0]
+Minimum q score is :213003.0
+True variants are: ['nifS_37', 'nifS_92']
+
+Predicted variants are: ['nifS_37', 'nifS_61', 'nifS_92']
+
+True proportions are: {'nifS_37': 93.14340718829038, 'nifS_92': 6.856592811709612}
+
+Predicted proportions using Counting method are: {'nifS_37': 84.22131147540983, 'nifS_61': 9.01639344262295, 'nifS_92': 6.762295081967213}
+
+This sim is not predicted correctly based on quality score.
+             nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                   
+nifS_37-492    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_37-648    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                  ...               
+nifS_37-492      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_37-648      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                         
+nifS_37-492     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_37-648     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             nifS_98  nifS_99  
+Read                           
+nifS_37-492     -1.0     -1.0  
+nifS_37-648     -1.0     -1.0  
+
+[2 rows x 154 columns]
+======================================== SIMULATION 26 ====================================================
+
+Number of optimal solutions: 1
+[['nifS_150', 'nifS_157', 'nifS_25', 'nifS_33', 'nifS_43', 'nifS_79']]
+Qscores are: [405573.0]
+Minimum q score is :405573.0
+True variants are: ['nifS_43', 'nifS_25', 'nifS_33', 'nifS_150', 'nifS_79', 'nifS_157']
+
+Predicted variants are: ['nifS_150', 'nifS_157', 'nifS_25', 'nifS_33', 'nifS_43', 'nifS_79']
+
+True proportions are: {'nifS_33': 33.92583121729526, 'nifS_43': 4.055278404943387, 'nifS_157': 31.82952025629553, 'nifS_150': 3.0313117378197942, 'nifS_79': 20.965336963626918, 'nifS_25': 6.192721420019106}
+
+Predicted proportions using Counting method are: {'nifS_33': 32.5910931174089, 'nifS_43': 5.263157894736842, 'nifS_157': 25.20242914979757, 'nifS_150': 3.4412955465587043, 'nifS_79': 20.647773279352226, 'nifS_25': 12.854251012145749}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 27 ====================================================
+
+Number of optimal solutions: 2
+[['nifS_117', 'nifS_159', 'nifS_44', 'nifS_7', 'nifS_9'], ['nifS_117', 'nifS_159', 'nifS_44', 'nifS_5', 'nifS_7']]
+Qscores are: [332930.0, 332930.0]
+Minimum q score is :332930.0
+True variants are: ['nifS_7', 'nifS_5', 'nifS_44']
+
+Predicted variants are: ['nifS_117', 'nifS_159', 'nifS_44', 'nifS_7', 'nifS_9']
+
+True proportions are: {'nifS_44': 66.79977437358178, 'nifS_5': 12.909346904014111, 'nifS_7': 20.290878722404106}
+
+Predicted proportions using Counting method are: {'nifS_9': 14.081632653061225, 'nifS_44': 64.89795918367346, 'nifS_159': 1.1224489795918369, 'nifS_7': 19.387755102040817, 'nifS_117': 0.5102040816326531}
+
+This sim is not predicted correctly based on quality score.
+             nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                   
+nifS_44-195    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_44-379    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_44-599    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_44-351    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                  ...               
+nifS_44-195      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_44-379      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_44-599      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_44-351      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                         
+nifS_44-195     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_44-379     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_44-599     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_44-351     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             nifS_98  nifS_99  
+Read                           
+nifS_44-195     -1.0     -1.0  
+nifS_44-379     -1.0     -1.0  
+nifS_44-599     -1.0     -1.0  
+nifS_44-351     -1.0     -1.0  
+
+[4 rows x 154 columns]
+======================================== SIMULATION 28 ====================================================
+
+Number of optimal solutions: 2
+[['nifS_102', 'nifS_61'], ['nifS_101', 'nifS_102', 'nifS_61']]
+Qscores are: [98650.0, 179620.0]
+Minimum q score is :98650.0
+True variants are: ['nifS_61', 'nifS_102']
+
+Predicted variants are: ['nifS_102', 'nifS_61']
+
+True proportions are: {'nifS_102': 38.2072672616659, 'nifS_61': 61.7927327383341}
+
+Predicted proportions using Counting method are: {'nifS_102': 38.650306748466264, 'nifS_61': 61.34969325153375}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 29 ====================================================
+
+Number of optimal solutions: 2
+[['nifS_100', 'nifS_164', 'nifS_33', 'nifS_50', 'nifS_67', 'nifS_72'], ['nifS_100', 'nifS_103', 'nifS_164', 'nifS_33', 'nifS_50', 'nifS_72']]
+Qscores are: [369149.0, 369149.0]
+Minimum q score is :369149.0
+True variants are: ['nifS_164', 'nifS_72', 'nifS_50', 'nifS_33', 'nifS_67', 'nifS_100']
+
+Predicted variants are: ['nifS_100', 'nifS_164', 'nifS_33', 'nifS_50', 'nifS_67', 'nifS_72']
+
+True proportions are: {'nifS_33': 5.4027479103836376, 'nifS_100': 26.071008391103174, 'nifS_164': 18.90796437168259, 'nifS_50': 16.628824040740472, 'nifS_67': 5.618134535860798, 'nifS_72': 27.371320750229327}
+
+Predicted proportions using Counting method are: {'nifS_33': 7.748830995323981, 'nifS_100': 21.576486305945217, 'nifS_164': 18.637274549098194, 'nifS_50': 14.762859051436209, 'nifS_67': 10.220440881763528, 'nifS_72': 27.054108216432862}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 30 ====================================================
+
+Number of optimal solutions: 2
+[['nifS_104', 'nifS_132', 'nifS_154', 'nifS_49', 'nifS_8'], ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_29', 'nifS_8']]
+Qscores are: [348899.0, 348899.0]
+Minimum q score is :348899.0
+True variants are: ['nifS_104', 'nifS_8', 'nifS_49', 'nifS_154', 'nifS_132']
+
+Predicted variants are: ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_49', 'nifS_8']
+
+True proportions are: {'nifS_154': 35.84365496592645, 'nifS_8': 7.724852322219434, 'nifS_104': 27.85493507464722, 'nifS_132': 16.396878190614867, 'nifS_49': 12.179679446592035}
+
+Predicted proportions using Counting method are: {'nifS_132': 17.10794297352342, 'nifS_104': 24.745417515274948, 'nifS_49': 15.376782077393074, 'nifS_8': 7.331975560081466, 'nifS_154': 35.437881873727086}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 31 ====================================================
+
+Number of optimal solutions: 1
+[['nifS_128', 'nifS_159', 'nifS_50', 'nifS_55', 'nifS_57', 'nifS_60']]
+Qscores are: [469246.0]
+Minimum q score is :469246.0
+True variants are: ['nifS_60', 'nifS_128', 'nifS_50', 'nifS_55', 'nifS_57']
+
+Predicted variants are: ['nifS_128', 'nifS_159', 'nifS_50', 'nifS_55', 'nifS_57', 'nifS_60']
+
+True proportions are: {'nifS_128': 22.263414463553058, 'nifS_50': 20.822687562095123, 'nifS_60': 6.156312608973016, 'nifS_55': 43.17472152204278, 'nifS_57': 7.582863843336016}
+
+Predicted proportions using Counting method are: {'nifS_55': 40.08736559139786, 'nifS_128': 22.58064516129032, 'nifS_159': 2.688172043010753, 'nifS_50': 20.530913978494617, 'nifS_60': 7.056451612903225, 'nifS_57': 7.056451612903225}
+
+This sim is not predicted correctly based on quality score.
+             nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                   
+nifS_55-126    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_55-346    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                  ...               
+nifS_55-126      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_55-346      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                         
+nifS_55-126     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_55-346     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             nifS_98  nifS_99  
+Read                           
+nifS_55-126     -1.0     -1.0  
+nifS_55-346     -1.0     -1.0  
+
+[2 rows x 154 columns]
+======================================== SIMULATION 32 ====================================================
+
+Number of optimal solutions: 1
+[['nifS_22', 'nifS_95', 'nifS_97']]
+Qscores are: [143976.0]
+Minimum q score is :143976.0
+True variants are: ['nifS_22', 'nifS_95', 'nifS_97']
+
+Predicted variants are: ['nifS_22', 'nifS_95', 'nifS_97']
+
+True proportions are: {'nifS_95': 1.8647569289230375, 'nifS_22': 93.96638285347785, 'nifS_97': 4.168860217599113}
+
+Predicted proportions using Counting method are: {'nifS_95': 26.591375770020537, 'nifS_22': 68.6858316221766, 'nifS_97': 4.722792607802875}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 33 ====================================================
+
+Number of optimal solutions: 3
+[['nifS_109', 'nifS_120', 'nifS_154', 'nifS_157', 'nifS_36', 'nifS_61', 'nifS_96'], ['nifS_109', 'nifS_120', 'nifS_154', 'nifS_157', 'nifS_36', 'nifS_45', 'nifS_96'], ['nifS_109', 'nifS_120', 'nifS_154', 'nifS_157', 'nifS_36', 'nifS_59', 'nifS_96']]
+Qscores are: [560448.0, 562015.0, 562785.0]
+Minimum q score is :560448.0
+True variants are: ['nifS_96', 'nifS_36', 'nifS_154', 'nifS_109', 'nifS_120', 'nifS_157']
+
+Predicted variants are: ['nifS_109', 'nifS_120', 'nifS_154', 'nifS_157', 'nifS_36', 'nifS_61', 'nifS_96']
+
+True proportions are: {'nifS_120': 28.48512791969749, 'nifS_36': 35.43510659539096, 'nifS_109': 9.301258200827323, 'nifS_154': 7.604056588954513, 'nifS_157': 12.37588212901418, 'nifS_96': 6.798568566115535}
+
+Predicted proportions using Counting method are: {'nifS_120': 28.150406504065042, 'nifS_36': 31.808943089430898, 'nifS_109': 9.857723577235774, 'nifS_154': 7.3170731707317085, 'nifS_157': 10.975609756097562, 'nifS_96': 8.333333333333334, 'nifS_61': 3.5569105691056913}
+
+This sim is not predicted correctly based on quality score.
+            nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  nifS_104  \
+Read                                                                            
+nifS_36-10    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0      -1.0   
+
+            nifS_105  nifS_106  nifS_107   ...     nifS_90  nifS_91  nifS_92  \
+Read                                       ...                                 
+nifS_36-10      -1.0      -1.0      -1.0   ...        -1.0     -1.0     -1.0   
+
+            nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  nifS_98  nifS_99  
+Read                                                                       
+nifS_36-10     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0  
+
+[1 rows x 154 columns]
+======================================== SIMULATION 34 ====================================================
+
+Number of optimal solutions: 1
+[['nifS_119', 'nifS_157']]
+Qscores are: [28302.0]
+Minimum q score is :28302.0
+True variants are: ['nifS_119', 'nifS_157']
+
+Predicted variants are: ['nifS_119', 'nifS_157']
+
+True proportions are: {'nifS_119': 49.20165678359731, 'nifS_157': 50.798343216402685}
+
+Predicted proportions using Counting method are: {'nifS_119': 49.89690721649485, 'nifS_157': 50.10309278350516}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 35 ====================================================
+
+Number of optimal solutions: 2
+[['nifS_106', 'nifS_128', 'nifS_159', 'nifS_48'], ['nifS_106', 'nifS_128', 'nifS_159', 'nifS_50']]
+Qscores are: [233848.0, 234627.0]
+Minimum q score is :233848.0
+True variants are: ['nifS_128', 'nifS_106']
+
+Predicted variants are: ['nifS_106', 'nifS_128', 'nifS_159', 'nifS_48']
+
+True proportions are: {'nifS_128': 59.70202431656912, 'nifS_106': 40.297975683430884}
+
+Predicted proportions using Counting method are: {'nifS_106': 30.53278688524593, 'nifS_128': 59.22131147540981, 'nifS_159': 6.454918032786878, 'nifS_48': 3.7909836065573765}
+
+This sim is not predicted correctly based on quality score.
+              nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                    
+nifS_106-313    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_106-93     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_106-65     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+              nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                   ...               
+nifS_106-313      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_106-93       -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_106-65        3.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+              nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                          
+nifS_106-313     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_106-93      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_106-65      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+              nifS_98  nifS_99  
+Read                            
+nifS_106-313     -1.0     -1.0  
+nifS_106-93      -1.0     -1.0  
+nifS_106-65      -1.0     -1.0  
+
+[3 rows x 154 columns]
+======================================== SIMULATION 36 ====================================================
+
+Number of optimal solutions: 4
+[['nifS_105', 'nifS_124', 'nifS_145', 'nifS_159', 'nifS_51', 'nifS_67', 'nifS_85', 'nifS_95'], ['nifS_105', 'nifS_124', 'nifS_137', 'nifS_145', 'nifS_159', 'nifS_67', 'nifS_85', 'nifS_95'], ['nifS_103', 'nifS_105', 'nifS_124', 'nifS_145', 'nifS_159', 'nifS_51', 'nifS_85', 'nifS_95'], ['nifS_103', 'nifS_105', 'nifS_124', 'nifS_137', 'nifS_145', 'nifS_159', 'nifS_85', 'nifS_95']]
+Qscores are: [487838.0, 487838.0, 487838.0, 487838.0]
+Minimum q score is :487838.0
+True variants are: ['nifS_124', 'nifS_95', 'nifS_137', 'nifS_85', 'nifS_103', 'nifS_105', 'nifS_145']
+
+Predicted variants are: ['nifS_105', 'nifS_124', 'nifS_145', 'nifS_159', 'nifS_51', 'nifS_67', 'nifS_85', 'nifS_95']
+
+True proportions are: {'nifS_105': 18.490623406751034, 'nifS_137': 16.602047065253945, 'nifS_103': 23.249876672120283, 'nifS_145': 21.54119574000834, 'nifS_95': 11.71756805846322, 'nifS_85': 0.3829883379715405, 'nifS_124': 8.01570071943163}
+
+Predicted proportions using Counting method are: {'nifS_105': 16.39219576719578, 'nifS_124': 12.56613756613758, 'nifS_85': 0.9920634920634908, 'nifS_95': 11.309523809523794, 'nifS_145': 15.839947089947103, 'nifS_51': 16.58399470899472, 'nifS_67': 21.332671957671934, 'nifS_159': 4.983465608465596}
+
+This sim is not predicted correctly based on quality score.
+              nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                    
+nifS_105-71     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+nifS_145-104    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+              nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                   ...               
+nifS_105-71       -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+nifS_145-104      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+              nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                          
+nifS_105-71      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+nifS_145-104     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+              nifS_98  nifS_99  
+Read                            
+nifS_105-71      -1.0     -1.0  
+nifS_145-104     -1.0     -1.0  
+
+[2 rows x 154 columns]
+======================================== SIMULATION 37 ====================================================
+
+Number of optimal solutions: 9
+[['nifS_105', 'nifS_113', 'nifS_122', 'nifS_159', 'nifS_38', 'nifS_39', 'nifS_66', 'nifS_67', 'nifS_96'], ['nifS_103', 'nifS_105', 'nifS_113', 'nifS_122', 'nifS_159', 'nifS_38', 'nifS_39', 'nifS_66', 'nifS_96'], ['nifS_105', 'nifS_113', 'nifS_122', 'nifS_138', 'nifS_159', 'nifS_38', 'nifS_39', 'nifS_66', 'nifS_96'], ['nifS_105', 'nifS_113', 'nifS_122', 'nifS_144', 'nifS_159', 'nifS_38', 'nifS_39', 'nifS_66', 'nifS_96'], ['nifS_105', 'nifS_113', 'nifS_122', 'nifS_159', 'nifS_160', 'nifS_38', 'nifS_39', 'nifS_66', 'nifS_96'], ['nifS_105', 'nifS_113', 'nifS_122', 'nifS_159', 'nifS_30', 'nifS_38', 'nifS_39', 'nifS_66', 'nifS_96'], ['nifS_105', 'nifS_113', 'nifS_122', 'nifS_159', 'nifS_38', 'nifS_39', 'nifS_48', 'nifS_66', 'nifS_96'], ['nifS_105', 'nifS_113', 'nifS_122', 'nifS_159', 'nifS_38', 'nifS_39', 'nifS_50', 'nifS_66', 'nifS_96'], ['nifS_105', 'nifS_113', 'nifS_122', 'nifS_159', 'nifS_38', 'nifS_39', 'nifS_66', 'nifS_96']]
+Qscores are: [685456.0, 685456.0, 683349.0, 686996.0, 683288.0, 686240.0, 685570.0, 686220.0, 592402.0]
+Minimum q score is :592402.0
+True variants are: ['nifS_122', 'nifS_38', 'nifS_39', 'nifS_105', 'nifS_113', 'nifS_96', 'nifS_66']
+
+Predicted variants are: ['nifS_105', 'nifS_113', 'nifS_122', 'nifS_159', 'nifS_38', 'nifS_39', 'nifS_66', 'nifS_96']
+
+True proportions are: {'nifS_122': 24.080520056475287, 'nifS_105': 5.692073373114489, 'nifS_39': 23.220345972248495, 'nifS_38': 11.317745459182364, 'nifS_96': 10.34225602744684, 'nifS_113': 2.7879565543753753, 'nifS_66': 22.55910255715715}
+
+Predicted proportions using Counting method are: {'nifS_122': 24.248496993987974, 'nifS_105': 5.811623246492984, 'nifS_39': 19.03807615230461, 'nifS_38': 11.32264529058116, 'nifS_96': 14.72945891783567, 'nifS_113': 2.5050100200400798, 'nifS_159': 2.3046092184368736, 'nifS_66': 20.040080160320635}
+
+This sim is not predicted correctly based on quality score.
+Allele       nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                   
+nifS_66-115    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+Allele       nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                  ...               
+nifS_66-115      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+Allele       nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                         
+nifS_66-115     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+Allele       nifS_98  nifS_99  
+Read                           
+nifS_66-115     -1.0     -1.0  
+
+[1 rows x 154 columns]
+======================================== SIMULATION 38 ====================================================
+
+Number of optimal solutions: 1
+[['nifS_118', 'nifS_159', 'nifS_25', 'nifS_28', 'nifS_36']]
+Qscores are: [378296.0]
+Minimum q score is :378296.0
+True variants are: ['nifS_25', 'nifS_118', 'nifS_28', 'nifS_36']
+
+Predicted variants are: ['nifS_118', 'nifS_159', 'nifS_25', 'nifS_28', 'nifS_36']
+
+True proportions are: {'nifS_28': 18.06524213954517, 'nifS_118': 30.673073863602184, 'nifS_25': 35.11398183269936, 'nifS_36': 16.147702164153284}
+
+Predicted proportions using Counting method are: {'nifS_28': 17.165668662674648, 'nifS_118': 28.642714570858278, 'nifS_159': 2.6946107784431135, 'nifS_25': 34.73053892215568, 'nifS_36': 16.766467065868262}
+
+This sim is not predicted correctly based on quality score.
+            nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  nifS_104  \
+Read                                                                            
+nifS_28-71    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0      -1.0   
+
+            nifS_105  nifS_106  nifS_107   ...     nifS_90  nifS_91  nifS_92  \
+Read                                       ...                                 
+nifS_28-71      -1.0      -1.0      -1.0   ...        -1.0     -1.0     -1.0   
+
+            nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  nifS_98  nifS_99  
+Read                                                                       
+nifS_28-71     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0  
+
+[1 rows x 154 columns]
+======================================== SIMULATION 39 ====================================================
+
+Number of optimal solutions: 1
+[['nifS_1', 'nifS_117', 'nifS_145', 'nifS_150', 'nifS_159', 'nifS_17', 'nifS_25', 'nifS_70']]
+Qscores are: [572577.0]
+Minimum q score is :572577.0
+True variants are: ['nifS_145', 'nifS_117', 'nifS_1', 'nifS_70', 'nifS_17', 'nifS_150', 'nifS_25']
+
+Predicted variants are: ['nifS_1', 'nifS_117', 'nifS_145', 'nifS_150', 'nifS_159', 'nifS_17', 'nifS_25', 'nifS_70']
+
+True proportions are: {'nifS_25': 29.53918913930934, 'nifS_17': 2.955865702129442, 'nifS_150': 14.496289172892768, 'nifS_145': 16.672129287711837, 'nifS_1': 10.082435483708027, 'nifS_117': 5.259377998643551, 'nifS_70': 20.994713215605046}
+
+Predicted proportions using Counting method are: {'nifS_25': 28.528225806451612, 'nifS_17': 4.536290322580645, 'nifS_150': 14.71774193548387, 'nifS_145': 14.012096774193548, 'nifS_1': 9.173387096774192, 'nifS_159': 2.9233870967741935, 'nifS_117': 5.64516129032258, 'nifS_70': 20.463709677419352}
+
+This sim is not predicted correctly based on quality score.
+             nifS_1  nifS_10  nifS_100  nifS_101  nifS_102  nifS_103  \
+Read                                                                   
+nifS_145-49    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             nifS_104  nifS_105  nifS_106  nifS_107   ...     nifS_90  \
+Read                                                  ...               
+nifS_145-49      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             nifS_91  nifS_92  nifS_93  nifS_94  nifS_95  nifS_96  nifS_97  \
+Read                                                                         
+nifS_145-49     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             nifS_98  nifS_99  
+Read                           
+nifS_145-49     -1.0     -1.0  
+
+[1 rows x 156 columns]
+======================================== SIMULATION 40 ====================================================
+
+Number of optimal solutions: 21
+[['nifS_142', 'nifS_81'], ['nifS_101', 'nifS_105', 'nifS_142', 'nifS_81'], ['nifS_101', 'nifS_106', 'nifS_142', 'nifS_81'], ['nifS_105', 'nifS_142', 'nifS_81'], ['nifS_106', 'nifS_142', 'nifS_81'], ['nifS_101', 'nifS_121', 'nifS_142', 'nifS_81'], ['nifS_101', 'nifS_124', 'nifS_142', 'nifS_81'], ['nifS_121', 'nifS_142', 'nifS_81'], ['nifS_124', 'nifS_142', 'nifS_81'], ['nifS_101', 'nifS_106', 'nifS_144', 'nifS_81', 'nifS_93'], ['nifS_101', 'nifS_121', 'nifS_144', 'nifS_81', 'nifS_93'], ['nifS_101', 'nifS_144', 'nifS_76', 'nifS_81'], ['nifS_101', 'nifS_144', 'nifS_145', 'nifS_81', 'nifS_93'], ['nifS_106', 'nifS_144', 'nifS_81', 'nifS_93'], ['nifS_101', 'nifS_142', 'nifS_145', 'nifS_81'], ['nifS_101', 'nifS_144', 'nifS_158', 'nifS_81', 'nifS_93'], ['nifS_101', 'nifS_105', 'nifS_144', 'nifS_81', 'nifS_93'], ['nifS_121', 'nifS_144', 'nifS_81', 'nifS_93'], ['nifS_144', 'nifS_81', 'nifS_93'], ['nifS_101', 'nifS_124', 'nifS_144', 'nifS_81', 'nifS_93'], ['nifS_101', 'nifS_142', 'nifS_81']]
+Qscores are: [38945.0, 145851.0, 156662.0, 109921.0, 120732.0, 137815.0, 161902.0, 101885.0, 125972.0, 180544.0, 161697.0, 118811.0, 179857.0, 144614.0, 155975.0, 155924.0, 169733.0, 125767.0, 62827.0, 185784.0, 74875.0]
+Minimum q score is :38945.0
+True variants are: ['nifS_81', 'nifS_142']
+
+Predicted variants are: ['nifS_142', 'nifS_81']
+
+True proportions are: {'nifS_142': 2.5737606881380755, 'nifS_81': 97.42623931186193}
+
+Predicted proportions using Counting method are: {'nifS_142': 20.850622406639005, 'nifS_81': 79.149377593361}
+
+This sim is predicted correctly based on quality score.
+======================================== nifS: SUMMARY STATISTICS ====================================================
+
+(1)Total Variation Distance:
+
+Counting Method ~ Total variation distances are: [11.576656166050377, 8.664387339362246, 6.083347548973453, 12.664374494287213, 3.6500316940593303, 62.57668711656442, 10.238647608703289, 5.220217150314898, 0.5496536077953849, 3.578041592915452, 0.9536823578428105, 17.662367854960646, 2.421948934709257, 0.3300861605730887, 36.410788381742734, 24.070310208423717, 4.829577285012846, 29.932229843881018, 2.076971538370466, 6.720300891058034, 3.657386503733001, 0.48086257279326006, 10.464793439151855, 41.158821985332025, 9.016393442622949, 8.279392890659011, 15.714285714285719, 0.4430394868003589, 6.948389430843076, 3.908167413709597, 3.9055417446782195, 25.280551231301263, 5.648140712731937, 0.6952504328975344, 10.24590163934426, 48.05964427593015, 6.98423875111569, 3.3133756801580994, 5.111047771495536, 18.276861718500932] 
+
+Counting Method ~ The average of total variation distance is: 11.9450598653 
+
+Counting Method ~ The standard deviation of total variation distance is: 13.933091452 
+
+(2)Total Variation Distance for variants which are predicted correctly:
+
+Counting Method ~ Total variation distances are: [6.083347548973453, 3.6500316940593303, 0.5496536077953849, 3.578041592915452, 0.9536823578428105, 2.421948934709257, 0.3300861605730887, 4.829577285012846, 6.720300891058034, 3.657386503733001, 0.48086257279326006, 10.464793439151855, 8.279392890659011, 0.4430394868003589, 6.948389430843076, 3.908167413709597, 25.280551231301263, 0.6952504328975344, 18.276861718500932] 
+
+Counting Method ~ The average of total variation distance is: 5.66059816807 
+
+Counting Method ~ The standard deviation of total variation distance is: 6.32061079869 
+
+(3) Precision: 
+
+Precision is: [0.6666666666666666, 0.75, 1.0, 0.75, 1.0, 0.5, 0.7142857142857143, 0.75, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 0.6666666666666666, 0.8333333333333334, 1.0, 0.5714285714285714, 0.8571428571428571, 1.0, 1.0, 1.0, 1.0, 0.6, 0.6666666666666666, 1.0, 0.4, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 0.8571428571428571, 1.0, 0.5, 0.625, 0.875, 0.8, 0.875, 1.0] 
+
+Average of precision is:  0.848125 
+
+Standard deviation of precision is:  0.174608382577 
+
+(4) Recall : 
+
+Recall is: [1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 0.8, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.7142857142857143, 1.0, 1.0, 1.0, 1.0] 
+
+Average of recall is:  0.95869047619 
+
+Standard deviation of recall is:  0.108402058264 
+
+(5) Objective Value: 
+
+Predicted objective values are: [33.0, 28.0, 12.0, 36.0, 30.0, 40.0, 21.0, 45.0, 26.0, 26.0, 17.0, 31.0, 20.0, 43.0, 37.0, 16.0, 21.0, 25.0, 23.0, 20.0, 17.0, 31.0, 16.0, 39.0, 45.0, 21.0, 47.0, 41.0, 16.0, 17.0, 28.0, 40.0, 23.0, 46.0, 43.0, 20.0, 26.0, 27.0, 23.0, 36.0] 
+
+True objective values are: [48.0, 40.0, 12.0, 47.0, 30.0, 42.0, 25.0, 50.0, 26.0, 26.0, 17.0, 31.0, 20.0, 43.0, 39.0, 16.0, 21.0, 40.0, 26.0, 20.0, 17.0, 31.0, 16.0, 49.0, 50.0, 21.0, 58.0, 41.0, 16.0, 17.0, 37.0, 40.0, 26.0, 46.0, 57.0, 27.0, 30.0, 29.0, 26.0, 36.0] 
+
+The difference in objective values are: [-15.0, -12.0, 0.0, -11.0, 0.0, -2.0, -4.0, -5.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -2.0, 0.0, 0.0, -15.0, -3.0, 0.0, 0.0, 0.0, 0.0, -10.0, -5.0, 0.0, -11.0, 0.0, 0.0, 0.0, -9.0, 0.0, -3.0, 0.0, -14.0, -7.0, -4.0, -2.0, -3.0, 0.0] 
+
+Average of difference in objective value is:  -3.425 
+
+Standard deviation of difference in objective value is:  4.77957895635 
+
+(6)Accuracy: 
+
+Total number of simulations:  40 
+
+Number of simulations which are predicted correctly: 19
+
+Percentage of simulations predicted correctly:  47.5 %
+
+(7)Optimal solutions: 
+
+Number of optimal solutions: [1, 2, 1, 9, 20, 4, 20, 2, 1, 3, 2, 7, 12, 1, 1, 20, 1, 8, 1, 2, 20, 1, 4, 3, 4, 1, 2, 2, 2, 2, 1, 1, 3, 1, 2, 4, 9, 1, 1, 21]
+
+Average number of optimal solutions: 5.075
+
+(8)Statistics about quality score: 
+
+Number of simulations having multiple solutions: 26
+Number of these simulations which are correct: 11
+The percentage is : 42.3076923077 %

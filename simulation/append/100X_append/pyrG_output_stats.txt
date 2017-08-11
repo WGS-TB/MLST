@@ -1,0 +1,1072 @@
+======================================== SIMULATION 1 ====================================================
+
+Number of optimal solutions: 1
+[['pyrG_179', 'pyrG_189', 'pyrG_52', 'pyrG_68']]
+Qscores are: [264284.0]
+Minimum q score is :264284.0
+True variants are: ['pyrG_68', 'pyrG_52', 'pyrG_179', 'pyrG_189']
+
+Predicted variants are: ['pyrG_179', 'pyrG_189', 'pyrG_52', 'pyrG_68']
+
+True proportions are: {'pyrG_52': 37.58032467379183, 'pyrG_68': 34.20562264767503, 'pyrG_179': 19.855123074064377, 'pyrG_189': 8.358929604468765}
+
+Predicted proportions using Counting method are: {'pyrG_189': 8.49056603773585, 'pyrG_68': 34.716981132075475, 'pyrG_179': 19.433962264150946, 'pyrG_52': 37.35849056603774}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 2 ====================================================
+
+Number of optimal solutions: 3
+[['pyrG_111', 'pyrG_135', 'pyrG_145', 'pyrG_150', 'pyrG_198', 'pyrG_33', 'pyrG_55'], ['pyrG_111', 'pyrG_114', 'pyrG_135', 'pyrG_145', 'pyrG_150', 'pyrG_198', 'pyrG_33'], ['pyrG_111', 'pyrG_123', 'pyrG_135', 'pyrG_145', 'pyrG_150', 'pyrG_198', 'pyrG_33']]
+Qscores are: [549207.0, 540406.0, 537801.0]
+Minimum q score is :537801.0
+True variants are: ['pyrG_198', 'pyrG_145', 'pyrG_33', 'pyrG_135', 'pyrG_150', 'pyrG_111']
+
+Predicted variants are: ['pyrG_111', 'pyrG_123', 'pyrG_135', 'pyrG_145', 'pyrG_150', 'pyrG_198', 'pyrG_33']
+
+True proportions are: {'pyrG_33': 37.14874931688361, 'pyrG_198': 1.5847990271009047, 'pyrG_145': 22.936649247655915, 'pyrG_135': 1.0627279574993669, 'pyrG_150': 15.858755650497711, 'pyrG_111': 21.408318800362494}
+
+Predicted proportions using Counting method are: {'pyrG_33': 20.62226391494684, 'pyrG_198': 1.688555347091933, 'pyrG_145': 21.65415884928079, 'pyrG_135': 2.5328330206378995, 'pyrG_150': 15.759849906191375, 'pyrG_111': 20.841150719199497, 'pyrG_123': 16.901188242651664}
+
+This sim is not predicted correctly based on quality score.
+             pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                   
+pyrG_111-86    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+pyrG_145-99    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+pyrG_33-294    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                  ...               
+pyrG_111-86      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+pyrG_145-99      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+pyrG_33-294      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                         
+pyrG_111-86     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+pyrG_145-99     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+pyrG_33-294     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             pyrG_98  pyrG_99  
+Read                           
+pyrG_111-86     -1.0     -1.0  
+pyrG_145-99     -1.0     -1.0  
+pyrG_33-294     -1.0     -1.0  
+
+[3 rows x 192 columns]
+======================================== SIMULATION 3 ====================================================
+
+Number of optimal solutions: 16
+[['pyrG_104', 'pyrG_105', 'pyrG_109', 'pyrG_27', 'pyrG_32', 'pyrG_39', 'pyrG_55', 'pyrG_56'], ['pyrG_104', 'pyrG_105', 'pyrG_109', 'pyrG_123', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_104', 'pyrG_105', 'pyrG_109', 'pyrG_110', 'pyrG_123', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_104', 'pyrG_105', 'pyrG_109', 'pyrG_114', 'pyrG_27', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_104', 'pyrG_105', 'pyrG_109', 'pyrG_111', 'pyrG_123', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_105', 'pyrG_109', 'pyrG_110', 'pyrG_123', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_105', 'pyrG_109', 'pyrG_111', 'pyrG_123', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_105', 'pyrG_109', 'pyrG_114', 'pyrG_27', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_104', 'pyrG_105', 'pyrG_109', 'pyrG_122', 'pyrG_123', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_104', 'pyrG_105', 'pyrG_109', 'pyrG_123', 'pyrG_124', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_104', 'pyrG_105', 'pyrG_109', 'pyrG_123', 'pyrG_127', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_105', 'pyrG_109', 'pyrG_122', 'pyrG_123', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_105', 'pyrG_109', 'pyrG_123', 'pyrG_124', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_105', 'pyrG_109', 'pyrG_27', 'pyrG_32', 'pyrG_39', 'pyrG_55', 'pyrG_56'], ['pyrG_105', 'pyrG_109', 'pyrG_123', 'pyrG_127', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_105', 'pyrG_109', 'pyrG_123', 'pyrG_32', 'pyrG_39', 'pyrG_56']]
+Qscores are: [611115.0, 537980.0, 606399.0, 603933.0, 612715.0, 523779.0, 530095.0, 521313.0, 608520.0, 607761.0, 608583.0, 525900.0, 525141.0, 528495.0, 525963.0, 455360.0]
+Minimum q score is :455360.0
+True variants are: ['pyrG_105', 'pyrG_123', 'pyrG_56', 'pyrG_109', 'pyrG_32', 'pyrG_39']
+
+Predicted variants are: ['pyrG_105', 'pyrG_109', 'pyrG_123', 'pyrG_32', 'pyrG_39', 'pyrG_56']
+
+True proportions are: {'pyrG_32': 11.352912916616257, 'pyrG_39': 27.10993497596725, 'pyrG_56': 5.108192976476572, 'pyrG_123': 28.5871663230566, 'pyrG_109': 13.305348492199128, 'pyrG_105': 14.53644431568418}
+
+Predicted proportions using Counting method are: {'pyrG_32': 11.980136561142146, 'pyrG_39': 26.629422718808193, 'pyrG_56': 7.976412166356299, 'pyrG_123': 24.33271260086902, 'pyrG_109': 14.183736809435139, 'pyrG_105': 14.8975791433892}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 4 ====================================================
+
+Number of optimal solutions: 1
+[['pyrG_13', 'pyrG_152', 'pyrG_63']]
+Qscores are: [177027.0]
+Minimum q score is :177027.0
+True variants are: ['pyrG_13', 'pyrG_63', 'pyrG_152']
+
+Predicted variants are: ['pyrG_13', 'pyrG_152', 'pyrG_63']
+
+True proportions are: {'pyrG_63': 55.75715799944185, 'pyrG_13': 4.431067746690846, 'pyrG_152': 39.8117742538673}
+
+Predicted proportions using Counting method are: {'pyrG_63': 55.51330798479087, 'pyrG_13': 4.562737642585551, 'pyrG_152': 39.92395437262357}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 5 ====================================================
+
+Number of optimal solutions: 3
+[['pyrG_109', 'pyrG_185', 'pyrG_197', 'pyrG_201', 'pyrG_55'], ['pyrG_109', 'pyrG_123', 'pyrG_185', 'pyrG_197', 'pyrG_201'], ['pyrG_109', 'pyrG_114', 'pyrG_185', 'pyrG_197', 'pyrG_201']]
+Qscores are: [340972.0, 348221.0, 336880.0]
+Minimum q score is :336880.0
+True variants are: ['pyrG_109', 'pyrG_197', 'pyrG_201', 'pyrG_185']
+
+Predicted variants are: ['pyrG_109', 'pyrG_114', 'pyrG_185', 'pyrG_197', 'pyrG_201']
+
+True proportions are: {'pyrG_109': 38.13192513071833, 'pyrG_201': 13.289037090029643, 'pyrG_197': 25.75800596009843, 'pyrG_185': 22.821031819153596}
+
+Predicted proportions using Counting method are: {'pyrG_109': 30.69679849340866, 'pyrG_201': 13.747645951035782, 'pyrG_197': 25.235404896421844, 'pyrG_185': 22.22222222222222, 'pyrG_114': 8.097928436911488}
+
+This sim is not predicted correctly based on quality score.
+              pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                    
+pyrG_109-307    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+              pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                   ...               
+pyrG_109-307      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+              pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                          
+pyrG_109-307     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+              pyrG_98  pyrG_99  
+Read                            
+pyrG_109-307     -1.0     -1.0  
+
+[1 rows x 196 columns]
+======================================== SIMULATION 6 ====================================================
+
+Number of optimal solutions: 3
+[['pyrG_109', 'pyrG_183', 'pyrG_55'], ['pyrG_109', 'pyrG_114', 'pyrG_183'], ['pyrG_109', 'pyrG_123', 'pyrG_183']]
+Qscores are: [140870.0, 133851.0, 152225.0]
+Minimum q score is :133851.0
+True variants are: ['pyrG_183', 'pyrG_109']
+
+Predicted variants are: ['pyrG_109', 'pyrG_114', 'pyrG_183']
+
+True proportions are: {'pyrG_109': 62.480407715401995, 'pyrG_183': 37.519592284598005}
+
+Predicted proportions using Counting method are: {'pyrG_109': 50.563909774436084, 'pyrG_183': 37.21804511278195, 'pyrG_114': 12.218045112781954}
+
+This sim is not predicted correctly based on quality score.
+              pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                    
+pyrG_109-619    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+              pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                   ...               
+pyrG_109-619      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+              pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                          
+pyrG_109-619     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+              pyrG_98  pyrG_99  
+Read                            
+pyrG_109-619     -1.0     -1.0  
+
+[1 rows x 193 columns]
+======================================== SIMULATION 7 ====================================================
+
+Number of optimal solutions: 1
+[['pyrG_102', 'pyrG_115', 'pyrG_132', 'pyrG_17', 'pyrG_75']]
+Qscores are: [373479.0]
+Minimum q score is :373479.0
+True variants are: ['pyrG_115', 'pyrG_17', 'pyrG_102', 'pyrG_75', 'pyrG_132']
+
+Predicted variants are: ['pyrG_102', 'pyrG_115', 'pyrG_132', 'pyrG_17', 'pyrG_75']
+
+True proportions are: {'pyrG_17': 28.596375936700273, 'pyrG_75': 28.412997102090248, 'pyrG_102': 30.02030344865027, 'pyrG_132': 11.52900575270846, 'pyrG_115': 1.4413177598507472}
+
+Predicted proportions using Counting method are: {'pyrG_17': 26.988636363636363, 'pyrG_75': 27.083333333333332, 'pyrG_102': 30.303030303030305, 'pyrG_132': 12.68939393939394, 'pyrG_115': 2.9356060606060606}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 8 ====================================================
+
+Number of optimal solutions: 3
+[['pyrG_154', 'pyrG_189', 'pyrG_55', 'pyrG_88'], ['pyrG_123', 'pyrG_154', 'pyrG_189', 'pyrG_88'], ['pyrG_114', 'pyrG_154', 'pyrG_189', 'pyrG_88']]
+Qscores are: [317105.0, 327898.0, 310542.0]
+Minimum q score is :310542.0
+True variants are: ['pyrG_189', 'pyrG_88', 'pyrG_154']
+
+Predicted variants are: ['pyrG_114', 'pyrG_154', 'pyrG_189', 'pyrG_88']
+
+True proportions are: {'pyrG_189': 45.491834788669685, 'pyrG_154': 1.3989274525364226, 'pyrG_88': 53.10923775879388}
+
+Predicted proportions using Counting method are: {'pyrG_189': 45.0281425891182, 'pyrG_154': 1.6885553470919323, 'pyrG_88': 39.11819887429643, 'pyrG_114': 14.165103189493433}
+
+This sim is not predicted correctly based on quality score.
+             pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                   
+pyrG_88-502    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                  ...               
+pyrG_88-502      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                         
+pyrG_88-502     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             pyrG_98  pyrG_99  
+Read                           
+pyrG_88-502     -1.0     -1.0  
+
+[1 rows x 188 columns]
+======================================== SIMULATION 9 ====================================================
+
+Number of optimal solutions: 1
+[['pyrG_154', 'pyrG_28', 'pyrG_8']]
+Qscores are: [186996.0]
+Minimum q score is :186996.0
+True variants are: ['pyrG_8', 'pyrG_154', 'pyrG_28']
+
+Predicted variants are: ['pyrG_154', 'pyrG_28', 'pyrG_8']
+
+True proportions are: {'pyrG_154': 23.327897412612778, 'pyrG_28': 34.934600604289734, 'pyrG_8': 41.73750198309749}
+
+Predicted proportions using Counting method are: {'pyrG_154': 23.384030418250948, 'pyrG_28': 34.98098859315589, 'pyrG_8': 41.634980988593156}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 10 ====================================================
+
+Number of optimal solutions: 3
+[['pyrG_121', 'pyrG_39', 'pyrG_55', 'pyrG_60', 'pyrG_74', 'pyrG_98'], ['pyrG_114', 'pyrG_121', 'pyrG_39', 'pyrG_60', 'pyrG_74', 'pyrG_98'], ['pyrG_121', 'pyrG_123', 'pyrG_39', 'pyrG_60', 'pyrG_74', 'pyrG_98']]
+Qscores are: [464461.0, 462395.0, 467890.0]
+Minimum q score is :462395.0
+True variants are: ['pyrG_74', 'pyrG_60', 'pyrG_22', 'pyrG_121', 'pyrG_39']
+
+Predicted variants are: ['pyrG_114', 'pyrG_121', 'pyrG_39', 'pyrG_60', 'pyrG_74', 'pyrG_98']
+
+True proportions are: {'pyrG_39': 23.647863155425483, 'pyrG_74': 41.48714909992698, 'pyrG_60': 0.574542214917952, 'pyrG_22': 19.127309311739072, 'pyrG_121': 15.163136217990509}
+
+Predicted proportions using Counting method are: {'pyrG_39': 23.457943925233646, 'pyrG_74': 40.46728971962617, 'pyrG_60': 0.9345794392523366, 'pyrG_98': 19.252336448598133, 'pyrG_114': 1.869158878504673, 'pyrG_121': 14.018691588785048}
+
+This sim is not predicted correctly based on quality score.
+            pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  pyrG_104  \
+Read                                                                            
+pyrG_121-8    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0      -1.0   
+
+            pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  pyrG_91  pyrG_92  \
+Read                                       ...                                 
+pyrG_121-8      -1.0      -1.0      -1.0   ...        -1.0     -1.0     -1.0   
+
+            pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  pyrG_98  pyrG_99  
+Read                                                                       
+pyrG_121-8     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0  
+
+[1 rows x 189 columns]
+======================================== SIMULATION 11 ====================================================
+
+Number of optimal solutions: 2
+[['pyrG_14', 'pyrG_148', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_95'], ['pyrG_14', 'pyrG_148', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_96']]
+Qscores are: [530374.0, 530374.0]
+Minimum q score is :530374.0
+True variants are: ['pyrG_148', 'pyrG_14', 'pyrG_30', 'pyrG_170', 'pyrG_61', 'pyrG_179', 'pyrG_96']
+
+Predicted variants are: ['pyrG_14', 'pyrG_148', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_96']
+
+True proportions are: {'pyrG_30': 14.627350456132321, 'pyrG_14': 25.296546216548528, 'pyrG_179': 24.350558390719044, 'pyrG_170': 13.945484130973304, 'pyrG_61': 11.711652010320982, 'pyrG_96': 9.756981242885978, 'pyrG_148': 0.31142755241984954}
+
+Predicted proportions using Counting method are: {'pyrG_30': 14.915572232645403, 'pyrG_14': 25.140712945590995, 'pyrG_179': 24.20262664165103, 'pyrG_170': 13.789868667917448, 'pyrG_61': 11.44465290806754, 'pyrG_96': 9.568480300187616, 'pyrG_148': 0.9380863039399624}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 12 ====================================================
+
+Number of optimal solutions: 3
+[['pyrG_14', 'pyrG_145', 'pyrG_28', 'pyrG_55', 'pyrG_70', 'pyrG_73', 'pyrG_95'], ['pyrG_123', 'pyrG_14', 'pyrG_145', 'pyrG_28', 'pyrG_70', 'pyrG_73', 'pyrG_95'], ['pyrG_114', 'pyrG_14', 'pyrG_145', 'pyrG_28', 'pyrG_70', 'pyrG_73', 'pyrG_95']]
+Qscores are: [577788.0, 578431.0, 574693.0]
+Minimum q score is :574693.0
+True variants are: ['pyrG_70', 'pyrG_73', 'pyrG_96', 'pyrG_28', 'pyrG_145', 'pyrG_14']
+
+Predicted variants are: ['pyrG_114', 'pyrG_14', 'pyrG_145', 'pyrG_28', 'pyrG_70', 'pyrG_73', 'pyrG_95']
+
+True proportions are: {'pyrG_14': 11.640030772931329, 'pyrG_28': 14.657363837994147, 'pyrG_145': 20.57131723692035, 'pyrG_70': 2.7400721466612548, 'pyrG_73': 1.0221449826557, 'pyrG_96': 49.36907102283723}
+
+Predicted proportions using Counting method are: {'pyrG_14': 11.423220973782772, 'pyrG_28': 14.794007490636705, 'pyrG_145': 18.726591760299627, 'pyrG_70': 2.4344569288389515, 'pyrG_73': 1.9662921348314608, 'pyrG_95': 49.06367041198502, 'pyrG_114': 1.5917602996254683}
+
+This sim is not predicted correctly based on quality score.
+             pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                   
+pyrG_145-73    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                  ...               
+pyrG_145-73      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                         
+pyrG_145-73     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             pyrG_98  pyrG_99  
+Read                           
+pyrG_145-73     -1.0     -1.0  
+
+[1 rows x 189 columns]
+======================================== SIMULATION 13 ====================================================
+
+Number of optimal solutions: 3
+[['pyrG_141', 'pyrG_167', 'pyrG_200', 'pyrG_4', 'pyrG_43', 'pyrG_55', 'pyrG_70'], ['pyrG_123', 'pyrG_141', 'pyrG_167', 'pyrG_200', 'pyrG_4', 'pyrG_43', 'pyrG_70'], ['pyrG_114', 'pyrG_141', 'pyrG_167', 'pyrG_200', 'pyrG_4', 'pyrG_43', 'pyrG_70']]
+Qscores are: [507456.0, 513249.0, 504470.0]
+Minimum q score is :504470.0
+True variants are: ['pyrG_43', 'pyrG_4', 'pyrG_200', 'pyrG_70', 'pyrG_141', 'pyrG_167']
+
+Predicted variants are: ['pyrG_114', 'pyrG_141', 'pyrG_167', 'pyrG_200', 'pyrG_4', 'pyrG_43', 'pyrG_70']
+
+True proportions are: {'pyrG_200': 13.234792704796517, 'pyrG_43': 0.40386442110028925, 'pyrG_167': 4.969195017954185, 'pyrG_4': 29.336860593954107, 'pyrG_141': 29.79545422859397, 'pyrG_70': 22.259833033600934}
+
+Predicted proportions using Counting method are: {'pyrG_200': 13.799621928166351, 'pyrG_70': 22.3062381852552, 'pyrG_43': 0.945179584120983, 'pyrG_167': 4.536862003780718, 'pyrG_4': 29.111531190926275, 'pyrG_141': 20.415879017013232, 'pyrG_114': 8.88468809073724}
+
+This sim is not predicted correctly based on quality score.
+              pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                    
+pyrG_141-190    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+              pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                   ...               
+pyrG_141-190      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+              pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                          
+pyrG_141-190     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+              pyrG_98  pyrG_99  
+Read                            
+pyrG_141-190     -1.0     -1.0  
+
+[1 rows x 191 columns]
+======================================== SIMULATION 14 ====================================================
+
+Number of optimal solutions: 7
+[['pyrG_26', 'pyrG_27', 'pyrG_55', 'pyrG_95'], ['pyrG_114', 'pyrG_26', 'pyrG_27'], ['pyrG_26', 'pyrG_27', 'pyrG_55'], ['pyrG_123', 'pyrG_26', 'pyrG_27'], ['pyrG_123', 'pyrG_26', 'pyrG_33'], ['pyrG_123', 'pyrG_26', 'pyrG_54'], ['pyrG_123', 'pyrG_127', 'pyrG_26']]
+Qscores are: [222939.0, 166792.0, 170623.0, 155747.0, 156919.0, 160210.0, 158669.0]
+Minimum q score is :155747.0
+True variants are: ['pyrG_26', 'pyrG_27']
+
+Predicted variants are: ['pyrG_123', 'pyrG_26', 'pyrG_27']
+
+True proportions are: {'pyrG_26': 64.74726407468351, 'pyrG_27': 35.25273592531647}
+
+Predicted proportions using Counting method are: {'pyrG_26': 64.47368421052632, 'pyrG_27': 18.1390977443609, 'pyrG_123': 17.387218045112782}
+
+This sim is not predicted correctly based on quality score.
+             pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                   
+pyrG_27-268    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                  ...               
+pyrG_27-268      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                         
+pyrG_27-268     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             pyrG_98  pyrG_99  
+Read                           
+pyrG_27-268     -1.0     -1.0  
+
+[1 rows x 189 columns]
+======================================== SIMULATION 15 ====================================================
+
+Number of optimal solutions: 1
+[['pyrG_198', 'pyrG_21']]
+Qscores are: [82362.0]
+Minimum q score is :82362.0
+True variants are: ['pyrG_198', 'pyrG_21']
+
+Predicted variants are: ['pyrG_198', 'pyrG_21']
+
+True proportions are: {'pyrG_198': 2.6162994615947124, 'pyrG_21': 97.38370053840528}
+
+Predicted proportions using Counting method are: {'pyrG_198': 2.4761904761904763, 'pyrG_21': 97.52380952380952}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 16 ====================================================
+
+Number of optimal solutions: 1
+[['pyrG_114', 'pyrG_118', 'pyrG_143', 'pyrG_196', 'pyrG_52', 'pyrG_99']]
+Qscores are: [453500.0]
+Minimum q score is :453500.0
+True variants are: ['pyrG_52', 'pyrG_114', 'pyrG_143', 'pyrG_196', 'pyrG_99', 'pyrG_118']
+
+Predicted variants are: ['pyrG_114', 'pyrG_118', 'pyrG_143', 'pyrG_196', 'pyrG_52', 'pyrG_99']
+
+True proportions are: {'pyrG_196': 22.2031601614533, 'pyrG_52': 2.915919585626692, 'pyrG_118': 3.9019320771751715, 'pyrG_99': 31.405327191166833, 'pyrG_143': 21.37512617352857, 'pyrG_114': 18.19853481104944}
+
+Predicted proportions using Counting method are: {'pyrG_196': 22.433460076045627, 'pyrG_52': 3.8022813688212924, 'pyrG_118': 3.4220532319391634, 'pyrG_99': 31.55893536121673, 'pyrG_143': 20.05703422053232, 'pyrG_114': 18.726235741444867}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 17 ====================================================
+
+Number of optimal solutions: 10
+[['pyrG_100', 'pyrG_129', 'pyrG_153', 'pyrG_156', 'pyrG_186', 'pyrG_55', 'pyrG_89', 'pyrG_95', 'pyrG_97'], ['pyrG_100', 'pyrG_107', 'pyrG_129', 'pyrG_153', 'pyrG_156', 'pyrG_186', 'pyrG_55', 'pyrG_89', 'pyrG_95'], ['pyrG_100', 'pyrG_114', 'pyrG_129', 'pyrG_153', 'pyrG_156', 'pyrG_186', 'pyrG_85', 'pyrG_89'], ['pyrG_100', 'pyrG_107', 'pyrG_114', 'pyrG_129', 'pyrG_153', 'pyrG_156', 'pyrG_186', 'pyrG_89', 'pyrG_95'], ['pyrG_100', 'pyrG_114', 'pyrG_119', 'pyrG_129', 'pyrG_153', 'pyrG_156', 'pyrG_186', 'pyrG_89', 'pyrG_95'], ['pyrG_100', 'pyrG_119', 'pyrG_129', 'pyrG_153', 'pyrG_156', 'pyrG_186', 'pyrG_55', 'pyrG_89', 'pyrG_95'], ['pyrG_100', 'pyrG_119', 'pyrG_123', 'pyrG_129', 'pyrG_153', 'pyrG_156', 'pyrG_186', 'pyrG_89', 'pyrG_95'], ['pyrG_100', 'pyrG_107', 'pyrG_123', 'pyrG_129', 'pyrG_153', 'pyrG_156', 'pyrG_186', 'pyrG_89', 'pyrG_95'], ['pyrG_100', 'pyrG_123', 'pyrG_129', 'pyrG_153', 'pyrG_156', 'pyrG_186', 'pyrG_85', 'pyrG_89'], ['pyrG_100', 'pyrG_129', 'pyrG_153', 'pyrG_156', 'pyrG_186', 'pyrG_55', 'pyrG_85', 'pyrG_89']]
+Qscores are: [707303.0, 707248.0, 622021.0, 701187.0, 700453.0, 706514.0, 714043.0, 714777.0, 635611.0, 628082.0]
+Minimum q score is :622021.0
+True variants are: ['pyrG_156', 'pyrG_129', 'pyrG_85', 'pyrG_153', 'pyrG_100', 'pyrG_186', 'pyrG_89']
+
+Predicted variants are: ['pyrG_100', 'pyrG_114', 'pyrG_129', 'pyrG_153', 'pyrG_156', 'pyrG_186', 'pyrG_85', 'pyrG_89']
+
+True proportions are: {'pyrG_186': 12.706721653008051, 'pyrG_156': 18.669278862768497, 'pyrG_153': 4.684510643768236, 'pyrG_89': 28.985294080349323, 'pyrG_129': 9.844871841452747, 'pyrG_100': 14.686580028338591, 'pyrG_85': 10.422742890314552}
+
+Predicted proportions using Counting method are: {'pyrG_186': 12.7134724857685, 'pyrG_156': 17.204301075268813, 'pyrG_153': 6.641366223908919, 'pyrG_89': 25.332068311195446, 'pyrG_129': 10.562934851359902, 'pyrG_100': 15.180265654648956, 'pyrG_85': 8.72865275142315, 'pyrG_114': 3.6369386464263127}
+
+This sim is not predicted correctly based on quality score.
+             pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                   
+pyrG_89-177    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                  ...               
+pyrG_89-177      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                         
+pyrG_89-177     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             pyrG_98  pyrG_99  
+Read                           
+pyrG_89-177     -1.0     -1.0  
+
+[1 rows x 194 columns]
+======================================== SIMULATION 18 ====================================================
+
+Number of optimal solutions: 2
+[['pyrG_123', 'pyrG_129', 'pyrG_197', 'pyrG_56', 'pyrG_93'], ['pyrG_123', 'pyrG_129', 'pyrG_197', 'pyrG_56', 'pyrG_93', 'pyrG_95']]
+Qscores are: [371934.0, 448229.0]
+Minimum q score is :371934.0
+True variants are: ['pyrG_56', 'pyrG_197', 'pyrG_129', 'pyrG_123', 'pyrG_93']
+
+Predicted variants are: ['pyrG_123', 'pyrG_129', 'pyrG_197', 'pyrG_56', 'pyrG_93']
+
+True proportions are: {'pyrG_123': 17.07166605300989, 'pyrG_93': 20.931986615148933, 'pyrG_197': 20.154091537261078, 'pyrG_56': 21.699916237704908, 'pyrG_129': 20.142339556875186}
+
+Predicted proportions using Counting method are: {'pyrG_93': 20.37735849056604, 'pyrG_56': 20.849056603773587, 'pyrG_197': 20.37735849056604, 'pyrG_123': 18.018867924528305, 'pyrG_129': 20.37735849056604}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 19 ====================================================
+
+Number of optimal solutions: 2
+[['pyrG_136', 'pyrG_184', 'pyrG_19', 'pyrG_200', 'pyrG_26', 'pyrG_81', 'pyrG_95'], ['pyrG_136', 'pyrG_184', 'pyrG_19', 'pyrG_200', 'pyrG_26', 'pyrG_81']]
+Qscores are: [504528.0, 428742.0]
+Minimum q score is :428742.0
+True variants are: ['pyrG_184', 'pyrG_81', 'pyrG_136', 'pyrG_200', 'pyrG_19', 'pyrG_26']
+
+Predicted variants are: ['pyrG_136', 'pyrG_184', 'pyrG_19', 'pyrG_200', 'pyrG_26', 'pyrG_81']
+
+True proportions are: {'pyrG_200': 5.314326802177019, 'pyrG_184': 28.849468472351337, 'pyrG_26': 19.61244831198223, 'pyrG_19': 17.458401058250107, 'pyrG_136': 14.76138239666941, 'pyrG_81': 14.003972958569886}
+
+Predicted proportions using Counting method are: {'pyrG_200': 5.617977528089888, 'pyrG_184': 27.902621722846444, 'pyrG_26': 19.288389513108616, 'pyrG_19': 17.228464419475657, 'pyrG_136': 14.981273408239701, 'pyrG_81': 14.981273408239701}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 20 ====================================================
+
+Number of optimal solutions: 20
+[['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_55', 'pyrG_95', 'pyrG_97'], ['pyrG_107', 'pyrG_114', 'pyrG_166', 'pyrG_171', 'pyrG_46', 'pyrG_95'], ['pyrG_107', 'pyrG_119', 'pyrG_123', 'pyrG_166', 'pyrG_171', 'pyrG_95'], ['pyrG_107', 'pyrG_114', 'pyrG_119', 'pyrG_166', 'pyrG_171', 'pyrG_95'], ['pyrG_107', 'pyrG_119', 'pyrG_166', 'pyrG_171', 'pyrG_55', 'pyrG_95'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_46', 'pyrG_55', 'pyrG_95'], ['pyrG_107', 'pyrG_123', 'pyrG_151', 'pyrG_166', 'pyrG_171', 'pyrG_95'], ['pyrG_107', 'pyrG_123', 'pyrG_153', 'pyrG_166', 'pyrG_171', 'pyrG_95'], ['pyrG_107', 'pyrG_123', 'pyrG_154', 'pyrG_166', 'pyrG_171', 'pyrG_95'], ['pyrG_107', 'pyrG_151', 'pyrG_166', 'pyrG_171', 'pyrG_55', 'pyrG_95'], ['pyrG_107', 'pyrG_153', 'pyrG_166', 'pyrG_171', 'pyrG_55', 'pyrG_95'], ['pyrG_107', 'pyrG_154', 'pyrG_166', 'pyrG_171', 'pyrG_55', 'pyrG_95'], ['pyrG_107', 'pyrG_114', 'pyrG_151', 'pyrG_166', 'pyrG_171', 'pyrG_95'], ['pyrG_107', 'pyrG_114', 'pyrG_153', 'pyrG_166', 'pyrG_171', 'pyrG_95'], ['pyrG_107', 'pyrG_114', 'pyrG_154', 'pyrG_166', 'pyrG_171', 'pyrG_95'], ['pyrG_107', 'pyrG_123', 'pyrG_166', 'pyrG_171', 'pyrG_175', 'pyrG_95'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_175', 'pyrG_55', 'pyrG_95'], ['pyrG_107', 'pyrG_114', 'pyrG_166', 'pyrG_171', 'pyrG_175', 'pyrG_95'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_20', 'pyrG_55', 'pyrG_95'], ['pyrG_107', 'pyrG_123', 'pyrG_166', 'pyrG_171', 'pyrG_46', 'pyrG_95']]
+Qscores are: [292885.0, 301744.0, 288512.0, 280132.0, 282616.0, 304228.0, 297338.0, 307702.0, 298271.0, 291442.0, 301806.0, 292375.0, 288958.0, 299322.0, 289891.0, 306001.0, 300105.0, 297621.0, 289690.0, 310124.0]
+Minimum q score is :280132.0
+True variants are: ['pyrG_85', 'pyrG_171', 'pyrG_166', 'pyrG_107']
+
+Predicted variants are: ['pyrG_107', 'pyrG_114', 'pyrG_119', 'pyrG_166', 'pyrG_171', 'pyrG_95']
+
+True proportions are: {'pyrG_85': 38.906934950328, 'pyrG_166': 17.091906721338297, 'pyrG_171': 26.44790409334048, 'pyrG_107': 17.553254234993236}
+
+Predicted proportions using Counting method are: {'pyrG_166': 16.052299936988042, 'pyrG_171': 22.778827977315686, 'pyrG_119': 20.116572148708247, 'pyrG_95': 16.997479521109017, 'pyrG_107': 20.368620037807176, 'pyrG_114': 3.6862003780718333}
+
+This sim is not predicted correctly based on quality score.
+              pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                    
+pyrG_171-151    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+              pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                   ...               
+pyrG_171-151      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+              pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                          
+pyrG_171-151     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+              pyrG_98  pyrG_99  
+Read                            
+pyrG_171-151     -1.0     -1.0  
+
+[1 rows x 188 columns]
+======================================== SIMULATION 21 ====================================================
+
+Number of optimal solutions: 6
+[['pyrG_104', 'pyrG_105', 'pyrG_109', 'pyrG_126', 'pyrG_3', 'pyrG_35', 'pyrG_55', 'pyrG_69'], ['pyrG_104', 'pyrG_105', 'pyrG_109', 'pyrG_123', 'pyrG_126', 'pyrG_3', 'pyrG_35', 'pyrG_69'], ['pyrG_104', 'pyrG_105', 'pyrG_109', 'pyrG_114', 'pyrG_126', 'pyrG_3', 'pyrG_35', 'pyrG_69'], ['pyrG_105', 'pyrG_109', 'pyrG_114', 'pyrG_126', 'pyrG_3', 'pyrG_35', 'pyrG_69'], ['pyrG_105', 'pyrG_109', 'pyrG_126', 'pyrG_3', 'pyrG_35', 'pyrG_55', 'pyrG_69'], ['pyrG_105', 'pyrG_109', 'pyrG_123', 'pyrG_126', 'pyrG_3', 'pyrG_35', 'pyrG_69']]
+Qscores are: [619892.0, 624252.0, 614370.0, 540769.0, 546291.0, 550651.0]
+Minimum q score is :540769.0
+True variants are: ['pyrG_35', 'pyrG_3', 'pyrG_126', 'pyrG_109', 'pyrG_69', 'pyrG_105']
+
+Predicted variants are: ['pyrG_105', 'pyrG_109', 'pyrG_114', 'pyrG_126', 'pyrG_3', 'pyrG_35', 'pyrG_69']
+
+True proportions are: {'pyrG_35': 14.251233950427588, 'pyrG_109': 8.15524078750936, 'pyrG_3': 19.95210545141952, 'pyrG_126': 20.873348592198536, 'pyrG_69': 12.964327323386723, 'pyrG_105': 23.803743895058265}
+
+Predicted proportions using Counting method are: {'pyrG_35': 14.895635673624291, 'pyrG_109': 8.22264389626819, 'pyrG_3': 19.544592030360533, 'pyrG_126': 18.184693232131558, 'pyrG_69': 12.7134724857685, 'pyrG_105': 23.33965844402277, 'pyrG_114': 3.0993042378241626}
+
+This sim is not predicted correctly based on quality score.
+Allele       pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                   
+pyrG_126-73    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+Allele       pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                  ...               
+pyrG_126-73      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+Allele       pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                         
+pyrG_126-73     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+Allele       pyrG_98  pyrG_99  
+Read                           
+pyrG_126-73     -1.0     -1.0  
+
+[1 rows x 188 columns]
+======================================== SIMULATION 22 ====================================================
+
+Number of optimal solutions: 4
+[['pyrG_105', 'pyrG_143', 'pyrG_150', 'pyrG_189'], ['pyrG_104', 'pyrG_105', 'pyrG_143', 'pyrG_146', 'pyrG_150', 'pyrG_189'], ['pyrG_105', 'pyrG_143', 'pyrG_146', 'pyrG_150', 'pyrG_189'], ['pyrG_104', 'pyrG_105', 'pyrG_143', 'pyrG_150', 'pyrG_189']]
+Qscores are: [279332.0, 432817.0, 367329.0, 344820.0]
+Minimum q score is :279332.0
+True variants are: ['pyrG_143', 'pyrG_189', 'pyrG_150', 'pyrG_105']
+
+Predicted variants are: ['pyrG_105', 'pyrG_143', 'pyrG_150', 'pyrG_189']
+
+True proportions are: {'pyrG_189': 21.148916099238924, 'pyrG_150': 7.383262974484876, 'pyrG_105': 27.244306554204083, 'pyrG_143': 44.2235143720721}
+
+Predicted proportions using Counting method are: {'pyrG_189': 21.17202268431002, 'pyrG_150': 7.561436672967864, 'pyrG_105': 27.032136105860115, 'pyrG_143': 44.234404536862}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 23 ====================================================
+
+Number of optimal solutions: 6
+[['pyrG_125', 'pyrG_146', 'pyrG_156', 'pyrG_160', 'pyrG_191', 'pyrG_26', 'pyrG_37', 'pyrG_55', 'pyrG_95'], ['pyrG_114', 'pyrG_125', 'pyrG_146', 'pyrG_156', 'pyrG_160', 'pyrG_191', 'pyrG_26', 'pyrG_37'], ['pyrG_125', 'pyrG_146', 'pyrG_156', 'pyrG_160', 'pyrG_191', 'pyrG_26', 'pyrG_37', 'pyrG_55'], ['pyrG_123', 'pyrG_125', 'pyrG_146', 'pyrG_156', 'pyrG_160', 'pyrG_191', 'pyrG_26', 'pyrG_37', 'pyrG_95'], ['pyrG_114', 'pyrG_125', 'pyrG_146', 'pyrG_156', 'pyrG_160', 'pyrG_191', 'pyrG_26', 'pyrG_37', 'pyrG_95'], ['pyrG_123', 'pyrG_125', 'pyrG_146', 'pyrG_156', 'pyrG_160', 'pyrG_191', 'pyrG_26', 'pyrG_37']]
+Qscores are: [767752.0, 683723.0, 690721.0, 775333.0, 760754.0, 698302.0]
+Minimum q score is :683723.0
+True variants are: ['pyrG_37', 'pyrG_160', 'pyrG_156', 'pyrG_125', 'pyrG_191', 'pyrG_146', 'pyrG_26']
+
+Predicted variants are: ['pyrG_114', 'pyrG_125', 'pyrG_146', 'pyrG_156', 'pyrG_160', 'pyrG_191', 'pyrG_26', 'pyrG_37']
+
+True proportions are: {'pyrG_191': 6.008410645291557, 'pyrG_37': 18.46574917342312, 'pyrG_26': 19.655049634422223, 'pyrG_160': 4.036976128654941, 'pyrG_156': 19.238037452759656, 'pyrG_146': 12.16308711363433, 'pyrG_125': 20.432689851814175}
+
+Predicted proportions using Counting method are: {'pyrG_191': 8.719851576994435, 'pyrG_37': 14.842300556586272, 'pyrG_26': 16.697588126159555, 'pyrG_160': 4.452690166975882, 'pyrG_156': 18.089053803339517, 'pyrG_146': 12.987012987012989, 'pyrG_125': 19.758812615955474, 'pyrG_114': 4.452690166975882}
+
+This sim is not predicted correctly based on quality score.
+             pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                   
+pyrG_125-73    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+pyrG_37-47     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                  ...               
+pyrG_125-73      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+pyrG_37-47       -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                         
+pyrG_125-73     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+pyrG_37-47      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             pyrG_98  pyrG_99  
+Read                           
+pyrG_125-73     -1.0     -1.0  
+pyrG_37-47      -1.0     -1.0  
+
+[2 rows x 189 columns]
+======================================== SIMULATION 24 ====================================================
+
+Number of optimal solutions: 3
+[['pyrG_108', 'pyrG_30', 'pyrG_54', 'pyrG_55'], ['pyrG_108', 'pyrG_123', 'pyrG_30', 'pyrG_54'], ['pyrG_108', 'pyrG_114', 'pyrG_30', 'pyrG_54']]
+Qscores are: [137868.0, 145630.0, 126535.0]
+Minimum q score is :126535.0
+True variants are: ['pyrG_30', 'pyrG_54', 'pyrG_108']
+
+Predicted variants are: ['pyrG_108', 'pyrG_114', 'pyrG_30', 'pyrG_54']
+
+True proportions are: {'pyrG_108': 69.5953312819938, 'pyrG_30': 6.936416109906056, 'pyrG_54': 23.46825260810016}
+
+Predicted proportions using Counting method are: {'pyrG_108': 45.770202020202056, 'pyrG_30': 20.864898989898975, 'pyrG_54': 17.992424242424235, 'pyrG_114': 15.372474747474744}
+
+This sim is not predicted correctly based on quality score.
+              pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                    
+pyrG_108-710    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+pyrG_54-112     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+              pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                   ...               
+pyrG_108-710      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+pyrG_54-112       -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+              pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                          
+pyrG_108-710     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+pyrG_54-112      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+              pyrG_98  pyrG_99  
+Read                            
+pyrG_108-710     -1.0     -1.0  
+pyrG_54-112      -1.0     -1.0  
+
+[2 rows x 188 columns]
+======================================== SIMULATION 25 ====================================================
+
+Number of optimal solutions: 9
+[['pyrG_112', 'pyrG_44', 'pyrG_53'], ['pyrG_112', 'pyrG_191', 'pyrG_45'], ['pyrG_112', 'pyrG_41', 'pyrG_45'], ['pyrG_112', 'pyrG_43', 'pyrG_45'], ['pyrG_112', 'pyrG_41', 'pyrG_46'], ['pyrG_112', 'pyrG_43', 'pyrG_46'], ['pyrG_112', 'pyrG_191', 'pyrG_46'], ['pyrG_112', 'pyrG_44', 'pyrG_46'], ['pyrG_112', 'pyrG_44', 'pyrG_45']]
+Qscores are: [107725.0, 98482.0, 99262.0, 99561.0, 108134.0, 108433.0, 107354.0, 99232.0, 90360.0]
+Minimum q score is :90360.0
+True variants are: ['pyrG_45', 'pyrG_112']
+
+Predicted variants are: ['pyrG_112', 'pyrG_44', 'pyrG_45']
+
+True proportions are: {'pyrG_112': 6.856592811709612, 'pyrG_45': 93.14340718829038}
+
+Predicted proportions using Counting method are: {'pyrG_112': 6.4638783269961975, 'pyrG_44': 46.4828897338403, 'pyrG_45': 47.053231939163496}
+
+This sim is not predicted correctly based on quality score.
+======================================== SIMULATION 26 ====================================================
+
+Number of optimal solutions: 3
+[['pyrG_182', 'pyrG_191', 'pyrG_30', 'pyrG_40', 'pyrG_53', 'pyrG_55', 'pyrG_95'], ['pyrG_114', 'pyrG_182', 'pyrG_191', 'pyrG_30', 'pyrG_40', 'pyrG_53', 'pyrG_95'], ['pyrG_123', 'pyrG_182', 'pyrG_191', 'pyrG_30', 'pyrG_40', 'pyrG_53', 'pyrG_95']]
+Qscores are: [447156.0, 442962.0, 455149.0]
+Minimum q score is :442962.0
+True variants are: ['pyrG_53', 'pyrG_30', 'pyrG_40', 'pyrG_182', 'pyrG_96', 'pyrG_191']
+
+Predicted variants are: ['pyrG_114', 'pyrG_182', 'pyrG_191', 'pyrG_30', 'pyrG_40', 'pyrG_53', 'pyrG_95']
+
+True proportions are: {'pyrG_30': 6.192721420019106, 'pyrG_182': 3.0313117378197942, 'pyrG_53': 4.055278404943387, 'pyrG_191': 31.82952025629553, 'pyrG_40': 33.92583121729526, 'pyrG_96': 20.965336963626918}
+
+Predicted proportions using Counting method are: {'pyrG_30': 15.028355387523638, 'pyrG_182': 3.4026465028355406, 'pyrG_40': 22.495274102079406, 'pyrG_191': 24.98424700693131, 'pyrG_53': 12.035286704473883, 'pyrG_95': 19.313169502205376, 'pyrG_114': 2.7410207939508537}
+
+This sim is not predicted correctly based on quality score.
+             pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                   
+pyrG_40-242    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                  ...               
+pyrG_40-242      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                         
+pyrG_40-242     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             pyrG_98  pyrG_99  
+Read                           
+pyrG_40-242     -1.0     -1.0  
+
+[1 rows x 189 columns]
+======================================== SIMULATION 27 ====================================================
+
+Number of optimal solutions: 9
+[['pyrG_168', 'pyrG_54', 'pyrG_55', 'pyrG_6', 'pyrG_9'], ['pyrG_11', 'pyrG_114', 'pyrG_168', 'pyrG_54', 'pyrG_9'], ['pyrG_11', 'pyrG_123', 'pyrG_168', 'pyrG_54', 'pyrG_9'], ['pyrG_123', 'pyrG_54', 'pyrG_6', 'pyrG_9'], ['pyrG_11', 'pyrG_168', 'pyrG_54', 'pyrG_55', 'pyrG_9'], ['pyrG_54', 'pyrG_55', 'pyrG_6', 'pyrG_9'], ['pyrG_114', 'pyrG_168', 'pyrG_54', 'pyrG_6', 'pyrG_9'], ['pyrG_123', 'pyrG_168', 'pyrG_54', 'pyrG_6', 'pyrG_9'], ['pyrG_114', 'pyrG_54', 'pyrG_6', 'pyrG_9']]
+Qscores are: [312620.0, 304441.0, 297763.0, 220704.0, 311709.0, 234650.0, 305352.0, 298674.0, 227382.0]
+Minimum q score is :220704.0
+True variants are: ['pyrG_9', 'pyrG_6', 'pyrG_54']
+
+Predicted variants are: ['pyrG_123', 'pyrG_54', 'pyrG_6', 'pyrG_9']
+
+True proportions are: {'pyrG_6': 12.909346904014111, 'pyrG_9': 20.290878722404106, 'pyrG_54': 66.79977437358178}
+
+Predicted proportions using Counting method are: {'pyrG_6': 12.973484848484848, 'pyrG_123': 24.242424242424242, 'pyrG_9': 20.170454545454547, 'pyrG_54': 42.61363636363636}
+
+This sim is not predicted correctly based on quality score.
+             pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                   
+pyrG_54-671    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                  ...               
+pyrG_54-671      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                         
+pyrG_54-671     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             pyrG_98  pyrG_99  
+Read                           
+pyrG_54-671     -1.0     -1.0  
+
+[1 rows x 187 columns]
+======================================== SIMULATION 28 ====================================================
+
+Number of optimal solutions: 3
+[['pyrG_124', 'pyrG_55', 'pyrG_74'], ['pyrG_123', 'pyrG_124', 'pyrG_74'], ['pyrG_114', 'pyrG_124', 'pyrG_74']]
+Qscores are: [149500.0, 157030.0, 144799.0]
+Minimum q score is :144799.0
+True variants are: ['pyrG_74', 'pyrG_124']
+
+Predicted variants are: ['pyrG_114', 'pyrG_124', 'pyrG_74']
+
+True proportions are: {'pyrG_74': 61.7927327383341, 'pyrG_124': 38.2072672616659}
+
+Predicted proportions using Counting method are: {'pyrG_74': 61.423220973782776, 'pyrG_124': 26.779026217228466, 'pyrG_114': 11.797752808988765}
+
+This sim is not predicted correctly based on quality score.
+              pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                    
+pyrG_124-307    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+              pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                   ...               
+pyrG_124-307      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+              pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                          
+pyrG_124-307     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+              pyrG_98  pyrG_99  
+Read                            
+pyrG_124-307     -1.0     -1.0  
+
+[1 rows x 187 columns]
+======================================== SIMULATION 29 ====================================================
+
+Number of optimal solutions: 15
+[['pyrG_121', 'pyrG_199', 'pyrG_40', 'pyrG_55', 'pyrG_61', 'pyrG_81', 'pyrG_88'], ['pyrG_108', 'pyrG_121', 'pyrG_123', 'pyrG_199', 'pyrG_40', 'pyrG_61', 'pyrG_88'], ['pyrG_114', 'pyrG_121', 'pyrG_199', 'pyrG_40', 'pyrG_61', 'pyrG_81', 'pyrG_88'], ['pyrG_108', 'pyrG_114', 'pyrG_121', 'pyrG_199', 'pyrG_40', 'pyrG_61', 'pyrG_88'], ['pyrG_108', 'pyrG_121', 'pyrG_199', 'pyrG_40', 'pyrG_55', 'pyrG_61', 'pyrG_88'], ['pyrG_121', 'pyrG_149', 'pyrG_199', 'pyrG_40', 'pyrG_55', 'pyrG_61', 'pyrG_88'], ['pyrG_114', 'pyrG_121', 'pyrG_149', 'pyrG_199', 'pyrG_40', 'pyrG_61', 'pyrG_88'], ['pyrG_121', 'pyrG_123', 'pyrG_149', 'pyrG_199', 'pyrG_40', 'pyrG_61', 'pyrG_88'], ['pyrG_114', 'pyrG_121', 'pyrG_171', 'pyrG_199', 'pyrG_40', 'pyrG_61', 'pyrG_88'], ['pyrG_121', 'pyrG_123', 'pyrG_171', 'pyrG_199', 'pyrG_40', 'pyrG_61', 'pyrG_88'], ['pyrG_121', 'pyrG_171', 'pyrG_199', 'pyrG_40', 'pyrG_55', 'pyrG_61', 'pyrG_88'], ['pyrG_114', 'pyrG_121', 'pyrG_199', 'pyrG_37', 'pyrG_40', 'pyrG_61', 'pyrG_88'], ['pyrG_121', 'pyrG_123', 'pyrG_199', 'pyrG_37', 'pyrG_40', 'pyrG_61', 'pyrG_88'], ['pyrG_121', 'pyrG_199', 'pyrG_37', 'pyrG_40', 'pyrG_55', 'pyrG_61', 'pyrG_88'], ['pyrG_121', 'pyrG_123', 'pyrG_199', 'pyrG_40', 'pyrG_61', 'pyrG_81', 'pyrG_88']]
+Qscores are: [422776.0, 429201.0, 415239.0, 410587.0, 418124.0, 424500.0, 416963.0, 435577.0, 411869.0, 430483.0, 419406.0, 411953.0, 430567.0, 419490.0, 433853.0]
+Minimum q score is :410587.0
+True variants are: ['pyrG_199', 'pyrG_88', 'pyrG_61', 'pyrG_40', 'pyrG_81', 'pyrG_121']
+
+Predicted variants are: ['pyrG_108', 'pyrG_114', 'pyrG_121', 'pyrG_199', 'pyrG_40', 'pyrG_61', 'pyrG_88']
+
+True proportions are: {'pyrG_40': 5.4027479103836376, 'pyrG_199': 18.90796437168259, 'pyrG_61': 16.628824040740472, 'pyrG_88': 27.371320750229327, 'pyrG_81': 5.618134535860798, 'pyrG_121': 26.071008391103174}
+
+Predicted proportions using Counting method are: {'pyrG_40': 10.276729559748436, 'pyrG_199': 18.49056603773584, 'pyrG_108': 10.968553459119503, 'pyrG_61': 16.509433962264144, 'pyrG_88': 14.710691823899369, 'pyrG_114': 8.106918238993709, 'pyrG_121': 20.93710691823898}
+
+This sim is not predicted correctly based on quality score.
+              pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                    
+pyrG_121-151    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+pyrG_88-164     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+              pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                   ...               
+pyrG_121-151      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+pyrG_88-164       -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+              pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                          
+pyrG_121-151     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+pyrG_88-164      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+              pyrG_98  pyrG_99  
+Read                            
+pyrG_121-151     -1.0     -1.0  
+pyrG_88-164      -1.0     -1.0  
+
+[2 rows x 192 columns]
+======================================== SIMULATION 30 ====================================================
+
+Number of optimal solutions: 3
+[['pyrG_127', 'pyrG_161', 'pyrG_187', 'pyrG_55', 'pyrG_60', 'pyrG_9'], ['pyrG_123', 'pyrG_127', 'pyrG_161', 'pyrG_187', 'pyrG_60', 'pyrG_9'], ['pyrG_114', 'pyrG_127', 'pyrG_161', 'pyrG_187', 'pyrG_60', 'pyrG_9']]
+Qscores are: [453594.0, 446422.0, 452149.0]
+Minimum q score is :446422.0
+True variants are: ['pyrG_127', 'pyrG_9', 'pyrG_60', 'pyrG_187', 'pyrG_161']
+
+Predicted variants are: ['pyrG_123', 'pyrG_127', 'pyrG_161', 'pyrG_187', 'pyrG_60', 'pyrG_9']
+
+True proportions are: {'pyrG_127': 27.85493507464722, 'pyrG_60': 12.179679446592035, 'pyrG_161': 16.396878190614867, 'pyrG_9': 7.724852322219434, 'pyrG_187': 35.84365496592645}
+
+Predicted proportions using Counting method are: {'pyrG_187': 35.673624288425046, 'pyrG_161': 16.698292220113853, 'pyrG_60': 12.7134724857685, 'pyrG_127': 16.698292220113853, 'pyrG_123': 10.62618595825427, 'pyrG_9': 7.590132827324478}
+
+This sim is not predicted correctly based on quality score.
+              pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                    
+pyrG_127-164    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+              pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                   ...               
+pyrG_127-164      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+              pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                          
+pyrG_127-164     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+              pyrG_98  pyrG_99  
+Read                            
+pyrG_127-164     -1.0     -1.0  
+
+[1 rows x 193 columns]
+======================================== SIMULATION 31 ====================================================
+
+Number of optimal solutions: 1
+[['pyrG_156', 'pyrG_61', 'pyrG_67', 'pyrG_69', 'pyrG_73']]
+Qscores are: [310116.0]
+Minimum q score is :310116.0
+True variants are: ['pyrG_73', 'pyrG_156', 'pyrG_61', 'pyrG_67', 'pyrG_69']
+
+Predicted variants are: ['pyrG_156', 'pyrG_61', 'pyrG_67', 'pyrG_69', 'pyrG_73']
+
+True proportions are: {'pyrG_156': 22.263414463553058, 'pyrG_61': 20.822687562095123, 'pyrG_69': 7.582863843336016, 'pyrG_67': 43.17472152204278, 'pyrG_73': 6.156312608973016}
+
+Predicted proportions using Counting method are: {'pyrG_156': 21.401515151515163, 'pyrG_61': 21.33838383838379, 'pyrG_69': 19.539141414141405, 'pyrG_67': 30.33459595959599, 'pyrG_73': 7.38636363636364}
+
+This sim is predicted correctly based on quality score.
+======================================== SIMULATION 32 ====================================================
+
+Number of optimal solutions: 20
+[['pyrG_116', 'pyrG_26', 'pyrG_95', 'pyrG_97'], ['pyrG_116', 'pyrG_118', 'pyrG_26', 'pyrG_95'], ['pyrG_116', 'pyrG_153', 'pyrG_26', 'pyrG_95'], ['pyrG_116', 'pyrG_163', 'pyrG_26', 'pyrG_95'], ['pyrG_116', 'pyrG_175', 'pyrG_26', 'pyrG_95'], ['pyrG_116', 'pyrG_191', 'pyrG_26', 'pyrG_95'], ['pyrG_116', 'pyrG_20', 'pyrG_26', 'pyrG_95'], ['pyrG_116', 'pyrG_21', 'pyrG_26', 'pyrG_95'], ['pyrG_116', 'pyrG_20', 'pyrG_25', 'pyrG_95'], ['pyrG_116', 'pyrG_23', 'pyrG_26', 'pyrG_95'], ['pyrG_116', 'pyrG_24', 'pyrG_26', 'pyrG_95'], ['pyrG_116', 'pyrG_23', 'pyrG_25', 'pyrG_95'], ['pyrG_116', 'pyrG_25', 'pyrG_53', 'pyrG_95'], ['pyrG_116', 'pyrG_26', 'pyrG_41', 'pyrG_95'], ['pyrG_116', 'pyrG_26', 'pyrG_42', 'pyrG_95'], ['pyrG_116', 'pyrG_26', 'pyrG_43', 'pyrG_95'], ['pyrG_116', 'pyrG_26', 'pyrG_44', 'pyrG_95'], ['pyrG_116', 'pyrG_26', 'pyrG_46', 'pyrG_95'], ['pyrG_116', 'pyrG_26', 'pyrG_45', 'pyrG_95'], ['pyrG_116', 'pyrG_26', 'pyrG_95']]
+Qscores are: [98669.0, 97704.0, 110681.0, 116340.0, 107685.0, 115193.0, 94372.0, 110683.0, 102098.0, 97554.0, 116925.0, 105280.0, 117519.0, 114753.0, 101910.0, 115917.0, 106671.0, 115704.0, 106790.0, 75987.0]
+Minimum q score is :75987.0
+True variants are: ['pyrG_26', 'pyrG_116', 'pyrG_118']
+
+Predicted variants are: ['pyrG_116', 'pyrG_26', 'pyrG_95']
+
+True proportions are: {'pyrG_26': 93.96638285347785, 'pyrG_118': 4.168860217599113, 'pyrG_116': 1.8647569289230375}
+
+Predicted proportions using Counting method are: {'pyrG_26': 71.42857142857129, 'pyrG_95': 17.428571428571484, 'pyrG_116': 11.142857142857222}
+
+This sim is not predicted correctly based on quality score.
+======================================== SIMULATION 33 ====================================================
+
+Number of optimal solutions: 3
+[['pyrG_117', 'pyrG_133', 'pyrG_145', 'pyrG_187', 'pyrG_191', 'pyrG_43', 'pyrG_55'], ['pyrG_117', 'pyrG_123', 'pyrG_133', 'pyrG_145', 'pyrG_187', 'pyrG_191', 'pyrG_43'], ['pyrG_114', 'pyrG_117', 'pyrG_133', 'pyrG_145', 'pyrG_187', 'pyrG_191', 'pyrG_43']]
+Qscores are: [488197.0, 490587.0, 485494.0]
+Minimum q score is :485494.0
+True variants are: ['pyrG_117', 'pyrG_43', 'pyrG_187', 'pyrG_133', 'pyrG_145', 'pyrG_191']
+
+Predicted variants are: ['pyrG_114', 'pyrG_117', 'pyrG_133', 'pyrG_145', 'pyrG_187', 'pyrG_191', 'pyrG_43']
+
+True proportions are: {'pyrG_191': 12.37588212901418, 'pyrG_187': 7.604056588954513, 'pyrG_43': 35.43510659539096, 'pyrG_145': 28.48512791969749, 'pyrG_133': 9.301258200827323, 'pyrG_117': 6.798568566115535}
+
+Predicted proportions using Counting method are: {'pyrG_191': 18.459119496855337, 'pyrG_187': 7.547169811320757, 'pyrG_43': 26.477987421383645, 'pyrG_145': 26.415094339622648, 'pyrG_133': 9.433962264150946, 'pyrG_117': 9.59119496855347, 'pyrG_114': 2.075471698113208}
+
+This sim is not predicted correctly based on quality score.
+              pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                    
+pyrG_145-177    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+              pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                   ...               
+pyrG_145-177      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+              pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                          
+pyrG_145-177     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+              pyrG_98  pyrG_99  
+Read                            
+pyrG_145-177     -1.0     -1.0  
+
+[1 rows x 193 columns]
+======================================== SIMULATION 34 ====================================================
+
+Number of optimal solutions: 3
+[['pyrG_144', 'pyrG_190', 'pyrG_55'], ['pyrG_123', 'pyrG_144', 'pyrG_190'], ['pyrG_114', 'pyrG_144', 'pyrG_190']]
+Qscores are: [217078.0, 214616.0, 213478.0]
+Minimum q score is :213478.0
+True variants are: ['pyrG_144', 'pyrG_190']
+
+Predicted variants are: ['pyrG_114', 'pyrG_144', 'pyrG_190']
+
+True proportions are: {'pyrG_144': 49.20165678359731, 'pyrG_190': 50.798343216402685}
+
+Predicted proportions using Counting method are: {'pyrG_144': 47.740112994350284, 'pyrG_190': 50.47080979284369, 'pyrG_114': 1.7890772128060264}
+
+This sim is not predicted correctly based on quality score.
+              pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                    
+pyrG_144-450    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+              pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                   ...               
+pyrG_144-450      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+              pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                          
+pyrG_144-450     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+              pyrG_98  pyrG_99  
+Read                            
+pyrG_144-450     -1.0     -1.0  
+
+[1 rows x 188 columns]
+======================================== SIMULATION 35 ====================================================
+
+Number of optimal solutions: 1
+[['pyrG_128', 'pyrG_149', 'pyrG_156']]
+Qscores are: [202509.0]
+Minimum q score is :202509.0
+True variants are: ['pyrG_156', 'pyrG_128']
+
+Predicted variants are: ['pyrG_128', 'pyrG_149', 'pyrG_156']
+
+True proportions are: {'pyrG_156': 59.70202431656912, 'pyrG_128': 40.297975683430884}
+
+Predicted proportions using Counting method are: {'pyrG_156': 57.53295668549906, 'pyrG_149': 9.416195856873824, 'pyrG_128': 33.05084745762712}
+
+This sim is not predicted correctly based on quality score.
+======================================== SIMULATION 36 ====================================================
+
+Number of optimal solutions: 6
+[['pyrG_104', 'pyrG_115', 'pyrG_123', 'pyrG_125', 'pyrG_128', 'pyrG_151', 'pyrG_166', 'pyrG_177'], ['pyrG_104', 'pyrG_115', 'pyrG_125', 'pyrG_128', 'pyrG_151', 'pyrG_166', 'pyrG_177', 'pyrG_55'], ['pyrG_104', 'pyrG_114', 'pyrG_115', 'pyrG_125', 'pyrG_128', 'pyrG_149', 'pyrG_151', 'pyrG_166', 'pyrG_177'], ['pyrG_104', 'pyrG_115', 'pyrG_123', 'pyrG_125', 'pyrG_128', 'pyrG_149', 'pyrG_151', 'pyrG_166', 'pyrG_177'], ['pyrG_104', 'pyrG_115', 'pyrG_125', 'pyrG_128', 'pyrG_149', 'pyrG_151', 'pyrG_166', 'pyrG_177', 'pyrG_55'], ['pyrG_104', 'pyrG_114', 'pyrG_115', 'pyrG_125', 'pyrG_128', 'pyrG_151', 'pyrG_166', 'pyrG_177']]
+Qscores are: [626314.0, 622305.0, 710755.0, 718534.0, 714525.0, 618535.0]
+Minimum q score is :618535.0
+True variants are: ['pyrG_151', 'pyrG_115', 'pyrG_166', 'pyrG_104', 'pyrG_125', 'pyrG_128', 'pyrG_177']
+
+Predicted variants are: ['pyrG_104', 'pyrG_114', 'pyrG_115', 'pyrG_125', 'pyrG_128', 'pyrG_151', 'pyrG_166', 'pyrG_177']
+
+True proportions are: {'pyrG_128': 18.490623406751034, 'pyrG_177': 21.54119574000834, 'pyrG_166': 16.602047065253945, 'pyrG_151': 8.01570071943163, 'pyrG_125': 23.249876672120283, 'pyrG_104': 0.3829883379715405, 'pyrG_115': 11.71756805846322}
+
+Predicted proportions using Counting method are: {'pyrG_128': 14.915572232645403, 'pyrG_177': 18.105065666041273, 'pyrG_166': 14.540337711069418, 'pyrG_151': 10.412757973733584, 'pyrG_125': 23.17073170731707, 'pyrG_104': 0.9380863039399624, 'pyrG_115': 14.352720450281424, 'pyrG_114': 3.564727954971857}
+
+This sim is not predicted correctly based on quality score.
+              pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                    
+pyrG_125-112    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+              pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                   ...               
+pyrG_125-112      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+              pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                          
+pyrG_125-112     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+              pyrG_98  pyrG_99  
+Read                            
+pyrG_125-112     -1.0     -1.0  
+
+[1 rows x 189 columns]
+======================================== SIMULATION 37 ====================================================
+
+Number of optimal solutions: 20
+[['pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_44', 'pyrG_46', 'pyrG_47', 'pyrG_55', 'pyrG_81', 'pyrG_95'], ['pyrG_116', 'pyrG_123', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_46', 'pyrG_47', 'pyrG_81'], ['pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_46', 'pyrG_47', 'pyrG_55', 'pyrG_81'], ['pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_150', 'pyrG_46', 'pyrG_47', 'pyrG_55', 'pyrG_81'], ['pyrG_116', 'pyrG_123', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_150', 'pyrG_46', 'pyrG_47', 'pyrG_81'], ['pyrG_114', 'pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_150', 'pyrG_46', 'pyrG_47', 'pyrG_81'], ['pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_154', 'pyrG_46', 'pyrG_47', 'pyrG_55', 'pyrG_81'], ['pyrG_114', 'pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_154', 'pyrG_46', 'pyrG_47', 'pyrG_81'], ['pyrG_116', 'pyrG_123', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_154', 'pyrG_46', 'pyrG_47', 'pyrG_81'], ['pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_191', 'pyrG_46', 'pyrG_47', 'pyrG_55', 'pyrG_81'], ['pyrG_114', 'pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_191', 'pyrG_46', 'pyrG_47', 'pyrG_81'], ['pyrG_116', 'pyrG_123', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_191', 'pyrG_46', 'pyrG_47', 'pyrG_81'], ['pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_41', 'pyrG_46', 'pyrG_47', 'pyrG_55', 'pyrG_81'], ['pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_43', 'pyrG_46', 'pyrG_47', 'pyrG_55', 'pyrG_81'], ['pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_44', 'pyrG_46', 'pyrG_47', 'pyrG_55', 'pyrG_81'], ['pyrG_114', 'pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_41', 'pyrG_46', 'pyrG_47', 'pyrG_81'], ['pyrG_114', 'pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_43', 'pyrG_46', 'pyrG_47', 'pyrG_81'], ['pyrG_114', 'pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_44', 'pyrG_46', 'pyrG_47', 'pyrG_81'], ['pyrG_116', 'pyrG_123', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_41', 'pyrG_46', 'pyrG_47', 'pyrG_81'], ['pyrG_114', 'pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_46', 'pyrG_47', 'pyrG_81']]
+Qscores are: [726010.0, 583875.0, 570326.0, 647505.0, 661054.0, 640288.0, 648457.0, 641240.0, 662006.0, 649923.0, 642706.0, 663472.0, 649607.0, 650288.0, 648380.0, 642390.0, 643071.0, 641163.0, 663156.0, 563109.0]
+Minimum q score is :563109.0
+True variants are: ['pyrG_149', 'pyrG_46', 'pyrG_47', 'pyrG_128', 'pyrG_137', 'pyrG_116', 'pyrG_81']
+
+Predicted variants are: ['pyrG_114', 'pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_46', 'pyrG_47', 'pyrG_81']
+
+True proportions are: {'pyrG_137': 2.7879565543753753, 'pyrG_81': 22.55910255715715, 'pyrG_46': 11.317745459182364, 'pyrG_149': 24.080520056475287, 'pyrG_128': 5.692073373114489, 'pyrG_47': 23.220345972248495, 'pyrG_116': 10.34225602744684}
+
+Predicted proportions using Counting method are: {'pyrG_128': 8.035714285714286, 'pyrG_81': 20.58270676691729, 'pyrG_46': 11.466165413533837, 'pyrG_116': 10.714285714285717, 'pyrG_137': 2.443609022556392, 'pyrG_47': 21.444235588972422, 'pyrG_149': 18.703007518796987, 'pyrG_114': 6.610275689223058}
+
+This sim is not predicted correctly based on quality score.
+            pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  pyrG_104  \
+Read                                                                            
+pyrG_81-99    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0      -1.0   
+
+            pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  pyrG_91  pyrG_92  \
+Read                                       ...                                 
+pyrG_81-99      -1.0      -1.0      -1.0   ...        -1.0     -1.0     -1.0   
+
+            pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  pyrG_98  pyrG_99  
+Read                                                                       
+pyrG_81-99     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0  
+
+[1 rows x 189 columns]
+======================================== SIMULATION 38 ====================================================
+
+Number of optimal solutions: 6
+[['pyrG_123', 'pyrG_143', 'pyrG_31', 'pyrG_33', 'pyrG_44'], ['pyrG_143', 'pyrG_31', 'pyrG_33', 'pyrG_44', 'pyrG_55'], ['pyrG_123', 'pyrG_143', 'pyrG_146', 'pyrG_31', 'pyrG_33', 'pyrG_44'], ['pyrG_143', 'pyrG_146', 'pyrG_31', 'pyrG_33', 'pyrG_44', 'pyrG_55'], ['pyrG_114', 'pyrG_143', 'pyrG_146', 'pyrG_31', 'pyrG_33', 'pyrG_44'], ['pyrG_114', 'pyrG_143', 'pyrG_31', 'pyrG_33', 'pyrG_44']]
+Qscores are: [388738.0, 384642.0, 493528.0, 489432.0, 479695.0, 374905.0]
+Minimum q score is :374905.0
+True variants are: ['pyrG_31', 'pyrG_143', 'pyrG_33', 'pyrG_44']
+
+Predicted variants are: ['pyrG_114', 'pyrG_143', 'pyrG_31', 'pyrG_33', 'pyrG_44']
+
+True proportions are: {'pyrG_31': 35.11398183269936, 'pyrG_33': 18.06524213954517, 'pyrG_44': 16.147702164153284, 'pyrG_143': 30.673073863602184}
+
+Predicted proportions using Counting method are: {'pyrG_31': 30.752487562189046, 'pyrG_33': 13.868159203980094, 'pyrG_143': 28.358208955223898, 'pyrG_44': 16.417910447761187, 'pyrG_114': 10.603233830845777}
+
+This sim is not predicted correctly based on quality score.
+             pyrG_1  pyrG_10  pyrG_100  pyrG_101  pyrG_102  pyrG_103  \
+Read                                                                   
+pyrG_31-268    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+pyrG_33-47     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+
+             pyrG_104  pyrG_105  pyrG_106  pyrG_107   ...     pyrG_90  \
+Read                                                  ...               
+pyrG_31-268      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+pyrG_33-47       -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             pyrG_91  pyrG_92  pyrG_93  pyrG_94  pyrG_95  pyrG_96  pyrG_97  \
+Read                                                                         
+pyrG_31-268     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+pyrG_33-47      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             pyrG_98  pyrG_99  
+Read                           
+pyrG_31-268     -1.0     -1.0  
+pyrG_33-47      -1.0     -1.0  
+
+[2 rows x 189 columns]
+======================================== SIMULATION 39 ====================================================
+
+Number of optimal solutions: 3
+[['pyrG_142', 'pyrG_168', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_142', 'pyrG_168', 'pyrG_177', 'pyrG_182', 'pyrG_21', 'pyrG_4', 'pyrG_86'], ['pyrG_12', 'pyrG_142', 'pyrG_168', 'pyrG_177', 'pyrG_182', 'pyrG_21', 'pyrG_86']]
+Qscores are: [490161.0, 491563.0, 493624.0]
+Minimum q score is :490161.0
+True variants are: ['pyrG_177', 'pyrG_142', 'pyrG_1', 'pyrG_86', 'pyrG_21', 'pyrG_2', 'pyrG_182']
+
+Predicted variants are: ['pyrG_142', 'pyrG_168', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86']
+
+True proportions are: {'pyrG_182': 29.53918913930934, 'pyrG_142': 5.259377998643551, 'pyrG_177': 16.672129287711837, 'pyrG_21': 2.955865702129442, 'pyrG_2': 14.496289172892768, 'pyrG_1': 10.082435483708027, 'pyrG_86': 20.994713215605046}
+
+Predicted proportions using Counting method are: {'pyrG_168': 12.641509433962264, 'pyrG_177': 17.641509433962266, 'pyrG_182': 29.056603773584907, 'pyrG_21': 2.4528301886792456, 'pyrG_2': 13.207547169811322, 'pyrG_142': 5.660377358490567, 'pyrG_86': 19.339622641509436}
+
+This sim is not predicted correctly based on quality score.
+======================================== SIMULATION 40 ====================================================
+
+Number of optimal solutions: 1
+[['pyrG_2', 'pyrG_98']]
+Qscores are: [82462.0]
+Minimum q score is :82462.0
+True variants are: ['pyrG_2', 'pyrG_98']
+
+Predicted variants are: ['pyrG_2', 'pyrG_98']
+
+True proportions are: {'pyrG_2': 6.532386988616142, 'pyrG_98': 93.46761301138386}
+
+Predicted proportions using Counting method are: {'pyrG_2': 6.4638783269961975, 'pyrG_98': 93.53612167300379}
+
+This sim is predicted correctly based on quality score.
+======================================== pyrG: SUMMARY STATISTICS ====================================================
+
+(1)Total Variation Distance:
+
+Counting Method ~ Total variation distances are: [0.6429949176675267, 18.475049625781224, 4.734965979346641, 0.24385001465097877, 8.556537297917629, 12.21804511278196, 2.9374033418208256, 14.454731084048941, 0.10252099450432972, 21.481532551437184, 0.9148805280332004, 51.73622151642881, 10.037237628782037, 17.387218045112775, 0.14010898540423788, 1.797970798232254, 6.812293695544964, 1.405487758514223, 1.5008421871529674, 43.615617850703046, 3.811109069779688, 0.2121704483439748, 8.403771010378357, 29.30095762746766, 46.4828897338403, 39.241167328207, 24.30656218689498, 11.797752808988761, 23.949453347478016, 11.461393026929724, 13.702024874484682, 26.706671642505672, 11.08403953171592, 1.7890772128060235, 9.416195856873825, 9.152035567060437, 9.474366243013211, 10.873442114453677, 14.011888940059709, 0.06850866161993707] 
+
+Counting Method ~ The average of total variation distance is: 13.1110246787 
+
+Counting Method ~ The standard deviation of total variation distance is: 13.3318648996 
+
+(2)Total Variation Distance for variants which are predicted correctly:
+
+Counting Method ~ Total variation distances are: [0.6429949176675267, 4.734965979346641, 0.24385001465097877, 2.9374033418208256, 0.10252099450432972, 0.9148805280332004, 0.14010898540423788, 1.797970798232254, 1.405487758514223, 1.5008421871529674, 0.2121704483439748, 13.702024874484682, 0.06850866161993707] 
+
+Counting Method ~ The average of total variation distance is: 2.18490226844 
+
+Counting Method ~ The standard deviation of total variation distance is: 3.56893367482 
+
+(3) Precision: 
+
+Precision is: [1.0, 0.8571428571428571, 1.0, 1.0, 0.8, 0.6666666666666666, 1.0, 0.75, 1.0, 0.6666666666666666, 1.0, 0.7142857142857143, 0.8571428571428571, 0.6666666666666666, 1.0, 1.0, 0.875, 1.0, 1.0, 0.5, 0.8571428571428571, 1.0, 0.875, 0.75, 0.6666666666666666, 0.7142857142857143, 0.75, 0.6666666666666666, 0.7142857142857143, 0.8333333333333334, 1.0, 0.6666666666666666, 0.8571428571428571, 0.6666666666666666, 0.6666666666666666, 0.875, 0.875, 0.8, 0.8571428571428571, 1.0] 
+
+Average of precision is:  0.836130952381 
+
+Standard deviation of precision is:  0.138697769581 
+
+(4) Recall : 
+
+Recall is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.75, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0] 
+
+Average of recall is:  0.964345238095 
+
+Standard deviation of recall is:  0.0816244641407 
+
+(5) Objective Value: 
+
+Predicted objective values are: [38.0, 46.0, 55.0, 30.0, 43.0, 32.0, 47.0, 30.0, 37.0, 42.0, 50.0, 41.0, 51.0, 32.0, 24.0, 44.0, 53.0, 44.0, 49.0, 42.0, 50.0, 37.0, 52.0, 35.0, 26.0, 48.0, 32.0, 32.0, 54.0, 45.0, 37.0, 26.0, 48.0, 29.0, 25.0, 48.0, 53.0, 47.0, 50.0, 23.0] 
+
+True objective values are: [38.0, 60.0, 55.0, 30.0, 47.0, 33.0, 47.0, 34.0, 37.0, 47.0, 50.0, 46.0, 55.0, 36.0, 24.0, 44.0, 57.0, 44.0, 49.0, 47.0, 54.0, 37.0, 61.0, 42.0, 27.0, 53.0, 36.0, 33.0, 63.0, 49.0, 37.0, 26.0, 52.0, 33.0, 26.0, 52.0, 57.0, 56.0, 51.0, 23.0] 
+
+The difference in objective values are: [0.0, -14.0, 0.0, 0.0, -4.0, -1.0, 0.0, -4.0, 0.0, -5.0, 0.0, -5.0, -4.0, -4.0, 0.0, 0.0, -4.0, 0.0, 0.0, -5.0, -4.0, 0.0, -9.0, -7.0, -1.0, -5.0, -4.0, -1.0, -9.0, -4.0, 0.0, 0.0, -4.0, -4.0, -1.0, -4.0, -4.0, -9.0, -1.0, 0.0] 
+
+Average of difference in objective value is:  -3.025 
+
+Standard deviation of difference in objective value is:  3.23641391049 
+
+(6)Accuracy: 
+
+Total number of simulations:  40 
+
+Number of simulations which are predicted correctly: 13
+
+Percentage of simulations predicted correctly:  32.5 %
+
+(7)Optimal solutions: 
+
+Number of optimal solutions: [1, 3, 16, 1, 3, 3, 1, 3, 1, 3, 2, 3, 3, 7, 1, 1, 10, 2, 2, 20, 6, 4, 6, 3, 9, 3, 9, 3, 15, 3, 1, 20, 3, 3, 1, 6, 20, 6, 3, 1]
+
+Average number of optimal solutions: 5.275
+
+(8)Statistics about quality score: 
+
+Number of simulations having multiple solutions: 31
+Number of these simulations which are correct: 5
+The percentage is : 16.1290322581 %
