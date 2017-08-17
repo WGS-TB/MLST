@@ -1,832 +1,665 @@
 ======================================== SIMULATION 1 ====================================================
 
 Number of optimal solutions: 1
+[['clpX_161', 'clpX_171', 'clpX_47', 'clpX_61']]
+Qscores are: [628496.0]
+Minimum q score is :628496.0
 True variants are: ['clpX_61', 'clpX_47', 'clpX_161', 'clpX_171']
 
 Predicted variants are: ['clpX_161', 'clpX_171', 'clpX_47', 'clpX_61']
 
 True proportions are: {'clpX_47': 37.58032467379183, 'clpX_61': 34.20562264767503, 'clpX_171': 8.358929604468765, 'clpX_161': 19.855123074064377}
 
-Predicted proportions using Bayes method are: {'clpX_61': 34.061869996106225, 'clpX_47': 27.901445058824464, 'clpX_171': 8.6017060433955947, 'clpX_161': 29.434978901673713}
+Predicted proportions using Counting method are: {'clpX_61': 34.105960264900666, 'clpX_47': 35.84437086092716, 'clpX_171': 8.609271523178808, 'clpX_161': 21.44039735099338}
 
-Predicted proportions using Counting method are: {'clpX_61': 34.105960264900666, 'clpX_47': 35.76158940397351, 'clpX_171': 8.609271523178808, 'clpX_161': 21.523178807947023}
-
-All solutions: 
-{'sol_0': ['clpX_161', 'clpX_171', 'clpX_47', 'clpX_61']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 5073.3159467379501}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 2 ====================================================
 
-Number of optimal solutions: 20
+Number of optimal solutions: 2
+[['clpX_100', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_178', 'clpX_30'], ['clpX_121', 'clpX_131', 'clpX_135', 'clpX_158', 'clpX_178', 'clpX_30']]
+Qscores are: [952687.0, 963713.0]
+Minimum q score is :952687.0
 True variants are: ['clpX_178', 'clpX_131', 'clpX_30', 'clpX_121', 'clpX_135', 'clpX_100']
 
 Predicted variants are: ['clpX_100', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_178', 'clpX_30']
 
 True proportions are: {'clpX_100': 21.408318800362494, 'clpX_131': 22.936649247655915, 'clpX_121': 1.0627279574993669, 'clpX_178': 1.5847990271009047, 'clpX_135': 15.858755650497711, 'clpX_30': 37.14874931688361}
 
-Predicted proportions using Bayes method are: {'clpX_100': 20.402814156943279, 'clpX_131': 22.857574375090302, 'clpX_121': 1.4069004637385092, 'clpX_178': 19.867895157639666, 'clpX_135': 15.240880882018155, 'clpX_30': 20.223934964570109}
+Predicted proportions using Counting method are: {'clpX_100': 17.869911991199146, 'clpX_131': 21.624037403740378, 'clpX_121': 1.3201320132013197, 'clpX_178': 7.212596259625959, 'clpX_135': 15.841584158415836, 'clpX_30': 36.13173817381737}
 
-Predicted proportions using Counting method are: {'clpX_100': 16.976072607260747, 'clpX_131': 22.6553905390539, 'clpX_121': 1.3201320132013197, 'clpX_178': 7.418866886688668, 'clpX_135': 15.841584158415836, 'clpX_30': 35.78795379537952}
-
-All solutions: 
-{'sol_8': ['clpX_107', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_158', 'clpX_178', 'clpX_30'], 'sol_9': ['clpX_121', 'clpX_131', 'clpX_135', 'clpX_158', 'clpX_175', 'clpX_178', 'clpX_30'], 'sol_2': ['clpX_100', 'clpX_103', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_178', 'clpX_30'], 'sol_3': ['clpX_100', 'clpX_121', 'clpX_125', 'clpX_131', 'clpX_135', 'clpX_178', 'clpX_30'], 'sol_0': ['clpX_100', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_178', 'clpX_30'], 'sol_1': ['clpX_121', 'clpX_131', 'clpX_135', 'clpX_158', 'clpX_178', 'clpX_30'], 'sol_6': ['clpX_100', 'clpX_107', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_178', 'clpX_30'], 'sol_7': ['clpX_100', 'clpX_105', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_178', 'clpX_30'], 'sol_4': ['clpX_103', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_158', 'clpX_178', 'clpX_30'], 'sol_5': ['clpX_121', 'clpX_125', 'clpX_131', 'clpX_135', 'clpX_158', 'clpX_178', 'clpX_30'], 'sol_18': ['clpX_100', 'clpX_105', 'clpX_107', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_178', 'clpX_30'], 'sol_19': ['clpX_105', 'clpX_107', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_158', 'clpX_178', 'clpX_30'], 'sol_14': ['clpX_103', 'clpX_105', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_158', 'clpX_178', 'clpX_30'], 'sol_15': ['clpX_121', 'clpX_125', 'clpX_131', 'clpX_135', 'clpX_158', 'clpX_175', 'clpX_178', 'clpX_30'], 'sol_16': ['clpX_105', 'clpX_121', 'clpX_125', 'clpX_131', 'clpX_135', 'clpX_158', 'clpX_178', 'clpX_30'], 'sol_17': ['clpX_100', 'clpX_107', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_175', 'clpX_178', 'clpX_30'], 'sol_10': ['clpX_105', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_158', 'clpX_178', 'clpX_30'], 'sol_11': ['clpX_100', 'clpX_103', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_175', 'clpX_178', 'clpX_30'], 'sol_12': ['clpX_100', 'clpX_103', 'clpX_105', 'clpX_121', 'clpX_131', 'clpX_135', 'clpX_178', 'clpX_30'], 'sol_13': ['clpX_100', 'clpX_105', 'clpX_121', 'clpX_125', 'clpX_131', 'clpX_135', 'clpX_178', 'clpX_30']}
-
-Solutions negative log likelihood score: 
-{'sol_8': 5305.6623047646408, 'sol_9': 5315.6119694751615, 'sol_2': 5278.6239154417854, 'sol_3': 5280.7599977883183, 'sol_0': 5225.5222050959892, 'sol_1': 5237.7525594423687, 'sol_6': 5293.4411297797978, 'sol_7': 5303.4231271289045, 'sol_4': 5290.3455862170085, 'sol_5': 5292.9891003717867, 'sol_18': 5360.7991686965825, 'sol_19': 5373.0123483720517, 'sol_14': 5357.9746230928913, 'sol_15': 5360.5896093929359, 'sol_16': 5360.6078097759673, 'sol_17': 5360.7643689577517, 'sol_10': 5315.6453850757171, 'sol_11': 5346.2219397415129, 'sol_12': 5346.2562326599837, 'sol_13': 5348.3868026027567}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 3 ====================================================
 
-Number of optimal solutions: 6
+Number of optimal solutions: 2
+[['clpX_111', 'clpX_29', 'clpX_36', 'clpX_50', 'clpX_95', 'clpX_99'], ['clpX_111', 'clpX_29', 'clpX_36', 'clpX_42', 'clpX_50', 'clpX_95']]
+Qscores are: [1108840.0, 1108840.0]
+Minimum q score is :1108840.0
 True variants are: ['clpX_95', 'clpX_111', 'clpX_50', 'clpX_99', 'clpX_29', 'clpX_36']
 
 Predicted variants are: ['clpX_111', 'clpX_29', 'clpX_36', 'clpX_50', 'clpX_95', 'clpX_99']
 
 True proportions are: {'clpX_99': 13.305348492199128, 'clpX_95': 14.53644431568418, 'clpX_111': 28.5871663230566, 'clpX_36': 27.10993497596725, 'clpX_29': 11.352912916616257, 'clpX_50': 5.108192976476572}
 
-Predicted proportions using Bayes method are: {'clpX_99': 11.386114420126656, 'clpX_95': 14.913238234695839, 'clpX_50': 8.1433576231091749, 'clpX_111': 27.745768368923489, 'clpX_36': 26.703103056262616, 'clpX_29': 11.108418296882226}
+Predicted proportions using Counting method are: {'clpX_99': 12.885038503850382, 'clpX_95': 14.52145214521452, 'clpX_50': 5.6655665566556594, 'clpX_111': 28.382838283828377, 'clpX_36': 27.062706270627057, 'clpX_29': 11.482398239823992}
 
-Predicted proportions using Counting method are: {'clpX_99': 12.76127612761276, 'clpX_95': 14.52145214521452, 'clpX_50': 5.583058305830579, 'clpX_111': 28.382838283828377, 'clpX_36': 27.062706270627057, 'clpX_29': 11.688668866886697}
-
-All solutions: 
-{'sol_2': ['clpX_111', 'clpX_175', 'clpX_29', 'clpX_36', 'clpX_50', 'clpX_95', 'clpX_99'], 'sol_3': ['clpX_105', 'clpX_111', 'clpX_29', 'clpX_36', 'clpX_50', 'clpX_95', 'clpX_99'], 'sol_0': ['clpX_111', 'clpX_29', 'clpX_36', 'clpX_50', 'clpX_95', 'clpX_99'], 'sol_1': ['clpX_111', 'clpX_29', 'clpX_36', 'clpX_38', 'clpX_50', 'clpX_95', 'clpX_99'], 'sol_4': ['clpX_111', 'clpX_175', 'clpX_29', 'clpX_36', 'clpX_38', 'clpX_50', 'clpX_95', 'clpX_99'], 'sol_5': ['clpX_105', 'clpX_111', 'clpX_29', 'clpX_36', 'clpX_38', 'clpX_50', 'clpX_95', 'clpX_99']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 5406.9561046255885, 'sol_3': 5407.9465094797142, 'sol_0': 5329.5004881547156, 'sol_1': 5360.9329365229514, 'sol_4': 5427.5352836985894, 'sol_5': 5428.5256885527597}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 4 ====================================================
 
 Number of optimal solutions: 1
+[['clpX_12', 'clpX_137', 'clpX_57']]
+Qscores are: [449792.0]
+Minimum q score is :449792.0
 True variants are: ['clpX_12', 'clpX_57', 'clpX_137']
 
 Predicted variants are: ['clpX_12', 'clpX_137', 'clpX_57']
 
 True proportions are: {'clpX_137': 39.8117742538673, 'clpX_12': 4.431067746690846, 'clpX_57': 55.75715799944185}
 
-Predicted proportions using Bayes method are: {'clpX_57': 55.448794675635646, 'clpX_12': 4.7976009725112458, 'clpX_137': 39.753604351853099}
-
 Predicted proportions using Counting method are: {'clpX_57': 55.629139072847686, 'clpX_12': 4.635761589403974, 'clpX_137': 39.735099337748345}
 
-All solutions: 
-{'sol_0': ['clpX_12', 'clpX_137', 'clpX_57']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 4937.8953626410621}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 5 ====================================================
 
-Number of optimal solutions: 5
+Number of optimal solutions: 1
+[['clpX_167', 'clpX_178', 'clpX_181', 'clpX_98']]
+Qscores are: [674536.0]
+Minimum q score is :674536.0
 True variants are: ['clpX_98', 'clpX_178', 'clpX_181', 'clpX_167']
 
 Predicted variants are: ['clpX_167', 'clpX_178', 'clpX_181', 'clpX_98']
 
 True proportions are: {'clpX_181': 13.289037090029643, 'clpX_178': 25.75800596009843, 'clpX_167': 22.821031819153596, 'clpX_98': 38.13192513071833}
 
-Predicted proportions using Bayes method are: {'clpX_167': 22.847682119205299, 'clpX_181': 13.245033112582782, 'clpX_98': 38.003856968171966, 'clpX_178': 25.903427800039946}
-
 Predicted proportions using Counting method are: {'clpX_167': 22.8476821192053, 'clpX_181': 13.245033112582782, 'clpX_98': 38.0794701986755, 'clpX_178': 25.827814569536425}
 
-All solutions: 
-{'sol_2': ['clpX_125', 'clpX_167', 'clpX_178', 'clpX_181', 'clpX_98'], 'sol_3': ['clpX_103', 'clpX_167', 'clpX_178', 'clpX_181', 'clpX_98'], 'sol_0': ['clpX_167', 'clpX_178', 'clpX_181', 'clpX_98'], 'sol_1': ['clpX_167', 'clpX_178', 'clpX_181', 'clpX_26', 'clpX_98'], 'sol_4': ['clpX_107', 'clpX_167', 'clpX_178', 'clpX_181', 'clpX_98']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 5208.3048534596564, 'sol_3': 5209.7064526213662, 'sol_0': 5112.7689791502144, 'sol_1': 5206.4119158277936, 'sol_4': 5217.1237028134774}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 6 ====================================================
 
 Number of optimal solutions: 1
+[['clpX_165', 'clpX_98']]
+Qscores are: [224360.0]
+Minimum q score is :224360.0
 True variants are: ['clpX_165', 'clpX_98']
 
 Predicted variants are: ['clpX_165', 'clpX_98']
 
 True proportions are: {'clpX_165': 37.519592284598005, 'clpX_98': 62.480407715401995}
 
-Predicted proportions using Bayes method are: {'clpX_165': 37.541528239202655, 'clpX_98': 62.458471760797345}
-
 Predicted proportions using Counting method are: {'clpX_165': 37.54152823920266, 'clpX_98': 62.458471760797345}
 
-All solutions: 
-{'sol_0': ['clpX_165', 'clpX_98']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 4671.4750023205206}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 7 ====================================================
 
-Number of optimal solutions: 20
+Number of optimal solutions: 1
+[['clpX_104', 'clpX_119', 'clpX_16', 'clpX_68', 'clpX_92']]
+Qscores are: [820783.0]
+Minimum q score is :820783.0
 True variants are: ['clpX_104', 'clpX_16', 'clpX_92', 'clpX_68', 'clpX_119']
 
 Predicted variants are: ['clpX_104', 'clpX_119', 'clpX_16', 'clpX_68', 'clpX_92']
 
 True proportions are: {'clpX_16': 28.596375936700273, 'clpX_119': 11.52900575270846, 'clpX_104': 1.4413177598507472, 'clpX_92': 30.02030344865027, 'clpX_68': 28.412997102090248}
 
-Predicted proportions using Bayes method are: {'clpX_16': 28.359430822738414, 'clpX_68': 19.694786265337946, 'clpX_104': 20.438618282696105, 'clpX_92': 19.988756052177916, 'clpX_119': 11.51840857704962}
+Predicted proportions using Counting method are: {'clpX_16': 28.382838283828384, 'clpX_68': 25.206270627062707, 'clpX_104': 6.023102310231023, 'clpX_92': 28.836633663366335, 'clpX_119': 11.551155115511552}
 
-Predicted proportions using Counting method are: {'clpX_16': 28.382838283828384, 'clpX_68': 25.783828382838283, 'clpX_104': 5.6105610561056105, 'clpX_92': 28.67161716171617, 'clpX_119': 11.551155115511552}
-
-All solutions: 
-{'sol_8': ['clpX_104', 'clpX_119', 'clpX_16', 'clpX_173', 'clpX_68', 'clpX_92'], 'sol_9': ['clpX_104', 'clpX_119', 'clpX_16', 'clpX_18', 'clpX_21', 'clpX_68', 'clpX_92'], 'sol_2': ['clpX_104', 'clpX_119', 'clpX_16', 'clpX_18', 'clpX_68', 'clpX_92'], 'sol_3': ['clpX_104', 'clpX_119', 'clpX_15', 'clpX_16', 'clpX_68', 'clpX_92'], 'sol_0': ['clpX_104', 'clpX_119', 'clpX_16', 'clpX_68', 'clpX_92'], 'sol_1': ['clpX_104', 'clpX_119', 'clpX_16', 'clpX_19', 'clpX_68', 'clpX_92'], 'sol_6': ['clpX_104', 'clpX_119', 'clpX_148', 'clpX_16', 'clpX_68', 'clpX_92'], 'sol_7': ['clpX_104', 'clpX_119', 'clpX_149', 'clpX_16', 'clpX_68', 'clpX_92'], 'sol_4': ['clpX_104', 'clpX_119', 'clpX_16', 'clpX_20', 'clpX_68', 'clpX_92'], 'sol_5': ['clpX_104', 'clpX_119', 'clpX_16', 'clpX_21', 'clpX_68', 'clpX_92'], 'sol_18': ['clpX_104', 'clpX_119', 'clpX_149', 'clpX_15', 'clpX_16', 'clpX_18', 'clpX_68', 'clpX_92'], 'sol_19': ['clpX_104', 'clpX_119', 'clpX_15', 'clpX_16', 'clpX_173', 'clpX_18', 'clpX_68', 'clpX_92'], 'sol_14': ['clpX_104', 'clpX_119', 'clpX_16', 'clpX_20', 'clpX_21', 'clpX_68', 'clpX_92'], 'sol_15': ['clpX_104', 'clpX_119', 'clpX_148', 'clpX_15', 'clpX_16', 'clpX_19', 'clpX_68', 'clpX_92'], 'sol_16': ['clpX_104', 'clpX_119', 'clpX_148', 'clpX_15', 'clpX_16', 'clpX_18', 'clpX_68', 'clpX_92'], 'sol_17': ['clpX_104', 'clpX_119', 'clpX_149', 'clpX_15', 'clpX_16', 'clpX_19', 'clpX_68', 'clpX_92'], 'sol_10': ['clpX_104', 'clpX_119', 'clpX_16', 'clpX_173', 'clpX_18', 'clpX_68', 'clpX_92'], 'sol_11': ['clpX_104', 'clpX_119', 'clpX_148', 'clpX_15', 'clpX_16', 'clpX_68', 'clpX_92'], 'sol_12': ['clpX_104', 'clpX_119', 'clpX_149', 'clpX_15', 'clpX_16', 'clpX_68', 'clpX_92'], 'sol_13': ['clpX_104', 'clpX_119', 'clpX_15', 'clpX_16', 'clpX_173', 'clpX_68', 'clpX_92']}
-
-Solutions negative log likelihood score: 
-{'sol_8': 5309.3940328197277, 'sol_9': 5321.006631665372, 'sol_2': 5246.161568245052, 'sol_3': 5261.2195639848787, 'sol_0': 5216.2873814449667, 'sol_1': 5245.8649030547904, 'sol_6': 5305.827971516459, 'sol_7': 5306.4014995111029, 'sol_4': 5276.193880403961, 'sol_5': 5302.5185928127612, 'sol_18': 5363.6108816964152, 'sol_19': 5365.0683183568271, 'sol_14': 5350.6474740168915, 'sol_15': 5363.1761776362337, 'sol_16': 5363.3500737355771, 'sol_17': 5363.4369855970717, 'sol_10': 5325.0873233094235, 'sol_11': 5337.3145336399575, 'sol_12': 5337.6466799189284, 'sol_13': 5340.0095306160847}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 8 ====================================================
 
-Number of optimal solutions: 5
+Number of optimal solutions: 1
+[['clpX_138', 'clpX_170', 'clpX_79']]
+Qscores are: [449789.0]
+Minimum q score is :449789.0
 True variants are: ['clpX_170', 'clpX_79', 'clpX_138']
 
 Predicted variants are: ['clpX_138', 'clpX_170', 'clpX_79']
 
 True proportions are: {'clpX_138': 1.3989274525364226, 'clpX_79': 53.10923775879388, 'clpX_170': 45.491834788669685}
 
-Predicted proportions using Bayes method are: {'clpX_138': 13.359505993098665, 'clpX_79': 41.276255596305369, 'clpX_170': 45.364238410595966}
-
 Predicted proportions using Counting method are: {'clpX_138': 1.6556291390728477, 'clpX_79': 52.980132450331126, 'clpX_170': 45.36423841059603}
 
-All solutions: 
-{'sol_2': ['clpX_138', 'clpX_170', 'clpX_26', 'clpX_79'], 'sol_3': ['clpX_107', 'clpX_138', 'clpX_170', 'clpX_79'], 'sol_0': ['clpX_138', 'clpX_170', 'clpX_79'], 'sol_1': ['clpX_125', 'clpX_138', 'clpX_170', 'clpX_79'], 'sol_4': ['clpX_103', 'clpX_138', 'clpX_170', 'clpX_79']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 5055.028886585349, 'sol_3': 5059.0651123099751, 'sol_0': 4927.8386516381515, 'sol_1': 5049.6781153798183, 'sol_4': 5061.2196924717582}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 9 ====================================================
 
-Number of optimal solutions: 7
+Number of optimal solutions: 1
+[['clpX_139', 'clpX_25', 'clpX_8']]
+Qscores are: [445341.0]
+Minimum q score is :445341.0
 True variants are: ['clpX_8', 'clpX_139', 'clpX_25']
 
 Predicted variants are: ['clpX_139', 'clpX_25', 'clpX_8']
 
 True proportions are: {'clpX_139': 23.327897412612778, 'clpX_25': 34.934600604289734, 'clpX_8': 41.73750198309749}
 
-Predicted proportions using Bayes method are: {'clpX_139': 23.904146037666244, 'clpX_25': 35.165494529774051, 'clpX_8': 40.930359432559705}
-
 Predicted proportions using Counting method are: {'clpX_139': 23.255813953488374, 'clpX_25': 34.883720930232556, 'clpX_8': 41.86046511627907}
 
-All solutions: 
-{'sol_2': ['clpX_139', 'clpX_25', 'clpX_31', 'clpX_8'], 'sol_3': ['clpX_113', 'clpX_139', 'clpX_25', 'clpX_8'], 'sol_0': ['clpX_139', 'clpX_25', 'clpX_8'], 'sol_1': ['clpX_139', 'clpX_25', 'clpX_76', 'clpX_8'], 'sol_6': ['clpX_139', 'clpX_25', 'clpX_31', 'clpX_8', 'clpX_89'], 'sol_4': ['clpX_139', 'clpX_25', 'clpX_8', 'clpX_89'], 'sol_5': ['clpX_139', 'clpX_25', 'clpX_76', 'clpX_8', 'clpX_89']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 5053.7357119161161, 'sol_3': 5054.6258471861875, 'sol_0': 4963.2125103907774, 'sol_1': 5008.3460770580805, 'sol_6': 5163.0417845082065, 'sol_4': 5101.5971933037554, 'sol_5': 5117.6533330201737}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 10 ====================================================
 
-Number of optimal solutions: 22
+Number of optimal solutions: 12
+[['clpX_103', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_54'], ['clpX_104', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_54'], ['clpX_109', 'clpX_137', 'clpX_20', 'clpX_35', 'clpX_54'], ['clpX_106', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_54'], ['clpX_108', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_54'], ['clpX_109', 'clpX_134', 'clpX_20', 'clpX_35', 'clpX_54'], ['clpX_109', 'clpX_20', 'clpX_35', 'clpX_54', 'clpX_64'], ['clpX_109', 'clpX_153', 'clpX_20', 'clpX_35', 'clpX_54'], ['clpX_109', 'clpX_158', 'clpX_20', 'clpX_35', 'clpX_54'], ['clpX_109', 'clpX_160', 'clpX_20', 'clpX_35', 'clpX_54'], ['clpX_109', 'clpX_20', 'clpX_26', 'clpX_35', 'clpX_54'], ['clpX_100', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_54']]
+Qscores are: [758695.0, 711610.0, 749615.0, 740097.0, 710998.0, 758948.0, 725094.0, 735698.0, 763016.0, 754049.0, 756731.0, 767915.0]
+Minimum q score is :710998.0
 True variants are: ['clpX_67', 'clpX_54', 'clpX_20', 'clpX_109', 'clpX_35']
 
-Predicted variants are: ['clpX_100', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_51', 'clpX_54']
+Predicted variants are: ['clpX_108', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_54']
 
 True proportions are: {'clpX_109': 15.163136217990509, 'clpX_20': 19.127309311739072, 'clpX_67': 41.48714909992698, 'clpX_35': 23.647863155425483, 'clpX_54': 0.574542214917952}
 
-Predicted proportions using Bayes method are: {'clpX_100': 12.08155213541381, 'clpX_109': 15.363766016957456, 'clpX_20': 19.121461554942726, 'clpX_51': 13.072308727372791, 'clpX_35': 23.184959239454653, 'clpX_54': 17.175952325858578}
+Predicted proportions using Counting method are: {'clpX_109': 30.435982339955828, 'clpX_108': 18.10154525386316, 'clpX_35': 23.509933774834447, 'clpX_54': 8.747240618101538, 'clpX_20': 19.20529801324504}
 
-Predicted proportions using Counting method are: {'clpX_100': 8.823123620309051, 'clpX_109': 35.23040838852096, 'clpX_20': 19.205298013245045, 'clpX_51': 3.787251655629141, 'clpX_35': 23.50993377483445, 'clpX_54': 9.443984547461367}
-
-All solutions: 
-{'sol_8': ['clpX_106', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_51', 'clpX_54'], 'sol_9': ['clpX_101', 'clpX_109', 'clpX_134', 'clpX_20', 'clpX_35', 'clpX_54'], 'sol_2': ['clpX_104', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_51', 'clpX_54'], 'sol_3': ['clpX_101', 'clpX_108', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_54'], 'sol_0': ['clpX_109', 'clpX_20', 'clpX_35', 'clpX_51', 'clpX_54', 'clpX_67'], 'sol_1': ['clpX_101', 'clpX_104', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_54'], 'sol_6': ['clpX_109', 'clpX_137', 'clpX_20', 'clpX_35', 'clpX_51', 'clpX_54'], 'sol_7': ['clpX_101', 'clpX_106', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_54'], 'sol_4': ['clpX_108', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_51', 'clpX_54'], 'sol_5': ['clpX_101', 'clpX_109', 'clpX_137', 'clpX_20', 'clpX_35', 'clpX_54'], 'sol_18': ['clpX_106', 'clpX_109', 'clpX_15', 'clpX_20', 'clpX_35', 'clpX_51', 'clpX_54'], 'sol_19': ['clpX_101', 'clpX_109', 'clpX_134', 'clpX_15', 'clpX_20', 'clpX_35', 'clpX_54'], 'sol_14': ['clpX_101', 'clpX_109', 'clpX_158', 'clpX_20', 'clpX_35', 'clpX_54'], 'sol_15': ['clpX_100', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_51', 'clpX_54'], 'sol_16': ['clpX_101', 'clpX_108', 'clpX_109', 'clpX_15', 'clpX_20', 'clpX_35', 'clpX_54'], 'sol_17': ['clpX_101', 'clpX_106', 'clpX_109', 'clpX_15', 'clpX_20', 'clpX_35', 'clpX_54'], 'sol_10': ['clpX_109', 'clpX_134', 'clpX_20', 'clpX_35', 'clpX_51', 'clpX_54'], 'sol_11': ['clpX_101', 'clpX_103', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_54'], 'sol_12': ['clpX_103', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_51', 'clpX_54'], 'sol_13': ['clpX_100', 'clpX_101', 'clpX_109', 'clpX_20', 'clpX_35', 'clpX_54'], 'sol_21': ['clpX_101', 'clpX_109', 'clpX_15', 'clpX_158', 'clpX_20', 'clpX_35', 'clpX_54'], 'sol_20': ['clpX_100', 'clpX_101', 'clpX_109', 'clpX_15', 'clpX_20', 'clpX_35', 'clpX_54']}
-
-Solutions negative log likelihood score: 
-{'sol_8': 5179.2814294734317, 'sol_9': 5181.9124631465729, 'sol_2': 5160.9991244786943, 'sol_3': 5161.5880933330691, 'sol_0': 5100.3299737108491, 'sol_1': 5160.4552012610275, 'sol_6': 5177.3127908652477, 'sol_7': 5178.7375062557658, 'sol_4': 5162.1390346163844, 'sol_5': 5176.7688676475809, 'sol_18': 5243.4608471284864, 'sol_19': 5246.0918808106871, 'sol_14': 5212.0831251377231, 'sol_15': 5212.6545373375502, 'sol_16': 5225.7675109897355, 'sol_17': 5242.9169239108278, 'sol_10': 5182.4563718171112, 'sol_11': 5186.6770706572697, 'sol_12': 5187.220979327808, 'sol_13': 5212.0614462986478, 'sol_21': 5276.2625427906896, 'sol_20': 5276.2408639538544}
-
+This sim is not predicted correctly based on quality score.
 ======================================== SIMULATION 11 ====================================================
 
-Number of optimal solutions: 20
+Number of optimal solutions: 7
+[['clpX_12', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_80', 'clpX_86'], ['clpX_12', 'clpX_153', 'clpX_160', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86'], ['clpX_12', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_34', 'clpX_55', 'clpX_86'], ['clpX_12', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_77', 'clpX_86'], ['clpX_12', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_79', 'clpX_86'], ['clpX_12', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86'], ['clpX_12', 'clpX_134', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86']]
+Qscores are: [1199614.0, 1190836.0, 1218778.0, 1233119.0, 1223894.0, 1034235.0, 1193161.0]
+Minimum q score is :1034235.0
 True variants are: ['clpX_134', 'clpX_12', 'clpX_27', 'clpX_153', 'clpX_55', 'clpX_162', 'clpX_86']
 
-Predicted variants are: ['clpX_12', 'clpX_134', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86']
+Predicted variants are: ['clpX_12', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86']
 
 True proportions are: {'clpX_162': 24.350558390719044, 'clpX_12': 25.296546216548528, 'clpX_86': 9.756981242885978, 'clpX_134': 0.31142755241984954, 'clpX_27': 14.627350456132321, 'clpX_153': 13.945484130973304, 'clpX_55': 11.711652010320982}
 
-Predicted proportions using Bayes method are: {'clpX_162': 14.098725319727158, 'clpX_12': 23.691653595523551, 'clpX_86': 10.983205637368776, 'clpX_134': 14.371206469452265, 'clpX_27': 11.503790263866485, 'clpX_153': 15.148982722579422, 'clpX_55': 10.202435991482345}
+Predicted proportions using Counting method are: {'clpX_162': 22.277227722772277, 'clpX_12': 25.082508250825082, 'clpX_86': 9.900990099009901, 'clpX_27': 14.645214521452148, 'clpX_153': 16.13036303630363, 'clpX_55': 11.963696369636963}
 
-Predicted proportions using Counting method are: {'clpX_162': 20.36578657865788, 'clpX_12': 25.082508250825068, 'clpX_86': 9.900990099009896, 'clpX_134': 6.999449944994507, 'clpX_27': 13.063806380638056, 'clpX_153': 12.981298129812995, 'clpX_55': 11.606160616061599}
-
-All solutions: 
-{'sol_8': ['clpX_12', 'clpX_134', 'clpX_153', 'clpX_157', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86'], 'sol_9': ['clpX_101', 'clpX_12', 'clpX_134', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86'], 'sol_2': ['clpX_104', 'clpX_12', 'clpX_153', 'clpX_160', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86'], 'sol_3': ['clpX_104', 'clpX_12', 'clpX_134', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86'], 'sol_0': ['clpX_12', 'clpX_153', 'clpX_160', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86'], 'sol_1': ['clpX_12', 'clpX_134', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86'], 'sol_6': ['clpX_12', 'clpX_153', 'clpX_157', 'clpX_160', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86'], 'sol_7': ['clpX_101', 'clpX_12', 'clpX_153', 'clpX_160', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86'], 'sol_4': ['clpX_12', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_79', 'clpX_86'], 'sol_5': ['clpX_104', 'clpX_12', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_79', 'clpX_86'], 'sol_18': ['clpX_101', 'clpX_104', 'clpX_12', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_34', 'clpX_55', 'clpX_86'], 'sol_19': ['clpX_101', 'clpX_104', 'clpX_12', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_79', 'clpX_86'], 'sol_14': ['clpX_12', 'clpX_153', 'clpX_157', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_79', 'clpX_86'], 'sol_15': ['clpX_101', 'clpX_12', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_34', 'clpX_55', 'clpX_86'], 'sol_16': ['clpX_101', 'clpX_12', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_79', 'clpX_86'], 'sol_17': ['clpX_104', 'clpX_12', 'clpX_153', 'clpX_157', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_79', 'clpX_86'], 'sol_10': ['clpX_104', 'clpX_12', 'clpX_153', 'clpX_157', 'clpX_160', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86'], 'sol_11': ['clpX_101', 'clpX_104', 'clpX_12', 'clpX_153', 'clpX_160', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86'], 'sol_12': ['clpX_104', 'clpX_12', 'clpX_134', 'clpX_153', 'clpX_157', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86'], 'sol_13': ['clpX_101', 'clpX_104', 'clpX_12', 'clpX_134', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86']}
-
-Solutions negative log likelihood score: 
-{'sol_8': 5381.450497740896, 'sol_9': 5382.3754877806241, 'sol_2': 5328.7486532462881, 'sol_3': 5337.6450813212659, 'sol_0': 5307.2706066777428, 'sol_1': 5316.1649860483367, 'sol_6': 5372.5646107457487, 'sol_7': 5373.4896007855214, 'sol_4': 5340.0946089663867, 'sol_5': 5351.4536224932208, 'sol_18': 5409.1431302935389, 'sol_19': 5409.7184183466952, 'sol_14': 5405.1850498158356, 'sol_15': 5405.400292075421, 'sol_16': 5405.9733618178388, 'sol_17': 5408.7934834203097, 'sol_10': 5386.1810361932221, 'sol_11': 5387.1768329902425, 'sol_12': 5395.0689415306533, 'sol_13': 5396.06473832763}
-
+This sim is not predicted correctly based on quality score.
 ======================================== SIMULATION 12 ====================================================
 
-Number of optimal solutions: 8
+Number of optimal solutions: 7
+[['clpX_12', 'clpX_130', 'clpX_25', 'clpX_63', 'clpX_66', 'clpX_80', 'clpX_86'], ['clpX_12', 'clpX_130', 'clpX_25', 'clpX_63', 'clpX_66', 'clpX_86'], ['clpX_12', 'clpX_130', 'clpX_160', 'clpX_25', 'clpX_63', 'clpX_66', 'clpX_86'], ['clpX_12', 'clpX_130', 'clpX_25', 'clpX_34', 'clpX_63', 'clpX_66', 'clpX_86'], ['clpX_12', 'clpX_130', 'clpX_25', 'clpX_63', 'clpX_66', 'clpX_77', 'clpX_86'], ['clpX_12', 'clpX_130', 'clpX_25', 'clpX_63', 'clpX_66', 'clpX_79', 'clpX_86'], ['clpX_12', 'clpX_130', 'clpX_134', 'clpX_25', 'clpX_63', 'clpX_66', 'clpX_86']]
+Qscores are: [1317521.0, 1117206.0, 1318164.0, 1318869.0, 1328204.0, 1320755.0, 1318844.0]
+Minimum q score is :1117206.0
 True variants are: ['clpX_63', 'clpX_66', 'clpX_86', 'clpX_25', 'clpX_130', 'clpX_12']
 
 Predicted variants are: ['clpX_12', 'clpX_130', 'clpX_25', 'clpX_63', 'clpX_66', 'clpX_86']
 
 True proportions are: {'clpX_66': 1.0221449826557, 'clpX_63': 2.7400721466612548, 'clpX_130': 20.57131723692035, 'clpX_86': 49.36907102283723, 'clpX_25': 14.657363837994147, 'clpX_12': 11.640030772931329}
 
-Predicted proportions using Bayes method are: {'clpX_66': 1.424031022690434, 'clpX_63': 7.7839819927583935, 'clpX_130': 15.886844884992554, 'clpX_86': 45.512220469203903, 'clpX_25': 14.852071555144011, 'clpX_12': 14.540850075210699}
+Predicted proportions using Counting method are: {'clpX_66': 1.3201320132013201, 'clpX_63': 3.0115511551155114, 'clpX_130': 20.297029702970296, 'clpX_86': 49.17491749174918, 'clpX_25': 14.645214521452145, 'clpX_12': 11.551155115511552}
 
-Predicted proportions using Counting method are: {'clpX_66': 1.3201320132013201, 'clpX_63': 3.0528052805280526, 'clpX_130': 20.214521452145213, 'clpX_86': 49.133663366336634, 'clpX_25': 14.686468646864686, 'clpX_12': 11.592409240924093}
-
-All solutions: 
-{'sol_2': ['clpX_12', 'clpX_130', 'clpX_25', 'clpX_63', 'clpX_66', 'clpX_76', 'clpX_85', 'clpX_86'], 'sol_3': ['clpX_113', 'clpX_12', 'clpX_130', 'clpX_25', 'clpX_63', 'clpX_66', 'clpX_85', 'clpX_86'], 'sol_0': ['clpX_12', 'clpX_130', 'clpX_25', 'clpX_63', 'clpX_66', 'clpX_85', 'clpX_86'], 'sol_1': ['clpX_12', 'clpX_130', 'clpX_25', 'clpX_63', 'clpX_66', 'clpX_86'], 'sol_6': ['clpX_113', 'clpX_12', 'clpX_130', 'clpX_25', 'clpX_63', 'clpX_66', 'clpX_86'], 'sol_7': ['clpX_12', 'clpX_130', 'clpX_25', 'clpX_31', 'clpX_63', 'clpX_66', 'clpX_86'], 'sol_4': ['clpX_12', 'clpX_130', 'clpX_25', 'clpX_31', 'clpX_63', 'clpX_66', 'clpX_85', 'clpX_86'], 'sol_5': ['clpX_12', 'clpX_130', 'clpX_25', 'clpX_63', 'clpX_66', 'clpX_76', 'clpX_86']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 5313.7923327688195, 'sol_3': 5332.0196633430487, 'sol_0': 5289.2822454928455, 'sol_1': 5311.3524649920419, 'sol_6': 5364.9431521350771, 'sol_7': 5366.0649757719621, 'sol_4': 5333.1414879000831, 'sol_5': 5346.7158215607806}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 13 ====================================================
 
-Number of optimal solutions: 4
+Number of optimal solutions: 1
+[['clpX_127', 'clpX_150', 'clpX_180', 'clpX_39', 'clpX_4', 'clpX_63']]
+Qscores are: [1076707.0]
+Minimum q score is :1076707.0
 True variants are: ['clpX_39', 'clpX_4', 'clpX_180', 'clpX_63', 'clpX_127', 'clpX_150']
 
 Predicted variants are: ['clpX_127', 'clpX_150', 'clpX_180', 'clpX_39', 'clpX_4', 'clpX_63']
 
 True proportions are: {'clpX_4': 29.336860593954107, 'clpX_63': 22.259833033600934, 'clpX_180': 13.234792704796517, 'clpX_127': 29.79545422859397, 'clpX_39': 0.40386442110028925, 'clpX_150': 4.969195017954185}
 
-Predicted proportions using Bayes method are: {'clpX_4': 29.250980194346855, 'clpX_63': 25.733505348693537, 'clpX_180': 13.201320132013201, 'clpX_127': 26.196131246521166, 'clpX_39': 0.77393293121631368, 'clpX_150': 4.8441301472089284}
+Predicted proportions using Counting method are: {'clpX_4': 29.372937293729372, 'clpX_63': 22.607260726072607, 'clpX_180': 13.201320132013201, 'clpX_127': 29.207920792079207, 'clpX_39': 0.6600660066006601, 'clpX_150': 4.9504950495049505}
 
-Predicted proportions using Counting method are: {'clpX_4': 29.372937293729372, 'clpX_63': 22.483498349834985, 'clpX_180': 13.201320132013201, 'clpX_127': 29.331683168316832, 'clpX_39': 0.6600660066006601, 'clpX_150': 4.9504950495049505}
-
-All solutions: 
-{'sol_2': ['clpX_127', 'clpX_150', 'clpX_180', 'clpX_39', 'clpX_4', 'clpX_63', 'clpX_93'], 'sol_3': ['clpX_107', 'clpX_127', 'clpX_150', 'clpX_180', 'clpX_39', 'clpX_4', 'clpX_63', 'clpX_93'], 'sol_0': ['clpX_127', 'clpX_150', 'clpX_180', 'clpX_39', 'clpX_4', 'clpX_63'], 'sol_1': ['clpX_107', 'clpX_127', 'clpX_150', 'clpX_180', 'clpX_39', 'clpX_4', 'clpX_63']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 5416.2578816671394, 'sol_3': 5465.1501552028558, 'sol_0': 5345.3544525832458, 'sol_1': 5404.3975902726015}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 14 ====================================================
 
-Number of optimal solutions: 16
+Number of optimal solutions: 1
+[['clpX_23', 'clpX_25']]
+Qscores are: [224360.0]
+Minimum q score is :224360.0
 True variants are: ['clpX_23', 'clpX_25']
 
 Predicted variants are: ['clpX_23', 'clpX_25']
 
 True proportions are: {'clpX_23': 64.74726407468351, 'clpX_25': 35.25273592531647}
 
-Predicted proportions using Bayes method are: {'clpX_23': 64.353288025646464, 'clpX_25': 35.646711974353536}
-
 Predicted proportions using Counting method are: {'clpX_23': 64.78405315614619, 'clpX_25': 35.21594684385382}
 
-All solutions: 
-{'sol_8': ['clpX_23', 'clpX_25', 'clpX_89'], 'sol_9': ['clpX_23', 'clpX_25', 'clpX_40', 'clpX_89'], 'sol_2': ['clpX_23', 'clpX_25', 'clpX_76'], 'sol_3': ['clpX_23', 'clpX_25', 'clpX_40', 'clpX_76'], 'sol_0': ['clpX_23', 'clpX_25'], 'sol_1': ['clpX_23', 'clpX_25', 'clpX_40'], 'sol_6': ['clpX_23', 'clpX_25', 'clpX_31', 'clpX_40'], 'sol_7': ['clpX_113', 'clpX_23', 'clpX_25', 'clpX_40'], 'sol_4': ['clpX_23', 'clpX_25', 'clpX_31'], 'sol_5': ['clpX_113', 'clpX_23', 'clpX_25'], 'sol_14': ['clpX_23', 'clpX_25', 'clpX_31', 'clpX_89'], 'sol_15': ['clpX_113', 'clpX_23', 'clpX_25', 'clpX_89'], 'sol_10': ['clpX_23', 'clpX_25', 'clpX_40', 'clpX_76', 'clpX_89'], 'sol_11': ['clpX_23', 'clpX_25', 'clpX_76', 'clpX_89'], 'sol_12': ['clpX_23', 'clpX_25', 'clpX_31', 'clpX_40', 'clpX_89'], 'sol_13': ['clpX_113', 'clpX_23', 'clpX_25', 'clpX_40', 'clpX_89']}
-
-Solutions negative log likelihood score: 
-{'sol_8': 4899.3816298001502, 'sol_9': 4931.4056194517825, 'sol_2': 4805.5286325622483, 'sol_3': 4837.5526224674522, 'sol_0': 4699.4138949085291, 'sol_1': 4793.0255215547431, 'sol_6': 4883.2390568392657, 'sol_7': 4883.8323919173681, 'sol_4': 4851.2150646644268, 'sol_5': 4851.8084022314779, 'sol_14': 4994.2653362593383, 'sol_15': 4994.8117623184135, 'sol_10': 4946.8575367941621, 'sol_11': 4948.5801300716203, 'sol_12': 4992.5427452515441, 'sol_13': 4993.0891688217034}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 15 ====================================================
 
-Number of optimal solutions: 14
+Number of optimal solutions: 1
+[['clpX_179', 'clpX_19']]
+Qscores are: [224416.0]
+Minimum q score is :224416.0
 True variants are: ['clpX_179', 'clpX_19']
 
 Predicted variants are: ['clpX_179', 'clpX_19']
 
 True proportions are: {'clpX_179': 2.6162994615947124, 'clpX_19': 97.38370053840528}
 
-Predicted proportions using Bayes method are: {'clpX_179': 2.6578073089700998, 'clpX_19': 97.342192691029908}
-
 Predicted proportions using Counting method are: {'clpX_179': 2.6578073089700998, 'clpX_19': 97.34219269102991}
 
-All solutions: 
-{'sol_8': ['clpX_15', 'clpX_17', 'clpX_179', 'clpX_18'], 'sol_9': ['clpX_15', 'clpX_179', 'clpX_19'], 'sol_2': ['clpX_17', 'clpX_179', 'clpX_19'], 'sol_3': ['clpX_17', 'clpX_179', 'clpX_18'], 'sol_0': ['clpX_16', 'clpX_179', 'clpX_19'], 'sol_1': ['clpX_16', 'clpX_179', 'clpX_18'], 'sol_6': ['clpX_15', 'clpX_16', 'clpX_179', 'clpX_18'], 'sol_7': ['clpX_15', 'clpX_17', 'clpX_179', 'clpX_19'], 'sol_4': ['clpX_179', 'clpX_19'], 'sol_5': ['clpX_15', 'clpX_16', 'clpX_179', 'clpX_19'], 'sol_10': ['clpX_15', 'clpX_179', 'clpX_18'], 'sol_11': ['clpX_15', 'clpX_179', 'clpX_19', 'clpX_95'], 'sol_12': ['clpX_15', 'clpX_179', 'clpX_18', 'clpX_95'], 'sol_13': ['clpX_179', 'clpX_19', 'clpX_95']}
-
-Solutions negative log likelihood score: 
-{'sol_8': 4684.0374551199438, 'sol_9': 4686.2097208933847, 'sol_2': 4666.161622733096, 'sol_3': 4666.7549531136192, 'sol_0': 4652.9888028326868, 'sol_1': 4653.58213321321, 'sol_6': 4674.6724063574829, 'sol_7': 4683.6896483741284, 'sol_4': 4671.4750023203906, 'sol_5': 4674.3245996116675, 'sol_10': 4686.8030512739078, 'sol_11': 4781.5753116452397, 'sol_12': 4782.1685986040466, 'sol_13': 4826.7349427209956}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 16 ====================================================
 
 Number of optimal solutions: 1
+[['clpX_102', 'clpX_106', 'clpX_129', 'clpX_177', 'clpX_47', 'clpX_89']]
+Qscores are: [975929.0]
+Minimum q score is :975929.0
 True variants are: ['clpX_47', 'clpX_102', 'clpX_129', 'clpX_177', 'clpX_89', 'clpX_106']
 
-Predicted variants are: ['clpX_102', 'clpX_106', 'clpX_124', 'clpX_129', 'clpX_177', 'clpX_47', 'clpX_89']
+Predicted variants are: ['clpX_102', 'clpX_106', 'clpX_129', 'clpX_177', 'clpX_47', 'clpX_89']
 
 True proportions are: {'clpX_129': 21.37512617352857, 'clpX_177': 22.2031601614533, 'clpX_89': 31.405327191166833, 'clpX_106': 3.9019320771751715, 'clpX_102': 18.19853481104944, 'clpX_47': 2.915919585626692}
 
-Predicted proportions using Bayes method are: {'clpX_129': 9.9924022036972957, 'clpX_177': 20.07178953382974, 'clpX_89': 23.962120763390075, 'clpX_106': 10.850284194833245, 'clpX_124': 11.132653780122961, 'clpX_102': 18.16101124559248, 'clpX_47': 5.8297382785342142}
+Predicted proportions using Counting method are: {'clpX_129': 21.452145214521448, 'clpX_177': 22.538503850385037, 'clpX_89': 29.99174917491748, 'clpX_106': 5.17051705170517, 'clpX_102': 17.87678767876789, 'clpX_47': 2.97029702970297}
 
-Predicted proportions using Counting method are: {'clpX_129': 16.707920792079204, 'clpX_177': 21.452145214521458, 'clpX_89': 31.421892189218916, 'clpX_106': 5.5005500550055, 'clpX_124': 4.744224422442243, 'clpX_102': 17.202970297029715, 'clpX_47': 2.97029702970297}
-
-All solutions: 
-{'sol_0': ['clpX_102', 'clpX_106', 'clpX_124', 'clpX_129', 'clpX_177', 'clpX_47', 'clpX_89']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 5300.3984396145188}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 17 ====================================================
 
 Number of optimal solutions: 1
+[['clpX_116', 'clpX_138', 'clpX_140', 'clpX_168', 'clpX_76', 'clpX_81', 'clpX_90']]
+Qscores are: [1345788.0]
+Minimum q score is :1345788.0
 True variants are: ['clpX_140', 'clpX_116', 'clpX_76', 'clpX_138', 'clpX_90', 'clpX_168', 'clpX_81']
 
 Predicted variants are: ['clpX_116', 'clpX_138', 'clpX_140', 'clpX_168', 'clpX_76', 'clpX_81', 'clpX_90']
 
 True proportions are: {'clpX_138': 4.684510643768236, 'clpX_76': 10.422742890314552, 'clpX_116': 9.844871841452747, 'clpX_90': 14.686580028338591, 'clpX_81': 28.985294080349323, 'clpX_168': 12.706721653008051, 'clpX_140': 18.669278862768497}
 
-Predicted proportions using Bayes method are: {'clpX_138': 5.190232503134907, 'clpX_76': 10.253345938550185, 'clpX_116': 10.738038871931305, 'clpX_90': 14.760538943385127, 'clpX_81': 27.6040837979358, 'clpX_168': 12.78688524590164, 'clpX_140': 18.666874699161028}
-
 Predicted proportions using Counting method are: {'clpX_138': 4.918032786885245, 'clpX_76': 10.450819672131146, 'clpX_116': 9.877049180327868, 'clpX_90': 14.754098360655737, 'clpX_81': 28.524590163934423, 'clpX_168': 12.786885245901638, 'clpX_140': 18.688524590163933}
 
-All solutions: 
-{'sol_0': ['clpX_116', 'clpX_138', 'clpX_140', 'clpX_168', 'clpX_76', 'clpX_81', 'clpX_90']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 5426.9922179712257}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 18 ====================================================
 
 Number of optimal solutions: 1
+[['clpX_111', 'clpX_117', 'clpX_178', 'clpX_50', 'clpX_84']]
+Qscores are: [859913.0]
+Minimum q score is :859913.0
 True variants are: ['clpX_50', 'clpX_178', 'clpX_117', 'clpX_111', 'clpX_84']
 
 Predicted variants are: ['clpX_111', 'clpX_117', 'clpX_178', 'clpX_50', 'clpX_84']
 
 True proportions are: {'clpX_50': 21.699916237704908, 'clpX_117': 20.142339556875186, 'clpX_84': 20.931986615148933, 'clpX_178': 20.154091537261078, 'clpX_111': 17.07166605300989}
 
-Predicted proportions using Bayes method are: {'clpX_50': 21.026373318737313, 'clpX_117': 20.132013201320134, 'clpX_84': 20.459116906207814, 'clpX_178': 21.261513348282559, 'clpX_111': 17.120983225452179}
+Predicted proportions using Counting method are: {'clpX_50': 21.65841584158416, 'clpX_117': 20.13201320132013, 'clpX_84': 20.792079207920793, 'clpX_178': 20.255775577557756, 'clpX_111': 17.16171617161716}
 
-Predicted proportions using Counting method are: {'clpX_50': 21.575907590759076, 'clpX_117': 20.13201320132013, 'clpX_84': 20.792079207920793, 'clpX_178': 20.33828382838284, 'clpX_111': 17.16171617161716}
-
-All solutions: 
-{'sol_0': ['clpX_111', 'clpX_117', 'clpX_178', 'clpX_50', 'clpX_84']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 5219.047657320104}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 19 ====================================================
 
-Number of optimal solutions: 2
+Number of optimal solutions: 1
+[['clpX_122', 'clpX_166', 'clpX_17', 'clpX_181', 'clpX_23', 'clpX_73']]
+Qscores are: [1127632.0]
+Minimum q score is :1127632.0
 True variants are: ['clpX_166', 'clpX_73', 'clpX_122', 'clpX_181', 'clpX_17', 'clpX_23']
 
 Predicted variants are: ['clpX_122', 'clpX_166', 'clpX_17', 'clpX_181', 'clpX_23', 'clpX_73']
 
 True proportions are: {'clpX_166': 28.849468472351337, 'clpX_73': 14.003972958569886, 'clpX_181': 5.314326802177019, 'clpX_122': 14.76138239666941, 'clpX_23': 19.61244831198223, 'clpX_17': 17.458401058250107}
 
-Predicted proportions using Bayes method are: {'clpX_73': 14.226430242077699, 'clpX_166': 28.712871287128714, 'clpX_181': 5.2805280528052805, 'clpX_122': 14.849021056479405, 'clpX_23': 19.442937926620552, 'clpX_17': 17.488211434888353}
-
 Predicted proportions using Counting method are: {'clpX_73': 14.191419141914192, 'clpX_166': 28.712871287128714, 'clpX_181': 5.2805280528052805, 'clpX_122': 14.85148514851485, 'clpX_23': 19.471947194719473, 'clpX_17': 17.49174917491749}
 
-All solutions: 
-{'sol_0': ['clpX_122', 'clpX_166', 'clpX_17', 'clpX_181', 'clpX_23', 'clpX_73'], 'sol_1': ['clpX_122', 'clpX_15', 'clpX_166', 'clpX_17', 'clpX_181', 'clpX_23', 'clpX_73']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 5363.1371019391954, 'sol_1': 5412.3467141149686}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 20 ====================================================
 
-Number of optimal solutions: 10
+Number of optimal solutions: 1
+[['clpX_150', 'clpX_154', 'clpX_77', 'clpX_96']]
+Qscores are: [469929.0]
+Minimum q score is :469929.0
 True variants are: ['clpX_77', 'clpX_154', 'clpX_150', 'clpX_96']
 
 Predicted variants are: ['clpX_150', 'clpX_154', 'clpX_77', 'clpX_96']
 
 True proportions are: {'clpX_96': 17.553254234993236, 'clpX_150': 17.091906721338297, 'clpX_77': 38.906934950328, 'clpX_154': 26.44790409334048}
 
-Predicted proportions using Bayes method are: {'clpX_96': 20.307474490969188, 'clpX_150': 20.503205267207477, 'clpX_77': 38.835783165134657, 'clpX_154': 20.353537076688685}
+Predicted proportions using Counting method are: {'clpX_96': 19.288079470198674, 'clpX_150': 18.58443708609282, 'clpX_77': 38.741721854304586, 'clpX_154': 23.38576158940393}
 
-Predicted proportions using Counting method are: {'clpX_96': 19.508830022075053, 'clpX_150': 18.43267108167781, 'clpX_77': 38.74172185430458, 'clpX_154': 23.316777041942554}
-
-All solutions: 
-{'sol_8': ['clpX_150', 'clpX_154', 'clpX_26', 'clpX_40', 'clpX_77', 'clpX_96'], 'sol_9': ['clpX_103', 'clpX_150', 'clpX_154', 'clpX_40', 'clpX_77', 'clpX_96'], 'sol_2': ['clpX_125', 'clpX_150', 'clpX_154', 'clpX_77', 'clpX_96'], 'sol_3': ['clpX_107', 'clpX_150', 'clpX_154', 'clpX_77', 'clpX_96'], 'sol_0': ['clpX_150', 'clpX_154', 'clpX_77', 'clpX_96'], 'sol_1': ['clpX_150', 'clpX_154', 'clpX_40', 'clpX_77', 'clpX_96'], 'sol_6': ['clpX_125', 'clpX_150', 'clpX_154', 'clpX_40', 'clpX_77', 'clpX_96'], 'sol_7': ['clpX_107', 'clpX_150', 'clpX_154', 'clpX_40', 'clpX_77', 'clpX_96'], 'sol_4': ['clpX_150', 'clpX_154', 'clpX_26', 'clpX_77', 'clpX_96'], 'sol_5': ['clpX_103', 'clpX_150', 'clpX_154', 'clpX_77', 'clpX_96']}
-
-Solutions negative log likelihood score: 
-{'sol_8': 5036.1048078475351, 'sol_9': 5040.9973058739351, 'sol_2': 4995.3637019551079, 'sol_3': 4998.7331911301444, 'sol_0': 4897.0870575690042, 'sol_1': 4955.4938096634087, 'sol_6': 5032.3541035847211, 'sol_7': 5035.7235927389247, 'sol_4': 4999.1144054812148, 'sol_5': 5004.0069042540845}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 21 ====================================================
 
-Number of optimal solutions: 4
+Number of optimal solutions: 2
+[['clpX_113', 'clpX_3', 'clpX_32', 'clpX_62', 'clpX_95', 'clpX_99'], ['clpX_113', 'clpX_3', 'clpX_32', 'clpX_42', 'clpX_62', 'clpX_95']]
+Qscores are: [1092553.0, 1092553.0]
+Minimum q score is :1092553.0
 True variants are: ['clpX_32', 'clpX_3', 'clpX_113', 'clpX_99', 'clpX_62', 'clpX_95']
 
 Predicted variants are: ['clpX_113', 'clpX_3', 'clpX_32', 'clpX_62', 'clpX_95', 'clpX_99']
 
 True proportions are: {'clpX_99': 8.15524078750936, 'clpX_62': 12.964327323386723, 'clpX_95': 23.803743895058265, 'clpX_113': 20.873348592198536, 'clpX_32': 14.251233950427588, 'clpX_3': 19.95210545141952}
 
-Predicted proportions using Bayes method are: {'clpX_99': 10.68390892339716, 'clpX_62': 12.903348519788763, 'clpX_95': 23.562885304803096, 'clpX_113': 17.257242666772424, 'clpX_32': 15.763480605036889, 'clpX_3': 19.82913398020165}
+Predicted proportions using Counting method are: {'clpX_99': 8.360927152317881, 'clpX_62': 12.913907284768213, 'clpX_95': 23.841059602649008, 'clpX_113': 20.240066225165563, 'clpX_32': 14.776490066225167, 'clpX_3': 19.867549668874172}
 
-Predicted proportions using Counting method are: {'clpX_99': 8.526490066225167, 'clpX_62': 12.913907284768213, 'clpX_95': 23.841059602649008, 'clpX_113': 20.157284768211923, 'clpX_32': 14.693708609271525, 'clpX_3': 19.867549668874172}
-
-All solutions: 
-{'sol_2': ['clpX_113', 'clpX_19', 'clpX_3', 'clpX_32', 'clpX_62', 'clpX_95', 'clpX_99'], 'sol_3': ['clpX_113', 'clpX_20', 'clpX_3', 'clpX_32', 'clpX_62', 'clpX_95', 'clpX_99'], 'sol_0': ['clpX_113', 'clpX_3', 'clpX_32', 'clpX_62', 'clpX_95', 'clpX_99'], 'sol_1': ['clpX_113', 'clpX_18', 'clpX_3', 'clpX_32', 'clpX_62', 'clpX_95', 'clpX_99']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 5366.5853630907641, 'sol_3': 5366.6520677571098, 'sol_0': 5298.031819375281, 'sol_1': 5366.5810425943437}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 22 ====================================================
 
-Number of optimal solutions: 4
+Number of optimal solutions: 1
+[['clpX_129', 'clpX_135', 'clpX_171', 'clpX_95']]
+Qscores are: [675062.0]
+Minimum q score is :675062.0
 True variants are: ['clpX_129', 'clpX_171', 'clpX_135', 'clpX_95']
 
-Predicted variants are: ['clpX_124', 'clpX_129', 'clpX_135', 'clpX_171', 'clpX_18', 'clpX_95']
+Predicted variants are: ['clpX_129', 'clpX_135', 'clpX_171', 'clpX_95']
 
 True proportions are: {'clpX_95': 27.244306554204083, 'clpX_129': 44.2235143720721, 'clpX_171': 21.148916099238924, 'clpX_135': 7.383262974484876}
 
-Predicted proportions using Bayes method are: {'clpX_129': 20.751451383121758, 'clpX_171': 20.379293262351005, 'clpX_95': 15.115592694554275, 'clpX_135': 8.5669070095759281, 'clpX_124': 22.957610648669057, 'clpX_18': 12.229145001727993}
+Predicted proportions using Counting method are: {'clpX_95': 27.152317880794705, 'clpX_129': 44.039735099337754, 'clpX_135': 7.6158940397351, 'clpX_171': 21.192052980132452}
 
-Predicted proportions using Counting method are: {'clpX_129': 33.73344370860927, 'clpX_171': 21.192052980132452, 'clpX_95': 25.496688741721858, 'clpX_135': 7.6158940397351, 'clpX_124': 10.306291390728477, 'clpX_18': 1.6556291390728477}
-
-All solutions: 
-{'sol_2': ['clpX_124', 'clpX_129', 'clpX_135', 'clpX_171', 'clpX_19', 'clpX_95'], 'sol_3': ['clpX_124', 'clpX_129', 'clpX_135', 'clpX_171', 'clpX_20', 'clpX_95'], 'sol_0': ['clpX_124', 'clpX_129', 'clpX_135', 'clpX_171', 'clpX_95'], 'sol_1': ['clpX_124', 'clpX_129', 'clpX_135', 'clpX_171', 'clpX_18', 'clpX_95']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 5234.7908901302608, 'sol_3': 5234.8666327940891, 'sol_0': 5153.0207706274005, 'sol_1': 5234.7865696337949}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 23 ====================================================
 
-Number of optimal solutions: 20
+Number of optimal solutions: 8
+[['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33', 'clpX_94'], ['clpX_113', 'clpX_123', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33'], ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_23', 'clpX_33'], ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_24', 'clpX_33'], ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33', 'clpX_40'], ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33', 'clpX_48'], ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33', 'clpX_81'], ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33', 'clpX_41']]
+Qscores are: [1216687.0, 1211428.0, 1214633.0, 1208030.0, 1216607.0, 1222133.0, 1211553.0, 1214438.0]
+Minimum q score is :1208030.0
 True variants are: ['clpX_33', 'clpX_145', 'clpX_140', 'clpX_113', 'clpX_172', 'clpX_132', 'clpX_24']
 
 Predicted variants are: ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_24', 'clpX_33']
 
 True proportions are: {'clpX_172': 6.008410645291557, 'clpX_132': 12.16308711363433, 'clpX_113': 20.432689851814175, 'clpX_140': 19.238037452759656, 'clpX_24': 19.655049634422223, 'clpX_145': 4.036976128654941, 'clpX_33': 18.46574917342312}
 
-Predicted proportions using Bayes method are: {'clpX_172': 6.443300667465623, 'clpX_132': 17.78186022941297, 'clpX_113': 16.553360029121887, 'clpX_33': 16.712405360043448, 'clpX_24': 11.613625785967816, 'clpX_145': 11.978293309718937, 'clpX_140': 18.917154618269322}
+Predicted proportions using Counting method are: {'clpX_172': 6.249999999999991, 'clpX_132': 13.788377192982475, 'clpX_113': 19.380482456140395, 'clpX_33': 17.81798245614034, 'clpX_24': 13.651315789473664, 'clpX_145': 10.03289473684209, 'clpX_140': 19.078947368421026}
 
-Predicted proportions using Counting method are: {'clpX_172': 6.249999999999993, 'clpX_132': 14.17214912280704, 'clpX_113': 19.435307017543913, 'clpX_33': 17.37938596491227, 'clpX_24': 13.40460526315788, 'clpX_145': 10.279605263157883, 'clpX_140': 19.07894736842103}
-
-All solutions: 
-{'sol_8': ['clpX_105', 'clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_24', 'clpX_33'], 'sol_9': ['clpX_113', 'clpX_123', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_175', 'clpX_33'], 'sol_2': ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33', 'clpX_81'], 'sol_3': ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33', 'clpX_41'], 'sol_0': ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_24', 'clpX_33'], 'sol_1': ['clpX_113', 'clpX_123', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33'], 'sol_6': ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33', 'clpX_40'], 'sol_7': ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_175', 'clpX_24', 'clpX_33'], 'sol_4': ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_23', 'clpX_33'], 'sol_5': ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33', 'clpX_48'], 'sol_18': ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_175', 'clpX_33', 'clpX_40'], 'sol_19': ['clpX_105', 'clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33', 'clpX_40'], 'sol_14': ['clpX_105', 'clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33', 'clpX_41'], 'sol_15': ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_175', 'clpX_23', 'clpX_33'], 'sol_16': ['clpX_105', 'clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_23', 'clpX_33'], 'sol_17': ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_175', 'clpX_33', 'clpX_48'], 'sol_10': ['clpX_105', 'clpX_113', 'clpX_123', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33'], 'sol_11': ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_175', 'clpX_33', 'clpX_81'], 'sol_12': ['clpX_105', 'clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_33', 'clpX_81'], 'sol_13': ['clpX_113', 'clpX_132', 'clpX_140', 'clpX_145', 'clpX_172', 'clpX_175', 'clpX_33', 'clpX_41']}
-
-Solutions negative log likelihood score: 
-{'sol_8': 5353.4852443710624, 'sol_9': 5366.2360564533674, 'sol_2': 5303.0094292156191, 'sol_3': 5307.4594046772854, 'sol_0': 5286.3961785609727, 'sol_1': 5299.1527817422193, 'sol_6': 5316.9524682639512, 'sol_7': 5353.4794532721235, 'sol_4': 5308.6460640815494, 'sol_5': 5315.46357882338, 'sol_18': 5384.0357429728319, 'sol_19': 5384.0415340717946, 'sol_14': 5374.5484704873043, 'sol_15': 5375.7293387926047, 'sol_16': 5375.7351298915673, 'sol_17': 5382.5468535344808, 'sol_10': 5366.2418475523064, 'sol_11': 5370.0927039267663, 'sol_12': 5370.0984950257061, 'sol_13': 5374.5426793883425}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 24 ====================================================
 
 Number of optimal solutions: 1
+[['clpX_27', 'clpX_48', 'clpX_97']]
+Qscores are: [448313.0]
+Minimum q score is :448313.0
 True variants are: ['clpX_27', 'clpX_48', 'clpX_97']
 
 Predicted variants are: ['clpX_27', 'clpX_48', 'clpX_97']
 
 True proportions are: {'clpX_97': 69.5953312819938, 'clpX_48': 23.46825260810016, 'clpX_27': 6.936416109906056}
 
-Predicted proportions using Bayes method are: {'clpX_97': 65.892258661115875, 'clpX_48': 26.134517929662099, 'clpX_27': 7.9732234092220358}
+Predicted proportions using Counting method are: {'clpX_97': 69.43521594684385, 'clpX_48': 23.588039867109636, 'clpX_27': 6.976744186046512}
 
-Predicted proportions using Counting method are: {'clpX_97': 69.35215946843854, 'clpX_48': 23.67109634551495, 'clpX_27': 6.976744186046512}
-
-All solutions: 
-{'sol_0': ['clpX_27', 'clpX_48', 'clpX_97']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 4900.789060585842}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 25 ====================================================
 
-Number of optimal solutions: 2
+Number of optimal solutions: 1
+[['clpX_101', 'clpX_41']]
+Qscores are: [225290.0]
+Minimum q score is :225290.0
 True variants are: ['clpX_41', 'clpX_101']
 
 Predicted variants are: ['clpX_101', 'clpX_41']
 
 True proportions are: {'clpX_101': 6.856592811709612, 'clpX_41': 93.14340718829038}
 
-Predicted proportions using Bayes method are: {'clpX_101': 9.293212554031804, 'clpX_41': 90.706787445968203}
-
 Predicted proportions using Counting method are: {'clpX_101': 6.976744186046512, 'clpX_41': 93.0232558139535}
 
-All solutions: 
-{'sol_0': ['clpX_101', 'clpX_41'], 'sol_1': ['clpX_101', 'clpX_40', 'clpX_41']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 4683.4482662347364, 'sol_1': 4725.2636689280571}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 26 ====================================================
 
-Number of optimal solutions: 4
+Number of optimal solutions: 1
+[['clpX_164', 'clpX_172', 'clpX_27', 'clpX_36', 'clpX_48', 'clpX_86']]
+Qscores are: [1128735.0]
+Minimum q score is :1128735.0
 True variants are: ['clpX_48', 'clpX_27', 'clpX_36', 'clpX_164', 'clpX_86', 'clpX_172']
 
 Predicted variants are: ['clpX_164', 'clpX_172', 'clpX_27', 'clpX_36', 'clpX_48', 'clpX_86']
 
 True proportions are: {'clpX_164': 3.0313117378197942, 'clpX_172': 31.82952025629553, 'clpX_86': 20.965336963626918, 'clpX_48': 4.055278404943387, 'clpX_27': 6.192721420019106, 'clpX_36': 33.92583121729526}
 
-Predicted proportions using Bayes method are: {'clpX_164': 3.3003300330033016, 'clpX_172': 28.936518049603954, 'clpX_86': 20.724370128953296, 'clpX_48': 5.4787352809118932, 'clpX_27': 8.3178911239364499, 'clpX_36': 33.242155383591097}
-
 Predicted proportions using Counting method are: {'clpX_164': 3.3003300330033003, 'clpX_172': 31.683168316831683, 'clpX_86': 20.792079207920793, 'clpX_48': 4.29042904290429, 'clpX_27': 6.270627062706271, 'clpX_36': 33.663366336633665}
 
-All solutions: 
-{'sol_2': ['clpX_164', 'clpX_172', 'clpX_27', 'clpX_36', 'clpX_48', 'clpX_85', 'clpX_86'], 'sol_3': ['clpX_164', 'clpX_172', 'clpX_27', 'clpX_36', 'clpX_38', 'clpX_48', 'clpX_85', 'clpX_86'], 'sol_0': ['clpX_164', 'clpX_172', 'clpX_27', 'clpX_36', 'clpX_48', 'clpX_86'], 'sol_1': ['clpX_164', 'clpX_172', 'clpX_27', 'clpX_36', 'clpX_38', 'clpX_48', 'clpX_86']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 5390.4010055942945, 'sol_3': 5400.8410038471029, 'sol_0': 5357.1362246931885, 'sol_1': 5378.4294922366862}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 27 ====================================================
 
 Number of optimal solutions: 1
+[['clpX_49', 'clpX_6', 'clpX_8']]
+Qscores are: [437112.0]
+Minimum q score is :437112.0
 True variants are: ['clpX_8', 'clpX_6', 'clpX_49']
 
 Predicted variants are: ['clpX_49', 'clpX_6', 'clpX_8']
 
 True proportions are: {'clpX_6': 12.909346904014111, 'clpX_49': 66.79977437358178, 'clpX_8': 20.290878722404106}
 
-Predicted proportions using Bayes method are: {'clpX_6': 16.104445025354096, 'clpX_49': 66.780631601640096, 'clpX_8': 17.114923373005809}
+Predicted proportions using Counting method are: {'clpX_6': 12.998338870431894, 'clpX_49': 66.77740863787376, 'clpX_8': 20.224252491694354}
 
-Predicted proportions using Counting method are: {'clpX_6': 13.205980066445184, 'clpX_49': 66.77740863787376, 'clpX_8': 20.016611295681063}
-
-All solutions: 
-{'sol_0': ['clpX_49', 'clpX_6', 'clpX_8']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 4905.5998722085815}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 28 ====================================================
 
-Number of optimal solutions: 4
+Number of optimal solutions: 1
+[['clpX_112', 'clpX_67']]
+Qscores are: [224360.0]
+Minimum q score is :224360.0
 True variants are: ['clpX_67', 'clpX_112']
 
 Predicted variants are: ['clpX_112', 'clpX_67']
 
 True proportions are: {'clpX_67': 61.7927327383341, 'clpX_112': 38.2072672616659}
 
-Predicted proportions using Bayes method are: {'clpX_67': 61.794019933554821, 'clpX_112': 38.205980066445186}
-
 Predicted proportions using Counting method are: {'clpX_67': 61.79401993355482, 'clpX_112': 38.205980066445186}
 
-All solutions: 
-{'sol_2': ['clpX_112', 'clpX_157', 'clpX_67'], 'sol_3': ['clpX_112', 'clpX_51', 'clpX_67'], 'sol_0': ['clpX_112', 'clpX_67'], 'sol_1': ['clpX_101', 'clpX_112', 'clpX_67']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 4869.0115649164927, 'sol_3': 4869.1627388774186, 'sol_0': 4689.4357190627234, 'sol_1': 4868.4115690983026}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 29 ====================================================
 
-Number of optimal solutions: 20
+Number of optimal solutions: 1
+[['clpX_109', 'clpX_179', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79']]
+Qscores are: [1084033.0]
+Minimum q score is :1084033.0
 True variants are: ['clpX_179', 'clpX_79', 'clpX_55', 'clpX_36', 'clpX_73', 'clpX_109']
 
 Predicted variants are: ['clpX_109', 'clpX_179', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79']
 
 True proportions are: {'clpX_73': 5.618134535860798, 'clpX_109': 26.071008391103174, 'clpX_79': 27.371320750229327, 'clpX_179': 18.90796437168259, 'clpX_36': 5.4027479103836376, 'clpX_55': 16.628824040740472}
 
-Predicted proportions using Bayes method are: {'clpX_73': 12.627120007367491, 'clpX_109': 24.763794116485492, 'clpX_79': 21.241111240201818, 'clpX_179': 18.811881188118821, 'clpX_36': 5.9328197647304348, 'clpX_55': 16.623273683095945}
+Predicted proportions using Counting method are: {'clpX_73': 6.435643564356436, 'clpX_109': 25.66006600660066, 'clpX_79': 26.567656765676567, 'clpX_179': 18.81188118811881, 'clpX_36': 5.6105610561056105, 'clpX_55': 16.914191419141915}
 
-Predicted proportions using Counting method are: {'clpX_73': 6.683168316831683, 'clpX_109': 25.7013201320132, 'clpX_79': 26.402640264026402, 'clpX_179': 18.81188118811881, 'clpX_36': 5.6105610561056105, 'clpX_55': 16.79042904290429}
-
-All solutions: 
-{'sol_8': ['clpX_109', 'clpX_157', 'clpX_179', 'clpX_26', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_9': ['clpX_109', 'clpX_179', 'clpX_26', 'clpX_36', 'clpX_51', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_2': ['clpX_103', 'clpX_109', 'clpX_179', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_3': ['clpX_107', 'clpX_109', 'clpX_179', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_0': ['clpX_109', 'clpX_179', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_1': ['clpX_109', 'clpX_179', 'clpX_26', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_6': ['clpX_101', 'clpX_109', 'clpX_179', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_7': ['clpX_109', 'clpX_125', 'clpX_179', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_4': ['clpX_109', 'clpX_157', 'clpX_179', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_5': ['clpX_109', 'clpX_179', 'clpX_36', 'clpX_51', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_18': ['clpX_109', 'clpX_125', 'clpX_179', 'clpX_36', 'clpX_51', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_19': ['clpX_101', 'clpX_109', 'clpX_125', 'clpX_179', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_14': ['clpX_107', 'clpX_109', 'clpX_157', 'clpX_179', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_15': ['clpX_107', 'clpX_109', 'clpX_179', 'clpX_36', 'clpX_51', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_16': ['clpX_101', 'clpX_107', 'clpX_109', 'clpX_179', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_17': ['clpX_109', 'clpX_125', 'clpX_157', 'clpX_179', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_10': ['clpX_101', 'clpX_109', 'clpX_179', 'clpX_26', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_11': ['clpX_103', 'clpX_109', 'clpX_157', 'clpX_179', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_12': ['clpX_103', 'clpX_109', 'clpX_179', 'clpX_36', 'clpX_51', 'clpX_55', 'clpX_73', 'clpX_79'], 'sol_13': ['clpX_101', 'clpX_103', 'clpX_109', 'clpX_179', 'clpX_36', 'clpX_55', 'clpX_73', 'clpX_79']}
-
-Solutions negative log likelihood score: 
-{'sol_8': 5446.4820932462271, 'sol_9': 5446.5254871360203, 'sol_2': 5398.2916758040374, 'sol_3': 5416.3075185807047, 'sol_0': 5353.6700614324254, 'sol_1': 5393.310864114942, 'sol_6': 5417.5664704831433, 'sol_7': 5418.8154045390884, 'sol_4': 5417.2874815228724, 'sol_5': 5417.3431669611082, 'sol_18': 5472.209070171798, 'sol_19': 5472.4427883124972, 'sol_14': 5469.9142749448993, 'sol_15': 5469.9699259225226, 'sol_16': 5470.1978888357271, 'sol_17': 5472.1614937892882, 'sol_10': 5446.7940796768235, 'sol_11': 5451.2011598578056, 'sol_12': 5451.2445541774641, 'sol_13': 5451.5131462884019}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 30 ====================================================
 
-Number of optimal solutions: 21
+Number of optimal solutions: 2
+[['clpX_114', 'clpX_13', 'clpX_145', 'clpX_168', 'clpX_54'], ['clpX_114', 'clpX_145', 'clpX_168', 'clpX_54', 'clpX_9']]
+Qscores are: [899361.0, 899361.0]
+Minimum q score is :899361.0
 True variants are: ['clpX_114', 'clpX_9', 'clpX_54', 'clpX_168', 'clpX_145']
 
 Predicted variants are: ['clpX_114', 'clpX_145', 'clpX_168', 'clpX_54', 'clpX_9']
 
 True proportions are: {'clpX_145': 16.396878190614867, 'clpX_114': 27.85493507464722, 'clpX_168': 35.84365496592645, 'clpX_54': 12.179679446592035, 'clpX_9': 7.724852322219434}
 
-Predicted proportions using Bayes method are: {'clpX_145': 16.413644933622365, 'clpX_114': 24.275587819853989, 'clpX_9': 7.8671094199770524, 'clpX_54': 15.800093470110911, 'clpX_168': 35.643564356435682}
-
 Predicted proportions using Counting method are: {'clpX_145': 16.5016501650165, 'clpX_114': 27.722772277227723, 'clpX_9': 7.920792079207921, 'clpX_54': 12.21122112211221, 'clpX_168': 35.64356435643565}
 
-All solutions: 
-{'sol_8': ['clpX_105', 'clpX_114', 'clpX_13', 'clpX_145', 'clpX_168', 'clpX_54'], 'sol_9': ['clpX_105', 'clpX_114', 'clpX_145', 'clpX_168', 'clpX_54', 'clpX_9'], 'sol_2': ['clpX_114', 'clpX_145', 'clpX_168', 'clpX_169', 'clpX_54', 'clpX_9'], 'sol_3': ['clpX_114', 'clpX_13', 'clpX_145', 'clpX_168', 'clpX_169', 'clpX_54'], 'sol_0': ['clpX_114', 'clpX_145', 'clpX_168', 'clpX_54', 'clpX_9'], 'sol_1': ['clpX_114', 'clpX_13', 'clpX_145', 'clpX_168', 'clpX_54'], 'sol_6': ['clpX_114', 'clpX_145', 'clpX_168', 'clpX_175', 'clpX_54', 'clpX_9'], 'sol_7': ['clpX_114', 'clpX_13', 'clpX_145', 'clpX_168', 'clpX_175', 'clpX_54'], 'sol_4': ['clpX_114', 'clpX_145', 'clpX_168', 'clpX_54', 'clpX_89', 'clpX_9'], 'sol_5': ['clpX_114', 'clpX_13', 'clpX_145', 'clpX_168', 'clpX_54', 'clpX_89'], 'sol_20': ['clpX_105', 'clpX_114', 'clpX_145', 'clpX_168', 'clpX_169', 'clpX_54', 'clpX_89', 'clpX_9'], 'sol_18': ['clpX_114', 'clpX_145', 'clpX_168', 'clpX_169', 'clpX_175', 'clpX_54', 'clpX_89', 'clpX_9'], 'sol_19': ['clpX_105', 'clpX_114', 'clpX_13', 'clpX_145', 'clpX_168', 'clpX_169', 'clpX_54', 'clpX_89'], 'sol_14': ['clpX_105', 'clpX_114', 'clpX_13', 'clpX_145', 'clpX_168', 'clpX_169', 'clpX_54'], 'sol_15': ['clpX_114', 'clpX_13', 'clpX_145', 'clpX_168', 'clpX_175', 'clpX_54', 'clpX_89'], 'sol_16': ['clpX_105', 'clpX_114', 'clpX_13', 'clpX_145', 'clpX_168', 'clpX_54', 'clpX_89'], 'sol_17': ['clpX_114', 'clpX_13', 'clpX_145', 'clpX_168', 'clpX_169', 'clpX_175', 'clpX_54', 'clpX_89'], 'sol_10': ['clpX_114', 'clpX_13', 'clpX_145', 'clpX_168', 'clpX_169', 'clpX_54', 'clpX_89'], 'sol_11': ['clpX_114', 'clpX_13', 'clpX_145', 'clpX_168', 'clpX_169', 'clpX_175', 'clpX_54'], 'sol_12': ['clpX_114', 'clpX_145', 'clpX_168', 'clpX_169', 'clpX_175', 'clpX_54', 'clpX_9'], 'sol_13': ['clpX_105', 'clpX_114', 'clpX_145', 'clpX_168', 'clpX_169', 'clpX_54', 'clpX_9']}
-
-Solutions negative log likelihood score: 
-{'sol_8': 5333.8205033362492, 'sol_9': 5333.8205033362492, 'sol_2': 5309.4916486223974, 'sol_3': 5309.4916486223974, 'sol_0': 5242.873761881573, 'sol_1': 5242.873761881573, 'sol_6': 5333.759621579924, 'sol_7': 5333.759621579924, 'sol_4': 5317.1424309729346, 'sol_5': 5317.1424309729346, 'sol_20': 5434.2276115353225, 'sol_18': 5434.1667315104987, 'sol_19': 5434.2276115353225, 'sol_14': 5385.6102288996381, 'sol_15': 5393.2302752423047, 'sol_16': 5393.2911552671249, 'sol_17': 5434.1667315104987, 'sol_10': 5368.9321565363089, 'sol_11': 5385.5493471433174, 'sol_12': 5385.5493471433174, 'sol_13': 5385.6102288996381}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 31 ====================================================
 
 Number of optimal solutions: 1
+[['clpX_140', 'clpX_141', 'clpX_55', 'clpX_61', 'clpX_66']]
+Qscores are: [896974.0]
+Minimum q score is :896974.0
 True variants are: ['clpX_66', 'clpX_140', 'clpX_141', 'clpX_55', 'clpX_61']
 
 Predicted variants are: ['clpX_140', 'clpX_141', 'clpX_55', 'clpX_61', 'clpX_66']
 
 True proportions are: {'clpX_61': 7.582863843336016, 'clpX_66': 6.156312608973016, 'clpX_141': 20.822687562095123, 'clpX_140': 22.263414463553058, 'clpX_55': 43.17472152204278}
 
-Predicted proportions using Bayes method are: {'clpX_61': 7.528977982683589, 'clpX_66': 6.421787655666825, 'clpX_141': 21.048668278479951, 'clpX_140': 21.949617488576067, 'clpX_55': 43.050948594593571}
-
 Predicted proportions using Counting method are: {'clpX_61': 7.6158940397351, 'clpX_66': 6.291390728476822, 'clpX_141': 20.86092715231788, 'clpX_140': 22.18543046357616, 'clpX_55': 43.046357615894046}
 
-All solutions: 
-{'sol_0': ['clpX_140', 'clpX_141', 'clpX_55', 'clpX_61', 'clpX_66']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 5237.674664993272}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 32 ====================================================
 
-Number of optimal solutions: 8
+Number of optimal solutions: 1
+[['clpX_104', 'clpX_107', 'clpX_148', 'clpX_24']]
+Qscores are: [601881.0]
+Minimum q score is :601881.0
 True variants are: ['clpX_24', 'clpX_104', 'clpX_107', 'clpX_148']
 
 Predicted variants are: ['clpX_104', 'clpX_107', 'clpX_148', 'clpX_24']
 
 True proportions are: {'clpX_148': 3.476068479110734, 'clpX_24': 16.618253007469868, 'clpX_107': 1.5548669045002819, 'clpX_104': 78.35081160891912}
 
-Predicted proportions using Bayes method are: {'clpX_24': 15.758231737435311, 'clpX_104': 43.690258614904714, 'clpX_107': 36.193291621383558, 'clpX_148': 4.3582180262764165}
+Predicted proportions using Counting method are: {'clpX_24': 16.55629139072848, 'clpX_104': 75.0, 'clpX_107': 4.801324503311259, 'clpX_148': 3.6423841059602653}
 
-Predicted proportions using Counting method are: {'clpX_24': 16.55629139072848, 'clpX_104': 74.33774834437087, 'clpX_107': 5.4635761589403975, 'clpX_148': 3.6423841059602653}
-
-All solutions: 
-{'sol_2': ['clpX_101', 'clpX_104', 'clpX_107', 'clpX_148', 'clpX_24'], 'sol_3': ['clpX_104', 'clpX_107', 'clpX_148', 'clpX_157', 'clpX_24'], 'sol_0': ['clpX_104', 'clpX_107', 'clpX_148', 'clpX_24'], 'sol_1': ['clpX_104', 'clpX_107', 'clpX_148', 'clpX_159', 'clpX_24'], 'sol_6': ['clpX_104', 'clpX_107', 'clpX_148', 'clpX_157', 'clpX_159', 'clpX_24'], 'sol_7': ['clpX_104', 'clpX_107', 'clpX_148', 'clpX_159', 'clpX_24', 'clpX_51'], 'sol_4': ['clpX_104', 'clpX_107', 'clpX_148', 'clpX_24', 'clpX_51'], 'sol_5': ['clpX_101', 'clpX_104', 'clpX_107', 'clpX_148', 'clpX_159', 'clpX_24']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 5140.1893046455252, 'sol_3': 5140.7240942301632, 'sol_0': 5030.2302227050923, 'sol_1': 5131.3829177941079, 'sol_6': 5220.7136028480481, 'sol_7': 5220.8577129587056, 'sol_4': 5140.8969393167044, 'sol_5': 5220.1841617728669}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 33 ====================================================
 
 Number of optimal solutions: 1
+[['clpX_105', 'clpX_133', 'clpX_58']]
+Qscores are: [449716.0]
+Minimum q score is :449716.0
 True variants are: ['clpX_133', 'clpX_58', 'clpX_105']
 
 Predicted variants are: ['clpX_105', 'clpX_133', 'clpX_58']
 
 True proportions are: {'clpX_58': 14.528076747789845, 'clpX_133': 67.70122528174595, 'clpX_105': 17.770697970464223}
 
-Predicted proportions using Bayes method are: {'clpX_58': 14.564372694360713, 'clpX_133': 67.553491771104859, 'clpX_105': 17.882135534534431}
-
 Predicted proportions using Counting method are: {'clpX_58': 14.569536423841061, 'clpX_133': 67.54966887417218, 'clpX_105': 17.880794701986755}
 
-All solutions: 
-{'sol_0': ['clpX_105', 'clpX_133', 'clpX_58']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 4911.9521056177637}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 34 ====================================================
 
-Number of optimal solutions: 6
+Number of optimal solutions: 1
+[['clpX_131', 'clpX_172', 'clpX_8']]
+Qscores are: [448512.0]
+Minimum q score is :448512.0
 True variants are: ['clpX_172', 'clpX_8', 'clpX_131']
 
 Predicted variants are: ['clpX_131', 'clpX_172', 'clpX_8']
 
 True proportions are: {'clpX_131': 31.233265189342614, 'clpX_8': 28.513830913044124, 'clpX_172': 40.252903897613265}
 
-Predicted proportions using Bayes method are: {'clpX_131': 32.526050860514843, 'clpX_8': 28.480016476956589, 'clpX_172': 38.993932662528579}
-
 Predicted proportions using Counting method are: {'clpX_131': 31.229235880398672, 'clpX_8': 28.571428571428573, 'clpX_172': 40.19933554817276}
 
-All solutions: 
-{'sol_2': ['clpX_131', 'clpX_172', 'clpX_175', 'clpX_8'], 'sol_3': ['clpX_105', 'clpX_131', 'clpX_172', 'clpX_8'], 'sol_0': ['clpX_131', 'clpX_172', 'clpX_8'], 'sol_1': ['clpX_131', 'clpX_172', 'clpX_8', 'clpX_89'], 'sol_4': ['clpX_131', 'clpX_172', 'clpX_175', 'clpX_8', 'clpX_89'], 'sol_5': ['clpX_105', 'clpX_131', 'clpX_172', 'clpX_8', 'clpX_89']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 5111.6431399660751, 'sol_3': 5111.6819362860015, 'sol_0': 4963.3134720315247, 'sol_1': 5089.964934624013, 'sol_4': 5204.5481150913129, 'sol_5': 5204.5869096839488}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 35 ====================================================
 
 Number of optimal solutions: 1
+[['clpX_103', 'clpX_116', 'clpX_164', 'clpX_3', 'clpX_50', 'clpX_73']]
+Qscores are: [1087572.0]
+Minimum q score is :1087572.0
 True variants are: ['clpX_116', 'clpX_164', 'clpX_50', 'clpX_73', 'clpX_103', 'clpX_3']
 
 Predicted variants are: ['clpX_103', 'clpX_116', 'clpX_164', 'clpX_3', 'clpX_50', 'clpX_73']
 
 True proportions are: {'clpX_73': 20.590816302849923, 'clpX_103': 13.898493797704486, 'clpX_164': 25.02934837673884, 'clpX_3': 20.50901143670834, 'clpX_116': 18.955395097847784, 'clpX_50': 1.0169349881506207}
 
-Predicted proportions using Bayes method are: {'clpX_73': 15.49399419355843, 'clpX_103': 12.583233508537756, 'clpX_164': 25.082508250825075, 'clpX_3': 20.390094295892293, 'clpX_116': 15.94929907639813, 'clpX_50': 10.500870674788302}
+Predicted proportions using Counting method are: {'clpX_73': 19.031903190319035, 'clpX_103': 13.050055005500559, 'clpX_164': 25.082508250825082, 'clpX_3': 20.462046204620464, 'clpX_116': 18.77062706270627, 'clpX_50': 3.602860286028603}
 
-Predicted proportions using Counting method are: {'clpX_73': 19.23817381738174, 'clpX_103': 12.84378437843785, 'clpX_164': 25.082508250825082, 'clpX_3': 20.462046204620464, 'clpX_116': 18.935643564356436, 'clpX_50': 3.4378437843784386}
-
-All solutions: 
-{'sol_0': ['clpX_103', 'clpX_116', 'clpX_164', 'clpX_3', 'clpX_50', 'clpX_73']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 5311.1868787458889}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 36 ====================================================
 
-Number of optimal solutions: 3
+Number of optimal solutions: 1
+[['clpX_113', 'clpX_115', 'clpX_153', 'clpX_159', 'clpX_179', 'clpX_84']]
+Qscores are: [1001829.0]
+Minimum q score is :1001829.0
 True variants are: ['clpX_113', 'clpX_115', 'clpX_159', 'clpX_153', 'clpX_179', 'clpX_84']
 
 Predicted variants are: ['clpX_113', 'clpX_115', 'clpX_153', 'clpX_159', 'clpX_179', 'clpX_84']
 
 True proportions are: {'clpX_84': 12.72359973745884, 'clpX_115': 18.314066521095, 'clpX_113': 15.72050647396529, 'clpX_179': 20.450099187013343, 'clpX_159': 18.618729779388012, 'clpX_153': 14.172998301079515}
 
-Predicted proportions using Bayes method are: {'clpX_115': 16.820414861736442, 'clpX_84': 12.418789208144251, 'clpX_113': 16.634030516123183, 'clpX_179': 20.462046204620481, 'clpX_159': 16.959860152409437, 'clpX_153': 16.704859056966214}
+Predicted proportions using Counting method are: {'clpX_115': 17.560506050605074, 'clpX_84': 12.871287128712867, 'clpX_113': 16.212871287128728, 'clpX_179': 20.462046204620457, 'clpX_159': 18.385588558855886, 'clpX_153': 14.507700770077006}
 
-Predicted proportions using Counting method are: {'clpX_115': 17.71177117711773, 'clpX_84': 12.871287128712865, 'clpX_113': 16.281628162816297, 'clpX_179': 20.462046204620453, 'clpX_159': 18.0005500550055, 'clpX_153': 14.672717271727171}
-
-All solutions: 
-{'sol_2': ['clpX_105', 'clpX_113', 'clpX_115', 'clpX_153', 'clpX_159', 'clpX_179', 'clpX_84'], 'sol_0': ['clpX_113', 'clpX_115', 'clpX_153', 'clpX_159', 'clpX_179', 'clpX_84'], 'sol_1': ['clpX_113', 'clpX_115', 'clpX_153', 'clpX_159', 'clpX_175', 'clpX_179', 'clpX_84']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 5299.3501431001569, 'sol_0': 5222.0818105904536, 'sol_1': 5297.8415513580094}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 37 ====================================================
 
-Number of optimal solutions: 3
+Number of optimal solutions: 1
+[['clpX_105', 'clpX_115', 'clpX_117', 'clpX_123', 'clpX_134', 'clpX_73', 'clpX_90']]
+Qscores are: [1281264.0]
+Minimum q score is :1281264.0
 True variants are: ['clpX_115', 'clpX_123', 'clpX_105', 'clpX_73', 'clpX_90', 'clpX_134', 'clpX_117']
 
 Predicted variants are: ['clpX_105', 'clpX_115', 'clpX_117', 'clpX_123', 'clpX_134', 'clpX_73', 'clpX_90']
 
 True proportions are: {'clpX_73': 31.937276072815703, 'clpX_105': 14.641694417028974, 'clpX_123': 3.9469539149665085, 'clpX_134': 7.857541404716419, 'clpX_115': 8.058357741992971, 'clpX_90': 25.5224702527941, 'clpX_117': 8.035706195685309}
 
-Predicted proportions using Bayes method are: {'clpX_90': 25.385471409423332, 'clpX_73': 18.449447326886386, 'clpX_105': 11.978739689827549, 'clpX_123': 3.954647411572136, 'clpX_117': 8.2508250825082445, 'clpX_115': 15.67716041256703, 'clpX_134': 16.303708667215325}
+Predicted proportions using Counting method are: {'clpX_90': 25.412541254125415, 'clpX_73': 27.709020902090206, 'clpX_105': 14.24642464246425, 'clpX_123': 3.9603960396039612, 'clpX_117': 8.250825082508252, 'clpX_115': 12.004950495049505, 'clpX_134': 8.41584158415841}
 
-Predicted proportions using Counting method are: {'clpX_90': 25.412541254125415, 'clpX_73': 28.176567656765677, 'clpX_105': 14.370187018701873, 'clpX_123': 3.9603960396039612, 'clpX_117': 8.250825082508252, 'clpX_115': 11.89493949394939, 'clpX_134': 7.934543454345428}
-
-All solutions: 
-{'sol_2': ['clpX_105', 'clpX_115', 'clpX_117', 'clpX_123', 'clpX_134', 'clpX_32', 'clpX_89', 'clpX_90'], 'sol_0': ['clpX_105', 'clpX_115', 'clpX_117', 'clpX_123', 'clpX_134', 'clpX_73', 'clpX_89', 'clpX_90'], 'sol_1': ['clpX_105', 'clpX_115', 'clpX_117', 'clpX_123', 'clpX_134', 'clpX_73', 'clpX_90']}
-
-Solutions negative log likelihood score: 
-{'sol_2': 5365.977931172737, 'sol_0': 5344.7622326786241, 'sol_1': 5353.8577893800148}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 38 ====================================================
 
 Number of optimal solutions: 1
+[['clpX_175', 'clpX_22', 'clpX_40', 'clpX_69']]
+Qscores are: [675159.0]
+Minimum q score is :675159.0
 True variants are: ['clpX_40', 'clpX_175', 'clpX_69', 'clpX_22']
 
 Predicted variants are: ['clpX_175', 'clpX_22', 'clpX_40', 'clpX_69']
 
 True proportions are: {'clpX_22': 12.042746219103142, 'clpX_175': 10.988521287876566, 'clpX_40': 24.886075136600496, 'clpX_69': 52.082657356419794}
 
-Predicted proportions using Bayes method are: {'clpX_175': 11.137970263231285, 'clpX_22': 13.351539962140537, 'clpX_40': 24.088789300079764, 'clpX_69': 51.421700474548402}
-
 Predicted proportions using Counting method are: {'clpX_175': 10.927152317880795, 'clpX_22': 12.293046357615895, 'clpX_40': 24.793046357615896, 'clpX_69': 51.986754966887425}
 
-All solutions: 
-{'sol_0': ['clpX_175', 'clpX_22', 'clpX_40', 'clpX_69']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 5084.4800096369272}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 39 ====================================================
 
 Number of optimal solutions: 1
+[['clpX_123', 'clpX_128', 'clpX_159']]
+Qscores are: [428653.0]
+Minimum q score is :428653.0
 True variants are: ['clpX_123', 'clpX_159', 'clpX_128']
 
 Predicted variants are: ['clpX_123', 'clpX_128', 'clpX_159']
 
 True proportions are: {'clpX_123': 54.60708312083092, 'clpX_159': 7.6881833265634345, 'clpX_128': 37.704733552605646}
 
-Predicted proportions using Bayes method are: {'clpX_123': 53.74658366901668, 'clpX_159': 21.083885256139002, 'clpX_128': 25.169531074844311}
-
 Predicted proportions using Counting method are: {'clpX_123': 54.30463576158941, 'clpX_159': 8.236754966887418, 'clpX_128': 37.45860927152318}
 
-All solutions: 
-{'sol_0': ['clpX_123', 'clpX_128', 'clpX_159']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 4928.4231197184872}
-
+This sim is predicted correctly based on quality score.
 ======================================== SIMULATION 40 ====================================================
 
 Number of optimal solutions: 1
+[['clpX_1', 'clpX_164']]
+Qscores are: [224284.0]
+Minimum q score is :224284.0
 True variants are: ['clpX_1', 'clpX_164']
 
 Predicted variants are: ['clpX_1', 'clpX_164']
 
 True proportions are: {'clpX_164': 19.55120490694834, 'clpX_1': 80.44879509305166}
 
-Predicted proportions using Bayes method are: {'clpX_164': 19.601328903654487, 'clpX_1': 80.398671096345524}
-
 Predicted proportions using Counting method are: {'clpX_164': 19.601328903654487, 'clpX_1': 80.39867109634552}
 
-All solutions: 
-{'sol_0': ['clpX_1', 'clpX_164']}
-
-Solutions negative log likelihood score: 
-{'sol_0': 4687.4400838680403}
-
+This sim is predicted correctly based on quality score.
 ======================================== clpX: SUMMARY STATISTICS ====================================================
 
 (1)Total Variation Distance:
 
-Counting Method ~ Total variation distances are: [1.9183976525926854, 6.09147191528972, 0.8106212796244456, 0.20469384271312396, 0.09645890948969349, 0.02193595460465403, 4.1913926590579536, 0.25670168653641734, 0.12296313318158347, 41.62507848051802, 6.832031248698579, 0.6398249732829641, 0.5159436015096879, 0.036789081462661244, 0.04150784737537916, 6.4137848424009345, 0.46070391641489694, 0.27424240972903036, 0.31089705185712546, 3.296340147421338, 0.851039645150478, 12.237688475945067, 8.493280498384085, 0.24317181355524875, 0.12015137433689205, 0.5820745758315717, 0.2966331624310685, 0.0012871952207156312, 1.4344519288566748, 0.33225340691029626, 0.20634790612564036, 4.075024881289643, 0.15155640757375632, 0.05759765838444686, 2.4740686703140526, 1.2204750683597894, 4.142144813045817, 0.25030013851274635, 0.5485716403239804, 0.05012399670614087] 
+Counting Method ~ Total variation distances are: [1.83561619563904, 5.885201288227004, 0.6868589033868222, 0.20469384271312396, 0.09645890948969349, 0.02193595460465403, 4.603933913183366, 0.25670168653641734, 0.12296313318158347, 41.62507848051803, 2.5987961860900604, 0.5694660389998832, 0.6397059777473113, 0.036789081462661244, 0.04150784737537916, 1.735325148530897, 0.46070391641489694, 0.19173415890394807, 0.31089705185712546, 3.227355599959962, 0.7682581881968362, 0.275767946143739, 7.862798042243739, 0.16011533514993603, 0.12015137433689205, 0.5820745758315717, 0.08899196641777785, 0.0012871952207156312, 1.3106895526190532, 0.33225340691029626, 0.20634790612564036, 3.412773225660507, 0.15155640757375632, 0.05759765838444686, 2.6390851719642145, 0.9867016910220601, 4.733453943958914, 0.25030013851274635, 0.5485716403239804, 0.05012399670614087] 
 
-Bayes' Method ~ Total variation distances are: [9.8226322665361678, 18.627268636777895, 3.4119585656442539, 0.36653322582040238, 0.17207213999322146, 0.021935954604650476, 18.997300522845357, 11.960578540562237, 0.80714255053778317, 41.955900772694164, 16.489501903121333, 8.5413229055611168, 3.8437408252086289, 0.39397604903705741, 0.041507847375379159, 20.994824590688559, 1.5530113977853572, 1.156738983463768, 0.33990631995604748, 6.1655188018451348, 4.0409147904971059, 36.370399685488088, 13.994980319016703, 3.7030726208779194, 2.4366197423221854, 3.8176448750693597, 3.1950981213399849, 0.0012871952207156312, 7.5390573258534879, 3.7794378642839939, 0.49145576307863292, 35.52057426404896, 0.14773351064108287, 1.2927856711722256, 9.5370955607239196, 3.4573318156517265, 16.28778231650152, 1.4582427183921194, 13.395701929575573, 0.050123996706140872] 
+Counting Method ~ The average of total variation distance is: 2.24226556695 
 
-Counting Method ~ The average of total variation distance is: 2.79825059728 
-
-Bayes' Method ~ The average of total variation distance is: 8.15451782216 
-
-Counting Method ~ The standard deviation of total variation distance is: 6.79231719734 
-
-Bayes' Method ~ The standard deviation of total variation distance is: 10.4483745987 
+Counting Method ~ The standard deviation of total variation distance is: 6.55693676592 
 
 (2)Total Variation Distance for variants which are predicted correctly:
 
-Counting Method ~ Total variation distances are: [1.9183976525926854, 6.09147191528972, 0.8106212796244456, 0.20469384271312396, 0.09645890948969349, 0.02193595460465403, 4.1913926590579536, 0.25670168653641734, 0.12296313318158347, 6.832031248698579, 0.6398249732829641, 0.5159436015096879, 0.036789081462661244, 0.04150784737537916, 0.46070391641489694, 0.27424240972903036, 0.31089705185712546, 3.296340147421338, 0.851039645150478, 8.493280498384085, 0.24317181355524875, 0.12015137433689205, 0.5820745758315717, 0.2966331624310685, 0.0012871952207156312, 1.4344519288566748, 0.33225340691029626, 0.20634790612564036, 4.075024881289643, 0.15155640757375632, 0.05759765838444686, 2.4740686703140526, 1.2204750683597894, 4.142144813045817, 0.25030013851274635, 0.5485716403239804, 0.05012399670614087] 
+Counting Method ~ Total variation distances are: [1.83561619563904, 5.885201288227004, 0.6868589033868222, 0.20469384271312396, 0.09645890948969349, 0.02193595460465403, 4.603933913183366, 0.25670168653641734, 0.12296313318158347, 0.5694660389998832, 0.6397059777473113, 0.036789081462661244, 0.04150784737537916, 1.735325148530897, 0.46070391641489694, 0.19173415890394807, 0.31089705185712546, 3.227355599959962, 0.7682581881968362, 0.275767946143739, 7.862798042243739, 0.16011533514993603, 0.12015137433689205, 0.5820745758315717, 0.08899196641777785, 0.0012871952207156312, 1.3106895526190532, 0.33225340691029626, 0.20634790612564036, 3.412773225660507, 0.15155640757375632, 0.05759765838444686, 2.6390851719642145, 0.9867016910220601, 4.733453943958914, 0.25030013851274635, 0.5485716403239804, 0.05012399670614087] 
 
-Bayes' Method ~ Total variation distances are: [9.8226322665361678, 18.627268636777895, 3.4119585656442539, 0.36653322582040238, 0.17207213999322146, 0.021935954604650476, 18.997300522845357, 11.960578540562237, 0.80714255053778317, 16.489501903121333, 8.5413229055611168, 3.8437408252086289, 0.39397604903705741, 0.041507847375379159, 1.5530113977853572, 1.156738983463768, 0.33990631995604748, 6.1655188018451348, 4.0409147904971059, 13.994980319016703, 3.7030726208779194, 2.4366197423221854, 3.8176448750693597, 3.1950981213399849, 0.0012871952207156312, 7.5390573258534879, 3.7794378642839939, 0.49145576307863292, 35.52057426404896, 0.14773351064108287, 1.2927856711722256, 9.5370955607239196, 3.4573318156517265, 16.28778231650152, 1.4582427183921194, 13.395701929575573, 0.050123996706140872] 
+Counting Method ~ The average of total variation distance is: 1.19649336872 
 
-Counting Method ~ The average of total variation distance is: 1.39603978627 
-
-Bayes' Method ~ The average of total variation distance is: 6.13134021183 
-
-Counting Method ~ The standard deviation of total variation distance is: 2.09875160248 
-
-Bayes' Method ~ The standard deviation of total variation distance is: 7.55475177268 
+Counting Method ~ The standard deviation of total variation distance is: 1.82846946625 
 
 (3) Precision: 
 
-Precision is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
+Precision is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
 
-Average of precision is:  0.979761904762 
+Average of precision is:  0.995 
 
-Standard deviation of precision is:  0.0752075736766 
+Standard deviation of precision is:  0.031224989992 
 
 (4) Recall : 
 
-Recall is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
+Recall is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8, 0.8571428571428571, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
 
-Average of recall is:  0.995 
+Average of recall is:  0.991428571429 
 
-Standard deviation of recall is:  0.031224989992 
+Standard deviation of recall is:  0.0379042833183 
 
 (5) Objective Value: 
 
-Predicted objective values are: [294.0, 297.0, 303.0, 284.0, 297.0, 263.0, 307.0, 279.0, 304.0, 303.0, 305.0, 289.0, 314.0, 277.0, 263.0, 306.0, 293.0, 303.0, 310.0, 288.0, 298.0, 297.0, 302.0, 273.0, 269.0, 307.0, 278.0, 272.0, 316.0, 297.0, 302.0, 271.0, 271.0, 304.0, 298.0, 289.0, 300.0, 283.0, 281.0, 271.0] 
+Predicted objective values are: [11.0, 12.0, 14.0, 9.0, 11.0, 8.0, 14.0, 9.0, 10.0, 12.0, 13.0, 11.0, 14.0, 8.0, 9.0, 12.0, 12.0, 10.0, 13.0, 12.0, 11.0, 11.0, 11.0, 8.0, 9.0, 13.0, 7.0, 8.0, 14.0, 12.0, 10.0, 8.0, 8.0, 12.0, 12.0, 11.0, 13.0, 9.0, 9.0, 7.0] 
 
-True objective values are: [294.0, 297.0, 303.0, 284.0, 297.0, 263.0, 307.0, 279.0, 304.0, 303.0, 305.0, 289.0, 314.0, 277.0, 263.0, 307.0, 293.0, 303.0, 310.0, 288.0, 298.0, 298.0, 302.0, 273.0, 269.0, 307.0, 278.0, 272.0, 316.0, 297.0, 302.0, 271.0, 271.0, 304.0, 298.0, 289.0, 300.0, 283.0, 281.0, 271.0] 
+True objective values are: [11.0, 12.0, 14.0, 9.0, 11.0, 8.0, 14.0, 9.0, 10.0, 12.0, 13.0, 11.0, 14.0, 8.0, 9.0, 12.0, 12.0, 10.0, 13.0, 12.0, 11.0, 11.0, 11.0, 8.0, 9.0, 13.0, 7.0, 8.0, 14.0, 12.0, 10.0, 8.0, 8.0, 12.0, 12.0, 11.0, 13.0, 9.0, 9.0, 7.0] 
 
-The difference in objective values are: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+The difference in objective values are: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
 
-Average of difference in objective value is:  -0.05 
+Average of difference in objective value is:  0.0 
 
-Standard deviation of difference in objective value is:  0.217944947177 
+Standard deviation of difference in objective value is:  0.0 
 
 (6)Accuracy: 
 
 Total number of simulations:  40 
 
-Number of simulations which are predicted correctly: 37
+Number of simulations which are predicted correctly: 38
 
-Percentage of simulations predicted correctly:  92.5 %
+Percentage of simulations predicted correctly:  95.0 %
 
 (7)Optimal solutions: 
 
-Number of optimal solutions: [1, 20, 6, 1, 5, 1, 20, 5, 7, 22, 20, 8, 4, 16, 14, 1, 1, 1, 2, 10, 4, 4, 20, 1, 2, 4, 1, 4, 20, 21, 1, 8, 1, 6, 1, 3, 3, 1, 1, 1]
+Number of optimal solutions: [1, 2, 2, 1, 1, 1, 1, 1, 1, 12, 7, 7, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 8, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 
-Average number of optimal solutions: 6.8
+Average number of optimal solutions: 1.85
 
+(8)Statistics about quality score: 
+
+Number of simulations having multiple solutions: 8
+Number of these simulations which are correct: 6
+The percentage is : 75.0 %
