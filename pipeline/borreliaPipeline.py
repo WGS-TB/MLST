@@ -58,7 +58,7 @@ for samp in samples:
         #Generate matrix, predict variants and their proportions
         print("..... Predicting variants and computing their proportions .....")
         print("")
-        solutionsAndProp_dict = gvp.getVarAndProp(gene,"{0}_{1}_paired_reads.txt".format(samp, gene),"{0}_{1}_singleton_reads.txt".format(samp, gene), samp )
+        solutionsAndProp_dict = gvp.getVarAndProp(gene,"{0}_{1}_paired_reads.txt".format(samp, gene), samp )
         gene_solProp_dict[gene] = solutionsAndProp_dict
     
         print("Variants and proportions: \n{}".format(solutionsAndProp_dict[0]))

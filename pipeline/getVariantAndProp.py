@@ -224,19 +224,21 @@ def returnQualityMatrix(path, option):
     return matrix
 
 #Only return solutions with minimum number of variants
-def getVarAndProp(gene, paired_path, singleton_path, samp):
+def getVarAndProp(gene, paired_path, samp):
     #generate matrix
     pairedDF = returnMismatchMatrix(paired_path, "paired")
-    singletonDF = returnMismatchMatrix(singleton_path, "singleton")
-    dataMatrixDF = pd.concat([pairedDF, singletonDF])
-    dataMatrixDF = dataMatrixDF.fillna(-1)
+#    singletonDF = returnMismatchMatrix(singleton_path, "singleton")
+#    dataMatrixDF = pd.concat([pairedDF, singletonDF])
+#    dataMatrixDF = dataMatrixDF.fillna(-1)
+    dataMatrixDF = pairedDF
 
     #Generate quality matrix
     Qmatrix_paired = returnQualityMatrix(paired_path, "paired")
-    Qmatrix_singleton = returnQualityMatrix(singleton_path, "singleton")
-    Qmatrix = pd.concat([Qmatrix_paired, Qmatrix_singleton])
-    Qmatrix.loc[Qmatrix_paired.index] = Qmatrix.loc[Qmatrix_paired.index].fillna(186)
-    Qmatrix.loc[Qmatrix_singleton.index] = Qmatrix.loc[Qmatrix_singleton.index].fillna(93)
+    Qmatrix = Qmatrix_paired
+#    Qmatrix_singleton = returnQualityMatrix(singleton_path, "singleton")
+#    Qmatrix = pd.concat([Qmatrix_paired, Qmatrix_singleton])
+#    Qmatrix.loc[Qmatrix_paired.index] = Qmatrix.loc[Qmatrix_paired.index].fillna(186)
+#    Qmatrix.loc[Qmatrix_singleton.index] = Qmatrix.loc[Qmatrix_singleton.index].fillna(93)
     
     #predict variants
     pred_object_val,var_predicted,reads_cov, all_solutions, all_objective = varSolver.solver(dataMatrixDF)
