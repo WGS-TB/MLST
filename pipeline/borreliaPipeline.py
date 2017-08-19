@@ -16,8 +16,60 @@ import csv
 import time
 import argparse
 
-start_time = time.time()
+def writePropToCsv(aDict):
+    for gene in aDict.keys():
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Gene {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(gene))
+        print("Variants and proportions: \n{}".format(aDict[gene]))
+        #write proportions to file
+        with open(gene+'_proportions.csv', "wb") as writeFile:
+            writer = csv.writer(writeFile)
+            for (key, val) in (aDict[gene]).items():
+                writer.writerow([key, val])
+                
+def localILP(samp, aTuple, aDict, loci, reference, option):
+    track = 1
+    objValue_list = list()
+    objStr = list()
+    objProp = list()
+    objErr = list()
+    print("\nNumber of combinations to run: {}\n".format(len(aTuple)))
+    for comb in aTuple:
+        print("\nxxxxxxxxxxxxxxxxx Combination : {} xxxxxxxxxxxxxxxxxxxxxxxxxxxx\n".format(track))
+        comb_dict = {gene: aDict[gene][i] for (gene, i) in itertools.izip(loci, comb)}
+        sum_str, sum_prop, sum_err = gvp.maxExistingStr(samp, loci, comb_dict, reference, option)
+        objValue_list.append(sum_str+sum_prop+sum_err)
+        track += 1
+        
+    print("Objective Value: {}".format(objValue_list))
+    #Choose the combination which has the lowest objective value
+    minObjValIndex_list = np.argwhere(objValue_list == np.amin(objValue_list))
+    minObjValIndex_list = minObjValIndex_list.flatten().tolist()
+    if len(minObjValIndex_list) > 1:
+        print("@@@@@@@@@@@@@@@@@@@@@@@ You have more than 1 distribution having same objective value @@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+    
+    minObjValIndex = minObjValIndex_list[0]
+    comb_minObjVal = aTuple[minObjValIndex]
+    comb_minObjVal_dict = {gene: aDict[gene][i] for (gene, i) in itertools.izip(loci, comb_minObjVal)}
+    
+    return comb_minObjVal_dict
 
+def compatibleFilter(aTuple):
+    compatible_tuples = list()
+    for comb in aTuple:
+        comb_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, comb)}
+        
+        temp_boolean = True
+        for allele in loci:
+            temp_boolean = temp_boolean & reference[allele].isin(comb_dict[allele].keys())
+            if sum(temp_boolean) == 0:
+                break
+            
+        if sum(temp_boolean) != 0:
+            compatible_tuples.append(comb)
+            
+    return compatible_tuples
+''' ----------------------------------------------------------------- '''
+start_time = time.time()
 #currentpath = /pipeline/
 currentPath = os.getcwd()
 data_path = currentPath +"/data/"
@@ -29,10 +81,10 @@ for name in loci:
     reference["%s" %name] = name + "_" + reference["%s" %name].astype(str)
 
 #samples = [i for i in os.listdir(data_path)]
-#samples = ["SRR203433{}".format(i) for i in range(3,7)]
-#samples = ["SRR2034333", "SRR2034334", "SRR2034335"]
 ap = argparse.ArgumentParser()
 ap.add_argument("-s", "--sample", required = True)
+ap.add_argument("-cl", "--objectiveComponent_local", default="all", required=False)
+ap.add_argument("-cg", "--objectiveComponent_global", default="all", required=False)
 args = vars(ap.parse_args())
 samples = [args["sample"]]
 
@@ -40,6 +92,7 @@ samples = [args["sample"]]
 os.chdir("variantsAndProp")
 
 ''' $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Predicting Variant and Proportions $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$''' 
+numOfMinQualSol = list()
 for samp in samples:
     #currentpath=/pipeline/variantsAndProp/samp
     os.chdir(samp)
@@ -56,21 +109,46 @@ for samp in samples:
         print("")
         
         #Generate matrix, predict variants and their proportions
-        print("..... Predicting variants and computing their proportions .....")
+        print("..... Predicting variants .....")
         print("")
         solutionsAndProp_dict = gvp.getVarAndProp(gene,"{0}_{1}_paired_reads.txt".format(samp, gene), samp )
         gene_solProp_dict[gene] = solutionsAndProp_dict
-    
-        print("Variants and proportions: \n{}".format(solutionsAndProp_dict[0]))
-        #write proportions to file
-        with open(gene+'_proportions.csv', "wb") as writeFile:
-            writer = csv.writer(writeFile)
-            for (key, val) in (solutionsAndProp_dict[0]).items():
-                writer.writerow([key, val])
+        numOfMinQualSol.append(len(solutionsAndProp_dict))
+        
+    #If each gene has a unique optimal solution
+    if all(i == 1 for i in numOfMinQualSol):
+    #    Print and write to file
+        writePropToCsv(gene_solProp_dict)
+    else:   #when there are indistinguishable solutions based on quality score
+        #Choose an optimal solution which maximizes number of existing strains, similar flavour as 2nd ILP
+        print("\n... There are at least one gene having multiple optimal solutions ...")
+        print("\n... Picking a good set of variants among the multiple optimal solutions ...")
+        #gene_keys = [[0,1], [0,1,2],...] indices of solutions in each gene
+        gene_keys = [gene_solProp_dict[gene].keys() for gene in loci ]
+        #Combination of multiple optimal solutions across all genes
+        combinationsTuple = [comb for comb in itertools.product(*gene_keys)]
+        compatible_tuples = compatibleFilter(combinationsTuple)
+        localILP_dict = dict()
+        objValue_list = list()
+        track = 1
+        
+        #Only one compatible distribution, output it
+        if len(compatible_tuples) == 1:
+            localILP_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, compatible_tuples[0])}
+            writePropToCsv(localILP_dict)
+        else:
+            #Only new strains can describe
+            if len(compatible_tuples) == 0:
+                localILP_dict = localILP(samp, combinationsTuple, gene_solProp_dict, loci, reference, args["objectiveComponent_local"])
+            else:
+                localILP_dict = localILP(samp, compatible_tuples, gene_solProp_dict, loci, reference, args["objectiveComponent_local"])
+        
+            writePropToCsv(localILP_dict)
                 
     #currentpath=/pipeline/variantsAndProp
     os.chdir("..")
 
+#print("NUmber of solutions: {}".format(numOfMinQualSol))
 print("")
 print("Script done.")
 print("Time taken : {} hr(s)".format((time.time() - start_time)/3600))
