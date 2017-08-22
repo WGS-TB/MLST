@@ -1,0 +1,665 @@
+======================================== SIMULATION 1 ====================================================
+
+Number of optimal solutions: 2
+[['recG_117', 'recG_185', 'recG_196', 'recG_70'], ['recG_185', 'recG_196', 'recG_54', 'recG_70']]
+Likelihood scores are: [470.8101229143706, 460.12581125955285]
+Minimum likelihood score is :460.12581126
+True variants are: ['recG_70', 'recG_54', 'recG_185', 'recG_196']
+
+Predicted variants are: ['recG_185', 'recG_196', 'recG_54', 'recG_70']
+
+True proportions are: {'recG_54': 37.58032467379183, 'recG_185': 19.855123074064377, 'recG_196': 8.358929604468765, 'recG_70': 34.20562264767503}
+
+Predicted proportions using Counting method are: {'recG_185': 18.75, 'recG_54': 36.328125, 'recG_196': 9.375, 'recG_70': 35.546875}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 2 ====================================================
+
+Number of optimal solutions: 3
+[['recG_115', 'recG_139', 'recG_150', 'recG_155', 'recG_205', 'recG_34'], ['recG_115', 'recG_139', 'recG_150', 'recG_198', 'recG_205', 'recG_34'], ['recG_115', 'recG_150', 'recG_155', 'recG_205', 'recG_34']]
+Likelihood scores are: [503.34029827842431, 503.93367295106873, 501.24086833547869]
+Minimum likelihood score is :501.240868335
+True variants are: ['recG_205', 'recG_150', 'recG_34', 'recG_139', 'recG_155', 'recG_115']
+
+Predicted variants are: ['recG_115', 'recG_150', 'recG_155', 'recG_205', 'recG_34']
+
+True proportions are: {'recG_205': 1.5847990271009047, 'recG_34': 37.14874931688361, 'recG_115': 21.408318800362494, 'recG_155': 15.858755650497711, 'recG_139': 1.0627279574993669, 'recG_150': 22.936649247655915}
+
+Predicted proportions using Counting method are: {'recG_205': 3.0303030303030303, 'recG_155': 17.424242424242426, 'recG_34': 35.984848484848484, 'recG_150': 21.96969696969697, 'recG_115': 21.59090909090909}
+
+This sim is not predicted correctly based on likelihood score.
+======================================== SIMULATION 3 ====================================================
+
+Number of optimal solutions: 7
+[['recG_109', 'recG_113', 'recG_127', 'recG_34', 'recG_41', 'recG_58'], ['recG_109', 'recG_113', 'recG_127', 'recG_130', 'recG_34', 'recG_41'], ['recG_109', 'recG_113', 'recG_127', 'recG_132', 'recG_34', 'recG_41'], ['recG_109', 'recG_113', 'recG_127', 'recG_146', 'recG_34', 'recG_41'], ['recG_109', 'recG_113', 'recG_127', 'recG_34', 'recG_41', 'recG_57'], ['recG_109', 'recG_113', 'recG_127', 'recG_34', 'recG_41'], ['recG_109', 'recG_113', 'recG_127', 'recG_34', 'recG_41', 'recG_48']]
+Likelihood scores are: [506.74844466432899, 504.73555097291, 507.57494203313928, 506.94402617874869, 501.53165796972877, 502.45976163271956, 502.5110082429544]
+Minimum likelihood score is :501.53165797
+True variants are: ['recG_109', 'recG_127', 'recG_57', 'recG_113', 'recG_34', 'recG_41']
+
+Predicted variants are: ['recG_109', 'recG_113', 'recG_127', 'recG_34', 'recG_41', 'recG_57']
+
+True proportions are: {'recG_109': 14.53644431568418, 'recG_113': 13.305348492199128, 'recG_34': 11.352912916616257, 'recG_127': 28.5871663230566, 'recG_57': 5.108192976476572, 'recG_41': 27.10993497596725}
+
+Predicted proportions using Counting method are: {'recG_109': 15.151515151515152, 'recG_113': 12.247474747474747, 'recG_34': 12.878787878787879, 'recG_127': 21.085858585858578, 'recG_57': 12.87878787878788, 'recG_41': 25.757575757575758}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 4 ====================================================
+
+Number of optimal solutions: 1
+[['recG_13', 'recG_157', 'recG_65']]
+Likelihood scores are: [449.30721217810265]
+Minimum likelihood score is :449.307212178
+True variants are: ['recG_13', 'recG_65', 'recG_157']
+
+Predicted variants are: ['recG_13', 'recG_157', 'recG_65']
+
+True proportions are: {'recG_157': 39.8117742538673, 'recG_13': 4.431067746690846, 'recG_65': 55.75715799944185}
+
+Predicted proportions using Counting method are: {'recG_157': 38.70967741935483, 'recG_13': 6.451612903225806, 'recG_65': 54.83870967741935}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 5 ====================================================
+
+Number of optimal solutions: 1
+[['recG_113', 'recG_192', 'recG_204', 'recG_208']]
+Likelihood scores are: [464.79961551752996]
+Minimum likelihood score is :464.799615518
+True variants are: ['recG_113', 'recG_204', 'recG_208', 'recG_192']
+
+Predicted variants are: ['recG_113', 'recG_192', 'recG_204', 'recG_208']
+
+True proportions are: {'recG_192': 22.821031819153596, 'recG_113': 38.13192513071833, 'recG_204': 25.75800596009843, 'recG_208': 13.289037090029643}
+
+Predicted proportions using Counting method are: {'recG_192': 22.58064516129032, 'recG_113': 38.70967741935483, 'recG_204': 25.806451612903224, 'recG_208': 12.903225806451612}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 6 ====================================================
+
+Number of optimal solutions: 1
+[['recG_113', 'recG_189']]
+Likelihood scores are: [427.47189605519816]
+Minimum likelihood score is :427.471896055
+True variants are: ['recG_189', 'recG_113']
+
+Predicted variants are: ['recG_113', 'recG_189']
+
+True proportions are: {'recG_113': 62.480407715401995, 'recG_189': 37.519592284598005}
+
+Predicted proportions using Counting method are: {'recG_113': 61.29032258064516, 'recG_189': 38.70967741935483}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 7 ====================================================
+
+Number of optimal solutions: 1
+[['recG_106', 'recG_119', 'recG_137', 'recG_18', 'recG_78']]
+Likelihood scores are: [498.97519853008629]
+Minimum likelihood score is :498.97519853
+True variants are: ['recG_119', 'recG_18', 'recG_106', 'recG_78', 'recG_137']
+
+Predicted variants are: ['recG_106', 'recG_119', 'recG_137', 'recG_18', 'recG_78']
+
+True proportions are: {'recG_18': 28.596375936700273, 'recG_106': 30.02030344865027, 'recG_119': 1.4413177598507472, 'recG_137': 11.52900575270846, 'recG_78': 28.412997102090248}
+
+Predicted proportions using Counting method are: {'recG_119': 10.227272727272727, 'recG_18': 26.136363636363637, 'recG_106': 30.303030303030305, 'recG_137': 13.257575757575758, 'recG_78': 20.075757575757574}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 8 ====================================================
+
+Number of optimal solutions: 1
+[['recG_159', 'recG_195', 'recG_91']]
+Likelihood scores are: [449.30721217810265]
+Minimum likelihood score is :449.307212178
+True variants are: ['recG_195', 'recG_91', 'recG_159']
+
+Predicted variants are: ['recG_159', 'recG_195', 'recG_91']
+
+True proportions are: {'recG_91': 53.10923775879388, 'recG_159': 1.3989274525364226, 'recG_195': 45.491834788669685}
+
+Predicted proportions using Counting method are: {'recG_91': 51.61290322580645, 'recG_195': 45.16129032258064, 'recG_159': 3.225806451612903}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 9 ====================================================
+
+Number of optimal solutions: 1
+[['recG_159', 'recG_29', 'recG_9']]
+Likelihood scores are: [449.30721217810265]
+Minimum likelihood score is :449.307212178
+True variants are: ['recG_9', 'recG_159', 'recG_29']
+
+Predicted variants are: ['recG_159', 'recG_29', 'recG_9']
+
+True proportions are: {'recG_9': 41.73750198309749, 'recG_29': 34.934600604289734, 'recG_159': 23.327897412612778}
+
+Predicted proportions using Counting method are: {'recG_9': 41.93548387096774, 'recG_29': 35.483870967741936, 'recG_159': 22.58064516129032}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 10 ====================================================
+
+Number of optimal solutions: 4
+[['recG_112', 'recG_125', 'recG_23', 'recG_40', 'recG_62'], ['recG_125', 'recG_23', 'recG_40', 'recG_67', 'recG_76'], ['recG_112', 'recG_125', 'recG_23', 'recG_40', 'recG_67'], ['recG_125', 'recG_23', 'recG_40', 'recG_62', 'recG_76']]
+Likelihood scores are: [485.53819973550276, 484.64819363211865, 485.53819973550276, 484.64819363211865]
+Minimum likelihood score is :484.648193632
+True variants are: ['recG_76', 'recG_62', 'recG_23', 'recG_125', 'recG_40']
+
+Predicted variants are: ['recG_125', 'recG_23', 'recG_40', 'recG_62', 'recG_76']
+
+True proportions are: {'recG_76': 41.48714909992698, 'recG_125': 15.163136217990509, 'recG_62': 0.574542214917952, 'recG_23': 19.127309311739072, 'recG_40': 23.647863155425483}
+
+Predicted proportions using Counting method are: {'recG_76': 31.944444444444446, 'recG_125': 19.444444444444436, 'recG_62': 3.0303030303030303, 'recG_23': 18.18181818181818, 'recG_40': 27.398989898989903}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 11 ====================================================
+
+Number of optimal solutions: 20
+[['recG_14', 'recG_176', 'recG_186', 'recG_31', 'recG_63', 'recG_96', 'recG_99'], ['recG_110', 'recG_14', 'recG_176', 'recG_186', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_150', 'recG_176', 'recG_186', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_151', 'recG_176', 'recG_186', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_152', 'recG_176', 'recG_186', 'recG_32', 'recG_63', 'recG_99'], ['recG_14', 'recG_153', 'recG_176', 'recG_186', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_155', 'recG_176', 'recG_186', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_154', 'recG_176', 'recG_186', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_164', 'recG_176', 'recG_186', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_166', 'recG_176', 'recG_186', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_172', 'recG_176', 'recG_186', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_175', 'recG_176', 'recG_186', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_176', 'recG_185', 'recG_186', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_152', 'recG_176', 'recG_186', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_176', 'recG_186', 'recG_198', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_176', 'recG_186', 'recG_27', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_176', 'recG_186', 'recG_28', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_176', 'recG_186', 'recG_30', 'recG_32', 'recG_63', 'recG_99'], ['recG_14', 'recG_176', 'recG_186', 'recG_29', 'recG_31', 'recG_63', 'recG_99'], ['recG_14', 'recG_176', 'recG_186', 'recG_28', 'recG_32', 'recG_63', 'recG_99']]
+Likelihood scores are: [540.66066994215566, 540.05865425980926, 538.88063449160518, 539.77067437137123, 538.88063449160518, 538.87199349876323, 539.77940398217618, 539.18166448726925, 539.46968868468878, 540.35531945007074, 538.57969311390423, 540.08916358864508, 538.57532830850175, 538.28730411108222, 540.37273436269913, 537.9819979279788, 537.98636273338127, 537.9819979279788, 539.76198906954778, 538.57969311390423]
+Minimum likelihood score is :537.981997928
+True variants are: ['recG_153', 'recG_14', 'recG_31', 'recG_176', 'recG_63', 'recG_186', 'recG_99']
+
+Predicted variants are: ['recG_14', 'recG_153', 'recG_176', 'recG_186', 'recG_31', 'recG_63', 'recG_99']
+
+True proportions are: {'recG_99': 9.756981242885978, 'recG_14': 25.296546216548528, 'recG_31': 14.627350456132321, 'recG_186': 24.350558390719044, 'recG_63': 11.711652010320982, 'recG_153': 0.31142755241984954, 'recG_176': 13.945484130973304}
+
+Predicted proportions using Counting method are: {'recG_99': 8.823529411764705, 'recG_14': 23.52941176470588, 'recG_31': 12.13235294117647, 'recG_186': 23.52941176470588, 'recG_63': 11.76470588235294, 'recG_153': 5.514705882352941, 'recG_176': 14.705882352941176}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 12 ====================================================
+
+Number of optimal solutions: 6
+[['recG_110', 'recG_14', 'recG_150', 'recG_73', 'recG_76', 'recG_99'], ['recG_110', 'recG_112', 'recG_14', 'recG_150', 'recG_73', 'recG_99'], ['recG_112', 'recG_14', 'recG_150', 'recG_29', 'recG_73', 'recG_99'], ['recG_110', 'recG_14', 'recG_150', 'recG_73', 'recG_97', 'recG_99'], ['recG_14', 'recG_150', 'recG_29', 'recG_73', 'recG_97', 'recG_99'], ['recG_14', 'recG_150', 'recG_29', 'recG_73', 'recG_76', 'recG_99']]
+Likelihood scores are: [510.94002914266878, 510.94002914266878, 510.34669876214571, 510.94002914266878, 510.34669876214571, 510.34669876214571]
+Minimum likelihood score is :510.346698762
+True variants are: ['recG_73', 'recG_76', 'recG_99', 'recG_29', 'recG_150', 'recG_14']
+
+Predicted variants are: ['recG_14', 'recG_150', 'recG_29', 'recG_73', 'recG_76', 'recG_99']
+
+True proportions are: {'recG_76': 1.0221449826557, 'recG_99': 49.36907102283723, 'recG_29': 14.657363837994147, 'recG_73': 2.7400721466612548, 'recG_14': 11.640030772931329, 'recG_150': 20.57131723692035}
+
+Predicted proportions using Counting method are: {'recG_76': 3.0303030303030303, 'recG_99': 44.31818181818182, 'recG_29': 15.151515151515152, 'recG_73': 4.166666666666667, 'recG_14': 12.121212121212121, 'recG_150': 21.21212121212121}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 13 ====================================================
+
+Number of optimal solutions: 2
+[['recG_146', 'recG_206', 'recG_28', 'recG_4', 'recG_45', 'recG_72'], ['recG_146', 'recG_172', 'recG_206', 'recG_4', 'recG_45', 'recG_72']]
+Likelihood scores are: [499.18704650105161, 499.18704650105161]
+Minimum likelihood score is :499.187046501
+True variants are: ['recG_45', 'recG_4', 'recG_206', 'recG_72', 'recG_146', 'recG_172']
+
+Predicted variants are: ['recG_146', 'recG_172', 'recG_206', 'recG_4', 'recG_45', 'recG_72']
+
+True proportions are: {'recG_206': 13.234792704796517, 'recG_72': 22.259833033600934, 'recG_146': 29.79545422859397, 'recG_45': 0.40386442110028925, 'recG_172': 4.969195017954185, 'recG_4': 29.336860593954107}
+
+Predicted proportions using Counting method are: {'recG_206': 12.5, 'recG_72': 21.875, 'recG_146': 28.125, 'recG_172': 6.25, 'recG_45': 3.125, 'recG_4': 28.125}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 14 ====================================================
+
+Number of optimal solutions: 2
+[['recG_27', 'recG_28'], ['recG_172', 'recG_30']]
+Likelihood scores are: [407.9440880085557, 407.9440880085557]
+Minimum likelihood score is :407.944088009
+True variants are: ['recG_27', 'recG_28']
+
+Predicted variants are: ['recG_27', 'recG_28']
+
+True proportions are: {'recG_27': 64.74726407468351, 'recG_28': 35.25273592531647}
+
+Predicted proportions using Counting method are: {'recG_27': 58.87096774193548, 'recG_28': 41.12903225806451}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 15 ====================================================
+
+Number of optimal solutions: 1
+[['recG_205', 'recG_22']]
+Likelihood scores are: [427.47189605519816]
+Minimum likelihood score is :427.471896055
+True variants are: ['recG_205', 'recG_22']
+
+Predicted variants are: ['recG_205', 'recG_22']
+
+True proportions are: {'recG_205': 2.6162994615947124, 'recG_22': 97.38370053840528}
+
+Predicted proportions using Counting method are: {'recG_205': 3.225806451612903, 'recG_22': 96.77419354838709}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 16 ====================================================
+
+Number of optimal solutions: 1
+[['recG_102', 'recG_117', 'recG_122', 'recG_148', 'recG_203']]
+Likelihood scores are: [488.74908686700604]
+Minimum likelihood score is :488.749086867
+True variants are: ['recG_54', 'recG_117', 'recG_148', 'recG_203', 'recG_102', 'recG_122']
+
+Predicted variants are: ['recG_102', 'recG_117', 'recG_122', 'recG_148', 'recG_203']
+
+True proportions are: {'recG_203': 22.2031601614533, 'recG_117': 18.19853481104944, 'recG_102': 31.405327191166833, 'recG_122': 3.9019320771751715, 'recG_54': 2.915919585626692, 'recG_148': 21.37512617352857}
+
+Predicted proportions using Counting method are: {'recG_148': 21.21212121212121, 'recG_122': 8.333333333333334, 'recG_117': 18.939393939393938, 'recG_203': 25.0, 'recG_102': 26.515151515151516}
+
+This sim is not predicted correctly based on likelihood score.
+======================================== SIMULATION 17 ====================================================
+
+Number of optimal solutions: 8
+[['recG_134', 'recG_159', 'recG_161', 'recG_192', 'recG_74', 'recG_88', 'recG_92'], ['recG_134', 'recG_159', 'recG_160', 'recG_192', 'recG_74', 'recG_88', 'recG_92'], ['recG_103', 'recG_134', 'recG_159', 'recG_160', 'recG_192', 'recG_88', 'recG_92'], ['recG_103', 'recG_134', 'recG_159', 'recG_160', 'recG_166', 'recG_192', 'recG_88'], ['recG_134', 'recG_159', 'recG_160', 'recG_166', 'recG_192', 'recG_74', 'recG_88'], ['recG_134', 'recG_159', 'recG_161', 'recG_166', 'recG_192', 'recG_74', 'recG_88'], ['recG_103', 'recG_134', 'recG_159', 'recG_161', 'recG_166', 'recG_192', 'recG_88'], ['recG_103', 'recG_134', 'recG_159', 'recG_161', 'recG_192', 'recG_88', 'recG_92']]
+Likelihood scores are: [526.83261244349478, 526.83261244349478, 526.83261244349478, 526.83261244349478, 526.83261244349478, 526.83261244349478, 526.83261244349478, 526.83261244349478]
+Minimum likelihood score is :526.832612443
+True variants are: ['recG_161', 'recG_134', 'recG_88', 'recG_159', 'recG_103', 'recG_192', 'recG_92']
+
+Predicted variants are: ['recG_103', 'recG_134', 'recG_159', 'recG_161', 'recG_192', 'recG_88', 'recG_92']
+
+True proportions are: {'recG_192': 12.706721653008051, 'recG_88': 10.422742890314552, 'recG_92': 28.985294080349323, 'recG_103': 14.686580028338591, 'recG_134': 9.844871841452747, 'recG_159': 4.684510643768236, 'recG_161': 18.669278862768497}
+
+Predicted proportions using Counting method are: {'recG_192': 12.121212121212121, 'recG_88': 12.121212121212121, 'recG_92': 27.272727272727273, 'recG_103': 15.151515151515152, 'recG_134': 9.09090909090909, 'recG_159': 6.0606060606060606, 'recG_161': 18.18181818181818}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 18 ====================================================
+
+Number of optimal solutions: 1
+[['recG_127', 'recG_134', 'recG_204', 'recG_58', 'recG_96']]
+Likelihood scores are: [519.56113763467329]
+Minimum likelihood score is :519.561137635
+True variants are: ['recG_58', 'recG_204', 'recG_134', 'recG_127', 'recG_96']
+
+Predicted variants are: ['recG_127', 'recG_134', 'recG_204', 'recG_58', 'recG_96']
+
+True proportions are: {'recG_134': 20.142339556875186, 'recG_127': 17.07166605300989, 'recG_204': 20.154091537261078, 'recG_58': 21.699916237704908, 'recG_96': 20.931986615148933}
+
+Predicted proportions using Counting method are: {'recG_127': 18.01470588235294, 'recG_134': 20.588235294117645, 'recG_204': 20.588235294117645, 'recG_58': 20.220588235294116, 'recG_96': 20.588235294117645}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 19 ====================================================
+
+Number of optimal solutions: 1
+[['recG_141', 'recG_190', 'recG_20', 'recG_207', 'recG_27', 'recG_83']]
+Likelihood scores are: [512.81274371806933]
+Minimum likelihood score is :512.812743718
+True variants are: ['recG_190', 'recG_83', 'recG_141', 'recG_207', 'recG_20', 'recG_27']
+
+Predicted variants are: ['recG_141', 'recG_190', 'recG_20', 'recG_207', 'recG_27', 'recG_83']
+
+True proportions are: {'recG_207': 5.314326802177019, 'recG_83': 14.003972958569886, 'recG_27': 19.61244831198223, 'recG_20': 17.458401058250107, 'recG_141': 14.76138239666941, 'recG_190': 28.849468472351337}
+
+Predicted proportions using Counting method are: {'recG_207': 6.0606060606060606, 'recG_83': 15.53030303030303, 'recG_27': 18.18181818181818, 'recG_20': 17.803030303030305, 'recG_141': 15.151515151515152, 'recG_190': 27.272727272727273}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 20 ====================================================
+
+Number of optimal solutions: 8
+[['recG_111', 'recG_172', 'recG_177', 'recG_88'], ['recG_112', 'recG_172', 'recG_177', 'recG_88'], ['recG_172', 'recG_177', 'recG_41', 'recG_86'], ['recG_172', 'recG_177', 'recG_42', 'recG_88'], ['recG_172', 'recG_177', 'recG_76', 'recG_88'], ['recG_172', 'recG_177', 'recG_88'], ['recG_172', 'recG_177', 'recG_86'], ['recG_172', 'recG_177', 'recG_86', 'recG_88']]
+Likelihood scores are: [441.52203069140057, 443.60290292186096, 451.29928449400182, 444.50164649682023, 442.99878620783284, 445.24308049096931, 445.24731326460335, 442.13695435202828]
+Minimum likelihood score is :441.522030691
+True variants are: ['recG_88', 'recG_177', 'recG_172', 'recG_111']
+
+Predicted variants are: ['recG_111', 'recG_172', 'recG_177', 'recG_88']
+
+True proportions are: {'recG_111': 17.553254234993236, 'recG_172': 17.091906721338297, 'recG_88': 38.906934950328, 'recG_177': 26.44790409334048}
+
+Predicted proportions using Counting method are: {'recG_88': 29.036458333333332, 'recG_172': 18.750000000000007, 'recG_111': 25.911458333333325, 'recG_177': 26.302083333333325}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 21 ====================================================
+
+Number of optimal solutions: 2
+[['recG_109', 'recG_130', 'recG_3', 'recG_37', 'recG_71', 'recG_84'], ['recG_109', 'recG_113', 'recG_130', 'recG_3', 'recG_37', 'recG_71']]
+Likelihood scores are: [510.21369350383696, 510.21802496602169]
+Minimum likelihood score is :510.213693504
+True variants are: ['recG_37', 'recG_3', 'recG_130', 'recG_113', 'recG_71', 'recG_109']
+
+Predicted variants are: ['recG_109', 'recG_130', 'recG_3', 'recG_37', 'recG_71', 'recG_84']
+
+True proportions are: {'recG_109': 23.803743895058265, 'recG_71': 12.964327323386723, 'recG_113': 8.15524078750936, 'recG_37': 14.251233950427588, 'recG_130': 20.873348592198536, 'recG_3': 19.95210545141952}
+
+Predicted proportions using Counting method are: {'recG_109': 24.242424242424242, 'recG_71': 12.121212121212121, 'recG_37': 15.025252525252524, 'recG_84': 10.101010101010106, 'recG_130': 20.328282828282823, 'recG_3': 18.18181818181818}
+
+This sim is not predicted correctly based on likelihood score.
+======================================== SIMULATION 22 ====================================================
+
+Number of optimal solutions: 1
+[['recG_108', 'recG_148', 'recG_155', 'recG_196']]
+Likelihood scores are: [494.78668748640285]
+Minimum likelihood score is :494.786687486
+True variants are: ['recG_148', 'recG_196', 'recG_155', 'recG_108']
+
+Predicted variants are: ['recG_108', 'recG_148', 'recG_155', 'recG_196']
+
+True proportions are: {'recG_148': 44.2235143720721, 'recG_155': 7.383262974484876, 'recG_196': 21.148916099238924, 'recG_108': 27.244306554204083}
+
+Predicted proportions using Counting method are: {'recG_148': 42.42424242424242, 'recG_155': 9.09090909090909, 'recG_196': 21.21212121212121, 'recG_108': 27.272727272727273}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 23 ====================================================
+
+Number of optimal solutions: 23
+[['recG_129', 'recG_155', 'recG_161', 'recG_197', 'recG_38', 'recG_91', 'recG_92'], ['recG_129', 'recG_138', 'recG_151', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_150', 'recG_155', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_150', 'recG_151', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_153', 'recG_155', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_151', 'recG_161', 'recG_197', 'recG_38', 'recG_91', 'recG_92'], ['recG_129', 'recG_153', 'recG_155', 'recG_160', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_151', 'recG_153', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_150', 'recG_151', 'recG_160', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_155', 'recG_160', 'recG_197', 'recG_38', 'recG_91', 'recG_92'], ['recG_129', 'recG_153', 'recG_155', 'recG_160', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_150', 'recG_151', 'recG_161', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_161', 'recG_197', 'recG_198', 'recG_27', 'recG_38', 'recG_92'], ['recG_129', 'recG_160', 'recG_197', 'recG_198', 'recG_27', 'recG_38', 'recG_92'], ['recG_129', 'recG_155', 'recG_160', 'recG_166', 'recG_197', 'recG_38', 'recG_91'], ['recG_129', 'recG_138', 'recG_151', 'recG_160', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_150', 'recG_155', 'recG_160', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_150', 'recG_151', 'recG_160', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_150', 'recG_155', 'recG_161', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_160', 'recG_166', 'recG_197', 'recG_198', 'recG_27', 'recG_38'], ['recG_129', 'recG_155', 'recG_160', 'recG_172', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_151', 'recG_160', 'recG_197', 'recG_38', 'recG_91', 'recG_92'], ['recG_129', 'recG_138', 'recG_155', 'recG_161', 'recG_197', 'recG_38', 'recG_92']]
+Likelihood scores are: [518.71706820757731, 518.02145471594736, 516.09314934185693, 515.1030041475999, 516.0759958875808, 517.48566635388113, 516.0759958875808, 515.08585069332389, 515.1030041475999, 518.71706820757731, 516.0759958875808, 515.1030041475999, 515.43365743913887, 515.43365743913887, 518.71706820757731, 518.02145471594736, 516.09314934185693, 515.1030041475999, 516.09314934185693, 515.43365743913887, 515.78146418495385, 517.48566635388113, 519.01159991020438]
+Minimum likelihood score is :515.085850693
+True variants are: ['recG_38', 'recG_166', 'recG_161', 'recG_129', 'recG_197', 'recG_151', 'recG_27']
+
+Predicted variants are: ['recG_129', 'recG_151', 'recG_153', 'recG_161', 'recG_197', 'recG_38', 'recG_92']
+
+True proportions are: {'recG_38': 18.46574917342312, 'recG_27': 19.655049634422223, 'recG_197': 6.008410645291557, 'recG_161': 19.238037452759656, 'recG_166': 4.036976128654941, 'recG_129': 20.432689851814175, 'recG_151': 12.16308711363433}
+
+Predicted proportions using Counting method are: {'recG_38': 18.18181818181818, 'recG_92': 9.595959595959597, 'recG_197': 6.0606060606060606, 'recG_161': 18.18181818181818, 'recG_153': 11.86868686868687, 'recG_129': 21.21212121212121, 'recG_151': 14.8989898989899}
+
+This sim is not predicted correctly based on likelihood score.
+======================================== SIMULATION 24 ====================================================
+
+Number of optimal solutions: 1
+[['recG_111', 'recG_31', 'recG_56']]
+Likelihood scores are: [463.80099321610601]
+Minimum likelihood score is :463.800993216
+True variants are: ['recG_31', 'recG_56', 'recG_111']
+
+Predicted variants are: ['recG_111', 'recG_31', 'recG_56']
+
+True proportions are: {'recG_111': 69.5953312819938, 'recG_56': 23.46825260810016, 'recG_31': 6.936416109906056}
+
+Predicted proportions using Counting method are: {'recG_56': 25.0, 'recG_111': 65.625, 'recG_31': 9.375}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 25 ====================================================
+
+Number of optimal solutions: 1
+[['recG_115', 'recG_47']]
+Likelihood scores are: [419.5258870249969]
+Minimum likelihood score is :419.525887025
+True variants are: ['recG_47', 'recG_115']
+
+Predicted variants are: ['recG_115', 'recG_47']
+
+True proportions are: {'recG_47': 93.14340718829038, 'recG_115': 6.856592811709612}
+
+Predicted proportions using Counting method are: {'recG_47': 82.25806451612902, 'recG_115': 17.741935483870968}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 26 ====================================================
+
+Number of optimal solutions: 2
+[['recG_188', 'recG_197', 'recG_32', 'recG_41', 'recG_55', 'recG_99'], ['recG_188', 'recG_197', 'recG_31', 'recG_41', 'recG_55', 'recG_99']]
+Likelihood scores are: [514.9494448051546, 514.9494448051546]
+Minimum likelihood score is :514.949444805
+True variants are: ['recG_55', 'recG_31', 'recG_41', 'recG_188', 'recG_99', 'recG_197']
+
+Predicted variants are: ['recG_188', 'recG_197', 'recG_31', 'recG_41', 'recG_55', 'recG_99']
+
+True proportions are: {'recG_99': 20.965336963626918, 'recG_31': 6.192721420019106, 'recG_197': 31.82952025629553, 'recG_55': 4.055278404943387, 'recG_188': 3.0313117378197942, 'recG_41': 33.92583121729526}
+
+Predicted proportions using Counting method are: {'recG_99': 21.21212121212121, 'recG_31': 6.0606060606060606, 'recG_197': 30.303030303030305, 'recG_55': 8.333333333333334, 'recG_188': 3.0303030303030303, 'recG_41': 31.06060606060606}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 27 ====================================================
+
+Number of optimal solutions: 1
+[['recG_56', 'recG_6', 'recG_9']]
+Likelihood scores are: [463.68719811277117]
+Minimum likelihood score is :463.687198113
+True variants are: ['recG_9', 'recG_6', 'recG_56']
+
+Predicted variants are: ['recG_56', 'recG_6', 'recG_9']
+
+True proportions are: {'recG_56': 66.79977437358178, 'recG_9': 20.290878722404106, 'recG_6': 12.909346904014111}
+
+Predicted proportions using Counting method are: {'recG_56': 65.625, 'recG_9': 21.875, 'recG_6': 12.5}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 28 ====================================================
+
+Number of optimal solutions: 1
+[['recG_129', 'recG_77']]
+Likelihood scores are: [427.47189605519816]
+Minimum likelihood score is :427.471896055
+True variants are: ['recG_77', 'recG_129']
+
+Predicted variants are: ['recG_129', 'recG_77']
+
+True proportions are: {'recG_77': 61.7927327383341, 'recG_129': 38.2072672616659}
+
+Predicted proportions using Counting method are: {'recG_77': 61.29032258064516, 'recG_129': 38.70967741935483}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 29 ====================================================
+
+Number of optimal solutions: 2
+[['recG_126', 'recG_206', 'recG_42', 'recG_63', 'recG_84', 'recG_91'], ['recG_113', 'recG_126', 'recG_206', 'recG_42', 'recG_63', 'recG_91']]
+Likelihood scores are: [496.62343358519229, 496.62559931628459]
+Minimum likelihood score is :496.623433585
+True variants are: ['recG_206', 'recG_91', 'recG_63', 'recG_42', 'recG_84', 'recG_126']
+
+Predicted variants are: ['recG_126', 'recG_206', 'recG_42', 'recG_63', 'recG_84', 'recG_91']
+
+True proportions are: {'recG_206': 18.90796437168259, 'recG_91': 27.371320750229327, 'recG_84': 5.618134535860798, 'recG_126': 26.071008391103174, 'recG_63': 16.628824040740472, 'recG_42': 5.4027479103836376}
+
+Predicted proportions using Counting method are: {'recG_206': 18.750000000000007, 'recG_91': 28.125000000000007, 'recG_84': 8.072916666666668, 'recG_126': 20.96354166666667, 'recG_63': 15.625000000000004, 'recG_42': 8.463541666666668}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 30 ====================================================
+
+Number of optimal solutions: 2
+[['recG_10', 'recG_131', 'recG_193', 'recG_62', 'recG_92'], ['recG_10', 'recG_131', 'recG_166', 'recG_193', 'recG_62']]
+Likelihood scores are: [492.19763316699579, 492.19763316699579]
+Minimum likelihood score is :492.197633167
+True variants are: ['recG_131', 'recG_10', 'recG_62', 'recG_193', 'recG_166']
+
+Predicted variants are: ['recG_10', 'recG_131', 'recG_166', 'recG_193', 'recG_62']
+
+True proportions are: {'recG_10': 7.724852322219434, 'recG_193': 35.84365496592645, 'recG_62': 12.179679446592035, 'recG_131': 27.85493507464722, 'recG_166': 16.396878190614867}
+
+Predicted proportions using Counting method are: {'recG_10': 9.375, 'recG_193': 34.375, 'recG_62': 12.5, 'recG_131': 28.125, 'recG_166': 15.625}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 31 ====================================================
+
+Number of optimal solutions: 4
+[['recG_161', 'recG_162', 'recG_63', 'recG_69', 'recG_76'], ['recG_160', 'recG_162', 'recG_63', 'recG_69', 'recG_76'], ['recG_112', 'recG_160', 'recG_162', 'recG_63', 'recG_69'], ['recG_112', 'recG_161', 'recG_162', 'recG_63', 'recG_69']]
+Likelihood scores are: [490.6659841933909, 490.6659841933909, 490.6659841933909, 490.6659841933909]
+Minimum likelihood score is :490.665984193
+True variants are: ['recG_76', 'recG_161', 'recG_162', 'recG_63', 'recG_69']
+
+Predicted variants are: ['recG_161', 'recG_162', 'recG_63', 'recG_69', 'recG_76']
+
+True proportions are: {'recG_76': 6.156312608973016, 'recG_162': 20.822687562095123, 'recG_161': 22.263414463553058, 'recG_63': 43.17472152204278, 'recG_69': 7.582863843336016}
+
+Predicted proportions using Counting method are: {'recG_69': 10.546875, 'recG_162': 21.875, 'recG_161': 21.875, 'recG_63': 39.453125, 'recG_76': 6.25}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 32 ====================================================
+
+Number of optimal solutions: 2
+[['recG_120', 'recG_122', 'recG_170', 'recG_27'], ['recG_122', 'recG_170', 'recG_181', 'recG_27']]
+Likelihood scores are: [467.66406974111931, 468.48463293625156]
+Minimum likelihood score is :467.664069741
+True variants are: ['recG_27', 'recG_120', 'recG_122', 'recG_170']
+
+Predicted variants are: ['recG_120', 'recG_122', 'recG_170', 'recG_27']
+
+True proportions are: {'recG_170': 3.476068479110734, 'recG_27': 16.618253007469868, 'recG_122': 1.5548669045002819, 'recG_120': 78.35081160891912}
+
+Predicted proportions using Counting method are: {'recG_170': 10.416666666666668, 'recG_27': 15.625, 'recG_122': 10.416666666666666, 'recG_120': 63.54166666666667}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 33 ====================================================
+
+Number of optimal solutions: 1
+[['recG_121', 'recG_153', 'recG_67']]
+Likelihood scores are: [463.80099321610601]
+Minimum likelihood score is :463.800993216
+True variants are: ['recG_153', 'recG_67', 'recG_121']
+
+Predicted variants are: ['recG_121', 'recG_153', 'recG_67']
+
+True proportions are: {'recG_121': 17.770697970464223, 'recG_153': 67.70122528174595, 'recG_67': 14.528076747789845}
+
+Predicted proportions using Counting method are: {'recG_67': 15.625, 'recG_153': 65.625, 'recG_121': 18.75}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 34 ====================================================
+
+Number of optimal solutions: 1
+[['recG_151', 'recG_197', 'recG_9']]
+Likelihood scores are: [462.09461686151741]
+Minimum likelihood score is :462.094616862
+True variants are: ['recG_197', 'recG_9', 'recG_151']
+
+Predicted variants are: ['recG_151', 'recG_197', 'recG_9']
+
+True proportions are: {'recG_9': 28.513830913044124, 'recG_197': 40.252903897613265, 'recG_151': 31.233265189342614}
+
+Predicted proportions using Counting method are: {'recG_9': 28.515625, 'recG_197': 40.234375, 'recG_151': 31.25}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 35 ====================================================
+
+Number of optimal solutions: 2
+[['recG_119', 'recG_133', 'recG_189', 'recG_3', 'recG_58', 'recG_84'], ['recG_119', 'recG_133', 'recG_176', 'recG_189', 'recG_3', 'recG_84']]
+Likelihood scores are: [527.26590933340776, 527.26808625266199]
+Minimum likelihood score is :527.265909333
+True variants are: ['recG_133', 'recG_189', 'recG_58', 'recG_84', 'recG_119', 'recG_3']
+
+Predicted variants are: ['recG_119', 'recG_133', 'recG_189', 'recG_3', 'recG_58', 'recG_84']
+
+True proportions are: {'recG_119': 13.898493797704486, 'recG_84': 20.590816302849923, 'recG_58': 1.0169349881506207, 'recG_133': 18.955395097847784, 'recG_3': 20.50901143670834, 'recG_189': 25.02934837673884}
+
+Predicted proportions using Counting method are: {'recG_119': 12.867647058823525, 'recG_84': 19.485294117647058, 'recG_58': 5.882352941176469, 'recG_133': 17.64705882352941, 'recG_3': 20.588235294117645, 'recG_189': 23.52941176470588}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 36 ====================================================
+
+Number of optimal solutions: 1
+[['recG_129', 'recG_132', 'recG_176', 'recG_183', 'recG_205', 'recG_97']]
+Likelihood scores are: [504.50969853654539]
+Minimum likelihood score is :504.509698537
+True variants are: ['recG_129', 'recG_132', 'recG_183', 'recG_176', 'recG_205', 'recG_97']
+
+Predicted variants are: ['recG_129', 'recG_132', 'recG_176', 'recG_183', 'recG_205', 'recG_97']
+
+True proportions are: {'recG_205': 20.450099187013343, 'recG_183': 18.618729779388012, 'recG_97': 12.72359973745884, 'recG_129': 15.72050647396529, 'recG_132': 18.314066521095, 'recG_176': 14.172998301079515}
+
+Predicted proportions using Counting method are: {'recG_205': 21.212121212121218, 'recG_132': 17.8030303030303, 'recG_97': 12.878787878787882, 'recG_176': 14.772727272727272, 'recG_183': 18.181818181818187, 'recG_129': 15.151515151515156}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 37 ====================================================
+
+Number of optimal solutions: 2
+[['recG_104', 'recG_120', 'recG_132', 'recG_134', 'recG_142', 'recG_154', 'recG_83'], ['recG_104', 'recG_132', 'recG_134', 'recG_142', 'recG_154', 'recG_181', 'recG_83']]
+Likelihood scores are: [536.88010982663945, 537.35065667895026]
+Minimum likelihood score is :536.880109827
+True variants are: ['recG_132', 'recG_142', 'recG_120', 'recG_83', 'recG_104', 'recG_154', 'recG_134']
+
+Predicted variants are: ['recG_104', 'recG_120', 'recG_132', 'recG_134', 'recG_142', 'recG_154', 'recG_83']
+
+True proportions are: {'recG_83': 31.937276072815703, 'recG_104': 25.5224702527941, 'recG_134': 8.035706195685309, 'recG_142': 3.9469539149665085, 'recG_132': 8.058357741992971, 'recG_120': 14.641694417028974, 'recG_154': 7.857541404716419}
+
+Predicted proportions using Counting method are: {'recG_83': 29.41176470588235, 'recG_104': 23.52941176470588, 'recG_134': 8.823529411764705, 'recG_142': 7.475490196078429, 'recG_132': 9.313725490196079, 'recG_120': 12.62254901960784, 'recG_154': 8.823529411764705}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 38 ====================================================
+
+Number of optimal solutions: 1
+[['recG_201', 'recG_25', 'recG_45', 'recG_80']]
+Likelihood scores are: [473.43576127915532]
+Minimum likelihood score is :473.435761279
+True variants are: ['recG_45', 'recG_201', 'recG_80', 'recG_25']
+
+Predicted variants are: ['recG_201', 'recG_25', 'recG_45', 'recG_80']
+
+True proportions are: {'recG_25': 12.042746219103142, 'recG_45': 24.886075136600496, 'recG_80': 52.082657356419794, 'recG_201': 10.988521287876566}
+
+Predicted proportions using Counting method are: {'recG_25': 12.5, 'recG_45': 25.0, 'recG_80': 45.703125, 'recG_201': 16.796875}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 39 ====================================================
+
+Number of optimal solutions: 1
+[['recG_141', 'recG_147', 'recG_183']]
+Likelihood scores are: [463.77903626214919]
+Minimum likelihood score is :463.779036262
+True variants are: ['recG_141', 'recG_183', 'recG_147']
+
+Predicted variants are: ['recG_141', 'recG_147', 'recG_183']
+
+True proportions are: {'recG_141': 54.60708312083092, 'recG_147': 37.704733552605646, 'recG_183': 7.6881833265634345}
+
+Predicted proportions using Counting method are: {'recG_141': 53.125, 'recG_183': 9.375, 'recG_147': 37.5}
+
+This sim is predicted correctly based on likelihood score.
+======================================== SIMULATION 40 ====================================================
+
+Number of optimal solutions: 1
+[['recG_189', 'recG_2']]
+Likelihood scores are: [427.47189605519816]
+Minimum likelihood score is :427.471896055
+True variants are: ['recG_2', 'recG_189']
+
+Predicted variants are: ['recG_189', 'recG_2']
+
+True proportions are: {'recG_2': 80.44879509305166, 'recG_189': 19.55120490694834}
+
+Predicted proportions using Counting method are: {'recG_2': 80.64516129032258, 'recG_189': 19.354838709677416}
+
+This sim is predicted correctly based on likelihood score.
+======================================== recG: SUMMARY STATISTICS ====================================================
+
+(1)Total Variation Distance:
+
+Counting Method ~ Total variation distances are: [2.357322747856206, 3.1935810674934366, 9.911540700313898, 2.0205451565349626, 0.6261979414413021, 1.1900851347568313, 10.79725182666931, 1.8268789990764789, 0.747252251322454, 10.488195785403425, 6.016730423932929, 5.050889204655406, 4.001940560945528, 5.876296332748037, 0.6095069900181902, 7.969100223049364, 3.5394997709119544, 1.8230793234420783, 3.0073713297881195, 10.01629737700181, 11.313709023201017, 1.7992719478296855, 25.032176025623578, 3.9703312819937895, 10.885342672161357, 4.52483917688424, 1.5841212775958944, 0.5024101576889386, 6.269255136859567, 2.2405331565413134, 4.110010985595842, 15.802397949722316, 2.0762252817459403, 0.018528897613263595, 4.944641810435156, 1.5169391380846662, 6.537715252442707, 6.379532356419795, 1.6868166734365664, 0.19636619727092075] 
+
+Counting Method ~ The average of total variation distance is: 5.06151818866 
+
+Counting Method ~ The standard deviation of total variation distance is: 4.92600130089 
+
+(2)Total Variation Distance for variants which are predicted correctly:
+
+Counting Method ~ Total variation distances are: [2.357322747856206, 9.911540700313898, 2.0205451565349626, 0.6261979414413021, 1.1900851347568313, 10.79725182666931, 1.8268789990764789, 0.747252251322454, 10.488195785403425, 6.016730423932929, 5.050889204655406, 4.001940560945528, 5.876296332748037, 0.6095069900181902, 3.5394997709119544, 1.8230793234420783, 3.0073713297881195, 10.01629737700181, 1.7992719478296855, 3.9703312819937895, 10.885342672161357, 4.52483917688424, 1.5841212775958944, 0.5024101576889386, 6.269255136859567, 2.2405331565413134, 4.110010985595842, 15.802397949722316, 2.0762252817459403, 0.018528897613263595, 4.944641810435156, 1.5169391380846662, 6.537715252442707, 6.379532356419795, 1.6868166734365664, 0.19636619727092075] 
+
+Counting Method ~ The average of total variation distance is: 4.3042267002 
+
+Counting Method ~ The standard deviation of total variation distance is: 3.72720334262 
+
+(3) Precision: 
+
+Precision is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 0.7142857142857143, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
+
+Average of precision is:  0.98869047619 
+
+Standard deviation of precision is:  0.0510622702411 
+
+(4) Recall : 
+
+Recall is: [1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 0.7142857142857143, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
+
+Average of recall is:  0.980357142857 
+
+Standard deviation of recall is:  0.0611417028151 
+
+(5) Objective Value: 
+
+Predicted objective values are: [4.0, 6.0, 6.0, 3.0, 4.0, 2.0, 5.0, 3.0, 3.0, 5.0, 7.0, 6.0, 6.0, 2.0, 2.0, 5.0, 7.0, 5.0, 6.0, 4.0, 6.0, 4.0, 7.0, 3.0, 2.0, 6.0, 3.0, 2.0, 6.0, 5.0, 5.0, 4.0, 3.0, 3.0, 6.0, 6.0, 7.0, 4.0, 3.0, 2.0] 
+
+True objective values are: [4.0, 6.0, 6.0, 3.0, 4.0, 2.0, 5.0, 3.0, 3.0, 5.0, 7.0, 6.0, 6.0, 2.0, 2.0, 6.0, 7.0, 5.0, 6.0, 4.0, 6.0, 4.0, 7.0, 3.0, 2.0, 6.0, 3.0, 2.0, 6.0, 5.0, 5.0, 4.0, 3.0, 3.0, 6.0, 6.0, 7.0, 4.0, 3.0, 2.0] 
+
+The difference in objective values are: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+
+Average of difference in objective value is:  -0.025 
+
+Standard deviation of difference in objective value is:  0.15612494996 
+
+(6)Accuracy: 
+
+Total number of simulations:  40 
+
+Number of simulations which are predicted correctly: 36
+
+Percentage of simulations predicted correctly:  90.0 %
+
+(7)Optimal solutions: 
+
+Number of optimal solutions: [2, 3, 7, 1, 1, 1, 1, 1, 1, 4, 20, 6, 2, 2, 1, 1, 8, 1, 1, 8, 2, 1, 23, 1, 1, 2, 1, 1, 2, 2, 4, 2, 1, 1, 2, 1, 2, 1, 1, 1]
+
+Average number of optimal solutions: 3.1
+
+(8)Statistics about likelihood score: 
+
+Number of simulations having multiple solutions: 19
+Number of these simulations which are correct: 16
+The percentage is : 84.2105263158 %
