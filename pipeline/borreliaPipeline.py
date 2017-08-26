@@ -115,18 +115,21 @@ for samp in samples:
         gene_solProp_dict[gene] = solutionsAndProp_dict
         numOfMinQualSol.append(len(solutionsAndProp_dict))
         
+    #gene_keys = [[0,1], [0,1,2],...] indices of solutions in each gene
+    gene_keys = [gene_solProp_dict[gene].keys() for gene in loci ]
+    #Combination of multiple optimal solutions across all genes
+    combinationsTuple = [comb for comb in itertools.product(*gene_keys)]
+    
     #If each gene has a unique optimal solution
     if all(i == 1 for i in numOfMinQualSol):
     #    Print and write to file
-        writePropToCsv(gene_solProp_dict)
+        write_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, combinationsTuple[0])}
+        writePropToCsv(write_dict)
     else:   #when there are indistinguishable solutions based on quality score
         #Choose an optimal solution which maximizes number of existing strains, similar flavour as 2nd ILP
         print("\n... There are at least one gene having multiple optimal solutions ...")
         print("\n... Picking a good set of variants among the multiple optimal solutions ...")
-        #gene_keys = [[0,1], [0,1,2],...] indices of solutions in each gene
-        gene_keys = [gene_solProp_dict[gene].keys() for gene in loci ]
-        #Combination of multiple optimal solutions across all genes
-        combinationsTuple = [comb for comb in itertools.product(*gene_keys)]
+    
         compatible_tuples = compatibleFilter(combinationsTuple)
         localILP_dict = dict()
         objValue_list = list()
@@ -148,7 +151,7 @@ for samp in samples:
     #currentpath=/pipeline/variantsAndProp
     os.chdir("..")
 
-#print("NUmber of solutions: {}".format(numOfMinQualSol))
+print("NUmber of solutions: {}".format(numOfMinQualSol))
 print("")
 print("Script done.")
 print("Time taken : {} hr(s)".format((time.time() - start_time)/3600))

@@ -86,10 +86,9 @@ def create_dictionary(keys, vals):
 Input: A dataframe with rows=reads, columns=variants
 Output: Negative log likelihood score of this solution
 '''    
-def compute_likelihood(df):
+def compute_likelihood(df, max_mm):
     numVar = df.shape[1]
     likelihood_list = list()
-    max_mm = 3
     
     for row in df.itertuples(index=False):
         read = list(row)
@@ -245,7 +244,7 @@ def getVarAndProp(gene, paired_path, samp):
     
     #Calculate quality scores of solutions
     Qscores = list()
-#    minVar_Qscores = list()
+    minVar_Qscores = list()
     for i in range(len(all_solutions)):
         Qscores.append(compute_QSum(Qmatrix.loc[reads_cov,all_solutions[i]]))
         
@@ -258,13 +257,13 @@ def getVarAndProp(gene, paired_path, samp):
     minVar_solutions = all_solutions
     
     #Calculate quality scores for minimum alleles
-#    for i in range(len(minVar_solutions)):
-#        minVar_Qscores.append(compute_QSum(Qmatrix.loc[reads_cov, minVar_solutions[i]]))
+    for i in range(len(minVar_solutions)):
+        minVar_Qscores.append(compute_QSum(Qmatrix.loc[reads_cov, minVar_solutions[i]]))
         
-#    print("Quality scores for solutions with minimum alleles: {}".format(minVar_Qscores))
-#    print("Minimum alleles solutions: {}".format(minVar_solutions))
+    print("Quality scores for solutions with minimum alleles: {}".format(minVar_Qscores))
+    print("Minimum alleles solutions: {}".format(minVar_solutions))
     
-    #Return solutions with minimum quality scores
+#    Return solutions with minimum quality scores
     min_qscore = min(Qscores)
     minQscore_sol = [minVar_solutions[i] for i in range(len(minVar_solutions)) if Qscores[i] == min_qscore]
     print("Min quality score: {}".format(min_qscore))
@@ -273,34 +272,46 @@ def getVarAndProp(gene, paired_path, samp):
         print("@@@@@@@@@@@@ More than 1 solution having minimum quality score @@@@@@@@@@@@")
     
     #Likelihood approach 
-    ''' 
+     
     #compute proportions
-    prop = compute_proportions(dataMatrix_pred)
-    pred_prop = create_dictionary(var_predicted, prop)
+#    prop = compute_proportions(dataMatrix_pred)
+#    pred_prop = create_dictionary(var_predicted, prop)
     
     #score list and proportions
-    score_list = list()
-    min_score = sys.maxint
-    
-    for i in range(len(minVar_solutions)):
-        score = compute_likelihood(dataMatrixDF.loc[reads_cov, minVar_solutions[i]])
-        score_list.append(score)
-        
-        if score <= min_score:
-            min_score = score
-            
+#    score_list = list()
+#    min_score = sys.maxint
+#    
+#    for i in range(len(minVar_solutions)):
+#        score = compute_likelihood(dataMatrixDF.loc[reads_cov, minVar_solutions[i]],6)
+#        score_list.append(score)
+#        
+#        if score <= min_score:
+#            min_score = score
+#         
+#
+#    minLikeli = np.argmin(score_list)
+#    var_predicted = all_solutions[minLikeli]
+#    minLike_sol = [minVar_solutions[i] for i in range(len(minVar_solutions)) if score_list[i] == min_score]
+#    minIndices = np.where(np.array(score_list) == np.array(score_list).min())
+#    print("Likelihood score for all solutions: {}".format(score_list))
+#    print("Solutions: {}".format(minVar_solutions))
+#    print("Minimum neg log likelihood: {}".format(min_score))
+#    print("Solutions having minimum neg log likelihood: {}".format(minLike_sol))
+#    
+#    if len(minIndices) > 1:
+#        print("More than 1 solution having min likelihood")
     #Give some names to the solutions for further identifications and get the indices for sorted likelihood list
     #Sort quality score and produce some graphs
-    sortedIndex_score_list = np.argsort(score_list)
-    sortedIndex_qscore_minVarSol = np.argsort(Qscores)
-    likelihood_score_dict = dict()
-    qscores_minVarSol_dict = dict()
-    sol_name_dict = dict()
+#    sortedIndex_score_list = np.argsort(score_list)
+#    sortedIndex_qscore_minVarSol = np.argsort(Qscores)
+#    likelihood_score_dict = dict()
+#    qscores_minVarSol_dict = dict()
+#    sol_name_dict = dict()
     
-    for i in range(len(minVar_solutions)):
-        sol_name_dict["sol_{}".format(i)] = minVar_solutions[sortedIndex_score_list[i]]
-        likelihood_score_dict["sol_{}".format(i)] = score_list[sortedIndex_score_list[i]]
-        qscores_minVarSol_dict["sol_{}".format(i)] = Qscores[sortedIndex_qscore_minVarSol[i]]
+#    for i in range(len(minVar_solutions)):
+#        sol_name_dict["sol_{}".format(i)] = minVar_solutions[sortedIndex_score_list[i]]
+#        likelihood_score_dict["sol_{}".format(i)] = score_list[sortedIndex_score_list[i]]
+#        qscores_minVarSol_dict["sol_{}".format(i)] = Qscores[sortedIndex_qscore_minVarSol[i]]
             
 #    plt.figure()
 #    sorted_solution_namelist = ["sol_{}".format(i) for i in range(len(minVar_solutions))]
@@ -318,7 +329,7 @@ def getVarAndProp(gene, paired_path, samp):
 #    plt.savefig("{0}_{1}_minVarSol_avgQscore".format(samp, gene))
     
 #    minVar_minNegLog_solutions = [minVar_solutions[i] for i in range(len(minVar_solutions)) if min_score <= score_list[i] <= 1.01*min_score]
-    '''
+    
     
     ''' ====== '''
     #compute proportions
