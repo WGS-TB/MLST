@@ -650,9 +650,9 @@ def localILP(sample, loci, gene_solProp_dict, reference):
     #model.parameters.mip.pool.capacity.set(10)
     model.set_results_stream(None)
     model.parameters.mip.pool.intensity.set(4)
-    model.parameters.mip.limits.populate.set(100)
-    model.parameters.mip.pool.absgap.set(5)
-    model.parameters.mip.pool.replace.set(2)
+#    model.parameters.mip.limits.populate.set(100)
+    model.parameters.mip.pool.absgap.set(0)
+    model.parameters.mip.pool.replace.set(1)
     model.populate_solution_pool()
     
     solution_dict = dict()
@@ -735,7 +735,7 @@ def localLP(solution, data, strains, reference, loci):
     errorThres = 1
     model.variables.add(lb=[-1*errorThres*i for i in varAndProp["Proportion"].tolist()], ub=[(1-i)*errorThres for i in varAndProp["Proportion"].tolist()], names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
 #    model.variables.add(names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
-    model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Artificial"].tolist(), ub= [0.15]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
+    model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Artificial"].tolist(), ub= [0.2]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
     artificial_constr1 = [[[artif, err],[1,1]] for artif, err in itertools.izip(varAndProp["Artificial"].tolist(), varAndProp["Decision Variable"].tolist())]
     artificial_constr2 = [[[artif, err],[1,-1]] for artif, err in itertools.izip(varAndProp["Artificial"].tolist(), varAndProp["Decision Variable"].tolist())]
     model.linear_constraints.add(lin_expr=artificial_constr1, rhs=[0]*len(artificial_constr1), senses=["G"]*len(artificial_constr1), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(artificial_constr1))])

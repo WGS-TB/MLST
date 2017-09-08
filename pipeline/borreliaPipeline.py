@@ -15,6 +15,7 @@ import pandas as pd
 import csv
 import time
 import argparse
+import cplex
 
 def writePropToCsv(aDict):
     for gene in aDict.keys():
@@ -26,18 +27,60 @@ def writePropToCsv(aDict):
             for (key, val) in (aDict[gene]).items():
                 writer.writerow([key, val])
                 
-def localILP(samp, aTuple, aDict, loci, reference, option):
+#def localILP(samp, aTuple, aDict, loci, reference, option):
+#    track = 1
+#    objValue_list = list()
+#    print("\nNumber of combinations to run: {}\n".format(len(aTuple)))
+#    for comb in aTuple:
+#        print("\nxxxxxxxxxxxxxxxxx Combination : {} xxxxxxxxxxxxxxxxxxxxxxxxxxxx\n".format(track))
+#        comb_dict = {gene: aDict[gene][i] for (gene, i) in itertools.izip(loci, comb)}
+#        objVal = gvp.maxExistingStr(samp, loci, comb_dict, reference, option)
+#        objValue_list.append(objVal)
+#        track += 1
+#        
+#    print("Objective Value: {}".format(objValue_list))
+#    #Choose the combination which has the lowest objective value
+#    minObjValIndex_list = np.argwhere(objValue_list == np.amin(objValue_list))
+#    minObjValIndex_list = minObjValIndex_list.flatten().tolist()
+#    if len(minObjValIndex_list) > 1:
+#        print("@@@@@@@@@@@@@@@@@@@@@@@ You have more than 1 distribution having same objective value @@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+#    
+#    minObjValIndex = minObjValIndex_list[0]
+#    comb_minObjVal = aTuple[minObjValIndex]
+#    comb_minObjVal_dict = {gene: aDict[gene][i] for (gene, i) in itertools.izip(loci, comb_minObjVal)}
+#    
+#    return comb_minObjVal_dict
+
+def localMinimizer(samp, aTuple, aDict, loci, reference, option):
     track = 1
     objValue_list = list()
-    objStr = list()
-    objProp = list()
-    objErr = list()
     print("\nNumber of combinations to run: {}\n".format(len(aTuple)))
     for comb in aTuple:
         print("\nxxxxxxxxxxxxxxxxx Combination : {} xxxxxxxxxxxxxxxxxxxxxxxxxxxx\n".format(track))
         comb_dict = {gene: aDict[gene][i] for (gene, i) in itertools.izip(loci, comb)}
-        sum_str, sum_prop, sum_err = gvp.maxExistingStr(samp, loci, comb_dict, reference, option)
-        objValue_list.append(sum_str+sum_prop+sum_err)
+        solution_dict, ilp_objective_dict, data, strains = gvp.localILP(samp, loci, comb_dict, reference)
+        feasible_sol = list()
+        lp_objective_dict = dict()
+#        print solution_dict
+        infeasibility = 0
+        for i in solution_dict.keys():
+            try:
+                objvalue = gvp.localLP(solution_dict[i], data, strains, reference, loci)
+                feasible_sol.append(i)
+                lp_objective_dict[i] = objvalue
+            except cplex.exceptions.errors.CplexSolverError as e:
+                infeasibility += 1
+        
+        if infeasibility == len(solution_dict):
+            return -1
+        
+        min_obj = np.inf
+        for j in feasible_sol:
+            if (ilp_objective_dict[j] + lp_objective_dict[j]) < min_obj:
+                min_obj = ilp_objective_dict[j] + lp_objective_dict[j]
+        
+        objValue_list.append(min_obj)
+        print("Objective value: {}".format(min_obj))
         track += 1
         
     print("Objective Value: {}".format(objValue_list))
@@ -131,27 +174,29 @@ for samp in samples:
         print("\n... Picking a good set of variants among the multiple optimal solutions ...")
     
         compatible_tuples = compatibleFilter(combinationsTuple)
-        localILP_dict = dict()
+        localMinimizer_dict = dict()
         objValue_list = list()
         track = 1
         
         #Only one compatible distribution, output it
         if len(compatible_tuples) == 1:
-            localILP_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, compatible_tuples[0])}
-            writePropToCsv(localILP_dict)
+            localMinimizer_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, compatible_tuples[0])}
+            writePropToCsv(localMinimizer_dict)
         else:
             #Only new strains can describe
             if len(compatible_tuples) == 0:
-                localILP_dict = localILP(samp, combinationsTuple, gene_solProp_dict, loci, reference, args["objectiveComponent_local"])
+                localMinimizer_dict = localMinimizer(samp, combinationsTuple, gene_solProp_dict, loci, reference, args["objectiveComponent_local"])
             else:
-                localILP_dict = localILP(samp, compatible_tuples, gene_solProp_dict, loci, reference, args["objectiveComponent_local"])
+                localMinimizer_dict = localMinimizer(samp, compatible_tuples, gene_solProp_dict, loci, reference, args["objectiveComponent_local"])
         
-            writePropToCsv(localILP_dict)
+            if localMinimizer_dict == -1:
+                print("No feasibile solutions")
+            else:
+                writePropToCsv(localMinimizer_dict)
                 
     #currentpath=/pipeline/variantsAndProp
     os.chdir("..")
 
-print("NUmber of solutions: {}".format(numOfMinQualSol))
 print("")
 print("Script done.")
 print("Time taken : {} hr(s)".format((time.time() - start_time)/3600))

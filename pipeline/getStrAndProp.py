@@ -223,23 +223,17 @@ def returnCombinationsAndNumComb(data, numLoci, loci):
     strains = list()
     numOfComb = dict()
     previousNum = 0
-    maxNumAllele = dict()
+#    numAllele = dict()
     for sample in data:
         #key = sample name, value = dataframe
         sampleDF = data[sample]
         variantsAtAllLoci = list()
         
         #Use for getting matrix representation of combinations
-        maxNumVar = 0
         #only one row in the dataframe
-        for column in sampleDF.values[0]:
-            variantsAtAllLoci.append(column.keys())
-            
-            numVar = len(column.keys())
-            if numVar > maxNumVar:
-                maxNumVar = numVar
-        
-        maxNumAllele[sample] = maxNumVar
+        for locus in sampleDF.columns.tolist():
+            variantsAtAllLoci.append(sampleDF[locus][0].keys())
+#            numAllele[(sample, locus)] = len(sampleDF[locus][0].keys())
         
         combination = itertools.product(*variantsAtAllLoci) #produce combinations
         combinationIndices = [list(comb) for comb in itertools.product(*[range(len(var)) for var in variantsAtAllLoci])]
@@ -256,7 +250,7 @@ def returnCombinationsAndNumComb(data, numLoci, loci):
         previousNum = numOfComb[sample]
         
     strains = pd.DataFrame(strains, columns=(loci+['Sample']))
-    return strains, numOfComb, maxNumAllele
+    return strains, numOfComb
 
 '''Returns a dictionary where keys=sample name and values=numpy matrix representation of the proportions for the sample
 Input
@@ -405,7 +399,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     varAndProp = returnVarAndProportions(data)
     
     #Get the combinations at all loci across all samples
-    strains, numOfComb, maxAllele_dict = returnCombinationsAndNumComb(data, numLoci, loci)
+    strains, numOfComb = returnCombinationsAndNumComb(data, numLoci, loci)
     uniqueStrains = strains.drop_duplicates(loci)
     uniqueStrains = (uniqueStrains[loci]).reset_index(drop=True)
     uniqueStrains["ST"] = uniqueStrains.index.values + 1    #assign indices for strains or each unique combinations
@@ -447,9 +441,9 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     model.variables.add(obj=strainWeightDecVarDF['Weights'].values.tolist(), names=strainWeightDecVarDF['Decision Variable'], types = [model.variables.type.binary]* len(strainWeightDecVarDF['Weights'].values.tolist()))
     #add proportions decision variables
     if objectiveOption == "noPropAndErr":
-        model.variables.add(ub=[propFormat]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))
+        model.variables.add(lb=[0]*proportionWeightDecVarDF.shape[0], ub=[propFormat]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))
     else:
-        model.variables.add(obj=[i for i in proportionWeightDecVarDF['Weights'].values.tolist()],ub=[propFormat]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))
+        model.variables.add(obj=[i for i in proportionWeightDecVarDF['Weights'].values.tolist()],lb=[0]*proportionWeightDecVarDF.shape[0],ub=[propFormat]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))
         
     #add linear constraints such that for each sample, the sum of the proportions of its variants combination = 1
     propVarSumTo1 = list()
@@ -504,22 +498,22 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     varAndProp["Decision Variable"] = varAndProp["Decision Variable"] + varAndProp["Variant"]
     
     #create artificial variable to minimize absolute value of error
-    varAndProp["Artificial"] = ["f_s{}_".format(samp[-3:]) for samp in varAndProp["Sample"].tolist() ]
-    varAndProp["Artificial"] = varAndProp["Artificial"] + varAndProp["Variant"]
+#    varAndProp["Artificial"] = ["f_s{}_".format(samp[-3:]) for samp in varAndProp["Sample"].tolist() ]
+#    varAndProp["Artificial"] = varAndProp["Artificial"] + varAndProp["Variant"]
     
     #add error variables
     errorThres = 1
-    model.variables.add(lb=[-1*errorThres*i for i in varAndProp["Proportion"].tolist()], ub=[(1-i)*errorThres for i in varAndProp["Proportion"].tolist()], names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
-#    model.variables.add(names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
-    model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Artificial"].tolist(), ub= [0.1]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
-    artificial_constr1 = [[[artif, err],[1,1]] for artif, err in itertools.izip(varAndProp["Artificial"].tolist(), varAndProp["Decision Variable"].tolist())]
-    artificial_constr2 = [[[artif, err],[1,-1]] for artif, err in itertools.izip(varAndProp["Artificial"].tolist(), varAndProp["Decision Variable"].tolist())]
-    model.linear_constraints.add(lin_expr=artificial_constr1, rhs=[0]*len(artificial_constr1), senses=["G"]*len(artificial_constr1), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(artificial_constr1))])
-    model.linear_constraints.add(lin_expr=artificial_constr2, rhs=[0]*len(artificial_constr2), senses=["G"]*len(artificial_constr2), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(artificial_constr2))])
+#    model.variables.add(lb=[-1*errorThres*i for i in varAndProp["Proportion"].tolist()], ub=[(1-i)*errorThres for i in varAndProp["Proportion"].tolist()], names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
+    model.variables.add(names=varAndProp["Decision Variable"].tolist(), lb= [0]*varAndProp.shape[0], ub= [0.1]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
+#    model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Artificial"].tolist(), ub= [0.2]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
+#    artificial_constr1 = [[[artif, err],[1,1]] for artif, err in itertools.izip(varAndProp["Artificial"].tolist(), varAndProp["Decision Variable"].tolist())]
+#    artificial_constr2 = [[[artif, err],[1,-1]] for artif, err in itertools.izip(varAndProp["Artificial"].tolist(), varAndProp["Decision Variable"].tolist())]
+#    model.linear_constraints.add(lin_expr=artificial_constr1, rhs=[0]*len(artificial_constr1), senses=["G"]*len(artificial_constr1), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(artificial_constr1))])
+#    model.linear_constraints.add(lin_expr=artificial_constr2, rhs=[0]*len(artificial_constr2), senses=["G"]*len(artificial_constr2), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(artificial_constr2))])
     
     #add linear constraints such that for each sample, sum of pi_ik \dot V_ik (proportion \dot matrix representation) across all combinations = Proportion matrix
     piDotComb = list()
-#    piDotComb_2 = list()
+    piDotComb_2 = list()
     propConstrRHS = list()
     for locusName in varSampToST:
         temp=list()
@@ -530,10 +524,10 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
             errorDecVar = varAndProp[(varAndProp["Variant"] == var) & (varAndProp["Sample"] == sample)]["Decision Variable"]
             propConstrRHS.append(  float( ( (data["{}".format(sample)])[locusName][0] )[var] )  )
             piDotComb.append([propDecVar.tolist() + errorDecVar.tolist(), [1]*len(propDecVar) + [-1]])
-#            piDotComb_2.append([propDecVar.tolist() + errorDecVar.tolist(), [1]*len(propDecVar) + [1]])
+            piDotComb_2.append([propDecVar.tolist() + errorDecVar.tolist(), [1]*len(propDecVar) + [1]])
            
-    model.linear_constraints.add(lin_expr=piDotComb, rhs=propConstrRHS, senses=["E"]*len(propConstrRHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(propConstrRHS))])     
-#    model.linear_constraints.add(lin_expr=piDotComb_2, rhs=propConstrRHS, senses=["G"]*len(propConstrRHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(propConstrRHS))]) 
+    model.linear_constraints.add(lin_expr=piDotComb, rhs=propConstrRHS, senses=["L"]*len(propConstrRHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(propConstrRHS))])     
+    model.linear_constraints.add(lin_expr=piDotComb_2, rhs=propConstrRHS, senses=["G"]*len(propConstrRHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(propConstrRHS))]) 
     
     #add error variable
     #model.variables.add(lb=(-1*varAndProp["Proportion"]).tolist(), ub=(1-varAndProp["Proportion"]).tolist(), names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
@@ -580,7 +574,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     #writeInfoToCsv()
     
     ''' ================================== Solve ILP ========================================== '''
-#    model.write("borreliaLP.lp")
+    model.write("borreliaLP.lp")
 #    model.set_results_stream(None)
     model.solve()
     
@@ -601,7 +595,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     print conclusion
     strainInfo = conclusion.merge(strainWeightDecVarDF[strainWeightDecVarDF["Decision Variable"].isin(varNames)])
     strainInfo["New/Existing"] = ["Existing" if w==0 else "New" for w in strainInfo["Weights"].tolist()]
-    strainsNeeded = (strainInfo[strainInfo["Value"] == 1][loci + ["ST", "New/Existing"]])
+    strainsNeeded = (strainInfo[strainInfo["Value"] > 0.9][loci + ["ST", "New/Existing"]])
     errorVariables = conclusion[conclusion["Decision Variable"].str.startswith("d_")]
     errorVariables = errorVariables[errorVariables["Value"] != 0.0]
     print errorVariables
@@ -618,6 +612,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
         output["Proportion"] = model.solution.get_values(output["Decision Variable"].tolist())
         output.drop("Decision Variable", axis=1, inplace=True)
         output = output[["ST", "New/Existing"]+loci+["Proportion"]]
+        print output
         output.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, samp))
     
     #varValues2 = model.solution.pool.get_values(1,varNames)
@@ -632,6 +627,7 @@ def minNewStrain(dataPath, refStrains, loci, globalILP_option):
     
     #read data for samples and reference
     data, numSamples, startingSampleNum = readData(dataPath,loci, globalILP_option)
+    allSamples = data.keys()
     reference = pd.read_csv(refStrains,sep="\t",usecols=range(1,numLoci+1))
     lociNames = list(reference.columns.values)
     
@@ -640,7 +636,7 @@ def minNewStrain(dataPath, refStrains, loci, globalILP_option):
         reference["%s" %name] = name + "_" + reference["%s" %name].astype(str)
     
     #Get the combinations at all loci across all samples
-    strains, numOfComb, maxAllele_dict = returnCombinationsAndNumComb(data, numLoci, loci)
+    strains, numOfComb = returnCombinationsAndNumComb(data, numLoci, loci)
     uniqueStrains = strains.drop_duplicates(loci)
     uniqueStrains = (uniqueStrains[loci]).reset_index(drop=True)
     uniqueStrains["ST"] = uniqueStrains.index.values + 1    #assign indices for strains or each unique combinations
@@ -659,8 +655,7 @@ def minNewStrain(dataPath, refStrains, loci, globalILP_option):
     strainWeightDecVarDF["Decision Variable"] = ["a{}".format(i) for i in range(1, strainWeightDecVarDF.shape[0] + 1)]
     
     #Relate sample and strain decision variable 
-    samp_decVar_DF = strains.merge(strainWeightDecVarDF, how="left")[["Sample", "Decision Variable"]]
-    samp_decVar_dict = {samp: group["Decision Variable"].tolist() for samp, group in samp_decVar_DF.groupby("Sample")}
+    samp_decVar_DF = strains.merge(strainWeightDecVarDF, how="left")[loci+["Sample", "Decision Variable"]]
     
     '''==================================== Forming ILP here ================================================'''
     #Form a CPLEX model
@@ -673,21 +668,27 @@ def minNewStrain(dataPath, refStrains, loci, globalILP_option):
     #Add linear constraints where strains chosen are able to describe all alleles seen in all samples
     descAllAlleleLHS = list()
     descAllAlleleRHS = list()
-    for samp in maxAllele_dict.keys():
-        descAllAlleleLHS.append([samp_decVar_dict[samp], [1]*len(samp_decVar_dict[samp])])
-        descAllAlleleRHS.append(maxAllele_dict[samp])
-        
+            
+    for samp in allSamples:
+        for l in loci:
+            unique_allele = samp_decVar_DF[l].unique()
+            
+            for allele in unique_allele:
+                temp = samp_decVar_DF[(samp_decVar_DF[l] == allele) & (samp_decVar_DF["Sample"] == samp)]["Decision Variable"].tolist()
+                descAllAlleleLHS.append([temp, [1]*len(temp)])
+                descAllAlleleRHS.append(1)
+
     model.linear_constraints.add(lin_expr=descAllAlleleLHS, rhs=descAllAlleleRHS, senses=["G"]*len(descAllAlleleRHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(descAllAlleleRHS))])
-    
+
 #    model.solve()
     
     #options for searching more optimal solutions
     #model.parameters.mip.pool.capacity.set(10)
 #    model.set_results_stream(None)
     model.parameters.mip.pool.intensity.set(4)
-    model.parameters.mip.limits.populate.set(100)
-    model.parameters.mip.pool.absgap.set(5)
-    model.parameters.mip.pool.replace.set(2)
+#    model.parameters.mip.limits.populate.set(50)
+    model.parameters.mip.pool.absgap.set(0)
+    model.parameters.mip.pool.replace.set(1)
     model.populate_solution_pool()
     
     solution_dict = dict()
@@ -758,7 +759,7 @@ def minNewStrainProp(solution, data, strains, refStrains, loci):
     #minimize problem
     model.objective.set_sense(model.objective.sense.minimize)
     #add the decision variables for unqiue strain types
-    model.variables.add(obj=proportionWeightDecVarDF['Weights'].values.tolist(), names=proportionWeightDecVarDF['Decision Variable'], types = [model.variables.type.continuous]* len(proportionWeightDecVarDF['Weights'].values.tolist()))
+    model.variables.add(obj=proportionWeightDecVarDF['Weights'].values.tolist(), lb=[0]*proportionWeightDecVarDF.shape[0], ub=[propFormat]*proportionWeightDecVarDF.shape[0], names=proportionWeightDecVarDF['Decision Variable'], types = [model.variables.type.continuous]* len(proportionWeightDecVarDF['Weights'].values.tolist()))
         
     #add linear constraints such that for each sample, the sum of the proportions of its variants combination = 1
     propVarSumTo1 = list()
@@ -775,22 +776,22 @@ def minNewStrainProp(solution, data, strains, refStrains, loci):
     varAndProp["Decision Variable"] = varAndProp["Decision Variable"] + varAndProp["Variant"]
     
      #create artificial variable to minimize absolute value of error
-    varAndProp["Artificial"] = ["f_s{}_".format(samp[-3:]) for samp in varAndProp["Sample"].tolist() ]
-    varAndProp["Artificial"] = varAndProp["Artificial"] + varAndProp["Variant"]
+#    varAndProp["Artificial"] = ["f_s{}_".format(samp[-3:]) for samp in varAndProp["Sample"].tolist() ]
+#    varAndProp["Artificial"] = varAndProp["Artificial"] + varAndProp["Variant"]
     
     #add error variables
     errorThres = 1
-    model.variables.add(lb=[-1*errorThres*i for i in varAndProp["Proportion"].tolist()], ub=[(1-i)*errorThres for i in varAndProp["Proportion"].tolist()], names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
-#    model.variables.add(names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
-    model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Artificial"].tolist(), ub= [0.15]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
-    artificial_constr1 = [[[artif, err],[1,1]] for artif, err in itertools.izip(varAndProp["Artificial"].tolist(), varAndProp["Decision Variable"].tolist())]
-    artificial_constr2 = [[[artif, err],[1,-1]] for artif, err in itertools.izip(varAndProp["Artificial"].tolist(), varAndProp["Decision Variable"].tolist())]
-    model.linear_constraints.add(lin_expr=artificial_constr1, rhs=[0]*len(artificial_constr1), senses=["G"]*len(artificial_constr1), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(artificial_constr1))])
-    model.linear_constraints.add(lin_expr=artificial_constr2, rhs=[0]*len(artificial_constr2), senses=["G"]*len(artificial_constr2), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(artificial_constr2))])
+#    model.variables.add(lb=[-1*errorThres*i for i in varAndProp["Proportion"].tolist()], ub=[(1-i)*errorThres for i in varAndProp["Proportion"].tolist()], names=varAndProp["Decision Variable"].tolist(), types=[model.variables.type.continuous]*varAndProp.shape[0])
+    model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Decision Variable"].tolist(), lb=[0]*varAndProp.shape[0], ub= [0.2]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
+#    model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Artificial"].tolist(), lb=[0]*varAndProp.shape[0], ub= [0.2]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
+#    artificial_constr1 = [[[artif, err],[1,1]] for artif, err in itertools.izip(varAndProp["Artificial"].tolist(), varAndProp["Decision Variable"].tolist())]
+#    artificial_constr2 = [[[artif, err],[1,-1]] for artif, err in itertools.izip(varAndProp["Artificial"].tolist(), varAndProp["Decision Variable"].tolist())]
+#    model.linear_constraints.add(lin_expr=artificial_constr1, rhs=[0]*len(artificial_constr1), senses=["G"]*len(artificial_constr1), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(artificial_constr1))])
+#    model.linear_constraints.add(lin_expr=artificial_constr2, rhs=[0]*len(artificial_constr2), senses=["G"]*len(artificial_constr2), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(artificial_constr2))])
     
    #add linear constraints such that for each sample, sum of pi_ik \dot V_ik (proportion \dot matrix representation) across all combinations = Proportion matrix
     piDotComb = list()
-#    piDotComb_2 = list()
+    piDotComb_2 = list()
     propConstrRHS = list()
     for locusName in varSampToST:
         temp=list()
@@ -801,14 +802,25 @@ def minNewStrainProp(solution, data, strains, refStrains, loci):
             errorDecVar = varAndProp[(varAndProp["Variant"] == var) & (varAndProp["Sample"] == sample)]["Decision Variable"]
             propConstrRHS.append(  float( ( (data["{}".format(sample)])[locusName][0] )[var] )  )
             piDotComb.append([propDecVar.tolist() + errorDecVar.tolist(), [1]*len(propDecVar) + [-1]])
-#            piDotComb_2.append([propDecVar.tolist() + errorDecVar.tolist(), [1]*len(propDecVar) + [1]])
+            piDotComb_2.append([propDecVar.tolist() + errorDecVar.tolist(), [1]*len(propDecVar) + [1]])
            
-    model.linear_constraints.add(lin_expr=piDotComb, rhs=propConstrRHS, senses=["E"]*len(propConstrRHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(propConstrRHS))])                                                                              
+    model.linear_constraints.add(lin_expr=piDotComb, rhs=propConstrRHS, senses=["L"]*len(propConstrRHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(propConstrRHS))])           
+    model.linear_constraints.add(lin_expr=piDotComb_2, rhs=propConstrRHS, senses=["G"]*len(propConstrRHS), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(propConstrRHS))])                                                                   
+    
+    #error must sum to 0
+#    errorSumTo0 = list()
+#    for samp, loc in list(set(itertools.izip(varAndProp["Sample"].tolist(), varAndProp["Locus"].tolist()))):
+#        temp = (varAndProp[(varAndProp["Sample"] == samp) & (varAndProp["Locus"] == loc)])["Decision Variable"].tolist()
+#        errorSumTo0.append([temp, [1]*len(temp)])
+#        
+#    model.linear_constraints.add(lin_expr=errorSumTo0, rhs=[0]*len(errorSumTo0), senses=["E"]*len(errorSumTo0), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(errorSumTo0))])
+#    model.variables.set_upper_bounds([(i, 0.2) for i in varAndProp["Artificial"].tolist()])
     
     ''' ==== Solve ==== '''
     model.set_problem_type(0)   #set to LP problem
-    model.set_results_stream(None)
-    model.set_error_stream(None)
+#    model.set_results_stream(None)
+#    model.set_error_stream(None)
+    model.write("a.lp")
     model.solve()
     
     objvalue = model.solution.get_objective_value()
@@ -817,9 +829,9 @@ def minNewStrainProp(solution, data, strains, refStrains, loci):
     conclusion = pd.DataFrame(columns=["Decision Variable", "Value"])
     conclusion["Decision Variable"] = varNames
     conclusion["Value"] = varValues
-    conclusion = conclusion[conclusion["Value"] > 0]
-#    print(conclusion[conclusion["Decision Variable"].str.startswith("d_")])
-#    print("")
+    conclusion = conclusion[conclusion["Value"] != 0.0]
+    print conclusion
+    print conclusion[conclusion["Decision Variable"].str.startswith("d_")]["Value"].sum()
     
     sampleAndStrainProp = dict()
     for samp in allSamples:
