@@ -1,17 +1,18 @@
 import os
-import getVariantAndProp as gvp
-import getStrAndProp as gsp
+import pipeline_functions as pf
 import numpy as np
-import itertools
 import pandas as pd
-import csv
 import time
 import argparse
 import cplex
 
 start_time = time.time()
 ap = argparse.ArgumentParser()
-ap.add_argument("-s", "--sample", required = False, default="all")
+ap.add_argument("-s", "--sample", required = False, default="all", help="Sample name. Default is all samples")
+ap.add_argument("-o", "--output", required=True, help="Name of output folder")
+ap.add_argument("-g", "--globalOption", required=True, help="Version of optimization program to use. 'mixed': mixed ILP, 'separated': pure ILP + LP")
+#Only for mixed version
+ap.add_argument("-oc", "--objectiveComponent", required=False, default="all", help="Objective components. Default: 'all'. 'noPropAndErr': Does not include proportion and error in objective function")
 args = vars(ap.parse_args())
 
 #currentpath = /pipeline/
@@ -24,64 +25,67 @@ reference = pd.read_csv(currentPath+"/strain_ref.txt",sep="\t",usecols=range(1,l
 for name in loci:
     reference["%s" %name] = name + "_" + reference["%s" %name].astype(str)
 
-if not os.path.exists("strainsAndProp_errThres"):
-    os.mkdir("strainsAndProp_errThres")
+if not os.path.exists(args["output"]):
+    os.mkdir(args["output"])
 
-if args["sample"] != "all":
-    gsp.strainSolver(currentPath+"/variantsAndProp/{}".format(args["sample"]), currentPath+"/strain_ref.txt", currentPath+"/strainsAndProp_errThres", loci, "all", args["sample"])
+if args["globalOption"] == "mixed":
+    if args["sample"] != "all":
+        pf.strainSolver(currentPath+"/variantsAndProp/{}".format(args["sample"]), currentPath+"/strain_ref.txt", currentPath+"/"+args["output"], loci, args["objectiveComponent"], args["sample"])
+    else:
+        pf.strainSolver(currentPath+"/variantsAndProp", currentPath+"/strain_ref.txt", currentPath+"/"+args["output"], loci, args["objectiveComponent"], args["sample"])
 else:
-    gsp.strainSolver(currentPath+"/variantsAndProp", currentPath+"/strain_ref.txt", currentPath+"/strainsAndProp_errThres", loci, "all", args["sample"])
-#if args["sample"] != "all":
-#    dataPath = currentPath+"/variantsAndProp/{}".format(args["sample"])
-#else:
-#    dataPath = currentPath+"/variantsAndProp"
-#
-#print("\n~~~~~~~~~~~~~~~~~~~~~~ Solving ILP for strain prediction ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
-#solution_dict, ilp_objective_dict, data, strains = gsp.minNewStrain(dataPath, currentPath+"/strain_ref.txt", loci, args["sample"])
-##    print(solution_dict)
-#print("Number of solutions from ILP: {}".format(len(solution_dict)))
-#print("\n~~~~~~~~~~~~~~~~~~~~~~ Solving LP for proportion prediction ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
-#feasible_sol = list()
-#lp_objective_dict = dict()
-#sample_strainProp_dict = dict()
-#infeasibility = 0
-#for i in solution_dict.keys():
-#    print("============= ILP Solution {0} ===============".format(i))
-#    feasible=False
-#    try:
-#        objvalue, sampleAndStrainProp = gsp.minNewStrainProp(solution_dict[i], data, strains, ref_strains, loci)
-#        feasible=True
-#    except cplex.exceptions.errors.CplexSolverError as e:
-#        infeasibility +=1
-#        print("Infeasible!")
-#        
-#    if feasible == True:
-#        print("Objective Value (Pure ILP, LP, Sum): ({0}, {1}, {2})".format(ilp_objective_dict[i], objvalue, objvalue+ilp_objective_dict[i]))
-#        feasible_sol.append(i)
-#        lp_objective_dict[i] = objvalue
-#        #sampleAndStrainProp is a dict with samples as keys and dataframes as values
-#        sample_strainProp_dict[i] = sampleAndStrainProp
-#    
-#if infeasibility == len(solution_dict):
-#    print("No feasible solutions")
-#else:
-#    total_obj_dict = dict()
-#    min_obj = np.inf
-#    for j in feasible_sol:
-#        total_obj_dict[j] = ilp_objective_dict[j] + lp_objective_dict[j]
-#        if total_obj_dict[j] < min_obj:
-#            min_obj = total_obj_dict[j]
-#    
-#    min_obj_list = [i for i in total_obj_dict.keys() if total_obj_dict[i] == min_obj]
-#    print("\nMinimum objective value: {}".format(min_obj))
-#    print("\nSolution which minimizes both pure ILP and LP: {}\n".format(min_obj_list))
-#    if len(min_obj_list) > 1:
-#        print("@@@@@@@@@@@@@@@ More than 1 optimal solution for the problem @@@@@@@@@@@@@@@@@@")
-#        
-#    for samp in sample_strainProp_dict[min_obj_list[0]].keys():
-#        output = sample_strainProp_dict[min_obj_list[0]][samp]
-#        print output
-#        output.to_csv("{0}/{1}_strainsAndProportions.csv".format(currentPath+"/strainsAndProp_sep_ALL", samp))
+    if args["sample"] != "all":
+        dataPath = currentPath+"/variantsAndProp/{}".format(args["sample"])
+    else:
+        dataPath = currentPath+"/variantsAndProp"
+    
+    print("\n~~~~~~~~~~~~~~~~~~~~~~ Solving ILP for strain prediction ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+    solution_dict, ilp_objective_dict, data, strains = pf.minNewStrain(dataPath, currentPath+"/strain_ref.txt", loci, args["sample"])
+    #    print(solution_dict)
+    print("Number of solutions from ILP: {}".format(len(solution_dict)))
+    print("\n~~~~~~~~~~~~~~~~~~~~~~ Solving LP for proportion prediction ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+    feasible_sol = list()
+    lp_objective_dict = dict()
+    sample_strainProp_dict = dict()
+    infeasibility = 0
+    for i in solution_dict.keys():
+        feasible = False
+        print("============= ILP Solution {0} ===============".format(i))
+        try:
+            objvalue, sampleAndStrainProp, feasible = pf.minNewStrainProp(solution_dict[i], data, strains, ref_strains, loci)
+            if feasible == False:
+                infeasibility += 1
+        except cplex.exceptions.errors.CplexSolverError as e:
+            infeasibility +=1
+            print("Infeasible!")
+            
+        if feasible == True:
+            print("Objective Value (Pure ILP, LP, Sum): ({0}, {1}, {2})".format(ilp_objective_dict[i], objvalue, objvalue+ilp_objective_dict[i]))
+            feasible_sol.append(i)
+            lp_objective_dict[i] = objvalue
+            #sampleAndStrainProp is a dict with samples as keys and dataframes as values
+            sample_strainProp_dict[i] = sampleAndStrainProp
+        
+    if infeasibility == len(solution_dict):
+        print("No feasible solutions")
+    else:
+        total_obj_dict = dict()
+        min_obj = np.inf
+        for j in feasible_sol:
+            total_obj_dict[j] = ilp_objective_dict[j] + lp_objective_dict[j]
+            if total_obj_dict[j] < min_obj:
+                min_obj = total_obj_dict[j]
+        
+        min_obj_list = [i for i in total_obj_dict.keys() if total_obj_dict[i] == min_obj]
+        print("\nMinimum objective value: {}".format(min_obj))
+        print("\nSolution which minimizes both pure ILP and LP: {}\n".format(min_obj_list))
+        if len(min_obj_list) > 1:
+            print("@@@@@@@@@@@@@@@ More than 1 optimal solution for the problem @@@@@@@@@@@@@@@@@@")
+            
+        for samp in sample_strainProp_dict[min_obj_list[0]].keys():
+            output = sample_strainProp_dict[min_obj_list[0]][samp]
+            print output
+            output.to_csv("{0}/{1}_strainsAndProportions.csv".format(currentPath+"/"+args["output"], samp))
     
 print("")
 print("Script done.")
