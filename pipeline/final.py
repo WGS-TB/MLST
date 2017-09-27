@@ -10,9 +10,11 @@ start_time = time.time()
 ap = argparse.ArgumentParser()
 ap.add_argument("-s", "--sample", required = False, default="all", help="Sample name. Default is all samples")
 ap.add_argument("-o", "--output", required=True, help="Name of output folder")
-ap.add_argument("-g", "--globalOption", required=True, help="Version of optimization program to use. 'mixed': mixed ILP, 'separated': pure ILP + LP")
+ap.add_argument("-go", "--globalOption", required=True, help="Version of optimization program to use. 'mixed': mixed ILP, 'separated': pure ILP + LP")
 #Only for mixed version
 ap.add_argument("-oc", "--objectiveComponent", required=False, default="all", help="Objective components. Default: 'all'. 'noPropAndErr': Does not include proportion and error in objective function")
+ap.add_argument("-timlim", "--timeLimit", required=False, help="Time limit in integer for cplex solver for mixed ILP", default=600)
+ap.add_argument("-g", "--gap", required=False, help="Relative gap tolerance for cplex solver for mixed ILP", default=5)
 args = vars(ap.parse_args())
 
 #currentpath = /pipeline/
@@ -30,9 +32,9 @@ if not os.path.exists(args["output"]):
 
 if args["globalOption"] == "mixed":
     if args["sample"] != "all":
-        pf.strainSolver(currentPath+"/variantsAndProp/{}".format(args["sample"]), currentPath+"/strain_ref.txt", currentPath+"/"+args["output"], loci, args["objectiveComponent"], args["sample"])
+        pf.strainSolver(currentPath+"/variantsAndProp/{}".format(args["sample"]), currentPath+"/strain_ref.txt", currentPath+"/"+args["output"], loci, args["objectiveComponent"], args["sample"], args["timeLimit"], args["gap"])
     else:
-        pf.strainSolver(currentPath+"/variantsAndProp", currentPath+"/strain_ref.txt", currentPath+"/"+args["output"], loci, args["objectiveComponent"], args["sample"])
+        pf.strainSolver(currentPath+"/variantsAndProp", currentPath+"/strain_ref.txt", currentPath+"/"+args["output"], loci, args["objectiveComponent"], args["sample"], args["timeLimit"], args["gap"])
 else:
     if args["sample"] != "all":
         dataPath = currentPath+"/variantsAndProp/{}".format(args["sample"])
@@ -40,7 +42,7 @@ else:
         dataPath = currentPath+"/variantsAndProp"
     
     print("\n~~~~~~~~~~~~~~~~~~~~~~ Solving ILP for strain prediction ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
-    solution_dict, ilp_objective_dict, data, strains = pf.minNewStrain(dataPath, currentPath+"/strain_ref.txt", loci, args["sample"])
+    solution_dict, ilp_objective_dict, data, strains, newNameToOriName = pf.minNewStrain(dataPath, currentPath+"/strain_ref.txt", loci, args["sample"])
     #    print(solution_dict)
     print("Number of solutions from ILP: {}".format(len(solution_dict)))
     print("\n~~~~~~~~~~~~~~~~~~~~~~ Solving LP for proportion prediction ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
@@ -52,7 +54,7 @@ else:
         feasible = False
         print("============= ILP Solution {0} ===============".format(i))
         try:
-            objvalue, sampleAndStrainProp, feasible = pf.minNewStrainProp(solution_dict[i], data, strains, ref_strains, loci)
+            objvalue,errObj, propObj, sampleAndStrainProp, feasible = pf.minNewStrainProp(solution_dict[i], data, strains, ref_strains, loci, newNameToOriName)
             if feasible == False:
                 infeasibility += 1
         except cplex.exceptions.errors.CplexSolverError as e:
@@ -60,7 +62,8 @@ else:
             print("Infeasible!")
             
         if feasible == True:
-            print("Objective Value (Pure ILP, LP, Sum): ({0}, {1}, {2})".format(ilp_objective_dict[i], objvalue, objvalue+ilp_objective_dict[i]))
+            print("Objective Value (Strain, Prop, Error): ({0}, {1}, {2})".format(ilp_objective_dict[i],propObj , errObj))
+            print("Total objective: {}".format(objvalue+ilp_objective_dict[i]))
             feasible_sol.append(i)
             lp_objective_dict[i] = objvalue
             #sampleAndStrainProp is a dict with samples as keys and dataframes as values

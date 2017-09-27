@@ -23,6 +23,19 @@ import math
 import variantILP as varSolver
 import matplotlib.pyplot as plt
 
+''' Extend class as need to retrieve solution if gap does not converge after certain time'''
+class TimeLimitCallback(cplex.callbacks.MIPInfoCallback):
+    def __call__(self):
+        if not self.aborted and self.has_incumbent():
+            relGap = 100.0 * self.get_MIP_relative_gap()
+            totalTimeUsed = self.get_time() - self.starttime
+            if totalTimeUsed > self.timelimit and relGap < self.acceptablegap:
+                print("Good enough solution at", totalTimeUsed, "sec., gap =",
+                      relGap, "%, quitting.")
+                self.aborted = True
+                self.abort()
+
+
 ''' ====================================== Functions related to processing raw data ======================================================= '''
 '''
 Return the sum of all quality scores in Qmatrix
@@ -48,6 +61,36 @@ def compute_probability(n, k):
 #Return 2D dictionary
 def tree():
     return defaultdict(tree)
+
+'''
+Input: Dataframe with rows=reads, columns=variants
+Output: The proportions of variants (type list)
+'''
+def bayes_compute_proportions(dataframe):
+    #computes the proportion of a set of variants given a set of reads uing probabilistic methods
+    prob_list = [] #a list to hold the probabilities
+    for row in dataframe.itertuples(index=False):
+        temp_list = list(row)
+        #compute the probability for each row in the matrix
+        for i in range(len(temp_list)):
+            if temp_list[i] >= 0:
+                temp_list[i] = compute_probability(152,int(temp_list[i]))
+            else:
+                temp_list[i] = 0
+        total = sum(temp_list)
+        #solve for k
+        #try except just in case when we encounter the weird issue where the decision variable for a predicted variant = 1 but was not output
+        try:
+            temp_list = [j*(1.0/total) for j in temp_list]
+        except ZeroDivisionError:
+            print(total)
+            print(temp_list)
+            
+        prob_list.append(temp_list)
+    col_sums = [sum(k) for k in zip(*prob_list)]
+    total_sum = sum(col_sums)
+    prop_list = [100.0*l*(1/total_sum) for l in col_sums]
+    return prop_list     
 
 '''
 Input: Dataframe with rows=reads, columns=variants
@@ -315,7 +358,7 @@ Input:
     reference, a dataframe of all the existing strains
     objectiveOption: "all" means include all objective components, "noPropAndErr" omits proportion and error terms
 '''
-def localMILP(sample, loci, gene_solProp_dict, reference, objectiveOption):
+def localMILP(sample, loci, gene_solProp_dict, reference, objectiveOption, timelimit, gap):
     genesDF = pd.DataFrame(columns=loci)
     
     for gene in loci:
@@ -381,6 +424,21 @@ def localMILP(sample, loci, gene_solProp_dict, reference, objectiveOption):
     '''==================================== Forming ILP here ================================================'''
      #Form a CPLEX model
     model = cplex.Cplex()
+    
+    #Some bound on cplex solver when gap finds it hard to converge
+    timelim_cb = model.register_callback(TimeLimitCallback)
+    timelim_cb.starttime = model.get_time()
+    timelim_cb.timelimit = timelimit
+    timelim_cb.acceptablegap = gap
+    timelim_cb.aborted = False
+    
+    #Some bound on cplex solver when gap finds it hard to converge
+    timelim_cb = model.register_callback(TimeLimitCallback)
+    timelim_cb.starttime = model.get_time()
+    timelim_cb.timelimit = timelimit
+    timelim_cb.acceptablegap = gap
+    timelim_cb.aborted = False
+    
     #minimize problem
     model.objective.set_sense(model.objective.sense.minimize)
     #add the decision variables for unqiue strain types
@@ -745,14 +803,14 @@ Input:
 Output:
     comb_minObjVal_dict, a dictionary where key=gene, value=a dictionary where key=allele, value=proportion
 '''
-def localMinimizer(samp, aTuple, aDict, loci, reference, option):
+def localMinimizer(samp, aTuple, aDict, loci, reference, option, timelimit, gap):
     track = 1
     objValue_list = list()
     print("\nNumber of combinations to run: {}\n".format(len(aTuple)))
     for combin in aTuple:
         print("\nxxxxxxxxxxxxxxxxx Combination : {} xxxxxxxxxxxxxxxxxxxxxxxxxxxx\n".format(track))
         comb_dict = {gene: aDict[gene][i] for (gene, i) in itertools.izip(loci, combin)}
-        objVal = localMILP(samp, loci, comb_dict, reference, option)
+        objVal = localMILP(samp, loci, comb_dict, reference, option, timelimit, gap)
         objValue_list.append(objVal)
         track += 1
         
@@ -1217,7 +1275,7 @@ Input:
     globalILP_option, "all" if running on all samples
 '''
 
-def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, globalILP_option):
+def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, globalILP_option, timelimit, gap):
     ''' ============================================== Data handling ====================================================== '''
     #paramaters
     propFormat = 1    #proportion in percentage or fraction
@@ -1287,6 +1345,14 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     '''==================================== Forming ILP here ================================================'''
     #Form a CPLEX model
     model = cplex.Cplex()
+    
+    #Some bound on cplex solver when gap finds it hard to converge
+    timelim_cb = model.register_callback(TimeLimitCallback)
+    timelim_cb.starttime = model.get_time()
+    timelim_cb.timelimit = timelimit
+    timelim_cb.acceptablegap = gap
+    timelim_cb.aborted = False
+    
     #minimize problem
     model.objective.set_sense(model.objective.sense.minimize)
     #add the decision variables for unqiue strain types
@@ -1380,15 +1446,15 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     ''' ================================== Solve ILP ========================================== '''
     model.write("borreliaLP.lp")
 #    model.set_results_stream(None)
-    model.solve()
+#    model.solve()
     
     #options for searching more optimal solutions
     #model.parameters.mip.pool.capacity.set(10)
-#    model.parameters.mip.pool.intensity.set(0)
+    model.parameters.mip.pool.intensity.set(4)
     #model.parameters.mip.limits.populate.set(2100000000)
-#    model.parameters.mip.pool.absgap.set(0)
-#    model.parameters.mip.pool.replace.set(1)
-#    model.populate_solution_pool()
+    model.parameters.mip.pool.absgap.set(0)
+    model.parameters.mip.pool.replace.set(1)
+    model.populate_solution_pool()
     
     objvalue = model.solution.get_objective_value()
     varNames = model.variables.get_names()
@@ -1419,13 +1485,24 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     allStr.drop("Weights", 1, inplace=True)
     allStr.to_csv("{0}/indexedStrains.csv".format(outputPath))
     
-    for samp in allSamples:
-        output = proportionWeightDecVarDF[proportionWeightDecVarDF["Sample"] == samp].merge(strainsNeeded).drop(["Weights", "Sample"],1)
-        output["Proportion"] = model.solution.get_values(output["Decision Variable"].tolist())
-        output.drop("Decision Variable", axis=1, inplace=True)
-        output = output[["ST", "New/Existing"]+loci+["Proportion"]]
-        print output
-        output.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, newNameToOriName[samp]))
+    for i in range(model.solution.pool.get_num()):
+        objvalue = model.solution.pool.get_objective_value(i)
+        varNames = model.variables.get_names()
+        varValues = model.solution.pool.get_values(i,varNames)
+        conclusion = pd.DataFrame(columns=["Decision Variable", "Value"])
+        conclusion["Decision Variable"] = varNames
+        conclusion["Value"] = varValues
+        strainInfo = conclusion.merge(strainWeightDecVarDF[strainWeightDecVarDF["Decision Variable"].isin(varNames)])
+        strainInfo["New/Existing"] = ["Existing" if w==0 else "New" for w in strainInfo["Weights"].tolist()]
+        strainsNeeded = (strainInfo[strainInfo["Value"] > 0.9][loci + ["ST", "New/Existing"]])
+        print strainsNeeded
+#    for samp in allSamples:
+#        output = proportionWeightDecVarDF[proportionWeightDecVarDF["Sample"] == samp].merge(strainsNeeded).drop(["Weights", "Sample"],1)
+#        output["Proportion"] = model.solution.get_values(output["Decision Variable"].tolist())
+#        output.drop("Decision Variable", axis=1, inplace=True)
+#        output = output[["ST", "New/Existing"]+loci+["Proportion"]]
+#        print output
+#        output.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, newNameToOriName[samp]))
     
 '''
 Solve the pure ILP instance of strain prediction
