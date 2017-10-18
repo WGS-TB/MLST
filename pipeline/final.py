@@ -13,8 +13,8 @@ ap.add_argument("-o", "--output", required=True, help="Name of output folder")
 ap.add_argument("-go", "--globalOption", required=True, help="Version of optimization program to use. 'mixed': mixed ILP, 'separated': pure ILP + LP")
 #Only for mixed version
 ap.add_argument("-oc", "--objectiveComponent", required=False, default="all", help="Objective components. Default: 'all'. 'noPropAndErr': Does not include proportion and error in objective function")
-ap.add_argument("-timlim", "--timeLimit", required=False, help="Time limit in integer for cplex solver for mixed ILP", default=600)
-ap.add_argument("-g", "--gap", required=False, help="Relative gap tolerance for cplex solver for mixed ILP", default=5)
+ap.add_argument("-timelim", "--timeLimit", required=False, help="Time limit in integer(sec) for cplex solver for mixed ILP. Default:600sec", default=600)
+ap.add_argument("-g", "--gap", required=False, help="Relative gap tolerance(in percent) for cplex solver for mixed ILP. Default: 5", default=5)
 args = vars(ap.parse_args())
 
 #currentpath = /pipeline/

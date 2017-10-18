@@ -35,7 +35,6 @@ class TimeLimitCallback(cplex.callbacks.MIPInfoCallback):
                 self.aborted = True
                 self.abort()
 
-
 ''' ====================================== Functions related to processing raw data ======================================================= '''
 '''
 Return the sum of all quality scores in Qmatrix
@@ -432,13 +431,6 @@ def localMILP(sample, loci, gene_solProp_dict, reference, objectiveOption, timel
     timelim_cb.acceptablegap = gap
     timelim_cb.aborted = False
     
-    #Some bound on cplex solver when gap finds it hard to converge
-    timelim_cb = model.register_callback(TimeLimitCallback)
-    timelim_cb.starttime = model.get_time()
-    timelim_cb.timelimit = timelimit
-    timelim_cb.acceptablegap = gap
-    timelim_cb.aborted = False
-    
     #minimize problem
     model.objective.set_sense(model.objective.sense.minimize)
     #add the decision variables for unqiue strain types
@@ -502,7 +494,7 @@ def localMILP(sample, loci, gene_solProp_dict, reference, objectiveOption, timel
     varAndProp["Decision Variable"] = varAndProp["Decision Variable"] + varAndProp["Variant"]
     
     #add error variables
-    errorThres = 0.25
+    errorThres = 0.1
     model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Decision Variable"].tolist(), lb= [0]*varAndProp.shape[0], ub= [errorThres]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
 
     #add linear constraints such that for each sample, sum of pi_ik \dot V_ik (proportion \dot matrix representation) across all combinations = Proportion matrix
@@ -750,7 +742,7 @@ def localLP(solution, data, strains, reference, loci, newNameToOriName):
     varAndProp["Decision Variable"] = varAndProp["Decision Variable"] + varAndProp["Variant"]
     
     #add error variables
-    errorThres = 0.25
+    errorThres = 0.10
     model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Decision Variable"].tolist(), lb=[0]*varAndProp.shape[0], ub= [errorThres]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
     
    #add linear constraints such that for each sample, sum of pi_ik \dot V_ik (proportion \dot matrix representation) across all combinations = Proportion matrix
@@ -1416,7 +1408,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     varAndProp["Decision Variable"] = varAndProp["Decision Variable"] + varAndProp["Variant"]
     
     #add error variables
-    errorThres = 0.25
+    errorThres = 0.1
     if objectiveOption == "noPropAndErr":
         model.variables.add(names=varAndProp["Decision Variable"].tolist(), lb= [0]*varAndProp.shape[0], ub= [errorThres]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
     else:
@@ -1446,15 +1438,22 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     ''' ================================== Solve ILP ========================================== '''
     model.write("borreliaLP.lp")
 #    model.set_results_stream(None)
-#    model.solve()
+    #Some bound on cplex solver when gap finds it hard to converge
+    timelim_cb = model.register_callback(TimeLimitCallback)
+    timelim_cb.starttime = model.get_time()
+    timelim_cb.timelimit = int(timelimit)
+    timelim_cb.acceptablegap = float(gap)
+    timelim_cb.aborted = False
+
+    model.solve()
     
     #options for searching more optimal solutions
     #model.parameters.mip.pool.capacity.set(10)
-    model.parameters.mip.pool.intensity.set(4)
+#    model.parameters.mip.pool.intensity.set(4)
     #model.parameters.mip.limits.populate.set(2100000000)
-    model.parameters.mip.pool.absgap.set(0)
-    model.parameters.mip.pool.replace.set(1)
-    model.populate_solution_pool()
+#    model.parameters.mip.pool.absgap.set(0)
+#    model.parameters.mip.pool.replace.set(1)
+#    model.populate_solution_pool()
     
     objvalue = model.solution.get_objective_value()
     varNames = model.variables.get_names()
@@ -1469,13 +1468,13 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     errorVariables = conclusion[conclusion["Decision Variable"].str.startswith("d_")]
     errorVariables = errorVariables[errorVariables["Value"] != 0.0]
     strainVariables = conclusion[conclusion["Decision Variable"].str.startswith("a")]
-    strainVariables = strainVariables[strainVariables["Value"] != 0.0]
+    strainVariables = strainVariables[strainVariables["Value"] > 0.0]
     strainVariables = strainVariables.merge(strainWeightDecVarDF)
-    strainVariables = strainVariables[strainVariables["Weights"] != 0]
+    strainVariables = strainVariables[strainVariables["Weights"] > 0]
     propVariables = conclusion[conclusion["Decision Variable"].str.startswith("pi_")]
-    propVariables = propVariables[propVariables["Value"] != 0.0]
+    propVariables = propVariables[propVariables["Value"] > 0.0]
     propVariables = propVariables.merge(proportionWeightDecVarDF)
-    propVariables = propVariables[propVariables["Weights"] != 0]
+    propVariables = propVariables[propVariables["Weights"] > 0]
     print("(Strain, Proportion, Error): ({0},{1},{2})".format(strainVariables["Value"].sum(), propVariables["Value"].sum(), errorVariables["Value"].sum()))
     print("Total: {}".format(objvalue))
     
@@ -1485,24 +1484,25 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     allStr.drop("Weights", 1, inplace=True)
     allStr.to_csv("{0}/indexedStrains.csv".format(outputPath))
     
-    for i in range(model.solution.pool.get_num()):
-        objvalue = model.solution.pool.get_objective_value(i)
-        varNames = model.variables.get_names()
-        varValues = model.solution.pool.get_values(i,varNames)
-        conclusion = pd.DataFrame(columns=["Decision Variable", "Value"])
-        conclusion["Decision Variable"] = varNames
-        conclusion["Value"] = varValues
-        strainInfo = conclusion.merge(strainWeightDecVarDF[strainWeightDecVarDF["Decision Variable"].isin(varNames)])
-        strainInfo["New/Existing"] = ["Existing" if w==0 else "New" for w in strainInfo["Weights"].tolist()]
-        strainsNeeded = (strainInfo[strainInfo["Value"] > 0.9][loci + ["ST", "New/Existing"]])
-        print strainsNeeded
-#    for samp in allSamples:
-#        output = proportionWeightDecVarDF[proportionWeightDecVarDF["Sample"] == samp].merge(strainsNeeded).drop(["Weights", "Sample"],1)
-#        output["Proportion"] = model.solution.get_values(output["Decision Variable"].tolist())
-#        output.drop("Decision Variable", axis=1, inplace=True)
-#        output = output[["ST", "New/Existing"]+loci+["Proportion"]]
-#        print output
-#        output.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, newNameToOriName[samp]))
+#    for i in range(model.solution.pool.get_num()):
+#        objvalue = model.solution.pool.get_objective_value(i)
+#        varNames = model.variables.get_names()
+#        varValues = model.solution.pool.get_values(i,varNames)
+#        conclusion = pd.DataFrame(columns=["Decision Variable", "Value"])
+#        conclusion["Decision Variable"] = varNames
+#        conclusion["Value"] = varValues
+#        strainInfo = conclusion.merge(strainWeightDecVarDF[strainWeightDecVarDF["Decision Variable"].isin(varNames)])
+#        strainInfo["New/Existing"] = ["Existing" if w==0 else "New" for w in strainInfo["Weights"].tolist()]
+#        strainsNeeded = (strainInfo[strainInfo["Value"] > 0.9][loci + ["ST", "New/Existing"]])
+#        print strainsNeeded
+        
+    for samp in allSamples:
+        output = proportionWeightDecVarDF[proportionWeightDecVarDF["Sample"] == samp].merge(strainsNeeded).drop(["Weights", "Sample"],1)
+        output["Proportion"] = model.solution.get_values(output["Decision Variable"].tolist())
+        output.drop("Decision Variable", axis=1, inplace=True)
+        output = output[["ST", "New/Existing"]+loci+["Proportion"]]
+        print output
+        output.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, newNameToOriName[samp]))
     
 '''
 Solve the pure ILP instance of strain prediction
@@ -1702,7 +1702,7 @@ def minNewStrainProp(solution, data, strains, refStrains, loci, newNameToOriName
 #    varAndProp["Artificial"] = varAndProp["Artificial"] + varAndProp["Variant"]
     
     #add error variables
-    errorThres = 0.25
+    errorThres = 0.1
     model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Decision Variable"].tolist(), lb=[0]*varAndProp.shape[0], ub= [errorThres]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
 #    model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Artificial"].tolist(), lb=[0]*varAndProp.shape[0], ub= [0.2]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
 #    artificial_constr1 = [[[artif, err],[1,1]] for artif, err in itertools.izip(varAndProp["Artificial"].tolist(), varAndProp["Decision Variable"].tolist())]

@@ -39,12 +39,12 @@ for name in loci:
 #samples = [i for i in os.listdir(data_path)]
 ap = argparse.ArgumentParser()
 ap.add_argument("-s", "--sample", required = True, help="Sample name")
-ap.add_argument("-lo", "--localOption", required=True, help="Version of optimization program to use. 'mixed': mixed ILP, 'separated': pure ILP + LP")
-ap.add_argument("-timlim", "--timeLimit", required=False, help="Time limit in integer for cplex solver for mixed ILP", default=600)
-ap.add_argument("-g", "--gap", required=False, help="Relative gap tolerance for cplex solver for mixed ILP", default=5)
+#ap.add_argument("-lo", "--localOption", required=True, help="Version of optimization program to use. 'mixed': mixed ILP, 'separated': pure ILP + LP")
+#ap.add_argument("-timelim", "--timeLimit", required=False, help="Time limit in integer(sec) for cplex solver for mixed ILP. Default: 600sec", default=600)
+#ap.add_argument("-g", "--gap", required=False, help="Relative gap tolerance(percent) for cplex solver for mixed ILP. Default: 5", default=5)
 
 #only for MILP
-ap.add_argument("-oc", "--objectiveComponent", required=False, default="all", help="Objective components, only applicable to mixed ILP. Default: 'all'. 'noPropAndErr': Does not include proportion and error in objective function")
+#ap.add_argument("-oc", "--objectiveComponent", required=False, default="all", help="Objective components, only applicable to mixed ILP. Default: 'all'. 'noPropAndErr': Does not include proportion and error in objective function")
 args = vars(ap.parse_args())
 samples = [args["sample"]]
 
@@ -102,21 +102,27 @@ for samp in samples:
         else:
             #Only new strains can describe
             if len(compatible_tuples) == 0:
-                if args["localOption"] == "mixed":
-                    localMinimizer_dict = pf.localMinimizer(samp, combinationsTuple, gene_solProp_dict, loci, reference, args["objectiveComponent"],args["timeLimit"], args["gap"])
-                else:
-                    localMinimizer_dict = pf.localMinimizer_sep(samp, combinationsTuple, gene_solProp_dict, loci, reference)
-            else: #more than one compatible combinations
-                if args["localOption"] == "mixed":
-                    localMinimizer_dict = pf.localMinimizer(samp, compatible_tuples, gene_solProp_dict, loci, reference, args["objectiveComponent"],args["timeLimit"], args["gap"])
-                else:
-                    localMinimizer_dict = pf.localMinimizer_sep(samp, compatible_tuples, gene_solProp_dict, loci, reference)
+                localMinimizer_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, combinationsTuple[0])}
+            else:
+                localMinimizer_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, compatible_tuples[0])}
+                
+            writePropToCsv(localMinimizer_dict)
+#            if len(compatible_tuples) == 0:
+#                if args["localOption"] == "mixed":
+#                    localMinimizer_dict = pf.localMinimizer(samp, combinationsTuple, gene_solProp_dict, loci, reference, args["objectiveComponent"],args["timeLimit"], args["gap"])
+#                else:
+#                    localMinimizer_dict = pf.localMinimizer_sep(samp, combinationsTuple, gene_solProp_dict, loci, reference)
+#            else: #more than one compatible combinations
+#                if args["localOption"] == "mixed":
+#                    localMinimizer_dict = pf.localMinimizer(samp, compatible_tuples, gene_solProp_dict, loci, reference, args["objectiveComponent"],args["timeLimit"], args["gap"])
+#                else:
+#                    localMinimizer_dict = pf.localMinimizer_sep(samp, compatible_tuples, gene_solProp_dict, loci, reference)
             
             #only matters if separated version of local optimization is chosen
-            if localMinimizer_dict == -1:
-                print("No feasibile solutions")
-            else:
-                writePropToCsv(localMinimizer_dict)
+#            if localMinimizer_dict == -1:
+#                print("No feasibile solutions")
+#            else:
+#                writePropToCsv(localMinimizer_dict)
                 
     #currentpath=/pipeline/variantsAndProp
     os.chdir("..")
