@@ -21,7 +21,10 @@ import cplex
 import sys
 import math
 import variantILP as varSolver
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
+#from scipy.spatial.distance import hamming
+
+errorThres=0.1
 
 ''' Extend class as need to retrieve solution if gap does not converge after certain time'''
 class TimeLimitCallback(cplex.callbacks.MIPInfoCallback):
@@ -494,7 +497,7 @@ def localMILP(sample, loci, gene_solProp_dict, reference, objectiveOption, timel
     varAndProp["Decision Variable"] = varAndProp["Decision Variable"] + varAndProp["Variant"]
     
     #add error variables
-    errorThres = 0.1
+    #errorThres = 0.1
     model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Decision Variable"].tolist(), lb= [0]*varAndProp.shape[0], ub= [errorThres]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
 
     #add linear constraints such that for each sample, sum of pi_ik \dot V_ik (proportion \dot matrix representation) across all combinations = Proportion matrix
@@ -742,7 +745,7 @@ def localLP(solution, data, strains, reference, loci, newNameToOriName):
     varAndProp["Decision Variable"] = varAndProp["Decision Variable"] + varAndProp["Variant"]
     
     #add error variables
-    errorThres = 0.10
+    #errorThres = 0.10
     model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Decision Variable"].tolist(), lb=[0]*varAndProp.shape[0], ub= [errorThres]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
     
    #add linear constraints such that for each sample, sum of pi_ik \dot V_ik (proportion \dot matrix representation) across all combinations = Proportion matrix
@@ -1256,6 +1259,31 @@ def mapVarAndSampleToStrain(strain, loci, allSamples):
 #    piDotCombDF.to_csv('piDotComb.csv')
 #    pd.DataFrame(propConstrRHS).to_csv('propConstrRHS.csv')
 
+
+#def hammingWeightsStrain(df, loci,reference):
+#    ref_copy = reference[:]
+#    
+#    for l in loci:
+#        df.loc[:,l] = df.loc[:,l].str.split('_').str[1]
+#        ref_copy.loc[:,l] = ref_copy.loc[:,l].str.split('_').str[1]
+#        
+#    matrix_ref = ref_copy[loci].as_matrix()
+#            
+#    index_hamming_dict = {ind:1.0 for ind in df.index}
+#    
+#    for row_weight in df[loci].itertuples():
+#        ind = row_weight[0]
+#        vec = list(row_weight[1:])
+#        
+#        for row_ref in matrix_ref:
+#            hd = hamming(vec, row_ref)
+#            
+#            if hd < 0.5:
+#                index_hamming_dict[ind] = 0.5
+#                break
+#            
+#    return pd.DataFrame(data=index_hamming_dict.values(), index=index_hamming_dict.keys())
+    
 '''
 Predict strains using MILP and output in csv file
 Input:
@@ -1330,6 +1358,8 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
         
     #weights and decision variables for unique strain types, weight=0 if strain is in reference, otherwise=1. no duplications
     strainWeightDecVarDF = proportionWeightDecVarDF.drop_duplicates(loci)
+    #temp_changeWeightDF = hammingWeightsStrain(strainWeightDecVarDF[strainWeightDecVarDF["Weights"] == 1], loci, reference)
+    #strainWeightDecVarDF.loc[temp_changeWeightDF.index, "Weights"] = temp_changeWeightDF.values
     retainCol = loci + ['Weights', 'ST']
     strainWeightDecVarDF = strainWeightDecVarDF[retainCol].reset_index(drop=True)
     strainWeightDecVarDF["Decision Variable"] = ["a{}".format(i) for i in range(1, strainWeightDecVarDF.shape[0] + 1)]
@@ -1408,7 +1438,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     varAndProp["Decision Variable"] = varAndProp["Decision Variable"] + varAndProp["Variant"]
     
     #add error variables
-    errorThres = 0.1
+    #errorThres = 0.1
     if objectiveOption == "noPropAndErr":
         model.variables.add(names=varAndProp["Decision Variable"].tolist(), lb= [0]*varAndProp.shape[0], ub= [errorThres]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
     else:
@@ -1702,7 +1732,7 @@ def minNewStrainProp(solution, data, strains, refStrains, loci, newNameToOriName
 #    varAndProp["Artificial"] = varAndProp["Artificial"] + varAndProp["Variant"]
     
     #add error variables
-    errorThres = 0.1
+    #errorThres = 0.1
     model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Decision Variable"].tolist(), lb=[0]*varAndProp.shape[0], ub= [errorThres]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
 #    model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Artificial"].tolist(), lb=[0]*varAndProp.shape[0], ub= [0.2]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
 #    artificial_constr1 = [[[artif, err],[1,1]] for artif, err in itertools.izip(varAndProp["Artificial"].tolist(), varAndProp["Decision Variable"].tolist())]
