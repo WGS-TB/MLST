@@ -141,7 +141,7 @@ def solver(dataMatrix):
         conclusion["Decision Variable"] = varNames
         conclusion["Value"] = varValues
     
-        present = conclusion[conclusion["Value"]==1]
+        present = conclusion[conclusion["Value"]>0.5]
         variantsPresent = xIsVariant[xIsVariant["Variable"] .isin(present["Decision Variable"].tolist())]
         varPresentList = variantsPresent.index.tolist()
         allSol.append(varPresentList)
