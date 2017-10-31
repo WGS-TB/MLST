@@ -83,16 +83,10 @@ for locus in genes:
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Simulating locus {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(locus))
     os.chdir(locus)
     currentDir = os.listdir(".")
-    outFiles = [i for i in currentDir if i.endswith(".out")]
     readsFiles = [i for i in currentDir if i.endswith("reads.txt")]
     faFiles = [i for i in currentDir if i.endswith(".fa")]
     
     #Remove previous simulation files if exist
-    if len(outFiles) != 0:
-        for i in outFiles:
-            os.remove(i)
-        print("==== Removed previous .out files ====")
-            
     if len(readsFiles) != 0:
         for i in readsFiles:
             os.remove(i)
