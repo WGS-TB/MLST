@@ -1,23 +1,17 @@
 #!/usr/bin/python
 from __future__ import division
-from collections import defaultdict
-from scipy.misc import comb
-import pandas as pd
 import sh
-import csv
 import math
 import numpy as np
 import random
 import os
-import matplotlib.pyplot as plt
 import itertools
 import sys
 import variantILP as varSolver
 import linecache
-import re
+import pipeline_functions as pf
 
 #Testing purposes and global variables
-NO_BINOM = False
 TEST_EMPTY_LIST = True
 
 ''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Function Definitions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
@@ -60,384 +54,26 @@ def recall(predicted, true):
     truePos = set.intersection(set(predicted), set(true))
     return float(len(truePos)/len(true))
 
-#Return 2D dictionary
-def tree():
-    return defaultdict(tree)
-
 #Return boolean whether predicted matches true
 def predictedCorrectly(predicted, true):
         return set(predicted) == set(true)
-    
-def compute_QSum(Qmatrix):
-    Qsum = Qmatrix.sum()
-    Qsum = Qsum.sum()
-    return Qsum
 
-def ConvertAscii(Qscore):
-    result = []
-    for char in Qscore:
-        #subtract 33 for predefined offset
-        result.append(ord(char)-33)
-    return result
-
-def generate_matrix(path):
-    var_list = [] #holds the variants
-    read_list = [] #holds the reads
-    mismatch_list = [] #holds the mismatches
-    first = True
-    with open(path) as inf:
-        for line in inf:
-            if first:
-                prevParts = line.split('\t')
-            else:
-                parts = line.split('\t')
-            if len(prevParts) > 0 and not first:
-                read_list.append(parts[0])
-                var_list.append(parts[1])
-                mm_1 = re.findall(r'\d+', prevParts[6])
-                mm_2 = re.findall(r'\d+',parts[6])
-                
-                mm_tot = int(mm_1[0]) + int(mm_2[0])
-                mismatch_list.append(mm_tot)
-            first = not first
-            #parts = line.split('\t') # split line into parts
-    #        if len(parts) > 1:   # if at least 2 parts/columns
-    #            read_list.append(parts[0]) #append reads to a list
-    #            var_list.append(parts[1])   #append vars to a list
-    #            #mismatch_list.append(parts[2]) #append mismatches to list
-    #            MisMatch_pos = re.findall(r'\d+',parts[7])
-    #            Converted_scores = ConvertAscii(parts[5])
-    #            Qsum = 0
-    #            if len(MisMatch_pos) == 1:
-    #                Qsum = 0
-    #            else:
-    #                print MisMatch_pos
-    #                for i in range(1,len(MisMatch_pos)):
-    #                    sen = int(MisMatch_pos[0])
-    #                    pos = int(MisMatch_pos[i])
-    #                    tot = sen+pos
-    #                    Qsum += Converted_scores[tot-1]
-                        
-            
-    flag = True #makes sure all the previous steps completed successfully
-            
-            
-    if flag is True:
-        read_var_dict = defaultdict(list) #dictionary holding all the variants that a read maps to
-        read_mismatch_dict = defaultdict(list) #dictionary holding all the mismatches that a read has to its variants
-        read_index_dict = defaultdict(list) #dictionary holding indices for later use
-    
-        for i in range(len(read_list)):
-            #num_mismatch = mismatch_list[i].count('>') #count the number of mismatches for each read
-            num_mismatch = mismatch_list[i]
-            #append the appropriate suffix for paired reads
-            '''if  i%2 == 0:    
-                read_list[i] = read_list[i]+'-1/2'
-            else:
-                read_list[i] = read_list[i]+'-2/2'
-            '''
-            
-            read_var_dict[read_list[i]].append(var_list[i]) #append all the variants that read read_i maps to
-            read_mismatch_dict[read_list[i]].append(num_mismatch) #append all the mismatches that each read_i has when it maps to a variants
-            read_index_dict[read_list[i]].append(i) #for testing purposes
-    
-        var_list = set(var_list) #removes duplicates
-        matrix_dict = tree() #creates a 2-D dictionary object later used to generate the read-variant matrix datastructure
-     
-    #       create a 2D dictionary that contains all the possible combinations of a read with a variant and the number of mismatches.
-        for var in var_list:
-            for read in read_var_dict:   #key=read name
-                temp_var_list = read_var_dict[read]   #list of variants that key maps to 
-                if var in temp_var_list:
-                    index = temp_var_list.index(var)
-                    mismatch = read_mismatch_dict[read][index] #get the number of mismatches
-                    #only for perfect matches.
-                    if mismatch <= 6:
-                    #print val
-                        matrix_dict[read][var] = int(mismatch) #add it to the matrix data structure
-    
-        matrixDF = pd.DataFrame(matrix_dict).T.fillna(-1) #convert 2-D dictionary to a matrix
-    return matrixDF
-
-'''
-Input: Path to reads.txt file
-Output: Matrix with rows=reads, columns=variants and entries=mismatches information
-'''
-def Compute_Paired_Matrix(path):
-    
-    first = True
-    var_list = [] #holds the variants
-    read_list = [] #holds the reads
-    mismatch_list = [] #holds the mismatches
-    with open(path) as inf:
+def writeReadTable(capGene, iteration, option):
+    readOutFile = open("{0}_{1}_{2}NoHeader.sam".format(capGene, iteration, option))
+    writefile = open("{0}_{1}_{2}_reads.txt".format(capGene, iteration, option), "w")
+    for line in readOutFile:
+        fields = line.strip("\t").split()
+        read = fields[0]
+        allele = fields[2]
+        quality = fields[10]
+#        mm = [i for i in fields if i.startswith("XM:i:")][0]  #bowtie2
+        mm = [i for i in fields if i.startswith("NM:i:")][0]   #bowtie
+        mm_pos = [j for j in fields if j.startswith("MD:Z:")][0]
         
-        for line in inf:
-            count = 0
-            if first:
-                prevParts = line.split('\t')
-            else:
-                parts = line.split('\t')
-            if not first and len(prevParts) > 0:
-                if parts[3] == '=':
-                    read_list.append(parts[0])
-                    var_list.append(parts[1])
-                    mm_1 = re.findall(r'\d+', prevParts[6])
-                    mm_2 = re.findall(r'\d+',parts[6])
-                    
-                    mm_tot = int(mm_1[0]) + int(mm_2[0])
-                    mismatch_list.append(mm_tot)
-                else:
-                    read = parts[0]+'-{}'.format(str(count))
-                    read_list.append(read)
-                    var_list.append(parts[1])
-                    mm = re.findall(r'\d+',parts[6])
-                    mismatch_list.append(mm)
-                    count += 1
-            first = not first
-    flag = True #makes sure all the previous steps completed successfully
-                
-                
-    if flag is True:
-        read_var_dict = defaultdict(list) #dictionary holding all the variants that a read maps to
-        read_mismatch_dict = defaultdict(list) #dictionary holding all the mismatches that a read has to its variants
-        read_index_dict = defaultdict(list) #dictionary holding indices for later use
-    
-        for i in range(len(read_list)):
-            #num_mismatch = mismatch_list[i].count('>') #count the number of mismatches for each read
-            num_mismatch = mismatch_list[i]
-            #append the appropriate suffix for paired reads
-            '''if  i%2 == 0:    
-                read_list[i] = read_list[i]+'-1/2'
-            else:
-                read_list[i] = read_list[i]+'-2/2'
-            '''
-            
-            read_var_dict[read_list[i]].append(var_list[i]) #append all the variants that read read_i maps to
-            read_mismatch_dict[read_list[i]].append(num_mismatch) #append all the mismatches that each read_i has when it maps to a variants
-            read_index_dict[read_list[i]].append(i) #for testing purposes
-    
-        var_list = set(var_list) #removes duplicates
-        matrix_dict = tree() #creates a 2-D dictionary object later used to generate the read-variant matrix datastructure
-     
-    #       create a 2D dictionary that contains all the possible combinations of a read with a variant and the number of mismatches.
-        for var in var_list:
-            for read in read_var_dict:   #key=read name
-                temp_var_list = read_var_dict[read]   #list of variants that key maps to 
-                if var in temp_var_list:
-                    index = temp_var_list.index(var)
-                    mismatch = read_mismatch_dict[read][index] #get the number of mismatches
-                    #only for perfect matches.
-                    if mismatch <= 6:
-                    #print val
-                        matrix_dict[read][var] = int(mismatch) #add it to the matrix data structure
-    
-        matrixDF = pd.DataFrame(matrix_dict).T.fillna(-1) #convert 2-D dictionary to a matrix
-        matrixDF = matrixDF[(matrixDF.T != -1).any()]
-        return matrixDF
-    
-def Compute_Singleton_Matrix(path):
-    var_list = [] #holds the variants
-    read_list = [] #holds the reads
-    mismatch_list = [] #holds the mismatches
-    with open(path) as inf:
-        count = 0
-        for line in inf:
-            parts = line.split('\t')
-            read = parts[0]# + '-{}'.format(str(count))
-            read_list.append(read)
-            var_list.append(parts[1])
-            mm = re.findall(r'\d+',parts[6])
-            mismatch_list.append(int(mm[0]))
-            count += 1
-    flag = True
-    if flag is True:
-        read_var_dict = defaultdict(list) #dictionary holding all the variants that a read maps to
-        read_mismatch_dict = defaultdict(list) #dictionary holding all the mismatches that a read has to its variants
-        read_index_dict = defaultdict(list) #dictionary holding indices for later use
-    
-        for i in range(len(read_list)):
-            #num_mismatch = mismatch_list[i].count('>') #count the number of mismatches for each read
-            num_mismatch = mismatch_list[i]
-            #append the appropriate suffix for paired reads
-            '''if  i%2 == 0:    
-                read_list[i] = read_list[i]+'-1/2'
-            else:
-                read_list[i] = read_list[i]+'-2/2'
-            '''
-            
-            read_var_dict[read_list[i]].append(var_list[i]) #append all the variants that read read_i maps to
-            read_mismatch_dict[read_list[i]].append(num_mismatch) #append all the mismatches that each read_i has when it maps to a variants
-            read_index_dict[read_list[i]].append(i) #for testing purposes
-    
-        var_list = set(var_list) #removes duplicates
-        matrix_dict = tree() #creates a 2-D dictionary object later used to generate the read-variant matrix datastructure
-     
-    #       create a 2D dictionary that contains all the possible combinations of a read with a variant and the number of mismatches.
-        for var in var_list:
-            for read in read_var_dict:
-                 #key=read name
-                temp_var_list = read_var_dict[read]   #list of variants that key maps to 
-                if var in temp_var_list:
-                    index = temp_var_list.index(var)
-                    mismatch = read_mismatch_dict[read][index] #get the number of mismatches
-                    #only for perfect matches.
-                    if mismatch <= 3:
-                    #print val
-                        matrix_dict[read][var] = int(mismatch)*2 #add it to the matrix data structure
-        matrixDF = pd.DataFrame(matrix_dict).T.fillna(-1) #convert 2-D dictionary to a matrix
-        matrixDF = matrixDF[(matrixDF.T != -1).any()]
-        return matrixDF
-
-def Generate_Qmatrix(DataPath):
-    var_list = []
-    read_list = []
-    mismatch = []
-    Qscores = []
-    
-    first = True
-    with open(DataPath) as inf:
-        for line in inf:
-            if first:
-                prevParts = line.split('\t')
-            else:
-                parts = line.split('\t')
-            if len(prevParts) > 0 and not first:
-                read_list.append(parts[0])
-                var_list.append(parts[1])
-                Converted_scores = ConvertAscii(prevParts[5])
-                Converted_scores_2 = ConvertAscii(parts[5])
-                MisMatch_pos = re.findall(r'\d+',prevParts[7])
-                MisMatch_pos_2 = re.findall(r'\d+',parts[7])
-                Qsum = 0
-                Qsum2 = 0
-                if len(MisMatch_pos) == 0:
-                    Qsum = 0
-                else:
-                    for i in range(1,len(MisMatch_pos)):
-                        sen = int(MisMatch_pos[0])
-                        pos = int(MisMatch_pos[i])
-                        tot = sen+pos
-                        Qsum += Converted_scores[tot-1]
-                if len(MisMatch_pos_2) == 0:
-                    Qsum2 = 0
-                else:
-                    for i in range(1,len(MisMatch_pos_2)):
-                        sen = int(MisMatch_pos_2[0])
-                        pos = int(MisMatch_pos_2[i])
-                        tot = sen+pos
-                        Qsum2 += Converted_scores_2[tot-1]
-                Qscores.append(Qsum+Qsum2)
-            first = not first
-            
-    flag = True
-    
-    if flag is True:
-        read_var_dict = defaultdict(list) #dictionary holding all the variants that a read maps to
-        read_mismatch_dict = defaultdict(list) #dictionary holding all the mismatches that a read has to its variants
-        read_index_dict = defaultdict(list) #dictionary holding indices for later use
-    
-        for i in range(len(read_list)):
-            num_mismatch = Qscores[i] #count the number of mismatches for each read
-            #append the appropriate suffix for paired reads
-            '''if  i%2 == 0:    
-                read_list[i] = read_list[i]+'-1/2'
-            else:
-                read_list[i] = read_list[i]+'-2/2'
-            '''
-            read_var_dict[read_list[i]].append(var_list[i]) #append all the variants that read read_i maps to
-            read_mismatch_dict[read_list[i]].append(num_mismatch) #append all the mismatches that each read_i has when it maps to a variants
-            read_index_dict[read_list[i]].append(i) #for testing purposes
-    
-        var_list = set(var_list) #removes duplicates
-        matrix_dict = tree() #creates a 2-D dictionary object later used to generate the read-variant matrix datastructure
-     
-    #       create a 2D dictionary that contains all the possible combinations of a read with a variant and the number of mismatches.
-        for var in var_list:
-            for read in read_var_dict:   #key=read name
-                temp_var_list = read_var_dict[read]   #list of variants that key maps to 
-                if var in temp_var_list:
-                    index = temp_var_list.index(var)
-                    mismatch = read_mismatch_dict[read][index] #get the number of mismatches
-                    #only for perfect matches.
-                    #if val == 1:
-                    #print val
-                    matrix_dict[read][var] = int(mismatch) #add it to the matrix data structure
-    
-        QmatrixDF = pd.DataFrame(matrix_dict).T.fillna(186) #convert 2-D dictionary to a matrix
-        return QmatrixDF
-
-#compute the probability of read of length n mapping to a variant with k mismatches using the binomial distribution/without 
-def compute_probability(n, k):
-    #NO_BINOM=True means not using binomial coefficient
-    if NO_BINOM:
-        b=10**10
-    else:
-        b = comb(n, k, exact=False)
-    
-    x = math.pow(0.99,(n-k))
-    y = math.pow(0.01,k)
-    prob = b*x*y
+        writefile.write(read + "\t" + allele + "\t" + quality + "\t" + mm + "\t" + mm_pos + '\n')
         
-    return prob
-
-'''
-Input: Dataframe with rows=reads, columns=variants
-Output: The proportions of variants (type list) based on counting method
-'''
-def count_compute_proportions(dataframe):
-    prob_list = [0.0]*dataframe.shape[1]
-    
-#    weightage = dataframe[dataframe.loc[:, dataframe.columns.tolist()] == 0.0].count(axis=0).tolist()
-    
-    for row in dataframe.itertuples(index=False):
-        mmInfo = [i for i in list(row) if i>=0]
-        min_mm = min(mmInfo)
-        numOfVar_minMm = len([i for i in list(row) if i== min_mm])
-        indexOfVar_minMm = [i for i in range(len(list(row))) if list(row)[i] == min_mm]
-        
-#        weights = [weightage[i] for i in indexOfVar_minMm]
-#        weights = [i/sum(weights) for i in weights]
-        
-        track=0
-        for i in indexOfVar_minMm:
-#            prob_list[i] += (1/numOfVar_minMm) * weights[track]
-            prob_list[i] += (1/numOfVar_minMm)
-            track += 1
-                
-    normalize_term = 1.0/(sum(prob_list))
-    prob_list = [100.0*normalize_term * i for i in prob_list]
-    return prob_list
-        
-
-'''
-Input: Dataframe with rows=reads, columns=variants
-Output: The proportions of variants (type list)
-'''
-def bayes_compute_proportions(dataframe):
-    #computes the proportion of a set of variants given a set of reads uing probabilistic methods
-    prob_list = [] #a list to hold the probabilities
-    for row in dataframe.itertuples(index=False):
-        temp_list = list(row)
-        #compute the probability for each row in the matrix
-        for i in range(len(temp_list)):
-            if temp_list[i] >= 0:
-                temp_list[i] = compute_probability(152,int(temp_list[i]))
-            else:
-                temp_list[i] = 0
-        total = sum(temp_list)
-        #solve for k
-        #try except just in case when we encounter the weird issue where the decision variable for a predicted variant = 1 but was not output
-        try:
-            temp_list = [j*(1.0/total) for j in temp_list]
-        except ZeroDivisionError:
-            print(total)
-            print(temp_list)
-            
-        prob_list.append(temp_list)
-    col_sums = [sum(k) for k in zip(*prob_list)]
-    total_sum = sum(col_sums)
-    prop_list = [100.0*l*(1/total_sum) for l in col_sums]
-    return prop_list     
+    readOutFile.close()
+    writefile.close()
 
 '''
 Input: Dataframe with rows=reads, columns=variants
@@ -460,116 +96,47 @@ def compute_true_objective_val(dataframe):
                 else:
                     objective_val+=max_mm + 1
                     bad_read.append(list(row)[0])
-                    print(list(row))
+#                    print(list(row))
             else:
                 if len(mmInfo_list) == 0:
                     bad_read.append(list(row)[0])
-                    print(list(row))
+#                    print(list(row))
                     
                 objective_val += min(mmInfo_list)
         objective_val += len(dataframe.columns)     #Increment by the number of variants used
         return objective_val, bad_read
 
-#Create a dictionary given keys and values which are lists
-def create_dictionary(keys, vals):
-        my_dict = dict()
-        if len(keys) == len(vals):
-            for i in range(len(keys)):
-                my_dict[keys[i]] = vals[i]
-        return my_dict 
-
 #Compute the difference between predicted and true objective values
 def compute_obj_diff(predicted, true):
         diff = predicted - true
         return diff
-'''
-Input: A dataframe with rows=reads, columns=variants
-Output: Negative log likelihood score of this solution
-'''    
-def compute_likelihood(df):
-    numVar = df.shape[1]
-    likelihood_list = list()
-    max_mm = 6  #because now it is paired
-    
-    for row in df.itertuples(index=False):
-        read = list(row)
-        
-        temp = list()
-        for i in range(numVar):
-            if read[i] == -1:   #treat those reads which do not map having mm=max_mm+1
-                prob = (0.01)**(max_mm+1) * (0.99)**(152 - max_mm -1)
-                temp.append(prob)
-            else:
-                prob = (0.01)**(read[i]) * (0.99)**(152 - read[i])
-                temp.append(prob)
-                
-        likelihood_list.append( sum(temp) )
-    
-    #Similar to method in GAML paper
-    likelihood_list = [i/(2.0*152*numVar) for i in likelihood_list]
-    neg_log_likelihood = [-1.0*np.log10(j) for j in likelihood_list]
-    
-    score = sum(neg_log_likelihood)
-    return score
 
-#def outputDataForML(trueProp, dataMatrix, csvfile):
-#    var_mm_probDict = {(var, i):0 for (var,i) in itertools.product(dataMatrix.columns.tolist(), range(7))}
-#    variants = dataMatrix.columns.tolist()
+#def outputDataForML(dataMatrix, csvfile, varProp_dict):
+#    mm = range(7)
+#    matrixForML = list()
+#    variants = varProp_dict.keys()
+#    print(variants)
+#    proportions = varProp_dict.values()
+#    print(proportions)
 #    
-#    for row in dataMatrix.itertuples(index=False):
-#        temp_index = list()
-#        temp_mm = list()
-#        for i in range(len(list(row))):
-#            if list(row)[i] >= 0:
-#                temp_index.append(i)
-#                temp_mm.append(list(row)[i])
-#                
-#        for j in range(len(temp_index)):
-#            var_mm_probDict[(variants[temp_index[j]], temp_mm[j])] += 1
-#                            
-#    for (var,mm) in var_mm_probDict.keys():
-#        var_mm_probDict[(var,mm)] = var_mm_probDict[(var,mm)] * compute_probability(152, mm)
-#    
-#    data = list()
-#    for var in variants:
-#        temp_list = list()
+#    track=0
+#    for v in variants:
+#        temp_array = list()
+#        temp = dataMatrix.loc[:, v].value_counts()
 #        
-#        for i in range(7):
-#            temp_list.append(var_mm_probDict[(var, i)])
-#            
-#        temp_list.append(trueProp[var])
-#        data.append(temp_list)
-#    
+#        for i in mm:
+#            if i in temp.index:
+#                temp_array.append(temp[i])
+#            else:
+#                temp_array.append(0)
+#                
+#        temp_array.append(proportions[track])
+#        track += 1
+#        matrixForML.append(temp_array)
+#
 #    with open(csvfile, "a") as f:
 #        writer = csv.writer(f)
-#        writer.writerows(data)
-
-def outputDataForML(dataMatrix, csvfile, varProp_dict):
-    mm = range(7)
-    matrixForML = list()
-    variants = varProp_dict.keys()
-    print(variants)
-    proportions = varProp_dict.values()
-    print(proportions)
-    
-    track=0
-    for v in variants:
-        temp_array = list()
-        temp = dataMatrix.loc[:, v].value_counts()
-        
-        for i in mm:
-            if i in temp.index:
-                temp_array.append(temp[i])
-            else:
-                temp_array.append(0)
-                
-        temp_array.append(proportions[track])
-        track += 1
-        matrixForML.append(temp_array)
-
-    with open(csvfile, "a") as f:
-        writer = csv.writer(f)
-        writer.writerows(matrixForML)
+#        writer.writerows(matrixForML)
             
         
 def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage):
@@ -603,7 +170,10 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     
     '''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Simulation starts here ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
     
-    for iteration in range(1,numOfIter+1):  
+    iteration = 1
+    numSimHavingMultSol = 0
+    multSolCorrect = 0
+    while(iteration < numOfIter+1):  
         true_prop = dict()#dictionary to store the true proportions
         k =random.randint(2,7) #generate a random integer k between 2 and 7
         #generate k random fractions that sum up to 1
@@ -650,65 +220,73 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         appendSecond_cmd ="cat *_2.fq > "+str(upperfirst(gene))+"_"+str(iteration)+"_2.fa" #append all the second of the pairs together
         os.system(appendFirst_cmd)
         os.system(appendSecond_cmd)
+<<<<<<< HEAD
         ref = upperfirst(gene)+"_bowtie2"
         bowtie2_mapping_cmd = 'bowtie2 -x {0} -a -p 4 -1 ./{1}_{2}_1.fa -2 ./{1}_{2}_2.fa -S {1}_{2}.sam --al {0}_{1}_unpaired.sam '.format(ref, upperfirst(gene), str(iteration))
         os.system(bowtie2_mapping_cmd)
+=======
+#        ref = upperfirst(gene)+"_bowtie2"
+        ref = upperfirst(gene) + "_bowtie"
+#        mapping_cmd = 'bowtie2 -x {0} -a -p 4 -1 ./{1}_{2}_1.fa -2 ./{1}_{2}_2.fa -S {1}_{2}.sam >/dev/null 2>&1'.format(ref, upperfirst(gene), str(iteration))
+        mapping_cmd = "bowtie -a --best --strata -v 3 -p 4 {0} -1 ./{1}_{2}_1.fa -2 ./{1}_{2}_2.fa --sam {1}_{2}.sam >/dev/null 2>&1".format(ref, upperfirst(gene), str(iteration))
+
+        #Execute commands for bowtie mapping
+        os.system(mapping_cmd)
+>>>>>>> 1cacbff0ef8d22709a0437931b937e98053589cb
         
         #convert from sam to bam file
-        convert_cmd = 'samtools view -h -b -S {0}_{1}.sam > {0}_{1}.bam'.format(upperfirst(gene),str(iteration))
-        filter_cmd = 'samtools view -b -F 4 {0}_{1}.bam > {0}_{1}_mapped.bam'.format(upperfirst(gene),str(iteration))
-        paired_cmd = 'samtools view -b -F8 {0}_{1}_mapped.bam > {0}_{1}_paired.bam'.format(upperfirst(gene),str(iteration))
-        singleton_cmd = 'samtools view -b -f8 {0}_{1}_mapped.bam > {0}_{1}_singleton.bam'.format(upperfirst(gene),str(iteration))
-        paired_parse_cmd = '''samtools view {0}_{1}_paired.bam | awk '{{print $1 "\\t" $3 "\\t" $4 "\\t" $7 "\\t" $8 "\\t" $11 "\\t" $15 "\\t" $19}}' > {0}_{1}_paired_reads.txt'''.format(upperfirst(gene),str(iteration))
-        singleton_parse_cmd = '''samtools view {0}_{1}_singleton.bam | awk '{{print $1 "\\t" $3 "\\t" $4 "\\t" $7 "\\t" $8 "\\t" $11 "\\t" $14 "\\t" $18}}' > {0}_{1}_singleton_reads.txt'''.format(upperfirst(gene),str(iteration))
+        mapped_cmd = "samtools view -h -F4 {0}_{1}.sam > {0}_{1}_mapped.sam".format(upperfirst(gene),str(iteration))
+        paired_cmd = "samtools view -F8 {0}_{1}_mapped.sam > {0}_{1}_pairedNoHeader.sam".format(upperfirst(gene),str(iteration))
+#        singleton_cmd = "samtools view -f8 {0}_{1}_mapped.sam > {0}_{1}_singletonNoHeader.sam".format(upperfirst(gene),str(iteration))
+        
         #run the commands
-        os.system(convert_cmd)
-        os.system(filter_cmd)
+        os.system(mapped_cmd)
         os.system(paired_cmd)
-        os.system(singleton_cmd)
-        os.system(paired_parse_cmd)
-        os.system(singleton_parse_cmd)
+#        os.system(singleton_cmd)
+        
+        #Tabulate as reads.txt file
+        #For paired
+        writeReadTable(upperfirst(gene), str(iteration), "paired")
+        #For singleton
+#        writeReadTable(upperfirst(gene), str(iteration), "singleton")
         
         #Remove unneccessary files for the next iteration.    
         os.system("rm {}*".format(gene))
-        os.system("rm *.bam")
         os.system("rm *.sam")
-        #os.system("rm {}*.sam".format(upperfirst(gene)))
-        #os.system("rm {}*.bam".format(upperfirst(gene)))
+
         #Keep track of true variants
         true_ratios_list.append(fractions)
         true_variants_list.append(true_variants)
         for j in range(0,len(true_variants)):
             key = true_variants[j]
-            true_prop[key] = float(fractions[j])*100
+            true_prop[key] = float(fractions[j])
         
         #Create data matrix where rows=reads and columns=variants
         paired_readsTxt_path = upperfirst(gene)+ '_'+str(iteration)+'_paired_reads.txt'
-        singleton_readsTxt_path = upperfirst(gene)+ '_'+str(iteration)+'_singleton_reads.txt'
-        pairedDF = Compute_Paired_Matrix(paired_readsTxt_path)
-        pairedDF = generate_matrix(paired_readsTxt_path)
-        singletonDF = Compute_Singleton_Matrix(singleton_readsTxt_path)
-        dataMatrix = pd.concat([pairedDF,singletonDF])
+#        singleton_readsTxt_path = upperfirst(gene)+ '_'+str(iteration)+'_singleton_reads.txt'
+        pairedDF = pf.returnMismatchMatrix(paired_readsTxt_path, "paired")
+#        singletonDF = returnMismatchMatrix(singleton_readsTxt_path, "singleton")
+        dataMatrix = pairedDF
         dataMatrix = dataMatrix.fillna(-1)
+<<<<<<< HEAD
         dataMatrix.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
 
         #Qmatrix = Generate_Qmatrix(readsTxt_path)
+=======
+        paired_Qmatrix = pf.returnQualityMatrix(paired_readsTxt_path, "paired")
+#        singleton_Qmatrix = returnQualityMatrix(singleton_readsTxt_path, "singleton")
+        Qmatrix = paired_Qmatrix
+        
+>>>>>>> 1cacbff0ef8d22709a0437931b937e98053589cb
         #Run the ILP solver
         pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = varSolver.solver(dataMatrix)
+#        if len(all_solutions) == 1:
+#            continue
         
         
         '''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Statistics and Calculations start here ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
-        
-        print "======================================== SIMULATION " + str(iteration) + " ====================================================" +  "\n"    
-        
-        #Keep the likelihood scores of all optimal solutions
-#        minVar_solutions = [sol for sol in all_solutions if len(sol) == min(map(len,all_solutions))]
-#        all_solutions = minVar_solutions
         score_list = list()
         min_score = sys.maxint
-        print("Number of optimal solutions: {}".format(len(all_solutions)))
-        numOfOptimalSol.append(len(all_solutions))
-        print all_solutions
         Qscore_list = [] #list to hold all the average Qsocres for the solutions
         
         #Compute negative log likelihood score for each solution
@@ -716,13 +294,14 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
 #            print("Solution:{}".format(all_solutions[i]))
 #            print("Objective value: {}".format(all_objective[i]))
 #            print("Proportions:{}".format(compute_proportions(dataMatrix.loc[reads_cov, all_solutions[i]])))
-            score = compute_likelihood(dataMatrix.loc[reads_cov, all_solutions[i]])
+            score = pf.compute_likelihood(dataMatrix.loc[reads_cov, all_solutions[i]], 6)
             score_list.append(score)
             
             
             if score <= min_score:
                 min_score = score
                 
+<<<<<<< HEAD
             Qscore_list.append(compute_QAvg(Qmatrix.loc[reads_cov,all_solutions[i]]))
         min_Qscore = np.argmin(Qscore_list)
         var_predicted = all_solutions[min_Qscore]
@@ -733,6 +312,16 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
                 var_predicted = solution
                 break
         '''
+=======
+            Qscore_list.append(pf.compute_QSum(Qmatrix.loc[reads_cov,all_solutions[i]]))
+            
+        min_Qscore = np.argmin(Qscore_list)
+        var_predicted = all_solutions[min_Qscore]
+        minQIndices = np.where(np.array(Qscore_list) == np.array(Qscore_list).min())
+        
+        if len(minQIndices) > 1:
+            print("More than 1 solution having minimum quality score")
+>>>>>>> 1cacbff0ef8d22709a0437931b937e98053589cb
             
         #Keep track of precision and recall for all simulations
         precision_list.append(precision(var_predicted, true_variants))
@@ -743,26 +332,47 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         true_DF = dataMatrix.loc[reads_cov,true_variants]
 #        true_DF =  true_DF[(true_DF.T != -1).any()]
         predicted_DF = dataMatrix.loc[reads_cov,var_predicted]
-        prop_count = count_compute_proportions(predicted_DF)
+        prop_count = pf.compute_proportions(predicted_DF)
         #prop_bayes = bayes_compute_proportions(predicted_DF)
 #        if proportion_method == "count":
 #            prop = count_compute_proportions(predicted_DF)
 #        elif proportion_method == "bayes":
 #            prop = bayes_compute_proportions(predicted_DF)
-        pred_prop_count = create_dictionary(var_predicted, prop_count)
+        pred_prop_count = pf.create_dictionary(var_predicted, prop_count)
         #pred_prop_bayes = create_dictionary(var_predicted, prop_bayes)
-        val_count = totalVariationDist(pred_prop_count, true_prop)
+        val_count = 100.0*totalVariationDist(pred_prop_count, true_prop)
         #val_bayes = totalVariationDist(pred_prop_bayes, true_prop)
         totalVarDist_count.append(val_count)
         #totalVarDist_bayes.append(val_bayes)
         
         #Print true and predicted variants
+        print "======================================== SIMULATION " + str(iteration) + " ====================================================" +  "\n"
+        print("Number of optimal solutions: {}".format(len(all_solutions)))
+        numOfOptimalSol.append(len(all_solutions))
+        print all_solutions
+        print ('Qscores are: {}').format(Qscore_list)
+        print("Minimum q score is :{}".format(Qscore_list[min_Qscore]))
+#        print ('Likelihood scores are: {}').format(score_list)
+#        print("Minimum likelihood score is :{}".format(score_list[minLikeli]))
         print("True variants are: {}\n".format(true_variants))
         print("Predicted variants are: {}\n".format(var_predicted))
         print("True proportions are: {}\n".format(true_prop))
         #print("Predicted proportions using Bayes method are: {}\n".format(pred_prop_bayes))
         print("Predicted proportions using Counting method are: {}\n".format(pred_prop_count))
-        print ('average Qscores are: {}').format(Qscore_list)
+        correct = False
+        if set(true_variants) == set(var_predicted):
+            correct = True
+            
+        if correct:
+            print("This sim is predicted correctly based on quality score.")
+        else:
+            print("This sim is not predicted correctly based on quality score.")
+        
+        if len(all_solutions) > 1:
+            numSimHavingMultSol += 1
+            
+            if correct:
+                multSolCorrect += 1
         
         #Compute objective value of true variants
         true_Objective_val, bad_reads = compute_true_objective_val(true_DF)
@@ -780,6 +390,8 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
                 
         if len(bad_reads) != 0:
             print(dataMatrix.loc[bad_reads,:])   
+            
+        iteration += 1
 
     
     '''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Here is the summary ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
@@ -853,12 +465,18 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     print "({0})Accuracy: \n".format(context)
     print 'Total number of simulations: ', numOfIter , "\n"
     print("Number of simulations which are predicted correctly: {0}\n".format(predictedCorrect_count))
-    print 'Percentage of simulations predicted correctly: ', 100*predictedCorrect_count/iteration, "%\n"
+    print 'Percentage of simulations predicted correctly: ', 100*predictedCorrect_count/numOfIter, "%\n"
     context+=1
     
     print "({0})Optimal solutions: \n".format(context)
     print("Number of optimal solutions: {0}\n".format(numOfOptimalSol))
     print("Average number of optimal solutions: {0}\n".format(np.mean(numOfOptimalSol)))
+    context+=1
+    
+    print "({0})Statistics about quality score: \n".format(context)
+    print("Number of simulations having multiple solutions: {}".format(numSimHavingMultSol))
+    print("Number of these simulations which are correct: {}".format(multSolCorrect))
+    print("The percentage is : {} %".format(100.0*(multSolCorrect/numSimHavingMultSol)))
     context+=1
     
     sys.stdout.close()
