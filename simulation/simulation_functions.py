@@ -632,7 +632,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
             file_name = simulation_name + '_reference.fa'
             covOfThisVar = math.ceil((fractions[i]*coverage)) #compute the number of reads to generate
             covOfThisVar = int(covOfThisVar)
-            variant_sequence = sh.grep(variant,"{0}/sim_data/{1}/newLinear.txt".format(originalPath, gene),"-w","-A1") #use bash to extract the variant sequence
+            variant_sequence = sh.grep(variant,"{0}/sim_data/{1}/linear.txt".format(originalPath, gene),"-w","-A1") #use bash to extract the variant sequence
             variant_sequence = variant_sequence.rstrip() #remove the "\n" character that is returned by bash
             variant_sequence = str(variant_sequence)
             total_variants_sequence += variant_sequence
@@ -651,7 +651,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         os.system(appendFirst_cmd)
         os.system(appendSecond_cmd)
         ref = upperfirst(gene)+"_bowtie2"
-        bowtie2_mapping_cmd = 'bowtie2 -x {0} -a -p 4 -1 ./{1}_{2}_1.fa -2 ./{1}_{2}_2.fa -S {1}_{2}.sam --al {0}_{1}_unpaired.sam >/dev/null 2>&1'.format(ref, upperfirst(gene), str(iteration))
+        bowtie2_mapping_cmd = 'bowtie2 -x {0} -a -p 4 -1 ./{1}_{2}_1.fa -2 ./{1}_{2}_2.fa -S {1}_{2}.sam --al {0}_{1}_unpaired.sam '.format(ref, upperfirst(gene), str(iteration))
         os.system(bowtie2_mapping_cmd)
         
         #convert from sam to bam file
@@ -691,6 +691,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         dataMatrix = pd.concat([pairedDF,singletonDF])
         dataMatrix = dataMatrix.fillna(-1)
         dataMatrix.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
+
         #Qmatrix = Generate_Qmatrix(readsTxt_path)
         #Run the ILP solver
         pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = varSolver.solver(dataMatrix)
@@ -722,15 +723,16 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
             if score <= min_score:
                 min_score = score
                 
-            #Qscore_list.append(compute_QAvg(Qmatrix.loc[reads_cov,all_solutions[i]]))
-        #min_Qscore = np.argmin(Qscore_list)
-        #var_predicted = all_solutions[min_Qscore]
+            Qscore_list.append(compute_QAvg(Qmatrix.loc[reads_cov,all_solutions[i]]))
+        min_Qscore = np.argmin(Qscore_list)
+        var_predicted = all_solutions[min_Qscore]
             
         #If there is one solution among all optimal which matches true variants, assign to var_predicted to generate statistics
-        for solution in all_solutions:
+        '''for solution in all_solutions:
             if set(solution) == set(true_variants):
                 var_predicted = solution
                 break
+        '''
             
         #Keep track of precision and recall for all simulations
         precision_list.append(precision(var_predicted, true_variants))
