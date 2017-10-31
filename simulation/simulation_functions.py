@@ -220,11 +220,6 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         appendSecond_cmd ="cat *_2.fq > "+str(upperfirst(gene))+"_"+str(iteration)+"_2.fa" #append all the second of the pairs together
         os.system(appendFirst_cmd)
         os.system(appendSecond_cmd)
-<<<<<<< HEAD
-        ref = upperfirst(gene)+"_bowtie2"
-        bowtie2_mapping_cmd = 'bowtie2 -x {0} -a -p 4 -1 ./{1}_{2}_1.fa -2 ./{1}_{2}_2.fa -S {1}_{2}.sam --al {0}_{1}_unpaired.sam '.format(ref, upperfirst(gene), str(iteration))
-        os.system(bowtie2_mapping_cmd)
-=======
 #        ref = upperfirst(gene)+"_bowtie2"
         ref = upperfirst(gene) + "_bowtie"
 #        mapping_cmd = 'bowtie2 -x {0} -a -p 4 -1 ./{1}_{2}_1.fa -2 ./{1}_{2}_2.fa -S {1}_{2}.sam >/dev/null 2>&1'.format(ref, upperfirst(gene), str(iteration))
@@ -232,7 +227,6 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
 
         #Execute commands for bowtie mapping
         os.system(mapping_cmd)
->>>>>>> 1cacbff0ef8d22709a0437931b937e98053589cb
         
         #convert from sam to bam file
         mapped_cmd = "samtools view -h -F4 {0}_{1}.sam > {0}_{1}_mapped.sam".format(upperfirst(gene),str(iteration))
@@ -268,16 +262,12 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
 #        singletonDF = returnMismatchMatrix(singleton_readsTxt_path, "singleton")
         dataMatrix = pairedDF
         dataMatrix = dataMatrix.fillna(-1)
-<<<<<<< HEAD
         dataMatrix.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
 
         #Qmatrix = Generate_Qmatrix(readsTxt_path)
-=======
         paired_Qmatrix = pf.returnQualityMatrix(paired_readsTxt_path, "paired")
 #        singleton_Qmatrix = returnQualityMatrix(singleton_readsTxt_path, "singleton")
         Qmatrix = paired_Qmatrix
-        
->>>>>>> 1cacbff0ef8d22709a0437931b937e98053589cb
         #Run the ILP solver
         pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = varSolver.solver(dataMatrix)
 #        if len(all_solutions) == 1:
@@ -300,11 +290,6 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
             
             if score <= min_score:
                 min_score = score
-                
-<<<<<<< HEAD
-            Qscore_list.append(compute_QAvg(Qmatrix.loc[reads_cov,all_solutions[i]]))
-        min_Qscore = np.argmin(Qscore_list)
-        var_predicted = all_solutions[min_Qscore]
             
         #If there is one solution among all optimal which matches true variants, assign to var_predicted to generate statistics
         '''for solution in all_solutions:
@@ -312,7 +297,6 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
                 var_predicted = solution
                 break
         '''
-=======
             Qscore_list.append(pf.compute_QSum(Qmatrix.loc[reads_cov,all_solutions[i]]))
             
         min_Qscore = np.argmin(Qscore_list)
@@ -321,7 +305,6 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         
         if len(minQIndices) > 1:
             print("More than 1 solution having minimum quality score")
->>>>>>> 1cacbff0ef8d22709a0437931b937e98053589cb
             
         #Keep track of precision and recall for all simulations
         precision_list.append(precision(var_predicted, true_variants))
