@@ -463,6 +463,10 @@ def main():
     plt.xlabel("Recall")
     plt.ylabel("Frequency")
     plt.savefig(args["masterDir"]+'/'+outputDir+'/recall_plot')
+    #Save the plot for boxplot plotting
+    recallDF = pd.DataFrame(recall)
+    recallDF = recallDF.T
+    recallDF.to_csv('Recall_values.csv', sep = '\t')
     #for precision
     plt.figure()
     plt.hist(precision, bins=np.linspace(0,2))
@@ -470,6 +474,10 @@ def main():
     plt.xlabel("Precision")
     plt.ylabel("Frequency")
     plt.savefig(args["masterDir"]+'/'+outputDir+'/Precision_plot')
+    #save the plot for boxplot plotting
+    precisionDF = pd.DataFrame(precision)
+    precisionDF = precisionDF.T
+    precisionDF.to_csv('Precision_values.csv',sep = '\t')
     #for total variation distance
     plt.figure()
     plt.hist(total_var_dist,bins=np.linspace(-1,1))
@@ -477,6 +485,10 @@ def main():
     plt.xlabel("Total Variation Distance")
     plt.ylabel("Frequency")
     plt.savefig(args["masterDir"]+'/'+outputDir+'/Total_variation_Distance_plot')
+    #save the plot for boxplot plotting
+    total_var_distDF = pd.DataFrame(total_var_dist)
+    total_var_distDF = total_var_distDF.T
+    total_var_distDF.to_csv('Total_Variation_Distance.csv', sep = '\t')
     #for the time taken
     plt.figure()
     plt.hist(times)
