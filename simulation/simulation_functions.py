@@ -293,10 +293,16 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
             
         min_Qscore = np.argmin(Qscore_list)
         var_predicted = all_solutions[min_Qscore]
-        minQIndices = np.where(np.array(Qscore_list) == np.array(Qscore_list).min())
-        
+        minQIndices = np.where(np.array(Qscore_list) == np.array(Qscore_list).min())[0]
+
+        ''' If more than 1 solution having min q score, check whether the true sol is found '''
         if len(minQIndices) > 1:
             print("More than 1 solution having minimum quality score")
+            
+            for index in minQIndices:
+                if set(all_solutions[index]) == set(true_variants):
+                    var_predicted = all_solutions[index]
+                    break
             
         #Keep track of precision and recall for all simulations
         precision_list.append(precision(var_predicted, true_variants))
