@@ -201,6 +201,28 @@ plt.title("Number of samples sharing each cluster")
 plt.tight_layout()
 plt.savefig("shareCount_cluster.png",dpi=1000)
 
+''' Assign group to existing strains too '''
+df_group_all = df.merge(df_new, how="outer")
+df_justStrains_exist = df_exist.drop_duplicates(subset=["clpA", "clpX", "nifS", "pepX", "pyrG", "recG", "rplB", "uvrA"])
+st_group = {i:"E{}".format(j) for (i,j) in itertools.izip(df_justStrains_exist["ST"].tolist(), range(1, 1+df_justStrains_exist.shape[0]))}
+df_group_all["Group"] = df_group_all["Group"].fillna(df_group_all["ST"].map(st_group))
+grouped_all_count = df_group_all[["Sample","Group"]].drop_duplicates().groupby(["Group"]).count()
+grouped_all_count.rename(columns={"Sample":"Count"}, inplace=True)
+grouped_all_count["Count"].plot(kind='bar', cmap=plt.cm.Paired)
+plt.xlabel("Group type")
+plt.ylabel("Frequency")
+plt.title("Number of samples sharing each type. G(X) represents \na cluster of new strains, E(X) represents existing strain")
+plt.tight_layout()
+plt.savefig("shareCount_all.png",dpi=1000)
+
+sampComparison_dict = {}
+for (i,j) in itertools.combinations(df_group_all["Sample"].unique().tolist(),2):
+    sampComparison_dict[(i,j)] = [list(set.intersection(set(df_group_all[df_group_all["Sample"] == i]["Group"].tolist()),set( df_group_all[df_group_all["Sample"] == j]["Group"].tolist())))]
+
+sampComparison_df = pd.DataFrame.from_dict(sampComparison_dict, orient='index')
+sampComparison_df = sampComparison_df.rename(columns={0:"Common"})
+sampComparison_df["Count"] = sampComparison_df.apply(lambda x: len(x["Common"]), axis=1)
+sampComparison_df_nonzero = sampComparison_df[sampComparison_df["Count"] != 0].reset_index()
 ''' Generate graph where y=#of strains x=sample '''
 samp_df_new_pivot = df.replace({"New":True, "Existing":False}).pivot_table(index="Sample", columns="ST", values="New/Existing")
 samp_df_new_pivot["New strains"] = samp_df_new_pivot[samp_df_new_pivot == True].count(axis=1)

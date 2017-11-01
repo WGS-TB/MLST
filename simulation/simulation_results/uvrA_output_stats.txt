@@ -1,63 +1,55 @@
 ======================================== SIMULATION 1 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_171', 'uvrA_181', 'uvrA_50', 'uvrA_65']]
+Number of optimal solutions: 2
+[['uvrA_171', 'uvrA_181', 'uvrA_50', 'uvrA_65'], ['uvrA_111', 'uvrA_171', 'uvrA_181', 'uvrA_50', 'uvrA_65']]
 True variants are: ['uvrA_65', 'uvrA_50', 'uvrA_171', 'uvrA_181']
 
 Predicted variants are: ['uvrA_171', 'uvrA_181', 'uvrA_50', 'uvrA_65']
 
 True proportions are: {'uvrA_171': 19.855123074064377, 'uvrA_181': 8.358929604468765, 'uvrA_65': 34.20562264767503, 'uvrA_50': 37.58032467379183}
 
-Predicted proportions using Bayes method are: {'uvrA_171': 19.848771266540645, 'uvrA_181': 8.5950104887803711, 'uvrA_50': 37.442889916312225, 'uvrA_65': 34.113328328366769}
+Predicted proportions using Counting method are: {'uvrA_171': 18.620689655172416, 'uvrA_181': 7.586206896551724, 'uvrA_50': 38.62068965517241, 'uvrA_65': 35.17241379310345}
 
-Predicted proportions using Counting method are: {'uvrA_171': 19.84877126654064, 'uvrA_181': 8.601134215500945, 'uvrA_50': 37.42911153119093, 'uvrA_65': 34.12098298676749}
-
-average Qscores are: [591679.0]
+average Qscores are: []
 ======================================== SIMULATION 2 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_106', 'uvrA_129', 'uvrA_139', 'uvrA_143', 'uvrA_189', 'uvrA_32']]
+Number of optimal solutions: 2
+[['uvrA_106', 'uvrA_129', 'uvrA_139', 'uvrA_143', 'uvrA_189', 'uvrA_32'], ['uvrA_106', 'uvrA_111', 'uvrA_129', 'uvrA_139', 'uvrA_143', 'uvrA_189', 'uvrA_32']]
 True variants are: ['uvrA_189', 'uvrA_139', 'uvrA_32', 'uvrA_129', 'uvrA_143', 'uvrA_106']
 
 Predicted variants are: ['uvrA_106', 'uvrA_129', 'uvrA_139', 'uvrA_143', 'uvrA_189', 'uvrA_32']
 
 True proportions are: {'uvrA_189': 1.5847990271009047, 'uvrA_143': 15.858755650497711, 'uvrA_139': 22.936649247655915, 'uvrA_129': 1.0627279574993669, 'uvrA_32': 37.14874931688361, 'uvrA_106': 21.408318800362494}
 
-Predicted proportions using Bayes method are: {'uvrA_189': 1.6949152542372881, 'uvrA_129': 2.084506817919515, 'uvrA_139': 29.542758155901449, 'uvrA_143': 15.777920689089896, 'uvrA_32': 25.958845541627571, 'uvrA_106': 24.941053541224282}
+Predicted proportions using Counting method are: {'uvrA_189': 2.7210884353741496, 'uvrA_129': 2.7210884353741496, 'uvrA_139': 22.675736961451243, 'uvrA_143': 14.285714285714285, 'uvrA_32': 36.281179138321995, 'uvrA_106': 21.31519274376417}
 
-Predicted proportions using Counting method are: {'uvrA_189': 1.694915254237288, 'uvrA_129': 1.3182674199623352, 'uvrA_139': 22.645951035781543, 'uvrA_143': 15.819209039548022, 'uvrA_32': 36.911487758945384, 'uvrA_106': 21.610169491525422}
-
-average Qscores are: [886392.0]
+average Qscores are: []
 ======================================== SIMULATION 3 ====================================================
 
 Number of optimal solutions: 1
-[['uvrA_100', 'uvrA_104', 'uvrA_118', 'uvrA_31', 'uvrA_38', 'uvrA_53']]
+[['uvrA_100', 'uvrA_104', 'uvrA_111', 'uvrA_118', 'uvrA_31', 'uvrA_38', 'uvrA_53']]
 True variants are: ['uvrA_100', 'uvrA_118', 'uvrA_53', 'uvrA_104', 'uvrA_31', 'uvrA_38']
 
-Predicted variants are: ['uvrA_100', 'uvrA_104', 'uvrA_118', 'uvrA_31', 'uvrA_38', 'uvrA_53']
+Predicted variants are: ['uvrA_100', 'uvrA_104', 'uvrA_111', 'uvrA_118', 'uvrA_31', 'uvrA_38', 'uvrA_53']
 
 True proportions are: {'uvrA_53': 5.108192976476572, 'uvrA_118': 28.5871663230566, 'uvrA_31': 11.352912916616257, 'uvrA_100': 14.53644431568418, 'uvrA_104': 13.305348492199128, 'uvrA_38': 27.10993497596725}
 
-Predicted proportions using Bayes method are: {'uvrA_53': 15.60846616699404, 'uvrA_118': 15.832897942595006, 'uvrA_31': 18.481891918341777, 'uvrA_100': 18.726907352283209, 'uvrA_104': 12.826073823094339, 'uvrA_38': 18.523762796691635}
+Predicted proportions using Counting method are: {'uvrA_53': 6.264367816091954, 'uvrA_118': 27.494252873563227, 'uvrA_31': 11.977011494252872, 'uvrA_100': 13.298850574712638, 'uvrA_111': 4.678160919540232, 'uvrA_104': 11.724137931034484, 'uvrA_38': 24.5632183908046}
 
-Predicted proportions using Counting method are: {'uvrA_53': 5.560791705937793, 'uvrA_118': 28.369462770970774, 'uvrA_31': 12.284008796732634, 'uvrA_100': 14.310398994659144, 'uvrA_104': 13.19509896324222, 'uvrA_38': 26.28023876845742}
-
-average Qscores are: [801657.0]
+average Qscores are: []
 ======================================== SIMULATION 4 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_12', 'uvrA_145', 'uvrA_60']]
+Number of optimal solutions: 10
+[['uvrA_104', 'uvrA_145', 'uvrA_60', 'uvrA_7'], ['uvrA_12', 'uvrA_145', 'uvrA_60'], ['uvrA_104', 'uvrA_11', 'uvrA_145', 'uvrA_60'], ['uvrA_104', 'uvrA_12', 'uvrA_145', 'uvrA_60'], ['uvrA_104', 'uvrA_125', 'uvrA_145', 'uvrA_60'], ['uvrA_104', 'uvrA_126', 'uvrA_145', 'uvrA_60'], ['uvrA_104', 'uvrA_128', 'uvrA_145', 'uvrA_60'], ['uvrA_104', 'uvrA_145', 'uvrA_5', 'uvrA_60'], ['uvrA_104', 'uvrA_145', 'uvrA_6', 'uvrA_60'], ['uvrA_10', 'uvrA_104', 'uvrA_145', 'uvrA_60']]
 True variants are: ['uvrA_12', 'uvrA_60', 'uvrA_145']
 
 Predicted variants are: ['uvrA_12', 'uvrA_145', 'uvrA_60']
 
 True proportions are: {'uvrA_60': 55.75715799944185, 'uvrA_12': 4.431067746690846, 'uvrA_145': 39.8117742538673}
 
-Predicted proportions using Bayes method are: {'uvrA_60': 54.357271220571661, 'uvrA_12': 5.9165956069093637, 'uvrA_145': 39.726133172518978}
+Predicted proportions using Counting method are: {'uvrA_60': 55.821917808219176, 'uvrA_12': 5.821917808219178, 'uvrA_145': 38.35616438356164}
 
-Predicted proportions using Counting method are: {'uvrA_60': 55.629139072847686, 'uvrA_12': 4.635761589403974, 'uvrA_145': 39.735099337748345}
-
-average Qscores are: [396283.0]
+average Qscores are: []
 ======================================== SIMULATION 5 ====================================================
 
 Number of optimal solutions: 1
@@ -68,11 +60,9 @@ Predicted variants are: ['uvrA_104', 'uvrA_177', 'uvrA_189', 'uvrA_192']
 
 True proportions are: {'uvrA_189': 25.75800596009843, 'uvrA_177': 22.821031819153596, 'uvrA_104': 38.13192513071833, 'uvrA_192': 13.289037090029643}
 
-Predicted proportions using Bayes method are: {'uvrA_189': 19.110874001931911, 'uvrA_177': 22.873345935727787, 'uvrA_104': 38.090737240075619, 'uvrA_192': 19.92504282226469}
+Predicted proportions using Counting method are: {'uvrA_189': 21.42857142857143, 'uvrA_177': 22.142857142857142, 'uvrA_104': 40.0, 'uvrA_192': 16.42857142857143}
 
-Predicted proportions using Counting method are: {'uvrA_189': 21.880907372400756, 'uvrA_177': 22.873345935727787, 'uvrA_104': 38.09073724007561, 'uvrA_192': 17.15500945179584}
-
-average Qscores are: [522814.0]
+average Qscores are: []
 ======================================== SIMULATION 6 ====================================================
 
 Number of optimal solutions: 1
@@ -83,26 +73,22 @@ Predicted variants are: ['uvrA_104', 'uvrA_175']
 
 True proportions are: {'uvrA_104': 62.480407715401995, 'uvrA_175': 37.519592284598005}
 
-Predicted proportions using Bayes method are: {'uvrA_175': 37.571157495256166, 'uvrA_104': 62.428842504743834}
+Predicted proportions using Counting method are: {'uvrA_175': 38.62068965517241, 'uvrA_104': 61.37931034482759}
 
-Predicted proportions using Counting method are: {'uvrA_175': 37.571157495256166, 'uvrA_104': 62.428842504743834}
-
-average Qscores are: [196390.0]
+average Qscores are: []
 ======================================== SIMULATION 7 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_110', 'uvrA_127', 'uvrA_17', 'uvrA_72', 'uvrA_98']]
+Number of optimal solutions: 12
+[['uvrA_110', 'uvrA_127', 'uvrA_17', 'uvrA_72', 'uvrA_84', 'uvrA_98'], ['uvrA_110', 'uvrA_122', 'uvrA_127', 'uvrA_17', 'uvrA_72', 'uvrA_98'], ['uvrA_110', 'uvrA_123', 'uvrA_127', 'uvrA_17', 'uvrA_72', 'uvrA_98'], ['uvrA_110', 'uvrA_127', 'uvrA_13', 'uvrA_17', 'uvrA_72', 'uvrA_98'], ['uvrA_110', 'uvrA_127', 'uvrA_14', 'uvrA_17', 'uvrA_72', 'uvrA_98'], ['uvrA_110', 'uvrA_127', 'uvrA_157', 'uvrA_17', 'uvrA_72', 'uvrA_98'], ['uvrA_110', 'uvrA_127', 'uvrA_16', 'uvrA_17', 'uvrA_72', 'uvrA_98'], ['uvrA_110', 'uvrA_127', 'uvrA_17', 'uvrA_2', 'uvrA_72', 'uvrA_98'], ['uvrA_110', 'uvrA_127', 'uvrA_17', 'uvrA_4', 'uvrA_72', 'uvrA_98'], ['uvrA_110', 'uvrA_127', 'uvrA_17', 'uvrA_7', 'uvrA_72', 'uvrA_98'], ['uvrA_110', 'uvrA_127', 'uvrA_17', 'uvrA_72', 'uvrA_98'], ['uvrA_10', 'uvrA_110', 'uvrA_127', 'uvrA_17', 'uvrA_72', 'uvrA_98']]
 True variants are: ['uvrA_110', 'uvrA_17', 'uvrA_98', 'uvrA_72', 'uvrA_127']
 
 Predicted variants are: ['uvrA_110', 'uvrA_127', 'uvrA_17', 'uvrA_72', 'uvrA_98']
 
 True proportions are: {'uvrA_98': 30.02030344865027, 'uvrA_127': 11.52900575270846, 'uvrA_110': 1.4413177598507472, 'uvrA_17': 28.596375936700273, 'uvrA_72': 28.412997102090248}
 
-Predicted proportions using Bayes method are: {'uvrA_72': 15.739935846127759, 'uvrA_127': 16.106053570321404, 'uvrA_110': 15.797264053867268, 'uvrA_17': 23.564867887134373, 'uvrA_98': 28.791878642549207}
+Predicted proportions using Counting method are: {'uvrA_72': 25.838926174496645, 'uvrA_127': 11.74496644295302, 'uvrA_110': 4.3624161073825505, 'uvrA_17': 27.181208053691275, 'uvrA_98': 30.87248322147651}
 
-Predicted proportions using Counting method are: {'uvrA_72': 26.459510357815443, 'uvrA_127': 11.629001883239171, 'uvrA_110': 3.5781544256120528, 'uvrA_17': 28.342749529190208, 'uvrA_98': 29.990583804143125}
-
-average Qscores are: [753184.0]
+average Qscores are: []
 ======================================== SIMULATION 8 ====================================================
 
 Number of optimal solutions: 1
@@ -113,71 +99,75 @@ Predicted variants are: ['uvrA_147', 'uvrA_180', 'uvrA_84']
 
 True proportions are: {'uvrA_147': 1.3989274525364226, 'uvrA_180': 45.491834788669685, 'uvrA_84': 53.10923775879388}
 
-Predicted proportions using Bayes method are: {'uvrA_147': 1.7013232514177694, 'uvrA_180': 45.356372584366035, 'uvrA_84': 52.942304164216196}
+Predicted proportions using Counting method are: {'uvrA_147': 2.73972602739726, 'uvrA_180': 44.52054794520548, 'uvrA_84': 52.73972602739726}
 
-Predicted proportions using Counting method are: {'uvrA_147': 1.7013232514177694, 'uvrA_180': 45.36862003780718, 'uvrA_84': 52.93005671077505}
-
-average Qscores are: [394625.0]
+average Qscores are: []
 ======================================== SIMULATION 9 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_147', 'uvrA_27', 'uvrA_8']]
+Number of optimal solutions: 4
+[['uvrA_104', 'uvrA_147', 'uvrA_24', 'uvrA_27', 'uvrA_8'], ['uvrA_104', 'uvrA_147', 'uvrA_23', 'uvrA_27', 'uvrA_8'], ['uvrA_147', 'uvrA_24', 'uvrA_27', 'uvrA_8'], ['uvrA_147', 'uvrA_23', 'uvrA_27', 'uvrA_8']]
 True variants are: ['uvrA_8', 'uvrA_147', 'uvrA_27']
 
-Predicted variants are: ['uvrA_147', 'uvrA_27', 'uvrA_8']
+Predicted variants are: ['uvrA_147', 'uvrA_23', 'uvrA_27', 'uvrA_8']
 
 True proportions are: {'uvrA_147': 23.327897412612778, 'uvrA_27': 34.934600604289734, 'uvrA_8': 41.73750198309749}
 
-Predicted proportions using Bayes method are: {'uvrA_147': 23.393703242709957, 'uvrA_27': 34.716404558371352, 'uvrA_8': 41.889892198918709}
+Predicted proportions using Counting method are: {'uvrA_147': 21.83098591549296, 'uvrA_27': 33.098591549295776, 'uvrA_8': 42.25352112676057, 'uvrA_23': 2.8169014084507045}
 
-Predicted proportions using Counting method are: {'uvrA_147': 23.244781783681216, 'uvrA_27': 34.9146110056926, 'uvrA_8': 41.84060721062619}
+average Qscores are: []
+['uvrA_27-18', -1.0, -1.0, -1.0]
+            uvrA_1  uvrA_10  uvrA_100  uvrA_101  uvrA_102  uvrA_103  uvrA_104  \
+Read                                                                            
+uvrA_27-18    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0      -1.0   
 
-average Qscores are: [397580.0]
+            uvrA_105  uvrA_106  uvrA_107   ...     uvrA_90  uvrA_91  uvrA_92  \
+Read                                       ...                                 
+uvrA_27-18      -1.0      -1.0      -1.0   ...        -1.0     -1.0     -1.0   
+
+            uvrA_93  uvrA_94  uvrA_95  uvrA_96  uvrA_97  uvrA_98  uvrA_99  
+Read                                                                       
+uvrA_27-18     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0  
+
+[1 rows x 176 columns]
 ======================================== SIMULATION 10 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_115', 'uvrA_21', 'uvrA_37', 'uvrA_58', 'uvrA_71']]
+Number of optimal solutions: 4
+[['uvrA_111', 'uvrA_115', 'uvrA_21', 'uvrA_23', 'uvrA_37', 'uvrA_58', 'uvrA_71'], ['uvrA_111', 'uvrA_115', 'uvrA_21', 'uvrA_37', 'uvrA_58', 'uvrA_71'], ['uvrA_115', 'uvrA_21', 'uvrA_37', 'uvrA_58', 'uvrA_71'], ['uvrA_115', 'uvrA_21', 'uvrA_23', 'uvrA_37', 'uvrA_58', 'uvrA_71']]
 True variants are: ['uvrA_71', 'uvrA_58', 'uvrA_21', 'uvrA_115', 'uvrA_37']
 
 Predicted variants are: ['uvrA_115', 'uvrA_21', 'uvrA_37', 'uvrA_58', 'uvrA_71']
 
 True proportions are: {'uvrA_115': 15.163136217990509, 'uvrA_37': 23.647863155425483, 'uvrA_71': 41.48714909992698, 'uvrA_58': 0.574542214917952, 'uvrA_21': 19.127309311739072}
 
-Predicted proportions using Bayes method are: {'uvrA_115': 28.938607845762593, 'uvrA_37': 25.686831198763695, 'uvrA_71': 26.385022847789472, 'uvrA_21': 18.323390547175279, 'uvrA_58': 0.66614756050896018}
+Predicted proportions using Counting method are: {'uvrA_115': 15.878378378378368, 'uvrA_37': 23.986486486486488, 'uvrA_71': 39.18918918918919, 'uvrA_21': 18.24324324324324, 'uvrA_58': 2.702702702702702}
 
-Predicted proportions using Counting method are: {'uvrA_115': 16.020793950850663, 'uvrA_37': 22.73156899810964, 'uvrA_71': 41.39886578449906, 'uvrA_21': 19.187145557655956, 'uvrA_58': 0.6616257088846881}
-
-average Qscores are: [659422.0]
+average Qscores are: []
 ======================================== SIMULATION 11 ====================================================
 
 Number of optimal solutions: 4
-[['uvrA_13', 'uvrA_131', 'uvrA_142', 'uvrA_162', 'uvrA_171', 'uvrA_59', 'uvrA_91'], ['uvrA_13', 'uvrA_145', 'uvrA_162', 'uvrA_171', 'uvrA_28', 'uvrA_59', 'uvrA_91'], ['uvrA_13', 'uvrA_142', 'uvrA_162', 'uvrA_171', 'uvrA_28', 'uvrA_59', 'uvrA_91'], ['uvrA_13', 'uvrA_142', 'uvrA_156', 'uvrA_162', 'uvrA_171', 'uvrA_59', 'uvrA_91']]
+[['uvrA_13', 'uvrA_145', 'uvrA_162', 'uvrA_171', 'uvrA_28', 'uvrA_59', 'uvrA_91'], ['uvrA_13', 'uvrA_142', 'uvrA_162', 'uvrA_171', 'uvrA_28', 'uvrA_59', 'uvrA_91'], ['uvrA_13', 'uvrA_142', 'uvrA_156', 'uvrA_162', 'uvrA_171', 'uvrA_59', 'uvrA_91'], ['uvrA_13', 'uvrA_131', 'uvrA_142', 'uvrA_162', 'uvrA_171', 'uvrA_59', 'uvrA_91']]
 True variants are: ['uvrA_142', 'uvrA_13', 'uvrA_28', 'uvrA_162', 'uvrA_59', 'uvrA_171', 'uvrA_91']
 
 Predicted variants are: ['uvrA_13', 'uvrA_142', 'uvrA_162', 'uvrA_171', 'uvrA_28', 'uvrA_59', 'uvrA_91']
 
 True proportions are: {'uvrA_91': 9.756981242885978, 'uvrA_142': 0.31142755241984954, 'uvrA_171': 24.350558390719044, 'uvrA_59': 11.711652010320982, 'uvrA_13': 25.296546216548528, 'uvrA_28': 14.627350456132321, 'uvrA_162': 13.945484130973304}
 
-Predicted proportions using Bayes method are: {'uvrA_91': 10.738806000639231, 'uvrA_142': 8.1702285149810248, 'uvrA_171': 18.769767876509277, 'uvrA_59': 11.900965768341441, 'uvrA_13': 24.245825382536417, 'uvrA_28': 6.8371129198213456, 'uvrA_162': 19.337293537171252}
+Predicted proportions using Counting method are: {'uvrA_91': 7.762557077625571, 'uvrA_142': 5.707762557077625, 'uvrA_171': 23.63013698630137, 'uvrA_59': 11.643835616438356, 'uvrA_13': 24.65753424657534, 'uvrA_28': 11.187214611872147, 'uvrA_162': 15.410958904109588}
 
-Predicted proportions using Counting method are: {'uvrA_91': 9.896324222431668, 'uvrA_142': 2.403393025447691, 'uvrA_171': 22.95004712535344, 'uvrA_59': 11.875589066918002, 'uvrA_13': 25.070688030160227, 'uvrA_28': 12.488218661639962, 'uvrA_162': 15.31573986804901}
-
-average Qscores are: [1121825.0, 1123342.0, 1120608.0, 1122123.0]
+average Qscores are: []
 ======================================== SIMULATION 12 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_13', 'uvrA_138', 'uvrA_26', 'uvrA_67', 'uvrA_70', 'uvrA_92']]
+Number of optimal solutions: 2
+[['uvrA_13', 'uvrA_138', 'uvrA_26', 'uvrA_67', 'uvrA_70', 'uvrA_92'], ['uvrA_13', 'uvrA_138', 'uvrA_23', 'uvrA_26', 'uvrA_67', 'uvrA_70', 'uvrA_92']]
 True variants are: ['uvrA_67', 'uvrA_70', 'uvrA_92', 'uvrA_26', 'uvrA_138', 'uvrA_13']
 
 Predicted variants are: ['uvrA_13', 'uvrA_138', 'uvrA_26', 'uvrA_67', 'uvrA_70', 'uvrA_92']
 
 True proportions are: {'uvrA_92': 49.36907102283723, 'uvrA_13': 11.640030772931329, 'uvrA_138': 20.57131723692035, 'uvrA_26': 14.657363837994147, 'uvrA_70': 1.0221449826557, 'uvrA_67': 2.7400721466612548}
 
-Predicted proportions using Bayes method are: {'uvrA_92': 46.079180293571333, 'uvrA_26': 14.847719229654469, 'uvrA_138': 17.796663783876564, 'uvrA_13': 13.9294305521049, 'uvrA_70': 1.3182674199623341, 'uvrA_67': 6.028738720830388}
+Predicted proportions using Counting method are: {'uvrA_92': 47.97297297297297, 'uvrA_26': 14.18918918918919, 'uvrA_138': 19.594594594594593, 'uvrA_13': 11.486486486486486, 'uvrA_70': 2.7027027027027026, 'uvrA_67': 4.054054054054054}
 
-Predicted proportions using Counting method are: {'uvrA_92': 49.152542372881356, 'uvrA_26': 14.500941619585687, 'uvrA_138': 20.433145009416194, 'uvrA_13': 11.581920903954803, 'uvrA_70': 1.3182674199623352, 'uvrA_67': 3.0131826741996233}
-
-average Qscores are: [987014.0]
+average Qscores are: []
 ======================================== SIMULATION 13 ====================================================
 
 Number of optimal solutions: 1
@@ -188,56 +178,71 @@ Predicted variants are: ['uvrA_134', 'uvrA_159', 'uvrA_191', 'uvrA_4', 'uvrA_41'
 
 True proportions are: {'uvrA_4': 29.336860593954107, 'uvrA_134': 29.79545422859397, 'uvrA_191': 13.234792704796517, 'uvrA_159': 4.969195017954185, 'uvrA_41': 0.40386442110028925, 'uvrA_67': 22.259833033600934}
 
-Predicted proportions using Bayes method are: {'uvrA_4': 29.254302621371266, 'uvrA_41': 13.114467105974766, 'uvrA_191': 13.182674199623355, 'uvrA_159': 12.032467326658896, 'uvrA_134': 10.302826055090827, 'uvrA_67': 22.113262691280887}
+Predicted proportions using Counting method are: {'uvrA_4': 28.87323943661972, 'uvrA_41': 6.807511737089202, 'uvrA_191': 11.971830985915494, 'uvrA_159': 9.27230046948357, 'uvrA_134': 21.24413145539906, 'uvrA_67': 21.83098591549296}
 
-Predicted proportions using Counting method are: {'uvrA_4': 29.37853107344632, 'uvrA_41': 5.7595731324544905, 'uvrA_191': 13.18267419962335, 'uvrA_159': 7.642812303829251, 'uvrA_134': 21.908349026993108, 'uvrA_67': 22.12806026365348}
-
-average Qscores are: [880245.0]
+average Qscores are: []
 ======================================== SIMULATION 14 ====================================================
 
 Number of optimal solutions: 1
-[['uvrA_25', 'uvrA_26']]
+[['uvrA_23', 'uvrA_25', 'uvrA_26']]
 True variants are: ['uvrA_25', 'uvrA_26']
 
-Predicted variants are: ['uvrA_25', 'uvrA_26']
+Predicted variants are: ['uvrA_23', 'uvrA_25', 'uvrA_26']
 
 True proportions are: {'uvrA_25': 64.74726407468351, 'uvrA_26': 35.25273592531647}
 
-Predicted proportions using Bayes method are: {'uvrA_25': 47.944205347132169, 'uvrA_26': 52.055794652867839}
+Predicted proportions using Counting method are: {'uvrA_25': 41.724137931034505, 'uvrA_26': 28.275862068965495, 'uvrA_23': 29.999999999999993}
 
-Predicted proportions using Counting method are: {'uvrA_25': 61.66982922201139, 'uvrA_26': 38.33017077798861}
+average Qscores are: []
+['uvrA_25-126', -1.0, -1.0]
+['uvrA_26-18', -1.0, -1.0]
+             uvrA_1  uvrA_10  uvrA_100  uvrA_101  uvrA_102  uvrA_103  \
+Read                                                                   
+uvrA_25-126    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+uvrA_26-18     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
 
-average Qscores are: [50888.0]
+             uvrA_104  uvrA_105  uvrA_106  uvrA_107   ...     uvrA_9  uvrA_90  \
+Read                                                  ...                       
+uvrA_25-126      -1.0      -1.0      -1.0      -1.0   ...       -1.0     -1.0   
+uvrA_26-18       -1.0      -1.0      -1.0      -1.0   ...       -1.0     -1.0   
+
+             uvrA_91  uvrA_92  uvrA_93  uvrA_94  uvrA_96  uvrA_97  uvrA_98  \
+Read                                                                         
+uvrA_25-126     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+uvrA_26-18      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             uvrA_99  
+Read                  
+uvrA_25-126     -1.0  
+uvrA_26-18      -1.0  
+
+[2 rows x 171 columns]
 ======================================== SIMULATION 15 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_190', 'uvrA_20']]
+Number of optimal solutions: 20
+[['uvrA_190', 'uvrA_3', 'uvrA_4'], ['uvrA_10', 'uvrA_190', 'uvrA_20'], ['uvrA_11', 'uvrA_190', 'uvrA_4'], ['uvrA_12', 'uvrA_190', 'uvrA_4'], ['uvrA_122', 'uvrA_190', 'uvrA_20'], ['uvrA_123', 'uvrA_190', 'uvrA_20'], ['uvrA_125', 'uvrA_190', 'uvrA_4'], ['uvrA_126', 'uvrA_190', 'uvrA_4'], ['uvrA_127', 'uvrA_190', 'uvrA_4'], ['uvrA_128', 'uvrA_190', 'uvrA_4'], ['uvrA_13', 'uvrA_190', 'uvrA_20'], ['uvrA_14', 'uvrA_190', 'uvrA_20'], ['uvrA_157', 'uvrA_190', 'uvrA_20'], ['uvrA_16', 'uvrA_190', 'uvrA_20'], ['uvrA_19', 'uvrA_190', 'uvrA_4'], ['uvrA_190', 'uvrA_2', 'uvrA_20'], ['uvrA_190', 'uvrA_20', 'uvrA_4'], ['uvrA_190', 'uvrA_4', 'uvrA_9'], ['uvrA_190', 'uvrA_4', 'uvrA_5'], ['uvrA_1', 'uvrA_190', 'uvrA_4']]
 True variants are: ['uvrA_190', 'uvrA_20']
 
-Predicted variants are: ['uvrA_190', 'uvrA_20']
+Predicted variants are: ['uvrA_1', 'uvrA_190', 'uvrA_4']
 
 True proportions are: {'uvrA_20': 97.38370053840528, 'uvrA_190': 2.6162994615947124}
 
-Predicted proportions using Bayes method are: {'uvrA_20': 97.343453510436433, 'uvrA_190': 2.6565464895635675}
+Predicted proportions using Counting method are: {'uvrA_4': 84.96503496503496, 'uvrA_1': 12.237762237762237, 'uvrA_190': 2.797202797202797}
 
-Predicted proportions using Counting method are: {'uvrA_20': 97.34345351043643, 'uvrA_190': 2.6565464895635675}
-
-average Qscores are: [196346.0]
+average Qscores are: []
 ======================================== SIMULATION 16 ====================================================
 
-Number of optimal solutions: 2
-[['uvrA_109', 'uvrA_113', 'uvrA_137', 'uvrA_188', 'uvrA_50', 'uvrA_94'], ['uvrA_109', 'uvrA_113', 'uvrA_137', 'uvrA_188', 'uvrA_72', 'uvrA_94']]
+Number of optimal solutions: 20
+[['uvrA_109', 'uvrA_113', 'uvrA_137', 'uvrA_188', 'uvrA_36', 'uvrA_94'], ['uvrA_100', 'uvrA_109', 'uvrA_113', 'uvrA_137', 'uvrA_188', 'uvrA_94'], ['uvrA_105', 'uvrA_109', 'uvrA_113', 'uvrA_137', 'uvrA_188', 'uvrA_94'], ['uvrA_105', 'uvrA_109', 'uvrA_111', 'uvrA_113', 'uvrA_137', 'uvrA_188', 'uvrA_94'], ['uvrA_109', 'uvrA_111', 'uvrA_113', 'uvrA_137', 'uvrA_188', 'uvrA_36', 'uvrA_94'], ['uvrA_100', 'uvrA_109', 'uvrA_111', 'uvrA_113', 'uvrA_137', 'uvrA_188', 'uvrA_94'], ['uvrA_109', 'uvrA_111', 'uvrA_113', 'uvrA_136', 'uvrA_137', 'uvrA_188', 'uvrA_94'], ['uvrA_109', 'uvrA_111', 'uvrA_113', 'uvrA_137', 'uvrA_141', 'uvrA_188', 'uvrA_94'], ['uvrA_109', 'uvrA_113', 'uvrA_136', 'uvrA_137', 'uvrA_188', 'uvrA_94'], ['uvrA_109', 'uvrA_113', 'uvrA_137', 'uvrA_141', 'uvrA_188', 'uvrA_94'], ['uvrA_109', 'uvrA_111', 'uvrA_113', 'uvrA_137', 'uvrA_154', 'uvrA_188', 'uvrA_94'], ['uvrA_109', 'uvrA_113', 'uvrA_137', 'uvrA_154', 'uvrA_188', 'uvrA_94'], ['uvrA_109', 'uvrA_111', 'uvrA_113', 'uvrA_137', 'uvrA_160', 'uvrA_188', 'uvrA_94'], ['uvrA_109', 'uvrA_111', 'uvrA_113', 'uvrA_137', 'uvrA_161', 'uvrA_188', 'uvrA_94'], ['uvrA_109', 'uvrA_113', 'uvrA_137', 'uvrA_160', 'uvrA_188', 'uvrA_94'], ['uvrA_109', 'uvrA_113', 'uvrA_137', 'uvrA_161', 'uvrA_188', 'uvrA_94'], ['uvrA_109', 'uvrA_113', 'uvrA_137', 'uvrA_164', 'uvrA_188', 'uvrA_94'], ['uvrA_109', 'uvrA_113', 'uvrA_137', 'uvrA_167', 'uvrA_188', 'uvrA_94'], ['uvrA_109', 'uvrA_113', 'uvrA_137', 'uvrA_170', 'uvrA_188', 'uvrA_94'], ['uvrA_111', 'uvrA_113', 'uvrA_137', 'uvrA_188', 'uvrA_37', 'uvrA_68', 'uvrA_94']]
 True variants are: ['uvrA_50', 'uvrA_109', 'uvrA_137', 'uvrA_188', 'uvrA_94', 'uvrA_113']
 
-Predicted variants are: ['uvrA_109', 'uvrA_113', 'uvrA_137', 'uvrA_188', 'uvrA_50', 'uvrA_94']
+Predicted variants are: ['uvrA_111', 'uvrA_113', 'uvrA_137', 'uvrA_188', 'uvrA_37', 'uvrA_68', 'uvrA_94']
 
 True proportions are: {'uvrA_137': 21.37512617352857, 'uvrA_50': 2.915919585626692, 'uvrA_188': 22.2031601614533, 'uvrA_94': 31.405327191166833, 'uvrA_109': 18.19853481104944, 'uvrA_113': 3.9019320771751715}
 
-Predicted proportions using Bayes method are: {'uvrA_137': 21.447206278722867, 'uvrA_50': 10.745101587381086, 'uvrA_188': 22.107243650047039, 'uvrA_94': 29.993758835583179, 'uvrA_109': 9.9135847439668119, 'uvrA_113': 5.7931049042990086}
+Predicted proportions using Counting method are: {'uvrA_137': 21.088435374149658, 'uvrA_68': 4.648526077097506, 'uvrA_188': 21.088435374149658, 'uvrA_94': 31.29251700680272, 'uvrA_37': 12.811791383219953, 'uvrA_111': 4.308390022675737, 'uvrA_113': 4.761904761904762}
 
-Predicted proportions using Counting method are: {'uvrA_137': 21.44873000940734, 'uvrA_50': 5.503292568203198, 'uvrA_188': 22.107243650047035, 'uvrA_94': 31.32643461900282, 'uvrA_109': 15.66321730950141, 'uvrA_113': 3.951081843838194}
-
-average Qscores are: [951565.0, 951755.0]
+average Qscores are: []
 ======================================== SIMULATION 17 ====================================================
 
 Number of optimal solutions: 1
@@ -248,11 +253,9 @@ Predicted variants are: ['uvrA_123', 'uvrA_146', 'uvrA_149', 'uvrA_178', 'uvrA_8
 
 True proportions are: {'uvrA_178': 12.706721653008051, 'uvrA_123': 9.844871841452747, 'uvrA_146': 4.684510643768236, 'uvrA_149': 18.669278862768497, 'uvrA_96': 14.686580028338591, 'uvrA_85': 28.985294080349323, 'uvrA_81': 10.422742890314552}
 
-Predicted proportions using Bayes method are: {'uvrA_178': 12.803738317757015, 'uvrA_149': 18.682731554535106, 'uvrA_146': 10.745475218296137, 'uvrA_123': 9.8873938859682013, 'uvrA_96': 14.642447397655681, 'uvrA_85': 22.793351026157787, 'uvrA_81': 10.444862599630078}
+Predicted proportions using Counting method are: {'uvrA_178': 11.971830985915494, 'uvrA_149': 17.95774647887324, 'uvrA_146': 5.985915492957747, 'uvrA_123': 8.802816901408452, 'uvrA_96': 14.788732394366198, 'uvrA_85': 28.521126760563384, 'uvrA_81': 11.971830985915494}
 
-Predicted proportions using Counting method are: {'uvrA_178': 12.803738317757011, 'uvrA_149': 18.691588785046733, 'uvrA_146': 4.953271028037384, 'uvrA_123': 9.813084112149534, 'uvrA_96': 14.766355140186917, 'uvrA_85': 28.504672897196265, 'uvrA_81': 10.46728971962617}
-
-average Qscores are: [1189614.0]
+average Qscores are: []
 ======================================== SIMULATION 18 ====================================================
 
 Number of optimal solutions: 1
@@ -263,11 +266,9 @@ Predicted variants are: ['uvrA_118', 'uvrA_124', 'uvrA_189', 'uvrA_53', 'uvrA_89
 
 True proportions are: {'uvrA_124': 20.142339556875186, 'uvrA_189': 20.154091537261078, 'uvrA_118': 17.07166605300989, 'uvrA_53': 21.699916237704908, 'uvrA_89': 20.931986615148933}
 
-Predicted proportions using Bayes method are: {'uvrA_124': 20.153781042246678, 'uvrA_189': 20.150659133709972, 'uvrA_118': 17.766167873420166, 'uvrA_53': 21.31126582684292, 'uvrA_89': 20.618126123780254}
+Predicted proportions using Counting method are: {'uvrA_124': 20.529801324503314, 'uvrA_189': 20.529801324503314, 'uvrA_118': 17.880794701986755, 'uvrA_53': 20.529801324503314, 'uvrA_89': 20.529801324503314}
 
-Predicted proportions using Counting method are: {'uvrA_124': 20.15065913370998, 'uvrA_189': 20.15065913370998, 'uvrA_118': 17.137476459510356, 'uvrA_53': 21.75141242937853, 'uvrA_89': 20.80979284369115}
-
-average Qscores are: [778236.0]
+average Qscores are: []
 ======================================== SIMULATION 19 ====================================================
 
 Number of optimal solutions: 1
@@ -278,56 +279,48 @@ Predicted variants are: ['uvrA_130', 'uvrA_176', 'uvrA_18', 'uvrA_191', 'uvrA_25
 
 True proportions are: {'uvrA_191': 5.314326802177019, 'uvrA_130': 14.76138239666941, 'uvrA_176': 28.849468472351337, 'uvrA_25': 19.61244831198223, 'uvrA_18': 17.458401058250107, 'uvrA_77': 14.003972958569886}
 
-Predicted proportions using Bayes method are: {'uvrA_191': 5.2681091251175909, 'uvrA_130': 14.757203604733823, 'uvrA_176': 28.692380056444019, 'uvrA_25': 19.338645502487331, 'uvrA_18': 17.401539973574135, 'uvrA_77': 14.5421217376431}
+Predicted proportions using Counting method are: {'uvrA_191': 5.517241379310345, 'uvrA_130': 14.482758620689657, 'uvrA_176': 28.27586206896552, 'uvrA_25': 18.620689655172416, 'uvrA_18': 18.620689655172416, 'uvrA_77': 14.482758620689657}
 
-Predicted proportions using Counting method are: {'uvrA_191': 5.268109125117592, 'uvrA_130': 14.863593603010347, 'uvrA_176': 28.692380056444026, 'uvrA_25': 19.47318908748824, 'uvrA_18': 17.497648165569142, 'uvrA_77': 14.205079962370649}
-
-average Qscores are: [989009.0]
+average Qscores are: []
 ======================================== SIMULATION 20 ====================================================
 
 Number of optimal solutions: 1
-[['uvrA_102', 'uvrA_159', 'uvrA_163', 'uvrA_82']]
+[['uvrA_102', 'uvrA_159', 'uvrA_163', 'uvrA_33']]
 True variants are: ['uvrA_82', 'uvrA_163', 'uvrA_159', 'uvrA_102']
 
-Predicted variants are: ['uvrA_102', 'uvrA_159', 'uvrA_163', 'uvrA_82']
+Predicted variants are: ['uvrA_102', 'uvrA_159', 'uvrA_163', 'uvrA_33']
 
 True proportions are: {'uvrA_159': 17.091906721338297, 'uvrA_102': 17.553254234993236, 'uvrA_163': 26.44790409334048, 'uvrA_82': 38.906934950328}
 
-Predicted proportions using Bayes method are: {'uvrA_102': 17.578809332970138, 'uvrA_159': 17.202268431001883, 'uvrA_163': 29.477868180398303, 'uvrA_82': 35.741054055629682}
+Predicted proportions using Counting method are: {'uvrA_102': 18.493150684931507, 'uvrA_159': 18.493150684931507, 'uvrA_163': 26.712328767123285, 'uvrA_33': 36.3013698630137}
 
-Predicted proportions using Counting method are: {'uvrA_102': 17.580340264650285, 'uvrA_159': 17.20226843100189, 'uvrA_163': 26.465028355387524, 'uvrA_82': 38.752362948960304}
-
-average Qscores are: [545223.0]
+average Qscores are: []
 ======================================== SIMULATION 21 ====================================================
 
-Number of optimal solutions: 2
-[['uvrA_101', 'uvrA_104', 'uvrA_120', 'uvrA_3', 'uvrA_34', 'uvrA_66'], ['uvrA_101', 'uvrA_104', 'uvrA_120', 'uvrA_34', 'uvrA_6', 'uvrA_66']]
+Number of optimal solutions: 5
+[['uvrA_101', 'uvrA_104', 'uvrA_120', 'uvrA_16', 'uvrA_34', 'uvrA_66'], ['uvrA_101', 'uvrA_104', 'uvrA_120', 'uvrA_122', 'uvrA_34', 'uvrA_66'], ['uvrA_101', 'uvrA_104', 'uvrA_120', 'uvrA_157', 'uvrA_34', 'uvrA_66'], ['uvrA_101', 'uvrA_104', 'uvrA_120', 'uvrA_2', 'uvrA_34', 'uvrA_66'], ['uvrA_10', 'uvrA_101', 'uvrA_104', 'uvrA_120', 'uvrA_34', 'uvrA_66']]
 True variants are: ['uvrA_34', 'uvrA_3', 'uvrA_120', 'uvrA_104', 'uvrA_66', 'uvrA_101']
 
-Predicted variants are: ['uvrA_101', 'uvrA_104', 'uvrA_120', 'uvrA_3', 'uvrA_34', 'uvrA_66']
+Predicted variants are: ['uvrA_10', 'uvrA_101', 'uvrA_104', 'uvrA_120', 'uvrA_34', 'uvrA_66']
 
 True proportions are: {'uvrA_120': 20.873348592198536, 'uvrA_3': 19.95210545141952, 'uvrA_34': 14.251233950427588, 'uvrA_66': 12.964327323386723, 'uvrA_101': 23.803743895058265, 'uvrA_104': 8.15524078750936}
 
-Predicted proportions using Bayes method are: {'uvrA_120': 20.675047858210803, 'uvrA_3': 16.984725502425725, 'uvrA_34': 14.256002956451814, 'uvrA_104': 16.64653226779922, 'uvrA_101': 18.500958648351336, 'uvrA_66': 12.936732766761093}
+Predicted proportions using Counting method are: {'uvrA_120': 21.678321678321677, 'uvrA_10': 12.937062937062937, 'uvrA_34': 14.685314685314685, 'uvrA_104': 13.636363636363635, 'uvrA_101': 25.174825174825173, 'uvrA_66': 11.888111888111888}
 
-Predicted proportions using Counting method are: {'uvrA_120': 20.868744098205855, 'uvrA_3': 15.926975133774, 'uvrA_34': 14.258734655335223, 'uvrA_104': 12.244255587031791, 'uvrA_101': 23.764557758892042, 'uvrA_66': 12.936732766761097}
-
-average Qscores are: [906877.0, 910382.0]
+average Qscores are: []
 ======================================== SIMULATION 22 ====================================================
 
 Number of optimal solutions: 1
-[['uvrA_100', 'uvrA_136', 'uvrA_143', 'uvrA_181']]
+[['uvrA_100', 'uvrA_111', 'uvrA_136', 'uvrA_143', 'uvrA_181']]
 True variants are: ['uvrA_136', 'uvrA_181', 'uvrA_143', 'uvrA_100']
 
-Predicted variants are: ['uvrA_100', 'uvrA_136', 'uvrA_143', 'uvrA_181']
+Predicted variants are: ['uvrA_100', 'uvrA_111', 'uvrA_136', 'uvrA_143', 'uvrA_181']
 
 True proportions are: {'uvrA_136': 44.2235143720721, 'uvrA_100': 27.244306554204083, 'uvrA_181': 21.148916099238924, 'uvrA_143': 7.383262974484876}
 
-Predicted proportions using Bayes method are: {'uvrA_136': 35.542939011956342, 'uvrA_100': 35.64949629562112, 'uvrA_181': 21.128993062512745, 'uvrA_143': 7.6785716299098121}
+Predicted proportions using Counting method are: {'uvrA_136': 38.85135135135136, 'uvrA_100': 27.02702702702703, 'uvrA_181': 20.945945945945937, 'uvrA_111': 5.74324324324324, 'uvrA_143': 7.43243243243243}
 
-Predicted proportions using Counting method are: {'uvrA_136': 41.6351606805293, 'uvrA_100': 29.53686200378072, 'uvrA_181': 21.17202268431002, 'uvrA_143': 7.655954631379962}
-
-average Qscores are: [503616.0]
+average Qscores are: []
 ======================================== SIMULATION 23 ====================================================
 
 Number of optimal solutions: 1
@@ -338,26 +331,40 @@ Predicted variants are: ['uvrA_120', 'uvrA_140', 'uvrA_149', 'uvrA_153', 'uvrA_1
 
 True proportions are: {'uvrA_182': 6.008410645291557, 'uvrA_153': 4.036976128654941, 'uvrA_120': 20.432689851814175, 'uvrA_149': 19.238037452759656, 'uvrA_140': 12.16308711363433, 'uvrA_25': 19.655049634422223, 'uvrA_35': 18.46574917342312}
 
-Predicted proportions using Bayes method are: {'uvrA_182': 10.246513895871503, 'uvrA_153': 4.3151969981238283, 'uvrA_120': 20.35647279549719, 'uvrA_149': 19.043151969981242, 'uvrA_140': 12.178908898989821, 'uvrA_25': 19.266310052098216, 'uvrA_35': 14.593445389438191}
+Predicted proportions using Counting method are: {'uvrA_182': 5.517241379310345, 'uvrA_153': 5.517241379310345, 'uvrA_120': 21.379310344827587, 'uvrA_149': 18.620689655172416, 'uvrA_140': 11.724137931034484, 'uvrA_25': 18.620689655172416, 'uvrA_35': 18.620689655172416}
 
-Predicted proportions using Counting method are: {'uvrA_182': 6.285178236397749, 'uvrA_153': 4.315196998123827, 'uvrA_120': 20.356472795497183, 'uvrA_149': 19.04315196998124, 'uvrA_140': 12.195121951219512, 'uvrA_25': 19.41838649155722, 'uvrA_35': 18.386491557223263}
-
-average Qscores are: [1184701.0]
+average Qscores are: []
 ======================================== SIMULATION 24 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_103', 'uvrA_29', 'uvrA_51']]
+Number of optimal solutions: 14
+[['uvrA_103', 'uvrA_23', 'uvrA_29', 'uvrA_51'], ['uvrA_102', 'uvrA_103', 'uvrA_111', 'uvrA_23', 'uvrA_29', 'uvrA_51'], ['uvrA_103', 'uvrA_111', 'uvrA_23', 'uvrA_29', 'uvrA_51'], ['uvrA_103', 'uvrA_162', 'uvrA_23', 'uvrA_29', 'uvrA_51'], ['uvrA_103', 'uvrA_111', 'uvrA_162', 'uvrA_23', 'uvrA_29', 'uvrA_51'], ['uvrA_103', 'uvrA_111', 'uvrA_171', 'uvrA_23', 'uvrA_29', 'uvrA_51'], ['uvrA_103', 'uvrA_111', 'uvrA_173', 'uvrA_23', 'uvrA_29', 'uvrA_51'], ['uvrA_103', 'uvrA_171', 'uvrA_23', 'uvrA_29', 'uvrA_51'], ['uvrA_103', 'uvrA_173', 'uvrA_23', 'uvrA_29', 'uvrA_51'], ['uvrA_103', 'uvrA_111', 'uvrA_23', 'uvrA_27', 'uvrA_29', 'uvrA_51'], ['uvrA_103', 'uvrA_23', 'uvrA_27', 'uvrA_29', 'uvrA_51'], ['uvrA_103', 'uvrA_111', 'uvrA_23', 'uvrA_29', 'uvrA_46', 'uvrA_51'], ['uvrA_103', 'uvrA_23', 'uvrA_29', 'uvrA_46', 'uvrA_51'], ['uvrA_102', 'uvrA_103', 'uvrA_23', 'uvrA_29', 'uvrA_51']]
 True variants are: ['uvrA_29', 'uvrA_51', 'uvrA_103']
 
-Predicted variants are: ['uvrA_103', 'uvrA_29', 'uvrA_51']
+Predicted variants are: ['uvrA_102', 'uvrA_103', 'uvrA_23', 'uvrA_29', 'uvrA_51']
 
 True proportions are: {'uvrA_103': 69.5953312819938, 'uvrA_51': 23.46825260810016, 'uvrA_29': 6.936416109906056}
 
-Predicted proportions using Bayes method are: {'uvrA_103': 68.175475202078871, 'uvrA_51': 23.601895734597168, 'uvrA_29': 8.2226290633239678}
+Predicted proportions using Counting method are: {'uvrA_102': 26.141552511415522, 'uvrA_103': 33.333333333333336, 'uvrA_51': 24.657534246575338, 'uvrA_29': 7.534246575342464, 'uvrA_23': 8.333333333333334}
 
-Predicted proportions using Counting method are: {'uvrA_103': 69.38388625592418, 'uvrA_51': 23.601895734597157, 'uvrA_29': 7.0142180094786735}
+average Qscores are: []
+['uvrA_103-138', -1.0, -1.0, -1.0]
+              uvrA_1  uvrA_10  uvrA_100  uvrA_101  uvrA_102  uvrA_103  \
+Read                                                                    
+uvrA_103-138    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
 
-average Qscores are: [395314.0]
+              uvrA_104  uvrA_105  uvrA_106  uvrA_107   ...     uvrA_90  \
+Read                                                   ...               
+uvrA_103-138      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+              uvrA_91  uvrA_92  uvrA_93  uvrA_94  uvrA_95  uvrA_96  uvrA_97  \
+Read                                                                          
+uvrA_103-138     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+              uvrA_98  uvrA_99  
+Read                            
+uvrA_103-138     -1.0     -1.0  
+
+[1 rows x 170 columns]
 ======================================== SIMULATION 25 ====================================================
 
 Number of optimal solutions: 1
@@ -368,56 +375,48 @@ Predicted variants are: ['uvrA_107', 'uvrA_43']
 
 True proportions are: {'uvrA_43': 93.14340718829038, 'uvrA_107': 6.856592811709612}
 
-Predicted proportions using Bayes method are: {'uvrA_43': 49.612165606663915, 'uvrA_107': 50.387834393336092}
+Predicted proportions using Counting method are: {'uvrA_43': 79.7872340425532, 'uvrA_107': 20.21276595744681}
 
-Predicted proportions using Counting method are: {'uvrA_43': 88.89943074003796, 'uvrA_107': 11.10056925996205}
-
-average Qscores are: [89222.0]
+average Qscores are: []
 ======================================== SIMULATION 26 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_174', 'uvrA_182', 'uvrA_29', 'uvrA_38', 'uvrA_50', 'uvrA_91']]
+Number of optimal solutions: 4
+[['uvrA_174', 'uvrA_182', 'uvrA_29', 'uvrA_38', 'uvrA_50', 'uvrA_91'], ['uvrA_111', 'uvrA_174', 'uvrA_182', 'uvrA_29', 'uvrA_38', 'uvrA_72', 'uvrA_91'], ['uvrA_174', 'uvrA_182', 'uvrA_29', 'uvrA_38', 'uvrA_72', 'uvrA_91'], ['uvrA_111', 'uvrA_174', 'uvrA_182', 'uvrA_29', 'uvrA_38', 'uvrA_50', 'uvrA_91']]
 True variants are: ['uvrA_50', 'uvrA_29', 'uvrA_38', 'uvrA_174', 'uvrA_91', 'uvrA_182']
 
 Predicted variants are: ['uvrA_174', 'uvrA_182', 'uvrA_29', 'uvrA_38', 'uvrA_50', 'uvrA_91']
 
 True proportions are: {'uvrA_182': 31.82952025629553, 'uvrA_50': 4.055278404943387, 'uvrA_91': 20.965336963626918, 'uvrA_174': 3.0313117378197942, 'uvrA_29': 6.192721420019106, 'uvrA_38': 33.92583121729526}
 
-Predicted proportions using Bayes method are: {'uvrA_182': 21.710763206208394, 'uvrA_50': 26.593428015151936, 'uvrA_91': 20.387963322707698, 'uvrA_174': 3.295668549905832, 'uvrA_29': 6.3231209423734613, 'uvrA_38': 21.689055963652681}
+Predicted proportions using Counting method are: {'uvrA_182': 28.040540540540544, 'uvrA_50': 13.175675675675675, 'uvrA_91': 20.608108108108105, 'uvrA_174': 2.702702702702702, 'uvrA_29': 5.743243243243242, 'uvrA_38': 29.729729729729737}
 
-Predicted proportions using Counting method are: {'uvrA_182': 30.27306967984934, 'uvrA_50': 7.062146892655367, 'uvrA_91': 20.80979284369115, 'uvrA_174': 3.295668549905838, 'uvrA_29': 6.308851224105461, 'uvrA_38': 32.250470809792844}
-
-average Qscores are: [857426.0]
+average Qscores are: []
 ======================================== SIMULATION 27 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_51', 'uvrA_6', 'uvrA_8']]
+Number of optimal solutions: 8
+[['uvrA_10', 'uvrA_104', 'uvrA_111', 'uvrA_51', 'uvrA_8'], ['uvrA_10', 'uvrA_51', 'uvrA_8'], ['uvrA_10', 'uvrA_104', 'uvrA_51', 'uvrA_8'], ['uvrA_10', 'uvrA_104', 'uvrA_111', 'uvrA_116', 'uvrA_51', 'uvrA_8'], ['uvrA_10', 'uvrA_116', 'uvrA_51', 'uvrA_8'], ['uvrA_10', 'uvrA_104', 'uvrA_116', 'uvrA_51', 'uvrA_8'], ['uvrA_10', 'uvrA_111', 'uvrA_116', 'uvrA_51', 'uvrA_8'], ['uvrA_10', 'uvrA_111', 'uvrA_51', 'uvrA_8']]
 True variants are: ['uvrA_8', 'uvrA_6', 'uvrA_51']
 
-Predicted variants are: ['uvrA_51', 'uvrA_6', 'uvrA_8']
+Predicted variants are: ['uvrA_10', 'uvrA_111', 'uvrA_51', 'uvrA_8']
 
 True proportions are: {'uvrA_6': 12.909346904014111, 'uvrA_51': 66.79977437358178, 'uvrA_8': 20.290878722404106}
 
-Predicted proportions using Bayes method are: {'uvrA_6': 16.0181017617526, 'uvrA_51': 66.872588295120508, 'uvrA_8': 17.109309943126892}
+Predicted proportions using Counting method are: {'uvrA_10': 13.26530612244898, 'uvrA_111': 6.802721088435374, 'uvrA_51': 60.54421768707483, 'uvrA_8': 19.387755102040817}
 
-Predicted proportions using Counting method are: {'uvrA_6': 13.933649289099527, 'uvrA_51': 66.72985781990522, 'uvrA_8': 19.336492890995263}
-
-average Qscores are: [356340.0]
+average Qscores are: []
 ======================================== SIMULATION 28 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_119', 'uvrA_71']]
+Number of optimal solutions: 2
+[['uvrA_111', 'uvrA_119', 'uvrA_71'], ['uvrA_119', 'uvrA_71']]
 True variants are: ['uvrA_71', 'uvrA_119']
 
 Predicted variants are: ['uvrA_119', 'uvrA_71']
 
 True proportions are: {'uvrA_71': 61.7927327383341, 'uvrA_119': 38.2072672616659}
 
-Predicted proportions using Bayes method are: {'uvrA_71': 49.994167843226272, 'uvrA_119': 50.005832156773728}
+Predicted proportions using Counting method are: {'uvrA_71': 58.96551724137932, 'uvrA_119': 41.03448275862069}
 
-Predicted proportions using Counting method are: {'uvrA_71': 60.62618595825427, 'uvrA_119': 39.37381404174573}
-
-average Qscores are: [76034.0]
+average Qscores are: []
 ======================================== SIMULATION 29 ====================================================
 
 Number of optimal solutions: 1
@@ -428,26 +427,22 @@ Predicted variants are: ['uvrA_116', 'uvrA_190', 'uvrA_38', 'uvrA_58', 'uvrA_78'
 
 True proportions are: {'uvrA_190': 18.90796437168259, 'uvrA_58': 16.628824040740472, 'uvrA_84': 27.371320750229327, 'uvrA_78': 5.618134535860798, 'uvrA_116': 26.071008391103174, 'uvrA_38': 5.4027479103836376}
 
-Predicted proportions using Bayes method are: {'uvrA_190': 18.81467544684854, 'uvrA_58': 16.42936908250455, 'uvrA_84': 26.737077217231793, 'uvrA_78': 5.638534538840771, 'uvrA_116': 19.092621530040528, 'uvrA_38': 13.287722184533822}
+Predicted proportions using Counting method are: {'uvrA_190': 19.148936170212767, 'uvrA_58': 14.893617021276595, 'uvrA_84': 29.078014184397166, 'uvrA_78': 5.673758865248227, 'uvrA_116': 25.177304964539008, 'uvrA_38': 6.028368794326242}
 
-Predicted proportions using Counting method are: {'uvrA_190': 18.814675446848543, 'uvrA_58': 16.462841015992474, 'uvrA_84': 27.37535277516463, 'uvrA_78': 5.644402634054562, 'uvrA_116': 26.05832549388523, 'uvrA_38': 5.644402634054562}
-
-average Qscores are: [983096.0]
+average Qscores are: []
 ======================================== SIMULATION 30 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_121', 'uvrA_154', 'uvrA_179', 'uvrA_57', 'uvrA_9']]
+Number of optimal solutions: 20
+[['uvrA_121', 'uvrA_154', 'uvrA_179', 'uvrA_57', 'uvrA_84', 'uvrA_9'], ['uvrA_121', 'uvrA_154', 'uvrA_179', 'uvrA_2', 'uvrA_4', 'uvrA_57'], ['uvrA_10', 'uvrA_121', 'uvrA_154', 'uvrA_179', 'uvrA_57', 'uvrA_9'], ['uvrA_10', 'uvrA_121', 'uvrA_154', 'uvrA_179', 'uvrA_4', 'uvrA_57'], ['uvrA_121', 'uvrA_122', 'uvrA_154', 'uvrA_179', 'uvrA_4', 'uvrA_57'], ['uvrA_121', 'uvrA_122', 'uvrA_154', 'uvrA_179', 'uvrA_57', 'uvrA_9'], ['uvrA_121', 'uvrA_123', 'uvrA_154', 'uvrA_179', 'uvrA_4', 'uvrA_57'], ['uvrA_121', 'uvrA_125', 'uvrA_154', 'uvrA_179', 'uvrA_4', 'uvrA_57'], ['uvrA_121', 'uvrA_124', 'uvrA_154', 'uvrA_179', 'uvrA_4', 'uvrA_57'], ['uvrA_121', 'uvrA_123', 'uvrA_154', 'uvrA_179', 'uvrA_57', 'uvrA_9'], ['uvrA_121', 'uvrA_13', 'uvrA_154', 'uvrA_179', 'uvrA_57', 'uvrA_9'], ['uvrA_121', 'uvrA_127', 'uvrA_154', 'uvrA_179', 'uvrA_4', 'uvrA_57'], ['uvrA_121', 'uvrA_128', 'uvrA_154', 'uvrA_179', 'uvrA_4', 'uvrA_57'], ['uvrA_121', 'uvrA_13', 'uvrA_154', 'uvrA_179', 'uvrA_4', 'uvrA_57'], ['uvrA_121', 'uvrA_14', 'uvrA_154', 'uvrA_179', 'uvrA_57', 'uvrA_9'], ['uvrA_121', 'uvrA_14', 'uvrA_154', 'uvrA_179', 'uvrA_4', 'uvrA_57'], ['uvrA_121', 'uvrA_154', 'uvrA_157', 'uvrA_179', 'uvrA_57', 'uvrA_9'], ['uvrA_121', 'uvrA_154', 'uvrA_16', 'uvrA_179', 'uvrA_57', 'uvrA_9'], ['uvrA_121', 'uvrA_154', 'uvrA_157', 'uvrA_179', 'uvrA_4', 'uvrA_57'], ['uvrA_121', 'uvrA_154', 'uvrA_179', 'uvrA_2', 'uvrA_57', 'uvrA_9']]
 True variants are: ['uvrA_121', 'uvrA_9', 'uvrA_57', 'uvrA_179', 'uvrA_154']
 
-Predicted variants are: ['uvrA_121', 'uvrA_154', 'uvrA_179', 'uvrA_57', 'uvrA_9']
+Predicted variants are: ['uvrA_121', 'uvrA_154', 'uvrA_179', 'uvrA_2', 'uvrA_57', 'uvrA_9']
 
 True proportions are: {'uvrA_57': 12.179679446592035, 'uvrA_179': 35.84365496592645, 'uvrA_9': 7.724852322219434, 'uvrA_121': 27.85493507464722, 'uvrA_154': 16.396878190614867}
 
-Predicted proportions using Bayes method are: {'uvrA_57': 12.183968505533155, 'uvrA_179': 35.626767200754003, 'uvrA_9': 8.0308675853339953, 'uvrA_121': 27.597726467764566, 'uvrA_154': 16.560670240614275}
+Predicted proportions using Counting method are: {'uvrA_57': 12.056737588652483, 'uvrA_121': 29.078014184397166, 'uvrA_2': 2.8368794326241136, 'uvrA_9': 4.964539007092199, 'uvrA_179': 36.17021276595745, 'uvrA_154': 14.893617021276595}
 
-Predicted proportions using Counting method are: {'uvrA_57': 12.252591894439208, 'uvrA_179': 35.626767200754, 'uvrA_9': 7.917059377945335, 'uvrA_121': 27.70970782280867, 'uvrA_154': 16.49387370405278}
-
-average Qscores are: [793323.0]
+average Qscores are: []
 ======================================== SIMULATION 31 ====================================================
 
 Number of optimal solutions: 1
@@ -458,41 +453,58 @@ Predicted variants are: ['uvrA_149', 'uvrA_58', 'uvrA_64', 'uvrA_66', 'uvrA_70']
 
 True proportions are: {'uvrA_70': 6.156312608973016, 'uvrA_64': 43.17472152204278, 'uvrA_58': 20.822687562095123, 'uvrA_66': 7.582863843336016, 'uvrA_149': 22.263414463553058}
 
-Predicted proportions using Bayes method are: {'uvrA_70': 6.6623915745148521, 'uvrA_64': 31.217124081830072, 'uvrA_58': 32.616681395034895, 'uvrA_66': 7.3130569618402017, 'uvrA_149': 22.190745986779984}
+Predicted proportions using Counting method are: {'uvrA_70': 5.673758865248227, 'uvrA_64': 35.46099290780142, 'uvrA_58': 28.72340425531915, 'uvrA_66': 7.801418439716312, 'uvrA_149': 22.340425531914896}
 
-Predicted proportions using Counting method are: {'uvrA_70': 6.326723323890463, 'uvrA_64': 35.93012275731823, 'uvrA_58': 27.903682719546744, 'uvrA_66': 7.64872521246459, 'uvrA_149': 22.190745986779984}
-
-average Qscores are: [673636.0]
+average Qscores are: []
 ======================================== SIMULATION 32 ====================================================
 
-Number of optimal solutions: 2
-[['uvrA_111', 'uvrA_113', 'uvrA_25'], ['uvrA_113', 'uvrA_25', 'uvrA_42']]
+Number of optimal solutions: 8
+[['uvrA_112', 'uvrA_113', 'uvrA_23', 'uvrA_25'], ['uvrA_113', 'uvrA_169', 'uvrA_23', 'uvrA_25'], ['uvrA_113', 'uvrA_23', 'uvrA_25', 'uvrA_42'], ['uvrA_111', 'uvrA_113', 'uvrA_24', 'uvrA_25'], ['uvrA_113', 'uvrA_24', 'uvrA_25', 'uvrA_42'], ['uvrA_112', 'uvrA_113', 'uvrA_24', 'uvrA_25'], ['uvrA_113', 'uvrA_169', 'uvrA_24', 'uvrA_25'], ['uvrA_111', 'uvrA_113', 'uvrA_23', 'uvrA_25']]
 True variants are: ['uvrA_25', 'uvrA_111', 'uvrA_113']
 
-Predicted variants are: ['uvrA_111', 'uvrA_113', 'uvrA_25']
+Predicted variants are: ['uvrA_111', 'uvrA_113', 'uvrA_23', 'uvrA_25']
 
 True proportions are: {'uvrA_25': 93.96638285347785, 'uvrA_111': 1.8647569289230375, 'uvrA_113': 4.168860217599113}
 
-Predicted proportions using Bayes method are: {'uvrA_25': 93.410820428414752, 'uvrA_111': 3.5464856138051752, 'uvrA_113': 3.04269395778008}
+Predicted proportions using Counting method are: {'uvrA_25': 59.86394557823129, 'uvrA_111': 3.401360544217687, 'uvrA_113': 4.761904761904762, 'uvrA_23': 31.972789115646258}
 
-Predicted proportions using Counting method are: {'uvrA_25': 93.64326375711575, 'uvrA_111': 2.1821631878557874, 'uvrA_113': 4.174573055028463}
+average Qscores are: []
+['uvrA_25-234', -1.0, -1.0, -1.0]
+['uvrA_25-38', -1.0, -1.0, -1.0]
+             uvrA_1  uvrA_10  uvrA_100  uvrA_101  uvrA_102  uvrA_103  \
+Read                                                                   
+uvrA_25-234    -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
+uvrA_25-38     -1.0     -1.0      -1.0      -1.0      -1.0      -1.0   
 
-average Qscores are: [388393.0, 388720.0]
+             uvrA_104  uvrA_105  uvrA_106  uvrA_107   ...     uvrA_90  \
+Read                                                  ...               
+uvrA_25-234      -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+uvrA_25-38       -1.0      -1.0      -1.0      -1.0   ...        -1.0   
+
+             uvrA_91  uvrA_92  uvrA_93  uvrA_94  uvrA_95  uvrA_96  uvrA_97  \
+Read                                                                         
+uvrA_25-234     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+uvrA_25-38      -1.0     -1.0     -1.0     -1.0     -1.0     -1.0     -1.0   
+
+             uvrA_98  uvrA_99  
+Read                           
+uvrA_25-234     -1.0     -1.0  
+uvrA_25-38      -1.0     -1.0  
+
+[2 rows x 163 columns]
 ======================================== SIMULATION 33 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_112', 'uvrA_127', 'uvrA_139', 'uvrA_179', 'uvrA_182', 'uvrA_41']]
+Number of optimal solutions: 12
+[['uvrA_112', 'uvrA_127', 'uvrA_139', 'uvrA_179', 'uvrA_182', 'uvrA_4', 'uvrA_41'], ['uvrA_112', 'uvrA_122', 'uvrA_127', 'uvrA_139', 'uvrA_179', 'uvrA_182', 'uvrA_41'], ['uvrA_112', 'uvrA_123', 'uvrA_127', 'uvrA_139', 'uvrA_179', 'uvrA_182', 'uvrA_41'], ['uvrA_112', 'uvrA_127', 'uvrA_13', 'uvrA_139', 'uvrA_179', 'uvrA_182', 'uvrA_41'], ['uvrA_112', 'uvrA_127', 'uvrA_139', 'uvrA_14', 'uvrA_179', 'uvrA_182', 'uvrA_41'], ['uvrA_112', 'uvrA_127', 'uvrA_139', 'uvrA_157', 'uvrA_179', 'uvrA_182', 'uvrA_41'], ['uvrA_112', 'uvrA_127', 'uvrA_139', 'uvrA_16', 'uvrA_179', 'uvrA_182', 'uvrA_41'], ['uvrA_112', 'uvrA_127', 'uvrA_139', 'uvrA_179', 'uvrA_182', 'uvrA_2', 'uvrA_41'], ['uvrA_112', 'uvrA_127', 'uvrA_139', 'uvrA_179', 'uvrA_182', 'uvrA_41', 'uvrA_7'], ['uvrA_112', 'uvrA_127', 'uvrA_139', 'uvrA_179', 'uvrA_182', 'uvrA_41'], ['uvrA_112', 'uvrA_127', 'uvrA_139', 'uvrA_179', 'uvrA_182', 'uvrA_41', 'uvrA_84'], ['uvrA_10', 'uvrA_112', 'uvrA_127', 'uvrA_139', 'uvrA_179', 'uvrA_182', 'uvrA_41']]
 True variants are: ['uvrA_112', 'uvrA_41', 'uvrA_179', 'uvrA_127', 'uvrA_139', 'uvrA_182']
 
 Predicted variants are: ['uvrA_112', 'uvrA_127', 'uvrA_139', 'uvrA_179', 'uvrA_182', 'uvrA_41']
 
 True proportions are: {'uvrA_182': 12.37588212901418, 'uvrA_179': 7.604056588954513, 'uvrA_127': 9.301258200827323, 'uvrA_139': 28.48512791969749, 'uvrA_41': 35.43510659539096, 'uvrA_112': 6.798568566115535}
 
-Predicted proportions using Bayes method are: {'uvrA_182': 16.757670109826236, 'uvrA_179': 7.6271186440677852, 'uvrA_41': 35.186850635096192, 'uvrA_139': 15.107797890037538, 'uvrA_127': 9.0969350045874133, 'uvrA_112': 16.223627716384836}
+Predicted proportions using Counting method are: {'uvrA_182': 15.258215962441314, 'uvrA_179': 7.746478873239437, 'uvrA_41': 35.91549295774648, 'uvrA_139': 23.356807511737088, 'uvrA_127': 7.746478873239437, 'uvrA_112': 9.976525821596248}
 
-Predicted proportions using Counting method are: {'uvrA_182': 14.830508474576272, 'uvrA_179': 7.627118644067797, 'uvrA_41': 35.31073446327684, 'uvrA_139': 23.540489642184582, 'uvrA_127': 9.227871939736346, 'uvrA_112': 9.463276836158173}
-
-average Qscores are: [853600.0]
+average Qscores are: []
 ======================================== SIMULATION 34 ====================================================
 
 Number of optimal solutions: 1
@@ -503,11 +515,9 @@ Predicted variants are: ['uvrA_138', 'uvrA_182']
 
 True proportions are: {'uvrA_182': 50.798343216402685, 'uvrA_138': 49.20165678359731}
 
-Predicted proportions using Bayes method are: {'uvrA_182': 51.60107552220844, 'uvrA_138': 48.398924477791567}
+Predicted proportions using Counting method are: {'uvrA_182': 52.027027027027025, 'uvrA_138': 47.97297297297297}
 
-Predicted proportions using Counting method are: {'uvrA_182': 50.853889943074, 'uvrA_138': 49.146110056926}
-
-average Qscores are: [117596.0]
+average Qscores are: []
 ======================================== SIMULATION 35 ====================================================
 
 Number of optimal solutions: 1
@@ -518,155 +528,131 @@ Predicted variants are: ['uvrA_123', 'uvrA_149']
 
 True proportions are: {'uvrA_123': 40.297975683430884, 'uvrA_149': 59.70202431656912}
 
-Predicted proportions using Bayes method are: {'uvrA_149': 59.7287674065416, 'uvrA_123': 40.2712325934584}
+Predicted proportions using Counting method are: {'uvrA_149': 57.931034482758626, 'uvrA_123': 42.06896551724138}
 
-Predicted proportions using Counting method are: {'uvrA_149': 59.77229601518027, 'uvrA_123': 40.22770398481973}
-
-average Qscores are: [197110.0]
+average Qscores are: []
 ======================================== SIMULATION 36 ====================================================
 
-Number of optimal solutions: 1
-[['uvrA_110', 'uvrA_120', 'uvrA_122', 'uvrA_145', 'uvrA_159', 'uvrA_169', 'uvrA_99']]
+Number of optimal solutions: 20
+[['uvrA_110', 'uvrA_111', 'uvrA_120', 'uvrA_122', 'uvrA_131', 'uvrA_145', 'uvrA_147', 'uvrA_159'], ['uvrA_110', 'uvrA_120', 'uvrA_122', 'uvrA_145', 'uvrA_159', 'uvrA_169'], ['uvrA_110', 'uvrA_111', 'uvrA_120', 'uvrA_122', 'uvrA_145', 'uvrA_147', 'uvrA_159'], ['uvrA_110', 'uvrA_111', 'uvrA_120', 'uvrA_122', 'uvrA_137', 'uvrA_145', 'uvrA_147', 'uvrA_159'], ['uvrA_110', 'uvrA_120', 'uvrA_122', 'uvrA_137', 'uvrA_145', 'uvrA_159', 'uvrA_169'], ['uvrA_110', 'uvrA_111', 'uvrA_120', 'uvrA_122', 'uvrA_143', 'uvrA_145', 'uvrA_147', 'uvrA_159'], ['uvrA_110', 'uvrA_111', 'uvrA_120', 'uvrA_122', 'uvrA_145', 'uvrA_159', 'uvrA_169'], ['uvrA_110', 'uvrA_111', 'uvrA_120', 'uvrA_122', 'uvrA_131', 'uvrA_145', 'uvrA_159', 'uvrA_169'], ['uvrA_110', 'uvrA_111', 'uvrA_120', 'uvrA_122', 'uvrA_143', 'uvrA_145', 'uvrA_159', 'uvrA_169'], ['uvrA_110', 'uvrA_111', 'uvrA_120', 'uvrA_122', 'uvrA_145', 'uvrA_147', 'uvrA_155', 'uvrA_159'], ['uvrA_110', 'uvrA_111', 'uvrA_120', 'uvrA_122', 'uvrA_145', 'uvrA_147', 'uvrA_156', 'uvrA_159'], ['uvrA_110', 'uvrA_111', 'uvrA_120', 'uvrA_122', 'uvrA_137', 'uvrA_145', 'uvrA_159', 'uvrA_169'], ['uvrA_110', 'uvrA_111', 'uvrA_120', 'uvrA_122', 'uvrA_145', 'uvrA_155', 'uvrA_159', 'uvrA_169'], ['uvrA_110', 'uvrA_111', 'uvrA_120', 'uvrA_122', 'uvrA_145', 'uvrA_156', 'uvrA_159', 'uvrA_169'], ['uvrA_110', 'uvrA_120', 'uvrA_122', 'uvrA_143', 'uvrA_145', 'uvrA_159', 'uvrA_169'], ['uvrA_110', 'uvrA_120', 'uvrA_122', 'uvrA_145', 'uvrA_155', 'uvrA_159', 'uvrA_169'], ['uvrA_110', 'uvrA_120', 'uvrA_122', 'uvrA_145', 'uvrA_156', 'uvrA_159', 'uvrA_169'], ['uvrA_110', 'uvrA_111', 'uvrA_120', 'uvrA_122', 'uvrA_145', 'uvrA_147', 'uvrA_159', 'uvrA_28'], ['uvrA_110', 'uvrA_111', 'uvrA_120', 'uvrA_122', 'uvrA_145', 'uvrA_159', 'uvrA_169', 'uvrA_28'], ['uvrA_110', 'uvrA_120', 'uvrA_122', 'uvrA_131', 'uvrA_145', 'uvrA_159', 'uvrA_169']]
 True variants are: ['uvrA_145', 'uvrA_110', 'uvrA_159', 'uvrA_99', 'uvrA_120', 'uvrA_122', 'uvrA_169']
 
-Predicted variants are: ['uvrA_110', 'uvrA_120', 'uvrA_122', 'uvrA_145', 'uvrA_159', 'uvrA_169', 'uvrA_99']
+Predicted variants are: ['uvrA_110', 'uvrA_120', 'uvrA_122', 'uvrA_131', 'uvrA_145', 'uvrA_159', 'uvrA_169']
 
 True proportions are: {'uvrA_99': 0.3829883379715405, 'uvrA_169': 21.54119574000834, 'uvrA_120': 23.249876672120283, 'uvrA_122': 18.490623406751034, 'uvrA_159': 16.602047065253945, 'uvrA_145': 8.01570071943163, 'uvrA_110': 11.71756805846322}
 
-Predicted proportions using Bayes method are: {'uvrA_99': 9.3023747860163297, 'uvrA_169': 17.578969969599541, 'uvrA_120': 22.952596420821436, 'uvrA_122': 18.081825107013984, 'uvrA_159': 8.0355630170359476, 'uvrA_145': 8.0177116961306112, 'uvrA_110': 16.030959003382158}
+Predicted proportions using Counting method are: {'uvrA_169': 20.774647887323944, 'uvrA_120': 21.83098591549296, 'uvrA_122': 19.014084507042256, 'uvrA_131': 4.342723004694836, 'uvrA_159': 11.737089201877936, 'uvrA_145': 9.27230046948357, 'uvrA_110': 13.028169014084508}
 
-Predicted proportions using Counting method are: {'uvrA_99': 3.2394366197183095, 'uvrA_169': 21.36150234741784, 'uvrA_120': 23.00469483568075, 'uvrA_122': 18.4037558685446, 'uvrA_159': 14.319248826291078, 'uvrA_145': 7.793427230046948, 'uvrA_110': 11.877934272300468}
-
-average Qscores are: [1118606.0]
+average Qscores are: []
 ======================================== SIMULATION 37 ====================================================
 
-Number of optimal solutions: 5
-[['uvrA_111', 'uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_44', 'uvrA_45', 'uvrA_77'], ['uvrA_122', 'uvrA_131', 'uvrA_135', 'uvrA_142', 'uvrA_44', 'uvrA_45', 'uvrA_77'], ['uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_42', 'uvrA_44', 'uvrA_45', 'uvrA_77'], ['uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_44', 'uvrA_45', 'uvrA_47', 'uvrA_77'], ['uvrA_112', 'uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_44', 'uvrA_45', 'uvrA_77']]
+Number of optimal solutions: 12
+[['uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_44', 'uvrA_45', 'uvrA_55', 'uvrA_77'], ['uvrA_111', 'uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_44', 'uvrA_45', 'uvrA_77'], ['uvrA_112', 'uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_44', 'uvrA_45', 'uvrA_77'], ['uvrA_119', 'uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_44', 'uvrA_45', 'uvrA_77'], ['uvrA_122', 'uvrA_131', 'uvrA_135', 'uvrA_142', 'uvrA_44', 'uvrA_45', 'uvrA_77'], ['uvrA_122', 'uvrA_131', 'uvrA_139', 'uvrA_142', 'uvrA_44', 'uvrA_45', 'uvrA_77'], ['uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_146', 'uvrA_44', 'uvrA_45', 'uvrA_77'], ['uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_147', 'uvrA_44', 'uvrA_45', 'uvrA_77'], ['uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_169', 'uvrA_44', 'uvrA_45', 'uvrA_77'], ['uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_182', 'uvrA_44', 'uvrA_45', 'uvrA_77'], ['uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_183', 'uvrA_44', 'uvrA_45', 'uvrA_77'], ['uvrA_109', 'uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_44', 'uvrA_45', 'uvrA_77']]
 True variants are: ['uvrA_142', 'uvrA_44', 'uvrA_45', 'uvrA_122', 'uvrA_131', 'uvrA_111', 'uvrA_77']
 
-Predicted variants are: ['uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_42', 'uvrA_44', 'uvrA_45', 'uvrA_77']
+Predicted variants are: ['uvrA_111', 'uvrA_122', 'uvrA_131', 'uvrA_142', 'uvrA_44', 'uvrA_45', 'uvrA_77']
 
 True proportions are: {'uvrA_122': 5.692073373114489, 'uvrA_131': 2.7879565543753753, 'uvrA_45': 23.220345972248495, 'uvrA_77': 22.55910255715715, 'uvrA_142': 24.080520056475287, 'uvrA_44': 11.317745459182364, 'uvrA_111': 10.34225602744684}
 
-Predicted proportions using Bayes method are: {'uvrA_42': 16.842343152549773, 'uvrA_122': 5.8211186362149316, 'uvrA_131': 14.818729298560804, 'uvrA_44': 16.537876855992046, 'uvrA_45': 15.630758963950404, 'uvrA_142': 12.23294114866845, 'uvrA_77': 18.116231944063596}
+Predicted proportions using Counting method are: {'uvrA_122': 5.555555555555556, 'uvrA_131': 6.597222222222223, 'uvrA_44': 13.078703703703708, 'uvrA_45': 18.981481481481474, 'uvrA_77': 20.48611111111111, 'uvrA_142': 21.180555555555557, 'uvrA_111': 14.120370370370372}
 
-Predicted proportions using Counting method are: {'uvrA_42': 12.785602503912346, 'uvrA_122': 5.915492957746481, 'uvrA_131': 4.460093896713617, 'uvrA_44': 12.738654147104834, 'uvrA_45': 19.170579029733982, 'uvrA_142': 22.582159624413155, 'uvrA_77': 22.347417840375595}
-
-average Qscores are: [983566.0, 992622.0, 983477.0, 989175.0, 991430.0]
+average Qscores are: []
 ======================================== SIMULATION 38 ====================================================
 
-Number of optimal solutions: 2
-[['uvrA_111', 'uvrA_137', 'uvrA_29', 'uvrA_32'], ['uvrA_137', 'uvrA_29', 'uvrA_32', 'uvrA_42']]
+Number of optimal solutions: 1
+[['uvrA_111', 'uvrA_137', 'uvrA_29', 'uvrA_32']]
 True variants are: ['uvrA_29', 'uvrA_137', 'uvrA_32', 'uvrA_42']
 
 Predicted variants are: ['uvrA_111', 'uvrA_137', 'uvrA_29', 'uvrA_32']
 
 True proportions are: {'uvrA_137': 30.673073863602184, 'uvrA_42': 16.147702164153284, 'uvrA_29': 35.11398183269936, 'uvrA_32': 18.06524213954517}
 
-Predicted proportions using Bayes method are: {'uvrA_137': 33.130772629229334, 'uvrA_111': 17.767947961490425, 'uvrA_29': 32.504313143938639, 'uvrA_32': 16.596966265341614}
+Predicted proportions using Counting method are: {'uvrA_137': 32.06896551724138, 'uvrA_111': 14.482758620689657, 'uvrA_29': 34.827586206896555, 'uvrA_32': 18.620689655172416}
 
-Predicted proportions using Counting method are: {'uvrA_137': 31.26177024482109, 'uvrA_111': 16.195856873822976, 'uvrA_29': 34.36911487758945, 'uvrA_32': 18.173258003766477}
-
-average Qscores are: [476973.0, 476996.0]
+average Qscores are: []
 ======================================== SIMULATION 39 ====================================================
 
-Number of optimal solutions: 2
-[['uvrA_1', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_2', 'uvrA_20', 'uvrA_82'], ['uvrA_1', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_2', 'uvrA_4', 'uvrA_82']]
+Number of optimal solutions: 20
+[['uvrA_1', 'uvrA_104', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_2', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_2', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_111', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_2', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_10', 'uvrA_104', 'uvrA_111', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_104', 'uvrA_111', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_2', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_104', 'uvrA_111', 'uvrA_122', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_104', 'uvrA_122', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_104', 'uvrA_127', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_104', 'uvrA_13', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_104', 'uvrA_111', 'uvrA_127', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_104', 'uvrA_111', 'uvrA_13', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_104', 'uvrA_111', 'uvrA_13', 'uvrA_135', 'uvrA_147', 'uvrA_174', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_104', 'uvrA_111', 'uvrA_127', 'uvrA_135', 'uvrA_147', 'uvrA_174', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_104', 'uvrA_111', 'uvrA_122', 'uvrA_135', 'uvrA_147', 'uvrA_174', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_111', 'uvrA_135', 'uvrA_147', 'uvrA_174', 'uvrA_2', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_10', 'uvrA_104', 'uvrA_111', 'uvrA_135', 'uvrA_147', 'uvrA_174', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_104', 'uvrA_13', 'uvrA_135', 'uvrA_160', 'uvrA_169', 'uvrA_174', 'uvrA_4'], ['uvrA_1', 'uvrA_104', 'uvrA_111', 'uvrA_135', 'uvrA_147', 'uvrA_174', 'uvrA_2', 'uvrA_33', 'uvrA_4'], ['uvrA_1', 'uvrA_104', 'uvrA_122', 'uvrA_135', 'uvrA_160', 'uvrA_169', 'uvrA_174', 'uvrA_4'], ['uvrA_1', 'uvrA_10', 'uvrA_104', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_33', 'uvrA_4']]
 True variants are: ['uvrA_169', 'uvrA_135', 'uvrA_1', 'uvrA_82', 'uvrA_20', 'uvrA_2', 'uvrA_174']
 
-Predicted variants are: ['uvrA_1', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_2', 'uvrA_20', 'uvrA_82']
+Predicted variants are: ['uvrA_1', 'uvrA_10', 'uvrA_104', 'uvrA_135', 'uvrA_169', 'uvrA_174', 'uvrA_33', 'uvrA_4']
 
 True proportions are: {'uvrA_169': 16.672129287711837, 'uvrA_135': 5.259377998643551, 'uvrA_1': 10.082435483708027, 'uvrA_2': 14.496289172892768, 'uvrA_174': 29.53918913930934, 'uvrA_20': 2.955865702129442, 'uvrA_82': 20.994713215605046}
 
-Predicted proportions using Bayes method are: {'uvrA_169': 13.801776444023742, 'uvrA_135': 13.727852013433109, 'uvrA_1': 9.1999358576469579, 'uvrA_2': 9.4681608003330062, 'uvrA_174': 29.350893697083706, 'uvrA_20': 8.9269969433717886, 'uvrA_82': 15.524384244107674}
+Predicted proportions using Counting method are: {'uvrA_169': 16.331096196868007, 'uvrA_135': 7.874720357941835, 'uvrA_1': 8.322147651006713, 'uvrA_4': 4.966442953020134, 'uvrA_174': 27.516778523489933, 'uvrA_10': 8.43400447427293, 'uvrA_33': 20.3579418344519, 'uvrA_104': 6.196868008948545}
 
-Predicted proportions using Counting method are: {'uvrA_169': 14.158043273753528, 'uvrA_135': 7.949200376293509, 'uvrA_1': 10.959548447789276, 'uvrA_2': 13.264346190028222, 'uvrA_174': 29.350893697083723, 'uvrA_20': 3.5277516462841016, 'uvrA_82': 20.790216368767638}
-
-average Qscores are: [1057318.0, 1057318.0]
+average Qscores are: []
 ======================================== SIMULATION 40 ====================================================
 
-Number of optimal solutions: 2
-[['uvrA_3', 'uvrA_94'], ['uvrA_2', 'uvrA_94']]
+Number of optimal solutions: 1
+[['uvrA_2', 'uvrA_94']]
 True variants are: ['uvrA_2', 'uvrA_94']
 
 Predicted variants are: ['uvrA_2', 'uvrA_94']
 
 True proportions are: {'uvrA_94': 93.46761301138386, 'uvrA_2': 6.532386988616142}
 
-Predicted proportions using Bayes method are: {'uvrA_94': 87.415048442096861, 'uvrA_2': 12.584951557903137}
+Predicted proportions using Counting method are: {'uvrA_94': 94.4055944055944, 'uvrA_2': 5.594405594405594}
 
-Predicted proportions using Counting method are: {'uvrA_94': 93.35863377609108, 'uvrA_2': 6.641366223908919}
-
-average Qscores are: [189237.0, 189236.0]
+average Qscores are: []
 ======================================== uvrA: SUMMARY STATISTICS ====================================================
 
 (1)Total Variation Distance:
 
-Counting Method ~ Total variation distances are: [0.2422046110321796, 0.5675063807622827, 1.3836946095775993, 0.20469384271312396, 3.9182864783403906, 0.05156521065816122, 2.2368327962920165, 0.30239579888134094, 0.10310522752869922, 1.00457747274377, 3.7655012462462603, 0.5692329648450115, 8.070996476721483, 3.077434852672134, 0.04024702796885049, 2.710126585118302, 0.5124089124562792, 0.1256261750088825, 0.34256531746073193, 0.15457200136769167, 4.096515504430057, 2.5883536915428076, 0.5870232981602648, 0.2114450260696139, 4.243976448252432, 3.3873551038843783, 1.0243023850854112, 1.166546780079834, 0.2719548467999884, 0.3621150170109906, 7.317267241497634, 0.3231190963621029, 5.142396670718012, 0.055546726671312996, 0.07027169861114757, 3.0168144955840175, 16.102068118805043, 16.89256911926319, 4.138821285885872, 0.10897923529277787] 
+Counting Method ~ Total variation distances are: [2.0071561268090043, 2.794649886148031, 6.4584343367922195, 1.4556098703056572, 5.007609207823456, 1.1010973705744078, 3.9892388106026013, 1.3407985748608322, 3.33292055211378, 3.182025979233618, 6.861809777794064, 2.9945396274398126, 10.706752767518296, 29.99999999999999, 97.38370053840528, 22.628680167722795, 2.9526453108180544, 1.572300203847222, 1.843988836175395, 38.906934950327994, 21.028320886694356, 5.792412701190788, 2.581826225418108, 36.26199794866045, 13.356173145737191, 9.120397270732283, 20.068027210884352, 2.827215496954789, 2.628910446028047, 4.386516342405061, 8.196282357966156, 34.10243727524656, 6.683099735548289, 1.2286838106243394, 1.7709898338104963, 7.433384810659278, 9.348338255291722, 16.43409778995609, 42.570599629991804, 0.937981394210543] 
 
-Bayes' Method ~ Total variation distances are: [0.23608088431160024, 11.270738736663853, 21.819715228842007, 1.4855278602185145, 6.6883198488092335, 0.05156521065816122, 18.932994111629458, 0.30239579888134094, 0.21819604591839159, 15.906045016701304, 14.421748884532846, 6.0645441823096728, 19.773874993579192, 16.803058727551356, 0.040247027968850491, 9.792434934072535, 6.2360756848744501, 0.705943305781771, 0.53814877907320957, 3.165880894698315, 8.4960604863140858, 8.7004983968419563, 4.53214590540433, 1.4198560799149216, 43.531241581626475, 22.932905944648937, 3.1815687792772138, 11.79856489510783, 7.9053742771301536, 0.4740963720550937, 12.300072798481603, 1.6817286848821362, 13.829909186194632, 0.80273230580574761, 0.02674308997248076, 13.234788369662702, 34.222292556645321, 20.225646727117567, 14.439605256031918, 6.0525645692869983] 
+Counting Method ~ The average of total variation distance is: 12.3319646366 
 
-Counting Method ~ The average of total variation distance is: 2.51227539446 
-
-Bayes' Method ~ The average of total variation distance is: 9.60604831049 
-
-Counting Method ~ The standard deviation of total variation distance is: 3.79201606089 
-
-Bayes' Method ~ The standard deviation of total variation distance is: 9.72667851132 
+Counting Method ~ The standard deviation of total variation distance is: 17.7718779611 
 
 (2)Total Variation Distance for variants which are predicted correctly:
 
-Counting Method ~ Total variation distances are: [0.2422046110321796, 0.5675063807622827, 1.3836946095775993, 0.20469384271312396, 3.9182864783403906, 0.05156521065816122, 2.2368327962920165, 0.30239579888134094, 0.10310522752869922, 1.00457747274377, 3.7655012462462603, 0.5692329648450115, 8.070996476721483, 3.077434852672134, 0.04024702796885049, 2.710126585118302, 0.5124089124562792, 0.1256261750088825, 0.34256531746073193, 0.15457200136769167, 4.096515504430057, 2.5883536915428076, 0.5870232981602648, 0.2114450260696139, 4.243976448252432, 3.3873551038843783, 1.0243023850854112, 1.166546780079834, 0.2719548467999884, 0.3621150170109906, 7.317267241497634, 0.3231190963621029, 5.142396670718012, 0.055546726671312996, 0.07027169861114757, 3.0168144955840175, 4.138821285885872, 0.10897923529277787] 
+Counting Method ~ Total variation distances are: [2.0071561268090043, 2.794649886148031, 1.4556098703056572, 5.007609207823456, 1.1010973705744078, 3.9892388106026013, 1.3407985748608322, 3.182025979233618, 6.861809777794064, 2.9945396274398126, 10.706752767518296, 2.9526453108180544, 1.572300203847222, 1.843988836175395, 2.581826225418108, 13.356173145737191, 9.120397270732283, 2.827215496954789, 2.628910446028047, 8.196282357966156, 6.683099735548289, 1.2286838106243394, 1.7709898338104963, 9.348338255291722, 0.937981394210543] 
 
-Bayes' Method ~ Total variation distances are: [0.23608088431160024, 11.270738736663853, 21.819715228842007, 1.4855278602185145, 6.6883198488092335, 0.05156521065816122, 18.932994111629458, 0.30239579888134094, 0.21819604591839159, 15.906045016701304, 14.421748884532846, 6.0645441823096728, 19.773874993579192, 16.803058727551356, 0.040247027968850491, 9.792434934072535, 6.2360756848744501, 0.705943305781771, 0.53814877907320957, 3.165880894698315, 8.4960604863140858, 8.7004983968419563, 4.53214590540433, 1.4198560799149216, 43.531241581626475, 22.932905944648937, 3.1815687792772138, 11.79856489510783, 7.9053742771301536, 0.4740963720550937, 12.300072798481603, 1.6817286848821362, 13.829909186194632, 0.80273230580574761, 0.02674308997248076, 13.234788369662702, 14.439605256031918, 6.0525645692869983] 
+Counting Method ~ The average of total variation distance is: 4.25960481289 
 
-Counting Method ~ The average of total variation distance is: 1.7762204879 
-
-Bayes' Method ~ The average of total variation distance is: 8.67878929305 
-
-Counting Method ~ The standard deviation of total variation distance is: 2.0718196869 
-
-Bayes' Method ~ The standard deviation of total variation distance is: 8.93385472638 
+Counting Method ~ The standard deviation of total variation distance is: 3.39206989277 
 
 (3) Precision: 
 
-Precision is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 0.75, 1.0, 1.0] 
+Precision is: [1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 1.0, 1.0, 1.0, 0.75, 1.0, 1.0, 1.0, 1.0, 0.6666666666666666, 0.3333333333333333, 0.5714285714285714, 1.0, 1.0, 1.0, 0.75, 0.8333333333333334, 0.8, 1.0, 0.6, 1.0, 1.0, 0.5, 1.0, 1.0, 0.8333333333333334, 1.0, 0.75, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 0.75, 0.5, 1.0] 
 
-Average of precision is:  0.990178571429 
+Average of precision is:  0.88380952381 
 
-Standard deviation of precision is:  0.0444549617304 
+Standard deviation of precision is:  0.176464715789 
 
 (4) Recall : 
 
-Recall is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 0.75, 1.0, 1.0] 
+Recall is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 0.6666666666666666, 1.0, 1.0, 1.0, 0.75, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 0.75, 0.5714285714285714, 1.0] 
 
-Average of recall is:  0.990178571429 
+Average of recall is:  0.939880952381 
 
-Standard deviation of recall is:  0.0444549617304 
+Standard deviation of recall is:  0.130815675398 
 
 (5) Objective Value: 
 
-Predicted objective values are: [11.0, 12.0, 10.0, 9.0, 9.0, 9.0, 12.0, 9.0, 10.0, 11.0, 9.0, 10.0, 11.0, 8.0, 8.0, 12.0, 11.0, 10.0, 11.0, 10.0, 9.0, 10.0, 11.0, 7.0, 7.0, 13.0, 7.0, 8.0, 11.0, 11.0, 10.0, 9.0, 11.0, 8.0, 8.0, 11.0, 10.0, 12.0, 11.0, 8.0] 
+Predicted objective values are: [22.0, 26.0, 24.0, 23.0, 15.0, 15.0, 23.0, 16.0, 24.0, 24.0, 27.0, 24.0, 27.0, 21.0, 12.0, 23.0, 22.0, 19.0, 25.0, 21.0, 21.0, 21.0, 25.0, 19.0, 12.0, 25.0, 17.0, 17.0, 23.0, 22.0, 23.0, 20.0, 25.0, 18.0, 14.0, 27.0, 23.0, 25.0, 23.0, 11.0] 
 
-True objective values are: [11.0, 12.0, 10.0, 9.0, 9.0, 9.0, 12.0, 9.0, 10.0, 11.0, 9.0, 10.0, 11.0, 8.0, 8.0, 12.0, 11.0, 10.0, 11.0, 10.0, 9.0, 10.0, 11.0, 7.0, 7.0, 13.0, 7.0, 8.0, 11.0, 11.0, 10.0, 9.0, 11.0, 8.0, 8.0, 11.0, 10.0, 12.0, 11.0, 8.0] 
+True objective values are: [22.0, 26.0, 25.0, 23.0, 15.0, 15.0, 23.0, 16.0, 28.0, 24.0, 27.0, 24.0, 27.0, 24.0, 14.0, 23.0, 22.0, 19.0, 25.0, 23.0, 23.0, 22.0, 25.0, 24.0, 12.0, 25.0, 18.0, 17.0, 23.0, 22.0, 23.0, 28.0, 25.0, 18.0, 14.0, 27.0, 23.0, 26.0, 23.0, 11.0] 
 
-The difference in objective values are: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+The difference in objective values are: [0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, -4.0, 0.0, 0.0, 0.0, 0.0, -3.0, -2.0, 0.0, 0.0, 0.0, 0.0, -2.0, -2.0, -1.0, 0.0, -5.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, 0.0, -8.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0] 
 
-Average of difference in objective value is:  0.0 
+Average of difference in objective value is:  -0.75 
 
-Standard deviation of difference in objective value is:  0.0 
+Standard deviation of difference in objective value is:  1.63935963108 
 
 (6)Accuracy: 
 
 Total number of simulations:  40 
 
-Number of simulations which are predicted correctly: 38
+Number of simulations which are predicted correctly: 25
 
-Percentage of simulations predicted correctly:  95.0 %
+Percentage of simulations predicted correctly:  62.5 %
 
 (7)Optimal solutions: 
 
-Number of optimal solutions: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 5, 2, 2, 2]
+Number of optimal solutions: [2, 2, 1, 10, 1, 1, 12, 1, 4, 4, 4, 2, 1, 1, 20, 20, 1, 1, 1, 1, 5, 1, 1, 14, 1, 4, 8, 2, 1, 20, 1, 8, 12, 1, 1, 20, 12, 1, 20, 1]
 
-Average number of optimal solutions: 1.325
+Average number of optimal solutions: 5.6
 

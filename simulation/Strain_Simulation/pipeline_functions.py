@@ -1705,7 +1705,7 @@ def minNewStrainProp(solution, data, strains, refStrains, loci, newNameToOriName
 #    varAndProp["Artificial"] = varAndProp["Artificial"] + varAndProp["Variant"]
 
     #add error variables
-    errorThres = 0.25
+    errorThres = 0.10
     model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Decision Variable"].tolist(), lb=[0]*varAndProp.shape[0], ub= [errorThres]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
 #    model.variables.add(obj=[1]*varAndProp.shape[0], names=varAndProp["Artificial"].tolist(), lb=[0]*varAndProp.shape[0], ub= [0.2]*varAndProp.shape[0], types=[model.variables.type.continuous]*varAndProp.shape[0])
 #    artificial_constr1 = [[[artif, err],[1,1]] for artif, err in itertools.izip(varAndProp["Artificial"].tolist(), varAndProp["Decision Variable"].tolist())]

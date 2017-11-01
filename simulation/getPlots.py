@@ -7,9 +7,11 @@ Created on Mon Jun  5 16:28:49 2017
 """
 
 import argparse
+import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
+matplotlib.style.use('ggplot')
 
 def construct_boxPlot(csv,type_of_data,name,coverage):
     if type_of_data == 'Recall':

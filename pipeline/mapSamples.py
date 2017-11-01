@@ -10,6 +10,14 @@ import os
 import time
 import argparse
 
+'''
+Summarize required information for our project from SAM file and write as .txt file
+Input:
+    path, path to write the file
+    samp, name of sample
+    gene, gene
+    option, paired or singleton
+'''
 def writeReadTable(path, samp, gene, option):
     readOutFile = open("{0}{1}_{2}_{3}NoHeader.sam".format(path, samp, gene, option))
     writefile = open("{0}_{1}_{2}_reads.txt".format(samp, gene, option), "w")
