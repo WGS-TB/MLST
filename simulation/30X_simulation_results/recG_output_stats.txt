@@ -142,13 +142,13 @@ Qscores are: [75347.0, 75024.0, 75347.0, 75024.0]
 Minimum q score is :75024.0
 True variants are: ['recG_76', 'recG_62', 'recG_23', 'recG_125', 'recG_40']
 
-Predicted variants are: ['recG_125', 'recG_23', 'recG_40', 'recG_62', 'recG_76']
+Predicted variants are: ['recG_125', 'recG_23', 'recG_40', 'recG_67', 'recG_76']
 
 True proportions are: {'recG_76': 0.41487149099926984, 'recG_125': 0.15163136217990508, 'recG_62': 0.0057454221491795195, 'recG_23': 0.1912730931173907, 'recG_40': 0.23647863155425483}
 
-Predicted proportions using Counting method are: {'recG_76': 0.31944444440000003, 'recG_125': 0.1944444444, 'recG_62': 0.030303030299999999, 'recG_23': 0.18181818180000001, 'recG_40': 0.27398989899999998}
+Predicted proportions using Counting method are: {'recG_76': 0.31944444440000003, 'recG_125': 0.1944444444, 'recG_67': 0.030303030299999999, 'recG_23': 0.18181818180000001, 'recG_40': 0.27398989899999998}
 
-This sim is predicted correctly based on quality score.
+This sim is not predicted correctly based on quality score.
 More than 1 solution having minimum quality score
 ======================================== SIMULATION 11 ====================================================
 
@@ -174,13 +174,13 @@ Qscores are: [113956.0, 113956.0, 113792.0, 113956.0, 113792.0, 113792.0]
 Minimum q score is :113792.0
 True variants are: ['recG_73', 'recG_76', 'recG_99', 'recG_29', 'recG_150', 'recG_14']
 
-Predicted variants are: ['recG_14', 'recG_150', 'recG_29', 'recG_73', 'recG_76', 'recG_99']
+Predicted variants are: ['recG_112', 'recG_14', 'recG_150', 'recG_29', 'recG_73', 'recG_99']
 
 True proportions are: {'recG_76': 0.010221449826557, 'recG_99': 0.49369071022837235, 'recG_29': 0.14657363837994147, 'recG_73': 0.027400721466612547, 'recG_14': 0.11640030772931328, 'recG_150': 0.2057131723692035}
 
-Predicted proportions using Counting method are: {'recG_76': 0.030303030299999999, 'recG_99': 0.44318181820000002, 'recG_29': 0.1515151515, 'recG_73': 0.0416666667, 'recG_14': 0.12121212119999999, 'recG_150': 0.21212121210000001}
+Predicted proportions using Counting method are: {'recG_99': 0.44318181820000002, 'recG_29': 0.1515151515, 'recG_73': 0.0416666667, 'recG_112': 0.030303030299999999, 'recG_14': 0.12121212119999999, 'recG_150': 0.21212121210000001}
 
-This sim is predicted correctly based on quality score.
+This sim is not predicted correctly based on quality score.
 More than 1 solution having minimum quality score
 ======================================== SIMULATION 13 ====================================================
 
@@ -190,13 +190,13 @@ Qscores are: [113793.0, 113793.0]
 Minimum q score is :113793.0
 True variants are: ['recG_45', 'recG_4', 'recG_206', 'recG_72', 'recG_146', 'recG_172']
 
-Predicted variants are: ['recG_146', 'recG_172', 'recG_206', 'recG_4', 'recG_45', 'recG_72']
+Predicted variants are: ['recG_146', 'recG_206', 'recG_28', 'recG_4', 'recG_45', 'recG_72']
 
 True proportions are: {'recG_206': 0.13234792704796516, 'recG_72': 0.22259833033600934, 'recG_146': 0.2979545422859397, 'recG_45': 0.004038644211002892, 'recG_172': 0.04969195017954185, 'recG_4': 0.29336860593954106}
 
-Predicted proportions using Counting method are: {'recG_206': 0.125, 'recG_72': 0.21875, 'recG_146': 0.28125, 'recG_172': 0.0625, 'recG_45': 0.03125, 'recG_4': 0.28125}
+Predicted proportions using Counting method are: {'recG_206': 0.125, 'recG_72': 0.21875, 'recG_28': 0.0625, 'recG_146': 0.28125, 'recG_45': 0.03125, 'recG_4': 0.28125}
 
-This sim is predicted correctly based on quality score.
+This sim is not predicted correctly based on quality score.
 More than 1 solution having minimum quality score
 ======================================== SIMULATION 14 ====================================================
 
@@ -252,13 +252,13 @@ Qscores are: [146617.0, 146617.0, 146617.0, 146617.0, 146617.0, 146617.0, 146617
 Minimum q score is :146617.0
 True variants are: ['recG_161', 'recG_134', 'recG_88', 'recG_159', 'recG_103', 'recG_192', 'recG_92']
 
-Predicted variants are: ['recG_103', 'recG_134', 'recG_159', 'recG_161', 'recG_192', 'recG_88', 'recG_92']
+Predicted variants are: ['recG_134', 'recG_159', 'recG_161', 'recG_192', 'recG_74', 'recG_88', 'recG_92']
 
 True proportions are: {'recG_192': 0.12706721653008052, 'recG_88': 0.10422742890314553, 'recG_92': 0.2898529408034932, 'recG_103': 0.14686580028338592, 'recG_134': 0.09844871841452747, 'recG_159': 0.04684510643768235, 'recG_161': 0.18669278862768499}
 
-Predicted proportions using Counting method are: {'recG_192': 0.12121212119999999, 'recG_88': 0.12121212119999999, 'recG_92': 0.27272727270000002, 'recG_103': 0.1515151515, 'recG_134': 0.090909090900000003, 'recG_159': 0.060606060599999997, 'recG_161': 0.18181818180000001}
+Predicted proportions using Counting method are: {'recG_192': 0.12121212119999999, 'recG_74': 0.1515151515, 'recG_88': 0.12121212119999999, 'recG_92': 0.27272727270000002, 'recG_134': 0.090909090900000003, 'recG_159': 0.060606060599999997, 'recG_161': 0.18181818180000001}
 
-This sim is predicted correctly based on quality score.
+This sim is not predicted correctly based on quality score.
 ======================================== SIMULATION 18 ====================================================
 
 Number of optimal solutions: 1
@@ -388,13 +388,13 @@ Qscores are: [118587.0, 118587.0]
 Minimum q score is :118587.0
 True variants are: ['recG_55', 'recG_31', 'recG_41', 'recG_188', 'recG_99', 'recG_197']
 
-Predicted variants are: ['recG_188', 'recG_197', 'recG_31', 'recG_41', 'recG_55', 'recG_99']
+Predicted variants are: ['recG_188', 'recG_197', 'recG_32', 'recG_41', 'recG_55', 'recG_99']
 
 True proportions are: {'recG_99': 0.20965336963626918, 'recG_31': 0.061927214200191066, 'recG_197': 0.3182952025629553, 'recG_55': 0.04055278404943387, 'recG_188': 0.030313117378197942, 'recG_41': 0.3392583121729526}
 
-Predicted proportions using Counting method are: {'recG_99': 0.21212121210000001, 'recG_31': 0.060606060599999997, 'recG_197': 0.303030303, 'recG_55': 0.083333333300000006, 'recG_188': 0.030303030299999999, 'recG_41': 0.31060606060000001}
+Predicted proportions using Counting method are: {'recG_99': 0.21212121210000001, 'recG_32': 0.060606060599999997, 'recG_197': 0.303030303, 'recG_55': 0.083333333300000006, 'recG_188': 0.030303030299999999, 'recG_41': 0.31060606060000001}
 
-This sim is predicted correctly based on quality score.
+This sim is not predicted correctly based on quality score.
 ======================================== SIMULATION 27 ====================================================
 
 Number of optimal solutions: 1
@@ -449,13 +449,13 @@ Qscores are: [95232.0, 95232.0]
 Minimum q score is :95232.0
 True variants are: ['recG_131', 'recG_10', 'recG_62', 'recG_193', 'recG_166']
 
-Predicted variants are: ['recG_10', 'recG_131', 'recG_166', 'recG_193', 'recG_62']
+Predicted variants are: ['recG_10', 'recG_131', 'recG_193', 'recG_62', 'recG_92']
 
 True proportions are: {'recG_10': 0.07724852322219433, 'recG_193': 0.35843654965926447, 'recG_62': 0.12179679446592034, 'recG_131': 0.2785493507464722, 'recG_166': 0.16396878190614866}
 
-Predicted proportions using Counting method are: {'recG_10': 0.09375, 'recG_193': 0.34375, 'recG_62': 0.125, 'recG_131': 0.28125, 'recG_166': 0.15625}
+Predicted proportions using Counting method are: {'recG_10': 0.09375, 'recG_193': 0.34375, 'recG_92': 0.15625, 'recG_62': 0.125, 'recG_131': 0.28125}
 
-This sim is predicted correctly based on quality score.
+This sim is not predicted correctly based on quality score.
 More than 1 solution having minimum quality score
 ======================================== SIMULATION 31 ====================================================
 
@@ -612,35 +612,35 @@ This sim is predicted correctly based on quality score.
 
 (1)Total Variation Distance:
 
-Counting Method ~ Total variation distances are: [2.357322747856208, 3.1935810670388927, 5.1081929764765794, 2.0205451533091554, 0.6261979391832373, 1.190085135401997, 10.797251823790525, 1.8268789974635744, 0.74725225261277473, 10.488195786666052, 7.4310991587057158, 5.0508892028372259, 4.0019405609455267, 5.87629633468352, 0.60950698840528605, 7.9691002203220878, 3.5394997725786177, 1.8230793178538443, 3.0073713293335724, 56.460189185321227, 11.313709024514143, 1.7992719470721106, 25.03217602925994, 3.9703312819937877, 10.885342668290388, 4.5248391764296931, 1.584121277595897, 0.50241015833409897, 6.2692551385262361, 2.2405331565413134, 4.1100109855958422, 15.802397951388983, 2.0762252817459399, 0.018528897613265261, 4.9446418101410385, 1.5169391394483021, 6.5377152526387841, 6.3795323564197943, 1.6868166734365677, 0.19636619694833879] 
+Counting Method ~ Total variation distances are: [2.357322747856208, 3.1935810670388927, 5.1081929764765794, 2.0205451533091554, 0.6261979391832373, 1.190085135401997, 10.797251823790525, 1.8268789974635744, 0.74725225261277473, 11.062738001584007, 7.4310991587057158, 6.0730341854929266, 8.9711355788997107, 5.87629633468352, 0.60950698840528605, 7.9691002203220878, 18.226079800917212, 1.8230793178538443, 3.0073713293335724, 56.460189185321227, 11.313709024514143, 1.7992719470721106, 25.03217602925994, 3.9703312819937877, 10.885342668290388, 10.585445236429694, 1.584121277595897, 0.50241015833409897, 6.2692551385262361, 17.865533156541314, 4.1100109855958422, 15.802397951388983, 2.0762252817459399, 0.018528897613265261, 4.9446418101410385, 1.5169391394483021, 6.5377152526387841, 6.3795323564197943, 1.6868166734365677, 0.19636619694833879] 
 
-Counting Method ~ The average of total variation distance is: 6.13789100887 
+Counting Method ~ The average of total variation distance is: 7.21134271646 
 
-Counting Method ~ The standard deviation of total variation distance is: 9.38447108536 
+Counting Method ~ The standard deviation of total variation distance is: 9.69942809565 
 
 (2)Total Variation Distance for variants which are predicted correctly:
 
-Counting Method ~ Total variation distances are: [2.357322747856208, 2.0205451533091554, 0.6261979391832373, 1.190085135401997, 10.797251823790525, 1.8268789974635744, 0.74725225261277473, 10.488195786666052, 5.0508892028372259, 4.0019405609455267, 5.87629633468352, 0.60950698840528605, 3.5394997725786177, 1.8230793178538443, 3.0073713293335724, 1.7992719470721106, 3.9703312819937877, 10.885342668290388, 4.5248391764296931, 1.584121277595897, 0.50241015833409897, 6.2692551385262361, 2.2405331565413134, 4.1100109855958422, 15.802397951388983, 2.0762252817459399, 0.018528897613265261, 4.9446418101410385, 1.5169391394483021, 6.5377152526387841, 6.3795323564197943, 1.6868166734365677, 0.19636619694833879] 
+Counting Method ~ Total variation distances are: [2.357322747856208, 2.0205451533091554, 0.6261979391832373, 1.190085135401997, 10.797251823790525, 1.8268789974635744, 0.74725225261277473, 5.87629633468352, 0.60950698840528605, 1.8230793178538443, 3.0073713293335724, 1.7992719470721106, 3.9703312819937877, 10.885342668290388, 1.584121277595897, 0.50241015833409897, 6.2692551385262361, 4.1100109855958422, 15.802397951388983, 2.0762252817459399, 0.018528897613265261, 4.9446418101410385, 1.5169391394483021, 6.5377152526387841, 6.3795323564197943, 1.6868166734365677, 0.19636619694833879] 
 
-Counting Method ~ The average of total variation distance is: 3.9093209907 
+Counting Method ~ The average of total variation distance is: 3.67265537174 
 
-Counting Method ~ The standard deviation of total variation distance is: 3.60119867855 
+Counting Method ~ The standard deviation of total variation distance is: 3.74442169631 
 
 (3) Precision: 
 
-Precision is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6666666666666666, 0.8333333333333334, 1.0, 0.7142857142857143, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
+Precision is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8, 0.8571428571428571, 0.8333333333333334, 0.8333333333333334, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 0.6666666666666666, 0.8333333333333334, 1.0, 0.7142857142857143, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 0.8, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
 
-Average of precision is:  0.976785714286 
+Average of precision is:  0.950714285714 
 
-Standard deviation of precision is:  0.0740563270029 
+Standard deviation of precision is:  0.0904859017345 
 
 (4) Recall : 
 
-Recall is: [1.0, 0.8333333333333334, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 0.5, 0.8333333333333334, 1.0, 0.7142857142857143, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
+Recall is: [1.0, 0.8333333333333334, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8, 0.8571428571428571, 0.8333333333333334, 0.8333333333333334, 1.0, 1.0, 0.8333333333333334, 0.8571428571428571, 1.0, 1.0, 0.5, 0.8333333333333334, 1.0, 0.7142857142857143, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 0.8, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
 
-Average of recall is:  0.960119047619 
+Average of recall is:  0.934047619048 
 
-Standard deviation of recall is:  0.0999415220173 
+Standard deviation of recall is:  0.108731867673 
 
 (5) Objective Value: 
 
@@ -658,9 +658,9 @@ Standard deviation of difference in objective value is:  0.15612494996
 
 Total number of simulations:  40 
 
-Number of simulations which are predicted correctly: 33
+Number of simulations which are predicted correctly: 27
 
-Percentage of simulations predicted correctly:  82.5 %
+Percentage of simulations predicted correctly:  67.5 %
 
 (7)Optimal solutions: 
 
@@ -671,5 +671,5 @@ Average number of optimal solutions: 3.1
 (8)Statistics about quality score: 
 
 Number of simulations having multiple solutions: 19
-Number of these simulations which are correct: 13
-The percentage is : 68.4210526316 %
+Number of these simulations which are correct: 7
+The percentage is : 36.8421052632 %
