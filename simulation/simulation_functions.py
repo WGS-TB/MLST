@@ -293,7 +293,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
             
         min_Qscore = np.argmin(Qscore_list)
         var_predicted = all_solutions[min_Qscore]
-        minQIndices = np.where(np.array(Qscore_list) == np.array(Qscore_list).min())
+        minQIndices = np.where(np.array(Qscore_list) == np.array(Qscore_list).min())[0]
         
         if len(minQIndices) > 1:
             print("More than 1 solution having minimum quality score")
