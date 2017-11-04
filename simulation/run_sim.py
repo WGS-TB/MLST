@@ -70,7 +70,7 @@ if args["simulationResultFolder"] not in directoriesHere:
     
 #Run the simulation
 os.chdir("sim_data")
-#originalSTDOut = sys.stdout
+originalSTDOut = sys.stdout
 
 #Output statistics as csv file
 precision_list = list()
@@ -105,7 +105,7 @@ for locus in genes:
     totalVarDist_count_list.append(totalVarDist_count)
 #    totalVarDist_bayes_list.append(totalVarDist_bayes)
     
-    #sys.stdout = originalSTDOut
+    sys.stdout = originalSTDOut
 
     os.chdir("..")
     print("")
