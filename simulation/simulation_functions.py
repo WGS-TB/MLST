@@ -262,12 +262,10 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
 #        singletonDF = returnMismatchMatrix(singleton_readsTxt_path, "singleton")
         dataMatrix = pairedDF
         dataMatrix = dataMatrix.fillna(-1)
-        dataMatrix.rename(columns={'Unnamed: 0': 'Read'}, inplace=True)
-
-        #Qmatrix = Generate_Qmatrix(readsTxt_path)
         paired_Qmatrix = pf.returnQualityMatrix(paired_readsTxt_path, "paired")
 #        singleton_Qmatrix = returnQualityMatrix(singleton_readsTxt_path, "singleton")
         Qmatrix = paired_Qmatrix
+        
         #Run the ILP solver
         pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = varSolver.solver(dataMatrix)
 #        if len(all_solutions) == 1:
@@ -290,27 +288,15 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
             
             if score <= min_score:
                 min_score = score
-            
-        #If there is one solution among all optimal which matches true variants, assign to var_predicted to generate statistics
-        '''for solution in all_solutions:
-            if set(solution) == set(true_variants):
-                var_predicted = solution
-                break
-        '''
+                
             Qscore_list.append(pf.compute_QSum(Qmatrix.loc[reads_cov,all_solutions[i]]))
             
         min_Qscore = np.argmin(Qscore_list)
         var_predicted = all_solutions[min_Qscore]
-        minQIndices = np.where(np.array(Qscore_list) == np.array(Qscore_list).min())[0]
-
-        ''' If more than 1 solution having min q score, check whether the true sol is found '''
+        minQIndices = np.where(np.array(Qscore_list) == np.array(Qscore_list).min())
+        
         if len(minQIndices) > 1:
             print("More than 1 solution having minimum quality score")
-            
-            for index in minQIndices:
-                if set(all_solutions[index]) == set(true_variants):
-                    var_predicted = all_solutions[index]
-                    break
             
         #Keep track of precision and recall for all simulations
         precision_list.append(precision(var_predicted, true_variants))
