@@ -25,10 +25,12 @@ def construct_boxPlot(csv,type_of_data,name,coverage):
         limit = [-10, 10]
     else:
         label = 'Total Variation Distance'
-        limit = [-20,100]
+        limit = [-1,2]
     #read in the dataframe
     df = pd.read_csv(csv, sep='\t')
     df.drop(df.columns[[0]], axis=1,inplace=True)
+    if label == 'Total Variation Distance':
+        df = df/100.0
     #create a plot object
     plt.figure()
     #plot the data
