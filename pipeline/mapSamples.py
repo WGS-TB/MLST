@@ -9,6 +9,8 @@ Created on Fri Jun  12 13:02:22 2017
 import os
 import time
 import argparse
+import sys
+from subprocess import call
 
 '''
 Summarize required information for our project from SAM file and write as .txt file
@@ -37,9 +39,21 @@ def writeReadTable(path, samp, gene, option):
 
 start_time = time.time()
 ap = argparse.ArgumentParser()
-ap.add_argument("-c", "--numOfCores", required = False, default = 4, type=int)
+ap.add_argument("-c", "--numOfCores", required = False, default = 4, type=int, help="Number of cores to use")
+ap.add_argument("-b", "--bowtie", required=False, default="", help="Path to folder containing bowtie and bowtie-build. Default assumes both bowtie and bowtie-build in user's bin folder")
+ap.add_argument("-s", "--samtools", required=False, default="samtools",help="Path for samtools. Default assumes in user's bin.")
 args = vars(ap.parse_args())
 
+if args["bowtie"] == "":
+    bt=""
+else:
+    bt=os.path.abspath(args["bowtie"])+"/"
+
+if args["samtools"] != "samtools":
+    samTools = os.path.abspath(args["samtools"])
+else:
+    samTools = args["samtools"]
+            
 #currentpath = /pipeline/
 currentPath = os.getcwd()
 data_path = currentPath +"/data/"
@@ -54,6 +68,7 @@ if not os.path.exists("variantsAndProp"):
 os.chdir("variantsAndProp")
 
 ''' $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Mapping Samples $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$''' 
+samples=["SRR2034333"]
 for samp in samples:
     if not os.path.exists(samp):
         os.mkdir(samp)
@@ -71,25 +86,36 @@ for samp in samples:
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~ Gene {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(gene))
         print("")
         #building index for gene
-        buildIndexCmd = "bowtie-build {0}{1}.fas {1}_bowtie >/dev/null".format(lociDb_path, gene)
+#        buildIndexCmd = args["bowtie"] + "/bowtie-build {0}{1}.fas {1}_bowtie >/dev/null".format(lociDb_path, gene)
+            
+        try:
+            buildIndexCmd = bt+"bowtie-build {0}{1}.fas {1}_bowtie >/dev/null".format(lociDb_path, gene)
+            os.system(buildIndexCmd)
+        except OSError:
+            print("Error in building index. Please make sure the path for bowtie and bowtie-build is correct")
+            sys.exit(-1)
 #        buildIndexCmd = "bowtie2-build {0}{1}.fas {1}_bowtie2 >/dev/null".format(lociDb_path, gene)
-        os.system(buildIndexCmd)
+#        os.system(buildIndexCmd)
         print("..... Done building index .....")
         
         #map sample to locus
         print("..... Mapping sample reads to variants .....")
         print("")
-        bowtieMapCmd = "bowtie --best --strata -a -v 3 -p {0} {1}_bowtie -1 {2}{3}_1.fastq -2 {2}{3}_2.fastq -S {2}{3}_{1}.sam >/dev/null".format(args["numOfCores"],gene, data_path+samp+"/", samp)
+        bowtieMapCmd = bt+"bowtie --best --strata -a -v 3 -p {0} {1}_bowtie -1 {2}{3}_1.fastq -2 {2}{3}_2.fastq -S {2}{3}_{1}.sam >/dev/null".format(args["numOfCores"],gene, data_path+samp+"/", samp)
 #        bowtieMapCmd = 'bowtie2 -x {1}_bowtie2 -a -p {0} -1 {2}{3}_1.fastq -2 {2}{3}_2.fastq -S {2}{3}_{1}.sam >/dev/null 2>&1'.format(args["numOfCores"],gene, data_path+samp+"/", samp)        
         os.system(bowtieMapCmd)
         
         #handle sam files for writing reads txt file
-        mapped_cmd = "samtools view -h -F4 {0}{1}_{2}.sam > {0}{1}_{2}_mapped.sam".format(data_path+samp+"/", samp, gene)
-        paired_cmd = "samtools view -F8 {0}{1}_{2}_mapped.sam > {0}{1}_{2}_pairedNoHeader.sam".format(data_path+samp+"/", samp, gene)
+        mapped_cmd = samTools + " view -h -F4 {0}{1}_{2}.sam > {0}{1}_{2}_mapped.sam".format(data_path+samp+"/", samp, gene)
+        paired_cmd = samTools + " view -F8 {0}{1}_{2}_mapped.sam > {0}{1}_{2}_pairedNoHeader.sam".format(data_path+samp+"/", samp, gene)
 #        singleton_cmd = "samtools view -f8 {0}{1}_{2}_mapped.sam > {0}{1}_{2}_singletonNoHeader.sam".format(data_path+samp+"/", samp, gene)
         
-        os.system(mapped_cmd)
-        os.system(paired_cmd)
+        try:
+            os.system(mapped_cmd)
+            os.system(paired_cmd)
+        except OSError:
+            print("Error in building index. Please make sure the path for bowtie and bowtie-build is correct")
+            sys.exit(-1)
 #        os.system(singleton_cmd)
         
         #create reads table
