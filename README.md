@@ -30,7 +30,7 @@ The script will output some intermediate results for you to keep track.
 
 5) To solve the global strain diversity problem, run the following script:
 ```
-globalStrainDiversity.py [-h] [-o OUTPUT] [-oc OBJECTIVECOMPONENT] [-timelim TIMELIMIT] [-g GAP]
+python globalStrainDiversity.py [-h] [-o OUTPUT] [-oc OBJECTIVECOMPONENT] [-timelim TIMELIMIT] [-g GAP]
 ```
 Specify `-o`, the folder name for the results to be stored. Default will be `strainsAndProp`. The `-oc` argument specifies different formulation of the objective function, 'all' includes all components of the objective function, 'noPropAndErr' omits the proportion and error component. `-g` specifies the relative gap in % to stop the solver, default is 5%. `-timelim` specifies the maximum time limit in seconds before stopping the solver, default is 600 seconds. The program will stop if and only if `-g` and `-timelim` are both satisfied. For example, if `-g` is 5 and `timelim` is 600, if the relative gap is above 5% and the 600 seconds have passed, the program will not stop until gap of 5% is reached.
 
