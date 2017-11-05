@@ -1,7 +1,18 @@
 import os
+from subprocess import call
+import argparse
+import sys
 
 '''Run this script to download all samples written in SRR_Acc_List.txt file '''
+ap = argparse.ArgumentParser()
+ap.add_argument("-c", "--cmd", required = False, default="fastq-dump", help="Path to fastq-dump. Default assumes fastq-dump is in user's bin file")
+args = vars(ap.parse_args())
 
+if args["cmd"] != "fastq-dump":
+    cmd_path = os.path.abspath(args["cmd"])
+else:
+    cmd_path = "fastq-dump"
+    
 sample = list()
 sampleNumbersTxt = open("SRR_Acc_List.txt", "r")
 
@@ -18,9 +29,14 @@ for samp in sample:
         os.mkdir(samp)
     os.chdir(samp)
     print("~~~~~ Downloading sample {} ~~~~~~\n".format(samp))
-    os.system("fastq-dump --split-3 {}".format(samp))
+    try:
+        call([cmd_path, "--split-3", samp])
+    except OSError:
+        print("Error in downloading. Please check the path to fastq-dump is correct.")
+        sys.exit(-1)
+#    os.system("fastq-dump --split-3 {}".format(samp))
     print("~~~~~ Downloaded sample {} ~~~~~\n".format(samp))
-    os.chdir("..")
+    os.chdir("..")  
     
 print("**** All samples downloaded ****")
 os.chdir("..")
