@@ -1529,7 +1529,8 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     for samp in allSamples:
         output = proportionWeightDecVarDF[proportionWeightDecVarDF["Sample"] == samp].merge(strainsNeeded).drop(["Weights", "Sample"],1)
         output["Proportion"] = model.solution.get_values(output["Decision Variable"].tolist())
-        output.drop("Decision Variable", axis=1, inplace=True)
+        output = output[output["Proportion"] > 0.0]
+	output.drop("Decision Variable", axis=1, inplace=True)
         output = output[["ST", "New/Existing"]+loci+["Proportion"]]
         print output
         output.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, newNameToOriName[samp]))
