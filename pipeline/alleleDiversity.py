@@ -36,9 +36,9 @@ reference = pd.read_csv(currentPath+"/strain_ref.txt",sep="\t",usecols=range(1,l
 for name in loci:
     reference["%s" %name] = name + "_" + reference["%s" %name].astype(str)
 
-#samples = [i for i in os.listdir(data_path)]
+
 ap = argparse.ArgumentParser()
-ap.add_argument("-s", "--sample", required = True, help="Sample name")
+ap.add_argument("-s", "--sample", required = False, help="Sample name, or default: runs on all samples in variantsAndProp folder", default='all')
 #ap.add_argument("-lo", "--localOption", required=True, help="Version of optimization program to use. 'mixed': mixed ILP, 'separated': pure ILP + LP")
 #ap.add_argument("-timelim", "--timeLimit", required=False, help="Time limit in integer(sec) for cplex solver for mixed ILP. Default: 600sec", default=600)
 #ap.add_argument("-g", "--gap", required=False, help="Relative gap tolerance(percent) for cplex solver for mixed ILP. Default: 5", default=5)
@@ -46,7 +46,10 @@ ap.add_argument("-s", "--sample", required = True, help="Sample name")
 #only for MILP
 #ap.add_argument("-oc", "--objectiveComponent", required=False, default="all", help="Objective components, only applicable to mixed ILP. Default: 'all'. 'noPropAndErr': Does not include proportion and error in objective function")
 args = vars(ap.parse_args())
-samples = [args["sample"]]
+if args["sample"] == 'all':
+    samples = [i for i in os.listdir(data_path)]
+else:
+    samples = [args["sample"]]
 
 #currentpath= /pipeline/variantsAndProp
 os.chdir("variantsAndProp")
