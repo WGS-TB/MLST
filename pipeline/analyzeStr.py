@@ -277,4 +277,12 @@ existStrComp.drop(['Sum'], axis=1).plot(kind='bar', stacked=True, legend=False, 
 #plt.tight_layout()
 #plt.savefig("existingStrainsComposition_err25.png", dpi=1000)
 
-
+timeTakenAlleleDiv = pd.read_csv("time_ilp1.csv")
+timeTakenAlleleDiv.sort_values(by="Time(sec)", inplace=True, ascending=False)
+timeTakenAlleleDiv["log(Time in sec)"] = np.log(timeTakenAlleleDiv["Time(sec)"])
+timeTakenAlleleDiv.plot(kind="bar",x="Sample", y="log(Time in sec)")
+plt.xlabel("Samples")
+plt.ylabel("Natural log of time taken in seconds")
+plt.title("Natural log of time taken for each sample when \nsolving the allele diversity problem")
+plt.tight_layout()
+plt.savefig("time_alleleDiv.png", dpi=1000)
