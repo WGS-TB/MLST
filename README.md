@@ -1,6 +1,6 @@
 # Deconvoluting the Diversity of Within-host Pathogen Strain in a MLST Framework
 ## Pre-requisites
-1) We are using Python 2.7.
+1) We are using Python 2.7. You will only need the folder **BorreliaPipeline** to run the pipeline.
 
 2) SRA toolkit: To download sample reads. Please download the toolkit here: https://www.ncbi.nlm.nih.gov/sra/docs/toolkitsoft/. You will need `fastq-dump` to download the sample reads. Our samples are downloaded using `fastq-dump` v2.8.2. Copy `fastq-dump` into your bin folder (ours: /usr/local/bin) or provide the path to `fastq-dump` to `download_samples.py` script. The python script calls the `fastq-dump` command to download sample reads. 
 
