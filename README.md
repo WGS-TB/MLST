@@ -14,9 +14,9 @@
 
 
 ## Instructions to run the pipeline
-1) The required scripts and files are in `pipeline` folder (except for sample reads as the files are big). 
+1) The required scripts and files are in `pipeline` folder in `BorreliaPipeline` folder (except for sample reads as the files are big). 
 
-2) Run `python download_samples.py [-h] [-c CMD]` to download the samples' reads (downloaded samples are based on the SRR_Acc_List.txt). `download_samples.py` has an optional argument `-c`, which sets the path for `fastq-dump` command needed to download the reads for Borrelia samples. By default, it assumes `fastq-dump` is in your bin folder. After running this script, it will create a `data` folder which contains folders for each sample.
+2) Run `python download_samples.py [-h] [-c CMD]` in the `pipeline` folder to download the samples' reads (downloaded samples are based on the SRR_Acc_List.txt). `download_samples.py` has an optional argument `-c`, which sets the path for `fastq-dump` command needed to download the reads for Borrelia samples. By default, it assumes `fastq-dump` is in your bin folder. After running this script, it will create a `data` folder which contains folders for each sample.
 
 3) Since we are using Bowtie to map the sample reads, we run `python mapSamples.py [-h] [-c NUMOFCORES] [-b BOWTIE] [-s SAMTOOLS]` to map the sample reads. `-c` specifies the number of core for running Bowtie, default is 4. `-b` specifies the path to the folder containing two commands `bowtie` and `bowtie-build`, default assumes these two commands are in the user's bin folder. `-s` specifies the path of `samtools`, default assumes the command is in user's bin folder. It will be easier to understand with a working example: `python mapSamples.py -c 2 -b ../bowtieFolder/ -s ../../samtools`, for example. The script will create a `variantsAndProp` folder containing a folder for each sample, where each of these folder contains a list of `sampleX_geneY_paired_reads.txt` text files, in which the text file contains information needed for our first stage ILP pipeline. These information are extracted from `.sam` file.
 
@@ -37,10 +37,14 @@ Specify `-o`, the folder name for the results to be stored. Default will be `str
 The script will output some intermediate results for you to keep track. It will create a new folder in your current directory with name specified by `-o`. The folder contains a list of `sampleX_strainsAndProportions.csv` with sampleX corresponds a particular sample, and the csv file contains the strains and their proportions identified in sampleX.
 
 ## Instructions to run the allele diversity simulation
-1) The required scripts and files to run the simulation and to generate statistics, graphs are in the `simulation` folder.
+1) The required scripts and files to run the simulation are in the `alleleSimulation` folder in the `BorreliaPipeline` folder.
 
-2) You only have to run 
+2) In the `alleleSimulation` folder, you only have to run 
 ```
 python run_sim.py [-h] [-i NUMOFITER] [-f SIMULATIONRESULTFOLDER] [-c COVERAGE] [-b BOWTIE] [-s SAMTOOLS] [-a ART]
 ``` 
-`-i` specifies the number of simulations on each gene, default is 40. `-f` specifies the name of the folder to store the results, default is simulation_results. `-c` specifies the coverage to test on, default is 30. `-b` specifies the path to the folder containing `bowtie` and `bowtie-build` commands, default assumes that both commands are in user's bin folder. `-s` specifies the path to `samtools`, default assumes it's in your bin folder. `-a` specifies the path to `art_illumina`, default assumes that it's in the user's bin folder. 
+`-i` specifies the number of simulations on each gene, default is 40. `-f` specifies the name of the folder to store the results, default is simulation_results. `-c` specifies the coverage to test on, default is 30. `-b` specifies the path to the folder containing `bowtie` and `bowtie-build` commands, default assumes that both commands are in user's bin folder. `-s` specifies the path to `samtools`, default assumes it's in your bin folder. `-a` specifies the path to `art_illumina`, default assumes that it's in the user's bin folder. In the results folder, it will contain .csv and .png files representing different statistics. 
+
+## Regenerating plots for the paper
+
+1) A jupyter notebook to visualize the figures are in the `plot` folder under `BorreliaPipeline` folder. In the `plot` folder, just run `jupyter notebook` to start the notebook.
