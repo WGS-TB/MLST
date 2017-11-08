@@ -50,7 +50,8 @@ The script will output some intermediate results for you to keep track. It will 
 python run_sim.py [-h] [-i NUMOFITER] [-f SIMULATIONRESULTFOLDER] [-c COVERAGE] [-b BOWTIE] [-s SAMTOOLS] [-a ART]
 ``` 
 `-i` specifies the number of simulations on each gene, default is 40. `-f` specifies the name of the folder to store the results, default is simulation_results. `-c` specifies the coverage to test on, default is 30. `-b` specifies the path to the folder containing `bowtie` and `bowtie-build` commands, default assumes that both commands are in user's bin folder. `-s` specifies the path to `samtools`, default assumes it's in your bin folder. `-a` specifies the path to `art_illumina`, default assumes that it's in the user's bin folder. In the results folder, it will contain .csv and .png files representing different statistics. 
-
+## Instructions to run the strain diversity simulation
+1) The required scripts and files to run the simualtions are in the `strainSimulation` folder in the `BorreliaPipeline` folder
 ## Regenerating plots for the paper
 
 1) A jupyter notebook to visualize the figures are in the `plot` folder under `BorreliaPipeline` folder. In the `plot` folder, just run `jupyter notebook` to start the notebook.
