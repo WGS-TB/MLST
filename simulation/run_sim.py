@@ -85,8 +85,8 @@ else:
 
 #Make directory for simulation results
 directoriesHere = [d for d in os.listdir(".") if os.path.isdir(d)]
-if args["simulationResultFolder"] not in directoriesHere:
-    os.mkdir(args["simulationResultFolder"])
+if not os.path.isdir(sim_folder):
+    os.mkdir(sim_folder)
     
 #Run the simulation
 os.chdir("sim_data")
