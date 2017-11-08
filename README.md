@@ -1,6 +1,12 @@
 # Deconvoluting the Diversity of Within-host Pathogen Strain in a MLST Framework
 ## Pre-requisites
-1) We are using Python 2.7. You will only need the folder **BorreliaPipeline** to run the pipeline.
+1) We are using Python 2.7. You will only need the folder **BorreliaPipeline** to run the pipeline. This can be done in the following `git` commands:
+```
+git init
+git remote add origin https://github.com/WGS-TB/MLST
+git fetch origin
+git checkout origin/master -- BorreliaPipeline
+```
 
 2) SRA toolkit: To download sample reads. Please download the toolkit here: https://www.ncbi.nlm.nih.gov/sra/docs/toolkitsoft/. You will need `fastq-dump` to download the sample reads. Our samples are downloaded using `fastq-dump` v2.8.2. Copy `fastq-dump` into your bin folder (ours: /usr/local/bin) or provide the path to `fastq-dump` to `download_samples.py` script. The python script calls the `fastq-dump` command to download sample reads. 
 
