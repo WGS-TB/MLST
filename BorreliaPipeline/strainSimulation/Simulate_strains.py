@@ -456,7 +456,7 @@ def main():
     my_df.to_csv('Values_for_plot.csv')
     #plot the results
     print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Creating plots ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    os.chdir(args["masterDir"]+'/'+outputDir+'/)
+    os.chdir(args["masterDir"]+'/'+outputDir+'/')
     plt.figure()
     plt.hist(recall, bins=np.linspace(0,2))
     plt.title("Plot of simulation recall for {}".format(args['Sim_Type']))
