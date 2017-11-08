@@ -10,7 +10,7 @@
 
 5) ART: For simulating reads. Please download it here: https://www.niehs.nih.gov/research/resources/software/biostatistics/art/. You will need `art_illumina`, copy this into your bin file or provide the path for `art_illumina` to `run_sim.py`. This script runs the allele simulation.
 
-6) Python packages such as numpy and pandas. Please use `pip install` to install these packages.
+6) Possible Python packages you will need: numpy, pandas, matplotlib, linecache, argparse . Please use `pip install` to install these packages if you do not have any of the packages.
 
 
 ## Instructions to run the pipeline
