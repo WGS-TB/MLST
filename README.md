@@ -52,6 +52,13 @@ python run_sim.py [-h] [-i NUMOFITER] [-f SIMULATIONRESULTFOLDER] [-c COVERAGE] 
 `-i` specifies the number of simulations on each gene, default is 40. `-f` specifies the name of the folder to store the results, default is simulation_results. `-c` specifies the coverage to test on, default is 30. `-b` specifies the path to the folder containing `bowtie` and `bowtie-build` commands, default assumes that both commands are in user's bin folder. `-s` specifies the path to `samtools`, default assumes it's in your bin folder. `-a` specifies the path to `art_illumina`, default assumes that it's in the user's bin folder. In the results folder, it will contain .csv and .png files representing different statistics. 
 ## Instructions to run the strain diversity simulation
 1) The required scripts and files to run the simualtions are in the `strainSimulation` folder in the `BorreliaPipeline` folder
+
+2) In the `strainSimulation` folder, you only have to run
+```
+python run_sim.py [-h] [-n NUMOFITER] [-d MASTERDIR] [-r STRAINREF] [-t SIM_TYPE] [-hd HAMMINGDIST] [-st MUT_REC_TYPE]
+``` 
+`-n` specifies the number of simulations iterations to run. The default is 40. `-d` specifies the absolute path to the master directory where one would like the sample files and ther results to be stored. The default will be the current directory where the script is run from. `-r` specifies the absolute path to the text file containing the reference strains. Note, there is no default for this as it is neccessary for the simulations. `-t` specifies the simulation type where the two types are mutation and recombination. The default is set to mutation. `-hd` specifies the hamming distance you would like to use for simulations involving mutations. The default is set to 2. `-st` specifies the type of simulations you would like to run for either mutations or recombinations. Type 1 is the simple case, and type 2 is the complex case. The default is set to simple.
+
 ## Regenerating plots for the paper
 
 1) A jupyter notebook to visualize the figures are in the `plot` folder under `BorreliaPipeline` folder. In the `plot` folder, just run `jupyter notebook` to start the notebook.
