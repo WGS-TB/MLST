@@ -55,7 +55,7 @@ python run_sim.py [-h] [-i NUMOFITER] [-f SIMULATIONRESULTFOLDER] [-c COVERAGE] 
 
 2) In the `strainSimulation` folder, you only have to run
 ```
-python run_sim.py [-h] [-n NUMOFITER] [-d MASTERDIR] [-r STRAINREF] [-t SIM_TYPE] [-hd HAMMINGDIST] [-st MUT_REC_TYPE]
+python Simulate_strains.py [-h] [-n NUMOFITER] [-d MASTERDIR] [-r STRAINREF] [-t SIM_TYPE] [-hd HAMMINGDIST] [-st MUT_REC_TYPE]
 ``` 
 `-n` specifies the number of simulations iterations to run. The default is 40. `-d` specifies the absolute path to the master directory where one would like the sample files and ther results to be stored. The default will be the current directory where the script is run from. `-r` specifies the absolute path to the text file containing the reference strains. Note, there is no default for this as it is neccessary for the simulations. `-t` specifies the simulation type where the two types are mutation and recombination. The default is set to mutation. `-hd` specifies the hamming distance you would like to use for simulations involving mutations. The default is set to 2. `-st` specifies the type of simulations you would like to run for either mutations or recombinations. Type 1 is the simple case, and type 2 is the complex case. The default is set to simple.
 
