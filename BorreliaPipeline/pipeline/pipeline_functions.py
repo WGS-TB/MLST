@@ -1466,7 +1466,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     #writeInfoToCsv()
     
     ''' ================================== Solve ILP ========================================== '''
-    model.write("borreliaLP.lp")
+    #model.write("borreliaLP.lp")
 #    model.set_results_stream(None)
     #Some bound on cplex solver when gap finds it hard to converge
     timelim_cb = model.register_callback(TimeLimitCallback)
@@ -1474,7 +1474,6 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     timelim_cb.timelimit = int(timelimit)
     timelim_cb.acceptablegap = float(gap)
     timelim_cb.aborted = False
-
     model.solve()
     
     #options for searching more optimal solutions
@@ -1811,3 +1810,4 @@ def minNewStrainProp(solution, data, strains, refStrains, loci, newNameToOriName
         sampleAndStrainProp = list()
 
     return objvalue, errObj, propObj, sampleAndStrainProp, feasible
+

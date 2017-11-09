@@ -1466,7 +1466,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     #writeInfoToCsv()
     
     ''' ================================== Solve ILP ========================================== '''
-    model.write("borreliaLP.lp")
+    #model.write("borreliaLP.lp")
 #    model.set_results_stream(None)
     #Some bound on cplex solver when gap finds it hard to converge
     timelim_cb = model.register_callback(TimeLimitCallback)
