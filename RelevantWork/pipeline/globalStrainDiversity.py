@@ -22,19 +22,17 @@ globalSamp = "all"
 
 #currentpath = /pipeline/
 currentPath = os.getcwd()
-data_path = currentPath +"/data/"
-lociDb_path = currentPath + "/loci_db/"
-ref_strains = currentPath + "/strain_ref.txt"
+ref_strains = os.path.join(currentPath, "strain_ref.txt")
 #ref_strains = currentPath + "/" + args["ref"]
 loci = ["clpA", "clpX", "nifS", "pepX", "pyrG", "recG", "rplB", "uvrA"]
 reference = pd.read_csv(ref_strains,sep="\t",usecols=range(1,len(loci)+1))
 for name in loci:
     reference["%s" %name] = name + "_" + reference["%s" %name].astype(str)
 
-if not os.path.exists(args["output"]):
-    os.mkdir(args["output"])
+if not os.path.exists(os.path.abspath(args["output"])):
+    os.mkdir(os.path.abspath(args["output"]))
 
-pf.strainSolver(currentPath+"/variantsAndProp", ref_strains, currentPath+"/"+args["output"], loci, args["objectiveComponent"], globalSamp, args["timeLimit"], args["gap"])
+pf.strainSolver(os.path.join(currentPath,"variantsAndProp"), ref_strains, os.path.join(currentPath,args["output"]), loci, args["objectiveComponent"], globalSamp, args["timeLimit"], args["gap"])
 #if args["globalOption"] == "mixed":
 #    if args["sample"] != "all":
 #        pf.strainSolver(currentPath+"/variantsAndProp/{}".format(args["sample"]), ref_strains, currentPath+"/"+args["output"], loci, args["objectiveComponent"], args["sample"], args["timeLimit"], args["gap"])
