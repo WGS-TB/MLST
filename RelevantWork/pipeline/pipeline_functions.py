@@ -24,7 +24,7 @@ import variantILP as varSolver
 #import matplotlib.pyplot as plt
 #from scipy.spatial.distance import hamming
 
-errorThres=0.2
+errorThres=0.1
 
 ''' Extend class as need to retrieve solution if gap does not converge after certain time'''
 class TimeLimitCallback(cplex.callbacks.MIPInfoCallback):
@@ -1529,7 +1529,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
         output = proportionWeightDecVarDF[proportionWeightDecVarDF["Sample"] == samp].merge(strainsNeeded).drop(["Weights", "Sample"],1)
         output["Proportion"] = model.solution.get_values(output["Decision Variable"].tolist())
         output = output[output["Proportion"] > 0.0]
-        output.drop("Decision Variable", axis=1, inplace=True)
+	output.drop("Decision Variable", axis=1, inplace=True)
         output = output[["ST", "New/Existing"]+loci+["Proportion"]]
         print output
         output.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, newNameToOriName[samp]))
@@ -1810,3 +1810,4 @@ def minNewStrainProp(solution, data, strains, refStrains, loci, newNameToOriName
         sampleAndStrainProp = list()
 
     return objvalue, errObj, propObj, sampleAndStrainProp, feasible
+
