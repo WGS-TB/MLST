@@ -16,7 +16,9 @@ git checkout origin/master -- BorreliaPipeline
 
 5) ART: For simulating reads. Please download it here: https://www.niehs.nih.gov/research/resources/software/biostatistics/art/. You will need `art_illumina`, copy this into your bin file or provide the path for `art_illumina` to `run_sim.py`. This script runs the allele simulation.
 
-6) Possible Python packages you will need: numpy, pandas, matplotlib, linecache, argparse . Please use `pip install` to install these packages if you do not have any of the packages.
+6) Samtools v1.3.1: For extracting information from sam files. Please download it here: https://sourceforge.net/projects/samtools/files/samtools/1.3.1/. You will need `samtools`, copy it into your bin folder or provide the path to `samtools` to `mapSamples.py`. The python script calls the `samtools` command while extracting information from sam files after mapping. 
+
+7) Possible Python packages you will need: numpy, pandas, matplotlib, linecache, argparse . Please use `pip install` to install these packages if you do not have any of the packages.
 
 
 ## Instructions to run the pipeline
