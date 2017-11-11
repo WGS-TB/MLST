@@ -63,4 +63,4 @@ python Simulate_strains.py [-h] [-n NUMOFITER] [-d MASTERDIR] [-r STRAINREF] [-t
 
 ## Regenerating plots for the paper
 
-1) A jupyter notebook to visualize the figures are in the `plot` folder under `BorreliaPipeline` folder. In the `plot` folder, just run `jupyter notebook` to start the notebook.
+1) A jupyter notebook `generate_plots.ipynb` to visualize the figures is in the `plot` folder under `BorreliaPipeline` folder. In the `plot` folder, just run `jupyter notebook` to start the notebook.
