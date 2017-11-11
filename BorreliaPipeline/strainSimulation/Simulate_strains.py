@@ -374,14 +374,14 @@ def Simulate_strains(numIter,strainRef,sampleDir,outputDir,samplesDir,simFilesDi
                     else:
                         uvrA[gene_key] += gene_dict[gene_key]
 
-	print sum(clpA.values())
-	print sum(clpX.values())
-	print sum(nifS.values())
-	print sum(pepX.values())
-	print sum(pyrG.values())
-	print sum(recG.values())
-	print sum(rplB.values())
-	print sum(uvrA.values())
+	#print sum(clpA.values())
+	#print sum(clpX.values())
+	#print sum(nifS.values())
+	#print sum(pepX.values())
+	#print sum(pyrG.values())
+	#print sum(recG.values())
+	#print sum(rplB.values())
+	#print sum(uvrA.values())
         #if sum(clpA.values()) != 1:
             #continue
         filesHere = [d for d in os.listdir(".") if os.path.isfile(d)]
