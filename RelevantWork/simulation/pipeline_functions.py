@@ -280,11 +280,11 @@ def returnQualityMatrix(path, option):
     
     tempDF.reset_index(inplace=True, drop=True)    
     matrix = tempDF.pivot(index="Read", columns="Allele", values="Quality")
-    
+    print matrix
     if option == "paired":
-        matrix = matrix.fillna(186)
+        matrix = matrix.fillna(1200)
     else:
-        matrix = matrix.fillna(93)
+        matrix = matrix.fillna(600)
         
     return matrix
 
