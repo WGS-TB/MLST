@@ -139,7 +139,7 @@ def compute_obj_diff(predicted, true):
 #        writer.writerows(matrixForML)
             
         
-def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage):
+def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage, bt, samtools, art):
     ''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Defining some parameters ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ '''
     #Record true variants and their fractions for all simulations
     true_ratios_list = []
@@ -212,7 +212,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
                 sequence_file.write(variant_sequence)
             
             #Set the ART command, I have included a random seed for reproducibility, and a coverage parameter
-            ART_command = "art_illumina -qL 33 -qs 10 -qs2 15 -k 3 -rs {} -q -ss HS25 -sam -i ".format(seed) +file_name+" -p -l 76 -f "+str(covOfThisVar)+" -m 200 -s 10 -o "+simulation_name + ' >/dev/null 2>&1'
+            ART_command = art+" -qL 33 -qs 10 -qs2 15 -k 3 -rs {} -q -ss HS25 -sam -i ".format(seed) +file_name+" -p -l 76 -f "+str(covOfThisVar)+" -m 200 -s 10 -o "+simulation_name + ' >/dev/null 2>&1'
             os.system(ART_command)
         
         #Putting the pairs together for all variants
@@ -223,14 +223,14 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
 #        ref = upperfirst(gene)+"_bowtie2"
         ref = upperfirst(gene) + "_bowtie"
 #        mapping_cmd = 'bowtie2 -x {0} -a -p 4 -1 ./{1}_{2}_1.fa -2 ./{1}_{2}_2.fa -S {1}_{2}.sam >/dev/null 2>&1'.format(ref, upperfirst(gene), str(iteration))
-        mapping_cmd = "bowtie -a --best --strata -v 3 -p 4 {0} -1 ./{1}_{2}_1.fa -2 ./{1}_{2}_2.fa --sam {1}_{2}.sam >/dev/null 2>&1".format(ref, upperfirst(gene), str(iteration))
+        mapping_cmd = bt+"bowtie -a --best --strata -v 3 -p 4 {0} -1 ./{1}_{2}_1.fa -2 ./{1}_{2}_2.fa --sam {1}_{2}.sam >/dev/null 2>&1".format(ref, upperfirst(gene), str(iteration))
 
         #Execute commands for bowtie mapping
         os.system(mapping_cmd)
         
         #convert from sam to bam file
-        mapped_cmd = "samtools view -h -F4 {0}_{1}.sam > {0}_{1}_mapped.sam".format(upperfirst(gene),str(iteration))
-        paired_cmd = "samtools view -F8 {0}_{1}_mapped.sam > {0}_{1}_pairedNoHeader.sam".format(upperfirst(gene),str(iteration))
+        mapped_cmd = samtools+" view -h -F4 {0}_{1}.sam > {0}_{1}_mapped.sam".format(upperfirst(gene),str(iteration))
+        paired_cmd = samtools+" view -F8 {0}_{1}_mapped.sam > {0}_{1}_pairedNoHeader.sam".format(upperfirst(gene),str(iteration))
 #        singleton_cmd = "samtools view -f8 {0}_{1}_mapped.sam > {0}_{1}_singletonNoHeader.sam".format(upperfirst(gene),str(iteration))
         
         #run the commands
@@ -267,7 +267,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         Qmatrix = paired_Qmatrix
         
         #Run the ILP solver
-        pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = varSolver.solver(dataMatrix)
+        pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = varSolver.solver(dataMatrix, Qmatrix, "paired")
 #        if len(all_solutions) == 1:
 #            continue
         
