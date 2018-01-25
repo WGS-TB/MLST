@@ -174,9 +174,13 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         DF = output_file.loc[:,['target_id','est_counts']]
         DF = DF[DF['est_counts'] != 0]
         DF['est_counts'] = (DF['est_counts']/DF['est_counts'].sum())*100
+        print DF
+        DF = DF[DF['est_counts'] > 1.0]
+        DF['est_counts'] = (DF['est_counts']/DF['est_counts'].sum())*100
+        print "Next"
+        print DF
         var_predicted = DF['target_id'].tolist()
         props = DF['est_counts'].tolist()
-        
         #Remove unneccessary files for the next iteration.    
         
         
