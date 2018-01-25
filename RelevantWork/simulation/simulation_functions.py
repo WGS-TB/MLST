@@ -7,7 +7,7 @@ import random
 import os
 import itertools
 import sys
-import variantILP as varSolver
+import norm_variantILP as varSolver
 import linecache
 import pipeline_functions as pf
 
@@ -268,35 +268,38 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         
         #Run the ILP solver
         pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = varSolver.solver(dataMatrix, Qmatrix, "paired")
+        #pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = varSolver.solver(dataMatrix)
+        #print all_solutions
+        #print dataMatrix
 #        if len(all_solutions) == 1:
 #            continue
         
         
         '''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Statistics and Calculations start here ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
-        score_list = list()
-        min_score = sys.maxint
-        Qscore_list = [] #list to hold all the average Qsocres for the solutions
+        #score_list = list()
+        #min_score = sys.maxint
+        #Qscore_list = [] #list to hold all the average Qsocres for the solutions
         
         #Compute negative log likelihood score for each solution
-        for i in range(len(all_solutions)):
+        #for i in range(len(all_solutions)):
 #            print("Solution:{}".format(all_solutions[i]))
 #            print("Objective value: {}".format(all_objective[i]))
 #            print("Proportions:{}".format(compute_proportions(dataMatrix.loc[reads_cov, all_solutions[i]])))
-            score = pf.compute_likelihood(dataMatrix.loc[reads_cov, all_solutions[i]], 6)
-            score_list.append(score)
+        #    score = pf.compute_likelihood(dataMatrix.loc[reads_cov, all_solutions[i]], 6)
+        #    score_list.append(score)
             
             
-            if score <= min_score:
-                min_score = score
+        #    if score <= min_score:
+        #        min_score = score
                 
-            Qscore_list.append(pf.compute_QSum(Qmatrix.loc[reads_cov,all_solutions[i]]))
+        #    Qscore_list.append(pf.compute_QSum(Qmatrix.loc[reads_cov,all_solutions[i]]))
             
-        min_Qscore = np.argmin(Qscore_list)
-        var_predicted = all_solutions[min_Qscore]
-        minQIndices = np.where(np.array(Qscore_list) == np.array(Qscore_list).min())[0]
+        #min_Qscore = np.argmin(Qscore_list)
+        #var_predicted = all_solutions[min_Qscore]
+        #minQIndices = np.where(np.array(Qscore_list) == np.array(Qscore_list).min())[0]
         
-        if len(minQIndices) > 1:
-            print("More than 1 solution having minimum quality score")
+        #if len(minQIndices) > 1:
+        #    print("More than 1 solution having minimum quality score")
             
         #Keep track of precision and recall for all simulations
         precision_list.append(precision(var_predicted, true_variants))
@@ -304,9 +307,10 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         pred_object_vals.append(pred_object_val)
         
         #Construct dataframe of true variants and predicted variants
-        true_DF = dataMatrix.loc[reads_cov,true_variants]
+        #true_DF = dataMatrix.loc[reads_cov,true_variants]
 #        true_DF =  true_DF[(true_DF.T != -1).any()]
-        predicted_DF = dataMatrix.loc[reads_cov,var_predicted]
+        #predicted_DF = dataMatrix.loc[reads_cov,var_predicted]
+        predicted_DF = Qmatrix.loc[reads_cov,var_predicted]
         prop_count = pf.compute_proportions(predicted_DF)
         #prop_bayes = bayes_compute_proportions(predicted_DF)
 #        if proportion_method == "count":
@@ -325,8 +329,8 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         print("Number of optimal solutions: {}".format(len(all_solutions)))
         numOfOptimalSol.append(len(all_solutions))
         print all_solutions
-        print ('Qscores are: {}').format(Qscore_list)
-        print("Minimum q score is :{}".format(Qscore_list[min_Qscore]))
+        #print ('Qscores are: {}').format(Qscore_list)
+        #print("Minimum q score is :{}".format(Qscore_list[min_Qscore]))
 #        print ('Likelihood scores are: {}').format(score_list)
 #        print("Minimum likelihood score is :{}".format(score_list[minLikeli]))
         print("True variants are: {}\n".format(true_variants))
@@ -334,27 +338,27 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         print("True proportions are: {}\n".format(true_prop))
         #print("Predicted proportions using Bayes method are: {}\n".format(pred_prop_bayes))
         print("Predicted proportions using Counting method are: {}\n".format(pred_prop_count))
-        correct = False
-        if set(true_variants) == set(var_predicted):
-            correct = True
+        #correct = False
+        #if set(true_variants) == set(var_predicted):
+        #    correct = True
             
-        if correct:
-            print("This sim is predicted correctly based on quality score.")
-        else:
-            print("This sim is not predicted correctly based on quality score.")
+        #if correct:
+        #    print("This sim is predicted correctly based on quality score.")
+        #else:
+        #    print("This sim is not predicted correctly based on quality score.")
         
         if len(all_solutions) > 1:
             numSimHavingMultSol += 1
             
-            if correct:
-                multSolCorrect += 1
+            #if correct:
+            #    multSolCorrect += 1
         
         #Compute objective value of true variants
-        true_Objective_val, bad_reads = compute_true_objective_val(true_DF)
-        true_Objective_vals.append(true_Objective_val)
+        #true_Objective_val, bad_reads = compute_true_objective_val(true_DF)
+        #true_Objective_vals.append(true_Objective_val)
         
         #Compute the difference in objective vlaue: Predicted - True
-        diff_obj_vals.append(compute_obj_diff(pred_object_val,true_Objective_val))
+        #diff_obj_vals.append(compute_obj_diff(pred_object_val,true_Objective_val))
         
         #Count simulations in which the ILP predicted correctly
         if predictedCorrectly(var_predicted, true_variants):
@@ -363,8 +367,8 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         else:
                 predCorrect_bool_list.append(False)
                 
-        if len(bad_reads) != 0:
-            print(dataMatrix.loc[bad_reads,:])   
+        #if len(bad_reads) != 0:
+        #    print(dataMatrix.loc[bad_reads,:])   
             
         iteration += 1
 
@@ -427,15 +431,15 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     print "Standard deviation of recall is: ", std_rec, "\n"
     context+=1
     
-    avg_diffObjVal = sum(diff_obj_vals)/len(diff_obj_vals)
-    std_diffObjVal = np.std(np.array(diff_obj_vals))
-    print "({0}) Objective Value: \n".format(context)
-    print 'Predicted objective values are:', pred_object_vals, "\n"
-    print 'True objective values are:', true_Objective_vals, "\n"
-    print 'The difference in objective values are:', diff_obj_vals, "\n"
-    print "Average of difference in objective value is: ", avg_diffObjVal, "\n"
-    print "Standard deviation of difference in objective value is: ", std_diffObjVal, "\n"
-    context+=1
+    #avg_diffObjVal = sum(diff_obj_vals)/len(diff_obj_vals)
+    #std_diffObjVal = np.std(np.array(diff_obj_vals))
+    #print "({0}) Objective Value: \n".format(context)
+    #print 'Predicted objective values are:', pred_object_vals, "\n"
+    #print 'True objective values are:', true_Objective_vals, "\n"
+    #print 'The difference in objective values are:', diff_obj_vals, "\n"
+    #print "Average of difference in objective value is: ", avg_diffObjVal, "\n"
+    #print "Standard deviation of difference in objective value is: ", std_diffObjVal, "\n"
+    #context+=1
     
     print "({0})Accuracy: \n".format(context)
     print 'Total number of simulations: ', numOfIter , "\n"
@@ -448,11 +452,12 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     print("Average number of optimal solutions: {0}\n".format(np.mean(numOfOptimalSol)))
     context+=1
     
-    print "({0})Statistics about quality score: \n".format(context)
-    print("Number of simulations having multiple solutions: {}".format(numSimHavingMultSol))
-    print("Number of these simulations which are correct: {}".format(multSolCorrect))
-    print("The percentage is : {} %".format(100.0*(multSolCorrect/numSimHavingMultSol)))
-    context+=1
+    #print "({0})Statistics about quality score: \n".format(context)
+    #print("Number of simulations having multiple solutions: {}".format(numSimHavingMultSol))
+    #print("Number of these simulations which are correct: {}".format(multSolCorrect))
+    #print("The percentage is : {} %".format(100.0*(multSolCorrect/numSimHavingMultSol)))
+    #context+=1
     
     sys.stdout.close()
-    return precision_list, recall_list, diff_obj_vals, totalVarDist_count
+    #return precision_list, recall_list, diff_obj_vals, totalVarDist_count
+    return precision_list, recall_list, totalVarDist_count
