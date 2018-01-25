@@ -101,9 +101,9 @@ Output: The proportions of variants (type list)
 def compute_proportions(dataframe):
     #computes the proportion of a set of variants given a set of reads uing probabilistic methods
     prob_list = [0.0]*dataframe.shape[1]
-    
     for row in dataframe.itertuples(index=False):
-        mmInfo = [i for i in list(row) if i>=0]
+        #mmInfo = [i for i in list(row) if i>=0]
+        mmInfo = [i for i in list(row) if i!=6]
         min_mm = min(mmInfo)
         numOfVar_minMm = len([i for i in list(row) if i== min_mm])
         
@@ -251,8 +251,9 @@ def returnQuality(quality, mm_pos):
             calculate_quality_pos.append(calculate_quality_pos[j-1] + temp[j] + 1)
 #        print(calculate_quality_pos)
         q = [ord( (quality[index])[k] ) for k in calculate_quality_pos]
+        q = [(k-33)/60 for k in q]
         q_list.append(sum(q))
-            
+
     return q_list
 
 '''
@@ -280,10 +281,11 @@ def returnQualityMatrix(path, option):
     
     tempDF.reset_index(inplace=True, drop=True)    
     matrix = tempDF.pivot(index="Read", columns="Allele", values="Quality")
+    #The max quality score is 93.As we limit to 3 mismatches, hence the maximum of an entry is 93*3
     if option == "paired":
-        matrix = matrix.fillna(1200)
+        matrix = matrix.fillna(6)
     else:
-        matrix = matrix.fillna(600)
+        matrix = matrix.fillna(3)
         
     return matrix
 
