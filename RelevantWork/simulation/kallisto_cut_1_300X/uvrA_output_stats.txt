@@ -1,5 +1,18 @@
 ======================================== SIMULATION 1 ====================================================
 
+    target_id  est_counts
+47    uvrA_48    0.000053
+49    uvrA_50   37.405209
+64    uvrA_65   34.185607
+71    uvrA_72    0.000039
+170  uvrA_171   19.791667
+180  uvrA_181    8.617424
+Next
+    target_id  est_counts
+49    uvrA_50   37.405244
+64    uvrA_65   34.185638
+170  uvrA_171   19.791685
+180  uvrA_181    8.617432
 True variants are: ['uvrA_65', 'uvrA_50', 'uvrA_171', 'uvrA_181']
 
 Predicted variants are: ['uvrA_50', 'uvrA_65', 'uvrA_171', 'uvrA_181']
@@ -10,6 +23,30 @@ Predicted proportions are: {'uvrA_171': 19.791685408793004, 'uvrA_181': 8.617432
 
 ======================================== SIMULATION 2 ====================================================
 
+    target_id    est_counts
+14    uvrA_15  1.357915e-04
+17    uvrA_18  6.267546e-09
+27    uvrA_28  1.170717e-06
+31    uvrA_32  3.683075e+01
+48    uvrA_49  1.998688e-04
+50    uvrA_51  1.082434e-06
+52    uvrA_53  3.808811e-04
+79    uvrA_80  3.614254e-08
+100  uvrA_101  6.267546e-09
+105  uvrA_106  2.155141e+01
+128  uvrA_129  1.320622e+00
+133  uvrA_134  4.981150e-07
+138  uvrA_139  2.284367e+01
+142  uvrA_143  1.575471e+01
+188  uvrA_189  1.698113e+00
+Next
+    target_id  est_counts
+31    uvrA_32   36.831012
+105  uvrA_106   21.551566
+128  uvrA_129    1.320632
+138  uvrA_139   22.843839
+142  uvrA_143   15.754827
+188  uvrA_189    1.698125
 True variants are: ['uvrA_189', 'uvrA_139', 'uvrA_32', 'uvrA_129', 'uvrA_143', 'uvrA_106']
 
 Predicted variants are: ['uvrA_32', 'uvrA_106', 'uvrA_129', 'uvrA_139', 'uvrA_143', 'uvrA_189']
@@ -20,6 +57,27 @@ Predicted proportions are: {'uvrA_189': 1.6981250623825113, 'uvrA_143': 15.75482
 
 ======================================== SIMULATION 3 ====================================================
 
+    target_id    est_counts
+11    uvrA_12  7.348291e-04
+30    uvrA_31  1.157775e+01
+36    uvrA_37  3.696624e-08
+37    uvrA_38  2.708302e+01
+47    uvrA_48  9.187941e-08
+49    uvrA_50  3.856313e-06
+52    uvrA_53  5.556878e+00
+99   uvrA_100  1.423326e+01
+103  uvrA_104  1.319434e+01
+107  uvrA_108  8.043974e-06
+117  uvrA_118  2.835399e+01
+138  uvrA_139  2.528689e-06
+Next
+    target_id  est_counts
+30    uvrA_31   11.577839
+37    uvrA_38   27.083226
+52    uvrA_53    5.556920
+99   uvrA_100   14.233371
+103  uvrA_104   13.194438
+117  uvrA_118   28.354206
 True variants are: ['uvrA_100', 'uvrA_118', 'uvrA_53', 'uvrA_104', 'uvrA_31', 'uvrA_38']
 
 Predicted variants are: ['uvrA_31', 'uvrA_38', 'uvrA_53', 'uvrA_100', 'uvrA_104', 'uvrA_118']
@@ -30,6 +88,18 @@ Predicted proportions are: {'uvrA_53': 5.556919582372165, 'uvrA_118': 28.3542060
 
 ======================================== SIMULATION 4 ====================================================
 
+    target_id    est_counts
+5      uvrA_6  5.723450e-09
+9     uvrA_10  5.723450e-09
+11    uvrA_12  4.644531e+00
+59    uvrA_60  5.573460e+01
+103  uvrA_104  2.034645e-05
+144  uvrA_145  3.962085e+01
+Next
+    target_id  est_counts
+11    uvrA_12    4.644532
+59    uvrA_60   55.734608
+144  uvrA_145   39.620861
 True variants are: ['uvrA_12', 'uvrA_60', 'uvrA_145']
 
 Predicted variants are: ['uvrA_12', 'uvrA_60', 'uvrA_145']
@@ -40,6 +110,20 @@ Predicted proportions are: {'uvrA_60': 55.73460772220052, 'uvrA_12': 4.644531686
 
 ======================================== SIMULATION 5 ====================================================
 
+    target_id    est_counts
+1      uvrA_2  1.165740e-09
+2      uvrA_3  1.165740e-09
+11    uvrA_12  7.642817e-04
+103  uvrA_104  3.813966e+01
+176  uvrA_177  2.296015e+01
+188  uvrA_189  2.644288e+01
+191  uvrA_192  1.245655e+01
+Next
+    target_id  est_counts
+103  uvrA_104   38.139948
+176  uvrA_177   22.960326
+188  uvrA_189   26.443085
+191  uvrA_192   12.456641
 True variants are: ['uvrA_104', 'uvrA_189', 'uvrA_192', 'uvrA_177']
 
 Predicted variants are: ['uvrA_104', 'uvrA_177', 'uvrA_189', 'uvrA_192']
@@ -50,6 +134,14 @@ Predicted proportions are: {'uvrA_189': 26.443084957001574, 'uvrA_177': 22.96032
 
 ======================================== SIMULATION 6 ====================================================
 
+    target_id  est_counts
+11    uvrA_12    0.000801
+103  uvrA_104   62.320812
+174  uvrA_175   37.678386
+Next
+    target_id  est_counts
+103  uvrA_104   62.321312
+174  uvrA_175   37.678688
 True variants are: ['uvrA_175', 'uvrA_104']
 
 Predicted variants are: ['uvrA_104', 'uvrA_175']
@@ -60,6 +152,20 @@ Predicted proportions are: {'uvrA_175': 37.678688324934924, 'uvrA_104': 62.32131
 
 ======================================== SIMULATION 7 ====================================================
 
+    target_id  est_counts
+16    uvrA_17   28.342758
+49    uvrA_50    0.000865
+71    uvrA_72   28.386543
+97    uvrA_98   30.026939
+109  uvrA_110    1.650236
+126  uvrA_127   11.592659
+Next
+    target_id  est_counts
+16    uvrA_17   28.343003
+71    uvrA_72   28.386789
+97    uvrA_98   30.027199
+109  uvrA_110    1.650250
+126  uvrA_127   11.592759
 True variants are: ['uvrA_110', 'uvrA_17', 'uvrA_98', 'uvrA_72', 'uvrA_127']
 
 Predicted variants are: ['uvrA_17', 'uvrA_72', 'uvrA_98', 'uvrA_110', 'uvrA_127']
@@ -70,6 +176,15 @@ Predicted proportions are: {'uvrA_72': 28.386788770709348, 'uvrA_127': 11.592759
 
 ======================================== SIMULATION 8 ====================================================
 
+    target_id  est_counts
+83    uvrA_84   52.796209
+146  uvrA_147    1.706161
+179  uvrA_180   45.497630
+Next
+    target_id  est_counts
+83    uvrA_84   52.796209
+146  uvrA_147    1.706161
+179  uvrA_180   45.497630
 True variants are: ['uvrA_180', 'uvrA_84', 'uvrA_147']
 
 Predicted variants are: ['uvrA_84', 'uvrA_147', 'uvrA_180']
@@ -80,6 +195,16 @@ Predicted proportions are: {'uvrA_147': 1.7061611374407581, 'uvrA_84': 52.796208
 
 ======================================== SIMULATION 9 ====================================================
 
+    target_id  est_counts
+7      uvrA_8   41.960050
+26    uvrA_27   34.727888
+101  uvrA_102    0.000923
+146  uvrA_147   23.311139
+Next
+    target_id  est_counts
+7      uvrA_8   41.960437
+26    uvrA_27   34.728209
+146  uvrA_147   23.311354
 True variants are: ['uvrA_8', 'uvrA_147', 'uvrA_27']
 
 Predicted variants are: ['uvrA_8', 'uvrA_27', 'uvrA_147']
@@ -90,6 +215,23 @@ Predicted proportions are: {'uvrA_147': 23.311354056651346, 'uvrA_27': 34.728208
 
 ======================================== SIMULATION 10 ====================================================
 
+    target_id    est_counts
+20    uvrA_21  1.905185e+01
+21    uvrA_22  2.564418e-04
+36    uvrA_37  2.372702e+01
+57    uvrA_58  6.635073e-01
+70    uvrA_71  4.139641e+01
+108  uvrA_109  1.089621e-08
+109  uvrA_110  6.103547e-10
+114  uvrA_115  1.516095e+01
+169  uvrA_170  2.383053e-06
+181  uvrA_182  7.150239e-10
+Next
+    target_id  est_counts
+20    uvrA_21   19.179158
+36    uvrA_37   23.885565
+70    uvrA_71   41.673020
+114  uvrA_115   15.262257
 True variants are: ['uvrA_71', 'uvrA_58', 'uvrA_21', 'uvrA_115', 'uvrA_37']
 
 Predicted variants are: ['uvrA_21', 'uvrA_37', 'uvrA_71', 'uvrA_115']
@@ -100,6 +242,27 @@ Predicted proportions are: {'uvrA_37': 23.88556455791381, 'uvrA_115': 15.2622574
 
 ======================================== SIMULATION 11 ====================================================
 
+    target_id    est_counts
+12    uvrA_13  2.518941e+01
+27    uvrA_28  1.447188e+01
+58    uvrA_59  1.193182e+01
+72    uvrA_73  5.259084e-05
+79    uvrA_80  8.149284e-04
+90    uvrA_91  9.943092e+00
+130  uvrA_131  1.584840e-05
+141  uvrA_142  3.947104e-01
+155  uvrA_156  2.954821e-06
+161  uvrA_162  1.394963e+01
+170  uvrA_171  2.411857e+01
+172  uvrA_173  1.493116e-09
+Next
+    target_id  est_counts
+12    uvrA_13   25.289450
+27    uvrA_28   14.529360
+58    uvrA_59   11.979213
+90    uvrA_91    9.982583
+161  uvrA_162   14.005031
+170  uvrA_171   24.214363
 True variants are: ['uvrA_142', 'uvrA_13', 'uvrA_28', 'uvrA_162', 'uvrA_59', 'uvrA_171', 'uvrA_91']
 
 Predicted variants are: ['uvrA_13', 'uvrA_28', 'uvrA_59', 'uvrA_91', 'uvrA_162', 'uvrA_171']
@@ -110,6 +273,23 @@ Predicted proportions are: {'uvrA_91': 9.982582604280953, 'uvrA_171': 24.2143632
 
 ======================================== SIMULATION 12 ====================================================
 
+    target_id  est_counts
+12    uvrA_13   11.603770
+25    uvrA_26   14.433958
+66    uvrA_67    3.018867
+69    uvrA_70    1.320754
+74    uvrA_75    0.111707
+91    uvrA_92   49.039230
+106  uvrA_107    0.000872
+137  uvrA_138   20.470843
+Next
+    target_id  est_counts
+12    uvrA_13   11.616848
+25    uvrA_26   14.450226
+66    uvrA_67    3.022269
+69    uvrA_70    1.322243
+91    uvrA_92   49.094500
+137  uvrA_138   20.493914
 True variants are: ['uvrA_67', 'uvrA_70', 'uvrA_92', 'uvrA_26', 'uvrA_138', 'uvrA_13']
 
 Predicted variants are: ['uvrA_13', 'uvrA_26', 'uvrA_67', 'uvrA_70', 'uvrA_92', 'uvrA_138']
@@ -120,6 +300,24 @@ Predicted proportions are: {'uvrA_92': 49.09449975302392, 'uvrA_26': 14.45022558
 
 ======================================== SIMULATION 13 ====================================================
 
+    target_id    est_counts
+3      uvrA_4  2.946082e+01
+19    uvrA_20  9.259378e-04
+27    uvrA_28  3.050067e-01
+40    uvrA_41  4.946346e-01
+66    uvrA_67  2.219075e+01
+79    uvrA_80  1.492097e-09
+133  uvrA_134  2.951691e+01
+155  uvrA_156  1.463881e-06
+158  uvrA_159  4.810936e+00
+190  uvrA_191  1.322002e+01
+Next
+    target_id  est_counts
+3      uvrA_4   29.698575
+66    uvrA_67   22.369836
+133  uvrA_134   29.755118
+158  uvrA_159    4.849761
+190  uvrA_191   13.326711
 True variants are: ['uvrA_41', 'uvrA_4', 'uvrA_191', 'uvrA_67', 'uvrA_134', 'uvrA_159']
 
 Predicted variants are: ['uvrA_4', 'uvrA_67', 'uvrA_134', 'uvrA_159', 'uvrA_191']
@@ -130,6 +328,14 @@ Predicted proportions are: {'uvrA_159': 4.849761328132363, 'uvrA_4': 29.69857455
 
 ======================================== SIMULATION 14 ====================================================
 
+   target_id  est_counts
+22   uvrA_23    0.000936
+24   uvrA_25   64.438251
+25   uvrA_26   35.560813
+Next
+   target_id  est_counts
+24   uvrA_25   64.438854
+25   uvrA_26   35.561146
 True variants are: ['uvrA_25', 'uvrA_26']
 
 Predicted variants are: ['uvrA_25', 'uvrA_26']
@@ -140,6 +346,14 @@ Predicted proportions are: {'uvrA_25': 64.4388538201379, 'uvrA_26': 35.561146179
 
 ======================================== SIMULATION 15 ====================================================
 
+    target_id  est_counts
+3      uvrA_4    0.000931
+19    uvrA_20   97.332402
+189  uvrA_190    2.666667
+Next
+    target_id  est_counts
+19    uvrA_20   97.333308
+189  uvrA_190    2.666692
 True variants are: ['uvrA_190', 'uvrA_20']
 
 Predicted variants are: ['uvrA_20', 'uvrA_190']
@@ -150,6 +364,22 @@ Predicted proportions are: {'uvrA_20': 97.33330793626607, 'uvrA_190': 2.66669206
 
 ======================================== SIMULATION 16 ====================================================
 
+    target_id  est_counts
+49    uvrA_50    3.305687
+89    uvrA_90    0.000832
+93    uvrA_94   31.355078
+108  uvrA_109   17.880787
+112  uvrA_113    3.954801
+136  uvrA_137   21.374760
+187  uvrA_188   22.128055
+Next
+    target_id  est_counts
+49    uvrA_50    3.305714
+93    uvrA_94   31.355339
+108  uvrA_109   17.880936
+112  uvrA_113    3.954834
+136  uvrA_137   21.374938
+187  uvrA_188   22.128239
 True variants are: ['uvrA_50', 'uvrA_109', 'uvrA_137', 'uvrA_188', 'uvrA_94', 'uvrA_113']
 
 Predicted variants are: ['uvrA_50', 'uvrA_94', 'uvrA_109', 'uvrA_113', 'uvrA_137', 'uvrA_188']
@@ -160,6 +390,27 @@ Predicted proportions are: {'uvrA_137': 21.37493768781932, 'uvrA_50': 3.30571415
 
 ======================================== SIMULATION 17 ====================================================
 
+    target_id    est_counts
+35    uvrA_36  1.200233e-09
+80    uvrA_81  1.046728e+01
+84    uvrA_85  2.850466e+01
+95    uvrA_96  1.476607e+01
+96    uvrA_97  3.250541e-04
+122  uvrA_123  9.813080e+00
+145  uvrA_146  4.953269e+00
+148  uvrA_149  1.869158e+01
+153  uvrA_154  9.719435e-07
+166  uvrA_167  1.200233e-09
+177  uvrA_178  1.280373e+01
+Next
+    target_id  est_counts
+80    uvrA_81   10.467319
+84    uvrA_85   28.504753
+95    uvrA_96   14.766116
+122  uvrA_123    9.813112
+145  uvrA_146    4.953285
+148  uvrA_149   18.691641
+177  uvrA_178   12.803774
 True variants are: ['uvrA_149', 'uvrA_123', 'uvrA_81', 'uvrA_146', 'uvrA_96', 'uvrA_178', 'uvrA_85']
 
 Predicted variants are: ['uvrA_81', 'uvrA_85', 'uvrA_96', 'uvrA_123', 'uvrA_146', 'uvrA_149', 'uvrA_178']
@@ -170,6 +421,23 @@ Predicted proportions are: {'uvrA_178': 12.803774216189392, 'uvrA_123': 9.813111
 
 ======================================== SIMULATION 18 ====================================================
 
+    target_id    est_counts
+1      uvrA_2  1.735852e-07
+2      uvrA_3  1.735852e-07
+52    uvrA_53  2.178312e+01
+88    uvrA_89  2.082940e+01
+107  uvrA_108  1.852770e-05
+117  uvrA_118  1.714241e+01
+123  uvrA_124  2.016964e+01
+138  uvrA_139  1.357427e-05
+188  uvrA_189  2.007539e+01
+Next
+    target_id  est_counts
+52    uvrA_53   21.783129
+88    uvrA_89   20.829406
+117  uvrA_118   17.142413
+123  uvrA_124   20.169651
+188  uvrA_189   20.075401
 True variants are: ['uvrA_53', 'uvrA_189', 'uvrA_124', 'uvrA_118', 'uvrA_89']
 
 Predicted variants are: ['uvrA_53', 'uvrA_89', 'uvrA_118', 'uvrA_124', 'uvrA_189']
@@ -180,6 +448,22 @@ Predicted proportions are: {'uvrA_124': 20.16965127238454, 'uvrA_189': 20.075400
 
 ======================================== SIMULATION 19 ====================================================
 
+    target_id    est_counts
+17    uvrA_18  1.756374e+01
+22    uvrA_23  5.245297e-08
+24    uvrA_25  1.945231e+01
+76    uvrA_77  1.425873e+01
+129  uvrA_130  1.491974e+01
+175  uvrA_176  2.851747e+01
+190  uvrA_191  5.288008e+00
+Next
+    target_id  est_counts
+17    uvrA_18   17.563739
+24    uvrA_25   19.452314
+76    uvrA_77   14.258735
+129  uvrA_130   14.919736
+175  uvrA_176   28.517469
+190  uvrA_191    5.288008
 True variants are: ['uvrA_176', 'uvrA_77', 'uvrA_130', 'uvrA_191', 'uvrA_18', 'uvrA_25']
 
 Predicted variants are: ['uvrA_18', 'uvrA_25', 'uvrA_77', 'uvrA_130', 'uvrA_176', 'uvrA_191']
@@ -190,6 +474,22 @@ Predicted proportions are: {'uvrA_191': 5.288007554296506, 'uvrA_130': 14.919735
 
 ======================================== SIMULATION 20 ====================================================
 
+    target_id    est_counts
+26    uvrA_27  4.012964e-09
+32    uvrA_33  9.158305e-04
+37    uvrA_38  1.019290e-01
+81    uvrA_82  3.852178e+01
+101  uvrA_102  1.751894e+01
+158  uvrA_159  1.714015e+01
+159  uvrA_160  1.049081e-08
+162  uvrA_163  2.649735e+01
+164  uvrA_165  2.189375e-01
+Next
+    target_id  est_counts
+81    uvrA_82   38.646136
+101  uvrA_102   17.575494
+158  uvrA_159   17.195483
+162  uvrA_163   26.582887
 True variants are: ['uvrA_82', 'uvrA_163', 'uvrA_159', 'uvrA_102']
 
 Predicted variants are: ['uvrA_82', 'uvrA_102', 'uvrA_159', 'uvrA_163']
@@ -200,6 +500,30 @@ Predicted proportions are: {'uvrA_102': 17.57549387137778, 'uvrA_159': 17.195483
 
 ======================================== SIMULATION 21 ====================================================
 
+    target_id    est_counts
+1      uvrA_2  5.973947e+00
+2      uvrA_3  1.508036e+01
+5      uvrA_6  2.175411e-04
+9     uvrA_10  7.154079e-05
+11    uvrA_12  9.091057e-05
+14    uvrA_15  4.440765e-04
+33    uvrA_34  1.425873e+01
+65    uvrA_66  1.293673e+01
+100  uvrA_101  2.376289e+01
+103  uvrA_104  7.116969e+00
+119  uvrA_120  2.086874e+01
+123  uvrA_124  9.818697e-08
+128  uvrA_129  8.022823e-04
+156  uvrA_157  4.679924e-07
+Next
+    target_id  est_counts
+1      uvrA_2    5.974044
+2      uvrA_3   15.080604
+33    uvrA_34   14.258966
+65    uvrA_66   12.936943
+100  uvrA_101   23.763275
+103  uvrA_104    7.117084
+119  uvrA_120   20.869083
 True variants are: ['uvrA_34', 'uvrA_3', 'uvrA_120', 'uvrA_104', 'uvrA_66', 'uvrA_101']
 
 Predicted variants are: ['uvrA_2', 'uvrA_3', 'uvrA_34', 'uvrA_66', 'uvrA_101', 'uvrA_104', 'uvrA_120']
@@ -210,6 +534,25 @@ Predicted proportions are: {'uvrA_120': 20.869083048374346, 'uvrA_3': 15.0806037
 
 ======================================== SIMULATION 22 ====================================================
 
+    target_id    est_counts
+27    uvrA_28  7.277333e-10
+32    uvrA_33  1.323974e-05
+36    uvrA_37  8.015186e-04
+37    uvrA_38  1.342924e-01
+81    uvrA_82  1.917777e-06
+99   uvrA_100  2.757134e+01
+135  uvrA_136  4.322092e+01
+142  uvrA_143  7.568592e+00
+159  uvrA_160  2.795062e-07
+160  uvrA_161  1.294494e-09
+164  uvrA_165  3.119887e-01
+180  uvrA_181  2.119206e+01
+Next
+    target_id  est_counts
+99   uvrA_100   27.695163
+135  uvrA_136   43.415023
+142  uvrA_143    7.602583
+180  uvrA_181   21.287231
 True variants are: ['uvrA_136', 'uvrA_181', 'uvrA_143', 'uvrA_100']
 
 Predicted variants are: ['uvrA_100', 'uvrA_136', 'uvrA_143', 'uvrA_181']
@@ -220,6 +563,25 @@ Predicted proportions are: {'uvrA_136': 43.4150230833414, 'uvrA_100': 27.6951630
 
 ======================================== SIMULATION 23 ====================================================
 
+    target_id    est_counts
+22    uvrA_23  5.215746e-08
+24    uvrA_25  1.934272e+01
+34    uvrA_35  1.840376e+01
+114  uvrA_115  3.394845e-09
+119  uvrA_120  2.037559e+01
+139  uvrA_140  1.220657e+01
+148  uvrA_149  1.906103e+01
+152  uvrA_153  4.319249e+00
+181  uvrA_182  6.291080e+00
+Next
+    target_id  est_counts
+24    uvrA_25   19.342723
+34    uvrA_35   18.403756
+119  uvrA_120   20.375587
+139  uvrA_140   12.206573
+148  uvrA_149   19.061033
+152  uvrA_153    4.319249
+181  uvrA_182    6.291080
 True variants are: ['uvrA_35', 'uvrA_153', 'uvrA_149', 'uvrA_120', 'uvrA_182', 'uvrA_140', 'uvrA_25']
 
 Predicted variants are: ['uvrA_25', 'uvrA_35', 'uvrA_120', 'uvrA_140', 'uvrA_149', 'uvrA_153', 'uvrA_182']
@@ -230,6 +592,22 @@ Predicted proportions are: {'uvrA_182': 6.291079812206572, 'uvrA_153': 4.3192488
 
 ======================================== SIMULATION 24 ====================================================
 
+    target_id    est_counts
+26    uvrA_27  1.015447e-04
+28    uvrA_29  6.951618e+00
+29    uvrA_30  7.635532e-04
+48    uvrA_49  1.593343e-08
+50    uvrA_51  2.371428e+01
+77    uvrA_78  7.634361e-07
+101  uvrA_102  1.015447e-04
+102  uvrA_103  6.933313e+01
+105  uvrA_106  1.593343e-08
+171  uvrA_172  1.389695e-07
+Next
+    target_id  est_counts
+28    uvrA_29    6.951685
+50    uvrA_51   23.714512
+102  uvrA_103   69.333803
 True variants are: ['uvrA_29', 'uvrA_51', 'uvrA_103']
 
 Predicted variants are: ['uvrA_29', 'uvrA_51', 'uvrA_103']
@@ -240,6 +618,14 @@ Predicted proportions are: {'uvrA_103': 69.3338031790779, 'uvrA_51': 23.71451156
 
 ======================================== SIMULATION 25 ====================================================
 
+    target_id  est_counts
+42    uvrA_43   92.803440
+106  uvrA_107    7.195682
+137  uvrA_138    0.000877
+Next
+    target_id  est_counts
+42    uvrA_43   92.804255
+106  uvrA_107    7.195745
 True variants are: ['uvrA_43', 'uvrA_107']
 
 Predicted variants are: ['uvrA_43', 'uvrA_107']
@@ -250,6 +636,29 @@ Predicted proportions are: {'uvrA_43': 92.80425460397312, 'uvrA_107': 7.19574539
 
 ======================================== SIMULATION 26 ====================================================
 
+    target_id    est_counts
+28    uvrA_29  6.220551e+00
+29    uvrA_30  2.830238e-06
+32    uvrA_33  2.639295e-07
+35    uvrA_36  2.069502e-01
+37    uvrA_38  3.353019e+01
+49    uvrA_50  4.274970e+00
+72    uvrA_73  8.303446e-04
+78    uvrA_79  8.414031e-10
+81    uvrA_82  2.999550e-08
+90    uvrA_91  2.082857e+01
+159  uvrA_160  2.299031e-09
+166  uvrA_167  2.193564e-05
+173  uvrA_174  3.298777e+00
+181  uvrA_182  3.163914e+01
+Next
+    target_id  est_counts
+28    uvrA_29    6.233505
+37    uvrA_38   33.600008
+49    uvrA_50    4.283872
+90    uvrA_91   20.871946
+173  uvrA_174    3.305646
+181  uvrA_182   31.705022
 True variants are: ['uvrA_50', 'uvrA_29', 'uvrA_38', 'uvrA_174', 'uvrA_91', 'uvrA_182']
 
 Predicted variants are: ['uvrA_29', 'uvrA_38', 'uvrA_50', 'uvrA_91', 'uvrA_174', 'uvrA_182']
@@ -260,6 +669,23 @@ Predicted proportions are: {'uvrA_182': 31.705022240389642, 'uvrA_50': 4.2838722
 
 ======================================== SIMULATION 27 ====================================================
 
+    target_id    est_counts
+1      uvrA_2  3.105203e-04
+2      uvrA_3  7.221982e-04
+5      uvrA_6  8.574840e+00
+7      uvrA_8  2.055146e+01
+9     uvrA_10  4.206019e+00
+11    uvrA_12  7.119798e-09
+48    uvrA_49  1.594957e-06
+50    uvrA_51  6.666664e+01
+105  uvrA_106  1.594957e-06
+156  uvrA_157  3.156608e-06
+Next
+   target_id  est_counts
+5     uvrA_6    8.574929
+7     uvrA_8   20.551677
+9    uvrA_10    4.206063
+50   uvrA_51   66.667331
 True variants are: ['uvrA_8', 'uvrA_6', 'uvrA_51']
 
 Predicted variants are: ['uvrA_6', 'uvrA_8', 'uvrA_10', 'uvrA_51']
@@ -270,6 +696,16 @@ Predicted proportions are: {'uvrA_10': 4.206062833485044, 'uvrA_6': 8.5749288098
 
 ======================================== SIMULATION 28 ====================================================
 
+    target_id    est_counts
+41    uvrA_42  7.503905e-04
+43    uvrA_44  2.246188e-07
+70    uvrA_71  6.203430e+01
+110  uvrA_111  4.127499e-04
+118  uvrA_119  3.796454e+01
+Next
+    target_id  est_counts
+70    uvrA_71   62.035023
+118  uvrA_119   37.964977
 True variants are: ['uvrA_71', 'uvrA_119']
 
 Predicted variants are: ['uvrA_71', 'uvrA_119']
@@ -280,6 +716,24 @@ Predicted proportions are: {'uvrA_71': 62.03502321319255, 'uvrA_119': 37.9649767
 
 ======================================== SIMULATION 29 ====================================================
 
+    target_id    est_counts
+28    uvrA_29  2.146789e-05
+29    uvrA_30  4.669152e-09
+37    uvrA_38  5.649717e+00
+57    uvrA_58  1.647834e+01
+77    uvrA_78  5.555537e+00
+83    uvrA_84  2.740113e+01
+115  uvrA_116  2.608286e+01
+158  uvrA_159  1.264190e-09
+189  uvrA_190  1.883239e+01
+Next
+    target_id  est_counts
+37    uvrA_38    5.649719
+57    uvrA_58   16.478346
+77    uvrA_78    5.555538
+83    uvrA_84   27.401135
+115  uvrA_116   26.082867
+189  uvrA_190   18.832395
 True variants are: ['uvrA_190', 'uvrA_84', 'uvrA_58', 'uvrA_38', 'uvrA_78', 'uvrA_116']
 
 Predicted variants are: ['uvrA_38', 'uvrA_58', 'uvrA_78', 'uvrA_84', 'uvrA_116', 'uvrA_190']
@@ -290,6 +744,23 @@ Predicted proportions are: {'uvrA_190': 18.832395260338092, 'uvrA_58': 16.478345
 
 ======================================== SIMULATION 30 ====================================================
 
+    target_id    est_counts
+8      uvrA_9  7.916993e+00
+13    uvrA_14  7.006324e-05
+35    uvrA_36  3.765900e-09
+56    uvrA_57  1.225259e+01
+84    uvrA_85  2.060471e-06
+120  uvrA_121  2.770971e+01
+153  uvrA_154  1.649387e+01
+166  uvrA_167  3.765900e-09
+178  uvrA_179  3.562677e+01
+Next
+    target_id  est_counts
+8      uvrA_9    7.916999
+56    uvrA_57   12.252600
+120  uvrA_121   27.709726
+153  uvrA_154   16.493885
+178  uvrA_179   35.626791
 True variants are: ['uvrA_121', 'uvrA_9', 'uvrA_57', 'uvrA_179', 'uvrA_154']
 
 Predicted variants are: ['uvrA_9', 'uvrA_57', 'uvrA_121', 'uvrA_154', 'uvrA_179']
@@ -300,6 +771,19 @@ Predicted proportions are: {'uvrA_57': 12.252599978152672, 'uvrA_179': 35.626790
 
 ======================================== SIMULATION 31 ====================================================
 
+    target_id  est_counts
+57    uvrA_58   20.877998
+63    uvrA_64   42.955807
+65    uvrA_66    7.648725
+69    uvrA_70    6.326723
+148  uvrA_149   22.190746
+Next
+    target_id  est_counts
+57    uvrA_58   20.877998
+63    uvrA_64   42.955807
+65    uvrA_66    7.648725
+69    uvrA_70    6.326723
+148  uvrA_149   22.190746
 True variants are: ['uvrA_70', 'uvrA_149', 'uvrA_58', 'uvrA_64', 'uvrA_66']
 
 Predicted variants are: ['uvrA_58', 'uvrA_64', 'uvrA_66', 'uvrA_70', 'uvrA_149']
@@ -310,6 +794,19 @@ Predicted proportions are: {'uvrA_70': 6.326723323890462, 'uvrA_64': 42.95580736
 
 ======================================== SIMULATION 32 ====================================================
 
+    target_id    est_counts
+24    uvrA_25  9.361297e+01
+41    uvrA_42  1.064442e+00
+43    uvrA_44  2.003012e-08
+44    uvrA_45  8.351163e-04
+110  uvrA_111  1.064442e+00
+112  uvrA_113  4.257312e+00
+Next
+    target_id  est_counts
+24    uvrA_25   93.613750
+41    uvrA_42    1.064451
+110  uvrA_111    1.064451
+112  uvrA_113    4.257347
 True variants are: ['uvrA_25', 'uvrA_111', 'uvrA_113']
 
 Predicted variants are: ['uvrA_25', 'uvrA_42', 'uvrA_111', 'uvrA_113']
@@ -320,6 +817,24 @@ Predicted proportions are: {'uvrA_42': 1.0644512556444699, 'uvrA_25': 93.6137500
 
 ======================================== SIMULATION 33 ====================================================
 
+    target_id    est_counts
+40    uvrA_41  3.512750e+01
+52    uvrA_53  7.349722e-04
+111  uvrA_112  6.507889e+00
+114  uvrA_115  4.910466e-09
+115  uvrA_116  1.771219e-06
+126  uvrA_127  9.254019e+00
+138  uvrA_139  2.855677e+01
+178  uvrA_179  7.648730e+00
+181  uvrA_182  1.290435e+01
+Next
+    target_id  est_counts
+40    uvrA_41   35.127761
+111  uvrA_112    6.507937
+126  uvrA_127    9.254087
+138  uvrA_139   28.556981
+178  uvrA_179    7.648787
+181  uvrA_182   12.904447
 True variants are: ['uvrA_112', 'uvrA_41', 'uvrA_179', 'uvrA_127', 'uvrA_139', 'uvrA_182']
 
 Predicted variants are: ['uvrA_41', 'uvrA_112', 'uvrA_127', 'uvrA_139', 'uvrA_179', 'uvrA_182']
@@ -330,6 +845,15 @@ Predicted proportions are: {'uvrA_182': 12.904447297263482, 'uvrA_179': 7.648786
 
 ======================================== SIMULATION 34 ====================================================
 
+    target_id  est_counts
+106  uvrA_107    0.000905
+137  uvrA_138   49.093331
+164  uvrA_165    0.097209
+181  uvrA_182   50.808554
+Next
+    target_id  est_counts
+137  uvrA_138   49.141546
+181  uvrA_182   50.858454
 True variants are: ['uvrA_138', 'uvrA_182']
 
 Predicted variants are: ['uvrA_138', 'uvrA_182']
@@ -340,6 +864,13 @@ Predicted proportions are: {'uvrA_182': 50.85845391625848, 'uvrA_138': 49.141546
 
 ======================================== SIMULATION 35 ====================================================
 
+    target_id  est_counts
+122  uvrA_123   40.209125
+148  uvrA_149   59.790875
+Next
+    target_id  est_counts
+122  uvrA_123   40.209125
+148  uvrA_149   59.790875
 True variants are: ['uvrA_149', 'uvrA_123']
 
 Predicted variants are: ['uvrA_123', 'uvrA_149']
@@ -350,6 +881,30 @@ Predicted proportions are: {'uvrA_149': 59.79087452471483, 'uvrA_123': 40.209125
 
 ======================================== SIMULATION 36 ====================================================
 
+    target_id    est_counts
+27    uvrA_28  1.234388e-05
+28    uvrA_29  1.635490e-07
+29    uvrA_30  8.456515e-06
+41    uvrA_42  7.680555e-09
+77    uvrA_78  1.635490e-07
+79    uvrA_80  5.086384e-06
+98    uvrA_99  5.899453e-01
+109  uvrA_110  1.186441e+01
+110  uvrA_111  5.057504e-09
+119  uvrA_120  2.306968e+01
+121  uvrA_122  1.845574e+01
+144  uvrA_145  8.115508e+00
+155  uvrA_156  8.368116e-04
+158  uvrA_159  1.643493e+01
+168  uvrA_169  2.146892e+01
+Next
+    target_id  est_counts
+109  uvrA_110   11.934918
+119  uvrA_120   23.206786
+121  uvrA_122   18.565429
+144  uvrA_145    8.163740
+158  uvrA_159   16.532609
+168  uvrA_169   21.596519
 True variants are: ['uvrA_145', 'uvrA_110', 'uvrA_159', 'uvrA_99', 'uvrA_120', 'uvrA_122', 'uvrA_169']
 
 Predicted variants are: ['uvrA_110', 'uvrA_120', 'uvrA_122', 'uvrA_145', 'uvrA_159', 'uvrA_169']
@@ -360,6 +915,26 @@ Predicted proportions are: {'uvrA_169': 21.596518868490175, 'uvrA_120': 23.20678
 
 ======================================== SIMULATION 37 ====================================================
 
+    target_id  est_counts
+27    uvrA_28    0.000899
+41    uvrA_42    5.479447
+43    uvrA_44   10.995770
+44    uvrA_45   22.824278
+76    uvrA_77   22.389471
+110  uvrA_111    5.479447
+121  uvrA_122    5.926625
+130  uvrA_131    2.928421
+141  uvrA_142   23.975643
+Next
+    target_id  est_counts
+41    uvrA_42    5.479496
+43    uvrA_44   10.995869
+44    uvrA_45   22.824484
+76    uvrA_77   22.389672
+110  uvrA_111    5.479496
+121  uvrA_122    5.926678
+130  uvrA_131    2.928447
+141  uvrA_142   23.975858
 True variants are: ['uvrA_142', 'uvrA_44', 'uvrA_45', 'uvrA_122', 'uvrA_131', 'uvrA_111', 'uvrA_77']
 
 Predicted variants are: ['uvrA_42', 'uvrA_44', 'uvrA_45', 'uvrA_77', 'uvrA_111', 'uvrA_122', 'uvrA_131', 'uvrA_142']
@@ -370,6 +945,20 @@ Predicted proportions are: {'uvrA_42': 5.479495999069042, 'uvrA_44': 10.99586910
 
 ======================================== SIMULATION 38 ====================================================
 
+    target_id  est_counts
+27    uvrA_28    0.000918
+28    uvrA_29   34.775473
+31    uvrA_32   18.259212
+41    uvrA_42   14.477285
+110  uvrA_111    1.795174
+136  uvrA_137   30.691938
+Next
+    target_id  est_counts
+28    uvrA_29   34.775793
+31    uvrA_32   18.259380
+41    uvrA_42   14.477417
+110  uvrA_111    1.795190
+136  uvrA_137   30.692220
 True variants are: ['uvrA_29', 'uvrA_137', 'uvrA_32', 'uvrA_42']
 
 Predicted variants are: ['uvrA_29', 'uvrA_32', 'uvrA_42', 'uvrA_111', 'uvrA_137']
@@ -380,6 +969,31 @@ Predicted proportions are: {'uvrA_42': 14.477417499297534, 'uvrA_137': 30.692219
 
 ======================================== SIMULATION 39 ====================================================
 
+    target_id  est_counts
+0      uvrA_1   10.188505
+1      uvrA_2   13.133558
+2      uvrA_3    0.863955
+3      uvrA_4    2.823988
+5      uvrA_6    0.036692
+9     uvrA_10    0.574097
+19    uvrA_20    0.183175
+32    uvrA_33    0.256530
+41    uvrA_42    0.008096
+81    uvrA_82   20.567020
+110  uvrA_111    0.000919
+134  uvrA_135    4.805195
+159  uvrA_160    0.000004
+168  uvrA_169   17.340534
+173  uvrA_174   29.217730
+Next
+    target_id  est_counts
+0      uvrA_1   10.388321
+1      uvrA_2   13.391133
+3      uvrA_4    2.879372
+81    uvrA_82   20.970379
+134  uvrA_135    4.899434
+168  uvrA_169   17.680616
+173  uvrA_174   29.790746
 True variants are: ['uvrA_169', 'uvrA_135', 'uvrA_1', 'uvrA_82', 'uvrA_20', 'uvrA_2', 'uvrA_174']
 
 Predicted variants are: ['uvrA_1', 'uvrA_2', 'uvrA_4', 'uvrA_82', 'uvrA_135', 'uvrA_169', 'uvrA_174']
@@ -390,6 +1004,17 @@ Predicted proportions are: {'uvrA_4': 2.8793716958699265, 'uvrA_135': 4.89943412
 
 ======================================== SIMULATION 40 ====================================================
 
+   target_id  est_counts
+1     uvrA_2    3.326997
+2     uvrA_3    3.326997
+74   uvrA_75    0.137882
+89   uvrA_90    0.000864
+93   uvrA_94   93.207259
+Next
+   target_id  est_counts
+1     uvrA_2     3.33162
+2     uvrA_3     3.33162
+93   uvrA_94    93.33676
 True variants are: ['uvrA_2', 'uvrA_94']
 
 Predicted variants are: ['uvrA_2', 'uvrA_3', 'uvrA_94']

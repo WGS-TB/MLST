@@ -1,5 +1,17 @@
 ======================================== SIMULATION 1 ====================================================
 
+    target_id  est_counts
+55    clpA_56   37.186040
+56    clpA_57    0.002663
+72    clpA_73   34.118145
+192  clpA_193   19.602252
+203  clpA_204    9.090899
+Next
+    target_id  est_counts
+55    clpA_56   37.187030
+72    clpA_73   34.119054
+192  clpA_193   19.602774
+203  clpA_204    9.091142
 True variants are: ['clpA_73', 'clpA_56', 'clpA_193', 'clpA_204']
 
 Predicted variants are: ['clpA_56', 'clpA_73', 'clpA_193', 'clpA_204']
@@ -10,6 +22,42 @@ Predicted proportions are: {'clpA_193': 19.602773934560823, 'clpA_56': 37.187030
 
 ======================================== SIMULATION 2 ====================================================
 
+    target_id    est_counts
+34    clpA_35  2.554267e-08
+35    clpA_36  2.265562e+01
+36    clpA_37  5.241030e-04
+52    clpA_53  5.779247e-05
+71    clpA_72  4.762395e-09
+90    clpA_91  2.837716e-09
+97    clpA_98  3.705821e-05
+101  clpA_102  3.224763e-04
+108  clpA_109  2.884763e-07
+110  clpA_111  1.238908e-06
+112  clpA_113  1.072017e-05
+113  clpA_114  6.279442e-09
+116  clpA_117  5.408774e-05
+118  clpA_119  5.408774e-05
+119  clpA_120  2.110791e+01
+122  clpA_123  3.404512e-01
+130  clpA_131  1.619702e-08
+133  clpA_134  2.239930e-03
+144  clpA_145  1.949861e+00
+156  clpA_157  2.256267e+01
+161  clpA_162  1.443922e+01
+171  clpA_172  4.045682e+00
+197  clpA_198  1.094510e+01
+204  clpA_205  3.224763e-04
+213  clpA_214  1.949861e+00
+Next
+    target_id  est_counts
+35    clpA_36   22.733846
+119  clpA_120   21.180787
+144  clpA_145    1.956593
+156  clpA_157   22.640573
+161  clpA_162   14.489072
+171  clpA_172    4.059650
+197  clpA_198   10.982886
+213  clpA_214    1.956593
 True variants are: ['clpA_214', 'clpA_157', 'clpA_36', 'clpA_145', 'clpA_162', 'clpA_120']
 
 Predicted variants are: ['clpA_36', 'clpA_120', 'clpA_145', 'clpA_157', 'clpA_162', 'clpA_172', 'clpA_198', 'clpA_214']
@@ -20,6 +68,25 @@ Predicted proportions are: {'clpA_214': 1.9565927111890271, 'clpA_36': 22.733846
 
 ======================================== SIMULATION 3 ====================================================
 
+    target_id    est_counts
+34    clpA_35  1.137590e+01
+42    clpA_43  2.672176e+01
+53    clpA_54  2.646603e-03
+59    clpA_60  5.785124e+00
+112  clpA_113  1.479226e+01
+117  clpA_118  1.214876e+01
+122  clpA_123  1.349862e+00
+132  clpA_133  2.782369e+01
+171  clpA_172  6.771212e-07
+Next
+    target_id  est_counts
+34    clpA_35   11.376196
+42    clpA_43   26.722470
+59    clpA_60    5.785277
+112  clpA_113   14.792650
+117  clpA_118   12.149082
+122  clpA_123    1.349898
+132  clpA_133   27.824427
 True variants are: ['clpA_113', 'clpA_133', 'clpA_60', 'clpA_118', 'clpA_35', 'clpA_43']
 
 Predicted variants are: ['clpA_35', 'clpA_43', 'clpA_60', 'clpA_113', 'clpA_118', 'clpA_123', 'clpA_133']
@@ -30,6 +97,16 @@ Predicted proportions are: {'clpA_35': 11.376196174885065, 'clpA_43': 26.7224697
 
 ======================================== SIMULATION 4 ====================================================
 
+    target_id  est_counts
+5      clpA_6    0.002584
+13    clpA_14    5.096572
+67    clpA_68   55.524076
+163  clpA_164   39.376768
+Next
+    target_id  est_counts
+13    clpA_14    5.096704
+67    clpA_68   55.525511
+163  clpA_164   39.377786
 True variants are: ['clpA_14', 'clpA_68', 'clpA_164']
 
 Predicted variants are: ['clpA_14', 'clpA_68', 'clpA_164']
@@ -40,6 +117,20 @@ Predicted proportions are: {'clpA_68': 55.52551071429887, 'clpA_14': 5.096703626
 
 ======================================== SIMULATION 5 ====================================================
 
+    target_id  est_counts
+117  clpA_118   36.796052
+122  clpA_123    1.472155
+199  clpA_200   22.625676
+212  clpA_213   25.001567
+215  clpA_216    0.417413
+216  clpA_217   13.687137
+Next
+    target_id  est_counts
+117  clpA_118   36.950288
+122  clpA_123    1.478326
+199  clpA_200   22.720514
+212  clpA_213   25.106364
+216  clpA_217   13.744508
 True variants are: ['clpA_118', 'clpA_213', 'clpA_217', 'clpA_200']
 
 Predicted variants are: ['clpA_118', 'clpA_123', 'clpA_200', 'clpA_213', 'clpA_217']
@@ -50,6 +141,14 @@ Predicted proportions are: {'clpA_118': 36.95028768378161, 'clpA_213': 25.106364
 
 ======================================== SIMULATION 6 ====================================================
 
+    target_id  est_counts
+116  clpA_117   62.960162
+118  clpA_119    0.002773
+196  clpA_197   37.037065
+Next
+    target_id  est_counts
+116  clpA_117   62.961908
+196  clpA_197   37.038092
 True variants are: ['clpA_197', 'clpA_117']
 
 Predicted variants are: ['clpA_117', 'clpA_197']
@@ -60,6 +159,20 @@ Predicted proportions are: {'clpA_197': 37.03809225334055, 'clpA_117': 62.961907
 
 ======================================== SIMULATION 7 ====================================================
 
+    target_id    est_counts
+13    clpA_14  5.751978e-09
+18    clpA_19  2.841226e+01
+80    clpA_81  2.813370e+01
+109  clpA_110  3.008357e+01
+123  clpA_124  1.949861e+00
+142  clpA_143  1.142061e+01
+Next
+    target_id  est_counts
+18    clpA_19   28.412256
+80    clpA_81   28.133705
+109  clpA_110   30.083565
+123  clpA_124    1.949861
+142  clpA_143   11.420613
 True variants are: ['clpA_124', 'clpA_19', 'clpA_110', 'clpA_81', 'clpA_143']
 
 Predicted variants are: ['clpA_19', 'clpA_81', 'clpA_110', 'clpA_124', 'clpA_143']
@@ -70,6 +183,23 @@ Predicted proportions are: {'clpA_124': 1.9498607242339834, 'clpA_110': 30.08356
 
 ======================================== SIMULATION 8 ====================================================
 
+    target_id    est_counts
+41    clpA_42  2.530591e-05
+42    clpA_43  1.580529e-01
+94    clpA_95  5.249272e+01
+102  clpA_103  1.580529e-01
+111  clpA_112  2.530591e-05
+165  clpA_166  1.966293e+00
+186  clpA_187  2.530591e-05
+192  clpA_193  2.530591e-05
+201  clpA_202  4.489918e-05
+202  clpA_203  1.552916e-07
+203  clpA_204  4.522474e+01
+Next
+    target_id  est_counts
+94    clpA_95   52.659254
+165  clpA_166    1.972531
+203  clpA_204   45.368215
 True variants are: ['clpA_204', 'clpA_95', 'clpA_166']
 
 Predicted variants are: ['clpA_95', 'clpA_166', 'clpA_204']
@@ -80,6 +210,17 @@ Predicted proportions are: {'clpA_95': 52.659253706949514, 'clpA_166': 1.9725310
 
 ======================================== SIMULATION 9 ====================================================
 
+    target_id  est_counts
+7      clpA_8    0.000106
+8      clpA_9   41.714199
+27    clpA_28    0.002387
+29    clpA_30   34.569071
+165  clpA_166   23.714237
+Next
+    target_id  est_counts
+8      clpA_9   41.715239
+29    clpA_30   34.569933
+165  clpA_166   23.714828
 True variants are: ['clpA_9', 'clpA_166', 'clpA_30']
 
 Predicted variants are: ['clpA_9', 'clpA_30', 'clpA_166']
@@ -90,6 +231,21 @@ Predicted proportions are: {'clpA_30': 34.56993302704062, 'clpA_166': 23.7148277
 
 ======================================== SIMULATION 10 ====================================================
 
+    target_id  est_counts
+23    clpA_24   19.498607
+39    clpA_40    1.003440
+41    clpA_42   23.119749
+64    clpA_65    0.002703
+79    clpA_80   40.947075
+129  clpA_130   15.428384
+186  clpA_187    0.000041
+Next
+    target_id  est_counts
+23    clpA_24   19.499142
+39    clpA_40    1.003468
+41    clpA_42   23.120384
+79    clpA_80   40.948199
+129  clpA_130   15.428808
 True variants are: ['clpA_80', 'clpA_65', 'clpA_24', 'clpA_130', 'clpA_42']
 
 Predicted variants are: ['clpA_24', 'clpA_40', 'clpA_42', 'clpA_80', 'clpA_130']
@@ -100,6 +256,25 @@ Predicted proportions are: {'clpA_40': 1.0034676438893935, 'clpA_130': 15.428807
 
 ======================================== SIMULATION 11 ====================================================
 
+    target_id    est_counts
+14    clpA_15  2.533632e+01
+31    clpA_32  1.448468e+01
+45    clpA_46  2.567630e-03
+65    clpA_66  1.179593e+01
+102  clpA_103  9.800084e+00
+138  clpA_139  3.178217e-08
+158  clpA_159  5.630307e-01
+159  clpA_160  5.630307e-01
+182  clpA_183  1.364903e+01
+193  clpA_194  2.380532e+01
+Next
+    target_id  est_counts
+14    clpA_15   25.625542
+31    clpA_32   14.650025
+65    clpA_66   11.930586
+102  clpA_103    9.911953
+182  clpA_183   13.804831
+193  clpA_194   24.077063
 True variants are: ['clpA_160', 'clpA_15', 'clpA_32', 'clpA_183', 'clpA_66', 'clpA_194', 'clpA_103']
 
 Predicted variants are: ['clpA_15', 'clpA_32', 'clpA_66', 'clpA_103', 'clpA_183', 'clpA_194']
@@ -110,6 +285,35 @@ Predicted proportions are: {'clpA_15': 25.625541980491807, 'clpA_183': 13.804831
 
 ======================================== SIMULATION 12 ====================================================
 
+    target_id    est_counts
+6      clpA_7  2.037304e+00
+14    clpA_15  1.091110e+01
+27    clpA_28  6.578934e-05
+29    clpA_30  1.448461e+01
+42    clpA_43  1.165093e-03
+45    clpA_46  4.115594e-04
+46    clpA_47  2.442231e-07
+66    clpA_67  2.442231e-07
+75    clpA_76  3.064063e+00
+78    clpA_79  1.949859e+00
+98    clpA_99  3.388408e-07
+102  clpA_103  4.762808e+01
+111  clpA_112  2.424474e-09
+137  clpA_138  8.206620e-07
+138  clpA_139  1.686296e-08
+155  clpA_156  1.936354e+01
+191  clpA_192  5.597849e-01
+193  clpA_194  3.237573e-06
+194  clpA_195  8.467289e-06
+Next
+    target_id  est_counts
+6      clpA_7    2.048807
+14    clpA_15   10.972707
+29    clpA_30   14.566389
+75    clpA_76    3.081363
+78    clpA_79    1.960868
+102  clpA_103   47.896993
+155  clpA_156   19.472872
 True variants are: ['clpA_76', 'clpA_79', 'clpA_103', 'clpA_30', 'clpA_156', 'clpA_15']
 
 Predicted variants are: ['clpA_7', 'clpA_15', 'clpA_30', 'clpA_76', 'clpA_79', 'clpA_103', 'clpA_156']
@@ -120,6 +324,26 @@ Predicted proportions are: {'clpA_30': 14.566389277662022, 'clpA_15': 10.9727071
 
 ======================================== SIMULATION 13 ====================================================
 
+    target_id    est_counts
+3      clpA_4  2.908587e+01
+45    clpA_46  5.540166e-01
+46    clpA_47  5.540166e-01
+66    clpA_67  5.465873e-08
+74    clpA_75  2.216066e+01
+137  clpA_138  5.465873e-08
+138  clpA_139  1.329607e-07
+151  clpA_152  2.908587e+01
+179  clpA_180  4.986150e+00
+191  clpA_192  5.465873e-08
+193  clpA_194  5.465873e-08
+214  clpA_215  1.357341e+01
+Next
+    target_id  est_counts
+3      clpA_4   29.411765
+74    clpA_75   22.408964
+151  clpA_152   29.411765
+179  clpA_180    5.042017
+214  clpA_215   13.725490
 True variants are: ['clpA_47', 'clpA_4', 'clpA_215', 'clpA_75', 'clpA_152', 'clpA_180']
 
 Predicted variants are: ['clpA_4', 'clpA_75', 'clpA_152', 'clpA_180', 'clpA_215']
@@ -130,6 +354,15 @@ Predicted proportions are: {'clpA_75': 22.408963585434172, 'clpA_180': 5.0420168
 
 ======================================== SIMULATION 14 ====================================================
 
+   target_id    est_counts
+27   clpA_28  7.017072e+01
+28   clpA_29  7.563318e-05
+29   clpA_30  2.982920e+01
+31   clpA_32  5.262346e-08
+Next
+   target_id  est_counts
+27   clpA_28   70.170774
+29   clpA_30   29.829226
 True variants are: ['clpA_28', 'clpA_30']
 
 Predicted variants are: ['clpA_28', 'clpA_30']
@@ -140,6 +373,14 @@ Predicted proportions are: {'clpA_30': 29.82922636103152, 'clpA_28': 70.17077363
 
 ======================================== SIMULATION 15 ====================================================
 
+    target_id    est_counts
+21    clpA_22  9.687500e+01
+157  clpA_158  1.402327e-08
+213  clpA_214  3.125000e+00
+Next
+    target_id  est_counts
+21    clpA_22      96.875
+213  clpA_214       3.125
 True variants are: ['clpA_214', 'clpA_22']
 
 Predicted variants are: ['clpA_22', 'clpA_214']
@@ -150,6 +391,25 @@ Predicted proportions are: {'clpA_214': 3.125, 'clpA_22': 96.87500000000001}
 
 ======================================== SIMULATION 16 ====================================================
 
+    target_id  est_counts
+7      clpA_8    0.002456
+55    clpA_56    3.038618
+56    clpA_57    0.000050
+105  clpA_106   31.234802
+117  clpA_118    1.088724
+122  clpA_123   17.419556
+126  clpA_127    3.867403
+154  clpA_155   20.972704
+211  clpA_212   22.375687
+Next
+    target_id  est_counts
+55    clpA_56    3.038695
+105  clpA_106   31.235585
+117  clpA_118    1.088751
+122  clpA_123   17.419992
+126  clpA_127    3.867500
+154  clpA_155   20.973230
+211  clpA_212   22.376248
 True variants are: ['clpA_56', 'clpA_123', 'clpA_155', 'clpA_212', 'clpA_106', 'clpA_127']
 
 Predicted variants are: ['clpA_56', 'clpA_106', 'clpA_118', 'clpA_123', 'clpA_127', 'clpA_155', 'clpA_212']
@@ -160,6 +420,25 @@ Predicted proportions are: {'clpA_212': 22.37624815955359, 'clpA_56': 3.03869450
 
 ======================================== SIMULATION 17 ====================================================
 
+    target_id    est_counts
+45    clpA_46  2.405176e-08
+65    clpA_66  2.473871e-03
+91    clpA_92  1.092437e+01
+95    clpA_96  2.829131e+01
+107  clpA_108  1.421389e+01
+138  clpA_139  1.015339e+01
+164  clpA_165  5.042016e+00
+167  clpA_168  1.848739e+01
+200  clpA_201  1.288515e+01
+Next
+    target_id  est_counts
+91    clpA_92   10.924639
+95    clpA_96   28.292014
+107  clpA_108   14.214244
+138  clpA_139   10.153640
+164  clpA_165    5.042141
+167  clpA_168   18.487851
+200  clpA_201   12.885472
 True variants are: ['clpA_168', 'clpA_139', 'clpA_92', 'clpA_165', 'clpA_108', 'clpA_201', 'clpA_96']
 
 Predicted variants are: ['clpA_92', 'clpA_96', 'clpA_108', 'clpA_139', 'clpA_165', 'clpA_168', 'clpA_201']
@@ -170,6 +449,26 @@ Predicted proportions are: {'clpA_168': 18.48785068091314, 'clpA_201': 12.885471
 
 ======================================== SIMULATION 18 ====================================================
 
+    target_id    est_counts
+45    clpA_46  4.064595e-08
+46    clpA_47  5.376517e-09
+59    clpA_60  2.114222e+01
+65    clpA_66  2.840111e-09
+89    clpA_90  1.020838e-01
+99   clpA_100  2.033426e+01
+132  clpA_133  1.727019e+01
+138  clpA_139  2.033426e+01
+152  clpA_153  1.020838e-01
+153  clpA_154  1.020838e-01
+212  clpA_213  2.020802e+01
+215  clpA_216  4.047994e-01
+Next
+    target_id  est_counts
+59    clpA_60   21.293633
+99   clpA_100   20.479880
+132  clpA_133   17.393871
+138  clpA_139   20.479880
+212  clpA_213   20.352736
 True variants are: ['clpA_60', 'clpA_213', 'clpA_139', 'clpA_133', 'clpA_100']
 
 Predicted variants are: ['clpA_60', 'clpA_100', 'clpA_133', 'clpA_139', 'clpA_213']
@@ -180,6 +479,33 @@ Predicted proportions are: {'clpA_100': 20.47988006084488, 'clpA_139': 20.479880
 
 ======================================== SIMULATION 19 ====================================================
 
+    target_id    est_counts
+4      clpA_5  3.250444e-08
+19    clpA_20  1.749781e+01
+24    clpA_25  2.183708e-03
+35    clpA_36  6.314694e+00
+36    clpA_37  2.832944e-04
+86    clpA_87  1.444444e+01
+97    clpA_98  2.589669e-06
+101  clpA_102  1.402728e-04
+110  clpA_111  9.095889e-09
+112  clpA_113  2.361517e-07
+133  clpA_134  6.185083e-04
+146  clpA_147  1.444444e+01
+171  clpA_172  1.864917e-04
+197  clpA_198  2.201728e+01
+198  clpA_199  1.944444e+01
+204  clpA_205  1.402728e-04
+215  clpA_216  5.833333e+00
+Next
+    target_id  est_counts
+19    clpA_20   17.498428
+35    clpA_36    6.314919
+86    clpA_87   14.444958
+146  clpA_147   14.444958
+197  clpA_198   22.018061
+198  clpA_199   19.445136
+215  clpA_216    5.833541
 True variants are: ['clpA_198', 'clpA_87', 'clpA_147', 'clpA_216', 'clpA_20', 'clpA_199']
 
 Predicted variants are: ['clpA_20', 'clpA_36', 'clpA_87', 'clpA_147', 'clpA_198', 'clpA_199', 'clpA_216']
@@ -190,6 +516,14 @@ Predicted proportions are: {'clpA_216': 5.833540748115489, 'clpA_36': 6.31491897
 
 ======================================== SIMULATION 20 ====================================================
 
+    target_id    est_counts
+80    clpA_81  7.008547e+01
+124  clpA_125  2.991453e+01
+126  clpA_127  4.920057e-09
+Next
+    target_id  est_counts
+80    clpA_81    70.08547
+124  clpA_125    29.91453
 True variants are: ['clpA_125', 'clpA_81']
 
 Predicted variants are: ['clpA_81', 'clpA_125']
@@ -200,6 +534,18 @@ Predicted proportions are: {'clpA_125': 29.914529914529915, 'clpA_81': 70.085470
 
 ======================================== SIMULATION 21 ====================================================
 
+    target_id  est_counts
+41    clpA_42    0.002647
+127  clpA_128   32.222220
+153  clpA_154   16.666665
+178  clpA_179   30.833331
+186  clpA_187   20.275137
+Next
+    target_id  est_counts
+127  clpA_128   32.223073
+153  clpA_154   16.667106
+178  clpA_179   30.834147
+186  clpA_187   20.275674
 True variants are: ['clpA_154', 'clpA_128', 'clpA_179', 'clpA_187']
 
 Predicted variants are: ['clpA_128', 'clpA_154', 'clpA_179', 'clpA_187']
@@ -210,6 +556,29 @@ Predicted proportions are: {'clpA_154': 16.66710649308801, 'clpA_179': 30.834147
 
 ======================================== SIMULATION 22 ====================================================
 
+    target_id    est_counts
+32    clpA_33  1.526990e-08
+35    clpA_36  7.254039e-08
+36    clpA_37  7.254039e-08
+50    clpA_51  2.570430e-07
+73    clpA_74  9.830315e+00
+100  clpA_101  1.903856e-05
+101  clpA_102  7.254039e-08
+113  clpA_114  1.120449e+00
+117  clpA_118  5.513701e+01
+122  clpA_123  1.725654e+00
+133  clpA_134  7.254039e-08
+135  clpA_136  3.149974e+01
+187  clpA_188  6.868044e-01
+197  clpA_198  7.254039e-08
+204  clpA_205  7.254039e-08
+Next
+    target_id  est_counts
+73    clpA_74    9.898299
+113  clpA_114    1.128198
+117  clpA_118   55.518328
+122  clpA_123    1.737588
+135  clpA_136   31.717587
 True variants are: ['clpA_136', 'clpA_118', 'clpA_74', 'clpA_114']
 
 Predicted variants are: ['clpA_74', 'clpA_114', 'clpA_118', 'clpA_123', 'clpA_136']
@@ -220,6 +589,23 @@ Predicted proportions are: {'clpA_136': 31.717586836956073, 'clpA_74': 9.8982991
 
 ======================================== SIMULATION 23 ====================================================
 
+    target_id    est_counts
+35    clpA_36  3.441646e-08
+52    clpA_53  6.475575e-08
+89    clpA_90  2.436601e-03
+112  clpA_113  2.762305e+01
+153  clpA_154  4.345156e+01
+161  clpA_162  7.474462e+00
+171  clpA_172  3.597133e-06
+197  clpA_198  1.369731e-08
+201  clpA_202  4.712761e-08
+203  clpA_204  2.144848e+01
+Next
+    target_id  est_counts
+112  clpA_113   27.623729
+153  clpA_154   43.452621
+161  clpA_162    7.474644
+203  clpA_204   21.449006
 True variants are: ['clpA_154', 'clpA_204', 'clpA_162', 'clpA_113']
 
 Predicted variants are: ['clpA_113', 'clpA_154', 'clpA_162', 'clpA_204']
@@ -230,6 +616,25 @@ Predicted proportions are: {'clpA_113': 27.62372872857537, 'clpA_162': 7.4746442
 
 ======================================== SIMULATION 24 ====================================================
 
+    target_id    est_counts
+28    clpA_29  1.880109e+01
+39    clpA_40  1.819774e+01
+64    clpA_65  9.124796e-07
+113  clpA_114  2.421278e-03
+134  clpA_135  2.014474e+01
+157  clpA_158  1.226158e+01
+167  clpA_168  1.880109e+01
+172  clpA_173  4.963025e+00
+205  clpA_206  6.828311e+00
+Next
+    target_id  est_counts
+28    clpA_29   18.801546
+39    clpA_40   18.198180
+134  clpA_135   20.145230
+157  clpA_158   12.261878
+167  clpA_168   18.801546
+172  clpA_173    4.963145
+205  clpA_206    6.828476
 True variants are: ['clpA_40', 'clpA_173', 'clpA_168', 'clpA_135', 'clpA_206', 'clpA_158', 'clpA_29']
 
 Predicted variants are: ['clpA_29', 'clpA_40', 'clpA_135', 'clpA_158', 'clpA_168', 'clpA_173', 'clpA_206']
@@ -240,6 +645,19 @@ Predicted proportions are: {'clpA_168': 18.801545868551035, 'clpA_206': 6.828476
 
 ======================================== SIMULATION 25 ====================================================
 
+    target_id  est_counts
+32    clpA_33    7.142858
+41    clpA_42    0.000018
+57    clpA_58   23.301659
+87    clpA_88    0.002359
+115  clpA_116   69.122292
+186  clpA_187    0.000018
+192  clpA_193    0.430797
+Next
+    target_id  est_counts
+32    clpA_33    7.173935
+57    clpA_58   23.403039
+115  clpA_116   69.423026
 True variants are: ['clpA_33', 'clpA_58', 'clpA_116']
 
 Predicted variants are: ['clpA_33', 'clpA_58', 'clpA_116']
@@ -250,6 +668,15 @@ Predicted proportions are: {'clpA_33': 7.173934627664183, 'clpA_58': 23.40303910
 
 ======================================== SIMULATION 26 ====================================================
 
+    target_id  est_counts
+48    clpA_49   92.877490
+116  clpA_117    0.000002
+118  clpA_119    0.000002
+119  clpA_120    7.122507
+Next
+    target_id  est_counts
+48    clpA_49   92.877493
+119  clpA_120    7.122507
 True variants are: ['clpA_49', 'clpA_120']
 
 Predicted variants are: ['clpA_49', 'clpA_120']
@@ -260,6 +687,26 @@ Predicted proportions are: {'clpA_49': 92.87749287749287, 'clpA_120': 7.12250712
 
 ======================================== SIMULATION 27 ====================================================
 
+    target_id    est_counts
+32    clpA_33  6.944445e+00
+42    clpA_43  2.768106e+01
+55    clpA_56  2.559608e-03
+56    clpA_57  4.997445e+00
+102  clpA_103  2.400672e+01
+111  clpA_112  2.485450e-07
+191  clpA_192  1.660295e+00
+194  clpA_195  1.043492e-06
+195  clpA_196  3.596361e+00
+205  clpA_206  3.111111e+01
+Next
+    target_id  est_counts
+32    clpA_33    6.944623
+42    clpA_43   27.681766
+56    clpA_57    4.997573
+102  clpA_103   24.007338
+191  clpA_192    1.660337
+195  clpA_196    3.596453
+205  clpA_206   31.111910
 True variants are: ['clpA_57', 'clpA_33', 'clpA_43', 'clpA_196', 'clpA_103', 'clpA_206']
 
 Predicted variants are: ['clpA_33', 'clpA_43', 'clpA_57', 'clpA_103', 'clpA_192', 'clpA_196', 'clpA_206']
@@ -270,6 +717,18 @@ Predicted proportions are: {'clpA_192': 1.6603370597623117, 'clpA_33': 6.9446226
 
 ======================================== SIMULATION 28 ====================================================
 
+   target_id  est_counts
+6     clpA_7   13.407049
+7     clpA_8    0.000001
+8     clpA_9   20.780942
+14   clpA_15    0.000005
+57   clpA_58   65.809603
+87   clpA_88    0.002400
+Next
+   target_id  est_counts
+6     clpA_7   13.407371
+8     clpA_9   20.781442
+57   clpA_58   65.811187
 True variants are: ['clpA_9', 'clpA_7', 'clpA_58']
 
 Predicted variants are: ['clpA_7', 'clpA_9', 'clpA_58']
@@ -280,6 +739,19 @@ Predicted proportions are: {'clpA_7': 13.407371108173404, 'clpA_58': 65.81118657
 
 ======================================== SIMULATION 29 ====================================================
 
+    target_id    est_counts
+35    clpA_36  1.080750e-03
+36    clpA_37  8.856820e-06
+79    clpA_80  6.147304e+01
+101  clpA_102  5.368098e-06
+133  clpA_134  3.852518e+01
+171  clpA_172  7.885518e-08
+197  clpA_198  6.786114e-04
+204  clpA_205  5.368098e-06
+Next
+    target_id  est_counts
+79    clpA_80   61.474133
+133  clpA_134   38.525867
 True variants are: ['clpA_80', 'clpA_134']
 
 Predicted variants are: ['clpA_80', 'clpA_134']
@@ -290,6 +762,22 @@ Predicted proportions are: {'clpA_80': 61.47413270480517, 'clpA_134': 38.5258672
 
 ======================================== SIMULATION 30 ====================================================
 
+    target_id  est_counts
+42    clpA_43    5.802188
+64    clpA_65   16.904211
+87    clpA_88    5.420665
+94    clpA_95   26.997590
+108  clpA_109    0.002576
+130  clpA_131   26.313213
+214  clpA_215   18.559557
+Next
+    target_id  est_counts
+42    clpA_43    5.802338
+64    clpA_65   16.904646
+87    clpA_88    5.420804
+94    clpA_95   26.998286
+130  clpA_131   26.313891
+214  clpA_215   18.560035
 True variants are: ['clpA_215', 'clpA_95', 'clpA_65', 'clpA_43', 'clpA_88', 'clpA_131']
 
 Predicted variants are: ['clpA_43', 'clpA_65', 'clpA_88', 'clpA_95', 'clpA_131', 'clpA_215']
@@ -300,6 +788,21 @@ Predicted proportions are: {'clpA_215': 18.56003492610751, 'clpA_43': 5.80233784
 
 ======================================== SIMULATION 31 ====================================================
 
+    target_id    est_counts
+2      clpA_3  2.727138e-03
+9     clpA_10  7.530477e+00
+22    clpA_23  6.215955e-09
+63    clpA_64  1.264045e+01
+136  clpA_137  2.786006e+01
+172  clpA_173  1.657303e+01
+201  clpA_202  3.539326e+01
+Next
+    target_id  est_counts
+9     clpA_10    7.530683
+63    clpA_64   12.640794
+136  clpA_137   27.860815
+172  clpA_173   16.573485
+201  clpA_202   35.394223
 True variants are: ['clpA_137', 'clpA_10', 'clpA_64', 'clpA_202', 'clpA_173']
 
 Predicted variants are: ['clpA_10', 'clpA_64', 'clpA_137', 'clpA_173', 'clpA_202']
@@ -310,6 +813,24 @@ Predicted proportions are: {'clpA_202': 35.39422282011617, 'clpA_173': 16.573485
 
 ======================================== SIMULATION 32 ====================================================
 
+    target_id  est_counts
+41    clpA_42    0.321304
+42    clpA_43    0.000532
+65    clpA_66   42.014226
+71    clpA_72    8.045603
+78    clpA_79    6.963792
+102  clpA_103    0.000532
+111  clpA_112    0.000532
+167  clpA_168   22.037977
+168  clpA_169   20.612823
+186  clpA_187    0.002679
+Next
+    target_id  est_counts
+65    clpA_66   42.151463
+71    clpA_72    8.071883
+78    clpA_79    6.986538
+167  clpA_168   22.109963
+168  clpA_169   20.680153
 True variants are: ['clpA_79', 'clpA_168', 'clpA_169', 'clpA_66', 'clpA_72']
 
 Predicted variants are: ['clpA_66', 'clpA_72', 'clpA_79', 'clpA_168', 'clpA_169']
@@ -320,6 +841,24 @@ Predicted proportions are: {'clpA_79': 6.986538337930476, 'clpA_168': 22.1099625
 
 ======================================== SIMULATION 33 ====================================================
 
+    target_id    est_counts
+2      clpA_3  1.526146e-04
+22    clpA_23  1.526146e-04
+27    clpA_28  1.657250e+01
+28    clpA_29  6.652079e-05
+29    clpA_30  4.649298e-04
+124  clpA_125  7.752809e+01
+126  clpA_127  9.352669e-09
+127  clpA_128  1.965834e+00
+136  clpA_137  1.526146e-04
+177  clpA_178  3.932584e+00
+181  clpA_182  3.733736e-08
+Next
+    target_id  est_counts
+27    clpA_28   16.572664
+124  clpA_125   77.528859
+127  clpA_128    1.965854
+177  clpA_178    3.932623
 True variants are: ['clpA_28', 'clpA_125', 'clpA_128', 'clpA_178']
 
 Predicted variants are: ['clpA_28', 'clpA_125', 'clpA_128', 'clpA_178']
@@ -330,6 +869,16 @@ Predicted proportions are: {'clpA_125': 77.5288586428961, 'clpA_128': 1.96585376
 
 ======================================== SIMULATION 34 ====================================================
 
+    target_id  est_counts
+68    clpA_69   14.730862
+125  clpA_126   17.847006
+158  clpA_159   67.419471
+159  clpA_160    0.002661
+Next
+    target_id  est_counts
+68    clpA_69   14.731254
+125  clpA_126   17.847481
+158  clpA_159   67.421266
 True variants are: ['clpA_159', 'clpA_69', 'clpA_126']
 
 Predicted variants are: ['clpA_69', 'clpA_126', 'clpA_159']
@@ -340,6 +889,17 @@ Predicted proportions are: {'clpA_126': 17.847480530665088, 'clpA_69': 14.731253
 
 ======================================== SIMULATION 35 ====================================================
 
+    target_id    est_counts
+7      clpA_8  3.573136e-05
+8      clpA_9  2.853108e+01
+106  clpA_107  3.977954e-07
+156  clpA_157  3.141287e+01
+205  clpA_206  4.005601e+01
+Next
+    target_id  est_counts
+8      clpA_9   28.531092
+156  clpA_157   31.412885
+205  clpA_206   40.056022
 True variants are: ['clpA_206', 'clpA_9', 'clpA_157']
 
 Predicted variants are: ['clpA_9', 'clpA_157', 'clpA_206']
@@ -350,6 +910,23 @@ Predicted proportions are: {'clpA_157': 31.412885154061627, 'clpA_206': 40.05602
 
 ======================================== SIMULATION 36 ====================================================
 
+    target_id  est_counts
+2      clpA_3   20.610083
+22    clpA_23    0.000038
+59    clpA_60    2.033953
+87    clpA_88   20.385682
+123  clpA_124   13.649025
+136  clpA_137    0.002696
+137  clpA_138   18.402618
+196  clpA_197   24.915905
+Next
+    target_id  est_counts
+2      clpA_3   20.610647
+59    clpA_60    2.034008
+87    clpA_88   20.386240
+123  clpA_124   13.649398
+137  clpA_138   18.403121
+196  clpA_197   24.916586
 True variants are: ['clpA_138', 'clpA_197', 'clpA_60', 'clpA_88', 'clpA_124', 'clpA_3']
 
 Predicted variants are: ['clpA_3', 'clpA_60', 'clpA_88', 'clpA_124', 'clpA_138', 'clpA_197']
@@ -360,6 +937,29 @@ Predicted proportions are: {'clpA_197': 24.91658616075275, 'clpA_60': 2.03400822
 
 ======================================== SIMULATION 37 ====================================================
 
+    target_id    est_counts
+32    clpA_33  2.462033e-08
+50    clpA_51  1.647320e-08
+100  clpA_101  1.135789e+01
+113  clpA_114  1.647320e-08
+134  clpA_135  1.555556e+01
+135  clpA_136  6.501223e-07
+137  clpA_138  1.833333e+01
+170  clpA_171  9.848195e-09
+183  clpA_184  1.444445e+01
+187  clpA_188  1.419883e+00
+188  clpA_189  2.023122e-08
+190  clpA_191  1.833333e+01
+213  clpA_214  2.055556e+01
+Next
+    target_id  est_counts
+100  clpA_101   11.357890
+134  clpA_135   15.555556
+137  clpA_138   18.333334
+183  clpA_184   14.444445
+187  clpA_188    1.419883
+190  clpA_191   18.333334
+213  clpA_214   20.555557
 True variants are: ['clpA_135', 'clpA_138', 'clpA_191', 'clpA_184', 'clpA_214', 'clpA_101']
 
 Predicted variants are: ['clpA_101', 'clpA_135', 'clpA_138', 'clpA_184', 'clpA_188', 'clpA_191', 'clpA_214']
@@ -370,6 +970,25 @@ Predicted proportions are: {'clpA_191': 18.333334351851907, 'clpA_184': 14.44444
 
 ======================================== SIMULATION 38 ====================================================
 
+    target_id  est_counts
+65    clpA_66    0.953814
+86    clpA_87   30.175279
+107  clpA_108   23.703585
+125  clpA_126   14.722223
+137  clpA_138    9.435445
+139  clpA_140    8.684945
+147  clpA_148    4.546945
+158  clpA_159    0.002598
+159  clpA_160    7.775167
+Next
+    target_id  est_counts
+86    clpA_87   30.466666
+107  clpA_108   23.932478
+125  clpA_126   14.864388
+137  clpA_138    9.526558
+139  clpA_140    8.768811
+147  clpA_148    4.590852
+159  clpA_160    7.850248
 True variants are: ['clpA_138', 'clpA_148', 'clpA_126', 'clpA_87', 'clpA_108', 'clpA_160', 'clpA_140']
 
 Predicted variants are: ['clpA_87', 'clpA_108', 'clpA_126', 'clpA_138', 'clpA_140', 'clpA_148', 'clpA_160']
@@ -380,6 +999,21 @@ Predicted proportions are: {'clpA_160': 7.850247744469396, 'clpA_108': 23.932477
 
 ======================================== SIMULATION 39 ====================================================
 
+    target_id    est_counts
+26    clpA_27  1.267605e+01
+45    clpA_46  1.394836e-04
+46    clpA_47  2.448007e+01
+66    clpA_67  5.516757e-09
+82    clpA_83  5.211264e+01
+83    clpA_84  6.286785e-05
+138  clpA_139  1.659396e-08
+208  clpA_209  1.073104e+01
+Next
+    target_id  est_counts
+26    clpA_27   12.676074
+46    clpA_47   24.480119
+82    clpA_83   52.112749
+208  clpA_209   10.731057
 True variants are: ['clpA_47', 'clpA_209', 'clpA_83', 'clpA_27']
 
 Predicted variants are: ['clpA_27', 'clpA_47', 'clpA_83', 'clpA_209']
@@ -390,6 +1024,18 @@ Predicted proportions are: {'clpA_27': 12.676074191653793, 'clpA_209': 10.731057
 
 ======================================== SIMULATION 40 ====================================================
 
+    target_id    est_counts
+69    clpA_70  1.924853e-08
+89    clpA_90  3.448108e-05
+146  clpA_147  5.350858e+01
+152  clpA_153  3.846847e+01
+153  clpA_154  2.952836e-07
+190  clpA_191  8.022920e+00
+Next
+    target_id  est_counts
+146  clpA_147   53.508596
+152  clpA_153   38.468481
+190  clpA_191    8.022923
 True variants are: ['clpA_147', 'clpA_191', 'clpA_153']
 
 Predicted variants are: ['clpA_147', 'clpA_153', 'clpA_191']

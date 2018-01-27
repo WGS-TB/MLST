@@ -1,5 +1,24 @@
 ======================================== SIMULATION 1 ====================================================
 
+    target_id  est_counts
+24    pepX_25    0.000002
+48    pepX_49   36.901418
+63    pepX_64   34.336347
+75    pepX_76    0.301025
+90    pepX_91    0.002659
+148  pepX_149    0.001241
+159  pepX_160    0.002659
+163  pepX_164    0.002659
+164  pepX_165    0.001241
+165  pepX_166    0.000038
+168  pepX_169   19.436625
+178  pepX_179    9.014087
+Next
+    target_id  est_counts
+48    pepX_49   37.016734
+63    pepX_64   34.443647
+168  pepX_169   19.497364
+178  pepX_179    9.042256
 True variants are: ['pepX_64', 'pepX_49', 'pepX_169', 'pepX_179']
 
 Predicted variants are: ['pepX_49', 'pepX_64', 'pepX_169', 'pepX_179']
@@ -10,6 +29,24 @@ Predicted proportions are: {'pepX_64': 34.4436469677361, 'pepX_49': 37.016733824
 
 ======================================== SIMULATION 2 ====================================================
 
+    target_id  est_counts
+29    pepX_30    0.002471
+30    pepX_31   36.692165
+31    pepX_32    0.000013
+104  pepX_105   21.288520
+126  pepX_127    1.960785
+136  pepX_137   22.689081
+141  pepX_142   15.406166
+149  pepX_150    0.000013
+186  pepX_187    1.960785
+Next
+    target_id  est_counts
+30    pepX_31   36.693082
+104  pepX_105   21.289052
+126  pepX_127    1.960834
+136  pepX_137   22.689648
+141  pepX_142   15.406551
+186  pepX_187    1.960834
 True variants are: ['pepX_187', 'pepX_137', 'pepX_31', 'pepX_127', 'pepX_142', 'pepX_105']
 
 Predicted variants are: ['pepX_31', 'pepX_105', 'pepX_127', 'pepX_137', 'pepX_142', 'pepX_187']
@@ -20,6 +57,31 @@ Predicted proportions are: {'pepX_142': 15.406550865427981, 'pepX_105': 21.28905
 
 ======================================== SIMULATION 3 ====================================================
 
+    target_id    est_counts
+3      pepX_4  1.398892e+01
+29    pepX_30  2.152338e-03
+30    pepX_31  1.135471e+01
+31    pepX_32  2.362623e-04
+33    pepX_34  8.106703e-09
+36    pepX_37  2.722100e+01
+52    pepX_53  5.605623e+00
+76    pepX_77  1.437859e-06
+82    pepX_83  7.283102e-06
+85    pepX_86  4.184100e-09
+98    pepX_99  1.454180e+01
+99   pepX_100  1.678360e-06
+102  pepX_103  1.329640e+01
+116  pepX_117  1.398892e+01
+149  pepX_150  2.362623e-04
+Next
+    target_id  est_counts
+3      pepX_4   13.989288
+30    pepX_31   11.355008
+36    pepX_37   27.221714
+52    pepX_53    5.605771
+98    pepX_99   14.542183
+102  pepX_103   13.296749
+116  pepX_117   13.989288
 True variants are: ['pepX_99', 'pepX_117', 'pepX_53', 'pepX_103', 'pepX_31', 'pepX_37']
 
 Predicted variants are: ['pepX_4', 'pepX_31', 'pepX_37', 'pepX_53', 'pepX_99', 'pepX_103', 'pepX_117']
@@ -30,6 +92,25 @@ Predicted proportions are: {'pepX_37': 27.221713590800867, 'pepX_53': 5.60577078
 
 ======================================== SIMULATION 4 ====================================================
 
+    target_id    est_counts
+11    pepX_12  5.113101e+00
+26    pepX_27  4.133981e-06
+59    pepX_60  5.502533e+01
+75    pepX_76  8.932138e-02
+90    pepX_91  1.335430e-01
+98    pepX_99  2.930656e-01
+143  pepX_144  3.920458e+01
+148  pepX_149  1.335430e-01
+159  pepX_160  2.625474e-03
+160  pepX_161  5.481510e-04
+163  pepX_164  2.625474e-03
+164  pepX_165  1.711212e-03
+165  pepX_166  4.589691e-07
+Next
+    target_id  est_counts
+11    pepX_12    5.146916
+59    pepX_60   55.389232
+143  pepX_144   39.463852
 True variants are: ['pepX_12', 'pepX_60', 'pepX_144']
 
 Predicted variants are: ['pepX_12', 'pepX_60', 'pepX_144']
@@ -40,6 +121,19 @@ Predicted proportions are: {'pepX_144': 39.463852112359874, 'pepX_60': 55.389232
 
 ======================================== SIMULATION 5 ====================================================
 
+    target_id  est_counts
+82    pepX_83    0.000006
+102  pepX_103   38.095235
+174  pepX_175   22.686721
+175  pepX_176    0.002354
+186  pepX_187   25.184396
+189  pepX_190   14.031288
+Next
+    target_id  est_counts
+102  pepX_103   38.096134
+174  pepX_175   22.687257
+186  pepX_187   25.184990
+189  pepX_190   14.031619
 True variants are: ['pepX_103', 'pepX_187', 'pepX_190', 'pepX_175']
 
 Predicted variants are: ['pepX_103', 'pepX_175', 'pepX_187', 'pepX_190']
@@ -50,6 +144,16 @@ Predicted proportions are: {'pepX_175': 22.687256506875798, 'pepX_103': 38.09613
 
 ======================================== SIMULATION 6 ====================================================
 
+    target_id    est_counts
+81    pepX_82  2.536394e-07
+82    pepX_83  1.506084e-03
+102  pepX_103  6.210679e+01
+105  pepX_106  1.591284e-08
+172  pepX_173  3.789171e+01
+Next
+    target_id  est_counts
+102  pepX_103   62.107722
+172  pepX_173   37.892278
 True variants are: ['pepX_173', 'pepX_103']
 
 Predicted variants are: ['pepX_103', 'pepX_173']
@@ -60,6 +164,21 @@ Predicted proportions are: {'pepX_103': 62.107722332226956, 'pepX_173': 37.89227
 
 ======================================== SIMULATION 7 ====================================================
 
+    target_id    est_counts
+2      pepX_3  1.684236e-06
+15    pepX_16  2.821226e+01
+37    pepX_38  9.069738e-09
+70    pepX_71  2.821226e+01
+96    pepX_97  3.056030e+01
+108  pepX_109  1.955305e+00
+124  pepX_125  1.105988e+01
+Next
+    target_id  est_counts
+15    pepX_16   28.212259
+70    pepX_71   28.212259
+96    pepX_97   30.560301
+108  pepX_109    1.955305
+124  pepX_125   11.059876
 True variants are: ['pepX_109', 'pepX_16', 'pepX_97', 'pepX_71', 'pepX_125']
 
 Predicted variants are: ['pepX_16', 'pepX_71', 'pepX_97', 'pepX_109', 'pepX_125']
@@ -70,6 +189,16 @@ Predicted proportions are: {'pepX_109': 1.955305077871421, 'pepX_16': 28.2122589
 
 ======================================== SIMULATION 8 ====================================================
 
+    target_id  est_counts
+82    pepX_83   53.122850
+103  pepX_104    0.002730
+144  pepX_145    1.982999
+178  pepX_179   44.891420
+Next
+    target_id  est_counts
+82    pepX_83   53.124301
+144  pepX_145    1.983053
+178  pepX_179   44.892646
 True variants are: ['pepX_179', 'pepX_83', 'pepX_145']
 
 Predicted variants are: ['pepX_83', 'pepX_145', 'pepX_179']
@@ -80,6 +209,20 @@ Predicted proportions are: {'pepX_145': 1.9830533922961204, 'pepX_83': 53.124300
 
 ======================================== SIMULATION 9 ====================================================
 
+    target_id    est_counts
+6      pepX_7  3.670767e-07
+7      pepX_8  4.147727e+01
+11    pepX_12  1.453974e-07
+16    pepX_17  4.471989e-09
+25    pepX_26  3.465909e+01
+119  pepX_120  8.923352e-08
+145  pepX_146  2.386364e+01
+160  pepX_161  4.191307e-08
+Next
+    target_id  est_counts
+7      pepX_8   41.477273
+25    pepX_26   34.659091
+145  pepX_146   23.863636
 True variants are: ['pepX_8', 'pepX_146', 'pepX_26']
 
 Predicted variants are: ['pepX_8', 'pepX_26', 'pepX_146']
@@ -90,6 +233,23 @@ Predicted proportions are: {'pepX_146': 23.863636363636363, 'pepX_8': 41.4772727
 
 ======================================== SIMULATION 10 ====================================================
 
+    target_id    est_counts
+4      pepX_5  1.180378e-05
+20    pepX_21  1.932664e+01
+21    pepX_22  1.097543e-03
+22    pepX_23  9.038150e-09
+36    pepX_37  2.352941e+01
+48    pepX_49  1.070311e-07
+56    pepX_57  1.120448e+00
+69    pepX_70  4.061624e+01
+113  pepX_114  1.540616e+01
+Next
+    target_id  est_counts
+20    pepX_21   19.326850
+36    pepX_37   23.529669
+56    pepX_57    1.120460
+69    pepX_70   40.616690
+113  pepX_114   15.406331
 True variants are: ['pepX_70', 'pepX_57', 'pepX_21', 'pepX_114', 'pepX_37']
 
 Predicted variants are: ['pepX_21', 'pepX_37', 'pepX_57', 'pepX_70', 'pepX_114']
@@ -100,6 +260,31 @@ Predicted proportions are: {'pepX_21': 19.326849789115343, 'pepX_37': 23.5296688
 
 ======================================== SIMULATION 11 ====================================================
 
+    target_id    est_counts
+0      pepX_1  3.687856e-01
+1      pepX_2  3.687856e-01
+6      pepX_7  6.986352e-08
+7      pepX_8  3.888747e-08
+11    pepX_12  2.605190e-03
+12    pepX_13  2.507750e+01
+13    pepX_14  2.311017e-06
+27    pepX_28  1.448468e+01
+38    pepX_39  6.795043e-09
+57    pepX_58  1.108699e+01
+75    pepX_76  1.875287e-08
+89    pepX_90  9.684180e+00
+90    pepX_91  6.772843e-01
+139  pepX_140  3.687856e-01
+160  pepX_161  1.336786e+01
+169  pepX_170  2.451254e+01
+Next
+    target_id  est_counts
+12    pepX_13   25.533591
+27    pepX_28   14.748121
+57    pepX_58   11.288637
+89    pepX_90    9.860310
+160  pepX_161   13.610984
+169  pepX_170   24.958358
 True variants are: ['pepX_140', 'pepX_13', 'pepX_28', 'pepX_161', 'pepX_58', 'pepX_170', 'pepX_90']
 
 Predicted variants are: ['pepX_13', 'pepX_28', 'pepX_58', 'pepX_90', 'pepX_161', 'pepX_170']
@@ -110,6 +295,23 @@ Predicted proportions are: {'pepX_58': 11.288636885106186, 'pepX_13': 25.5335912
 
 ======================================== SIMULATION 12 ====================================================
 
+    target_id  est_counts
+12    pepX_13   11.452505
+25    pepX_26   14.525128
+65    pepX_66    3.072623
+68    pepX_69    1.955306
+90    pepX_91   47.671190
+95    pepX_96    0.650189
+110  pepX_111    0.002686
+136  pepX_137   20.670374
+Next
+    target_id  est_counts
+12    pepX_13   11.527766
+25    pepX_26   14.620582
+65    pepX_66    3.092815
+68    pepX_69    1.968155
+90    pepX_91   47.984468
+136  pepX_137   20.806213
 True variants are: ['pepX_66', 'pepX_69', 'pepX_91', 'pepX_26', 'pepX_137', 'pepX_13']
 
 Predicted variants are: ['pepX_13', 'pepX_26', 'pepX_66', 'pepX_69', 'pepX_91', 'pepX_137']
@@ -120,6 +322,34 @@ Predicted proportions are: {'pepX_26': 14.620581842924341, 'pepX_13': 11.5277664
 
 ======================================== SIMULATION 13 ====================================================
 
+    target_id    est_counts
+3      pepX_4  1.440441e+01
+35    pepX_36  1.029151e-04
+40    pepX_41  1.572389e+00
+42    pepX_43  1.623582e-06
+65    pepX_66  2.243764e+01
+75    pepX_76  1.315732e-01
+90    pepX_91  2.195751e-01
+111  pepX_112  2.468346e-07
+116  pepX_117  1.440441e+01
+132  pepX_133  2.826700e+01
+148  pepX_149  3.002240e-06
+157  pepX_158  4.986143e+00
+158  pepX_159  1.029151e-04
+159  pepX_160  5.550076e-04
+163  pepX_164  9.484780e-05
+164  pepX_165  1.178697e-08
+165  pepX_166  2.597830e-03
+188  pepX_189  1.357339e+01
+Next
+    target_id  est_counts
+3      pepX_4   14.455674
+40    pepX_41    1.577984
+65    pepX_66   22.517493
+116  pepX_117   14.455674
+132  pepX_133   28.367593
+157  pepX_158    5.003887
+188  pepX_189   13.621693
 True variants are: ['pepX_41', 'pepX_4', 'pepX_189', 'pepX_66', 'pepX_133', 'pepX_158']
 
 Predicted variants are: ['pepX_4', 'pepX_41', 'pepX_66', 'pepX_117', 'pepX_133', 'pepX_158', 'pepX_189']
@@ -130,6 +360,16 @@ Predicted proportions are: {'pepX_158': 5.003887325467538, 'pepX_41': 1.57798420
 
 ======================================== SIMULATION 14 ====================================================
 
+    target_id    est_counts
+11    pepX_12  8.904886e-08
+21    pepX_22  7.113800e-09
+23    pepX_24  6.403514e+01
+25    pepX_26  3.596486e+01
+160  pepX_161  2.638631e-08
+Next
+   target_id  est_counts
+23   pepX_24   64.035143
+25   pepX_26   35.964857
 True variants are: ['pepX_24', 'pepX_26']
 
 Predicted variants are: ['pepX_24', 'pepX_26']
@@ -140,6 +380,13 @@ Predicted proportions are: {'pepX_24': 64.03514285714286, 'pepX_26': 35.96485714
 
 ======================================== SIMULATION 15 ====================================================
 
+    target_id  est_counts
+19    pepX_20   96.866097
+187  pepX_188    3.133903
+Next
+    target_id  est_counts
+19    pepX_20   96.866097
+187  pepX_188    3.133903
 True variants are: ['pepX_188', 'pepX_20']
 
 Predicted variants are: ['pepX_20', 'pepX_188']
@@ -150,6 +397,24 @@ Predicted proportions are: {'pepX_20': 96.86609686609687, 'pepX_188': 3.13390313
 
 ======================================== SIMULATION 16 ====================================================
 
+    target_id    est_counts
+40    pepX_41  4.672089e-08
+48    pepX_49  3.064067e+00
+92    pepX_93  3.091922e+01
+106  pepX_107  1.838214e+01
+107  pepX_108  2.255485e-03
+111  pepX_112  3.899721e+00
+135  pepX_136  2.144847e+01
+180  pepX_181  6.224290e-07
+185  pepX_186  2.228412e+01
+Next
+    target_id  est_counts
+48    pepX_49    3.064136
+92    pepX_93   30.919918
+106  pepX_107   18.382560
+111  pepX_112    3.899809
+135  pepX_136   21.448952
+185  pepX_186   22.284625
 True variants are: ['pepX_49', 'pepX_107', 'pepX_136', 'pepX_186', 'pepX_93', 'pepX_112']
 
 Predicted variants are: ['pepX_49', 'pepX_93', 'pepX_107', 'pepX_112', 'pepX_136', 'pepX_186']
@@ -160,6 +425,30 @@ Predicted proportions are: {'pepX_49': 3.064135987469356, 'pepX_107': 18.3825596
 
 ======================================== SIMULATION 17 ====================================================
 
+    target_id    est_counts
+17    pepX_18  9.671098e-09
+43    pepX_44  1.293908e-08
+79    pepX_80  1.092438e+01
+84    pepX_85  3.017677e+01
+85    pepX_86  2.402312e-03
+94    pepX_95  1.456583e+01
+100  pepX_101  1.183099e-08
+121  pepX_122  7.916027e+00
+134  pepX_135  1.021838e-06
+144  pepX_145  5.042020e+00
+146  pepX_147  1.848741e+01
+162  pepX_163  5.934205e-09
+174  pepX_175  1.187485e-04
+175  pepX_176  1.288505e+01
+Next
+    target_id  est_counts
+79    pepX_80   10.924651
+84    pepX_85   30.177528
+94    pepX_95   14.566202
+121  pepX_122    7.916226
+144  pepX_145    5.042147
+146  pepX_147   18.487871
+175  pepX_176   12.885374
 True variants are: ['pepX_147', 'pepX_122', 'pepX_80', 'pepX_145', 'pepX_95', 'pepX_176', 'pepX_85']
 
 Predicted variants are: ['pepX_80', 'pepX_85', 'pepX_95', 'pepX_122', 'pepX_145', 'pepX_147', 'pepX_176']
@@ -170,6 +459,22 @@ Predicted proportions are: {'pepX_145': 5.042146744397895, 'pepX_147': 18.487871
 
 ======================================== SIMULATION 18 ====================================================
 
+    target_id  est_counts
+5      pepX_6    8.633816
+14    pepX_15    0.002566
+52    pepX_53   21.448467
+87    pepX_88   20.334261
+115  pepX_116    8.633816
+121  pepX_122   20.334261
+186  pepX_187   20.612813
+Next
+    target_id  est_counts
+5      pepX_6    8.634037
+52    pepX_53   21.449018
+87    pepX_88   20.334783
+115  pepX_116    8.634037
+121  pepX_122   20.334783
+186  pepX_187   20.613342
 True variants are: ['pepX_53', 'pepX_187', 'pepX_122', 'pepX_116', 'pepX_88']
 
 Predicted variants are: ['pepX_6', 'pepX_53', 'pepX_88', 'pepX_116', 'pepX_122', 'pepX_187']
@@ -180,6 +485,25 @@ Predicted proportions are: {'pepX_53': 21.449017634992316, 'pepX_6': 8.634037418
 
 ======================================== SIMULATION 19 ====================================================
 
+    target_id    est_counts
+11    pepX_12  5.178249e-09
+17    pepX_18  1.722222e+01
+24    pepX_25  1.916641e+01
+26    pepX_27  5.178249e-09
+75    pepX_76  1.472222e+01
+94    pepX_95  3.922222e-06
+128  pepX_129  1.472222e+01
+168  pepX_169  2.558230e-04
+173  pepX_174  2.833333e+01
+188  pepX_189  5.833333e+00
+Next
+    target_id  est_counts
+17    pepX_18   17.222265
+24    pepX_25   19.166465
+75    pepX_76   14.722259
+128  pepX_129   14.722259
+173  pepX_174   28.333404
+188  pepX_189    5.833348
 True variants are: ['pepX_174', 'pepX_76', 'pepX_129', 'pepX_189', 'pepX_18', 'pepX_25']
 
 Predicted variants are: ['pepX_18', 'pepX_25', 'pepX_76', 'pepX_129', 'pepX_174', 'pepX_189']
@@ -190,6 +514,20 @@ Predicted proportions are: {'pepX_189': 5.833347916703126, 'pepX_25': 19.1664645
 
 ======================================== SIMULATION 20 ====================================================
 
+    target_id    est_counts
+80    pepX_81  3.841808e+01
+84    pepX_85  4.718108e-05
+85    pepX_86  5.479972e-08
+100  pepX_101  1.751407e+01
+103  pepX_104  6.759916e-07
+156  pepX_157  1.751413e+01
+161  pepX_162  2.655367e+01
+Next
+    target_id  est_counts
+80    pepX_81   38.418101
+100  pepX_101   17.514078
+156  pepX_157   17.514134
+161  pepX_162   26.553687
 True variants are: ['pepX_81', 'pepX_162', 'pepX_157', 'pepX_101']
 
 Predicted variants are: ['pepX_81', 'pepX_101', 'pepX_157', 'pepX_162']
@@ -200,6 +538,34 @@ Predicted proportions are: {'pepX_101': 17.514077691569316, 'pepX_157': 17.51413
 
 ======================================== SIMULATION 21 ====================================================
 
+    target_id    est_counts
+0      pepX_1  6.180087e-09
+1      pepX_2  6.180087e-09
+2      pepX_3  1.954792e+01
+3      pepX_4  1.448122e-07
+10    pepX_11  2.270466e-03
+15    pepX_16  1.419336e-06
+18    pepX_19  2.270466e-03
+29    pepX_30  1.260550e-08
+30    pepX_31  1.706660e-05
+31    pepX_32  2.123967e-05
+32    pepX_33  1.596243e+01
+33    pepX_34  1.608874e-08
+64    pepX_65  1.295775e+01
+82    pepX_83  1.026640e-06
+99   pepX_100  2.206570e+01
+102  pepX_103  9.014088e+00
+116  pepX_117  1.448122e-07
+118  pepX_119  2.044753e+01
+179  pepX_180  1.149046e-08
+Next
+    target_id  est_counts
+2      pepX_3   19.548819
+32    pepX_33   15.963160
+64    pepX_65   12.958345
+99   pepX_100   22.066710
+102  pepX_103    9.014501
+118  pepX_119   20.448466
 True variants are: ['pepX_33', 'pepX_3', 'pepX_119', 'pepX_103', 'pepX_65', 'pepX_100']
 
 Predicted variants are: ['pepX_3', 'pepX_33', 'pepX_65', 'pepX_100', 'pepX_103', 'pepX_119']
@@ -210,6 +576,19 @@ Predicted proportions are: {'pepX_33': 15.963159988236079, 'pepX_65': 12.9583451
 
 ======================================== SIMULATION 22 ====================================================
 
+    target_id    est_counts
+79    pepX_80  1.666741e-04
+98    pepX_99  2.723323e+01
+103  pepX_104  1.582962e-08
+134  pepX_135  4.363498e+01
+141  pepX_142  7.843131e+00
+178  pepX_179  2.128850e+01
+Next
+    target_id  est_counts
+98    pepX_99   27.233272
+134  pepX_135   43.635051
+141  pepX_142    7.843144
+178  pepX_179   21.288533
 True variants are: ['pepX_135', 'pepX_179', 'pepX_142', 'pepX_99']
 
 Predicted variants are: ['pepX_99', 'pepX_135', 'pepX_142', 'pepX_179']
@@ -220,6 +599,30 @@ Predicted proportions are: {'pepX_179': 21.28853329568624, 'pepX_142': 7.8431438
 
 ======================================== SIMULATION 23 ====================================================
 
+    target_id    est_counts
+11    pepX_12  5.107314e-09
+24    pepX_25  1.890386e+01
+26    pepX_27  5.107314e-09
+30    pepX_31  1.963066e-07
+31    pepX_32  2.685633e-09
+34    pepX_35  1.780822e+01
+48    pepX_49  5.207999e-06
+117  pepX_118  2.000000e+01
+120  pepX_121  2.098238e-07
+137  pepX_138  1.232877e+01
+146  pepX_147  1.890411e+01
+151  pepX_152  4.931506e+00
+168  pepX_169  2.523186e-04
+180  pepX_181  7.123287e+00
+Next
+    target_id  est_counts
+24    pepX_25   18.903910
+34    pepX_35   17.808263
+117  pepX_118   20.000049
+137  pepX_138   12.328798
+146  pepX_147   18.904156
+151  pepX_152    4.931519
+180  pepX_181    7.123305
 True variants are: ['pepX_35', 'pepX_152', 'pepX_147', 'pepX_118', 'pepX_181', 'pepX_138', 'pepX_25']
 
 Predicted variants are: ['pepX_25', 'pepX_35', 'pepX_118', 'pepX_138', 'pepX_147', 'pepX_152', 'pepX_181']
@@ -230,6 +633,15 @@ Predicted proportions are: {'pepX_25': 18.90390962607853, 'pepX_152': 4.93151900
 
 ======================================== SIMULATION 24 ====================================================
 
+    target_id  est_counts
+28    pepX_29    7.122507
+50    pepX_51   23.931624
+101  pepX_102   68.945869
+Next
+    target_id  est_counts
+28    pepX_29    7.122507
+50    pepX_51   23.931624
+101  pepX_102   68.945869
 True variants are: ['pepX_29', 'pepX_51', 'pepX_102']
 
 Predicted variants are: ['pepX_29', 'pepX_51', 'pepX_102']
@@ -240,6 +652,16 @@ Predicted proportions are: {'pepX_29': 7.122507122507122, 'pepX_51': 23.93162393
 
 ======================================== SIMULATION 25 ====================================================
 
+    target_id    est_counts
+40    pepX_41  3.310709e-04
+42    pepX_43  9.289740e+01
+102  pepX_103  2.672760e-09
+105  pepX_106  7.102269e+00
+111  pepX_112  2.762479e-08
+Next
+    target_id  est_counts
+42    pepX_43   92.897707
+105  pepX_106    7.102293
 True variants are: ['pepX_43', 'pepX_106']
 
 Predicted variants are: ['pepX_43', 'pepX_106']
@@ -250,6 +672,22 @@ Predicted proportions are: {'pepX_43': 92.89770709575879, 'pepX_106': 7.10229290
 
 ======================================== SIMULATION 26 ====================================================
 
+    target_id  est_counts
+28    pepX_29    6.381619
+37    pepX_38   33.567035
+49    pepX_50    5.027932
+89    pepX_90   19.782176
+112  pepX_113    0.002694
+171  pepX_172    3.910614
+179  pepX_180   31.327929
+Next
+    target_id  est_counts
+28    pepX_29    6.381791
+37    pepX_38   33.567939
+49    pepX_50    5.028068
+89    pepX_90   19.782709
+171  pepX_172    3.910719
+179  pepX_180   31.328773
 True variants are: ['pepX_50', 'pepX_29', 'pepX_38', 'pepX_172', 'pepX_90', 'pepX_180']
 
 Predicted variants are: ['pepX_29', 'pepX_38', 'pepX_50', 'pepX_90', 'pepX_172', 'pepX_180']
@@ -260,6 +698,18 @@ Predicted proportions are: {'pepX_38': 33.56793925200229, 'pepX_29': 6.381791243
 
 ======================================== SIMULATION 27 ====================================================
 
+    target_id  est_counts
+5      pepX_6    6.521651
+7      pepX_8   20.572362
+14    pepX_15    0.002579
+50    pepX_51   66.381756
+115  pepX_116    6.521651
+Next
+    target_id  est_counts
+5      pepX_6    6.521820
+7      pepX_8   20.572892
+50    pepX_51   66.383469
+115  pepX_116    6.521820
 True variants are: ['pepX_8', 'pepX_6', 'pepX_51']
 
 Predicted variants are: ['pepX_6', 'pepX_8', 'pepX_51', 'pepX_116']
@@ -270,6 +720,13 @@ Predicted proportions are: {'pepX_6': 6.521819647797238, 'pepX_51': 66.383468521
 
 ======================================== SIMULATION 28 ====================================================
 
+    target_id  est_counts
+69    pepX_70   61.428571
+117  pepX_118   38.571429
+Next
+    target_id  est_counts
+69    pepX_70   61.428571
+117  pepX_118   38.571429
 True variants are: ['pepX_70', 'pepX_118']
 
 Predicted variants are: ['pepX_70', 'pepX_118']
@@ -280,6 +737,22 @@ Predicted proportions are: {'pepX_70': 61.42857142857143, 'pepX_118': 38.5714285
 
 ======================================== SIMULATION 29 ====================================================
 
+    target_id  est_counts
+37    pepX_38    5.846991
+56    pepX_57   16.434539
+76    pepX_77    5.849582
+82    pepX_83   27.019496
+112  pepX_113    0.002601
+114  pepX_115   26.183841
+187  pepX_188   18.662951
+Next
+    target_id  est_counts
+37    pepX_38    5.847143
+56    pepX_57   16.434966
+76    pepX_77    5.849734
+82    pepX_83   27.020199
+114  pepX_115   26.184522
+187  pepX_188   18.663436
 True variants are: ['pepX_188', 'pepX_83', 'pepX_57', 'pepX_38', 'pepX_77', 'pepX_115']
 
 Predicted variants are: ['pepX_38', 'pepX_57', 'pepX_77', 'pepX_83', 'pepX_115', 'pepX_188']
@@ -290,6 +763,20 @@ Predicted proportions are: {'pepX_38': 5.847143115406611, 'pepX_57': 16.43496614
 
 ======================================== SIMULATION 30 ====================================================
 
+    target_id  est_counts
+8      pepX_9    8.570567
+55    pepX_56   12.994354
+119  pepX_120   26.740177
+151  pepX_152   16.666671
+176  pepX_177   35.025715
+177  pepX_178    0.002516
+Next
+    target_id  est_counts
+8      pepX_9    8.570783
+55    pepX_56   12.994681
+119  pepX_120   26.740849
+151  pepX_152   16.667090
+176  pepX_177   35.026597
 True variants are: ['pepX_120', 'pepX_9', 'pepX_56', 'pepX_177', 'pepX_152']
 
 Predicted variants are: ['pepX_9', 'pepX_56', 'pepX_120', 'pepX_152', 'pepX_177']
@@ -300,6 +787,25 @@ Predicted proportions are: {'pepX_152': 16.667090406253266, 'pepX_120': 26.74084
 
 ======================================== SIMULATION 31 ====================================================
 
+    target_id  est_counts
+57    pepX_58   42.574970
+63    pepX_64    7.354300
+68    pepX_69    6.927801
+75    pepX_76    0.358716
+90    pepX_91    0.002595
+146  pepX_147   22.222207
+147  pepX_148   20.555541
+148  pepX_149    0.002595
+159  pepX_160    0.000003
+163  pepX_164    0.000003
+164  pepX_165    0.001267
+Next
+    target_id  est_counts
+57    pepX_58   42.731016
+63    pepX_64    7.381255
+68    pepX_69    6.953192
+146  pepX_147   22.303655
+147  pepX_148   20.630881
 True variants are: ['pepX_69', 'pepX_147', 'pepX_148', 'pepX_58', 'pepX_64']
 
 Predicted variants are: ['pepX_58', 'pepX_64', 'pepX_69', 'pepX_147', 'pepX_148']
@@ -310,6 +816,36 @@ Predicted proportions are: {'pepX_58': 42.73101568616081, 'pepX_64': 7.381255338
 
 ======================================== SIMULATION 32 ====================================================
 
+    target_id    est_counts
+11    pepX_12  4.641265e-08
+24    pepX_25  1.652576e+01
+26    pepX_27  4.641265e-08
+35    pepX_36  3.613813e-05
+37    pepX_38  2.973308e-07
+39    pepX_40  3.824289e-05
+40    pepX_41  3.167930e-07
+60    pepX_61  1.865548e-07
+75    pepX_76  3.057062e-05
+90    pepX_91  6.496113e-01
+95    pepX_96  1.212634e-03
+98    pepX_99  5.139781e-01
+109  pepX_110  7.603817e+01
+110  pepX_111  1.912674e-04
+111  pepX_112  2.348498e+00
+112  pepX_113  2.973308e-07
+148  pepX_149  4.486811e-05
+155  pepX_156  3.921572e+00
+158  pepX_159  1.429111e-08
+159  pepX_160  3.961460e-09
+162  pepX_163  4.581657e-09
+163  pepX_164  2.219299e-09
+168  pepX_169  8.565807e-04
+Next
+    target_id  est_counts
+24    pepX_25   16.720722
+109  pepX_110   76.935236
+111  pepX_112    2.376205
+155  pepX_156    3.967838
 True variants are: ['pepX_25', 'pepX_110', 'pepX_112', 'pepX_156']
 
 Predicted variants are: ['pepX_25', 'pepX_110', 'pepX_112', 'pepX_156']
@@ -320,6 +856,19 @@ Predicted proportions are: {'pepX_112': 2.376204674435674, 'pepX_25': 16.7207223
 
 ======================================== SIMULATION 33 ====================================================
 
+    target_id  est_counts
+35    pepX_36    0.002781
+60    pepX_61   14.602793
+90    pepX_91    1.429576
+95    pepX_96    0.798322
+110  pepX_111   16.214958
+138  pepX_139   66.951571
+Next
+    target_id  est_counts
+60    pepX_61   14.720721
+90    pepX_91    1.441120
+110  pepX_111   16.345906
+138  pepX_139   67.492253
 True variants are: ['pepX_139', 'pepX_61', 'pepX_111']
 
 Predicted variants are: ['pepX_61', 'pepX_91', 'pepX_111', 'pepX_139']
@@ -330,6 +879,16 @@ Predicted proportions are: {'pepX_139': 67.4922529663635, 'pepX_61': 14.72072093
 
 ======================================== SIMULATION 34 ====================================================
 
+    target_id  est_counts
+7      pepX_8   28.554223
+92    pepX_93    0.002593
+137  pepX_138   31.330210
+179  pepX_180   40.112974
+Next
+    target_id  est_counts
+7      pepX_8   28.554963
+137  pepX_138   31.331023
+179  pepX_180   40.114014
 True variants are: ['pepX_180', 'pepX_8', 'pepX_138']
 
 Predicted variants are: ['pepX_8', 'pepX_138', 'pepX_180']
@@ -340,6 +899,24 @@ Predicted proportions are: {'pepX_138': 31.331022540121072, 'pepX_180': 40.11401
 
 ======================================== SIMULATION 35 ====================================================
 
+    target_id    est_counts
+2      pepX_3  2.033426e+01
+15    pepX_16  1.873482e-06
+34    pepX_35  2.611273e-07
+52    pepX_53  2.820306e+00
+55    pepX_56  7.794652e-08
+76    pepX_77  1.974237e+01
+108  pepX_109  1.337047e+01
+120  pepX_121  1.838440e+01
+171  pepX_172  2.534819e+01
+Next
+    target_id  est_counts
+2      pepX_3   20.334262
+52    pepX_53    2.820306
+76    pepX_77   19.742368
+108  pepX_109   13.370474
+120  pepX_121   18.384401
+171  pepX_172   25.348189
 True variants are: ['pepX_121', 'pepX_172', 'pepX_53', 'pepX_77', 'pepX_109', 'pepX_3']
 
 Predicted variants are: ['pepX_3', 'pepX_53', 'pepX_77', 'pepX_109', 'pepX_121', 'pepX_172']
@@ -350,6 +927,23 @@ Predicted proportions are: {'pepX_53': 2.8203064066852366, 'pepX_3': 20.33426183
 
 ======================================== SIMULATION 36 ====================================================
 
+    target_id    est_counts
+11    pepX_12  2.533747e-03
+87    pepX_88  1.262897e+01
+117  pepX_118  1.532033e+01
+120  pepX_121  1.829025e+01
+150  pepX_151  5.241449e-09
+160  pepX_161  1.448215e+01
+166  pepX_167  1.866295e+01
+187  pepX_188  2.061281e+01
+Next
+    target_id  est_counts
+87    pepX_88   12.629289
+117  pepX_118   15.320723
+120  pepX_121   18.290714
+160  pepX_161   14.482512
+166  pepX_167   18.663426
+187  pepX_188   20.613336
 True variants are: ['pepX_118', 'pepX_121', 'pepX_167', 'pepX_161', 'pepX_188', 'pepX_88']
 
 Predicted variants are: ['pepX_88', 'pepX_118', 'pepX_121', 'pepX_161', 'pepX_167', 'pepX_188']
@@ -360,6 +954,29 @@ Predicted proportions are: {'pepX_118': 15.320722614417248, 'pepX_167': 18.66342
 
 ======================================== SIMULATION 37 ====================================================
 
+    target_id    est_counts
+17    pepX_18  4.585054e-06
+31    pepX_32  8.706358e-06
+34    pepX_35  5.100970e-05
+39    pepX_40  4.305832e-07
+47    pepX_48  1.080327e-03
+75    pepX_76  3.096749e+01
+94    pepX_95  2.499999e+01
+95    pepX_96  1.154041e-08
+109  pepX_110  1.431905e+01
+120  pepX_121  8.666692e+00
+122  pepX_123  8.888886e+00
+128  pepX_129  4.157915e+00
+140  pepX_141  7.998831e+00
+Next
+    target_id  est_counts
+75    pepX_76   30.967844
+94    pepX_95   25.000278
+109  pepX_110   14.319215
+120  pepX_121    8.666791
+122  pepX_123    8.888988
+128  pepX_129    4.157963
+140  pepX_141    7.998922
 True variants are: ['pepX_121', 'pepX_129', 'pepX_110', 'pepX_76', 'pepX_95', 'pepX_141', 'pepX_123']
 
 Predicted variants are: ['pepX_76', 'pepX_95', 'pepX_110', 'pepX_121', 'pepX_123', 'pepX_129', 'pepX_141']
@@ -370,6 +987,24 @@ Predicted proportions are: {'pepX_141': 7.998922210246781, 'pepX_129': 4.1579628
 
 ======================================== SIMULATION 38 ====================================================
 
+    target_id    est_counts
+20    pepX_21  1.305523e-08
+22    pepX_23  1.264045e+01
+35    pepX_36  2.119009e-04
+40    pepX_41  2.443655e+01
+42    pepX_43  4.204326e-04
+60    pepX_61  2.641138e-08
+72    pepX_73  5.224720e+01
+111  pepX_112  7.999608e-04
+127  pepX_128  3.619242e-07
+158  pepX_159  2.119009e-04
+182  pepX_183  1.067416e+01
+Next
+    target_id  est_counts
+22    pepX_23   12.640659
+40    pepX_41   24.436950
+72    pepX_73   52.248057
+182  pepX_183   10.674334
 True variants are: ['pepX_41', 'pepX_183', 'pepX_73', 'pepX_23']
 
 Predicted variants are: ['pepX_23', 'pepX_41', 'pepX_73', 'pepX_183']
@@ -380,6 +1015,24 @@ Predicted proportions are: {'pepX_73': 52.24805692004446, 'pepX_23': 12.64065893
 
 ======================================== SIMULATION 39 ====================================================
 
+    target_id    est_counts
+52    pepX_53  1.614199e-07
+75    pepX_76  4.606299e-01
+90    pepX_91  2.594139e-03
+98    pepX_99  3.247373e-01
+128  pepX_129  5.396188e+01
+133  pepX_134  3.591566e+01
+148  pepX_149  1.650720e-04
+150  pepX_151  5.046980e-04
+159  pepX_160  5.656415e-06
+163  pepX_164  5.656415e-06
+164  pepX_165  1.674621e-07
+166  pepX_167  9.333817e+00
+Next
+    target_id  est_counts
+128  pepX_129   54.390828
+133  pepX_134   36.201160
+166  pepX_167    9.408013
 True variants are: ['pepX_129', 'pepX_167', 'pepX_134']
 
 Predicted variants are: ['pepX_129', 'pepX_134', 'pepX_167']
@@ -390,6 +1043,14 @@ Predicted proportions are: {'pepX_167': 9.408012728170355, 'pepX_129': 54.390827
 
 ======================================== SIMULATION 40 ====================================================
 
+    target_id  est_counts
+0      pepX_1    0.002747
+1      pepX_2   80.054213
+171  pepX_172   19.943040
+Next
+    target_id  est_counts
+1      pepX_2   80.056412
+171  pepX_172   19.943588
 True variants are: ['pepX_2', 'pepX_172']
 
 Predicted variants are: ['pepX_2', 'pepX_172']

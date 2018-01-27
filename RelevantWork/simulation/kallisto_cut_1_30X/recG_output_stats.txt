@@ -1,5 +1,27 @@
 ======================================== SIMULATION 1 ====================================================
 
+    target_id    est_counts
+26    recG_27  2.426538e-04
+45    recG_46  7.266708e-03
+53    recG_54  3.716116e+01
+56    recG_57  1.764523e-07
+69    recG_70  3.469827e+01
+77    recG_78  1.764523e-07
+110  recG_111  2.732483e-06
+141  recG_142  5.180154e-04
+148  recG_149  1.308328e-08
+149  recG_150  7.294716e-09
+152  recG_153  7.294716e-09
+172  recG_173  5.180154e-04
+176  recG_177  7.266708e-03
+184  recG_185  1.874976e+01
+195  recG_196  9.374997e+00
+Next
+    target_id  est_counts
+53    recG_54   37.167037
+69    recG_70   34.703758
+184  recG_185   18.752725
+195  recG_196    9.376480
 True variants are: ['recG_70', 'recG_54', 'recG_185', 'recG_196']
 
 Predicted variants are: ['recG_54', 'recG_70', 'recG_185', 'recG_196']
@@ -10,6 +32,25 @@ Predicted proportions are: {'recG_54': 37.1670372980736, 'recG_185': 18.75272503
 
 ======================================== SIMULATION 2 ====================================================
 
+    target_id  est_counts
+26    recG_27    0.007292
+33    recG_34   36.080854
+114  recG_115   21.494936
+138  recG_139    3.101282
+149  recG_150   20.417739
+150  recG_151    0.002653
+152  recG_153    0.000003
+154  recG_155   15.864933
+197  recG_198    0.000003
+204  recG_205    3.030305
+Next
+    target_id  est_counts
+33    recG_34   36.084445
+114  recG_115   21.497076
+138  recG_139    3.101591
+149  recG_150   20.419771
+154  recG_155   15.866512
+204  recG_205    3.030606
 True variants are: ['recG_205', 'recG_150', 'recG_34', 'recG_139', 'recG_155', 'recG_115']
 
 Predicted variants are: ['recG_34', 'recG_115', 'recG_139', 'recG_150', 'recG_155', 'recG_205']
@@ -20,6 +61,29 @@ Predicted proportions are: {'recG_205': 3.030606320526471, 'recG_34': 36.0844445
 
 ======================================== SIMULATION 3 ====================================================
 
+    target_id    est_counts
+33    recG_34  1.202159e+01
+40    recG_41  2.580764e+01
+45    recG_46  7.072111e-03
+53    recG_54  8.476588e-01
+56    recG_57  3.893718e+00
+83    recG_84  3.991180e-03
+108  recG_109  1.515151e+01
+110  recG_111  2.153636e-05
+112  recG_113  1.357454e+01
+123  recG_124  1.951961e-08
+126  recG_127  2.869226e+01
+141  recG_142  9.046890e-08
+172  recG_173  9.046890e-08
+176  recG_177  9.046890e-08
+Next
+    target_id  est_counts
+33    recG_34   12.125715
+40    recG_41   26.031182
+56    recG_57    3.927445
+108  recG_109   15.282749
+112  recG_113   13.692120
+126  recG_127   28.940789
 True variants are: ['recG_109', 'recG_127', 'recG_57', 'recG_113', 'recG_34', 'recG_41']
 
 Predicted variants are: ['recG_34', 'recG_41', 'recG_57', 'recG_109', 'recG_113', 'recG_127']
@@ -30,6 +94,18 @@ Predicted proportions are: {'recG_109': 15.282748810218902, 'recG_113': 13.69212
 
 ======================================== SIMULATION 4 ====================================================
 
+    target_id    est_counts
+12    recG_13  6.451614e+00
+61    recG_62  1.744105e-03
+64    recG_65  5.483687e+01
+66    recG_67  8.689196e-05
+136  recG_137  5.441284e-07
+156  recG_157  3.870969e+01
+Next
+    target_id  est_counts
+12    recG_13    6.451733
+64    recG_65   54.837872
+156  recG_157   38.710395
 True variants are: ['recG_13', 'recG_65', 'recG_157']
 
 Predicted variants are: ['recG_13', 'recG_65', 'recG_157']
@@ -40,6 +116,18 @@ Predicted proportions are: {'recG_157': 38.71039543475403, 'recG_13': 6.45173257
 
 ======================================== SIMULATION 5 ====================================================
 
+    target_id  est_counts
+83    recG_84    0.007849
+112  recG_113   38.701845
+191  recG_192   22.580639
+203  recG_204   25.806445
+207  recG_208   12.903222
+Next
+    target_id  est_counts
+112  recG_113   38.704883
+191  recG_192   22.582412
+203  recG_204   25.808471
+207  recG_208   12.904235
 True variants are: ['recG_113', 'recG_204', 'recG_208', 'recG_192']
 
 Predicted variants are: ['recG_113', 'recG_192', 'recG_204', 'recG_208']
@@ -50,6 +138,14 @@ Predicted proportions are: {'recG_192': 22.58241168865629, 'recG_113': 38.704882
 
 ======================================== SIMULATION 6 ====================================================
 
+    target_id  est_counts
+83    recG_84    0.007888
+112  recG_113   61.282429
+188  recG_189   38.709683
+Next
+    target_id  est_counts
+112  recG_113   61.287263
+188  recG_189   38.712737
 True variants are: ['recG_189', 'recG_113']
 
 Predicted variants are: ['recG_113', 'recG_189']
@@ -60,6 +156,31 @@ Predicted proportions are: {'recG_113': 61.287263025626224, 'recG_189': 38.71273
 
 ======================================== SIMULATION 7 ====================================================
 
+    target_id    est_counts
+0      recG_1  4.177249e-08
+5      recG_6  6.550385e-03
+8      recG_9  1.196386e-04
+15    recG_16  1.282962e-06
+17    recG_18  2.707681e+01
+18    recG_19  3.821052e-08
+45    recG_46  1.058454e-07
+53    recG_54  1.058454e-07
+56    recG_57  1.058454e-07
+77    recG_78  2.626264e+01
+105  recG_106  3.030302e+01
+110  recG_111  1.058454e-07
+118  recG_119  4.040400e+00
+136  recG_137  1.231045e+01
+141  recG_142  1.058454e-07
+172  recG_173  1.058454e-07
+176  recG_177  1.058454e-07
+Next
+    target_id  est_counts
+17    recG_18   27.078617
+77    recG_78   26.264397
+105  recG_106   30.305044
+118  recG_119    4.040670
+136  recG_137   12.311272
 True variants are: ['recG_119', 'recG_18', 'recG_106', 'recG_78', 'recG_137']
 
 Predicted variants are: ['recG_18', 'recG_78', 'recG_106', 'recG_119', 'recG_137']
@@ -70,6 +191,16 @@ Predicted proportions are: {'recG_18': 27.078617268738235, 'recG_106': 30.305043
 
 ======================================== SIMULATION 8 ====================================================
 
+    target_id  est_counts
+90    recG_91   51.612901
+158  recG_159    3.225806
+193  recG_194    0.005973
+194  recG_195   45.155320
+Next
+    target_id  est_counts
+90    recG_91   51.615984
+158  recG_159    3.225999
+194  recG_195   45.158017
 True variants are: ['recG_195', 'recG_91', 'recG_159']
 
 Predicted variants are: ['recG_91', 'recG_159', 'recG_195']
@@ -80,6 +211,16 @@ Predicted proportions are: {'recG_91': 51.615983534501254, 'recG_195': 45.158017
 
 ======================================== SIMULATION 9 ====================================================
 
+    target_id  est_counts
+8      recG_9   41.935474
+28    recG_29   35.476121
+109  recG_110    0.007766
+158  recG_159   22.580640
+Next
+    target_id  est_counts
+8      recG_9   41.938731
+28    recG_29   35.478876
+158  recG_159   22.582393
 True variants are: ['recG_9', 'recG_159', 'recG_29']
 
 Predicted variants are: ['recG_9', 'recG_29', 'recG_159']
@@ -90,6 +231,24 @@ Predicted proportions are: {'recG_9': 41.93873074044442, 'recG_29': 35.478875783
 
 ======================================== SIMULATION 10 ====================================================
 
+    target_id  est_counts
+22    recG_23   18.181819
+39    recG_40   25.336517
+41    recG_42    1.641402
+61    recG_62    1.515152
+66    recG_67    1.515152
+75    recG_76   37.718184
+111  recG_112    0.007305
+124  recG_125   14.084471
+Next
+    target_id  est_counts
+22    recG_23   18.183147
+39    recG_40   25.338368
+41    recG_42    1.641522
+61    recG_62    1.515262
+66    recG_67    1.515262
+75    recG_76   37.720939
+124  recG_125   14.085499
 True variants are: ['recG_76', 'recG_62', 'recG_23', 'recG_125', 'recG_40']
 
 Predicted variants are: ['recG_23', 'recG_40', 'recG_42', 'recG_62', 'recG_67', 'recG_76', 'recG_125']
@@ -100,6 +259,35 @@ Predicted proportions are: {'recG_76': 37.72093944746718, 'recG_23': 18.18314748
 
 ======================================== SIMULATION 11 ====================================================
 
+    target_id    est_counts
+13    recG_14  2.352941e+01
+26    recG_27  1.190684e-03
+27    recG_28  6.689213e-05
+29    recG_30  3.528162e+00
+30    recG_31  1.411110e+01
+31    recG_32  6.467139e-03
+57    recG_58  8.319044e-06
+62    recG_63  1.176471e+01
+73    recG_74  7.131963e-07
+98    recG_99  8.823529e+00
+101  recG_102  7.131963e-07
+102  recG_103  7.131963e-07
+149  recG_150  6.198772e-09
+151  recG_152  6.412786e-05
+152  recG_153  6.198772e-09
+171  recG_172  6.546794e-09
+175  recG_176  1.470588e+01
+184  recG_185  4.315485e-07
+185  recG_186  2.352941e+01
+Next
+    target_id  est_counts
+13    recG_14   23.531246
+29    recG_30    3.528437
+30    recG_31   14.112203
+62    recG_63   11.765623
+98    recG_99    8.824217
+175  recG_176   14.707029
+185  recG_186   23.531246
 True variants are: ['recG_153', 'recG_14', 'recG_31', 'recG_176', 'recG_63', 'recG_186', 'recG_99']
 
 Predicted variants are: ['recG_14', 'recG_30', 'recG_31', 'recG_63', 'recG_99', 'recG_176', 'recG_186']
@@ -110,6 +298,33 @@ Predicted proportions are: {'recG_99': 8.824217181633276, 'recG_14': 23.53124581
 
 ======================================== SIMULATION 12 ====================================================
 
+    target_id    est_counts
+13    recG_14  1.212121e+01
+26    recG_27  3.467939e+00
+28    recG_29  1.211258e+01
+51    recG_52  9.859091e-05
+72    recG_73  2.693606e+00
+75    recG_76  1.010098e+00
+91    recG_92  2.452462e-07
+96    recG_97  1.010098e+00
+98    recG_99  4.579121e+01
+109  recG_110  7.138924e-03
+111  recG_112  1.010098e+00
+149  recG_150  2.077591e+01
+152  recG_153  1.481280e-05
+165  recG_166  2.452462e-07
+184  recG_185  6.068909e-08
+Next
+    target_id  est_counts
+13    recG_14   12.122091
+26    recG_27    3.468191
+28    recG_29   12.113454
+72    recG_73    2.693801
+75    recG_76    1.010172
+96    recG_97    1.010172
+98    recG_99   45.794532
+111  recG_112    1.010172
+149  recG_150   20.777415
 True variants are: ['recG_73', 'recG_76', 'recG_99', 'recG_29', 'recG_150', 'recG_14']
 
 Predicted variants are: ['recG_14', 'recG_27', 'recG_29', 'recG_73', 'recG_76', 'recG_97', 'recG_99', 'recG_112', 'recG_150']
@@ -120,6 +335,32 @@ Predicted proportions are: {'recG_76': 1.0101717222983513, 'recG_99': 45.7945322
 
 ======================================== SIMULATION 13 ====================================================
 
+    target_id    est_counts
+2      recG_3  9.514217e-07
+3      recG_4  2.811836e+01
+6      recG_7  6.647296e-03
+9     recG_10  3.173382e-08
+26    recG_27  3.781882e-06
+27    recG_28  3.124992e+00
+29    recG_30  3.781882e-06
+44    recG_45  3.125000e+00
+71    recG_72  2.192984e+01
+145  recG_146  2.807015e+01
+149  recG_150  3.781882e-06
+151  recG_152  3.781882e-06
+152  recG_153  3.781882e-06
+171  recG_172  3.124992e+00
+184  recG_185  3.781882e-06
+205  recG_206  1.250000e+01
+Next
+    target_id  est_counts
+3      recG_4   28.120231
+27    recG_28    3.125200
+44    recG_45    3.125208
+71    recG_72   21.931304
+145  recG_146   28.072025
+171  recG_172    3.125200
+205  recG_206   12.500832
 True variants are: ['recG_45', 'recG_4', 'recG_206', 'recG_72', 'recG_146', 'recG_172']
 
 Predicted variants are: ['recG_4', 'recG_28', 'recG_45', 'recG_72', 'recG_146', 'recG_172', 'recG_206']
@@ -130,6 +371,21 @@ Predicted proportions are: {'recG_206': 12.500832086635766, 'recG_72': 21.931303
 
 ======================================== SIMULATION 14 ====================================================
 
+    target_id    est_counts
+26    recG_27  4.375596e+01
+27    recG_28  1.141266e+01
+29    recG_30  2.094104e+01
+149  recG_150  1.206217e-06
+151  recG_152  5.071749e-07
+152  recG_153  1.206217e-06
+171  recG_172  2.388298e+01
+184  recG_185  7.363990e-03
+Next
+    target_id  est_counts
+26    recG_27   43.759179
+27    recG_28   11.413499
+29    recG_30   20.942585
+171  recG_172   23.884737
 True variants are: ['recG_27', 'recG_28']
 
 Predicted variants are: ['recG_27', 'recG_28', 'recG_30', 'recG_172']
@@ -140,6 +396,15 @@ Predicted proportions are: {'recG_27': 43.75917910104693, 'recG_28': 11.41349889
 
 ======================================== SIMULATION 15 ====================================================
 
+    target_id  est_counts
+21    recG_22   96.767721
+22    recG_23    0.006472
+25    recG_26    0.000001
+204  recG_205    3.225806
+Next
+    target_id  est_counts
+21    recG_22   96.773985
+204  recG_205    3.226015
 True variants are: ['recG_205', 'recG_22']
 
 Predicted variants are: ['recG_22', 'recG_205']
@@ -150,6 +415,22 @@ Predicted proportions are: {'recG_205': 3.2260145815859085, 'recG_22': 96.773985
 
 ======================================== SIMULATION 16 ====================================================
 
+    target_id  est_counts
+53    recG_54    0.000012
+73    recG_74    0.007308
+101  recG_102   31.697339
+102  recG_103    0.007308
+116  recG_117   20.202039
+121  recG_122    7.070702
+147  recG_148   21.212115
+202  recG_203   19.803176
+Next
+    target_id  est_counts
+101  recG_102   31.701976
+116  recG_117   20.204995
+121  recG_122    7.071737
+147  recG_148   21.215218
+202  recG_203   19.806073
 True variants are: ['recG_54', 'recG_117', 'recG_148', 'recG_203', 'recG_102', 'recG_122']
 
 Predicted variants are: ['recG_102', 'recG_117', 'recG_122', 'recG_148', 'recG_203']
@@ -160,6 +441,34 @@ Predicted proportions are: {'recG_148': 21.215218312552143, 'recG_122': 7.071736
 
 ======================================== SIMULATION 17 ====================================================
 
+    target_id    est_counts
+28    recG_29  6.737601e-04
+73    recG_74  7.575707e+00
+85    recG_86  6.914094e-03
+87    recG_88  1.211432e+01
+91    recG_92  1.363599e+01
+101  recG_102  2.301069e-07
+102  recG_103  7.575707e+00
+109  recG_110  2.754819e-05
+133  recG_134  9.090913e+00
+158  recG_159  6.060608e+00
+159  recG_160  9.090913e+00
+160  recG_161  9.090913e+00
+165  recG_166  1.363599e+01
+191  recG_192  1.212122e+01
+202  recG_203  1.031334e-04
+Next
+    target_id  est_counts
+73    recG_74    7.576292
+87    recG_88   12.115258
+91    recG_92   13.637043
+102  recG_103    7.576292
+133  recG_134    9.091614
+158  recG_159    6.061076
+159  recG_160    9.091614
+160  recG_161    9.091614
+165  recG_166   13.637043
+191  recG_192   12.122153
 True variants are: ['recG_161', 'recG_134', 'recG_88', 'recG_159', 'recG_103', 'recG_192', 'recG_92']
 
 Predicted variants are: ['recG_74', 'recG_88', 'recG_92', 'recG_103', 'recG_134', 'recG_159', 'recG_160', 'recG_161', 'recG_166', 'recG_192']
@@ -170,6 +479,30 @@ Predicted proportions are: {'recG_192': 12.122152506376253, 'recG_74': 7.5762922
 
 ======================================== SIMULATION 18 ====================================================
 
+    target_id    est_counts
+45    recG_46  8.137498e-06
+51    recG_52  1.634470e-03
+53    recG_54  1.846757e-08
+56    recG_57  1.568323e-08
+57    recG_58  2.051426e+01
+58    recG_59  2.012389e-05
+95    recG_96  2.058661e+01
+114  recG_115  2.732455e-08
+115  recG_116  5.030087e-07
+126  recG_127  1.771875e+01
+133  recG_134  2.058823e+01
+141  recG_142  1.846757e-08
+172  recG_173  1.846757e-08
+175  recG_176  2.256992e-03
+176  recG_177  1.846757e-08
+203  recG_204  2.058823e+01
+Next
+    target_id  est_counts
+57    recG_58   20.515064
+95    recG_96   20.587420
+126  recG_127   17.719441
+133  recG_134   20.589038
+203  recG_204   20.589038
 True variants are: ['recG_58', 'recG_204', 'recG_134', 'recG_127', 'recG_96']
 
 Predicted variants are: ['recG_58', 'recG_96', 'recG_127', 'recG_134', 'recG_204']
@@ -180,6 +513,26 @@ Predicted proportions are: {'recG_127': 17.71944053702093, 'recG_134': 20.589037
 
 ======================================== SIMULATION 19 ====================================================
 
+    target_id    est_counts
+2      recG_3  3.414198e-01
+9     recG_10  5.118258e-07
+14    recG_15  1.056121e-08
+16    recG_17  2.698516e-01
+19    recG_20  1.787841e+01
+26    recG_27  1.818182e+01
+82    recG_83  1.484364e+01
+140  recG_141  1.515152e+01
+184  recG_185  4.243008e-07
+189  recG_190  2.727273e+01
+206  recG_207  6.060607e+00
+Next
+    target_id  est_counts
+19    recG_20   17.988370
+26    recG_27   18.293645
+82    recG_83   14.934932
+140  recG_141   15.244704
+189  recG_190   27.440468
+206  recG_207    6.097882
 True variants are: ['recG_190', 'recG_83', 'recG_141', 'recG_207', 'recG_20', 'recG_27']
 
 Predicted variants are: ['recG_20', 'recG_27', 'recG_83', 'recG_141', 'recG_190', 'recG_207']
@@ -190,6 +543,29 @@ Predicted proportions are: {'recG_207': 6.097881672130622, 'recG_83': 14.9349317
 
 ======================================== SIMULATION 20 ====================================================
 
+    target_id    est_counts
+26    recG_27  2.523789e-08
+27    recG_28  1.034562e-07
+45    recG_46  6.037108e-03
+53    recG_54  6.037108e-03
+56    recG_57  6.777499e-07
+75    recG_76  1.481578e-03
+77    recG_78  6.777499e-07
+85    recG_86  4.035069e+00
+87    recG_88  3.448452e+01
+110  recG_111  1.854242e+01
+111  recG_112  2.205625e-05
+141  recG_142  6.037108e-03
+171  recG_172  1.875000e+01
+172  recG_173  6.037108e-03
+176  recG_177  2.416234e+01
+Next
+    target_id  est_counts
+85    recG_86    4.036105
+87    recG_88   34.493373
+110  recG_111   18.547176
+171  recG_172   18.754807
+176  recG_177   24.168539
 True variants are: ['recG_88', 'recG_177', 'recG_172', 'recG_111']
 
 Predicted variants are: ['recG_86', 'recG_88', 'recG_111', 'recG_172', 'recG_177']
@@ -200,6 +576,29 @@ Predicted proportions are: {'recG_111': 18.54717603785783, 'recG_172': 18.754807
 
 ======================================== SIMULATION 21 ====================================================
 
+    target_id    est_counts
+2      recG_3  1.817545e+01
+3      recG_4  4.375454e-08
+9     recG_10  1.717439e-06
+10    recG_11  1.657742e-08
+14    recG_15  6.388333e-03
+16    recG_17  1.657742e-08
+36    recG_37  1.492985e+01
+70    recG_71  1.212121e+01
+83    recG_84  4.352030e+00
+86    recG_87  6.801091e-06
+108  recG_109  2.424242e+01
+112  recG_113  4.352030e+00
+129  recG_130  2.182061e+01
+Next
+    target_id  est_counts
+2      recG_3   18.176617
+36    recG_37   14.930803
+70    recG_71   12.121987
+83    recG_84    4.352309
+108  recG_109   24.243974
+112  recG_113    4.352309
+129  recG_130   21.822001
 True variants are: ['recG_37', 'recG_3', 'recG_130', 'recG_113', 'recG_71', 'recG_109']
 
 Predicted variants are: ['recG_3', 'recG_37', 'recG_71', 'recG_84', 'recG_109', 'recG_113', 'recG_130']
@@ -210,6 +609,20 @@ Predicted proportions are: {'recG_109': 24.243974387453264, 'recG_71': 12.121987
 
 ======================================== SIMULATION 22 ====================================================
 
+    target_id  est_counts
+106  recG_107    0.006989
+107  recG_108   27.265748
+147  recG_148   42.424227
+150  recG_151    0.000047
+154  recG_155    9.090830
+174  recG_175    0.000047
+195  recG_196   21.212114
+Next
+    target_id  est_counts
+107  recG_108   27.267679
+147  recG_148   42.427232
+154  recG_155    9.091474
+195  recG_196   21.213616
 True variants are: ['recG_148', 'recG_196', 'recG_155', 'recG_108']
 
 Predicted variants are: ['recG_108', 'recG_148', 'recG_155', 'recG_196']
@@ -220,6 +633,43 @@ Predicted proportions are: {'recG_148': 42.42723161556079, 'recG_155': 9.0914738
 
 ======================================== SIMULATION 23 ====================================================
 
+    target_id    est_counts
+0      recG_1  2.630909e-07
+7      recG_8  2.630909e-07
+15    recG_16  2.630909e-07
+26    recG_27  1.657993e+01
+28    recG_29  7.163175e-03
+29    recG_30  1.132682e-05
+37    recG_38  1.818182e+01
+51    recG_52  1.144432e+00
+89    recG_90  2.630909e-07
+91    recG_92  2.677371e+00
+95    recG_96  9.385379e-08
+109  recG_110  5.056712e-05
+128  recG_129  2.121212e+01
+135  recG_136  2.630909e-07
+149  recG_150  5.883826e-08
+150  recG_151  1.327712e+01
+152  recG_153  5.883826e-08
+154  recG_155  4.126523e-06
+159  recG_160  9.090910e+00
+160  recG_161  9.090910e+00
+165  recG_166  2.677371e+00
+171  recG_172  2.178000e-06
+184  recG_185  1.763152e-04
+196  recG_197  6.060607e+00
+Next
+    target_id  est_counts
+26    recG_27   16.581154
+37    recG_38   18.183167
+51    recG_52    1.144517
+91    recG_92    2.677570
+128  recG_129   21.213695
+150  recG_151   13.278106
+159  recG_160    9.091583
+160  recG_161    9.091583
+165  recG_166    2.677570
+196  recG_197    6.061056
 True variants are: ['recG_38', 'recG_166', 'recG_161', 'recG_129', 'recG_197', 'recG_151', 'recG_27']
 
 Predicted variants are: ['recG_27', 'recG_38', 'recG_52', 'recG_92', 'recG_129', 'recG_151', 'recG_160', 'recG_161', 'recG_166', 'recG_197']
@@ -230,6 +680,27 @@ Predicted proportions are: {'recG_38': 18.18316676668671, 'recG_197': 6.06105558
 
 ======================================== SIMULATION 24 ====================================================
 
+    target_id    est_counts
+30    recG_31  9.367896e+00
+31    recG_32  7.082676e-03
+41    recG_42  5.671144e-07
+45    recG_46  2.259001e-03
+53    recG_54  2.259001e-03
+55    recG_56  2.500001e+01
+56    recG_57  2.854642e-04
+75    recG_76  5.209839e-06
+77    recG_78  8.030786e-04
+110  recG_111  6.561262e+01
+111  recG_112  1.701931e-06
+141  recG_142  2.259001e-03
+148  recG_149  3.960901e-07
+172  recG_173  2.259001e-03
+176  recG_177  2.259001e-03
+Next
+    target_id  est_counts
+30    recG_31    9.369721
+55    recG_56   25.004884
+110  recG_111   65.625396
 True variants are: ['recG_31', 'recG_56', 'recG_111']
 
 Predicted variants are: ['recG_31', 'recG_56', 'recG_111']
@@ -240,6 +711,16 @@ Predicted proportions are: {'recG_111': 65.62539558507521, 'recG_56': 25.0048837
 
 ======================================== SIMULATION 25 ====================================================
 
+    target_id    est_counts
+45    recG_46  2.218358e-07
+46    recG_47  9.042559e+01
+114  recG_115  9.574412e+00
+115  recG_116  2.218358e-07
+173  recG_174  1.891544e-08
+Next
+    target_id  est_counts
+46    recG_47   90.425588
+114  recG_115    9.574412
 True variants are: ['recG_47', 'recG_115']
 
 Predicted variants are: ['recG_47', 'recG_115']
@@ -250,6 +731,37 @@ Predicted proportions are: {'recG_47': 90.4255876800298, 'recG_115': 9.574412319
 
 ======================================== SIMULATION 26 ====================================================
 
+    target_id    est_counts
+0      recG_1  7.592117e-04
+5      recG_6  1.117302e-07
+7      recG_8  9.907646e-04
+15    recG_16  2.327037e-05
+17    recG_18  1.117302e-07
+18    recG_19  1.117302e-07
+26    recG_27  1.191522e-07
+29    recG_30  1.191522e-07
+30    recG_31  3.030301e+00
+31    recG_32  3.030301e+00
+40    recG_41  3.317385e+01
+54    recG_55  6.220095e+00
+73    recG_74  7.115572e-08
+89    recG_90  7.592117e-04
+98    recG_99  2.121211e+01
+101  recG_102  7.115572e-08
+102  recG_103  7.115572e-08
+135  recG_136  1.511408e-04
+138  recG_139  1.191522e-07
+187  recG_188  3.030301e+00
+196  recG_197  3.030036e+01
+Next
+    target_id  est_counts
+30    recG_31    3.030383
+31    recG_32    3.030383
+40    recG_41   33.174736
+54    recG_55    6.220262
+98    recG_99   21.212679
+187  recG_188    3.030383
+196  recG_197   30.301175
 True variants are: ['recG_55', 'recG_31', 'recG_41', 'recG_188', 'recG_99', 'recG_197']
 
 Predicted variants are: ['recG_31', 'recG_32', 'recG_41', 'recG_55', 'recG_99', 'recG_188', 'recG_197']
@@ -260,6 +772,30 @@ Predicted proportions are: {'recG_99': 21.21267884845155, 'recG_32': 3.030382692
 
 ======================================== SIMULATION 27 ====================================================
 
+    target_id    est_counts
+0      recG_1  1.076836e-06
+2      recG_3  5.906329e-09
+4      recG_5  2.752610e-08
+5      recG_6  1.278141e+01
+6      recG_7  1.846211e-08
+7      recG_8  1.076836e-06
+8      recG_9  2.157836e+01
+12    recG_13  1.976243e-08
+14    recG_15  1.398633e-04
+15    recG_16  1.076836e-06
+17    recG_18  4.504595e-03
+18    recG_19  4.178993e-03
+55    recG_56  6.562501e+01
+89    recG_90  1.076836e-06
+135  recG_136  7.924689e-09
+136  recG_137  6.386736e-03
+166  recG_167  3.012485e-08
+196  recG_197  1.076836e-06
+Next
+   target_id  est_counts
+5     recG_6   12.783354
+8     recG_9   21.581647
+55   recG_56   65.634999
 True variants are: ['recG_9', 'recG_6', 'recG_56']
 
 Predicted variants are: ['recG_6', 'recG_9', 'recG_56']
@@ -270,6 +806,14 @@ Predicted proportions are: {'recG_56': 65.6349990818914, 'recG_9': 21.5816472040
 
 ======================================== SIMULATION 28 ====================================================
 
+    target_id  est_counts
+42    recG_43    0.000059
+76    recG_77   61.290255
+128  recG_129   38.709686
+Next
+    target_id  est_counts
+76    recG_77   61.290291
+128  recG_129   38.709709
 True variants are: ['recG_77', 'recG_129']
 
 Predicted variants are: ['recG_77', 'recG_129']
@@ -280,6 +824,25 @@ Predicted proportions are: {'recG_77': 61.290291363138195, 'recG_129': 38.709708
 
 ======================================== SIMULATION 29 ====================================================
 
+    target_id  est_counts
+41    recG_42    6.183397
+52    recG_53    0.000003
+62    recG_63   15.624995
+83    recG_84    3.193929
+90    recG_91   28.124991
+110  recG_111    0.007442
+112  recG_113    3.193929
+125  recG_126   24.921320
+205  recG_206   18.749994
+Next
+    target_id  est_counts
+41    recG_42    6.183857
+62    recG_63   15.626159
+83    recG_84    3.194167
+90    recG_91   28.127085
+112  recG_113    3.194167
+125  recG_126   24.923176
+205  recG_206   18.751390
 True variants are: ['recG_206', 'recG_91', 'recG_63', 'recG_42', 'recG_84', 'recG_126']
 
 Predicted variants are: ['recG_42', 'recG_63', 'recG_84', 'recG_91', 'recG_113', 'recG_126', 'recG_206']
@@ -290,6 +853,35 @@ Predicted proportions are: {'recG_206': 18.751390239792, 'recG_91': 28.127085359
 
 ======================================== SIMULATION 30 ====================================================
 
+    target_id    est_counts
+0      recG_1  1.372500e-08
+2      recG_3  6.898009e-03
+3      recG_4  6.845509e-06
+9     recG_10  9.368049e+00
+10    recG_11  5.784103e-06
+14    recG_15  5.784103e-06
+16    recG_17  5.784103e-06
+28    recG_29  1.897360e-03
+51    recG_52  4.259017e-07
+61    recG_62  1.250000e+01
+64    recG_65  2.676696e-06
+66    recG_67  2.885508e-06
+82    recG_83  5.784103e-06
+91    recG_92  7.811533e+00
+109  recG_110  3.594641e-05
+122  recG_123  1.670516e-07
+130  recG_131  2.812501e+01
+135  recG_136  1.372500e-08
+165  recG_166  7.811533e+00
+192  recG_193  3.437501e+01
+Next
+    target_id  est_counts
+9     recG_10    9.368880
+61    recG_62   12.501111
+91    recG_92    7.812226
+130  recG_131   28.127501
+165  recG_166    7.812226
+192  recG_193   34.378056
 True variants are: ['recG_131', 'recG_10', 'recG_62', 'recG_193', 'recG_166']
 
 Predicted variants are: ['recG_10', 'recG_62', 'recG_92', 'recG_131', 'recG_166', 'recG_193']
@@ -300,6 +892,28 @@ Predicted proportions are: {'recG_10': 9.368879826972117, 'recG_92': 7.812225805
 
 ======================================== SIMULATION 31 ====================================================
 
+    target_id    est_counts
+41    recG_42  1.763187e-07
+62    recG_63  4.098359e+01
+68    recG_69  9.016406e+00
+75    recG_76  3.124094e+00
+85    recG_86  1.763187e-07
+87    recG_88  1.763187e-07
+96    recG_97  1.814367e-03
+110  recG_111  1.763187e-07
+111  recG_112  3.124094e+00
+159  recG_160  1.093750e+01
+160  recG_161  1.093750e+01
+161  recG_162  2.187500e+01
+Next
+    target_id  est_counts
+62    recG_63   40.984337
+68    recG_69    9.016570
+75    recG_76    3.124150
+111  recG_112    3.124150
+159  recG_160   10.937698
+160  recG_161   10.937698
+161  recG_162   21.875396
 True variants are: ['recG_76', 'recG_161', 'recG_162', 'recG_63', 'recG_69']
 
 Predicted variants are: ['recG_63', 'recG_69', 'recG_76', 'recG_112', 'recG_160', 'recG_161', 'recG_162']
@@ -310,6 +924,20 @@ Predicted proportions are: {'recG_76': 3.1241503752255504, 'recG_112': 3.1241503
 
 ======================================== SIMULATION 32 ====================================================
 
+    target_id  est_counts
+26    recG_27   15.624996
+29    recG_30    0.000011
+119  recG_120   73.071152
+121  recG_122    4.797803
+169  recG_170    6.499170
+180  recG_181    0.006859
+184  recG_185    0.000009
+Next
+    target_id  est_counts
+26    recG_27   15.626071
+119  recG_120   73.076179
+121  recG_122    4.798133
+169  recG_170    6.499617
 True variants are: ['recG_27', 'recG_120', 'recG_122', 'recG_170']
 
 Predicted variants are: ['recG_27', 'recG_120', 'recG_122', 'recG_170']
@@ -320,6 +948,19 @@ Predicted proportions are: {'recG_170': 6.499617200334741, 'recG_27': 15.6260706
 
 ======================================== SIMULATION 33 ====================================================
 
+    target_id    est_counts
+26    recG_27  1.554570e-07
+61    recG_62  8.194220e-09
+66    recG_67  1.562500e+01
+120  recG_121  1.875000e+01
+149  recG_150  7.254009e-03
+152  recG_153  6.561774e+01
+184  recG_185  1.554570e-07
+Next
+    target_id  est_counts
+66    recG_67   15.626135
+120  recG_121   18.751362
+152  recG_153   65.622502
 True variants are: ['recG_153', 'recG_67', 'recG_121']
 
 Predicted variants are: ['recG_67', 'recG_121', 'recG_153']
@@ -330,6 +971,29 @@ Predicted proportions are: {'recG_121': 18.751362403674644, 'recG_67': 15.626135
 
 ======================================== SIMULATION 34 ====================================================
 
+    target_id    est_counts
+0      recG_1  5.704412e-04
+5      recG_6  5.779505e-07
+7      recG_8  7.041958e-04
+8      recG_9  2.898983e+01
+15    recG_16  3.653889e-05
+17    recG_18  5.779505e-07
+18    recG_19  5.779505e-07
+26    recG_27  6.247724e-08
+89    recG_90  5.704412e-04
+94    recG_95  9.549527e-09
+135  recG_136  1.588046e-04
+136  recG_137  1.100195e-03
+150  recG_151  3.124928e+01
+154  recG_155  7.238434e-04
+174  recG_175  7.553762e-08
+196  recG_197  3.975701e+01
+197  recG_198  4.696662e-06
+Next
+    target_id  est_counts
+8      recG_9   28.990954
+150  recG_151   31.250493
+196  recG_197   39.758553
 True variants are: ['recG_197', 'recG_9', 'recG_151']
 
 Predicted variants are: ['recG_9', 'recG_151', 'recG_197']
@@ -340,6 +1004,25 @@ Predicted proportions are: {'recG_9': 28.99095355994097, 'recG_197': 39.75855325
 
 ======================================== SIMULATION 35 ====================================================
 
+    target_id  est_counts
+2      recG_3   20.588238
+14    recG_15    0.000002
+57    recG_58    1.685309
+83    recG_84   21.176106
+112  recG_113    0.006868
+118  recG_119   13.681693
+132  recG_133   17.647061
+175  recG_176    1.685309
+188  recG_189   23.529415
+Next
+    target_id  est_counts
+2      recG_3   20.589652
+57    recG_58    1.685425
+83    recG_84   21.177560
+118  recG_119   13.682633
+132  recG_133   17.648273
+175  recG_176    1.685425
+188  recG_189   23.531031
 True variants are: ['recG_133', 'recG_189', 'recG_58', 'recG_84', 'recG_119', 'recG_3']
 
 Predicted variants are: ['recG_3', 'recG_58', 'recG_84', 'recG_119', 'recG_133', 'recG_176', 'recG_189']
@@ -350,6 +1033,23 @@ Predicted proportions are: {'recG_119': 13.682632863555904, 'recG_84': 21.177560
 
 ======================================== SIMULATION 36 ====================================================
 
+    target_id    est_counts
+56    recG_57  7.169241e-03
+57    recG_58  7.395650e-08
+96    recG_97  1.193445e+01
+128  recG_129  1.524377e+01
+131  recG_132  1.842157e+01
+175  recG_176  1.444453e+01
+182  recG_183  1.873642e+01
+204  recG_205  2.121209e+01
+Next
+    target_id  est_counts
+96    recG_97   11.935311
+128  recG_129   15.244862
+131  recG_132   18.422889
+175  recG_176   14.445563
+182  recG_183   18.737760
+204  recG_205   21.213616
 True variants are: ['recG_129', 'recG_132', 'recG_183', 'recG_176', 'recG_205', 'recG_97']
 
 Predicted variants are: ['recG_97', 'recG_129', 'recG_132', 'recG_176', 'recG_183', 'recG_205']
@@ -360,6 +1060,27 @@ Predicted proportions are: {'recG_205': 21.2136158077804, 'recG_132': 18.4228888
 
 ======================================== SIMULATION 37 ====================================================
 
+    target_id    est_counts
+16    recG_17  7.148917e-03
+56    recG_57  9.632423e-01
+82    recG_83  2.940462e+01
+99   recG_100  1.149933e-03
+103  recG_104  2.352823e+01
+119  recG_120  1.385860e+01
+131  recG_132  9.405438e+00
+133  recG_134  8.823526e+00
+141  recG_142  5.184520e+00
+153  recG_154  8.823526e+00
+180  recG_181  8.751468e-08
+Next
+    target_id  est_counts
+82    recG_83   29.693103
+103  recG_104   23.759056
+119  recG_120   13.994561
+131  recG_132    9.497712
+133  recG_134    8.910092
+141  recG_142    5.235384
+153  recG_154    8.910092
 True variants are: ['recG_132', 'recG_142', 'recG_120', 'recG_83', 'recG_104', 'recG_154', 'recG_134']
 
 Predicted variants are: ['recG_83', 'recG_104', 'recG_120', 'recG_132', 'recG_134', 'recG_142', 'recG_154']
@@ -370,6 +1091,21 @@ Predicted proportions are: {'recG_83': 29.693103032215546, 'recG_104': 23.759056
 
 ======================================== SIMULATION 38 ====================================================
 
+    target_id    est_counts
+24    recG_25  1.250000e+01
+38    recG_39  1.455906e-06
+43    recG_44  1.904414e-07
+44    recG_45  2.500000e+01
+79    recG_80  4.952828e+01
+119  recG_120  4.526601e-06
+180  recG_181  8.396718e-09
+200  recG_201  1.297172e+01
+Next
+    target_id  est_counts
+24    recG_25   12.500000
+44    recG_45   25.000000
+79    recG_80   49.528281
+200  recG_201   12.971719
 True variants are: ['recG_45', 'recG_201', 'recG_80', 'recG_25']
 
 Predicted variants are: ['recG_25', 'recG_45', 'recG_80', 'recG_201']
@@ -380,6 +1116,16 @@ Predicted proportions are: {'recG_25': 12.5, 'recG_45': 25.0, 'recG_80': 49.5282
 
 ======================================== SIMULATION 39 ====================================================
 
+    target_id    est_counts
+139  recG_140  4.450969e-08
+140  recG_141  5.312500e+01
+146  recG_147  3.750000e+01
+182  recG_183  9.375000e+00
+Next
+    target_id  est_counts
+140  recG_141      53.125
+146  recG_147      37.500
+182  recG_183       9.375
 True variants are: ['recG_141', 'recG_183', 'recG_147']
 
 Predicted variants are: ['recG_141', 'recG_147', 'recG_183']
@@ -390,6 +1136,14 @@ Predicted proportions are: {'recG_141': 53.125, 'recG_183': 9.375000000000002, '
 
 ======================================== SIMULATION 40 ====================================================
 
+    target_id    est_counts
+1      recG_2  8.064516e+01
+7      recG_8  4.712581e-08
+188  recG_189  1.935484e+01
+Next
+    target_id  est_counts
+1      recG_2   80.645161
+188  recG_189   19.354839
 True variants are: ['recG_2', 'recG_189']
 
 Predicted variants are: ['recG_2', 'recG_189']

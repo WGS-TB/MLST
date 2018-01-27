@@ -1,5 +1,19 @@
 ======================================== SIMULATION 1 ====================================================
 
+    target_id  est_counts
+48    pyrG_49    0.000013
+51    pyrG_52   37.150592
+67    pyrG_68   34.357573
+173  pyrG_174    0.000175
+178  pyrG_179   19.553090
+187  pyrG_188    0.000001
+188  pyrG_189    8.938556
+Next
+    target_id  est_counts
+51    pyrG_52   37.150662
+67    pyrG_68   34.357638
+178  pyrG_179   19.553127
+188  pyrG_189    8.938572
 True variants are: ['pyrG_68', 'pyrG_52', 'pyrG_179', 'pyrG_189']
 
 Predicted variants are: ['pyrG_52', 'pyrG_68', 'pyrG_179', 'pyrG_189']
@@ -10,6 +24,25 @@ Predicted proportions are: {'pyrG_52': 37.15066243201796, 'pyrG_68': 34.35763787
 
 ======================================== SIMULATION 2 ====================================================
 
+    target_id    est_counts
+26    pyrG_27  2.286360e-03
+32    pyrG_33  3.669091e+01
+88    pyrG_89  2.133640e-08
+109  pyrG_110  7.157655e-07
+110  pyrG_111  2.131396e+01
+122  pyrG_123  2.286360e-03
+134  pyrG_135  1.981640e+00
+144  pyrG_145  2.255737e+01
+149  pyrG_150  1.551249e+01
+197  pyrG_198  1.939061e+00
+Next
+    target_id  est_counts
+32    pyrG_33   36.692586
+110  pyrG_111   21.314937
+134  pyrG_135    1.981730
+144  pyrG_145   22.558402
+149  pyrG_150   15.513195
+197  pyrG_198    1.939149
 True variants are: ['pyrG_198', 'pyrG_145', 'pyrG_33', 'pyrG_135', 'pyrG_150', 'pyrG_111']
 
 Predicted variants are: ['pyrG_33', 'pyrG_111', 'pyrG_135', 'pyrG_145', 'pyrG_150', 'pyrG_198']
@@ -20,6 +53,27 @@ Predicted proportions are: {'pyrG_33': 36.69258561504044, 'pyrG_198': 1.93914943
 
 ======================================== SIMULATION 3 ====================================================
 
+    target_id    est_counts
+26    pyrG_27  1.406644e+01
+31    pyrG_32  1.154907e+01
+38    pyrG_39  2.684932e+01
+47    pyrG_48  2.497735e-07
+55    pyrG_56  5.110138e+00
+103  pyrG_104  2.678034e-03
+104  pyrG_105  1.451787e+01
+108  pyrG_109  1.383803e+01
+109  pyrG_110  6.241207e-08
+113  pyrG_114  4.749097e-06
+122  pyrG_123  1.406644e+01
+Next
+    target_id  est_counts
+26    pyrG_27   14.066820
+31    pyrG_32   11.549382
+38    pyrG_39   26.850043
+55    pyrG_56    5.110276
+104  pyrG_105   14.518257
+108  pyrG_109   13.838403
+122  pyrG_123   14.066820
 True variants are: ['pyrG_105', 'pyrG_123', 'pyrG_56', 'pyrG_109', 'pyrG_32', 'pyrG_39']
 
 Predicted variants are: ['pyrG_27', 'pyrG_32', 'pyrG_39', 'pyrG_56', 'pyrG_105', 'pyrG_109', 'pyrG_123']
@@ -30,6 +84,19 @@ Predicted proportions are: {'pyrG_32': 11.549381750354323, 'pyrG_39': 26.8500433
 
 ======================================== SIMULATION 4 ====================================================
 
+    target_id    est_counts
+12    pyrG_13  5.084753e+00
+13    pyrG_14  4.314356e-08
+14    pyrG_15  4.314356e-08
+49    pyrG_50  2.123698e-03
+62    pyrG_63  5.536731e+01
+66    pyrG_67  5.173256e-08
+151  pyrG_152  3.954582e+01
+Next
+    target_id  est_counts
+12    pyrG_13    5.084861
+62    pyrG_63   55.368483
+151  pyrG_152   39.546656
 True variants are: ['pyrG_13', 'pyrG_63', 'pyrG_152']
 
 Predicted variants are: ['pyrG_13', 'pyrG_63', 'pyrG_152']
@@ -40,6 +107,20 @@ Predicted proportions are: {'pyrG_63': 55.36848290356844, 'pyrG_13': 5.084860674
 
 ======================================== SIMULATION 5 ====================================================
 
+    target_id    est_counts
+107  pyrG_108  5.061284e-08
+108  pyrG_109  3.826815e+01
+109  pyrG_110  9.707512e-06
+184  pyrG_185  2.262569e+01
+196  pyrG_197  2.541899e+01
+200  pyrG_201  1.368662e+01
+201  pyrG_202  5.400502e-04
+Next
+    target_id  est_counts
+108  pyrG_109   38.268360
+184  pyrG_185   22.625818
+196  pyrG_197   25.419129
+200  pyrG_201   13.686693
 True variants are: ['pyrG_109', 'pyrG_197', 'pyrG_201', 'pyrG_185']
 
 Predicted variants are: ['pyrG_109', 'pyrG_185', 'pyrG_197', 'pyrG_201']
@@ -50,6 +131,16 @@ Predicted proportions are: {'pyrG_109': 38.268359524813114, 'pyrG_201': 13.68669
 
 ======================================== SIMULATION 6 ====================================================
 
+    target_id    est_counts
+87    pyrG_88  5.494689e-09
+107  pyrG_108  4.417994e-09
+108  pyrG_109  6.242937e+01
+109  pyrG_110  9.993728e-06
+182  pyrG_183  3.757062e+01
+Next
+    target_id  est_counts
+108  pyrG_109   62.429379
+182  pyrG_183   37.570621
 True variants are: ['pyrG_183', 'pyrG_109']
 
 Predicted variants are: ['pyrG_109', 'pyrG_183']
@@ -60,6 +151,22 @@ Predicted proportions are: {'pyrG_109': 62.42937853107345, 'pyrG_183': 37.570621
 
 ======================================== SIMULATION 7 ====================================================
 
+    target_id    est_counts
+12    pyrG_13  4.683949e-09
+15    pyrG_16  4.817734e-07
+16    pyrG_17  2.814060e+01
+72    pyrG_73  6.620468e-05
+74    pyrG_75  2.824005e+01
+101  pyrG_102  3.011049e+01
+114  pyrG_115  1.969845e+00
+131  pyrG_132  1.153895e+01
+Next
+    target_id  est_counts
+16    pyrG_17   28.140620
+74    pyrG_75   28.240068
+101  pyrG_102   30.110511
+114  pyrG_115    1.969846
+131  pyrG_132   11.538955
 True variants are: ['pyrG_115', 'pyrG_17', 'pyrG_102', 'pyrG_75', 'pyrG_132']
 
 Predicted variants are: ['pyrG_17', 'pyrG_75', 'pyrG_102', 'pyrG_115', 'pyrG_132']
@@ -70,6 +177,17 @@ Predicted proportions are: {'pyrG_17': 28.1406201726498, 'pyrG_75': 28.240067730
 
 ======================================== SIMULATION 8 ====================================================
 
+    target_id    est_counts
+47    pyrG_48  2.730980e-09
+87    pyrG_88  5.293888e+01
+109  pyrG_110  2.350350e-03
+150  pyrG_151  9.803911e-01
+153  pyrG_154  9.803911e-01
+188  pyrG_189  4.509799e+01
+Next
+    target_id  est_counts
+87    pyrG_88   53.998949
+188  pyrG_189   46.001051
 True variants are: ['pyrG_189', 'pyrG_88', 'pyrG_154']
 
 Predicted variants are: ['pyrG_88', 'pyrG_189']
@@ -80,6 +198,20 @@ Predicted proportions are: {'pyrG_189': 46.00105145260463, 'pyrG_88': 53.9989485
 
 ======================================== SIMULATION 9 ====================================================
 
+    target_id    est_counts
+6      pyrG_7  4.613135e-09
+7      pyrG_8  4.152542e+01
+27    pyrG_28  3.474576e+01
+84    pyrG_85  1.921491e-07
+118  pyrG_119  1.921491e-07
+149  pyrG_150  4.592825e-07
+150  pyrG_151  4.303615e-04
+153  pyrG_154  2.372839e+01
+Next
+    target_id  est_counts
+7      pyrG_8    41.52560
+27    pyrG_28    34.74591
+153  pyrG_154    23.72849
 True variants are: ['pyrG_8', 'pyrG_154', 'pyrG_28']
 
 Predicted variants are: ['pyrG_8', 'pyrG_28', 'pyrG_154']
@@ -90,6 +222,23 @@ Predicted proportions are: {'pyrG_154': 23.728490374959218, 'pyrG_28': 34.745909
 
 ======================================== SIMULATION 10 ====================================================
 
+    target_id  est_counts
+21    pyrG_22    9.692768
+38    pyrG_39   23.294206
+59    pyrG_60    1.108033
+73    pyrG_74   40.694730
+94    pyrG_95    0.002516
+95    pyrG_96    0.002516
+97    pyrG_98    9.692768
+120  pyrG_121   15.512463
+Next
+    target_id  est_counts
+21    pyrG_22    9.693256
+38    pyrG_39   23.295379
+59    pyrG_60    1.108089
+73    pyrG_74   40.696777
+97    pyrG_98    9.693256
+120  pyrG_121   15.513243
 True variants are: ['pyrG_74', 'pyrG_60', 'pyrG_22', 'pyrG_121', 'pyrG_39']
 
 Predicted variants are: ['pyrG_22', 'pyrG_39', 'pyrG_60', 'pyrG_74', 'pyrG_98', 'pyrG_121']
@@ -100,6 +249,29 @@ Predicted proportions are: {'pyrG_39': 23.2953785217486, 'pyrG_22': 9.6932560884
 
 ======================================== SIMULATION 11 ====================================================
 
+    target_id  est_counts
+13    pyrG_14   12.569060
+14    pyrG_15   12.569060
+21    pyrG_22    0.002461
+29    pyrG_30   14.687900
+60    pyrG_61   11.602209
+94    pyrG_95    4.831795
+95    pyrG_96    4.831795
+97    pyrG_98    0.002461
+147  pyrG_148    1.104972
+169  pyrG_170   13.488894
+178  pyrG_179   24.309391
+Next
+    target_id  est_counts
+13    pyrG_14   12.569679
+14    pyrG_15   12.569679
+29    pyrG_30   14.688623
+60    pyrG_61   11.602780
+94    pyrG_95    4.832033
+95    pyrG_96    4.832033
+147  pyrG_148    1.105027
+169  pyrG_170   13.489558
+178  pyrG_179   24.310588
 True variants are: ['pyrG_148', 'pyrG_14', 'pyrG_30', 'pyrG_170', 'pyrG_61', 'pyrG_179', 'pyrG_96']
 
 Predicted variants are: ['pyrG_14', 'pyrG_15', 'pyrG_30', 'pyrG_61', 'pyrG_95', 'pyrG_96', 'pyrG_148', 'pyrG_170', 'pyrG_179']
@@ -110,6 +282,28 @@ Predicted proportions are: {'pyrG_30': 14.688622810734891, 'pyrG_15': 12.5696788
 
 ======================================== SIMULATION 12 ====================================================
 
+    target_id  est_counts
+13    pyrG_14    5.801105
+14    pyrG_15    5.801105
+21    pyrG_22    0.002572
+27    pyrG_28   14.640883
+69    pyrG_70    3.038674
+72    pyrG_73    1.933702
+94    pyrG_95   23.905966
+95    pyrG_96   23.905966
+97    pyrG_98    0.002572
+106  pyrG_107    0.525467
+144  pyrG_145   20.441988
+Next
+    target_id  est_counts
+13    pyrG_14    5.832050
+14    pyrG_15    5.832050
+27    pyrG_28   14.718984
+69    pyrG_70    3.054883
+72    pyrG_73    1.944017
+94    pyrG_95   24.033490
+95    pyrG_96   24.033490
+144  pyrG_145   20.551034
 True variants are: ['pyrG_70', 'pyrG_73', 'pyrG_96', 'pyrG_28', 'pyrG_145', 'pyrG_14']
 
 Predicted variants are: ['pyrG_14', 'pyrG_15', 'pyrG_28', 'pyrG_70', 'pyrG_73', 'pyrG_95', 'pyrG_96', 'pyrG_145']
@@ -120,6 +314,23 @@ Predicted proportions are: {'pyrG_15': 5.832050282271233, 'pyrG_14': 5.832050282
 
 ======================================== SIMULATION 13 ====================================================
 
+    target_id    est_counts
+1      pyrG_2  2.466967e-03
+3      pyrG_4  2.900304e+01
+17    pyrG_18  4.486354e-07
+42    pyrG_43  1.104973e+00
+69    pyrG_70  2.237569e+01
+140  pyrG_141  2.900553e+01
+166  pyrG_167  4.972377e+00
+199  pyrG_200  1.353591e+01
+Next
+    target_id  est_counts
+3      pyrG_4   29.003760
+42    pyrG_43    1.105000
+69    pyrG_70   22.376247
+140  pyrG_141   29.006246
+166  pyrG_167    4.972499
+199  pyrG_200   13.536248
 True variants are: ['pyrG_43', 'pyrG_4', 'pyrG_200', 'pyrG_70', 'pyrG_141', 'pyrG_167']
 
 Predicted variants are: ['pyrG_4', 'pyrG_43', 'pyrG_70', 'pyrG_141', 'pyrG_167', 'pyrG_200']
@@ -130,6 +341,21 @@ Predicted proportions are: {'pyrG_200': 13.53624813876588, 'pyrG_43': 1.10499984
 
 ======================================== SIMULATION 14 ====================================================
 
+    target_id    est_counts
+19    pyrG_20  3.212849e-07
+22    pyrG_23  3.212849e-07
+24    pyrG_25  2.378810e-03
+25    pyrG_26  6.356799e+01
+26    pyrG_27  1.779658e+01
+32    pyrG_33  3.277199e-06
+91    pyrG_92  8.364593e-01
+96    pyrG_97  3.212849e-07
+122  pyrG_123  1.779658e+01
+Next
+    target_id  est_counts
+25    pyrG_26   64.105734
+26    pyrG_27   17.947133
+122  pyrG_123   17.947133
 True variants are: ['pyrG_26', 'pyrG_27']
 
 Predicted variants are: ['pyrG_26', 'pyrG_27', 'pyrG_123']
@@ -140,6 +366,18 @@ Predicted proportions are: {'pyrG_26': 64.10573425139091, 'pyrG_27': 17.94713287
 
 ======================================== SIMULATION 15 ====================================================
 
+    target_id    est_counts
+20    pyrG_21  9.638268e+01
+24    pyrG_25  3.724290e-08
+25    pyrG_26  2.321046e-07
+56    pyrG_57  2.865958e-07
+116  pyrG_117  5.099600e-01
+117  pyrG_118  1.982250e-05
+197  pyrG_198  3.107342e+00
+Next
+    target_id  est_counts
+20    pyrG_21    96.87673
+197  pyrG_198     3.12327
 True variants are: ['pyrG_198', 'pyrG_21']
 
 Predicted variants are: ['pyrG_21', 'pyrG_198']
@@ -150,6 +388,23 @@ Predicted proportions are: {'pyrG_198': 3.123269779525547, 'pyrG_21': 96.8767302
 
 ======================================== SIMULATION 16 ====================================================
 
+    target_id    est_counts
+51    pyrG_52  2.845992e+00
+98    pyrG_99  3.093671e+01
+113  pyrG_114  1.847139e+01
+117  pyrG_118  3.867400e+00
+142  pyrG_143  2.150026e+01
+173  pyrG_174  1.766277e-08
+189  pyrG_190  2.580462e-03
+195  pyrG_196  2.237567e+01
+Next
+    target_id  est_counts
+51    pyrG_52    2.846065
+98    pyrG_99   30.937509
+113  pyrG_114   18.471868
+117  pyrG_118    3.867499
+142  pyrG_143   21.500811
+195  pyrG_196   22.376247
 True variants are: ['pyrG_52', 'pyrG_114', 'pyrG_143', 'pyrG_196', 'pyrG_99', 'pyrG_118']
 
 Predicted variants are: ['pyrG_52', 'pyrG_99', 'pyrG_114', 'pyrG_118', 'pyrG_143', 'pyrG_196']
@@ -160,6 +415,24 @@ Predicted proportions are: {'pyrG_196': 22.376246923266045, 'pyrG_52': 2.8460652
 
 ======================================== SIMULATION 17 ====================================================
 
+    target_id  est_counts
+84    pyrG_85   10.723221
+88    pyrG_89   28.333330
+99   pyrG_100   14.722220
+118  pyrG_119    0.002597
+128  pyrG_129    9.444443
+152  pyrG_153    5.107527
+155  pyrG_156   18.888886
+185  pyrG_186   12.777776
+Next
+    target_id  est_counts
+84    pyrG_85   10.723499
+88    pyrG_89   28.334065
+99   pyrG_100   14.722603
+128  pyrG_129    9.444688
+152  pyrG_153    5.107660
+155  pyrG_156   18.889377
+185  pyrG_186   12.778108
 True variants are: ['pyrG_156', 'pyrG_129', 'pyrG_85', 'pyrG_153', 'pyrG_100', 'pyrG_186', 'pyrG_89']
 
 Predicted variants are: ['pyrG_85', 'pyrG_89', 'pyrG_100', 'pyrG_129', 'pyrG_153', 'pyrG_156', 'pyrG_186']
@@ -170,6 +443,22 @@ Predicted proportions are: {'pyrG_186': 12.778107878897984, 'pyrG_156': 18.88937
 
 ======================================== SIMULATION 18 ====================================================
 
+    target_id  est_counts
+23    pyrG_24    0.002524
+26    pyrG_27    8.744200
+55    pyrG_56   21.292545
+92    pyrG_93   20.439479
+122  pyrG_123    8.744200
+128  pyrG_129   20.335059
+196  pyrG_197   20.441992
+Next
+    target_id  est_counts
+26    pyrG_27    8.744421
+55    pyrG_56   21.293083
+92    pyrG_93   20.439995
+122  pyrG_123    8.744421
+128  pyrG_129   20.335572
+196  pyrG_197   20.442508
 True variants are: ['pyrG_56', 'pyrG_197', 'pyrG_129', 'pyrG_123', 'pyrG_93']
 
 Predicted variants are: ['pyrG_27', 'pyrG_56', 'pyrG_93', 'pyrG_123', 'pyrG_129', 'pyrG_197']
@@ -180,6 +469,26 @@ Predicted proportions are: {'pyrG_197': 20.44250848364102, 'pyrG_27': 8.74442112
 
 ======================================== SIMULATION 19 ====================================================
 
+    target_id    est_counts
+17    pyrG_18  2.347685e-03
+18    pyrG_19  1.740052e+01
+24    pyrG_25  8.035496e-04
+25    pyrG_26  1.933621e+01
+39    pyrG_40  5.446436e-09
+50    pyrG_51  4.395303e-04
+80    pyrG_81  1.464088e+01
+85    pyrG_86  1.568099e-05
+135  pyrG_136  1.464088e+01
+183  pyrG_184  2.817679e+01
+199  pyrG_200  5.801104e+00
+Next
+    target_id  est_counts
+18    pyrG_19   17.401150
+25    pyrG_26   19.336910
+80    pyrG_81   14.641410
+135  pyrG_136   14.641410
+183  pyrG_184   28.177807
+199  pyrG_200    5.801313
 True variants are: ['pyrG_184', 'pyrG_81', 'pyrG_136', 'pyrG_200', 'pyrG_19', 'pyrG_26']
 
 Predicted variants are: ['pyrG_19', 'pyrG_26', 'pyrG_81', 'pyrG_136', 'pyrG_184', 'pyrG_200']
@@ -190,6 +499,22 @@ Predicted proportions are: {'pyrG_200': 5.80131330683146, 'pyrG_184': 28.1778074
 
 ======================================== SIMULATION 20 ====================================================
 
+    target_id    est_counts
+21    pyrG_22  5.663400e-08
+84    pyrG_85  3.575358e+01
+94    pyrG_95  2.667421e-03
+95    pyrG_96  2.667421e-03
+97    pyrG_98  5.663400e-08
+106  pyrG_107  1.856118e+01
+118  pyrG_119  1.368275e-03
+165  pyrG_166  1.914226e+01
+170  pyrG_171  2.653628e+01
+Next
+    target_id  est_counts
+84    pyrG_85   35.755978
+106  pyrG_107   18.562420
+165  pyrG_166   19.143547
+170  pyrG_171   26.538055
 True variants are: ['pyrG_85', 'pyrG_171', 'pyrG_166', 'pyrG_107']
 
 Predicted variants are: ['pyrG_85', 'pyrG_107', 'pyrG_166', 'pyrG_171']
@@ -200,6 +525,23 @@ Predicted proportions are: {'pyrG_85': 35.755978395229846, 'pyrG_166': 19.143547
 
 ======================================== SIMULATION 21 ====================================================
 
+    target_id  est_counts
+2      pyrG_3   19.498606
+34    pyrG_35   14.615292
+68    pyrG_69   12.813370
+103  pyrG_104    0.002738
+104  pyrG_105   23.395598
+108  pyrG_109    8.045125
+110  pyrG_111    0.298883
+125  pyrG_126   21.330389
+Next
+    target_id  est_counts
+2      pyrG_3   19.557596
+34    pyrG_35   14.659508
+68    pyrG_69   12.852135
+104  pyrG_105   23.466377
+108  pyrG_109    8.069464
+125  pyrG_126   21.394920
 True variants are: ['pyrG_35', 'pyrG_3', 'pyrG_126', 'pyrG_109', 'pyrG_69', 'pyrG_105']
 
 Predicted variants are: ['pyrG_3', 'pyrG_35', 'pyrG_69', 'pyrG_105', 'pyrG_109', 'pyrG_126']
@@ -210,6 +552,18 @@ Predicted proportions are: {'pyrG_35': 14.659507841478419, 'pyrG_109': 8.0694641
 
 ======================================== SIMULATION 22 ====================================================
 
+    target_id  est_counts
+103  pyrG_104    0.002727
+104  pyrG_105   27.144096
+142  pyrG_143   43.767308
+149  pyrG_150    7.756232
+188  pyrG_189   21.329637
+Next
+    target_id  est_counts
+104  pyrG_105   27.144837
+142  pyrG_143   43.768501
+149  pyrG_150    7.756443
+188  pyrG_189   21.330219
 True variants are: ['pyrG_143', 'pyrG_189', 'pyrG_150', 'pyrG_105']
 
 Predicted variants are: ['pyrG_105', 'pyrG_143', 'pyrG_150', 'pyrG_189']
@@ -220,6 +574,34 @@ Predicted proportions are: {'pyrG_189': 21.330218936691356, 'pyrG_150': 7.756443
 
 ======================================== SIMULATION 23 ====================================================
 
+    target_id    est_counts
+24    pyrG_25  1.892535e+00
+25    pyrG_26  1.743132e+01
+36    pyrG_37  1.808705e+01
+43    pyrG_44  8.862026e-05
+44    pyrG_45  3.172945e-06
+91    pyrG_92  1.078151e-03
+107  pyrG_108  9.964188e-06
+116  pyrG_117  2.034829e-09
+124  pyrG_125  2.001367e+01
+145  pyrG_146  6.127675e+00
+148  pyrG_149  2.650162e-08
+154  pyrG_155  6.127675e+00
+155  pyrG_156  1.910338e+01
+159  pyrG_160  4.864864e+00
+174  pyrG_175  3.172945e-06
+190  pyrG_191  6.350648e+00
+Next
+    target_id  est_counts
+24    pyrG_25    1.892557
+25    pyrG_26   17.431528
+36    pyrG_37   18.087265
+124  pyrG_125   20.013909
+145  pyrG_146    6.127747
+154  pyrG_155    6.127747
+155  pyrG_156   19.103601
+159  pyrG_160    4.864922
+190  pyrG_191    6.350723
 True variants are: ['pyrG_37', 'pyrG_160', 'pyrG_156', 'pyrG_125', 'pyrG_191', 'pyrG_146', 'pyrG_26']
 
 Predicted variants are: ['pyrG_25', 'pyrG_26', 'pyrG_37', 'pyrG_125', 'pyrG_146', 'pyrG_155', 'pyrG_156', 'pyrG_160', 'pyrG_191']
@@ -230,6 +612,23 @@ Predicted proportions are: {'pyrG_191': 6.350722797628339, 'pyrG_37': 18.0872652
 
 ======================================== SIMULATION 24 ====================================================
 
+    target_id    est_counts
+29    pyrG_30  7.729274e+00
+36    pyrG_37  1.211278e-03
+47    pyrG_48  7.904896e-08
+53    pyrG_54  2.404203e+01
+80    pyrG_81  1.205939e+00
+87    pyrG_88  1.219270e-08
+107  pyrG_108  6.701900e+01
+109  pyrG_110  2.536777e-03
+113  pyrG_114  3.647377e-07
+148  pyrG_149  1.487264e-08
+Next
+    target_id  est_counts
+29    pyrG_30    7.729564
+53    pyrG_54   24.042935
+80    pyrG_81    1.205984
+107  pyrG_108   67.021517
 True variants are: ['pyrG_30', 'pyrG_54', 'pyrG_108']
 
 Predicted variants are: ['pyrG_30', 'pyrG_54', 'pyrG_81', 'pyrG_108']
@@ -240,6 +639,17 @@ Predicted proportions are: {'pyrG_108': 67.02151653770123, 'pyrG_30': 7.72956423
 
 ======================================== SIMULATION 25 ====================================================
 
+    target_id  est_counts
+24    pyrG_25    0.649915
+43    pyrG_44    8.043783
+44    pyrG_45   84.241497
+111  pyrG_112    7.062145
+174  pyrG_175    0.002661
+Next
+    target_id  est_counts
+43    pyrG_44    8.096619
+44    pyrG_45   84.794848
+111  pyrG_112    7.108533
 True variants are: ['pyrG_45', 'pyrG_112']
 
 Predicted variants are: ['pyrG_44', 'pyrG_45', 'pyrG_112']
@@ -250,6 +660,29 @@ Predicted proportions are: {'pyrG_112': 7.108533083112969, 'pyrG_44': 8.09661918
 
 ======================================== SIMULATION 26 ====================================================
 
+    target_id    est_counts
+21    pyrG_22  2.431119e-03
+29    pyrG_30  8.136602e+00
+39    pyrG_40  3.164226e+01
+44    pyrG_45  4.282210e-08
+52    pyrG_53  5.233535e+00
+84    pyrG_85  9.515662e-01
+94    pyrG_95  1.002586e+01
+95    pyrG_96  1.002586e+01
+97    pyrG_98  2.431119e-03
+115  pyrG_116  2.918315e-09
+118  pyrG_119  1.822287e-04
+181  pyrG_182  3.867403e+00
+190  pyrG_191  3.011188e+01
+Next
+    target_id  est_counts
+29    pyrG_30    8.215189
+39    pyrG_40   31.947879
+52    pyrG_53    5.284084
+94    pyrG_95   10.122690
+95    pyrG_96   10.122690
+181  pyrG_182    3.904756
+190  pyrG_191   30.402711
 True variants are: ['pyrG_53', 'pyrG_30', 'pyrG_40', 'pyrG_182', 'pyrG_96', 'pyrG_191']
 
 Predicted variants are: ['pyrG_30', 'pyrG_40', 'pyrG_53', 'pyrG_95', 'pyrG_96', 'pyrG_182', 'pyrG_191']
@@ -260,6 +693,19 @@ Predicted proportions are: {'pyrG_30': 8.215188888402345, 'pyrG_182': 3.90475629
 
 ======================================== SIMULATION 27 ====================================================
 
+    target_id    est_counts
+0      pyrG_1  1.117248e-07
+5      pyrG_6  1.271135e+01
+8      pyrG_9  2.067653e+01
+10    pyrG_11  2.406312e-03
+53    pyrG_54  6.619718e+01
+112  pyrG_113  4.125352e-01
+167  pyrG_168  1.117248e-07
+Next
+   target_id  est_counts
+5     pyrG_6   12.764315
+8     pyrG_9   20.762686
+53   pyrG_54   66.472999
 True variants are: ['pyrG_9', 'pyrG_6', 'pyrG_54']
 
 Predicted variants are: ['pyrG_6', 'pyrG_9', 'pyrG_54']
@@ -270,6 +716,15 @@ Predicted proportions are: {'pyrG_6': 12.764315031100878, 'pyrG_9': 20.762685735
 
 ======================================== SIMULATION 28 ====================================================
 
+    target_id    est_counts
+68    pyrG_69  3.821412e-08
+73    pyrG_74  6.129943e+01
+123  pyrG_124  3.870056e+01
+181  pyrG_182  2.783232e-08
+Next
+    target_id  est_counts
+73    pyrG_74   61.299435
+123  pyrG_124   38.700565
 True variants are: ['pyrG_74', 'pyrG_124']
 
 Predicted variants are: ['pyrG_74', 'pyrG_124']
@@ -280,6 +735,28 @@ Predicted proportions are: {'pyrG_74': 61.299435028248595, 'pyrG_124': 38.700564
 
 ======================================== SIMULATION 29 ====================================================
 
+    target_id    est_counts
+29    pyrG_30  4.399945e-09
+36    pyrG_37  1.227215e-03
+39    pyrG_40  6.515193e+00
+47    pyrG_48  2.933840e-07
+60    pyrG_61  1.657459e+01
+80    pyrG_81  6.145553e+00
+87    pyrG_88  2.608370e+01
+107  pyrG_108  2.431378e-03
+109  pyrG_110  1.230724e-04
+120  pyrG_121  2.616890e+01
+148  pyrG_149  2.013340e-07
+170  pyrG_171  5.503923e-07
+198  pyrG_199  1.850829e+01
+Next
+    target_id  est_counts
+39    pyrG_40    6.515440
+60    pyrG_61   16.575213
+80    pyrG_81    6.145785
+87    pyrG_88   26.084689
+120  pyrG_121   26.169885
+198  pyrG_199   18.508988
 True variants are: ['pyrG_199', 'pyrG_88', 'pyrG_61', 'pyrG_40', 'pyrG_81', 'pyrG_121']
 
 Predicted variants are: ['pyrG_40', 'pyrG_61', 'pyrG_81', 'pyrG_88', 'pyrG_121', 'pyrG_199']
@@ -290,6 +767,23 @@ Predicted proportions are: {'pyrG_40': 6.515439948970444, 'pyrG_199': 18.5089877
 
 ======================================== SIMULATION 30 ====================================================
 
+    target_id    est_counts
+8      pyrG_9  7.821229e+00
+26    pyrG_27  2.952039e-04
+32    pyrG_33  3.977626e-09
+59    pyrG_60  1.284916e+01
+119  pyrG_120  3.986061e-09
+122  pyrG_123  2.952039e-04
+126  pyrG_127  2.737371e+01
+160  pyrG_161  1.675978e+01
+186  pyrG_187  3.519553e+01
+Next
+    target_id  est_counts
+8      pyrG_9    7.821275
+59    pyrG_60   12.849237
+126  pyrG_127   27.373876
+160  pyrG_161   16.759875
+186  pyrG_187   35.195737
 True variants are: ['pyrG_127', 'pyrG_9', 'pyrG_60', 'pyrG_187', 'pyrG_161']
 
 Predicted variants are: ['pyrG_9', 'pyrG_60', 'pyrG_127', 'pyrG_161', 'pyrG_187']
@@ -300,6 +794,22 @@ Predicted proportions are: {'pyrG_127': 27.373875656812512, 'pyrG_60': 12.849237
 
 ======================================== SIMULATION 31 ====================================================
 
+    target_id    est_counts
+60    pyrG_61  2.037642e+01
+62    pyrG_63  1.398234e-07
+66    pyrG_67  4.273202e+01
+68    pyrG_69  7.609802e+00
+72    pyrG_73  6.971847e+00
+73    pyrG_74  9.487039e-08
+74    pyrG_75  1.784253e-06
+155  pyrG_156  2.230990e+01
+Next
+    target_id  est_counts
+60    pyrG_61   20.376425
+66    pyrG_67   42.732021
+68    pyrG_69    7.609802
+72    pyrG_73    6.971847
+155  pyrG_156   22.309905
 True variants are: ['pyrG_73', 'pyrG_156', 'pyrG_61', 'pyrG_67', 'pyrG_69']
 
 Predicted variants are: ['pyrG_61', 'pyrG_67', 'pyrG_69', 'pyrG_73', 'pyrG_156']
@@ -310,6 +820,23 @@ Predicted proportions are: {'pyrG_69': 7.609802425523522, 'pyrG_61': 20.37642520
 
 ======================================== SIMULATION 32 ====================================================
 
+    target_id  est_counts
+21    pyrG_22    0.000001
+24    pyrG_25    0.002438
+25    pyrG_26   91.489592
+91    pyrG_92    0.000044
+94    pyrG_95    0.000003
+95    pyrG_96    0.000003
+97    pyrG_98    0.000001
+115  pyrG_116    2.054357
+116  pyrG_117    0.000110
+117  pyrG_118    6.453449
+165  pyrG_166    0.000001
+Next
+    target_id  est_counts
+25    pyrG_26   91.491972
+115  pyrG_116    2.054410
+117  pyrG_118    6.453617
 True variants are: ['pyrG_26', 'pyrG_116', 'pyrG_118']
 
 Predicted variants are: ['pyrG_26', 'pyrG_116', 'pyrG_118']
@@ -320,6 +847,30 @@ Predicted proportions are: {'pyrG_26': 91.49197230141296, 'pyrG_118': 6.45361733
 
 ======================================== SIMULATION 33 ====================================================
 
+    target_id    est_counts
+24    pyrG_25  5.390694e-05
+25    pyrG_26  2.307018e-07
+42    pyrG_43  3.454726e+01
+43    pyrG_44  2.378598e-03
+44    pyrG_45  2.983980e-04
+71    pyrG_72  4.834257e+00
+91    pyrG_92  3.858621e-06
+116  pyrG_117  7.540032e+00
+117  pyrG_118  2.570482e-08
+132  pyrG_133  4.834257e+00
+144  pyrG_145  2.817681e+01
+174  pyrG_175  5.006136e-05
+186  pyrG_187  7.734811e+00
+190  pyrG_191  1.232979e+01
+Next
+    target_id  est_counts
+42    pyrG_43   34.548221
+71    pyrG_72    4.834392
+116  pyrG_117    7.540242
+132  pyrG_133    4.834392
+144  pyrG_145   28.177597
+186  pyrG_187    7.735027
+190  pyrG_191   12.330130
 True variants are: ['pyrG_117', 'pyrG_43', 'pyrG_187', 'pyrG_133', 'pyrG_145', 'pyrG_191']
 
 Predicted variants are: ['pyrG_43', 'pyrG_72', 'pyrG_117', 'pyrG_133', 'pyrG_145', 'pyrG_187', 'pyrG_191']
@@ -330,6 +881,14 @@ Predicted proportions are: {'pyrG_191': 12.330129835185916, 'pyrG_187': 7.735026
 
 ======================================== SIMULATION 34 ====================================================
 
+    target_id  est_counts
+98    pyrG_99    0.002667
+143  pyrG_144   49.434967
+189  pyrG_190   50.562367
+Next
+    target_id  est_counts
+143  pyrG_144   49.436285
+189  pyrG_190   50.563715
 True variants are: ['pyrG_144', 'pyrG_190']
 
 Predicted variants are: ['pyrG_144', 'pyrG_190']
@@ -340,6 +899,13 @@ Predicted proportions are: {'pyrG_144': 49.436285103293585, 'pyrG_190': 50.56371
 
 ======================================== SIMULATION 35 ====================================================
 
+    target_id  est_counts
+127  pyrG_128   40.677966
+155  pyrG_156   59.322034
+Next
+    target_id  est_counts
+127  pyrG_128   40.677966
+155  pyrG_156   59.322034
 True variants are: ['pyrG_156', 'pyrG_128']
 
 Predicted variants are: ['pyrG_128', 'pyrG_156']
@@ -350,6 +916,37 @@ Predicted proportions are: {'pyrG_156': 59.32203389830508, 'pyrG_128': 40.677966
 
 ======================================== SIMULATION 36 ====================================================
 
+    target_id    est_counts
+17    pyrG_18  2.930600e-04
+18    pyrG_19  7.573577e-07
+21    pyrG_22  3.272376e-05
+50    pyrG_51  1.305292e-07
+84    pyrG_85  2.064120e-09
+85    pyrG_86  3.399863e-09
+94    pyrG_95  3.272376e-05
+95    pyrG_96  3.272376e-05
+97    pyrG_98  3.272376e-05
+103  pyrG_104  5.464479e-01
+104  pyrG_105  5.464479e-01
+105  pyrG_106  8.703714e-08
+114  pyrG_115  1.102142e+01
+118  pyrG_119  2.064120e-09
+124  pyrG_125  2.295081e+01
+127  pyrG_128  1.830601e+01
+149  pyrG_150  1.825382e-06
+150  pyrG_151  9.233850e+00
+153  pyrG_154  8.508768e-06
+165  pyrG_166  1.590262e+01
+166  pyrG_167  4.466338e-07
+176  pyrG_177  2.149196e+01
+Next
+    target_id  est_counts
+114  pyrG_115   11.143251
+124  pyrG_125   23.204516
+127  pyrG_128   18.508364
+150  pyrG_151    9.335923
+165  pyrG_166   16.078409
+176  pyrG_177   21.729538
 True variants are: ['pyrG_151', 'pyrG_115', 'pyrG_166', 'pyrG_104', 'pyrG_125', 'pyrG_128', 'pyrG_177']
 
 Predicted variants are: ['pyrG_115', 'pyrG_125', 'pyrG_128', 'pyrG_151', 'pyrG_166', 'pyrG_177']
@@ -360,6 +957,38 @@ Predicted proportions are: {'pyrG_128': 18.508363984933634, 'pyrG_177': 21.72953
 
 ======================================== SIMULATION 37 ====================================================
 
+    target_id    est_counts
+21    pyrG_22  1.138238e-06
+29    pyrG_30  1.164915e-06
+36    pyrG_37  1.351612e-04
+39    pyrG_40  2.128524e-05
+43    pyrG_44  8.681229e-07
+44    pyrG_45  5.153032e-06
+45    pyrG_46  1.154667e+01
+46    pyrG_47  2.286257e+01
+80    pyrG_81  2.214809e+01
+84    pyrG_85  9.260108e-06
+87    pyrG_88  8.698469e-09
+94    pyrG_95  3.999972e-05
+95    pyrG_96  3.999972e-05
+97    pyrG_98  1.138238e-06
+107  pyrG_108  1.351612e-04
+109  pyrG_110  8.698469e-09
+115  pyrG_116  1.058437e+01
+118  pyrG_119  2.363158e-07
+127  pyrG_128  6.699289e+00
+136  pyrG_137  3.005464e+00
+148  pyrG_149  2.315317e+01
+174  pyrG_175  8.681229e-07
+Next
+    target_id  est_counts
+45    pyrG_46   11.546711
+46    pyrG_47   22.862656
+80    pyrG_81   22.148172
+115  pyrG_116   10.584412
+127  pyrG_128    6.699315
+136  pyrG_137    3.005476
+148  pyrG_149   23.153258
 True variants are: ['pyrG_149', 'pyrG_46', 'pyrG_47', 'pyrG_128', 'pyrG_137', 'pyrG_116', 'pyrG_81']
 
 Predicted variants are: ['pyrG_46', 'pyrG_47', 'pyrG_81', 'pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149']
@@ -370,6 +999,19 @@ Predicted proportions are: {'pyrG_137': 3.005475977230514, 'pyrG_46': 11.5467108
 
 ======================================== SIMULATION 38 ====================================================
 
+    target_id    est_counts
+30    pyrG_31  3.480663e+01
+32    pyrG_33  1.850829e+01
+43    pyrG_44  1.657191e+01
+44    pyrG_45  2.682840e-03
+142  pyrG_143  3.011050e+01
+174  pyrG_175  7.548204e-07
+Next
+    target_id  est_counts
+30    pyrG_31   34.807563
+32    pyrG_33   18.508783
+43    pyrG_44   16.572350
+142  pyrG_143   30.111304
 True variants are: ['pyrG_31', 'pyrG_143', 'pyrG_33', 'pyrG_44']
 
 Predicted variants are: ['pyrG_31', 'pyrG_33', 'pyrG_44', 'pyrG_143']
@@ -380,6 +1022,32 @@ Predicted proportions are: {'pyrG_31': 34.80756252308419, 'pyrG_33': 18.50878324
 
 ======================================== SIMULATION 39 ====================================================
 
+    target_id    est_counts
+0      pyrG_1  5.702455e+00
+1      pyrG_2  1.393913e+01
+3      pyrG_4  2.170728e-04
+4      pyrG_5  7.547249e-05
+5      pyrG_6  1.553662e-08
+6      pyrG_7  2.855126e-07
+17    pyrG_18  2.458351e-03
+18    pyrG_19  1.527362e-06
+20    pyrG_21  3.030305e+00
+50    pyrG_51  1.527362e-06
+85    pyrG_86  2.043288e+01
+141  pyrG_142  5.785127e+00
+167  pyrG_168  5.702455e+00
+176  pyrG_177  1.647927e+01
+181  pyrG_182  2.892564e+01
+Next
+    target_id  est_counts
+0      pyrG_1    5.702612
+1      pyrG_2   13.939510
+20    pyrG_21    3.030388
+85    pyrG_86   20.433439
+141  pyrG_142    5.785287
+167  pyrG_168    5.702612
+176  pyrG_177   16.479719
+181  pyrG_182   28.926433
 True variants are: ['pyrG_177', 'pyrG_142', 'pyrG_1', 'pyrG_86', 'pyrG_21', 'pyrG_2', 'pyrG_182']
 
 Predicted variants are: ['pyrG_1', 'pyrG_2', 'pyrG_21', 'pyrG_86', 'pyrG_142', 'pyrG_168', 'pyrG_177', 'pyrG_182']
@@ -390,6 +1058,19 @@ Predicted proportions are: {'pyrG_168': 5.70261202931873, 'pyrG_1': 5.7026120293
 
 ======================================== SIMULATION 40 ====================================================
 
+    target_id    est_counts
+1      pyrG_2  7.062163e+00
+21    pyrG_22  4.622044e+01
+94    pyrG_95  2.605681e-03
+95    pyrG_96  2.605681e-03
+97    pyrG_98  4.622044e+01
+106  pyrG_107  4.917356e-01
+165  pyrG_166  2.396240e-08
+Next
+   target_id  est_counts
+1     pyrG_2    7.097434
+21   pyrG_22   46.451283
+97   pyrG_98   46.451283
 True variants are: ['pyrG_2', 'pyrG_98']
 
 Predicted variants are: ['pyrG_2', 'pyrG_22', 'pyrG_98']

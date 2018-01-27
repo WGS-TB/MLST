@@ -1,5 +1,18 @@
 ======================================== SIMULATION 1 ====================================================
 
+    target_id  est_counts
+42    nifS_43   37.159656
+55    nifS_56   34.509035
+59    nifS_60    0.004253
+109  nifS_110    0.008465
+146  nifS_147   18.584076
+155  nifS_156    9.734516
+Next
+    target_id  est_counts
+42    nifS_43   37.164382
+55    nifS_56   34.513425
+146  nifS_147   18.586439
+155  nifS_156    9.735754
 True variants are: ['nifS_56', 'nifS_43', 'nifS_147', 'nifS_156']
 
 Predicted variants are: ['nifS_43', 'nifS_56', 'nifS_147', 'nifS_156']
@@ -10,6 +23,25 @@ Predicted proportions are: {'nifS_147': 18.586439333862014, 'nifS_156': 9.735753
 
 ======================================== SIMULATION 2 ====================================================
 
+    target_id  est_counts
+26    nifS_27   35.593237
+33    nifS_34   10.501361
+77    nifS_78    0.420443
+90    nifS_91   10.501361
+97    nifS_98    0.420443
+110  nifS_111    3.389832
+119  nifS_120   20.529247
+122  nifS_123   15.254245
+162  nifS_163    3.389832
+Next
+    target_id  est_counts
+26    nifS_27   35.895074
+33    nifS_34   10.590414
+90    nifS_91   10.590414
+110  nifS_111    3.418578
+119  nifS_120   20.703338
+122  nifS_123   15.383603
+162  nifS_163    3.418578
 True variants are: ['nifS_163', 'nifS_120', 'nifS_27', 'nifS_111', 'nifS_123', 'nifS_91']
 
 Predicted variants are: ['nifS_27', 'nifS_34', 'nifS_91', 'nifS_111', 'nifS_120', 'nifS_123', 'nifS_163']
@@ -20,6 +52,23 @@ Predicted proportions are: {'nifS_120': 20.703338327306664, 'nifS_123': 15.38360
 
 ======================================== SIMULATION 3 ====================================================
 
+    target_id  est_counts
+26    nifS_27   11.589401
+31    nifS_32   27.863161
+33    nifS_34    0.026712
+45    nifS_46    6.521965
+85    nifS_86   15.384614
+89    nifS_90   10.834187
+90    nifS_91    0.026712
+100  nifS_101   27.753246
+Next
+    target_id  est_counts
+26    nifS_27   11.595596
+31    nifS_32   27.878055
+45    nifS_46    6.525452
+85    nifS_86   15.392838
+89    nifS_90   10.839979
+100  nifS_101   27.768081
 True variants are: ['nifS_86', 'nifS_101', 'nifS_46', 'nifS_90', 'nifS_27', 'nifS_32']
 
 Predicted variants are: ['nifS_27', 'nifS_32', 'nifS_46', 'nifS_86', 'nifS_90', 'nifS_101']
@@ -30,6 +79,21 @@ Predicted proportions are: {'nifS_46': 6.5254516301443095, 'nifS_32': 27.8780545
 
 ======================================== SIMULATION 4 ====================================================
 
+    target_id    est_counts
+4      nifS_5  4.578789e-04
+8      nifS_9  4.578789e-04
+10    nifS_11  6.420642e+00
+16    nifS_17  4.578789e-04
+51    nifS_52  5.504587e+01
+61    nifS_62  1.723991e-06
+113  nifS_114  3.025844e-08
+120  nifS_121  2.065927e-06
+124  nifS_125  3.853211e+01
+Next
+    target_id  est_counts
+10    nifS_11    6.420731
+51    nifS_52   55.046629
+124  nifS_125   38.532640
 True variants are: ['nifS_11', 'nifS_52', 'nifS_125']
 
 Predicted variants are: ['nifS_11', 'nifS_52', 'nifS_125']
@@ -40,6 +104,18 @@ Predicted proportions are: {'nifS_52': 55.04662908205159, 'nifS_11': 6.420730560
 
 ======================================== SIMULATION 5 ====================================================
 
+    target_id  est_counts
+89    nifS_90   38.532114
+147  nifS_148    0.002833
+151  nifS_152   22.935782
+161  nifS_162   27.113673
+164  nifS_165   11.415598
+Next
+    target_id  est_counts
+89    nifS_90   38.533206
+151  nifS_152   22.936432
+161  nifS_162   27.114441
+164  nifS_165   11.415921
 True variants are: ['nifS_90', 'nifS_162', 'nifS_165', 'nifS_152']
 
 Predicted variants are: ['nifS_90', 'nifS_152', 'nifS_162', 'nifS_165']
@@ -50,6 +126,20 @@ Predicted proportions are: {'nifS_165': 11.415921003257889, 'nifS_90': 38.533205
 
 ======================================== SIMULATION 6 ====================================================
 
+    target_id  est_counts
+22    nifS_23    0.007718
+23    nifS_24   30.727236
+38    nifS_39    0.000769
+39    nifS_40    0.002364
+79    nifS_80    0.001855
+88    nifS_89   30.727236
+114  nifS_115    0.000727
+149  nifS_150   38.532095
+Next
+    target_id  est_counts
+23    nifS_24   30.731364
+88    nifS_89   30.731364
+149  nifS_150   38.537272
 True variants are: ['nifS_150', 'nifS_89']
 
 Predicted variants are: ['nifS_24', 'nifS_89', 'nifS_150']
@@ -60,6 +150,23 @@ Predicted proportions are: {'nifS_89': 30.731364017565653, 'nifS_24': 30.7313640
 
 ======================================== SIMULATION 7 ====================================================
 
+    target_id  est_counts
+3      nifS_4    0.001169
+5      nifS_6    0.000149
+13    nifS_14   27.349126
+51    nifS_52    0.001545
+61    nifS_62   27.349126
+68    nifS_69    0.000113
+83    nifS_84   29.914423
+94    nifS_95    3.418801
+108  nifS_109   11.965547
+Next
+    target_id  est_counts
+13    nifS_14   27.349940
+61    nifS_62   27.349940
+83    nifS_84   29.915314
+94    nifS_95    3.418903
+108  nifS_109   11.965903
 True variants are: ['nifS_95', 'nifS_14', 'nifS_84', 'nifS_62', 'nifS_109']
 
 Predicted variants are: ['nifS_14', 'nifS_62', 'nifS_84', 'nifS_95', 'nifS_109']
@@ -70,6 +177,17 @@ Predicted proportions are: {'nifS_95': 3.4189027715335314, 'nifS_14': 27.3499400
 
 ======================================== SIMULATION 8 ====================================================
 
+    target_id    est_counts
+36    nifS_37  7.454356e-03
+71    nifS_72  5.136870e+01
+125  nifS_126  3.669724e+00
+126  nifS_127  7.802218e-08
+154  nifS_155  4.495412e+01
+Next
+    target_id  est_counts
+71    nifS_72   51.372533
+125  nifS_126    3.669997
+154  nifS_155   44.957469
 True variants are: ['nifS_155', 'nifS_72', 'nifS_126']
 
 Predicted variants are: ['nifS_72', 'nifS_126', 'nifS_155']
@@ -80,6 +198,22 @@ Predicted proportions are: {'nifS_155': 44.957469316527195, 'nifS_72': 51.372533
 
 ======================================== SIMULATION 9 ====================================================
 
+    target_id  est_counts
+6      nifS_7   41.818199
+22    nifS_23   11.812550
+23    nifS_24    0.008430
+38    nifS_39    0.000007
+39    nifS_40   11.812550
+88    nifS_89    0.008430
+114  nifS_115   11.812550
+126  nifS_127   22.727282
+Next
+    target_id  est_counts
+6      nifS_7   41.825254
+22    nifS_23   11.814543
+39    nifS_40   11.814543
+114  nifS_115   11.814543
+126  nifS_127   22.731116
 True variants are: ['nifS_7', 'nifS_127', 'nifS_23']
 
 Predicted variants are: ['nifS_7', 'nifS_23', 'nifS_40', 'nifS_115', 'nifS_127']
@@ -90,6 +224,26 @@ Predicted proportions are: {'nifS_23': 11.814543186393337, 'nifS_115': 11.814543
 
 ======================================== SIMULATION 10 ====================================================
 
+    target_id    est_counts
+17    nifS_18  1.794872e+01
+31    nifS_32  2.391137e+01
+33    nifS_34  1.434983e-05
+47    nifS_48  4.318025e-05
+49    nifS_50  3.700102e+00
+58    nifS_59  3.350308e-07
+60    nifS_61  3.931624e+01
+66    nifS_67  3.691803e-08
+90    nifS_91  1.434983e-05
+98    nifS_99  1.512350e+01
+102  nifS_103  3.691803e-08
+103  nifS_104  1.846786e-07
+Next
+   target_id  est_counts
+17   nifS_18   17.948730
+31   nifS_32   23.911384
+49   nifS_50    3.700105
+60   nifS_61   39.316266
+98   nifS_99   15.123515
 True variants are: ['nifS_61', 'nifS_50', 'nifS_18', 'nifS_99', 'nifS_32']
 
 Predicted variants are: ['nifS_18', 'nifS_32', 'nifS_50', 'nifS_61', 'nifS_99']
@@ -100,6 +254,43 @@ Predicted proportions are: {'nifS_61': 39.316266199156374, 'nifS_32': 23.9113838
 
 ======================================== SIMULATION 11 ====================================================
 
+    target_id    est_counts
+4      nifS_5  1.828561e-05
+8      nifS_9  1.828561e-05
+10    nifS_11  2.314048e+01
+16    nifS_17  6.925451e-09
+22    nifS_23  5.771154e-03
+23    nifS_24  7.429095e+00
+38    nifS_39  4.495336e-06
+39    nifS_40  5.771154e-03
+47    nifS_48  2.012726e-05
+49    nifS_50  1.175379e+01
+66    nifS_67  7.408302e-05
+70    nifS_71  2.125858e-07
+77    nifS_78  1.281429e-04
+78    nifS_79  9.090904e+00
+79    nifS_80  5.191890e-04
+80    nifS_81  6.108930e-06
+88    nifS_89  7.429095e+00
+97    nifS_98  1.281429e-04
+102  nifS_103  7.408302e-05
+114  nifS_115  5.771154e-03
+116  nifS_117  3.949039e-07
+121  nifS_122  3.305783e+00
+137  nifS_138  1.189057e-07
+139  nifS_140  1.469206e+01
+143  nifS_144  1.189057e-07
+147  nifS_148  2.314048e+01
+Next
+    target_id  est_counts
+10    nifS_11   23.144719
+23    nifS_24    7.430455
+49    nifS_50   11.755947
+78    nifS_79    9.092568
+88    nifS_89    7.430455
+121  nifS_122    3.306388
+139  nifS_140   14.694748
+147  nifS_148   23.144719
 True variants are: ['nifS_122', 'nifS_11', 'nifS_24', 'nifS_140', 'nifS_50', 'nifS_148', 'nifS_79']
 
 Predicted variants are: ['nifS_11', 'nifS_24', 'nifS_50', 'nifS_79', 'nifS_89', 'nifS_122', 'nifS_140', 'nifS_148']
@@ -110,6 +301,36 @@ Predicted proportions are: {'nifS_122': 3.306388471549189, 'nifS_24': 7.43045507
 
 ======================================== SIMULATION 12 ====================================================
 
+    target_id    est_counts
+10    nifS_11  1.186441e+01
+22    nifS_23  4.851806e+00
+23    nifS_24  7.442595e-03
+24    nifS_25  4.014832e-08
+37    nifS_38  1.129941e+00
+38    nifS_39  7.772087e-06
+39    nifS_40  4.851806e+00
+55    nifS_56  1.129941e+00
+57    nifS_58  3.389831e+00
+58    nifS_59  1.241941e-08
+59    nifS_60  1.129941e+00
+70    nifS_71  1.223814e-05
+78    nifS_79  4.491527e+01
+79    nifS_80  3.607111e-08
+88    nifS_89  7.442595e-03
+114  nifS_115  4.851806e+00
+118  nifS_119  2.187034e+01
+Next
+    target_id  est_counts
+10    nifS_11   11.866179
+22    nifS_23    4.852530
+37    nifS_38    1.130109
+39    nifS_40    4.852530
+55    nifS_56    1.130109
+57    nifS_58    3.390337
+59    nifS_60    1.130109
+78    nifS_79   44.921962
+114  nifS_115    4.852530
+118  nifS_119   21.873605
 True variants are: ['nifS_58', 'nifS_60', 'nifS_79', 'nifS_23', 'nifS_119', 'nifS_11']
 
 Predicted variants are: ['nifS_11', 'nifS_23', 'nifS_38', 'nifS_40', 'nifS_56', 'nifS_58', 'nifS_60', 'nifS_79', 'nifS_115', 'nifS_119']
@@ -120,6 +341,24 @@ Predicted proportions are: {'nifS_23': 4.852529674346287, 'nifS_40': 4.852529674
 
 ======================================== SIMULATION 13 ====================================================
 
+    target_id  est_counts
+3      nifS_4   28.061850
+5      nifS_6    0.008304
+35    nifS_36    3.508773
+50    nifS_51    3.070176
+56    nifS_57   21.929831
+115  nifS_116   28.070184
+136  nifS_137    3.070176
+163  nifS_164   12.280705
+Next
+    target_id  est_counts
+3      nifS_4   28.064181
+35    nifS_36    3.509064
+50    nifS_51    3.070431
+56    nifS_57   21.931652
+115  nifS_116   28.072515
+136  nifS_137    3.070431
+163  nifS_164   12.281725
 True variants are: ['nifS_36', 'nifS_4', 'nifS_164', 'nifS_57', 'nifS_116', 'nifS_137']
 
 Predicted variants are: ['nifS_4', 'nifS_36', 'nifS_51', 'nifS_57', 'nifS_116', 'nifS_137', 'nifS_164']
@@ -130,6 +369,21 @@ Predicted proportions are: {'nifS_137': 3.0704313078721466, 'nifS_36': 3.5090643
 
 ======================================== SIMULATION 14 ====================================================
 
+    target_id    est_counts
+20    nifS_21  6.422021e+01
+22    nifS_23  1.192092e+01
+23    nifS_24  8.507371e-03
+38    nifS_39  7.058975e-06
+39    nifS_40  1.192092e+01
+88    nifS_89  8.507371e-03
+96    nifS_97  8.452316e-08
+114  nifS_115  1.192092e+01
+Next
+    target_id  est_counts
+20    nifS_21   64.231144
+22    nifS_23   11.922952
+39    nifS_40   11.922952
+114  nifS_115   11.922952
 True variants are: ['nifS_21', 'nifS_23']
 
 Predicted variants are: ['nifS_21', 'nifS_23', 'nifS_40', 'nifS_115']
@@ -140,6 +394,13 @@ Predicted proportions are: {'nifS_21': 64.2311440300822, 'nifS_23': 11.922951989
 
 ======================================== SIMULATION 15 ====================================================
 
+    target_id  est_counts
+16    nifS_17   96.330275
+162  nifS_163    3.669725
+Next
+    target_id  est_counts
+16    nifS_17   96.330275
+162  nifS_163    3.669725
 True variants are: ['nifS_163', 'nifS_17']
 
 Predicted variants are: ['nifS_17', 'nifS_163']
@@ -150,6 +411,29 @@ Predicted proportions are: {'nifS_17': 96.3302752293578, 'nifS_163': 3.669724770
 
 ======================================== SIMULATION 16 ====================================================
 
+    target_id  est_counts
+25    nifS_26    0.007983
+28    nifS_29    5.776804
+42    nifS_43    1.400658
+48    nifS_49    5.776804
+80    nifS_81   31.778210
+92    nifS_93    5.776804
+96    nifS_97    5.982907
+107  nifS_108    0.000020
+109  nifS_110    1.400658
+117  nifS_118   20.731627
+160  nifS_161   21.367524
+Next
+    target_id  est_counts
+28    nifS_29    5.777267
+42    nifS_43    1.400770
+48    nifS_49    5.777267
+80    nifS_81   31.780753
+92    nifS_93    5.777267
+96    nifS_97    5.983386
+109  nifS_110    1.400770
+117  nifS_118   20.733286
+160  nifS_161   21.369235
 True variants are: ['nifS_43', 'nifS_93', 'nifS_118', 'nifS_161', 'nifS_81', 'nifS_97']
 
 Predicted variants are: ['nifS_29', 'nifS_43', 'nifS_49', 'nifS_81', 'nifS_93', 'nifS_97', 'nifS_110', 'nifS_118', 'nifS_161']
@@ -160,6 +444,26 @@ Predicted proportions are: {'nifS_43': 1.400770420739714, 'nifS_29': 5.777266587
 
 ======================================== SIMULATION 17 ====================================================
 
+    target_id    est_counts
+35    nifS_36  7.907926e-03
+52    nifS_53  4.199070e-07
+69    nifS_70  1.196582e+01
+73    nifS_74  2.685881e+01
+81    nifS_82  1.586830e+01
+105  nifS_106  9.401713e+00
+125  nifS_126  5.982900e+00
+126  nifS_127  9.688294e-06
+127  nifS_128  1.794872e+01
+152  nifS_153  1.196582e+01
+Next
+    target_id  est_counts
+69    nifS_70   11.966764
+73    nifS_74   26.860941
+81    nifS_82   15.869553
+105  nifS_106    9.402458
+125  nifS_126    5.983374
+127  nifS_128   17.950146
+152  nifS_153   11.966764
 True variants are: ['nifS_128', 'nifS_106', 'nifS_70', 'nifS_126', 'nifS_82', 'nifS_153', 'nifS_74']
 
 Predicted variants are: ['nifS_70', 'nifS_74', 'nifS_82', 'nifS_106', 'nifS_126', 'nifS_128', 'nifS_153']
@@ -170,6 +474,23 @@ Predicted proportions are: {'nifS_106': 9.40245758017155, 'nifS_126': 5.98337354
 
 ======================================== SIMULATION 18 ====================================================
 
+    target_id  est_counts
+30    nifS_31   10.370421
+42    nifS_43    0.007919
+45    nifS_46   20.697288
+75    nifS_76   10.370421
+100  nifS_101   17.091252
+105  nifS_106   20.801503
+109  nifS_110    0.000025
+161  nifS_162   20.661172
+Next
+    target_id  est_counts
+30    nifS_31   10.371245
+45    nifS_46   20.698932
+75    nifS_76   10.371245
+100  nifS_101   17.092610
+105  nifS_106   20.803155
+161  nifS_162   20.662813
 True variants are: ['nifS_46', 'nifS_162', 'nifS_106', 'nifS_101', 'nifS_76']
 
 Predicted variants are: ['nifS_31', 'nifS_46', 'nifS_76', 'nifS_101', 'nifS_106', 'nifS_162']
@@ -180,6 +501,27 @@ Predicted proportions are: {'nifS_46': 20.698932063148863, 'nifS_106': 20.803155
 
 ======================================== SIMULATION 19 ====================================================
 
+    target_id    est_counts
+1      nifS_2  1.240401e-04
+15    nifS_16  1.794863e+01
+18    nifS_19  5.389050e-08
+19    nifS_20  5.389050e-08
+20    nifS_21  1.794863e+01
+65    nifS_66  1.538461e+01
+93    nifS_94  5.389050e-08
+96    nifS_97  6.705417e-05
+111  nifS_112  1.538461e+01
+147  nifS_148  4.802811e-08
+150  nifS_151  2.735042e+01
+164  nifS_165  5.982905e+00
+Next
+    target_id  est_counts
+15    nifS_16   17.948663
+20    nifS_21   17.948663
+65    nifS_66   15.384642
+111  nifS_112   15.384642
+150  nifS_151   27.350474
+164  nifS_165    5.982916
 True variants are: ['nifS_151', 'nifS_66', 'nifS_112', 'nifS_165', 'nifS_16', 'nifS_21']
 
 Predicted variants are: ['nifS_16', 'nifS_21', 'nifS_66', 'nifS_112', 'nifS_151', 'nifS_165']
@@ -190,6 +532,30 @@ Predicted proportions are: {'nifS_21': 17.948663160107962, 'nifS_16': 17.9486631
 
 ======================================== SIMULATION 20 ====================================================
 
+    target_id    est_counts
+25    nifS_26  3.131708e-04
+28    nifS_29  3.792718e-03
+33    nifS_34  3.288566e-07
+48    nifS_49  3.792718e-03
+50    nifS_51  9.292152e+00
+69    nifS_70  3.790762e+01
+77    nifS_78  9.332241e-09
+80    nifS_81  3.099342e-07
+87    nifS_88  1.834243e+01
+90    nifS_91  3.288566e-07
+92    nifS_93  3.792718e-03
+97    nifS_98  9.332241e-09
+136  nifS_137  9.292152e+00
+137  nifS_138  2.603851e-08
+138  nifS_139  1.174840e-08
+140  nifS_141  2.515395e+01
+Next
+    target_id  est_counts
+50    nifS_51    9.293238
+69    nifS_70   37.912057
+87    nifS_88   18.344573
+136  nifS_137    9.293238
+140  nifS_141   25.156893
 True variants are: ['nifS_70', 'nifS_141', 'nifS_137', 'nifS_88']
 
 Predicted variants are: ['nifS_51', 'nifS_70', 'nifS_88', 'nifS_137', 'nifS_141']
@@ -200,6 +566,34 @@ Predicted proportions are: {'nifS_51': 9.293238131636942, 'nifS_88': 18.34457275
 
 ======================================== SIMULATION 21 ====================================================
 
+    target_id    est_counts
+2      nifS_3  1.794873e+01
+25    nifS_26  8.068004e-03
+28    nifS_29  4.444130e+00
+37    nifS_38  1.617633e-07
+48    nifS_49  4.444130e+00
+55    nifS_56  5.982909e+00
+59    nifS_60  5.982909e+00
+66    nifS_67  1.077761e+01
+86    nifS_87  2.393164e+01
+89    nifS_90  9.509065e+00
+92    nifS_93  4.444130e+00
+102  nifS_103  1.077761e+01
+137  nifS_138  1.749069e+00
+138  nifS_139  9.734193e-09
+Next
+    target_id  est_counts
+2      nifS_3   17.950175
+28    nifS_29    4.444489
+48    nifS_49    4.444489
+55    nifS_56    5.983392
+59    nifS_60    5.983392
+66    nifS_67   10.778482
+86    nifS_87   23.933567
+89    nifS_90    9.509832
+92    nifS_93    4.444489
+102  nifS_103   10.778482
+137  nifS_138    1.749210
 True variants are: ['nifS_29', 'nifS_3', 'nifS_103', 'nifS_90', 'nifS_56', 'nifS_87']
 
 Predicted variants are: ['nifS_3', 'nifS_29', 'nifS_49', 'nifS_56', 'nifS_60', 'nifS_67', 'nifS_87', 'nifS_90', 'nifS_93', 'nifS_103', 'nifS_138']
@@ -210,6 +604,18 @@ Predicted proportions are: {'nifS_138': 1.7492104059731346, 'nifS_103': 10.77848
 
 ======================================== SIMULATION 22 ====================================================
 
+    target_id  est_counts
+85    nifS_86   27.350179
+86    nifS_87    0.000225
+116  nifS_117   41.880355
+122  nifS_123    9.401712
+155  nifS_156   21.367528
+Next
+    target_id  est_counts
+85    nifS_86   27.350241
+116  nifS_117   41.880449
+122  nifS_123    9.401734
+155  nifS_156   21.367576
 True variants are: ['nifS_117', 'nifS_156', 'nifS_123', 'nifS_86']
 
 Predicted variants are: ['nifS_86', 'nifS_117', 'nifS_123', 'nifS_156']
@@ -220,6 +626,39 @@ Predicted proportions are: {'nifS_123': 9.401733508718399, 'nifS_86': 27.3502410
 
 ======================================== SIMULATION 23 ====================================================
 
+    target_id    est_counts
+21    nifS_22  2.115988e+01
+22    nifS_23  6.864136e-08
+23    nifS_24  6.864136e-08
+28    nifS_29  6.172439e-07
+30    nifS_31  8.750331e+00
+38    nifS_39  6.864136e-08
+39    nifS_40  6.864136e-08
+48    nifS_49  6.172439e-07
+66    nifS_67  1.067886e+01
+75    nifS_76  8.750331e+00
+77    nifS_78  8.200324e-03
+88    nifS_89  6.864136e-08
+92    nifS_93  6.172439e-07
+97    nifS_98  8.200324e-03
+102  nifS_103  1.067886e+01
+114  nifS_115  6.864136e-08
+119  nifS_120  1.284938e+01
+127  nifS_128  1.810342e+01
+131  nifS_132  3.526641e+00
+137  nifS_138  2.571617e-08
+156  nifS_157  5.485888e+00
+Next
+    target_id  est_counts
+21    nifS_22   21.163353
+30    nifS_31    8.751767
+66    nifS_67   10.680615
+75    nifS_76    8.751767
+102  nifS_103   10.680615
+119  nifS_120   12.851485
+127  nifS_128   18.106391
+131  nifS_132    3.527220
+156  nifS_157    5.486788
 True variants are: ['nifS_31', 'nifS_132', 'nifS_128', 'nifS_103', 'nifS_157', 'nifS_120', 'nifS_22']
 
 Predicted variants are: ['nifS_22', 'nifS_31', 'nifS_67', 'nifS_76', 'nifS_103', 'nifS_120', 'nifS_128', 'nifS_132', 'nifS_157']
@@ -230,6 +669,22 @@ Predicted proportions are: {'nifS_120': 12.851484918023317, 'nifS_132': 3.527219
 
 ======================================== SIMULATION 24 ====================================================
 
+    target_id  est_counts
+22    nifS_23    0.007841
+23    nifS_24   33.574328
+24    nifS_25    8.059494
+38    nifS_39    0.000782
+39    nifS_40    0.002745
+43    nifS_44   24.778755
+79    nifS_80    0.000760
+88    nifS_89   33.574328
+114  nifS_115    0.000967
+Next
+   target_id  est_counts
+23   nifS_24   33.578725
+24   nifS_25    8.060549
+43   nifS_44   24.782000
+88   nifS_89   33.578725
 True variants are: ['nifS_25', 'nifS_44', 'nifS_89']
 
 Predicted variants are: ['nifS_24', 'nifS_25', 'nifS_44', 'nifS_89']
@@ -240,6 +695,16 @@ Predicted proportions are: {'nifS_44': 24.78200026676053, 'nifS_89': 33.57872529
 
 ======================================== SIMULATION 25 ====================================================
 
+   target_id  est_counts
+29   nifS_30    5.045871
+36   nifS_37   89.900625
+71   nifS_72    0.007633
+91   nifS_92    5.045871
+Next
+   target_id  est_counts
+29   nifS_30    5.046256
+36   nifS_37   89.907488
+91   nifS_92    5.046256
 True variants are: ['nifS_37', 'nifS_92']
 
 Predicted variants are: ['nifS_30', 'nifS_37', 'nifS_92']
@@ -250,6 +715,34 @@ Predicted proportions are: {'nifS_30': 5.046255815809827, 'nifS_37': 89.90748836
 
 ======================================== SIMULATION 26 ====================================================
 
+    target_id    est_counts
+22    nifS_23  3.222751e-03
+23    nifS_24  3.222751e-03
+24    nifS_25  3.297503e+00
+32    nifS_33  3.333332e+01
+38    nifS_39  2.991529e+00
+39    nifS_40  3.222751e-03
+42    nifS_43  2.991119e+00
+70    nifS_71  5.150443e-06
+78    nifS_79  2.136752e+01
+79    nifS_80  2.671452e-07
+88    nifS_89  3.222751e-03
+105  nifS_106  6.683631e-04
+109  nifS_110  2.991119e+00
+114  nifS_115  3.222751e-03
+144  nifS_145  2.505008e-08
+149  nifS_150  3.418802e+00
+156  nifS_157  2.959230e+01
+Next
+    target_id  est_counts
+24    nifS_25    3.298057
+32    nifS_33   33.338921
+38    nifS_39    2.992031
+42    nifS_43    2.991621
+78    nifS_79   21.371103
+109  nifS_110    2.991621
+149  nifS_150    3.419377
+156  nifS_157   29.597268
 True variants are: ['nifS_43', 'nifS_25', 'nifS_33', 'nifS_150', 'nifS_79', 'nifS_157']
 
 Predicted variants are: ['nifS_25', 'nifS_33', 'nifS_39', 'nifS_43', 'nifS_79', 'nifS_110', 'nifS_150', 'nifS_157']
@@ -260,6 +753,22 @@ Predicted proportions are: {'nifS_33': 33.33892116447893, 'nifS_25': 3.298057050
 
 ======================================== SIMULATION 27 ====================================================
 
+    target_id    est_counts
+0      nifS_1  8.648759e-05
+4      nifS_5  6.163034e+00
+6      nifS_7  2.218707e+01
+8      nifS_9  6.163034e+00
+10    nifS_11  7.023476e-09
+16    nifS_17  5.184990e-08
+43    nifS_44  6.548671e+01
+63    nifS_64  7.155919e-09
+113  nifS_114  5.877220e-05
+Next
+   target_id  est_counts
+4     nifS_5    6.163043
+6     nifS_7   22.187107
+8     nifS_9    6.163043
+43   nifS_44   65.486807
 True variants are: ['nifS_7', 'nifS_5', 'nifS_44']
 
 Predicted variants are: ['nifS_5', 'nifS_7', 'nifS_9', 'nifS_44']
@@ -270,6 +779,14 @@ Predicted proportions are: {'nifS_9': 6.163043033858627, 'nifS_44': 65.486806797
 
 ======================================== SIMULATION 28 ====================================================
 
+    target_id  est_counts
+58    nifS_59    0.000004
+60    nifS_61   61.467887
+101  nifS_102   38.532108
+Next
+    target_id  est_counts
+60    nifS_61    61.46789
+101  nifS_102    38.53211
 True variants are: ['nifS_61', 'nifS_102']
 
 Predicted variants are: ['nifS_61', 'nifS_102']
@@ -280,6 +797,34 @@ Predicted proportions are: {'nifS_102': 38.532110091743114, 'nifS_61': 61.467889
 
 ======================================== SIMULATION 29 ====================================================
 
+    target_id    est_counts
+28    nifS_29  2.636124e-08
+31    nifS_32  2.263186e-07
+32    nifS_33  6.078088e+00
+33    nifS_34  2.836283e-03
+36    nifS_37  6.983911e-03
+48    nifS_49  2.636124e-08
+49    nifS_50  1.555336e+01
+66    nifS_67  3.092486e+00
+71    nifS_72  2.831159e+01
+90    nifS_91  2.836283e-03
+92    nifS_93  2.636124e-08
+98    nifS_99  7.144592e-07
+99   nifS_100  2.527522e+01
+102  nifS_103  3.092486e+00
+137  nifS_138  4.172911e-05
+138  nifS_139  2.636124e-08
+143  nifS_144  9.576902e-07
+163  nifS_164  1.858407e+01
+Next
+    target_id  est_counts
+32    nifS_33    6.078860
+49    nifS_50   15.555337
+66    nifS_67    3.092879
+71    nifS_72   28.315186
+99   nifS_100   25.278429
+102  nifS_103    3.092879
+163  nifS_164   18.586429
 True variants are: ['nifS_164', 'nifS_72', 'nifS_50', 'nifS_33', 'nifS_67', 'nifS_100']
 
 Predicted variants are: ['nifS_33', 'nifS_50', 'nifS_67', 'nifS_72', 'nifS_100', 'nifS_103', 'nifS_164']
@@ -290,6 +835,27 @@ Predicted proportions are: {'nifS_33': 6.078859919037511, 'nifS_103': 3.09287922
 
 ======================================== SIMULATION 30 ====================================================
 
+    target_id    est_counts
+7      nifS_8  9.649120e+00
+25    nifS_26  8.174945e-03
+28    nifS_29  4.480700e+00
+48    nifS_49  4.480700e+00
+80    nifS_81  4.669428e-08
+92    nifS_93  4.480700e+00
+103  nifS_104  2.690061e+01
+131  nifS_132  1.578947e+01
+137  nifS_138  6.575103e-06
+138  nifS_139  8.664067e-06
+153  nifS_154  3.421052e+01
+Next
+    target_id  est_counts
+7      nifS_8    9.649910
+28    nifS_29    4.481067
+48    nifS_49    4.481067
+92    nifS_93    4.481067
+103  nifS_104   26.902809
+131  nifS_132   15.790762
+153  nifS_154   34.213317
 True variants are: ['nifS_104', 'nifS_8', 'nifS_49', 'nifS_154', 'nifS_132']
 
 Predicted variants are: ['nifS_8', 'nifS_29', 'nifS_49', 'nifS_93', 'nifS_104', 'nifS_132', 'nifS_154']
@@ -300,6 +866,25 @@ Predicted proportions are: {'nifS_132': 15.790761877942675, 'nifS_104': 26.90280
 
 ======================================== SIMULATION 31 ====================================================
 
+    target_id    est_counts
+37    nifS_38  6.040799e-04
+45    nifS_46  1.652623e-07
+47    nifS_48  9.899739e-09
+49    nifS_50  2.192983e+01
+54    nifS_55  4.035088e+01
+55    nifS_56  3.155360e+00
+56    nifS_57  9.470703e+00
+58    nifS_59  7.431221e-03
+59    nifS_60  3.155360e+00
+127  nifS_128  2.192983e+01
+Next
+    target_id  est_counts
+49    nifS_50   21.931591
+54    nifS_55   40.354127
+55    nifS_56    3.155614
+56    nifS_57    9.471464
+59    nifS_60    3.155614
+127  nifS_128   21.931591
 True variants are: ['nifS_60', 'nifS_128', 'nifS_50', 'nifS_55', 'nifS_57']
 
 Predicted variants are: ['nifS_50', 'nifS_55', 'nifS_56', 'nifS_57', 'nifS_60', 'nifS_128']
@@ -310,6 +895,27 @@ Predicted proportions are: {'nifS_128': 21.931590631596475, 'nifS_55': 40.354126
 
 ======================================== SIMULATION 32 ====================================================
 
+    target_id    est_counts
+18    nifS_19  1.848952e-08
+19    nifS_20  1.848952e-08
+20    nifS_21  5.756961e-04
+21    nifS_22  8.989627e+01
+22    nifS_23  2.023987e-04
+23    nifS_24  2.023987e-04
+38    nifS_39  2.023987e-04
+39    nifS_40  5.827404e-05
+79    nifS_80  1.801740e-08
+88    nifS_89  2.023987e-04
+93    nifS_94  1.848952e-08
+94    nifS_95  3.908169e+00
+96    nifS_97  6.194102e+00
+114  nifS_115  1.638846e-05
+131  nifS_132  4.567645e-07
+Next
+   target_id  est_counts
+21   nifS_22   89.897582
+94   nifS_95    3.908226
+96   nifS_97    6.194192
 True variants are: ['nifS_22', 'nifS_95', 'nifS_97']
 
 Predicted variants are: ['nifS_22', 'nifS_95', 'nifS_97']
@@ -320,6 +926,30 @@ Predicted proportions are: {'nifS_95': 3.9082257575072394, 'nifS_22': 89.8975819
 
 ======================================== SIMULATION 33 ====================================================
 
+    target_id    est_counts
+22    nifS_23  4.719331e-06
+23    nifS_24  4.719331e-06
+35    nifS_36  3.305085e+01
+36    nifS_37  5.533034e-08
+38    nifS_39  2.350636e-04
+39    nifS_40  4.719331e-06
+77    nifS_78  5.885161e-04
+88    nifS_89  4.719331e-06
+95    nifS_96  9.268899e+00
+97    nifS_98  5.885161e-04
+108  nifS_109  9.322034e+00
+114  nifS_115  4.719331e-06
+119  nifS_120  2.711746e+01
+153  nifS_154  9.322034e+00
+156  nifS_157  1.191729e+01
+Next
+    target_id  est_counts
+35    nifS_36   33.051324
+95    nifS_96    9.269032
+108  nifS_109    9.322168
+119  nifS_120   27.117848
+153  nifS_154    9.322168
+156  nifS_157   11.917460
 True variants are: ['nifS_96', 'nifS_36', 'nifS_154', 'nifS_109', 'nifS_120', 'nifS_157']
 
 Predicted variants are: ['nifS_36', 'nifS_96', 'nifS_109', 'nifS_120', 'nifS_154', 'nifS_157']
@@ -330,6 +960,19 @@ Predicted proportions are: {'nifS_120': 27.117848307984094, 'nifS_36': 33.051323
 
 ======================================== SIMULATION 34 ====================================================
 
+    target_id    est_counts
+22    nifS_23  6.131644e-04
+23    nifS_24  9.057581e-07
+38    nifS_39  5.319910e-04
+39    nifS_40  1.870028e-04
+88    nifS_89  9.057581e-07
+114  nifS_115  1.026569e-04
+118  nifS_119  4.843644e+01
+156  nifS_157  5.156213e+01
+Next
+    target_id  est_counts
+118  nifS_119   48.437133
+156  nifS_157   51.562867
 True variants are: ['nifS_119', 'nifS_157']
 
 Predicted variants are: ['nifS_119', 'nifS_157']
@@ -340,6 +983,14 @@ Predicted proportions are: {'nifS_119': 48.43713302213611, 'nifS_157': 51.562866
 
 ======================================== SIMULATION 35 ====================================================
 
+    target_id  est_counts
+52    nifS_53    0.000274
+105  nifS_106   42.201560
+127  nifS_128   57.798166
+Next
+    target_id  est_counts
+105  nifS_106   42.201676
+127  nifS_128   57.798324
 True variants are: ['nifS_128', 'nifS_106']
 
 Predicted variants are: ['nifS_106', 'nifS_128']
@@ -350,6 +1001,28 @@ Predicted proportions are: {'nifS_106': 42.20167578442876, 'nifS_128': 57.798324
 
 ======================================== SIMULATION 36 ====================================================
 
+    target_id  est_counts
+50    nifS_51    6.713785
+66    nifS_67   11.494500
+84    nifS_85    3.389833
+94    nifS_95   11.864415
+102  nifS_103   11.494500
+104  nifS_105   17.080012
+123  nifS_124   10.163228
+136  nifS_137    6.713785
+137  nifS_138    0.008301
+144  nifS_145   21.077642
+Next
+    target_id  est_counts
+50    nifS_51    6.714342
+66    nifS_67   11.495454
+84    nifS_85    3.390114
+94    nifS_95   11.865400
+102  nifS_103   11.495454
+104  nifS_105   17.081430
+123  nifS_124   10.164071
+136  nifS_137    6.714342
+144  nifS_145   21.079392
 True variants are: ['nifS_124', 'nifS_95', 'nifS_137', 'nifS_85', 'nifS_103', 'nifS_105', 'nifS_145']
 
 Predicted variants are: ['nifS_51', 'nifS_67', 'nifS_85', 'nifS_95', 'nifS_103', 'nifS_105', 'nifS_124', 'nifS_137', 'nifS_145']
@@ -360,6 +1033,33 @@ Predicted proportions are: {'nifS_105': 17.0814302078852, 'nifS_124': 10.1640713
 
 ======================================== SIMULATION 37 ====================================================
 
+    target_id    est_counts
+22    nifS_23  7.277213e-03
+23    nifS_24  7.277213e-03
+37    nifS_38  1.196521e+01
+38    nifS_39  2.140179e+01
+39    nifS_40  7.277213e-03
+53    nifS_54  9.342222e-07
+55    nifS_56  3.120778e-04
+59    nifS_60  3.120778e-04
+65    nifS_66  2.188034e+01
+74    nifS_75  8.337085e-08
+79    nifS_80  1.299299e-08
+88    nifS_89  7.277213e-03
+95    nifS_96  1.189513e+01
+104  nifS_105  5.470085e+00
+112  nifS_113  3.418803e+00
+114  nifS_115  7.277213e-03
+121  nifS_122  2.393162e+01
+Next
+    target_id  est_counts
+37    nifS_38   11.969643
+38    nifS_39   21.409718
+65    nifS_66   21.888442
+95    nifS_96   11.899532
+104  nifS_105    5.472111
+112  nifS_113    3.420069
+121  nifS_122   23.940484
 True variants are: ['nifS_122', 'nifS_38', 'nifS_39', 'nifS_105', 'nifS_113', 'nifS_96', 'nifS_66']
 
 Predicted variants are: ['nifS_38', 'nifS_39', 'nifS_66', 'nifS_96', 'nifS_105', 'nifS_113', 'nifS_122']
@@ -370,6 +1070,23 @@ Predicted proportions are: {'nifS_122': 23.94048395688319, 'nifS_105': 5.4721106
 
 ======================================== SIMULATION 38 ====================================================
 
+    target_id    est_counts
+22    nifS_23  1.181513e-08
+24    nifS_25  3.451327e+01
+27    nifS_28  1.858407e+01
+35    nifS_36  1.592867e+01
+36    nifS_37  5.565282e-04
+39    nifS_40  1.181513e-08
+71    nifS_72  2.577964e-07
+81    nifS_82  9.833095e-09
+114  nifS_115  1.181513e-08
+117  nifS_118  3.097344e+01
+Next
+    target_id  est_counts
+24    nifS_25   34.513458
+27    nifS_28   18.584169
+35    nifS_36   15.928757
+117  nifS_118   30.973616
 True variants are: ['nifS_25', 'nifS_118', 'nifS_28', 'nifS_36']
 
 Predicted variants are: ['nifS_25', 'nifS_28', 'nifS_36', 'nifS_118']
@@ -380,6 +1097,36 @@ Predicted proportions are: {'nifS_28': 18.58416947346623, 'nifS_118': 30.9736157
 
 ======================================== SIMULATION 39 ====================================================
 
+    target_id    est_counts
+0      nifS_1  1.157025e+01
+4      nifS_5  3.033099e-07
+5      nifS_6  9.484545e-08
+7      nifS_8  7.726702e-09
+8      nifS_9  3.033099e-07
+10    nifS_11  3.033099e-07
+16    nifS_17  3.305785e+00
+22    nifS_23  6.476454e-09
+24    nifS_25  2.644628e+01
+39    nifS_40  6.476454e-09
+42    nifS_43  1.654653e-06
+69    nifS_70  2.066116e+01
+82    nifS_83  1.885124e-08
+109  nifS_110  5.500826e-08
+114  nifS_115  6.476454e-09
+116  nifS_117  5.784305e+00
+121  nifS_122  8.186586e-04
+123  nifS_124  1.876678e-06
+144  nifS_145  1.735537e+01
+149  nifS_150  1.487603e+01
+Next
+    target_id  est_counts
+0      nifS_1   11.570343
+16    nifS_17    3.305812
+24    nifS_25   26.446497
+69    nifS_70   20.661326
+116  nifS_117    5.784353
+144  nifS_145   17.355514
+149  nifS_150   14.876155
 True variants are: ['nifS_145', 'nifS_117', 'nifS_1', 'nifS_70', 'nifS_17', 'nifS_150', 'nifS_25']
 
 Predicted variants are: ['nifS_1', 'nifS_17', 'nifS_25', 'nifS_70', 'nifS_117', 'nifS_145', 'nifS_150']
@@ -390,6 +1137,18 @@ Predicted proportions are: {'nifS_25': 26.446497372168583, 'nifS_17': 3.30581217
 
 ======================================== SIMULATION 40 ====================================================
 
+    target_id  est_counts
+25    nifS_26    0.000055
+28    nifS_29    0.244862
+48    nifS_49    0.244862
+72    nifS_73    0.000013
+80    nifS_81   96.556602
+92    nifS_93    0.008863
+141  nifS_142    2.944744
+Next
+    target_id  est_counts
+80    nifS_81   97.040499
+141  nifS_142    2.959501
 True variants are: ['nifS_81', 'nifS_142']
 
 Predicted variants are: ['nifS_81', 'nifS_142']
