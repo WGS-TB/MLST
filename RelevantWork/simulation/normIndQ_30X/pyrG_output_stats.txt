@@ -1,8 +1,9 @@
-[4.0]
 ======================================== SIMULATION 1 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_179', 'pyrG_189', 'pyrG_52', 'pyrG_68']]
+Likelihood scores are: [423.56739156032972]
+Minimum likelihood score is :423.56739156
 True variants are: ['pyrG_68', 'pyrG_52', 'pyrG_179', 'pyrG_189']
 
 Predicted variants are: ['pyrG_179', 'pyrG_189', 'pyrG_52', 'pyrG_68']
@@ -11,11 +12,13 @@ True proportions are: {'pyrG_52': 0.3758032467379183, 'pyrG_68': 0.3420562264767
 
 Predicted proportions using Counting method are: {'pyrG_189': 0.097345132700000003, 'pyrG_68': 0.3451327434, 'pyrG_179': 0.18584070799999999, 'pyrG_52': 0.37168141589999998}
 
-[6.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 2 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_111', 'pyrG_135', 'pyrG_145', 'pyrG_150', 'pyrG_198', 'pyrG_33']]
+Likelihood scores are: [458.3708229153375]
+Minimum likelihood score is :458.370822915
 True variants are: ['pyrG_198', 'pyrG_145', 'pyrG_33', 'pyrG_135', 'pyrG_150', 'pyrG_111']
 
 Predicted variants are: ['pyrG_111', 'pyrG_135', 'pyrG_145', 'pyrG_150', 'pyrG_198', 'pyrG_33']
@@ -24,11 +27,14 @@ True proportions are: {'pyrG_33': 0.3714874931688361, 'pyrG_198': 0.015847990271
 
 Predicted proportions using Counting method are: {'pyrG_33': 0.34322033899999999, 'pyrG_198': 0.033898305099999998, 'pyrG_145': 0.22457627120000001, 'pyrG_135': 0.033898305099999998, 'pyrG_150': 0.1525423729, 'pyrG_111': 0.21186440679999999}
 
-[6.0, 6.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
+More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 3 ====================================================
 
 Number of optimal solutions: 2
-[['pyrG_105', 'pyrG_109', 'pyrG_123', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_105', 'pyrG_109', 'pyrG_27', 'pyrG_32', 'pyrG_39', 'pyrG_56']]
+[['pyrG_105', 'pyrG_109', 'pyrG_27', 'pyrG_32', 'pyrG_39', 'pyrG_56'], ['pyrG_105', 'pyrG_109', 'pyrG_123', 'pyrG_32', 'pyrG_39', 'pyrG_56']]
+Likelihood scores are: [452.50427846228888, 452.50427846228888]
+Minimum likelihood score is :452.504278462
 True variants are: ['pyrG_105', 'pyrG_123', 'pyrG_56', 'pyrG_109', 'pyrG_32', 'pyrG_39']
 
 Predicted variants are: ['pyrG_105', 'pyrG_109', 'pyrG_123', 'pyrG_32', 'pyrG_39', 'pyrG_56']
@@ -37,11 +43,13 @@ True proportions are: {'pyrG_32': 0.11352912916616256, 'pyrG_39': 0.271099349759
 
 Predicted proportions using Counting method are: {'pyrG_32': 0.1196581197, 'pyrG_39': 0.27350427350000001, 'pyrG_56': 0.075498575499999998, 'pyrG_123': 0.23789173790000001, 'pyrG_109': 0.13960113960000001, 'pyrG_105': 0.1538461538}
 
-[3.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 4 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_13', 'pyrG_152', 'pyrG_63']]
+Likelihood scores are: [394.95553328559004]
+Minimum likelihood score is :394.955533286
 True variants are: ['pyrG_13', 'pyrG_63', 'pyrG_152']
 
 Predicted variants are: ['pyrG_13', 'pyrG_152', 'pyrG_63']
@@ -50,11 +58,13 @@ True proportions are: {'pyrG_63': 0.5575715799944185, 'pyrG_13': 0.0443106774669
 
 Predicted proportions using Counting method are: {'pyrG_63': 0.55045871560000004, 'pyrG_13': 0.0642201835, 'pyrG_152': 0.38532110089999999}
 
-[4.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 5 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_109', 'pyrG_185', 'pyrG_197', 'pyrG_201']]
+Likelihood scores are: [408.57385557589328]
+Minimum likelihood score is :408.573855576
 True variants are: ['pyrG_109', 'pyrG_197', 'pyrG_201', 'pyrG_185']
 
 Predicted variants are: ['pyrG_109', 'pyrG_185', 'pyrG_197', 'pyrG_201']
@@ -63,11 +73,13 @@ True proportions are: {'pyrG_109': 0.3813192513071833, 'pyrG_201': 0.13289037090
 
 Predicted proportions using Counting method are: {'pyrG_109': 0.38532110089999999, 'pyrG_201': 0.128440367, 'pyrG_197': 0.25688073389999999, 'pyrG_185': 0.22935779819999999}
 
-[2.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 6 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_109', 'pyrG_183']]
+Likelihood scores are: [375.76158604852077]
+Minimum likelihood score is :375.761586049
 True variants are: ['pyrG_183', 'pyrG_109']
 
 Predicted variants are: ['pyrG_109', 'pyrG_183']
@@ -76,11 +88,13 @@ True proportions are: {'pyrG_109': 0.62480407715402, 'pyrG_183': 0.3751959228459
 
 Predicted proportions using Counting method are: {'pyrG_109': 0.61467889909999995, 'pyrG_183': 0.38532110089999999}
 
-[5.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 7 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_102', 'pyrG_115', 'pyrG_132', 'pyrG_17', 'pyrG_75']]
+Likelihood scores are: [446.52210918246203]
+Minimum likelihood score is :446.522109182
 True variants are: ['pyrG_115', 'pyrG_17', 'pyrG_102', 'pyrG_75', 'pyrG_132']
 
 Predicted variants are: ['pyrG_102', 'pyrG_115', 'pyrG_132', 'pyrG_17', 'pyrG_75']
@@ -89,11 +103,14 @@ True proportions are: {'pyrG_17': 0.28596375936700275, 'pyrG_75': 0.284129971020
 
 Predicted proportions using Counting method are: {'pyrG_17': 0.2692307692, 'pyrG_75': 0.25641025639999998, 'pyrG_102': 0.29914529909999998, 'pyrG_132': 0.13675213680000001, 'pyrG_115': 0.038461538500000003}
 
-[3.0, 3.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
+More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 8 ====================================================
 
 Number of optimal solutions: 2
 [['pyrG_151', 'pyrG_189', 'pyrG_88'], ['pyrG_154', 'pyrG_189', 'pyrG_88']]
+Likelihood scores are: [394.95553328559004, 394.95553328559004]
+Minimum likelihood score is :394.955533286
 True variants are: ['pyrG_189', 'pyrG_88', 'pyrG_154']
 
 Predicted variants are: ['pyrG_151', 'pyrG_189', 'pyrG_88']
@@ -102,11 +119,13 @@ True proportions are: {'pyrG_189': 0.4549183478866969, 'pyrG_154': 0.01398927452
 
 Predicted proportions using Counting method are: {'pyrG_189': 0.44954128440000002, 'pyrG_88': 0.51376146789999999, 'pyrG_151': 0.036697247699999998}
 
-[3.0]
+This sim is not predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 9 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_154', 'pyrG_28', 'pyrG_8']]
+Likelihood scores are: [398.57897854509088]
+Minimum likelihood score is :398.578978545
 True variants are: ['pyrG_8', 'pyrG_154', 'pyrG_28']
 
 Predicted variants are: ['pyrG_154', 'pyrG_28', 'pyrG_8']
@@ -115,11 +134,14 @@ True proportions are: {'pyrG_154': 0.23327897412612777, 'pyrG_28': 0.34934600604
 
 Predicted proportions using Counting method are: {'pyrG_154': 0.2272727273, 'pyrG_28': 0.35454545450000002, 'pyrG_8': 0.4181818182}
 
-[5.0, 5.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
+More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 10 ====================================================
 
 Number of optimal solutions: 2
-[['pyrG_121', 'pyrG_22', 'pyrG_39', 'pyrG_60', 'pyrG_74'], ['pyrG_121', 'pyrG_39', 'pyrG_60', 'pyrG_74', 'pyrG_98']]
+[['pyrG_121', 'pyrG_39', 'pyrG_60', 'pyrG_74', 'pyrG_98'], ['pyrG_121', 'pyrG_22', 'pyrG_39', 'pyrG_60', 'pyrG_74']]
+Likelihood scores are: [449.56781543322631, 449.56781543322631]
+Minimum likelihood score is :449.567815433
 True variants are: ['pyrG_74', 'pyrG_60', 'pyrG_22', 'pyrG_121', 'pyrG_39']
 
 Predicted variants are: ['pyrG_121', 'pyrG_22', 'pyrG_39', 'pyrG_60', 'pyrG_74']
@@ -128,11 +150,14 @@ True proportions are: {'pyrG_39': 0.23647863155425483, 'pyrG_74': 0.414871490999
 
 Predicted proportions using Counting method are: {'pyrG_39': 0.24358974359999999, 'pyrG_74': 0.38888888890000001, 'pyrG_60': 0.034188034200000002, 'pyrG_22': 0.17948717950000001, 'pyrG_121': 0.1538461538}
 
-[7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
+More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 11 ====================================================
 
 Number of optimal solutions: 8
-[['pyrG_14', 'pyrG_148', 'pyrG_170', 'pyrG_179', 'pyrG_22', 'pyrG_30', 'pyrG_61'], ['pyrG_14', 'pyrG_148', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_95'], ['pyrG_14', 'pyrG_148', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_96'], ['pyrG_14', 'pyrG_148', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_98'], ['pyrG_148', 'pyrG_15', 'pyrG_170', 'pyrG_179', 'pyrG_22', 'pyrG_30', 'pyrG_61'], ['pyrG_148', 'pyrG_15', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_95'], ['pyrG_148', 'pyrG_15', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_96'], ['pyrG_148', 'pyrG_15', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_98']]
+[['pyrG_148', 'pyrG_15', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_98'], ['pyrG_148', 'pyrG_15', 'pyrG_170', 'pyrG_179', 'pyrG_22', 'pyrG_30', 'pyrG_61'], ['pyrG_148', 'pyrG_15', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_95'], ['pyrG_14', 'pyrG_148', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_95'], ['pyrG_148', 'pyrG_15', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_96'], ['pyrG_14', 'pyrG_148', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_96'], ['pyrG_14', 'pyrG_148', 'pyrG_170', 'pyrG_179', 'pyrG_30', 'pyrG_61', 'pyrG_98'], ['pyrG_14', 'pyrG_148', 'pyrG_170', 'pyrG_179', 'pyrG_22', 'pyrG_30', 'pyrG_61']]
+Likelihood scores are: [482.32482313180668, 482.32482313180668, 482.32482313180668, 482.32482313180668, 482.32482313180668, 482.32482313180668, 482.32482313180668, 482.32482313180668]
+Minimum likelihood score is :482.324823132
 True variants are: ['pyrG_148', 'pyrG_14', 'pyrG_30', 'pyrG_170', 'pyrG_61', 'pyrG_179', 'pyrG_96']
 
 Predicted variants are: ['pyrG_14', 'pyrG_148', 'pyrG_170', 'pyrG_179', 'pyrG_22', 'pyrG_30', 'pyrG_61']
@@ -141,11 +166,14 @@ True proportions are: {'pyrG_30': 0.1462735045613232, 'pyrG_14': 0.2529654621654
 
 Predicted proportions using Counting method are: {'pyrG_30': 0.14876033059999999, 'pyrG_14': 0.2314049587, 'pyrG_179': 0.2314049587, 'pyrG_22': 0.090909090900000003, 'pyrG_170': 0.14876033059999999, 'pyrG_61': 0.11570247929999999, 'pyrG_148': 0.033057851200000002}
 
-[6.0, 6.0]
+This sim is not predicted correctly based on minimum neg log likelihood score.
+More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 12 ====================================================
 
 Number of optimal solutions: 2
-[['pyrG_14', 'pyrG_145', 'pyrG_28', 'pyrG_70', 'pyrG_73', 'pyrG_96'], ['pyrG_145', 'pyrG_15', 'pyrG_28', 'pyrG_70', 'pyrG_73', 'pyrG_96']]
+[['pyrG_145', 'pyrG_15', 'pyrG_28', 'pyrG_70', 'pyrG_73', 'pyrG_96'], ['pyrG_14', 'pyrG_145', 'pyrG_28', 'pyrG_70', 'pyrG_73', 'pyrG_96']]
+Likelihood scores are: [463.00902709953976, 463.00902709953976]
+Minimum likelihood score is :463.0090271
 True variants are: ['pyrG_70', 'pyrG_73', 'pyrG_96', 'pyrG_28', 'pyrG_145', 'pyrG_14']
 
 Predicted variants are: ['pyrG_14', 'pyrG_145', 'pyrG_28', 'pyrG_70', 'pyrG_73', 'pyrG_96']
@@ -154,11 +182,13 @@ True proportions are: {'pyrG_14': 0.11640030772931328, 'pyrG_28': 0.146573638379
 
 Predicted proportions using Counting method are: {'pyrG_14': 0.1186440678, 'pyrG_28': 0.1525423729, 'pyrG_145': 0.21186440679999999, 'pyrG_70': 0.033898305099999998, 'pyrG_73': 0.033898305099999998, 'pyrG_96': 0.44915254240000002}
 
-[6.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 13 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_141', 'pyrG_167', 'pyrG_200', 'pyrG_4', 'pyrG_43', 'pyrG_70']]
+Likelihood scores are: [447.39017908878634]
+Minimum likelihood score is :447.390179089
 True variants are: ['pyrG_43', 'pyrG_4', 'pyrG_200', 'pyrG_70', 'pyrG_141', 'pyrG_167']
 
 Predicted variants are: ['pyrG_141', 'pyrG_167', 'pyrG_200', 'pyrG_4', 'pyrG_43', 'pyrG_70']
@@ -167,11 +197,14 @@ True proportions are: {'pyrG_200': 0.13234792704796516, 'pyrG_43': 0.00403864421
 
 Predicted proportions using Counting method are: {'pyrG_200': 0.1228070175, 'pyrG_43': 0.0350877193, 'pyrG_167': 0.061403508799999999, 'pyrG_4': 0.2807017544, 'pyrG_141': 0.2807017544, 'pyrG_70': 0.2192982456}
 
-[2.0, 2.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
+More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 14 ====================================================
 
 Number of optimal solutions: 2
-[['pyrG_123', 'pyrG_26'], ['pyrG_26', 'pyrG_27']]
+[['pyrG_26', 'pyrG_27'], ['pyrG_123', 'pyrG_26']]
+Likelihood scores are: [375.76158604852077, 375.76158604852077]
+Minimum likelihood score is :375.761586049
 True variants are: ['pyrG_26', 'pyrG_27']
 
 Predicted variants are: ['pyrG_123', 'pyrG_26']
@@ -180,11 +213,13 @@ True proportions are: {'pyrG_26': 0.6474726407468352, 'pyrG_27': 0.3525273592531
 
 Predicted proportions using Counting method are: {'pyrG_26': 0.64220183490000005, 'pyrG_123': 0.35779816510000001}
 
-[2.0]
+This sim is not predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 15 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_198', 'pyrG_21']]
+Likelihood scores are: [375.76158604852077]
+Minimum likelihood score is :375.761586049
 True variants are: ['pyrG_198', 'pyrG_21']
 
 Predicted variants are: ['pyrG_198', 'pyrG_21']
@@ -193,11 +228,13 @@ True proportions are: {'pyrG_198': 0.02616299461594712, 'pyrG_21': 0.97383700538
 
 Predicted proportions using Counting method are: {'pyrG_198': 0.036697247699999998, 'pyrG_21': 0.96330275229999995}
 
-[6.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 16 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_114', 'pyrG_118', 'pyrG_143', 'pyrG_196', 'pyrG_52', 'pyrG_99']]
+Likelihood scores are: [458.22040430212712]
+Minimum likelihood score is :458.220404302
 True variants are: ['pyrG_52', 'pyrG_114', 'pyrG_143', 'pyrG_196', 'pyrG_99', 'pyrG_118']
 
 Predicted variants are: ['pyrG_114', 'pyrG_118', 'pyrG_143', 'pyrG_196', 'pyrG_52', 'pyrG_99']
@@ -206,11 +243,13 @@ True proportions are: {'pyrG_196': 0.222031601614533, 'pyrG_52': 0.0291591958562
 
 Predicted proportions using Counting method are: {'pyrG_196': 0.21367521370000001, 'pyrG_52': 0.047008546999999998, 'pyrG_118': 0.059829059800000001, 'pyrG_99': 0.29914529909999998, 'pyrG_143': 0.20085470089999999, 'pyrG_114': 0.17948717950000001}
 
-[7.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 17 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_100', 'pyrG_129', 'pyrG_153', 'pyrG_156', 'pyrG_186', 'pyrG_85', 'pyrG_89']]
+Likelihood scores are: [463.23096896995577]
+Minimum likelihood score is :463.23096897
 True variants are: ['pyrG_156', 'pyrG_129', 'pyrG_85', 'pyrG_153', 'pyrG_100', 'pyrG_186', 'pyrG_89']
 
 Predicted variants are: ['pyrG_100', 'pyrG_129', 'pyrG_153', 'pyrG_156', 'pyrG_186', 'pyrG_85', 'pyrG_89']
@@ -219,11 +258,14 @@ True proportions are: {'pyrG_186': 0.12706721653008052, 'pyrG_156': 0.1866927886
 
 Predicted proportions using Counting method are: {'pyrG_186': 0.1196581197, 'pyrG_156': 0.17094017089999999, 'pyrG_153': 0.068376068400000004, 'pyrG_89': 0.27350427350000001, 'pyrG_129': 0.1025641026, 'pyrG_100': 0.1538461538, 'pyrG_85': 0.11111111110000001}
 
-[5.0, 5.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
+More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 18 ====================================================
 
 Number of optimal solutions: 2
-[['pyrG_123', 'pyrG_129', 'pyrG_197', 'pyrG_56', 'pyrG_93'], ['pyrG_129', 'pyrG_197', 'pyrG_27', 'pyrG_56', 'pyrG_93']]
+[['pyrG_129', 'pyrG_197', 'pyrG_27', 'pyrG_56', 'pyrG_93'], ['pyrG_123', 'pyrG_129', 'pyrG_197', 'pyrG_56', 'pyrG_93']]
+Likelihood scores are: [462.81510303085093, 462.81510303085093]
+Minimum likelihood score is :462.815103031
 True variants are: ['pyrG_56', 'pyrG_197', 'pyrG_129', 'pyrG_123', 'pyrG_93']
 
 Predicted variants are: ['pyrG_123', 'pyrG_129', 'pyrG_197', 'pyrG_56', 'pyrG_93']
@@ -232,11 +274,13 @@ True proportions are: {'pyrG_123': 0.17071666053009887, 'pyrG_93': 0.20931986615
 
 Predicted proportions using Counting method are: {'pyrG_93': 0.20661157020000001, 'pyrG_56': 0.20661157020000001, 'pyrG_197': 0.20661157020000001, 'pyrG_123': 0.173553719, 'pyrG_129': 0.20661157020000001}
 
-[6.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 19 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_136', 'pyrG_184', 'pyrG_19', 'pyrG_200', 'pyrG_26', 'pyrG_81']]
+Likelihood scores are: [459.16360485428072]
+Minimum likelihood score is :459.163604854
 True variants are: ['pyrG_184', 'pyrG_81', 'pyrG_136', 'pyrG_200', 'pyrG_19', 'pyrG_26']
 
 Predicted variants are: ['pyrG_136', 'pyrG_184', 'pyrG_19', 'pyrG_200', 'pyrG_26', 'pyrG_81']
@@ -245,24 +289,28 @@ True proportions are: {'pyrG_200': 0.0531432680217702, 'pyrG_184': 0.28849468472
 
 Predicted proportions using Counting method are: {'pyrG_200': 0.059829059800000001, 'pyrG_184': 0.27350427350000001, 'pyrG_26': 0.17948717950000001, 'pyrG_19': 0.17948717950000001, 'pyrG_136': 0.1538461538, 'pyrG_81': 0.1538461538}
 
-[4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0, 4.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 20 ====================================================
 
 Number of optimal solutions: 17
-[['pyrG_107', 'pyrG_119', 'pyrG_166', 'pyrG_171'], ['pyrG_107', 'pyrG_151', 'pyrG_166', 'pyrG_171'], ['pyrG_107', 'pyrG_153', 'pyrG_166', 'pyrG_171'], ['pyrG_107', 'pyrG_154', 'pyrG_166', 'pyrG_171'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_175'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_20'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_23'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_41'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_42'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_43'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_44'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_45'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_46'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_57'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_85'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_92'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_97']]
+[['pyrG_107', 'pyrG_154', 'pyrG_166', 'pyrG_171'], ['pyrG_107', 'pyrG_119', 'pyrG_166', 'pyrG_171'], ['pyrG_107', 'pyrG_151', 'pyrG_166', 'pyrG_171'], ['pyrG_107', 'pyrG_153', 'pyrG_166', 'pyrG_171'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_175'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_20'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_23'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_41'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_42'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_43'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_44'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_46'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_45'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_57'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_92'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_97'], ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_85']]
+Likelihood scores are: [405.0703555570222, 400.73121756535249, 405.05315867994415, 407.72266472278307, 407.72266472278307, 404.8035672205628, 405.11961806027483, 407.7313289786598, 407.70741533708355, 410.10063489596462, 407.72257743406703, 409.49510641208445, 407.72266472278307, 405.13065575544357, 404.49175002280504, 405.12398241374723, 399.25000403648005]
+Minimum likelihood score is :399.250004036
 True variants are: ['pyrG_85', 'pyrG_171', 'pyrG_166', 'pyrG_107']
 
-Predicted variants are: ['pyrG_107', 'pyrG_119', 'pyrG_166', 'pyrG_171']
+Predicted variants are: ['pyrG_107', 'pyrG_166', 'pyrG_171', 'pyrG_85']
 
 True proportions are: {'pyrG_85': 0.38906934950328, 'pyrG_166': 0.17091906721338296, 'pyrG_171': 0.2644790409334048, 'pyrG_107': 0.17553254234993235}
 
-Predicted proportions using Counting method are: {'pyrG_171': 0.25, 'pyrG_119': 0.26636904760000002, 'pyrG_166': 0.23958333330000001, 'pyrG_107': 0.24404761899999999}
+Predicted proportions using Counting method are: {'pyrG_171': 0.25, 'pyrG_166': 0.23958333330000001, 'pyrG_85': 0.28869047619999999, 'pyrG_107': 0.2217261905}
 
-[6.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 21 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_105', 'pyrG_109', 'pyrG_126', 'pyrG_3', 'pyrG_35', 'pyrG_69']]
+Likelihood scores are: [453.39994018157029]
+Minimum likelihood score is :453.399940182
 True variants are: ['pyrG_35', 'pyrG_3', 'pyrG_126', 'pyrG_109', 'pyrG_69', 'pyrG_105']
 
 Predicted variants are: ['pyrG_105', 'pyrG_109', 'pyrG_126', 'pyrG_3', 'pyrG_35', 'pyrG_69']
@@ -271,11 +319,13 @@ True proportions are: {'pyrG_35': 0.1425123395042759, 'pyrG_109': 0.081552407875
 
 Predicted proportions using Counting method are: {'pyrG_35': 0.1538461538, 'pyrG_109': 0.11111111110000001, 'pyrG_3': 0.17948717950000001, 'pyrG_126': 0.19658119660000001, 'pyrG_69': 0.1196581197, 'pyrG_105': 0.23931623930000001}
 
-[4.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 22 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_105', 'pyrG_143', 'pyrG_150', 'pyrG_189']]
+Likelihood scores are: [438.56092754476617]
+Minimum likelihood score is :438.560927545
 True variants are: ['pyrG_143', 'pyrG_189', 'pyrG_150', 'pyrG_105']
 
 Predicted variants are: ['pyrG_105', 'pyrG_143', 'pyrG_150', 'pyrG_189']
@@ -284,11 +334,14 @@ True proportions are: {'pyrG_189': 0.21148916099238924, 'pyrG_150': 0.0738326297
 
 Predicted proportions using Counting method are: {'pyrG_189': 0.21367521370000001, 'pyrG_150': 0.094017093999999996, 'pyrG_105': 0.27350427350000001, 'pyrG_143': 0.41880341879999999}
 
-[7.0, 7.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
+More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 23 ====================================================
 
 Number of optimal solutions: 2
-[['pyrG_125', 'pyrG_146', 'pyrG_156', 'pyrG_160', 'pyrG_191', 'pyrG_26', 'pyrG_37'], ['pyrG_125', 'pyrG_155', 'pyrG_156', 'pyrG_160', 'pyrG_191', 'pyrG_26', 'pyrG_37']]
+[['pyrG_125', 'pyrG_155', 'pyrG_156', 'pyrG_160', 'pyrG_191', 'pyrG_26', 'pyrG_37'], ['pyrG_125', 'pyrG_146', 'pyrG_156', 'pyrG_160', 'pyrG_191', 'pyrG_26', 'pyrG_37']]
+Likelihood scores are: [461.29372462230492, 461.29372462230492]
+Minimum likelihood score is :461.293724622
 True variants are: ['pyrG_37', 'pyrG_160', 'pyrG_156', 'pyrG_125', 'pyrG_191', 'pyrG_146', 'pyrG_26']
 
 Predicted variants are: ['pyrG_125', 'pyrG_146', 'pyrG_156', 'pyrG_160', 'pyrG_191', 'pyrG_26', 'pyrG_37']
@@ -297,11 +350,13 @@ True proportions are: {'pyrG_191': 0.060084106452915564, 'pyrG_37': 0.1846574917
 
 Predicted proportions using Counting method are: {'pyrG_191': 0.064655172400000002, 'pyrG_37': 0.18103448280000001, 'pyrG_26': 0.17672413789999999, 'pyrG_160': 0.060344827599999998, 'pyrG_156': 0.18103448280000001, 'pyrG_146': 0.1206896552, 'pyrG_125': 0.2155172414}
 
-[3.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 24 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_108', 'pyrG_30', 'pyrG_54']]
+Likelihood scores are: [388.85515749181559]
+Minimum likelihood score is :388.855157492
 True variants are: ['pyrG_30', 'pyrG_54', 'pyrG_108']
 
 Predicted variants are: ['pyrG_108', 'pyrG_30', 'pyrG_54']
@@ -310,11 +365,13 @@ True proportions are: {'pyrG_108': 0.6959533128199379, 'pyrG_30': 0.069364161099
 
 Predicted proportions using Counting method are: {'pyrG_108': 0.47640117990000003, 'pyrG_30': 0.22418879059999999, 'pyrG_54': 0.29941002950000001}
 
-[2.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 25 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_112', 'pyrG_45']]
+Likelihood scores are: [375.76158604852077]
+Minimum likelihood score is :375.761586049
 True variants are: ['pyrG_45', 'pyrG_112']
 
 Predicted variants are: ['pyrG_112', 'pyrG_45']
@@ -323,11 +380,14 @@ True proportions are: {'pyrG_112': 0.06856592811709612, 'pyrG_45': 0.93143407188
 
 Predicted proportions using Counting method are: {'pyrG_112': 0.1009174312, 'pyrG_45': 0.89908256880000004}
 
-[6.0, 6.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
+More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 26 ====================================================
 
 Number of optimal solutions: 2
 [['pyrG_182', 'pyrG_191', 'pyrG_30', 'pyrG_40', 'pyrG_53', 'pyrG_95'], ['pyrG_182', 'pyrG_191', 'pyrG_30', 'pyrG_40', 'pyrG_53', 'pyrG_96']]
+Likelihood scores are: [442.08798558645213, 442.08798558645213]
+Minimum likelihood score is :442.087985586
 True variants are: ['pyrG_53', 'pyrG_30', 'pyrG_40', 'pyrG_182', 'pyrG_96', 'pyrG_191']
 
 Predicted variants are: ['pyrG_182', 'pyrG_191', 'pyrG_30', 'pyrG_40', 'pyrG_53', 'pyrG_95']
@@ -336,11 +396,13 @@ True proportions are: {'pyrG_30': 0.061927214200191066, 'pyrG_182': 0.0303131173
 
 Predicted proportions using Counting method are: {'pyrG_30': 0.16666666669999999, 'pyrG_182': 0.034188034200000002, 'pyrG_40': 0.22649572649999999, 'pyrG_191': 0.26210826209999999, 'pyrG_53': 0.103988604, 'pyrG_95': 0.2065527066}
 
-[3.0]
+This sim is not predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 27 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_54', 'pyrG_6', 'pyrG_9']]
+Likelihood scores are: [408.24051713472392]
+Minimum likelihood score is :408.240517135
 True variants are: ['pyrG_9', 'pyrG_6', 'pyrG_54']
 
 Predicted variants are: ['pyrG_54', 'pyrG_6', 'pyrG_9']
@@ -349,11 +411,13 @@ True proportions are: {'pyrG_6': 0.1290934690401411, 'pyrG_9': 0.202908787224041
 
 Predicted proportions using Counting method are: {'pyrG_6': 0.12389380530000001, 'pyrG_9': 0.2212389381, 'pyrG_54': 0.6548672566}
 
-[2.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 28 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_124', 'pyrG_74']]
+Likelihood scores are: [375.76158604852077]
+Minimum likelihood score is :375.761586049
 True variants are: ['pyrG_74', 'pyrG_124']
 
 Predicted variants are: ['pyrG_124', 'pyrG_74']
@@ -362,11 +426,13 @@ True proportions are: {'pyrG_74': 0.617927327383341, 'pyrG_124': 0.3820726726166
 
 Predicted proportions using Counting method are: {'pyrG_74': 0.61467889909999995, 'pyrG_124': 0.38532110089999999}
 
-[5.633]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 29 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_121', 'pyrG_199', 'pyrG_40', 'pyrG_61', 'pyrG_88']]
+Likelihood scores are: [430.50737448354488]
+Minimum likelihood score is :430.507374484
 True variants are: ['pyrG_199', 'pyrG_88', 'pyrG_61', 'pyrG_40', 'pyrG_81', 'pyrG_121']
 
 Predicted variants are: ['pyrG_121', 'pyrG_199', 'pyrG_40', 'pyrG_61', 'pyrG_88']
@@ -375,11 +441,13 @@ True proportions are: {'pyrG_40': 0.05402747910383637, 'pyrG_199': 0.18907964371
 
 Predicted proportions using Counting method are: {'pyrG_40': 0.1533923304, 'pyrG_199': 0.18584070799999999, 'pyrG_61': 0.1592920354, 'pyrG_88': 0.24188790560000001, 'pyrG_121': 0.2595870206}
 
-[5.0]
+This sim is not predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 30 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_127', 'pyrG_161', 'pyrG_187', 'pyrG_60', 'pyrG_9']]
+Likelihood scores are: [438.36338411241132]
+Minimum likelihood score is :438.363384112
 True variants are: ['pyrG_127', 'pyrG_9', 'pyrG_60', 'pyrG_187', 'pyrG_161']
 
 Predicted variants are: ['pyrG_127', 'pyrG_161', 'pyrG_187', 'pyrG_60', 'pyrG_9']
@@ -388,11 +456,13 @@ True proportions are: {'pyrG_127': 0.2785493507464722, 'pyrG_60': 0.121796794465
 
 Predicted proportions using Counting method are: {'pyrG_127': 0.2807017544, 'pyrG_60': 0.1228070175, 'pyrG_161': 0.15789473679999999, 'pyrG_9': 0.096491228100000007, 'pyrG_187': 0.34210526320000001}
 
-[5.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 31 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_156', 'pyrG_61', 'pyrG_67', 'pyrG_69', 'pyrG_73']]
+Likelihood scores are: [428.006597606772]
+Minimum likelihood score is :428.006597607
 True variants are: ['pyrG_73', 'pyrG_156', 'pyrG_61', 'pyrG_67', 'pyrG_69']
 
 Predicted variants are: ['pyrG_156', 'pyrG_61', 'pyrG_67', 'pyrG_69', 'pyrG_73']
@@ -401,24 +471,29 @@ True proportions are: {'pyrG_156': 0.22263414463553058, 'pyrG_61': 0.20822687562
 
 Predicted proportions using Counting method are: {'pyrG_156': 0.2192982456, 'pyrG_61': 0.22222222220000001, 'pyrG_69': 0.16081871349999999, 'pyrG_67': 0.33625730990000002, 'pyrG_73': 0.061403508799999999}
 
-[3.0, 3.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 32 ====================================================
 
-Number of optimal solutions: 2
-[['pyrG_116', 'pyrG_118', 'pyrG_26'], ['pyrG_116', 'pyrG_21', 'pyrG_26']]
+Number of optimal solutions: 5
+[['pyrG_118', 'pyrG_26'], ['pyrG_21', 'pyrG_26'], ['pyrG_26', 'pyrG_95'], ['pyrG_26', 'pyrG_96'], ['pyrG_166', 'pyrG_26']]
+Likelihood scores are: [382.72687504549992, 387.51694459880093, 389.00049209501657, 388.99612728961409, 389.32334611769278]
+Minimum likelihood score is :382.726875045
 True variants are: ['pyrG_26', 'pyrG_116', 'pyrG_118']
 
-Predicted variants are: ['pyrG_116', 'pyrG_118', 'pyrG_26']
+Predicted variants are: ['pyrG_118', 'pyrG_26']
 
 True proportions are: {'pyrG_26': 0.9396638285347785, 'pyrG_118': 0.04168860217599114, 'pyrG_116': 0.018647569289230375}
 
-Predicted proportions using Counting method are: {'pyrG_26': 0.75221238940000001, 'pyrG_118': 0.19026548670000001, 'pyrG_116': 0.0575221239}
+Predicted proportions using Counting method are: {'pyrG_26': 0.76548672569999998, 'pyrG_118': 0.23451327429999999}
 
-[6.0, 6.0]
+This sim is not predicted correctly based on minimum neg log likelihood score.
+More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 33 ====================================================
 
 Number of optimal solutions: 2
-[['pyrG_117', 'pyrG_133', 'pyrG_145', 'pyrG_187', 'pyrG_191', 'pyrG_43'], ['pyrG_117', 'pyrG_145', 'pyrG_187', 'pyrG_191', 'pyrG_43', 'pyrG_72']]
+[['pyrG_117', 'pyrG_145', 'pyrG_187', 'pyrG_191', 'pyrG_43', 'pyrG_72'], ['pyrG_117', 'pyrG_133', 'pyrG_145', 'pyrG_187', 'pyrG_191', 'pyrG_43']]
+Likelihood scores are: [452.44875100371036, 452.44875100371036]
+Minimum likelihood score is :452.448751004
 True variants are: ['pyrG_117', 'pyrG_43', 'pyrG_187', 'pyrG_133', 'pyrG_145', 'pyrG_191']
 
 Predicted variants are: ['pyrG_117', 'pyrG_133', 'pyrG_145', 'pyrG_187', 'pyrG_191', 'pyrG_43']
@@ -427,11 +502,13 @@ True proportions are: {'pyrG_191': 0.12375882129014179, 'pyrG_187': 0.0760405658
 
 Predicted proportions using Counting method are: {'pyrG_191': 0.1652542373, 'pyrG_187': 0.093220338999999999, 'pyrG_43': 0.27118644069999998, 'pyrG_145': 0.27118644069999998, 'pyrG_133': 0.093220338999999999, 'pyrG_117': 0.10593220339999999}
 
-[2.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 34 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_144', 'pyrG_190']]
+Likelihood scores are: [375.76158604852077]
+Minimum likelihood score is :375.761586049
 True variants are: ['pyrG_144', 'pyrG_190']
 
 Predicted variants are: ['pyrG_144', 'pyrG_190']
@@ -440,11 +517,13 @@ True proportions are: {'pyrG_144': 0.4920165678359731, 'pyrG_190': 0.50798343216
 
 Predicted proportions using Counting method are: {'pyrG_144': 0.48623853210000001, 'pyrG_190': 0.51376146789999999}
 
-[2.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 35 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_128', 'pyrG_156']]
+Likelihood scores are: [375.74300567473119]
+Minimum likelihood score is :375.743005675
 True variants are: ['pyrG_156', 'pyrG_128']
 
 Predicted variants are: ['pyrG_128', 'pyrG_156']
@@ -453,11 +532,14 @@ True proportions are: {'pyrG_156': 0.5970202431656912, 'pyrG_128': 0.40297975683
 
 Predicted proportions using Counting method are: {'pyrG_156': 0.57798165140000002, 'pyrG_128': 0.42201834859999998}
 
-[7.0, 7.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
+More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 36 ====================================================
 
 Number of optimal solutions: 2
-[['pyrG_104', 'pyrG_115', 'pyrG_125', 'pyrG_128', 'pyrG_151', 'pyrG_166', 'pyrG_177'], ['pyrG_105', 'pyrG_115', 'pyrG_125', 'pyrG_128', 'pyrG_151', 'pyrG_166', 'pyrG_177']]
+[['pyrG_105', 'pyrG_115', 'pyrG_125', 'pyrG_128', 'pyrG_151', 'pyrG_166', 'pyrG_177'], ['pyrG_104', 'pyrG_115', 'pyrG_125', 'pyrG_128', 'pyrG_151', 'pyrG_166', 'pyrG_177']]
+Likelihood scores are: [462.07447531499025, 462.07447531499025]
+Minimum likelihood score is :462.074475315
 True variants are: ['pyrG_151', 'pyrG_115', 'pyrG_166', 'pyrG_104', 'pyrG_125', 'pyrG_128', 'pyrG_177']
 
 Predicted variants are: ['pyrG_104', 'pyrG_115', 'pyrG_125', 'pyrG_128', 'pyrG_151', 'pyrG_166', 'pyrG_177']
@@ -466,24 +548,28 @@ True proportions are: {'pyrG_128': 0.18490623406751033, 'pyrG_177': 0.2154119574
 
 Predicted proportions using Counting method are: {'pyrG_128': 0.17796610169999999, 'pyrG_177': 0.186440678, 'pyrG_166': 0.14830508470000001, 'pyrG_151': 0.097457627099999999, 'pyrG_125': 0.21186440679999999, 'pyrG_104': 0.033898305099999998, 'pyrG_115': 0.14406779659999999}
 
-[7.0, 7.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 37 ====================================================
 
 Number of optimal solutions: 2
-[['pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_40', 'pyrG_46', 'pyrG_47'], ['pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_46', 'pyrG_47', 'pyrG_81']]
+[['pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_46', 'pyrG_47', 'pyrG_81'], ['pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_40', 'pyrG_46', 'pyrG_47']]
+Likelihood scores are: [452.47777826239439, 455.368531222027]
+Minimum likelihood score is :452.477778262
 True variants are: ['pyrG_149', 'pyrG_46', 'pyrG_47', 'pyrG_128', 'pyrG_137', 'pyrG_116', 'pyrG_81']
 
-Predicted variants are: ['pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_40', 'pyrG_46', 'pyrG_47']
+Predicted variants are: ['pyrG_116', 'pyrG_128', 'pyrG_137', 'pyrG_149', 'pyrG_46', 'pyrG_47', 'pyrG_81']
 
 True proportions are: {'pyrG_137': 0.027879565543753752, 'pyrG_81': 0.2255910255715715, 'pyrG_46': 0.11317745459182363, 'pyrG_149': 0.24080520056475285, 'pyrG_128': 0.056920733731144896, 'pyrG_47': 0.23220345972248493, 'pyrG_116': 0.1034225602744684}
 
-Predicted proportions using Counting method are: {'pyrG_128': 0.1068376068, 'pyrG_40': 0.1538461538, 'pyrG_46': 0.1196581197, 'pyrG_149': 0.2478632479, 'pyrG_137': 0.034188034200000002, 'pyrG_47': 0.21794871790000001, 'pyrG_116': 0.1196581197}
+Predicted proportions using Counting method are: {'pyrG_128': 0.1068376068, 'pyrG_81': 0.19658119660000001, 'pyrG_46': 0.1196581197, 'pyrG_47': 0.21367521370000001, 'pyrG_137': 0.034188034200000002, 'pyrG_149': 0.2094017094, 'pyrG_116': 0.1196581197}
 
-[4.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 38 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_143', 'pyrG_31', 'pyrG_33', 'pyrG_44']]
+Likelihood scores are: [423.17598113677707]
+Minimum likelihood score is :423.175981137
 True variants are: ['pyrG_31', 'pyrG_143', 'pyrG_33', 'pyrG_44']
 
 Predicted variants are: ['pyrG_143', 'pyrG_31', 'pyrG_33', 'pyrG_44']
@@ -492,24 +578,29 @@ True proportions are: {'pyrG_31': 0.3511398183269936, 'pyrG_33': 0.1806524213954
 
 Predicted proportions using Counting method are: {'pyrG_31': 0.34070796460000002, 'pyrG_33': 0.19026548670000001, 'pyrG_44': 0.1592920354, 'pyrG_143': 0.30973451330000001}
 
-[7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0, 7.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
+More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 39 ====================================================
 
 Number of optimal solutions: 14
-[['pyrG_1', 'pyrG_12', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_21', 'pyrG_86'], ['pyrG_1', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_1', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_21', 'pyrG_4', 'pyrG_86'], ['pyrG_112', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_113', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_12', 'pyrG_142', 'pyrG_168', 'pyrG_177', 'pyrG_182', 'pyrG_21', 'pyrG_86'], ['pyrG_138', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_139', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_142', 'pyrG_164', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_142', 'pyrG_164', 'pyrG_177', 'pyrG_182', 'pyrG_21', 'pyrG_4', 'pyrG_86'], ['pyrG_142', 'pyrG_168', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_142', 'pyrG_168', 'pyrG_177', 'pyrG_182', 'pyrG_21', 'pyrG_4', 'pyrG_86'], ['pyrG_142', 'pyrG_169', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_5', 'pyrG_86']]
+[['pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_5', 'pyrG_86'], ['pyrG_112', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_113', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_12', 'pyrG_142', 'pyrG_168', 'pyrG_177', 'pyrG_182', 'pyrG_21', 'pyrG_86'], ['pyrG_1', 'pyrG_12', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_21', 'pyrG_86'], ['pyrG_138', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_139', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_142', 'pyrG_164', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_142', 'pyrG_168', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_142', 'pyrG_169', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86'], ['pyrG_1', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_21', 'pyrG_4', 'pyrG_86'], ['pyrG_142', 'pyrG_168', 'pyrG_177', 'pyrG_182', 'pyrG_21', 'pyrG_4', 'pyrG_86'], ['pyrG_142', 'pyrG_164', 'pyrG_177', 'pyrG_182', 'pyrG_21', 'pyrG_4', 'pyrG_86'], ['pyrG_1', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86']]
+Likelihood scores are: [468.7001726835731, 469.59016825435759, 471.66682458618806, 469.59016825435759, 469.59016825435759, 472.88804931860176, 471.37015939592658, 470.48016382514209, 466.92018154200412, 469.29350306409611, 468.7001726835731, 468.7001726835731, 472.26015496671107, 466.92018154200412]
+Minimum likelihood score is :466.920181542
 True variants are: ['pyrG_177', 'pyrG_142', 'pyrG_1', 'pyrG_86', 'pyrG_21', 'pyrG_2', 'pyrG_182']
 
-Predicted variants are: ['pyrG_1', 'pyrG_12', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_21', 'pyrG_86']
+Predicted variants are: ['pyrG_1', 'pyrG_142', 'pyrG_177', 'pyrG_182', 'pyrG_2', 'pyrG_21', 'pyrG_86']
 
 True proportions are: {'pyrG_182': 0.2953918913930934, 'pyrG_142': 0.05259377998643551, 'pyrG_177': 0.16672129287711837, 'pyrG_21': 0.02955865702129442, 'pyrG_2': 0.14496289172892768, 'pyrG_1': 0.10082435483708027, 'pyrG_86': 0.20994713215605046}
 
-Predicted proportions using Counting method are: {'pyrG_182': 0.26446280989999998, 'pyrG_12': 0.10330578510000001, 'pyrG_177': 0.17768595039999999, 'pyrG_21': 0.033057851200000002, 'pyrG_142': 0.057851239700000001, 'pyrG_86': 0.20247933879999999, 'pyrG_1': 0.16115702479999999}
+Predicted proportions using Counting method are: {'pyrG_182': 0.26446280989999998, 'pyrG_1': 0.1239669421, 'pyrG_177': 0.17768595039999999, 'pyrG_21': 0.033057851200000002, 'pyrG_2': 0.14049586780000001, 'pyrG_142': 0.057851239700000001, 'pyrG_86': 0.20247933879999999}
 
-[2.0]
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== SIMULATION 40 ====================================================
 
 Number of optimal solutions: 1
 [['pyrG_2', 'pyrG_98']]
+Likelihood scores are: [375.76158604852077]
+Minimum likelihood score is :375.761586049
 True variants are: ['pyrG_2', 'pyrG_98']
 
 Predicted variants are: ['pyrG_2', 'pyrG_98']
@@ -518,51 +609,57 @@ True proportions are: {'pyrG_2': 0.06532386988616141, 'pyrG_98': 0.9346761301138
 
 Predicted proportions using Counting method are: {'pyrG_2': 0.0642201835, 'pyrG_98': 0.93577981649999997}
 
+This sim is predicted correctly based on minimum neg log likelihood score.
 ======================================== pyrG: SUMMARY STATISTICS ====================================================
 
 (1)Total Variation Distance:
 
-Counting Method ~ Total variation distances are: [1.6832353578562096, 4.1321340303997314, 4.7979925330566076, 1.990950603309152, 0.51493296012807277, 1.0125178054019996, 4.5510440174407956, 3.6697247699999958, 0.60062468261277702, 3.7768515716660547, 13.264498190474526, 4.4538167878372255, 4.2760633709455265, 35.779816509999996, 1.0534253084052874, 3.8659090171981401, 3.951038186125873, 1.3095888028538436, 3.1627714793335731, 40.35483903866848, 4.2171317870047842, 2.3431724920721106, 3.5736475092393292, 21.955213291993786, 3.2351503082903839, 37.86028958221771, 1.8330150875958968, 0.3248428283341015, 9.9364851296163614, 2.2405331565413142, 9.8985421645688572, 18.745143913477847, 9.6829463800884525, 0.57780357359731027, 1.9038591765691171, 7.4261157641336064, 23.984576739405643, 1.2616839968526459, 18.335976652807148, 0.11036863861614218] 
+Counting Method ~ Total variation distances are: [1.6832353578562096, 4.1321340303997314, 4.7979925330566076, 1.990950603309152, 0.51493296012807277, 1.0125178054019996, 4.5510440174407956, 3.6697247699999958, 0.60062468261277702, 3.7768515716660547, 13.264498190474526, 4.4538167878372255, 4.2760633709455265, 35.779816509999996, 1.0534253084052874, 3.8659090171981401, 3.951038186125873, 1.3095888028538436, 3.1627714793335731, 11.485791423668475, 4.2171317870047842, 2.3431724920721106, 3.5736475092393292, 21.955213291993786, 3.2351503082903839, 37.86028958221771, 1.8330150875958968, 0.3248428283341015, 9.9364851296163614, 2.2405331565413142, 9.8985421645688572, 19.282467212400888, 9.6829463800884525, 0.57780357359731027, 1.9038591765691171, 7.4261157641336064, 7.8941566208809304, 1.2616839968526459, 4.286389872807149, 0.11036863861614218] 
 
-Counting Method ~ The average of total variation distance is: 7.94120682992 
+Counting Method ~ The average of total variation distance is: 6.47941354955 
 
-Counting Method ~ The standard deviation of total variation distance is: 10.3984364882 
+Counting Method ~ The standard deviation of total variation distance is: 8.45778380057 
 
 (2)Total Variation Distance for variants which are predicted correctly:
 
-Counting Method ~ Total variation distances are: [1.6832353578562096, 4.1321340303997314, 4.7979925330566076, 1.990950603309152, 0.51493296012807277, 1.0125178054019996, 4.5510440174407956, 0.60062468261277702, 3.7768515716660547, 4.4538167878372255, 4.2760633709455265, 1.0534253084052874, 3.8659090171981401, 3.951038186125873, 1.3095888028538436, 3.1627714793335731, 4.2171317870047842, 2.3431724920721106, 3.5736475092393292, 21.955213291993786, 3.2351503082903839, 1.8330150875958968, 0.3248428283341015, 2.2405331565413142, 9.8985421645688572, 18.745143913477847, 9.6829463800884525, 0.57780357359731027, 1.9038591765691171, 7.4261157641336064, 1.2616839968526459, 0.11036863861614218] 
+Counting Method ~ Total variation distances are: [1.6832353578562096, 4.1321340303997314, 4.7979925330566076, 1.990950603309152, 0.51493296012807277, 1.0125178054019996, 4.5510440174407956, 0.60062468261277702, 3.7768515716660547, 4.4538167878372255, 4.2760633709455265, 1.0534253084052874, 3.8659090171981401, 3.951038186125873, 1.3095888028538436, 3.1627714793335731, 11.485791423668475, 4.2171317870047842, 2.3431724920721106, 3.5736475092393292, 21.955213291993786, 3.2351503082903839, 1.8330150875958968, 0.3248428283341015, 2.2405331565413142, 9.8985421645688572, 9.6829463800884525, 0.57780357359731027, 1.9038591765691171, 7.4261157641336064, 7.8941566208809304, 1.2616839968526459, 4.286389872807149, 0.11036863861614218] 
 
-Counting Method ~ The average of total variation distance is: 4.20193958074 
+Counting Method ~ The average of total variation distance is: 4.09950766434 
 
-Counting Method ~ The standard deviation of total variation distance is: 4.81171452116 
+Counting Method ~ The standard deviation of total variation distance is: 4.18581518547 
 
 (3) Precision: 
 
-Precision is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 0.75, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 0.8571428571428571, 1.0] 
+Precision is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
 
-Average of precision is:  0.958035714286 
+Average of precision is:  0.971428571429 
 
-Standard deviation of precision is:  0.105139589079 
+Standard deviation of precision is:  0.0970365898682 
 
 (4) Recall : 
 
-Recall is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 0.75, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8571428571428571, 1.0, 0.8571428571428571, 1.0] 
+Recall is: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 0.8571428571428571, 1.0, 1.0, 0.5, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 0.8333333333333334, 1.0, 1.0, 0.6666666666666666, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] 
 
-Average of recall is:  0.953869047619 
+Average of recall is:  0.958928571429 
 
-Standard deviation of recall is:  0.106685116788 
+Standard deviation of recall is:  0.109625664336 
 
 (5)Accuracy: 
 
 Total number of simulations:  40 
 
-Number of simulations which are predicted correctly: 32
+Number of simulations which are predicted correctly: 34
 
-Percentage of simulations predicted correctly:  80.0 %
+Percentage of simulations predicted correctly:  85.0 %
 
 (6)Optimal solutions: 
 
-Number of optimal solutions: [1, 1, 2, 1, 1, 1, 1, 2, 1, 2, 8, 2, 1, 2, 1, 1, 1, 2, 1, 17, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 2, 2, 1, 1, 2, 2, 1, 14, 1]
+Number of optimal solutions: [1, 1, 2, 1, 1, 1, 1, 2, 1, 2, 8, 2, 1, 2, 1, 1, 1, 2, 1, 17, 1, 1, 2, 1, 1, 2, 1, 1, 1, 1, 1, 5, 2, 1, 1, 2, 2, 1, 14, 1]
 
-Average number of optimal solutions: 2.2
+Average number of optimal solutions: 2.275
 
+(7)Statistics about minimum negative log likelihood score: 
+
+Number of simulations having multiple solutions: 15
+Number of these simulations which are correct: 10
+The percentage is : 66.6666666667 %
