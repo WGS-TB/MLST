@@ -1,8 +1,9 @@
+Time taken to run ADP: 0.0465564330419 min
 ======================================== SIMULATION 1 ====================================================
 
 Number of optimal solutions: 2
-[['recG_185', 'recG_196', 'recG_54', 'recG_70'], ['recG_117', 'recG_185', 'recG_196', 'recG_70']]
-Likelihood scores are: [1461.12020476015, 1502.0774602378588]
+[['recG_117', 'recG_185', 'recG_196', 'recG_70'], ['recG_185', 'recG_196', 'recG_54', 'recG_70']]
+Likelihood scores are: [1502.0774602378588, 1461.12020476015]
 Minimum likelihood score is :1461.12020476
 True variants are: ['recG_70', 'recG_54', 'recG_185', 'recG_196']
 
@@ -13,6 +14,7 @@ True proportions are: {'recG_54': 0.3758032467379183, 'recG_185': 0.198551230740
 Predicted proportions using Counting method are: {'recG_185': 0.1960784314, 'recG_54': 0.36029411760000002, 'recG_196': 0.0882352941, 'recG_70': 0.35539215689999998}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0451356013616 min
 ======================================== SIMULATION 2 ====================================================
 
 Number of optimal solutions: 2
@@ -28,6 +30,7 @@ True proportions are: {'recG_205': 0.015847990271009048, 'recG_34': 0.3714874931
 Predicted proportions using Counting method are: {'recG_205': 0.019417475699999999, 'recG_34': 0.36650485440000002, 'recG_115': 0.2160194175, 'recG_155': 0.145631068, 'recG_139': 0.083737864100000003, 'recG_150': 0.16868932040000001}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0532779494921 min
 ======================================== SIMULATION 3 ====================================================
 
 Number of optimal solutions: 1
@@ -43,6 +46,7 @@ True proportions are: {'recG_109': 0.1453644431568418, 'recG_113': 0.13305348492
 Predicted proportions using Counting method are: {'recG_109': 0.1442307692, 'recG_113': 0.13982371790000001, 'recG_34': 0.12059294869999999, 'recG_127': 0.21674679490000001, 'recG_57': 0.14342948720000001, 'recG_41': 0.23517628209999999}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.011065419515 min
 ======================================== SIMULATION 4 ====================================================
 
 Number of optimal solutions: 1
@@ -58,6 +62,7 @@ True proportions are: {'recG_157': 0.398117742538673, 'recG_13': 0.0443106774669
 Predicted proportions using Counting method are: {'recG_157': 0.39603960399999999, 'recG_13': 0.049504950499999999, 'recG_65': 0.55445544550000003}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0134822010994 min
 ======================================== SIMULATION 5 ====================================================
 
 Number of optimal solutions: 1
@@ -73,6 +78,7 @@ True proportions are: {'recG_192': 0.22821031819153595, 'recG_113': 0.3813192513
 Predicted proportions using Counting method are: {'recG_192': 0.22549019610000001, 'recG_113': 0.38235294120000002, 'recG_204': 0.25490196079999999, 'recG_208': 0.13725490200000001}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0171880483627 min
 ======================================== SIMULATION 6 ====================================================
 
 Number of optimal solutions: 1
@@ -88,6 +94,7 @@ True proportions are: {'recG_113': 0.62480407715402, 'recG_189': 0.3751959228459
 Predicted proportions using Counting method are: {'recG_113': 0.62376237619999997, 'recG_189': 0.37623762379999998}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0304987986883 min
 ======================================== SIMULATION 7 ====================================================
 
 Number of optimal solutions: 1
@@ -103,6 +110,7 @@ True proportions are: {'recG_18': 0.28596375936700275, 'recG_106': 0.30020303448
 Predicted proportions using Counting method are: {'recG_119': 0.10558252429999999, 'recG_18': 0.26699029130000002, 'recG_106': 0.30097087379999998, 'recG_137': 0.1310679612, 'recG_78': 0.1953883495}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.012574048837 min
 ======================================== SIMULATION 8 ====================================================
 
 Number of optimal solutions: 1
@@ -118,6 +126,7 @@ True proportions are: {'recG_91': 0.5310923775879388, 'recG_159': 0.013989274525
 Predicted proportions using Counting method are: {'recG_91': 0.52941176469999995, 'recG_195': 0.45098039220000002, 'recG_159': 0.019607843100000001}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0139780163765 min
 ======================================== SIMULATION 9 ====================================================
 
 Number of optimal solutions: 1
@@ -133,12 +142,13 @@ True proportions are: {'recG_9': 0.4173750198309749, 'recG_29': 0.34934600604289
 Predicted proportions using Counting method are: {'recG_9': 0.4158415842, 'recG_29': 0.34653465350000001, 'recG_159': 0.23762376239999999}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.070040500164 min
 More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 10 ====================================================
 
 Number of optimal solutions: 4
-[['recG_112', 'recG_125', 'recG_23', 'recG_40', 'recG_62'], ['recG_125', 'recG_23', 'recG_40', 'recG_67', 'recG_76'], ['recG_112', 'recG_125', 'recG_23', 'recG_40', 'recG_67'], ['recG_125', 'recG_23', 'recG_40', 'recG_62', 'recG_76']]
-Likelihood scores are: [1520.8143705265979, 1519.3331569977258, 1520.8143705265979, 1519.3331569977258]
+[['recG_112', 'recG_125', 'recG_23', 'recG_40', 'recG_62'], ['recG_112', 'recG_125', 'recG_23', 'recG_40', 'recG_67'], ['recG_125', 'recG_23', 'recG_40', 'recG_62', 'recG_76'], ['recG_125', 'recG_23', 'recG_40', 'recG_67', 'recG_76']]
+Likelihood scores are: [1520.8143705265979, 1520.8143705265979, 1519.3331569977258, 1519.3331569977258]
 Minimum likelihood score is :1519.333157
 True variants are: ['recG_76', 'recG_62', 'recG_23', 'recG_125', 'recG_40']
 
@@ -149,6 +159,7 @@ True proportions are: {'recG_76': 0.41487149099926984, 'recG_125': 0.15163136217
 Predicted proportions using Counting method are: {'recG_76': 0.34142394819999999, 'recG_125': 0.1982200647, 'recG_62': 0.0097087379000000001, 'recG_23': 0.1941747573, 'recG_40': 0.25647249189999999}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0258445342382 min
 ======================================== SIMULATION 11 ====================================================
 
 Number of optimal solutions: 1
@@ -164,12 +175,13 @@ True proportions are: {'recG_99': 0.09756981242885977, 'recG_14': 0.252965462165
 Predicted proportions using Counting method are: {'recG_99': 0.097087378599999996, 'recG_14': 0.25242718450000001, 'recG_31': 0.15533980580000001, 'recG_186': 0.2427184466, 'recG_63': 0.1165048544, 'recG_176': 0.13592233009999999}
 
 This sim is not predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0479432145754 min
 More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 12 ====================================================
 
 Number of optimal solutions: 4
-[['recG_110', 'recG_112', 'recG_14', 'recG_150', 'recG_73', 'recG_99'], ['recG_14', 'recG_150', 'recG_29', 'recG_73', 'recG_76', 'recG_99'], ['recG_110', 'recG_14', 'recG_150', 'recG_73', 'recG_76', 'recG_99'], ['recG_112', 'recG_14', 'recG_150', 'recG_29', 'recG_73', 'recG_99']]
-Likelihood scores are: [1599.1467300444631, 1597.9600692834172, 1599.1467300444631, 1597.9600692834172]
+[['recG_110', 'recG_112', 'recG_14', 'recG_150', 'recG_73', 'recG_99'], ['recG_110', 'recG_14', 'recG_150', 'recG_73', 'recG_76', 'recG_99'], ['recG_112', 'recG_14', 'recG_150', 'recG_29', 'recG_73', 'recG_99'], ['recG_14', 'recG_150', 'recG_29', 'recG_73', 'recG_76', 'recG_99']]
+Likelihood scores are: [1599.1467300444631, 1599.1467300444631, 1597.9600692834172, 1597.9600692834172]
 Minimum likelihood score is :1597.96006928
 True variants are: ['recG_73', 'recG_76', 'recG_99', 'recG_29', 'recG_150', 'recG_14']
 
@@ -180,6 +192,7 @@ True proportions are: {'recG_76': 0.010221449826557, 'recG_99': 0.49369071022837
 Predicted proportions using Counting method are: {'recG_99': 0.45752427179999999, 'recG_29': 0.14927184469999999, 'recG_73': 0.057038835000000003, 'recG_112': 0.019417475699999999, 'recG_14': 0.1165048544, 'recG_150': 0.20024271839999999}
 
 This sim is not predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0361577669779 min
 ======================================== SIMULATION 13 ====================================================
 
 Number of optimal solutions: 1
@@ -195,6 +208,7 @@ True proportions are: {'recG_206': 0.13234792704796516, 'recG_72': 0.22259833033
 Predicted proportions using Counting method are: {'recG_206': 0.13592233009999999, 'recG_72': 0.22694174759999999, 'recG_146': 0.28762135919999998, 'recG_172': 0.048543689299999998, 'recG_45': 0.0097087379000000001, 'recG_4': 0.2912621359}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.028627550602 min
 More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 14 ====================================================
 
@@ -211,6 +225,7 @@ True proportions are: {'recG_27': 0.6474726407468352, 'recG_28': 0.3525273592531
 Predicted proportions using Counting method are: {'recG_172': 0.51856435639999998, 'recG_30': 0.48143564360000002}
 
 This sim is not predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.00912640094757 min
 ======================================== SIMULATION 15 ====================================================
 
 Number of optimal solutions: 1
@@ -226,6 +241,7 @@ True proportions are: {'recG_205': 0.02616299461594712, 'recG_22': 0.97383700538
 Predicted proportions using Counting method are: {'recG_205': 0.029702970299999999, 'recG_22': 0.97029702969999998}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0219249844551 min
 ======================================== SIMULATION 16 ====================================================
 
 Number of optimal solutions: 1
@@ -241,6 +257,7 @@ True proportions are: {'recG_203': 0.222031601614533, 'recG_117': 0.181985348110
 Predicted proportions using Counting method are: {'recG_148': 0.21359223299999999, 'recG_122': 0.066747572800000002, 'recG_117': 0.1856796117, 'recG_203': 0.25728155339999997, 'recG_102': 0.27669902909999999}
 
 This sim is not predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0223717013995 min
 More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 17 ====================================================
 
@@ -257,6 +274,7 @@ True proportions are: {'recG_192': 0.12706721653008052, 'recG_88': 0.10422742890
 Predicted proportions using Counting method are: {'recG_192': 0.1274509804, 'recG_88': 0.1078431373, 'recG_92': 0.2843137255, 'recG_103': 0.1482843137, 'recG_134': 0.098039215700000001, 'recG_159': 0.049019607799999997, 'recG_161': 0.1850490196}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0249146143595 min
 ======================================== SIMULATION 18 ====================================================
 
 Number of optimal solutions: 1
@@ -272,6 +290,7 @@ True proportions are: {'recG_134': 0.20142339556875186, 'recG_127': 0.1707166605
 Predicted proportions using Counting method are: {'recG_127': 0.17597087380000001, 'recG_134': 0.20388349510000001, 'recG_204': 0.20388349510000001, 'recG_58': 0.21237864079999999, 'recG_96': 0.20388349510000001}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0244375507037 min
 ======================================== SIMULATION 19 ====================================================
 
 Number of optimal solutions: 1
@@ -287,6 +306,7 @@ True proportions are: {'recG_207': 0.0531432680217702, 'recG_83': 0.140039729585
 Predicted proportions using Counting method are: {'recG_207': 0.058252427199999998, 'recG_83': 0.1529126214, 'recG_27': 0.1941747573, 'recG_20': 0.16747572820000001, 'recG_141': 0.145631068, 'recG_190': 0.28155339810000002}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0434125820796 min
 ======================================== SIMULATION 20 ====================================================
 
 Number of optimal solutions: 1
@@ -302,6 +322,7 @@ True proportions are: {'recG_111': 0.17553254234993235, 'recG_172': 0.1709190672
 Predicted proportions using Counting method are: {'recG_172': 0.1764705882, 'recG_88': 0.42524509799999999, 'recG_177': 0.3982843137}
 
 This sim is not predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0357324838638 min
 ======================================== SIMULATION 21 ====================================================
 
 Number of optimal solutions: 1
@@ -317,6 +338,7 @@ True proportions are: {'recG_109': 0.23803743895058263, 'recG_71': 0.12964327323
 Predicted proportions using Counting method are: {'recG_109': 0.23529411759999999, 'recG_71': 0.1274509804, 'recG_113': 0.093137254899999994, 'recG_37': 0.15196078430000001, 'recG_130': 0.1960784314, 'recG_3': 0.1960784314}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0097044189771 min
 ======================================== SIMULATION 22 ====================================================
 
 Number of optimal solutions: 1
@@ -332,11 +354,12 @@ True proportions are: {'recG_148': 0.44223514372072104, 'recG_155': 0.0738326297
 Predicted proportions using Counting method are: {'recG_148': 0.43689320390000003, 'recG_155': 0.077669902900000004, 'recG_196': 0.21359223299999999, 'recG_108': 0.27184466019999998}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0483100175858 min
 ======================================== SIMULATION 23 ====================================================
 
 Number of optimal solutions: 20
-[['recG_129', 'recG_151', 'recG_161', 'recG_166', 'recG_197', 'recG_27', 'recG_38'], ['recG_129', 'recG_138', 'recG_155', 'recG_161', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_150', 'recG_151', 'recG_161', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_150', 'recG_155', 'recG_161', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_155', 'recG_161', 'recG_166', 'recG_197', 'recG_27', 'recG_38'], ['recG_129', 'recG_153', 'recG_155', 'recG_161', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_161', 'recG_166', 'recG_197', 'recG_198', 'recG_27', 'recG_38'], ['recG_129', 'recG_138', 'recG_151', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_138', 'recG_155', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_151', 'recG_153', 'recG_161', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_161', 'recG_197', 'recG_198', 'recG_27', 'recG_38', 'recG_92'], ['recG_129', 'recG_153', 'recG_155', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_155', 'recG_161', 'recG_197', 'recG_27', 'recG_38', 'recG_92'], ['recG_129', 'recG_155', 'recG_161', 'recG_166', 'recG_172', 'recG_197', 'recG_38'], ['recG_129', 'recG_150', 'recG_151', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_151', 'recG_161', 'recG_197', 'recG_27', 'recG_38', 'recG_92'], ['recG_129', 'recG_150', 'recG_155', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_151', 'recG_153', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_155', 'recG_161', 'recG_172', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_138', 'recG_151', 'recG_161', 'recG_166', 'recG_197', 'recG_38']]
-Likelihood scores are: [1633.8453337336532, 1649.4381835119104, 1639.403775085025, 1642.9632740730501, 1636.801691073081, 1642.9160920908864, 1639.1686114866104, 1646.1156636754556, 1649.4339060040418, 1639.3565931028613, 1639.1643339787418, 1642.9118145830178, 1636.7995253419888, 1643.2042345088682, 1639.3994550271514, 1633.843168002561, 1642.9589540151765, 1639.3523155949927, 1643.202068777776, 1646.1199411833243]
+[['recG_129', 'recG_138', 'recG_151', 'recG_161', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_138', 'recG_151', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_138', 'recG_155', 'recG_161', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_138', 'recG_155', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_150', 'recG_151', 'recG_161', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_150', 'recG_151', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_150', 'recG_155', 'recG_161', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_150', 'recG_155', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_151', 'recG_153', 'recG_161', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_151', 'recG_153', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_151', 'recG_161', 'recG_166', 'recG_197', 'recG_27', 'recG_38'], ['recG_129', 'recG_151', 'recG_161', 'recG_197', 'recG_27', 'recG_38', 'recG_92'], ['recG_129', 'recG_153', 'recG_155', 'recG_161', 'recG_166', 'recG_197', 'recG_38'], ['recG_129', 'recG_153', 'recG_155', 'recG_161', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_155', 'recG_161', 'recG_166', 'recG_172', 'recG_197', 'recG_38'], ['recG_129', 'recG_155', 'recG_161', 'recG_166', 'recG_197', 'recG_27', 'recG_38'], ['recG_129', 'recG_155', 'recG_161', 'recG_172', 'recG_197', 'recG_38', 'recG_92'], ['recG_129', 'recG_155', 'recG_161', 'recG_197', 'recG_27', 'recG_38', 'recG_92'], ['recG_129', 'recG_161', 'recG_166', 'recG_197', 'recG_198', 'recG_27', 'recG_38'], ['recG_129', 'recG_161', 'recG_197', 'recG_198', 'recG_27', 'recG_38', 'recG_92']]
+Likelihood scores are: [1646.1199411833243, 1646.1156636754556, 1649.4381835119104, 1649.4339060040418, 1639.403775085025, 1639.3994550271514, 1642.9632740730501, 1642.9589540151765, 1639.3565931028613, 1639.3523155949927, 1633.8453337336532, 1633.843168002561, 1642.9160920908864, 1642.9118145830178, 1643.2042345088682, 1636.801691073081, 1643.202068777776, 1636.7995253419888, 1639.1686114866104, 1639.1643339787418]
 Minimum likelihood score is :1633.843168
 True variants are: ['recG_38', 'recG_166', 'recG_161', 'recG_129', 'recG_197', 'recG_151', 'recG_27']
 
@@ -347,6 +370,7 @@ True proportions are: {'recG_38': 0.18465749173423118, 'recG_27': 0.196550496344
 Predicted proportions using Counting method are: {'recG_38': 0.180952381, 'recG_27': 0.15079365080000001, 'recG_197': 0.066666666700000002, 'recG_161': 0.1904761905, 'recG_92': 0.069841269799999994, 'recG_129': 0.20000000000000001, 'recG_151': 0.1412698413}
 
 This sim is not predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0304835319519 min
 ======================================== SIMULATION 24 ====================================================
 
 Number of optimal solutions: 1
@@ -362,6 +386,7 @@ True proportions are: {'recG_111': 0.6959533128199379, 'recG_56': 0.234682526081
 Predicted proportions using Counting method are: {'recG_56': 0.23762376239999999, 'recG_111': 0.69306930690000002, 'recG_31': 0.069306930700000005}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0366234342257 min
 ======================================== SIMULATION 25 ====================================================
 
 Number of optimal solutions: 1
@@ -377,6 +402,7 @@ True proportions are: {'recG_47': 0.9314340718829038, 'recG_115': 0.068565928117
 Predicted proportions using Counting method are: {'recG_47': 0.83910891089999995, 'recG_115': 0.1608910891}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0372047980626 min
 ======================================== SIMULATION 26 ====================================================
 
 Number of optimal solutions: 1
@@ -392,6 +418,7 @@ True proportions are: {'recG_99': 0.20965336963626918, 'recG_31': 0.061927214200
 Predicted proportions using Counting method are: {'recG_99': 0.20388349510000001, 'recG_31': 0.067961165000000004, 'recG_197': 0.31067961170000002, 'recG_55': 0.088592233000000006, 'recG_188': 0.038834951499999999, 'recG_41': 0.29004854369999999}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0180115977923 min
 ======================================== SIMULATION 27 ====================================================
 
 Number of optimal solutions: 1
@@ -407,6 +434,7 @@ True proportions are: {'recG_56': 0.6679977437358179, 'recG_9': 0.20290878722404
 Predicted proportions using Counting method are: {'recG_56': 0.6633663366, 'recG_9': 0.2017326733, 'recG_6': 0.13490099010000001}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0164023677508 min
 ======================================== SIMULATION 28 ====================================================
 
 Number of optimal solutions: 1
@@ -422,6 +450,7 @@ True proportions are: {'recG_77': 0.617927327383341, 'recG_129': 0.3820726726166
 Predicted proportions using Counting method are: {'recG_77': 0.61386138609999996, 'recG_129': 0.38613861389999998}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0274839003881 min
 ======================================== SIMULATION 29 ====================================================
 
 Number of optimal solutions: 1
@@ -437,6 +466,7 @@ True proportions are: {'recG_206': 0.1890796437168259, 'recG_91': 0.273713207502
 Predicted proportions using Counting method are: {'recG_206': 0.18446601939999999, 'recG_91': 0.27184466019999998, 'recG_84': 0.079692556600000006, 'recG_126': 0.21925566339999999, 'recG_63': 0.16504854369999999, 'recG_42': 0.079692556600000006}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0251506487528 min
 More than 1 solution having minimum negative log likelihood score.
 ======================================== SIMULATION 30 ====================================================
 
@@ -453,6 +483,7 @@ True proportions are: {'recG_10': 0.07724852322219433, 'recG_193': 0.35843654965
 Predicted proportions using Counting method are: {'recG_10': 0.078431372499999999, 'recG_193': 0.35294117650000001, 'recG_62': 0.1274509804, 'recG_131': 0.27450980390000002, 'recG_166': 0.16666666669999999}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0195658485095 min
 ======================================== SIMULATION 31 ====================================================
 
 Number of optimal solutions: 1
@@ -468,6 +499,7 @@ True proportions are: {'recG_76': 0.06156312608973016, 'recG_162': 0.20822687562
 Predicted proportions using Counting method are: {'recG_69': 0.082524271799999993, 'recG_162': 0.20388349510000001, 'recG_161': 0.22330097090000001, 'recG_63': 0.42233009710000002, 'recG_76': 0.067961165000000004}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0444073518117 min
 ======================================== SIMULATION 32 ====================================================
 
 Number of optimal solutions: 2
@@ -483,6 +515,7 @@ True proportions are: {'recG_170': 0.03476068479110734, 'recG_27': 0.16618253007
 Predicted proportions using Counting method are: {'recG_170': 0.1070261438, 'recG_27': 0.16666666669999999, 'recG_122': 0.1094771242, 'recG_120': 0.61683006539999996}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0214815338453 min
 ======================================== SIMULATION 33 ====================================================
 
 Number of optimal solutions: 1
@@ -498,6 +531,7 @@ True proportions are: {'recG_121': 0.17770697970464222, 'recG_153': 0.6770122528
 Predicted proportions using Counting method are: {'recG_67': 0.14851485149999999, 'recG_153': 0.6732673267, 'recG_121': 0.17821782180000001}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0238746166229 min
 ======================================== SIMULATION 34 ====================================================
 
 Number of optimal solutions: 1
@@ -513,6 +547,7 @@ True proportions are: {'recG_9': 0.28513830913044125, 'recG_197': 0.402529038976
 Predicted proportions using Counting method are: {'recG_9': 0.29166666670000002, 'recG_197': 0.39460784310000002, 'recG_151': 0.31372549020000001}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.024104599158 min
 ======================================== SIMULATION 35 ====================================================
 
 Number of optimal solutions: 1
@@ -528,6 +563,7 @@ True proportions are: {'recG_119': 0.13898493797704486, 'recG_84': 0.20590816302
 Predicted proportions using Counting method are: {'recG_119': 0.1306634304, 'recG_84': 0.1937702265, 'recG_58': 0.034789644000000002, 'recG_133': 0.18446601939999999, 'recG_3': 0.20388349510000001, 'recG_189': 0.25242718450000001}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0306033849716 min
 ======================================== SIMULATION 36 ====================================================
 
 Number of optimal solutions: 1
@@ -543,6 +579,7 @@ True proportions are: {'recG_205': 0.20450099187013343, 'recG_183': 0.1861872977
 Predicted proportions using Counting method are: {'recG_205': 0.20388349510000001, 'recG_132': 0.17880258900000001, 'recG_97': 0.1322815534, 'recG_176': 0.14724919089999999, 'recG_183': 0.1824433657, 'recG_129': 0.15533980580000001}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0332394003868 min
 ======================================== SIMULATION 37 ====================================================
 
 Number of optimal solutions: 2
@@ -558,6 +595,7 @@ True proportions are: {'recG_83': 0.319372760728157, 'recG_104': 0.2552247025279
 Predicted proportions using Counting method are: {'recG_83': 0.31067961170000002, 'recG_104': 0.25242718450000001, 'recG_134': 0.087378640800000004, 'recG_142': 0.050970873799999997, 'recG_132': 0.086165048499999994, 'recG_120': 0.13470873789999999, 'recG_154': 0.077669902900000004}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0286783854167 min
 ======================================== SIMULATION 38 ====================================================
 
 Number of optimal solutions: 1
@@ -573,6 +611,7 @@ True proportions are: {'recG_25': 0.12042746219103143, 'recG_45': 0.248860751366
 Predicted proportions using Counting method are: {'recG_25': 0.1274509804, 'recG_45': 0.24509803920000001, 'recG_80': 0.4485294118, 'recG_201': 0.1789215686}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0177621165911 min
 ======================================== SIMULATION 39 ====================================================
 
 Number of optimal solutions: 1
@@ -588,6 +627,7 @@ True proportions are: {'recG_141': 0.5460708312083092, 'recG_147': 0.37704733552
 Predicted proportions using Counting method are: {'recG_141': 0.54455445540000003, 'recG_183': 0.079207920799999998, 'recG_147': 0.37623762379999998}
 
 This sim is predicted correctly based on minimum neg log likelihood score.
+Time taken to run ADP: 0.0126639008522 min
 ======================================== SIMULATION 40 ====================================================
 
 Number of optimal solutions: 1
@@ -651,7 +691,11 @@ Number of optimal solutions: [2, 2, 1, 1, 1, 1, 1, 1, 1, 4, 1, 4, 1, 2, 1, 1, 2,
 
 Average number of optimal solutions: 1.8
 
-(7)Statistics about minimum negative log likelihood score: 
+(7)Filtering result: 
+
+Average number of solutions filtered: 0.675
+
+(8)Statistics about minimum negative log likelihood score: 
 
 Number of simulations having multiple solutions: 10
 Number of these simulations which are correct: 7
