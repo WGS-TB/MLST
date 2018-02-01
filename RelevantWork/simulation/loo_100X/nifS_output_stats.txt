@@ -1,11 +1,12 @@
 ======================================== SIMULATION 1 ====================================================
 
-Time taken to run ADP: 0.0211704015732 min
+Time taken to run ADP: 0.0213349978129 min
 True alleles: ['nifS_147', 'nifS_156', 'nifS_43', 'nifS_56']
 Predicted alleles: ['nifS_147', 'nifS_43', 'nifS_56', 'nifS_68']
 Removed: nifS_156
 Alleles in predicted but not in true: ['nifS_68']
 
+Edit distances with the removed allele:[1, 3, 4, 5, 8, 9, 10, 20, 23, 27, 28, 29, 30, 31, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 58, 133, 135, 136, 137, 139, 140, 143, 144, 145, 148, 149]
 Minimum edit distance for nifS_156 : 1
 Maximum edit distance for nifS_156: 149
 Average edit distance for nifS_156: 48.6242424242
@@ -14,13 +15,14 @@ nifS_68 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 2 ====================================================
 
-Time taken to run ADP: 0.0235323508581 min
+Time taken to run ADP: 0.0230523824692 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['nifS_5', 'nifS_65']
 Predicted alleles: ['nifS_110', 'nifS_5']
 Removed: nifS_65
 Alleles in predicted but not in true: ['nifS_110']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 134, 135, 136, 137, 138, 140, 142, 144, 146, 147, 149]
 Minimum edit distance for nifS_65 : 1
 Maximum edit distance for nifS_65: 149
 Average edit distance for nifS_65: 34.9575757576
@@ -29,13 +31,14 @@ nifS_110 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 3 ====================================================
 
-Time taken to run ADP: 0.0273915330569 min
+Time taken to run ADP: 0.0269713997841 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['nifS_101', 'nifS_151', 'nifS_159', 'nifS_29', 'nifS_64', 'nifS_74', 'nifS_86']
 Predicted alleles: ['nifS_101', 'nifS_151', 'nifS_159', 'nifS_49', 'nifS_64', 'nifS_74', 'nifS_86']
 Removed: nifS_29
 Alleles in predicted but not in true: ['nifS_49']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 136, 137, 138, 140, 142, 144, 146, 148, 149, 151]
 Minimum edit distance for nifS_29 : 1
 Maximum edit distance for nifS_29: 151
 Average edit distance for nifS_29: 33.5818181818
@@ -44,12 +47,13 @@ nifS_49 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 4 ====================================================
 
-Time taken to run ADP: 0.0295820514361 min
+Time taken to run ADP: 0.0293569167455 min
 True alleles: ['nifS_11', 'nifS_118', 'nifS_125', 'nifS_52', 'nifS_65']
 Predicted alleles: ['nifS_11', 'nifS_110', 'nifS_118', 'nifS_125', 'nifS_52']
 Removed: nifS_65
 Alleles in predicted but not in true: ['nifS_110']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 134, 135, 136, 137, 138, 140, 142, 144, 146, 147, 149]
 Minimum edit distance for nifS_65 : 1
 Maximum edit distance for nifS_65: 149
 Average edit distance for nifS_65: 34.9575757576
@@ -58,13 +62,14 @@ nifS_110 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 5 ====================================================
 
-Time taken to run ADP: 0.0257212678591 min
+Time taken to run ADP: 0.0255419294039 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['nifS_150', 'nifS_152', 'nifS_36', 'nifS_60', 'nifS_9']
 Predicted alleles: ['nifS_150', 'nifS_152', 'nifS_37', 'nifS_5', 'nifS_60', 'nifS_74', 'nifS_82']
 Removed: nifS_36
 Alleles in predicted but not in true: ['nifS_37', 'nifS_5', 'nifS_74', 'nifS_82']
 
+Edit distances with the removed allele:[1, 2, 3, 13, 14, 15, 16, 24, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 40, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 55, 130, 133, 134, 136, 137, 138, 140, 143, 145]
 Minimum edit distance for nifS_36 : 1
 Maximum edit distance for nifS_36: 145
 Average edit distance for nifS_36: 41.5818181818
@@ -75,27 +80,30 @@ nifS_74 is one of the closest allele to the removed allele.
 nifS_82 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 6 ====================================================
 
-Time taken to run ADP: 0.0368864337603 min
+Time taken to run ADP: 0.0366564154625 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['nifS_109', 'nifS_14', 'nifS_62', 'nifS_84', 'nifS_95']
 Predicted alleles: ['nifS_109', 'nifS_115', 'nifS_14', 'nifS_62', 'nifS_84']
 Removed: nifS_95
 Alleles in predicted but not in true: ['nifS_115']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 27, 28, 29, 30, 31, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 48, 49, 136, 139, 140, 141, 142, 143, 144, 145, 146, 150]
 Minimum edit distance for nifS_95 : 1
 Maximum edit distance for nifS_95: 150
 Average edit distance for nifS_95: 43.4121212121
 
 nifS_115 is not the closest allele to the removed allele, its edit distance from the removed allele is 3.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 7 ====================================================
 
-Time taken to run ADP: 0.0254562338193 min
+Time taken to run ADP: 0.0259697675705 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['nifS_114', 'nifS_127', 'nifS_23', 'nifS_64', 'nifS_7', 'nifS_95']
 Predicted alleles: ['nifS_1', 'nifS_114', 'nifS_115', 'nifS_127', 'nifS_64', 'nifS_95']
 Removed: nifS_7
 Alleles in predicted but not in true: ['nifS_1', 'nifS_115']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 9, 10, 12, 15, 19, 20, 22, 25, 27, 28, 29, 30, 31, 32, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 60, 131, 134, 135, 136, 139, 140, 141, 143, 144, 146]
 Minimum edit distance for nifS_7 : 1
 Maximum edit distance for nifS_7: 146
 Average edit distance for nifS_7: 45.696969697
@@ -104,12 +112,13 @@ nifS_1 is one of the closest allele to the removed allele.
 nifS_115 is not the closest allele to the removed allele, its edit distance from the removed allele is 42.
 ======================================== SIMULATION 8 ====================================================
 
-Time taken to run ADP: 0.0246518850327 min
+Time taken to run ADP: 0.024454331398 min
 True alleles: ['nifS_18', 'nifS_50', 'nifS_61', 'nifS_99']
 Predicted alleles: ['nifS_18', 'nifS_50', 'nifS_59', 'nifS_99']
 Removed: nifS_61
 Alleles in predicted but not in true: ['nifS_59']
 
+Edit distances with the removed allele:[1, 3, 4, 5, 14, 15, 16, 17, 21, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 42, 43, 45, 46, 47, 48, 49, 50, 51, 52, 55, 130, 133, 134, 136, 139, 140, 142, 144]
 Minimum edit distance for nifS_61 : 1
 Maximum edit distance for nifS_61: 144
 Average edit distance for nifS_61: 41.8303030303
@@ -118,12 +127,13 @@ nifS_59 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 9 ====================================================
 
-Time taken to run ADP: 0.0230525016785 min
+Time taken to run ADP: 0.0233082493146 min
 True alleles: ['nifS_11', 'nifS_122', 'nifS_140', 'nifS_148', 'nifS_24', 'nifS_50', 'nifS_79']
 Predicted alleles: ['nifS_11', 'nifS_122', 'nifS_140', 'nifS_162', 'nifS_165', 'nifS_24', 'nifS_50', 'nifS_79']
 Removed: nifS_148
 Alleles in predicted but not in true: ['nifS_162', 'nifS_165']
 
+Edit distances with the removed allele:[1, 5, 57, 79, 80, 83, 85, 92, 94, 95, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140]
 Minimum edit distance for nifS_148 : 1
 Maximum edit distance for nifS_148: 140
 Average edit distance for nifS_148: 131.224242424
@@ -133,12 +143,13 @@ nifS_165 is not the closest allele to the removed allele, its edit distance from
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 10 ====================================================
 
-Time taken to run ADP: 0.0167913834254 min
+Time taken to run ADP: 0.0174763679504 min
 True alleles: ['nifS_47', 'nifS_66']
 Predicted alleles: ['nifS_22', 'nifS_66']
 Removed: nifS_47
 Alleles in predicted but not in true: ['nifS_22']
 
+Edit distances with the removed allele:[2, 3, 4, 5, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 45, 46, 133, 136, 137, 139, 140, 141, 142, 143, 144, 148]
 Minimum edit distance for nifS_47 : 2
 Maximum edit distance for nifS_47: 148
 Average edit distance for nifS_47: 39.7393939394
@@ -147,12 +158,13 @@ nifS_22 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 11 ====================================================
 
-Time taken to run ADP: 0.0313664317131 min
+Time taken to run ADP: 0.0308008511861 min
 True alleles: ['nifS_11', 'nifS_137', 'nifS_145', 'nifS_2']
 Predicted alleles: ['nifS_11', 'nifS_145', 'nifS_2', 'nifS_51']
 Removed: nifS_137
 Alleles in predicted but not in true: ['nifS_51']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 136, 137, 138, 140, 142, 144, 146, 148, 149, 151]
 Minimum edit distance for nifS_137 : 1
 Maximum edit distance for nifS_137: 151
 Average edit distance for nifS_137: 34.0
@@ -161,13 +173,14 @@ nifS_51 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 12 ====================================================
 
-Time taken to run ADP: 0.0195488850276 min
+Time taken to run ADP: 0.0196752468745 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['nifS_11', 'nifS_116', 'nifS_137', 'nifS_45', 'nifS_57']
 Predicted alleles: ['nifS_11', 'nifS_116', 'nifS_137', 'nifS_45', 'nifS_59']
 Removed: nifS_57
 Alleles in predicted but not in true: ['nifS_59']
 
+Edit distances with the removed allele:[2, 3, 5, 6, 15, 16, 17, 18, 21, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 37, 38, 39, 40, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 57, 129, 132, 133, 135, 138, 139, 140, 142, 143, 144]
 Minimum edit distance for nifS_57 : 2
 Maximum edit distance for nifS_57: 144
 Average edit distance for nifS_57: 42.2242424242
@@ -176,12 +189,13 @@ nifS_59 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 13 ====================================================
 
-Time taken to run ADP: 0.0134783665339 min
+Time taken to run ADP: 0.0135360638301 min
 True alleles: ['nifS_116', 'nifS_4']
 Predicted alleles: ['nifS_23', 'nifS_4']
 Removed: nifS_116
 Alleles in predicted but not in true: ['nifS_23']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 134, 136, 137, 138, 139, 140, 141, 142, 143, 144, 148]
 Minimum edit distance for nifS_116 : 1
 Maximum edit distance for nifS_116: 148
 Average edit distance for nifS_116: 41.0848484848
@@ -190,12 +204,13 @@ nifS_23 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 14 ====================================================
 
-Time taken to run ADP: 0.022051580747 min
+Time taken to run ADP: 0.0219100475311 min
 True alleles: ['nifS_76', 'nifS_89']
 Predicted alleles: ['nifS_24', 'nifS_76']
 Removed: nifS_89
 Alleles in predicted but not in true: ['nifS_24']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 27, 28, 29, 30, 31, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 48, 49, 136, 138, 139, 140, 141, 142, 143, 144, 145, 146, 150]
 Minimum edit distance for nifS_89 : 1
 Maximum edit distance for nifS_89: 150
 Average edit distance for nifS_89: 43.0363636364
@@ -204,12 +219,13 @@ nifS_24 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 15 ====================================================
 
-Time taken to run ADP: 0.0283337155978 min
+Time taken to run ADP: 0.0280334353447 min
 True alleles: ['nifS_106', 'nifS_143', 'nifS_27', 'nifS_56', 'nifS_60', 'nifS_97']
 Predicted alleles: ['nifS_106', 'nifS_143', 'nifS_27', 'nifS_38', 'nifS_60', 'nifS_97']
 Removed: nifS_56
 Alleles in predicted but not in true: ['nifS_38']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 15, 16, 17, 18, 23, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 59, 131, 134, 135, 139, 140, 141, 143, 145]
 Minimum edit distance for nifS_56 : 1
 Maximum edit distance for nifS_56: 145
 Average edit distance for nifS_56: 43.4909090909
@@ -218,12 +234,13 @@ nifS_38 is not the closest allele to the removed allele, its edit distance from 
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 16 ====================================================
 
-Time taken to run ADP: 0.0125729839007 min
+Time taken to run ADP: 0.0127312699954 min
 True alleles: ['nifS_126', 'nifS_153', 'nifS_74', 'nifS_82']
 Predicted alleles: ['nifS_126', 'nifS_74', 'nifS_82']
 Removed: nifS_153
 Alleles in predicted but not in true: []
 
+Edit distances with the removed allele:[55, 57, 78, 80, 81, 85, 86, 95, 98, 102, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147]
 Minimum edit distance for nifS_153 : 55
 Maximum edit distance for nifS_153: 147
 Average edit distance for nifS_153: 137.727272727
@@ -231,13 +248,14 @@ Average edit distance for nifS_153: 137.727272727
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 17 ====================================================
 
-Time taken to run ADP: 0.0299496014913 min
+Time taken to run ADP: 0.0311158498128 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['nifS_101', 'nifS_119', 'nifS_163', 'nifS_30', 'nifS_76', 'nifS_79', 'nifS_83']
 Predicted alleles: ['nifS_101', 'nifS_119', 'nifS_163', 'nifS_30', 'nifS_31', 'nifS_71', 'nifS_83']
 Removed: nifS_79
 Alleles in predicted but not in true: ['nifS_31', 'nifS_71']
 
+Edit distances with the removed allele:[1, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 131, 136, 137, 139, 140, 141, 142, 143, 144, 147]
 Minimum edit distance for nifS_79 : 1
 Maximum edit distance for nifS_79: 147
 Average edit distance for nifS_79: 45.2
@@ -246,12 +264,13 @@ nifS_31 is not the closest allele to the removed allele, its edit distance from 
 nifS_71 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 18 ====================================================
 
-Time taken to run ADP: 0.0153491338094 min
+Time taken to run ADP: 0.0153019309044 min
 True alleles: ['nifS_140', 'nifS_151', 'nifS_21', 'nifS_59', 'nifS_95']
 Predicted alleles: ['nifS_140', 'nifS_151', 'nifS_59', 'nifS_95', 'nifS_97']
 Removed: nifS_21
 Alleles in predicted but not in true: ['nifS_97']
 
+Edit distances with the removed allele:[1, 2, 4, 25, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 131, 133, 134, 135, 137, 139, 140, 145]
 Minimum edit distance for nifS_21 : 1
 Maximum edit distance for nifS_21: 145
 Average edit distance for nifS_21: 42.0424242424
@@ -260,12 +279,13 @@ nifS_97 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 19 ====================================================
 
-Time taken to run ADP: 0.0282249967257 min
+Time taken to run ADP: 0.0282119989395 min
 True alleles: ['nifS_117', 'nifS_136', 'nifS_143', 'nifS_98']
 Predicted alleles: ['nifS_117', 'nifS_136', 'nifS_143', 'nifS_78']
 Removed: nifS_98
 Alleles in predicted but not in true: ['nifS_78']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 139, 140, 141, 143, 145, 146, 147, 148, 151, 152, 154]
 Minimum edit distance for nifS_98 : 1
 Maximum edit distance for nifS_98: 154
 Average edit distance for nifS_98: 35.6848484848
@@ -274,12 +294,13 @@ nifS_78 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 20 ====================================================
 
-Time taken to run ADP: 0.0367409149806 min
+Time taken to run ADP: 0.0371003985405 min
 True alleles: ['nifS_44', 'nifS_56', 'nifS_62', 'nifS_87', 'nifS_92']
 Predicted alleles: ['nifS_38', 'nifS_44', 'nifS_60', 'nifS_62', 'nifS_87', 'nifS_92']
 Removed: nifS_56
 Alleles in predicted but not in true: ['nifS_38', 'nifS_60']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 15, 16, 17, 18, 23, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 59, 131, 134, 135, 139, 140, 141, 143, 145]
 Minimum edit distance for nifS_56 : 1
 Maximum edit distance for nifS_56: 145
 Average edit distance for nifS_56: 43.4909090909
@@ -289,12 +310,13 @@ nifS_60 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 21 ====================================================
 
-Time taken to run ADP: 0.0151812314987 min
+Time taken to run ADP: 0.0153331359227 min
 True alleles: ['nifS_146', 'nifS_152', 'nifS_157', 'nifS_32']
 Predicted alleles: ['nifS_146', 'nifS_157', 'nifS_32', 'nifS_63']
 Removed: nifS_152
 Alleles in predicted but not in true: ['nifS_63']
 
+Edit distances with the removed allele:[15, 16, 72, 73, 74, 77, 79, 93, 95, 96, 102, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154]
 Minimum edit distance for nifS_152 : 15
 Maximum edit distance for nifS_152: 154
 Average edit distance for nifS_152: 141.406060606
@@ -303,12 +325,13 @@ nifS_63 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 22 ====================================================
 
-Time taken to run ADP: 0.015150698026 min
+Time taken to run ADP: 0.0154104510943 min
 True alleles: ['nifS_103', 'nifS_128', 'nifS_132']
 Predicted alleles: ['nifS_128', 'nifS_132', 'nifS_67']
 Removed: nifS_103
 Alleles in predicted but not in true: ['nifS_67']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 136, 137, 138, 140, 142, 144, 146, 148, 149, 151]
 Minimum edit distance for nifS_103 : 1
 Maximum edit distance for nifS_103: 151
 Average edit distance for nifS_103: 33.7212121212
@@ -317,12 +340,13 @@ nifS_67 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 23 ====================================================
 
-Time taken to run ADP: 0.0190640528997 min
+Time taken to run ADP: 0.0187131325404 min
 True alleles: ['nifS_24', 'nifS_37', 'nifS_44', 'nifS_6', 'nifS_80', 'nifS_89']
 Predicted alleles: ['nifS_37', 'nifS_44', 'nifS_6', 'nifS_89']
 Removed: nifS_80
 Alleles in predicted but not in true: []
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 27, 28, 29, 30, 31, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 48, 49, 136, 137, 138, 140, 141, 142, 143, 144, 145, 149]
 Minimum edit distance for nifS_80 : 1
 Maximum edit distance for nifS_80: 149
 Average edit distance for nifS_80: 42.3818181818
@@ -330,12 +354,13 @@ Average edit distance for nifS_80: 42.3818181818
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 24 ====================================================
 
-Time taken to run ADP: 0.0209623495738 min
+Time taken to run ADP: 0.0212045828501 min
 True alleles: ['nifS_150', 'nifS_157', 'nifS_25', 'nifS_33', 'nifS_43', 'nifS_79']
 Predicted alleles: ['nifS_150', 'nifS_157', 'nifS_23', 'nifS_33', 'nifS_43', 'nifS_79']
 Removed: nifS_25
 Alleles in predicted but not in true: ['nifS_23']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 24, 25, 26, 27, 28, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 46, 47, 133, 135, 136, 137, 138, 139, 140, 141, 142, 143, 147]
 Minimum edit distance for nifS_25 : 1
 Maximum edit distance for nifS_25: 147
 Average edit distance for nifS_25: 41.6787878788
@@ -344,13 +369,14 @@ nifS_23 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 25 ====================================================
 
-Time taken to run ADP: 0.0184829672178 min
+Time taken to run ADP: 0.0187877496084 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['nifS_19', 'nifS_44', 'nifS_5']
 Predicted alleles: ['nifS_19', 'nifS_5', 'nifS_64']
 Removed: nifS_44
 Alleles in predicted but not in true: ['nifS_64']
 
+Edit distances with the removed allele:[1, 3, 4, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 52, 134, 135, 136, 140, 141, 142, 144, 145, 150, 151, 152]
 Minimum edit distance for nifS_44 : 1
 Maximum edit distance for nifS_44: 152
 Average edit distance for nifS_44: 37.2606060606
@@ -359,12 +385,13 @@ nifS_64 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 26 ====================================================
 
-Time taken to run ADP: 0.0240367174149 min
+Time taken to run ADP: 0.0243610143661 min
 True alleles: ['nifS_137', 'nifS_83', 'nifS_94']
 Predicted alleles: ['nifS_135', 'nifS_137', 'nifS_20', 'nifS_83']
 Removed: nifS_94
 Alleles in predicted but not in true: ['nifS_135', 'nifS_20']
 
+Edit distances with the removed allele:[1, 2, 4, 25, 26, 27, 28, 29, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 48, 129, 132, 133, 135, 137, 138, 139, 140, 145]
 Minimum edit distance for nifS_94 : 1
 Maximum edit distance for nifS_94: 145
 Average edit distance for nifS_94: 41.9454545455
@@ -374,12 +401,13 @@ nifS_20 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 27 ====================================================
 
-Time taken to run ADP: 0.0255008538564 min
+Time taken to run ADP: 0.0265991489093 min
 True alleles: ['nifS_33', 'nifS_50', 'nifS_67']
 Predicted alleles: ['nifS_34', 'nifS_50', 'nifS_67']
 Removed: nifS_33
 Alleles in predicted but not in true: ['nifS_34']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 44, 45, 46, 47, 48, 49, 50, 51, 52, 138, 139, 140, 142, 144, 145, 146, 149, 150, 151]
 Minimum edit distance for nifS_33 : 1
 Maximum edit distance for nifS_33: 151
 Average edit distance for nifS_33: 36.3333333333
@@ -388,12 +416,13 @@ nifS_34 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 28 ====================================================
 
-Time taken to run ADP: 0.0229387203852 min
+Time taken to run ADP: 0.0228729685148 min
 True alleles: ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_49', 'nifS_8']
 Predicted alleles: ['nifS_104', 'nifS_132', 'nifS_154', 'nifS_8', 'nifS_93']
 Removed: nifS_49
 Alleles in predicted but not in true: ['nifS_93']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 137, 138, 139, 141, 143, 145, 147, 149, 150, 152]
 Minimum edit distance for nifS_49 : 1
 Maximum edit distance for nifS_49: 152
 Average edit distance for nifS_49: 33.8787878788
@@ -402,12 +431,13 @@ nifS_93 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 29 ====================================================
 
-Time taken to run ADP: 0.00933808088303 min
+Time taken to run ADP: 0.009616847833 min
 True alleles: ['nifS_150', 'nifS_27']
 Predicted alleles: ['nifS_163', 'nifS_27']
 Removed: nifS_150
 Alleles in predicted but not in true: ['nifS_163']
 
+Edit distances with the removed allele:[13, 59, 65, 67, 69, 70, 72, 77, 79, 80, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147]
 Minimum edit distance for nifS_150 : 13
 Maximum edit distance for nifS_150: 147
 Average edit distance for nifS_150: 136.781818182
@@ -416,12 +446,13 @@ nifS_163 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 30 ====================================================
 
-Time taken to run ADP: 0.0157840331395 min
+Time taken to run ADP: 0.0161642829577 min
 True alleles: ['nifS_135', 'nifS_22', 'nifS_4', 'nifS_7', 'nifS_95', 'nifS_97']
 Predicted alleles: ['nifS_1', 'nifS_135', 'nifS_22', 'nifS_4', 'nifS_95', 'nifS_97']
 Removed: nifS_7
 Alleles in predicted but not in true: ['nifS_1']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 9, 10, 12, 15, 19, 20, 22, 25, 27, 28, 29, 30, 31, 32, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 60, 131, 134, 135, 136, 139, 140, 141, 143, 144, 146]
 Minimum edit distance for nifS_7 : 1
 Maximum edit distance for nifS_7: 146
 Average edit distance for nifS_7: 45.696969697
@@ -430,12 +461,13 @@ nifS_1 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 31 ====================================================
 
-Time taken to run ADP: 0.0224081834157 min
+Time taken to run ADP: 0.0232095996539 min
 True alleles: ['nifS_109', 'nifS_119', 'nifS_120', 'nifS_124', 'nifS_129', 'nifS_157', 'nifS_7']
 Predicted alleles: ['nifS_1', 'nifS_109', 'nifS_119', 'nifS_120', 'nifS_124', 'nifS_129', 'nifS_157']
 Removed: nifS_7
 Alleles in predicted but not in true: ['nifS_1']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 9, 10, 12, 15, 19, 20, 22, 25, 27, 28, 29, 30, 31, 32, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 60, 131, 134, 135, 136, 139, 140, 141, 143, 144, 146]
 Minimum edit distance for nifS_7 : 1
 Maximum edit distance for nifS_7: 146
 Average edit distance for nifS_7: 45.696969697
@@ -444,12 +476,13 @@ nifS_1 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 32 ====================================================
 
-Time taken to run ADP: 0.0258050521215 min
+Time taken to run ADP: 0.0256595015526 min
 True alleles: ['nifS_105', 'nifS_122', 'nifS_124', 'nifS_132', 'nifS_137', 'nifS_95']
 Predicted alleles: ['nifS_105', 'nifS_122', 'nifS_132', 'nifS_137', 'nifS_145', 'nifS_95']
 Removed: nifS_124
 Alleles in predicted but not in true: ['nifS_145']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 135, 136, 137, 140, 141, 143, 145, 147, 149, 150]
 Minimum edit distance for nifS_124 : 1
 Maximum edit distance for nifS_124: 150
 Average edit distance for nifS_124: 34.4303030303
@@ -458,12 +491,13 @@ nifS_145 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 33 ====================================================
 
-Time taken to run ADP: 0.0215639352798 min
+Time taken to run ADP: 0.0217830141385 min
 True alleles: ['nifS_153', 'nifS_157', 'nifS_19', 'nifS_39', 'nifS_70']
 Predicted alleles: ['nifS_153', 'nifS_157', 'nifS_19', 'nifS_39', 'nifS_68', 'nifS_83', 'nifS_84']
 Removed: nifS_70
 Alleles in predicted but not in true: ['nifS_68', 'nifS_83', 'nifS_84']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 7, 10, 11, 19, 22, 26, 27, 28, 29, 30, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 132, 135, 136, 137, 139, 141, 142, 144, 146, 147, 148]
 Minimum edit distance for nifS_70 : 1
 Maximum edit distance for nifS_70: 148
 Average edit distance for nifS_70: 47.7212121212
@@ -471,14 +505,16 @@ Average edit distance for nifS_70: 47.7212121212
 nifS_68 is not the closest allele to the removed allele, its edit distance from the removed allele is 2.
 nifS_83 is one of the closest allele to the removed allele.
 nifS_84 is not the closest allele to the removed allele, its edit distance from the removed allele is 3.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 34 ====================================================
 
-Time taken to run ADP: 0.0169608314832 min
+Time taken to run ADP: 0.0172082980474 min
 True alleles: ['nifS_66', 'nifS_82', 'nifS_96']
 Predicted alleles: ['nifS_36', 'nifS_66', 'nifS_96']
 Removed: nifS_82
 Alleles in predicted but not in true: ['nifS_36']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 14, 15, 16, 17, 25, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 56, 131, 134, 135, 136, 137, 139, 142, 144]
 Minimum edit distance for nifS_82 : 1
 Maximum edit distance for nifS_82: 144
 Average edit distance for nifS_82: 42.1636363636
@@ -487,12 +523,13 @@ nifS_36 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 35 ====================================================
 
-Time taken to run ADP: 0.0151871681213 min
+Time taken to run ADP: 0.015580979983 min
 True alleles: ['nifS_159', 'nifS_20', 'nifS_36', 'nifS_39', 'nifS_63']
 Predicted alleles: ['nifS_151', 'nifS_152', 'nifS_159', 'nifS_20', 'nifS_36', 'nifS_39']
 Removed: nifS_63
 Alleles in predicted but not in true: ['nifS_151', 'nifS_152']
 
+Edit distances with the removed allele:[13, 15, 65, 67, 68, 73, 76, 90, 92, 93, 95, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153]
 Minimum edit distance for nifS_63 : 13
 Maximum edit distance for nifS_63: 153
 Average edit distance for nifS_63: 140.260606061
@@ -502,12 +539,13 @@ nifS_152 is not the closest allele to the removed allele, its edit distance from
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 36 ====================================================
 
-Time taken to run ADP: 0.0181983828545 min
+Time taken to run ADP: 0.0202870806058 min
 True alleles: ['nifS_117', 'nifS_145']
 Predicted alleles: ['nifS_117', 'nifS_124', 'nifS_43']
 Removed: nifS_145
 Alleles in predicted but not in true: ['nifS_124', 'nifS_43']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 135, 136, 137, 140, 141, 143, 145, 147, 149, 150]
 Minimum edit distance for nifS_145 : 1
 Maximum edit distance for nifS_145: 150
 Average edit distance for nifS_145: 34.3878787879
@@ -517,12 +555,13 @@ nifS_43 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 37 ====================================================
 
-Time taken to run ADP: 0.0511267662048 min
+Time taken to run ADP: 0.0548217495282 min
 True alleles: ['nifS_2', 'nifS_4', 'nifS_44', 'nifS_81']
 Predicted alleles: ['nifS_140', 'nifS_2', 'nifS_29', 'nifS_4', 'nifS_44']
 Removed: nifS_81
 Alleles in predicted but not in true: ['nifS_140', 'nifS_29']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 136, 137, 138, 140, 142, 144, 146, 148, 149, 151]
 Minimum edit distance for nifS_81 : 1
 Maximum edit distance for nifS_81: 151
 Average edit distance for nifS_81: 33.8606060606
@@ -532,12 +571,13 @@ nifS_29 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 38 ====================================================
 
-Time taken to run ADP: 0.0339955329895 min
+Time taken to run ADP: 0.0343811829885 min
 True alleles: ['nifS_3', 'nifS_67', 'nifS_90']
 Predicted alleles: ['nifS_103', 'nifS_3', 'nifS_90']
 Removed: nifS_67
 Alleles in predicted but not in true: ['nifS_103']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 135, 136, 137, 139, 141, 143, 145, 147, 148, 150]
 Minimum edit distance for nifS_67 : 1
 Maximum edit distance for nifS_67: 150
 Average edit distance for nifS_67: 33.4242424242
@@ -546,12 +586,13 @@ nifS_103 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 39 ====================================================
 
-Time taken to run ADP: 0.0215361674627 min
+Time taken to run ADP: 0.0229656656583 min
 True alleles: ['nifS_1', 'nifS_103', 'nifS_163', 'nifS_88']
 Predicted alleles: ['nifS_1', 'nifS_103', 'nifS_150', 'nifS_88']
 Removed: nifS_163
 Alleles in predicted but not in true: ['nifS_150']
 
+Edit distances with the removed allele:[13, 56, 63, 65, 68, 74, 78, 80, 81, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145]
 Minimum edit distance for nifS_163 : 13
 Maximum edit distance for nifS_163: 145
 Average edit distance for nifS_163: 134.181818182
@@ -560,13 +601,14 @@ nifS_150 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 40 ====================================================
 
-Time taken to run ADP: 0.0439718325933 min
+Time taken to run ADP: 0.0445530017217 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['nifS_5', 'nifS_54', 'nifS_56', 'nifS_59', 'nifS_78', 'nifS_84', 'nifS_99']
 Predicted alleles: ['nifS_5', 'nifS_54', 'nifS_56', 'nifS_59', 'nifS_84', 'nifS_98', 'nifS_99']
 Removed: nifS_78
 Alleles in predicted but not in true: ['nifS_98']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 138, 139, 140, 142, 144, 145, 146, 147, 150, 151, 153]
 Minimum edit distance for nifS_78 : 1
 Maximum edit distance for nifS_78: 153
 Average edit distance for nifS_78: 34.703030303
@@ -576,4 +618,4 @@ All predicted alleles which are not in true are top 3 closest to the removed all
 ======================================== nifS: SUMMARY STATISTICS ====================================================
 
 Out of 40 simulations, 29 simulations we found the closest allele to the removed one.
-Out of 40 simulations, 35 simulations we found the top 3 closest allele to the removed one.
+Out of 40 simulations, 37 simulations we found the top 3 closest allele to the removed one.

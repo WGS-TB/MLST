@@ -1,11 +1,12 @@
 ======================================== SIMULATION 1 ====================================================
 
-Time taken to run ADP: 0.367832700411 min
+Time taken to run ADP: 0.406313868364 min
 True alleles: ['recG_185', 'recG_196', 'recG_54', 'recG_70']
 Predicted alleles: ['recG_163', 'recG_185', 'recG_194', 'recG_54', 'recG_70']
 Removed: recG_196
 Alleles in predicted but not in true: ['recG_163', 'recG_194']
 
+Edit distances with the removed allele:[1, 3, 40, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 60, 61, 147, 151, 152, 153, 156, 157, 158]
 Minimum edit distance for recG_196 : 1
 Maximum edit distance for recG_196: 158
 Average edit distance for recG_196: 54.1153846154
@@ -15,12 +16,13 @@ recG_194 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 2 ====================================================
 
-Time taken to run ADP: 0.0519344846408 min
+Time taken to run ADP: 0.0532458980878 min
 True alleles: ['recG_6', 'recG_82']
 Predicted alleles: ['recG_43', 'recG_44', 'recG_6']
 Removed: recG_82
 Alleles in predicted but not in true: ['recG_43', 'recG_44']
 
+Edit distances with the removed allele:[6, 7, 23, 25, 26, 27, 28, 29, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 61, 64, 145, 146, 147, 148, 151, 152, 153, 155, 156, 160]
 Minimum edit distance for recG_82 : 6
 Maximum edit distance for recG_82: 160
 Average edit distance for recG_82: 50.5096153846
@@ -30,12 +32,13 @@ recG_44 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 3 ====================================================
 
-Time taken to run ADP: 0.268895848592 min
+Time taken to run ADP: 0.272026515007 min
 True alleles: ['recG_109', 'recG_127', 'recG_190', 'recG_200', 'recG_36', 'recG_80', 'recG_94']
 Predicted alleles: ['recG_109', 'recG_127', 'recG_190', 'recG_200', 'recG_38', 'recG_53', 'recG_80', 'recG_94']
 Removed: recG_36
 Alleles in predicted but not in true: ['recG_38', 'recG_53']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 33, 34, 35, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 60, 154, 155, 156, 162, 166, 167, 169]
 Minimum edit distance for recG_36 : 1
 Maximum edit distance for recG_36: 169
 Average edit distance for recG_36: 39.6634615385
@@ -44,12 +47,13 @@ recG_38 is not the closest allele to the removed allele, its edit distance from 
 recG_53 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 4 ====================================================
 
-Time taken to run ADP: 0.0853079517682 min
+Time taken to run ADP: 0.0870718002319 min
 True alleles: ['recG_13', 'recG_149', 'recG_157', 'recG_65', 'recG_81']
 Predicted alleles: ['recG_13', 'recG_149', 'recG_157', 'recG_44', 'recG_65']
 Removed: recG_81
 Alleles in predicted but not in true: ['recG_44']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 7, 24, 26, 27, 29, 30, 36, 37, 38, 39, 40, 41, 42, 43, 44, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 57, 61, 140, 141, 144, 145, 146, 147, 152, 153, 154, 159]
 Minimum edit distance for recG_81 : 1
 Maximum edit distance for recG_81: 159
 Average edit distance for recG_81: 47.9951923077
@@ -58,12 +62,13 @@ recG_44 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 5 ====================================================
 
-Time taken to run ADP: 0.0303498824437 min
+Time taken to run ADP: 0.0306616504987 min
 True alleles: ['recG_11', 'recG_189', 'recG_192', 'recG_45', 'recG_75']
 Predicted alleles: ['recG_11', 'recG_189', 'recG_192', 'recG_44', 'recG_75']
 Removed: recG_45
 Alleles in predicted but not in true: ['recG_44']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 7, 24, 26, 27, 28, 29, 30, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 57, 61, 140, 141, 144, 145, 146, 147, 150, 151, 152, 159]
 Minimum edit distance for recG_45 : 1
 Maximum edit distance for recG_45: 159
 Average edit distance for recG_45: 48.7836538462
@@ -72,12 +77,13 @@ recG_44 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 6 ====================================================
 
-Time taken to run ADP: 0.678199132284 min
+Time taken to run ADP: 0.720326900482 min
 True alleles: ['recG_106', 'recG_119', 'recG_137', 'recG_18', 'recG_78']
 Predicted alleles: ['recG_106', 'recG_129', 'recG_137', 'recG_18', 'recG_46', 'recG_78']
 Removed: recG_119
 Alleles in predicted but not in true: ['recG_129', 'recG_46']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 152, 153, 154, 156, 160, 162, 165, 168]
 Minimum edit distance for recG_119 : 1
 Maximum edit distance for recG_119: 168
 Average edit distance for recG_119: 40.0961538462
@@ -86,12 +92,13 @@ recG_129 is not the closest allele to the removed allele, its edit distance from
 recG_46 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 7 ====================================================
 
-Time taken to run ADP: 0.155847915014 min
+Time taken to run ADP: 0.159145832062 min
 True alleles: ['recG_120', 'recG_143', 'recG_159', 'recG_29', 'recG_80', 'recG_9']
 Predicted alleles: ['recG_120', 'recG_137', 'recG_143', 'recG_159', 'recG_29', 'recG_80']
 Removed: recG_9
 Alleles in predicted but not in true: ['recG_137']
 
+Edit distances with the removed allele:[1, 2, 6, 8, 9, 10, 11, 12, 13, 14, 34, 40, 41, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 143, 144, 145, 149, 150, 151, 152, 153, 154, 158]
 Minimum edit distance for recG_9 : 1
 Maximum edit distance for recG_9: 158
 Average edit distance for recG_9: 53.6201923077
@@ -100,12 +107,13 @@ recG_137 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 8 ====================================================
 
-Time taken to run ADP: 0.128109518687 min
+Time taken to run ADP: 0.130459551016 min
 True alleles: ['recG_125', 'recG_23', 'recG_62', 'recG_76']
 Predicted alleles: ['recG_112', 'recG_125', 'recG_23', 'recG_62']
 Removed: recG_76
 Alleles in predicted but not in true: ['recG_112']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 34, 35, 36, 40, 41, 42, 43, 44, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 62, 152, 153, 155, 156, 160, 162, 164, 167]
 Minimum edit distance for recG_76 : 1
 Maximum edit distance for recG_76: 167
 Average edit distance for recG_76: 39.7644230769
@@ -114,12 +122,13 @@ recG_112 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 9 ====================================================
 
-Time taken to run ADP: 0.0892654856046 min
+Time taken to run ADP: 0.0903743664424 min
 True alleles: ['recG_14', 'recG_153', 'recG_176', 'recG_186', 'recG_31', 'recG_63', 'recG_99']
 Predicted alleles: ['recG_14', 'recG_176', 'recG_25', 'recG_31', 'recG_63', 'recG_99']
 Removed: recG_186
 Alleles in predicted but not in true: ['recG_25']
 
+Edit distances with the removed allele:[3, 4, 5, 7, 8, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 63, 151, 152, 154, 155, 156, 158, 160, 161]
 Minimum edit distance for recG_186 : 3
 Maximum edit distance for recG_186: 161
 Average edit distance for recG_186: 51.6442307692
@@ -128,12 +137,13 @@ recG_25 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 10 ====================================================
 
-Time taken to run ADP: 0.065120446682 min
+Time taken to run ADP: 0.0687856992086 min
 True alleles: ['recG_60', 'recG_83']
 Predicted alleles: ['recG_51', 'recG_83']
 Removed: recG_60
 Alleles in predicted but not in true: ['recG_51']
 
+Edit distances with the removed allele:[1, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 37, 38, 39, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 67, 156, 157, 158, 159, 161, 163, 165, 166, 168, 171]
 Minimum edit distance for recG_60 : 1
 Maximum edit distance for recG_60: 171
 Average edit distance for recG_60: 43.0144230769
@@ -142,12 +152,13 @@ recG_51 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 11 ====================================================
 
-Time taken to run ADP: 0.254259836674 min
+Time taken to run ADP: 0.256794798374 min
 True alleles: ['recG_14', 'recG_173', 'recG_183', 'recG_3']
 Predicted alleles: ['recG_14', 'recG_183', 'recG_3', 'recG_46']
 Removed: recG_173
 Alleles in predicted but not in true: ['recG_46']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 35, 36, 37, 39, 40, 41, 42, 43, 44, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 63, 153, 154, 155, 156, 158, 162, 164, 167, 168]
 Minimum edit distance for recG_173 : 1
 Maximum edit distance for recG_173: 168
 Average edit distance for recG_173: 40.2692307692
@@ -156,26 +167,29 @@ recG_46 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 12 ====================================================
 
-Time taken to run ADP: 1.2055257837 min
+Time taken to run ADP: 1.22842036883 min
 True alleles: ['recG_14', 'recG_146', 'recG_172', 'recG_57', 'recG_72']
 Predicted alleles: ['recG_14', 'recG_146', 'recG_172', 'recG_200', 'recG_49', 'recG_57']
 Removed: recG_72
 Alleles in predicted but not in true: ['recG_200', 'recG_49']
 
+Edit distances with the removed allele:[2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 63, 151, 152, 153, 157, 160, 161, 164, 167]
 Minimum edit distance for recG_72 : 2
 Maximum edit distance for recG_72: 167
 Average edit distance for recG_72: 38.9615384615
 
 recG_200 is not the closest allele to the removed allele, its edit distance from the removed allele is 4.
 recG_49 is not the closest allele to the removed allele, its edit distance from the removed allele is 3.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 13 ====================================================
 
-Time taken to run ADP: 0.203972117106 min
+Time taken to run ADP: 0.205316563447 min
 True alleles: ['recG_146', 'recG_4']
 Predicted alleles: ['recG_156', 'recG_4', 'recG_57']
 Removed: recG_146
 Alleles in predicted but not in true: ['recG_156', 'recG_57']
 
+Edit distances with the removed allele:[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 35, 36, 37, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 63, 153, 154, 155, 157, 159, 161, 163, 166, 170]
 Minimum edit distance for recG_146 : 3
 Maximum edit distance for recG_146: 170
 Average edit distance for recG_146: 41.1442307692
@@ -184,12 +198,13 @@ recG_156 is not the closest allele to the removed allele, its edit distance from
 recG_57 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 14 ====================================================
 
-Time taken to run ADP: 0.0758569836617 min
+Time taken to run ADP: 0.0787869652112 min
 True alleles: ['recG_112', 'recG_96']
 Predicted alleles: ['recG_76', 'recG_96']
 Removed: recG_112
 Alleles in predicted but not in true: ['recG_76']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 35, 36, 37, 41, 42, 43, 44, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 63, 153, 154, 156, 157, 161, 163, 165, 168]
 Minimum edit distance for recG_112 : 1
 Maximum edit distance for recG_112: 168
 Average edit distance for recG_112: 40.7403846154
@@ -198,12 +213,13 @@ recG_76 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 15 ====================================================
 
-Time taken to run ADP: 0.113282783826 min
+Time taken to run ADP: 0.112698797385 min
 True alleles: ['recG_122', 'recG_134', 'recG_180', 'recG_34', 'recG_71', 'recG_75']
 Predicted alleles: ['recG_122', 'recG_134', 'recG_180', 'recG_34', 'recG_56', 'recG_65', 'recG_68', 'recG_75']
 Removed: recG_71
 Alleles in predicted but not in true: ['recG_56', 'recG_65', 'recG_68']
 
+Edit distances with the removed allele:[4, 5, 6, 8, 9, 11, 14, 28, 29, 30, 31, 34, 40, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 67, 144, 147, 148, 149, 152, 153, 156, 157]
 Minimum edit distance for recG_71 : 4
 Maximum edit distance for recG_71: 157
 Average edit distance for recG_71: 56.0384615385
@@ -213,12 +229,13 @@ recG_65 is one of the closest allele to the removed allele.
 recG_68 is not the closest allele to the removed allele, its edit distance from the removed allele is 5.
 ======================================== SIMULATION 16 ====================================================
 
-Time taken to run ADP: 0.0278838157654 min
+Time taken to run ADP: 0.0278436978658 min
 True alleles: ['recG_103', 'recG_159', 'recG_192', 'recG_92']
 Predicted alleles: ['recG_103', 'recG_159', 'recG_191', 'recG_92']
 Removed: recG_192
 Alleles in predicted but not in true: ['recG_191']
 
+Edit distances with the removed allele:[17, 20, 71, 74, 75, 85, 95, 101, 102, 103, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171]
 Minimum edit distance for recG_192 : 17
 Maximum edit distance for recG_192: 171
 Average edit distance for recG_192: 155.197115385
@@ -227,12 +244,13 @@ recG_191 is not the closest allele to the removed allele, its edit distance from
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 17 ====================================================
 
-Time taken to run ADP: 0.129416282972 min
+Time taken to run ADP: 0.128509902954 min
 True alleles: ['recG_100', 'recG_105', 'recG_127', 'recG_149', 'recG_205', 'recG_38', 'recG_96']
 Predicted alleles: ['recG_104', 'recG_105', 'recG_127', 'recG_149', 'recG_205', 'recG_38', 'recG_96']
 Removed: recG_100
 Alleles in predicted but not in true: ['recG_104']
 
+Edit distances with the removed allele:[1, 6, 7, 8, 12, 17, 18, 21, 22, 28, 43, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 68, 145, 147, 152, 153, 155, 156, 157, 166]
 Minimum edit distance for recG_100 : 1
 Maximum edit distance for recG_100: 166
 Average edit distance for recG_100: 57.5240384615
@@ -241,12 +259,13 @@ recG_104 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 18 ====================================================
 
-Time taken to run ADP: 0.139955719312 min
+Time taken to run ADP: 0.141599015395 min
 True alleles: ['recG_119', 'recG_176', 'recG_190', 'recG_27', 'recG_74']
 Predicted alleles: ['recG_119', 'recG_172', 'recG_176', 'recG_190', 'recG_74', 'recG_95']
 Removed: recG_27
 Alleles in predicted but not in true: ['recG_172', 'recG_95']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 55, 141, 142, 144, 145, 146, 149, 151, 153, 158]
 Minimum edit distance for recG_27 : 1
 Maximum edit distance for recG_27: 158
 Average edit distance for recG_27: 44.5432692308
@@ -256,12 +275,13 @@ recG_95 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 19 ====================================================
 
-Time taken to run ADP: 0.366199068228 min
+Time taken to run ADP: 0.415201214949 min
 True alleles: ['recG_123', 'recG_147', 'recG_172', 'recG_180']
 Predicted alleles: ['recG_131', 'recG_147', 'recG_172', 'recG_180', 'recG_54']
 Removed: recG_123
 Alleles in predicted but not in true: ['recG_131', 'recG_54']
 
+Edit distances with the removed allele:[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 35, 36, 37, 41, 42, 43, 44, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 63, 153, 154, 155, 158, 162, 164, 166, 169]
 Minimum edit distance for recG_123 : 3
 Maximum edit distance for recG_123: 169
 Average edit distance for recG_123: 40.8653846154
@@ -271,12 +291,13 @@ recG_54 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 20 ====================================================
 
-Time taken to run ADP: 0.237416052818 min
+Time taken to run ADP: 0.242399783929 min
 True alleles: ['recG_109', 'recG_116', 'recG_56', 'recG_71', 'recG_78']
 Predicted alleles: ['recG_109', 'recG_116', 'recG_56', 'recG_65', 'recG_68', 'recG_78']
 Removed: recG_71
 Alleles in predicted but not in true: ['recG_65', 'recG_68']
 
+Edit distances with the removed allele:[4, 5, 6, 8, 9, 11, 14, 28, 29, 30, 31, 34, 40, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 67, 144, 147, 148, 149, 152, 153, 156, 157]
 Minimum edit distance for recG_71 : 4
 Maximum edit distance for recG_71: 157
 Average edit distance for recG_71: 56.0384615385
@@ -286,12 +307,13 @@ recG_68 is not the closest allele to the removed allele, its edit distance from 
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 21 ====================================================
 
-Time taken to run ADP: 0.112460299333 min
+Time taken to run ADP: 0.115770447254 min
 True alleles: ['recG_184', 'recG_192', 'recG_197', 'recG_41']
 Predicted alleles: ['recG_184', 'recG_191', 'recG_197', 'recG_41']
 Removed: recG_192
 Alleles in predicted but not in true: ['recG_191']
 
+Edit distances with the removed allele:[17, 20, 71, 74, 75, 85, 95, 101, 102, 103, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171]
 Minimum edit distance for recG_192 : 17
 Maximum edit distance for recG_192: 171
 Average edit distance for recG_192: 155.197115385
@@ -300,13 +322,14 @@ recG_191 is not the closest allele to the removed allele, its edit distance from
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 22 ====================================================
 
-Time taken to run ADP: 0.0913046161334 min
+Time taken to run ADP: 0.0930617173513 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['recG_129', 'recG_161', 'recG_166']
 Predicted alleles: ['recG_161', 'recG_166', 'recG_199', 'recG_51', 'recG_76']
 Removed: recG_129
 Alleles in predicted but not in true: ['recG_199', 'recG_51', 'recG_76']
 
+Edit distances with the removed allele:[4, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 37, 38, 39, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 151, 152, 153, 154, 155, 157, 159, 161, 164, 166]
 Minimum edit distance for recG_129 : 4
 Maximum edit distance for recG_129: 166
 Average edit distance for recG_129: 44.6875
@@ -316,12 +339,13 @@ recG_51 is not the closest allele to the removed allele, its edit distance from 
 recG_76 is not the closest allele to the removed allele, its edit distance from the removed allele is 8.
 ======================================== SIMULATION 23 ====================================================
 
-Time taken to run ADP: 0.140980950991 min
+Time taken to run ADP: 0.140985751152 min
 True alleles: ['recG_100', 'recG_111', 'recG_30', 'recG_47', 'recG_56', 'recG_8']
 Predicted alleles: ['recG_104', 'recG_111', 'recG_30', 'recG_47', 'recG_56', 'recG_8']
 Removed: recG_100
 Alleles in predicted but not in true: ['recG_104']
 
+Edit distances with the removed allele:[1, 6, 7, 8, 12, 17, 18, 21, 22, 28, 43, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 68, 145, 147, 152, 153, 155, 156, 157, 166]
 Minimum edit distance for recG_100 : 1
 Maximum edit distance for recG_100: 166
 Average edit distance for recG_100: 57.5240384615
@@ -330,12 +354,13 @@ recG_104 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 24 ====================================================
 
-Time taken to run ADP: 0.257915651798 min
+Time taken to run ADP: 0.274310183525 min
 True alleles: ['recG_188', 'recG_197', 'recG_31', 'recG_41', 'recG_55', 'recG_99']
 Predicted alleles: ['recG_188', 'recG_197', 'recG_30', 'recG_32', 'recG_41', 'recG_55', 'recG_99']
 Removed: recG_31
 Alleles in predicted but not in true: ['recG_30', 'recG_32']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 57, 142, 143, 144, 145, 147, 150, 152, 154, 159]
 Minimum edit distance for recG_31 : 1
 Maximum edit distance for recG_31: 159
 Average edit distance for recG_31: 45.9375
@@ -345,12 +370,13 @@ recG_32 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 25 ====================================================
 
-Time taken to run ADP: 0.0956862688065 min
+Time taken to run ADP: 0.100784385204 min
 True alleles: ['recG_23', 'recG_56', 'recG_6']
 Predicted alleles: ['recG_23', 'recG_6', 'recG_61', 'recG_65', 'recG_66', 'recG_69', 'recG_71']
 Removed: recG_56
 Alleles in predicted but not in true: ['recG_61', 'recG_65', 'recG_66', 'recG_69', 'recG_71']
 
+Edit distances with the removed allele:[8, 9, 10, 25, 26, 27, 28, 33, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 61, 62, 65, 142, 145, 146, 149, 150, 151, 152, 153, 154, 155, 157]
 Minimum edit distance for recG_56 : 8
 Maximum edit distance for recG_56: 157
 Average edit distance for recG_56: 53.1538461538
@@ -360,14 +386,16 @@ recG_65 is not the closest allele to the removed allele, its edit distance from 
 recG_66 is one of the closest allele to the removed allele.
 recG_69 is not the closest allele to the removed allele, its edit distance from the removed allele is 10.
 recG_71 is not the closest allele to the removed allele, its edit distance from the removed allele is 9.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 26 ====================================================
 
-Time taken to run ADP: 0.16647806565 min
+Time taken to run ADP: 0.16804946661 min
 True alleles: ['recG_105', 'recG_119', 'recG_172']
 Predicted alleles: ['recG_105', 'recG_129', 'recG_172', 'recG_46']
 Removed: recG_119
 Alleles in predicted but not in true: ['recG_129', 'recG_46']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 152, 153, 154, 156, 160, 162, 165, 168]
 Minimum edit distance for recG_119 : 1
 Maximum edit distance for recG_119: 168
 Average edit distance for recG_119: 40.0961538462
@@ -376,12 +404,13 @@ recG_129 is not the closest allele to the removed allele, its edit distance from
 recG_46 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 27 ====================================================
 
-Time taken to run ADP: 0.544237184525 min
+Time taken to run ADP: 0.568777036667 min
 True alleles: ['recG_42', 'recG_63', 'recG_84']
 Predicted alleles: ['recG_111', 'recG_125', 'recG_63', 'recG_84']
 Removed: recG_42
 Alleles in predicted but not in true: ['recG_111', 'recG_125']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 34, 35, 36, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 152, 153, 154, 156, 157, 161, 162, 164, 167, 168]
 Minimum edit distance for recG_42 : 1
 Maximum edit distance for recG_42: 168
 Average edit distance for recG_42: 39.6634615385
@@ -391,12 +420,13 @@ recG_125 is not the closest allele to the removed allele, its edit distance from
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 28 ====================================================
 
-Time taken to run ADP: 0.12315330108 min
+Time taken to run ADP: 0.122526951631 min
 True alleles: ['recG_10', 'recG_131', 'recG_166', 'recG_193', 'recG_62']
 Predicted alleles: ['recG_10', 'recG_131', 'recG_166', 'recG_193', 'recG_65', 'recG_67']
 Removed: recG_62
 Alleles in predicted but not in true: ['recG_65', 'recG_67']
 
+Edit distances with the removed allele:[1, 2, 4, 5, 8, 10, 13, 29, 30, 31, 32, 40, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 69, 145, 148, 149, 150, 151, 152, 154, 156, 157, 158]
 Minimum edit distance for recG_62 : 1
 Maximum edit distance for recG_62: 158
 Average edit distance for recG_62: 55.2836538462
@@ -406,12 +436,13 @@ recG_67 is not the closest allele to the removed allele, its edit distance from 
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 29 ====================================================
 
-Time taken to run ADP: 0.0322387337685 min
+Time taken to run ADP: 0.0326609969139 min
 True alleles: ['recG_188', 'recG_34']
 Predicted alleles: ['recG_34']
 Removed: recG_188
 Alleles in predicted but not in true: []
 
+Edit distances with the removed allele:[59, 61, 68, 69, 71, 77, 79, 80, 81, 87, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166]
 Minimum edit distance for recG_188 : 59
 Maximum edit distance for recG_188: 166
 Average edit distance for recG_188: 151.024038462
@@ -419,12 +450,13 @@ Average edit distance for recG_188: 151.024038462
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 30 ====================================================
 
-Time taken to run ADP: 0.242308203379 min
+Time taken to run ADP: 0.257753447692 min
 True alleles: ['recG_120', 'recG_122', 'recG_170', 'recG_27', 'recG_4', 'recG_9']
 Predicted alleles: ['recG_120', 'recG_122', 'recG_137', 'recG_170', 'recG_27', 'recG_4']
 Removed: recG_9
 Alleles in predicted but not in true: ['recG_137']
 
+Edit distances with the removed allele:[1, 2, 6, 8, 9, 10, 11, 12, 13, 14, 34, 40, 41, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 143, 144, 145, 149, 150, 151, 152, 153, 154, 158]
 Minimum edit distance for recG_9 : 1
 Maximum edit distance for recG_9: 158
 Average edit distance for recG_9: 53.6201923077
@@ -433,12 +465,13 @@ recG_137 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 31 ====================================================
 
-Time taken to run ADP: 0.323049783707 min
+Time taken to run ADP: 0.342775650819 min
 True alleles: ['recG_137', 'recG_149', 'recG_151', 'recG_156', 'recG_197', 'recG_8', 'recG_9']
 Predicted alleles: ['recG_137', 'recG_151', 'recG_156', 'recG_197', 'recG_46', 'recG_8', 'recG_9']
 Removed: recG_149
 Alleles in predicted but not in true: ['recG_46']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 63, 154, 155, 156, 157, 158, 160, 162, 165, 169]
 Minimum edit distance for recG_149 : 1
 Maximum edit distance for recG_149: 169
 Average edit distance for recG_149: 40.3173076923
@@ -447,26 +480,29 @@ recG_46 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 32 ====================================================
 
-Time taken to run ADP: 0.179167485237 min
+Time taken to run ADP: 0.1773458004 min
 True alleles: ['recG_119', 'recG_132', 'recG_154', 'recG_166', 'recG_3']
 Predicted alleles: ['recG_119', 'recG_154', 'recG_166', 'recG_200', 'recG_3', 'recG_57']
 Removed: recG_132
 Alleles in predicted but not in true: ['recG_200', 'recG_57']
 
+Edit distances with the removed allele:[4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 62, 153, 154, 155, 157, 159, 161, 163, 166, 169]
 Minimum edit distance for recG_132 : 4
 Maximum edit distance for recG_132: 169
 Average edit distance for recG_132: 40.0288461538
 
 recG_200 is not the closest allele to the removed allele, its edit distance from the removed allele is 6.
 recG_57 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 33 ====================================================
 
-Time taken to run ADP: 0.181489801407 min
+Time taken to run ADP: 0.197224450111 min
 True alleles: ['recG_176', 'recG_198', 'recG_205', 'recG_49', 'recG_97']
 Predicted alleles: ['recG_198', 'recG_205', 'recG_49', 'recG_58', 'recG_97']
 Removed: recG_176
 Alleles in predicted but not in true: ['recG_58']
 
+Edit distances with the removed allele:[1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 31, 32, 33, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 63, 154, 155, 156, 157, 158, 161, 162, 165, 167, 171]
 Minimum edit distance for recG_176 : 1
 Maximum edit distance for recG_176: 171
 Average edit distance for recG_176: 40.1971153846
@@ -475,12 +511,13 @@ recG_58 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 34 ====================================================
 
-Time taken to run ADP: 0.293300382296 min
+Time taken to run ADP: 0.294072480996 min
 True alleles: ['recG_120', 'recG_132', 'recG_142', 'recG_83']
 Predicted alleles: ['recG_120', 'recG_132', 'recG_54', 'recG_83']
 Removed: recG_142
 Alleles in predicted but not in true: ['recG_54']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 33, 34, 35, 39, 40, 41, 42, 43, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 151, 152, 155, 157, 159, 161, 163, 166, 168]
 Minimum edit distance for recG_142 : 1
 Maximum edit distance for recG_142: 168
 Average edit distance for recG_142: 38.6586538462
@@ -489,12 +526,13 @@ recG_54 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 35 ====================================================
 
-Time taken to run ADP: 0.155029551188 min
+Time taken to run ADP: 0.162110547225 min
 True alleles: ['recG_100', 'recG_201', 'recG_25', 'recG_45', 'recG_48', 'recG_80']
 Predicted alleles: ['recG_100', 'recG_201', 'recG_25', 'recG_44', 'recG_48', 'recG_80']
 Removed: recG_45
 Alleles in predicted but not in true: ['recG_44']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 7, 24, 26, 27, 28, 29, 30, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 57, 61, 140, 141, 144, 145, 146, 147, 150, 151, 152, 159]
 Minimum edit distance for recG_45 : 1
 Maximum edit distance for recG_45: 159
 Average edit distance for recG_45: 48.7836538462
@@ -503,12 +541,13 @@ recG_44 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 36 ====================================================
 
-Time taken to run ADP: 0.129528101285 min
+Time taken to run ADP: 0.131576752663 min
 True alleles: ['recG_1', 'recG_22', 'recG_89']
 Predicted alleles: ['recG_136', 'recG_197', 'recG_22', 'recG_89']
 Removed: recG_1
 Alleles in predicted but not in true: ['recG_136', 'recG_197']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 8, 11, 12, 37, 39, 42, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 63, 138, 140, 147, 148, 149, 150, 151, 154, 157]
 Minimum edit distance for recG_1 : 1
 Maximum edit distance for recG_1: 157
 Average edit distance for recG_1: 52.625
@@ -518,12 +557,13 @@ recG_197 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 37 ====================================================
 
-Time taken to run ADP: 1.50260438522 min
+Time taken to run ADP: 1.55283688307 min
 True alleles: ['recG_113', 'recG_148', 'recG_4', 'recG_41', 'recG_68', 'recG_8', 'recG_84']
 Predicted alleles: ['recG_113', 'recG_148', 'recG_16', 'recG_2', 'recG_4', 'recG_41', 'recG_68']
 Removed: recG_8
 Alleles in predicted but not in true: ['recG_16', 'recG_2']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 11, 12, 37, 39, 42, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 65, 140, 142, 148, 149, 150, 151, 152, 153, 155, 159]
 Minimum edit distance for recG_8 : 1
 Maximum edit distance for recG_8: 159
 Average edit distance for recG_8: 53.7548076923
@@ -533,13 +573,14 @@ recG_2 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 38 ====================================================
 
-Time taken to run ADP: 0.0697396993637 min
+Time taken to run ADP: 0.0696233510971 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['recG_104', 'recG_118', 'recG_187', 'recG_192', 'recG_195', 'recG_208', 'recG_76']
 Predicted alleles: ['recG_100', 'recG_111', 'recG_112', 'recG_118', 'recG_187', 'recG_192', 'recG_195', 'recG_208']
 Removed: recG_76
 Alleles in predicted but not in true: ['recG_100', 'recG_111', 'recG_112']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 34, 35, 36, 40, 41, 42, 43, 44, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 62, 152, 153, 155, 156, 160, 162, 164, 167]
 Minimum edit distance for recG_76 : 1
 Maximum edit distance for recG_76: 167
 Average edit distance for recG_76: 39.7644230769
@@ -549,26 +590,29 @@ recG_111 is one of the closest allele to the removed allele.
 recG_112 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 39 ====================================================
 
-Time taken to run ADP: 0.172518014908 min
+Time taken to run ADP: 0.184870334466 min
 True alleles: ['recG_124', 'recG_196', 'recG_35', 'recG_64', 'recG_71', 'recG_98']
 Predicted alleles: ['recG_156', 'recG_196', 'recG_34', 'recG_35', 'recG_64', 'recG_71', 'recG_98']
 Removed: recG_124
 Alleles in predicted but not in true: ['recG_156', 'recG_34']
 
+Edit distances with the removed allele:[1, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 34, 35, 36, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 151, 152, 155, 157, 159, 161, 163, 165, 166]
 Minimum edit distance for recG_124 : 1
 Maximum edit distance for recG_124: 166
 Average edit distance for recG_124: 40.5673076923
 
 recG_156 is not the closest allele to the removed allele, its edit distance from the removed allele is 5.
 recG_34 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 40 ====================================================
 
-Time taken to run ADP: 0.0528305133184 min
+Time taken to run ADP: 0.0540295799573 min
 True alleles: ['recG_103', 'recG_138', 'recG_179', 'recG_188']
 Predicted alleles: ['recG_102', 'recG_138', 'recG_179', 'recG_188', 'recG_74']
 Removed: recG_103
 Alleles in predicted but not in true: ['recG_102', 'recG_74']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 6, 7, 9, 16, 17, 18, 19, 25, 40, 43, 44, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 145, 147, 151, 153, 154, 155, 156, 165]
 Minimum edit distance for recG_103 : 1
 Maximum edit distance for recG_103: 165
 Average edit distance for recG_103: 56.6971153846
@@ -579,4 +623,4 @@ All predicted alleles which are not in true are top 3 closest to the removed all
 ======================================== recG: SUMMARY STATISTICS ====================================================
 
 Out of 40 simulations, 23 simulations we found the closest allele to the removed one.
-Out of 40 simulations, 29 simulations we found the top 3 closest allele to the removed one.
+Out of 40 simulations, 33 simulations we found the top 3 closest allele to the removed one.

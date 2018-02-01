@@ -1,11 +1,12 @@
 ======================================== SIMULATION 1 ====================================================
 
-Time taken to run ADP: 0.0946148832639 min
+Time taken to run ADP: 0.103992482026 min
 True alleles: ['pepX_169', 'pepX_179', 'pepX_49', 'pepX_64']
 Predicted alleles: ['pepX_104', 'pepX_169', 'pepX_49', 'pepX_64']
 Removed: pepX_179
 Alleles in predicted but not in true: ['pepX_104']
 
+Edit distances with the removed allele:[1, 2, 4, 5, 6, 7, 22, 23, 24, 25, 36, 37, 38, 39, 40, 41, 42, 44, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 67, 135, 141, 146, 147, 148, 149, 152, 153]
 Minimum edit distance for pepX_179 : 1
 Maximum edit distance for pepX_179: 153
 Average edit distance for pepX_179: 54.5631578947
@@ -14,12 +15,13 @@ pepX_104 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 2 ====================================================
 
-Time taken to run ADP: 0.0652565677961 min
+Time taken to run ADP: 0.0672813177109 min
 True alleles: ['pepX_5', 'pepX_75']
 Predicted alleles: ['pepX_5', 'pepX_68', 'pepX_73', 'pepX_74']
 Removed: pepX_75
 Alleles in predicted but not in true: ['pepX_68', 'pepX_73', 'pepX_74']
 
+Edit distances with the removed allele:[6, 7, 8, 10, 15, 16, 20, 21, 32, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 67, 145, 146, 149, 150, 151, 152, 156, 157, 159, 160, 166]
 Minimum edit distance for pepX_75 : 6
 Maximum edit distance for pepX_75: 166
 Average edit distance for pepX_75: 54.7947368421
@@ -27,15 +29,17 @@ Average edit distance for pepX_75: 54.7947368421
 pepX_68 is one of the closest allele to the removed allele.
 pepX_73 is not the closest allele to the removed allele, its edit distance from the removed allele is 8.
 pepX_74 is not the closest allele to the removed allele, its edit distance from the removed allele is 7.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 3 ====================================================
 
-Time taken to run ADP: 0.193512650331 min
+Time taken to run ADP: 0.20922224919 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['pepX_117', 'pepX_174', 'pepX_183', 'pepX_33', 'pepX_73', 'pepX_86', 'pepX_99']
 Predicted alleles: ['pepX_117', 'pepX_174', 'pepX_183', 'pepX_31', 'pepX_73', 'pepX_85', 'pepX_99']
 Removed: pepX_33
 Alleles in predicted but not in true: ['pepX_31', 'pepX_85']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 56, 57, 58, 59, 133, 140, 143, 144, 146, 153, 155, 156, 159]
 Minimum edit distance for pepX_33 : 1
 Maximum edit distance for pepX_33: 159
 Average edit distance for pepX_33: 44.5052631579
@@ -45,12 +49,13 @@ pepX_85 is not the closest allele to the removed allele, its edit distance from 
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 4 ====================================================
 
-Time taken to run ADP: 0.0904742479324 min
+Time taken to run ADP: 0.0920444170634 min
 True alleles: ['pepX_12', 'pepX_136', 'pepX_144', 'pepX_60', 'pepX_74']
 Predicted alleles: ['pepX_12', 'pepX_136', 'pepX_144', 'pepX_50', 'pepX_60', 'pepX_67']
 Removed: pepX_74
 Alleles in predicted but not in true: ['pepX_50', 'pepX_67']
 
+Edit distances with the removed allele:[2, 3, 5, 7, 10, 11, 12, 15, 16, 27, 37, 38, 39, 40, 41, 42, 43, 44, 47, 50, 51, 52, 53, 54, 55, 59, 62, 143, 144, 145, 148, 150, 151, 152, 155, 158, 162]
 Minimum edit distance for pepX_74 : 2
 Maximum edit distance for pepX_74: 162
 Average edit distance for pepX_74: 49.1947368421
@@ -59,12 +64,13 @@ pepX_50 is not the closest allele to the removed allele, its edit distance from 
 pepX_67 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 5 ====================================================
 
-Time taken to run ADP: 0.0675514499346 min
+Time taken to run ADP: 0.0685882846514 min
 True alleles: ['pepX_10', 'pepX_173', 'pepX_175', 'pepX_42', 'pepX_69']
 Predicted alleles: ['pepX_10', 'pepX_112', 'pepX_173', 'pepX_175', 'pepX_69']
 Removed: pepX_42
 Alleles in predicted but not in true: ['pepX_112']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 28, 30, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 52, 53, 54, 56, 142, 144, 145, 148, 150, 151, 152, 153, 155, 158, 160, 161]
 Minimum edit distance for pepX_42 : 1
 Maximum edit distance for pepX_42: 161
 Average edit distance for pepX_42: 38.0789473684
@@ -73,12 +79,13 @@ pepX_112 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 6 ====================================================
 
-Time taken to run ADP: 0.092961482207 min
+Time taken to run ADP: 0.0936168511709 min
 True alleles: ['pepX_109', 'pepX_125', 'pepX_16', 'pepX_71', 'pepX_97']
 Predicted alleles: ['pepX_108', 'pepX_125', 'pepX_16', 'pepX_71', 'pepX_97']
 Removed: pepX_109
 Alleles in predicted but not in true: ['pepX_108']
 
+Edit distances with the removed allele:[3, 5, 20, 21, 22, 23, 24, 28, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 64, 65, 132, 137, 139, 142, 144, 145, 147, 149, 150, 151, 153]
 Minimum edit distance for pepX_109 : 3
 Maximum edit distance for pepX_109: 153
 Average edit distance for pepX_109: 52.8
@@ -87,12 +94,13 @@ pepX_108 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 7 ====================================================
 
-Time taken to run ADP: 0.128251000245 min
+Time taken to run ADP: 0.130959717433 min
 True alleles: ['pepX_109', 'pepX_131', 'pepX_146', 'pepX_26', 'pepX_73', 'pepX_8']
 Predicted alleles: ['pepX_109', 'pepX_120', 'pepX_131', 'pepX_146', 'pepX_26', 'pepX_7', 'pepX_73']
 Removed: pepX_8
 Alleles in predicted but not in true: ['pepX_120', 'pepX_7']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 12, 27, 29, 32, 34, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 62, 138, 143, 144, 145, 146, 148, 150, 157, 158, 159]
 Minimum edit distance for pepX_8 : 1
 Maximum edit distance for pepX_8: 159
 Average edit distance for pepX_8: 45.5210526316
@@ -102,12 +110,13 @@ pepX_7 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 8 ====================================================
 
-Time taken to run ADP: 0.0823538502057 min
+Time taken to run ADP: 0.0855829834938 min
 True alleles: ['pepX_114', 'pepX_21', 'pepX_57', 'pepX_70']
 Predicted alleles: ['pepX_114', 'pepX_21', 'pepX_50', 'pepX_57', 'pepX_72']
 Removed: pepX_70
 Alleles in predicted but not in true: ['pepX_50', 'pepX_72']
 
+Edit distances with the removed allele:[4, 7, 9, 11, 12, 13, 15, 16, 17, 18, 19, 30, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 63, 145, 146, 150, 151, 152, 153, 154, 157, 161]
 Minimum edit distance for pepX_70 : 4
 Maximum edit distance for pepX_70: 161
 Average edit distance for pepX_70: 54.4526315789
@@ -117,12 +126,13 @@ pepX_72 is not the closest allele to the removed allele, its edit distance from 
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 9 ====================================================
 
-Time taken to run ADP: 0.151134983699 min
+Time taken to run ADP: 0.158310067654 min
 True alleles: ['pepX_13', 'pepX_140', 'pepX_161', 'pepX_170', 'pepX_28', 'pepX_58', 'pepX_90']
 Predicted alleles: ['pepX_13', 'pepX_161', 'pepX_187', 'pepX_2', 'pepX_28', 'pepX_58', 'pepX_90']
 Removed: pepX_170
 Alleles in predicted but not in true: ['pepX_187', 'pepX_2']
 
+Edit distances with the removed allele:[3, 12, 61, 82, 83, 85, 86, 96, 100, 105, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150]
 Minimum edit distance for pepX_170 : 3
 Maximum edit distance for pepX_170: 150
 Average edit distance for pepX_170: 139.726315789
@@ -131,12 +141,13 @@ pepX_187 is one of the closest allele to the removed allele.
 pepX_2 is not the closest allele to the removed allele, its edit distance from the removed allele is 143.
 ======================================== SIMULATION 10 ====================================================
 
-Time taken to run ADP: 0.0840781013171 min
+Time taken to run ADP: 0.0918968677521 min
 True alleles: ['pepX_55', 'pepX_76']
 Predicted alleles: ['pepX_50', 'pepX_71', 'pepX_76']
 Removed: pepX_55
 Alleles in predicted but not in true: ['pepX_50', 'pepX_71']
 
+Edit distances with the removed allele:[5, 6, 7, 10, 11, 12, 14, 16, 18, 19, 20, 30, 44, 45, 46, 47, 48, 49, 50, 51, 55, 56, 57, 58, 59, 62, 64, 142, 143, 146, 147, 149, 150, 151, 152, 155, 158, 162]
 Minimum edit distance for pepX_55 : 5
 Maximum edit distance for pepX_55: 162
 Average edit distance for pepX_55: 54.2684210526
@@ -146,12 +157,13 @@ pepX_71 is not the closest allele to the removed allele, its edit distance from 
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 11 ====================================================
 
-Time taken to run ADP: 0.0623231013616 min
+Time taken to run ADP: 0.0614105820656 min
 True alleles: ['pepX_13', 'pepX_158', 'pepX_167', 'pepX_3']
 Predicted alleles: ['pepX_13', 'pepX_167', 'pepX_3']
 Removed: pepX_158
 Alleles in predicted but not in true: []
 
+Edit distances with the removed allele:[30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 57, 58, 60, 61, 138, 144, 145, 146, 148, 149, 153, 156, 159, 161]
 Minimum edit distance for pepX_158 : 30
 Maximum edit distance for pepX_158: 161
 Average edit distance for pepX_158: 49.3631578947
@@ -159,12 +171,13 @@ Average edit distance for pepX_158: 49.3631578947
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 12 ====================================================
 
-Time taken to run ADP: 0.143811051051 min
+Time taken to run ADP: 0.148520119985 min
 True alleles: ['pepX_13', 'pepX_133', 'pepX_158', 'pepX_52', 'pepX_66']
 Predicted alleles: ['pepX_13', 'pepX_133', 'pepX_158', 'pepX_50', 'pepX_52', 'pepX_67']
 Removed: pepX_66
 Alleles in predicted but not in true: ['pepX_50', 'pepX_67']
 
+Edit distances with the removed allele:[1, 3, 4, 6, 8, 9, 11, 12, 16, 17, 27, 40, 41, 42, 43, 44, 45, 46, 47, 50, 51, 52, 53, 54, 55, 56, 58, 62, 145, 146, 150, 151, 152, 154, 156, 159, 163]
 Minimum edit distance for pepX_66 : 1
 Maximum edit distance for pepX_66: 163
 Average edit distance for pepX_66: 50.8842105263
@@ -173,12 +186,13 @@ pepX_50 is not the closest allele to the removed allele, its edit distance from 
 pepX_67 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 13 ====================================================
 
-Time taken to run ADP: 0.317540899913 min
+Time taken to run ADP: 0.340874667962 min
 True alleles: ['pepX_133', 'pepX_4']
 Predicted alleles: ['pepX_126', 'pepX_143', 'pepX_4', 'pepX_61']
 Removed: pepX_133
 Alleles in predicted but not in true: ['pepX_126', 'pepX_143', 'pepX_61']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 9, 10, 11, 12, 13, 26, 28, 30, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 52, 54, 141, 144, 145, 147, 150, 151, 152, 156, 158, 160]
 Minimum edit distance for pepX_133 : 1
 Maximum edit distance for pepX_133: 160
 Average edit distance for pepX_133: 36.4421052632
@@ -189,12 +203,13 @@ pepX_61 is not the closest allele to the removed allele, its edit distance from 
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 14 ====================================================
 
-Time taken to run ADP: 0.0547300020854 min
+Time taken to run ADP: 0.0547089020411 min
 True alleles: ['pepX_103', 'pepX_88']
 Predicted alleles: ['pepX_106', 'pepX_83', 'pepX_88']
 Removed: pepX_103
 Alleles in predicted but not in true: ['pepX_106', 'pepX_83']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 22, 23, 24, 25, 35, 36, 37, 38, 39, 40, 41, 42, 44, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 65, 135, 140, 141, 144, 145, 147, 148, 149, 151, 152, 153, 154]
 Minimum edit distance for pepX_103 : 1
 Maximum edit distance for pepX_103: 154
 Average edit distance for pepX_103: 54.6052631579
@@ -204,12 +219,13 @@ pepX_83 is not the closest allele to the removed allele, its edit distance from 
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 15 ====================================================
 
-Time taken to run ADP: 0.113858147462 min
+Time taken to run ADP: 0.126927431424 min
 True alleles: ['pepX_112', 'pepX_122', 'pepX_164', 'pepX_31', 'pepX_65', 'pepX_69']
 Predicted alleles: ['pepX_112', 'pepX_122', 'pepX_164', 'pepX_31', 'pepX_69', 'pepX_73']
 Removed: pepX_65
 Alleles in predicted but not in true: ['pepX_73']
 
+Edit distances with the removed allele:[2, 5, 6, 7, 8, 10, 15, 16, 17, 20, 21, 30, 44, 45, 46, 47, 48, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 62, 63, 144, 145, 148, 149, 152, 153, 154, 158, 159, 165]
 Minimum edit distance for pepX_65 : 2
 Maximum edit distance for pepX_65: 165
 Average edit distance for pepX_65: 53.9526315789
@@ -218,12 +234,13 @@ pepX_73 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 16 ====================================================
 
-Time taken to run ADP: 0.063957353433 min
+Time taken to run ADP: 0.0612320144971 min
 True alleles: ['pepX_145', 'pepX_176', 'pepX_85', 'pepX_95']
 Predicted alleles: ['pepX_145', 'pepX_175', 'pepX_85', 'pepX_95']
 Removed: pepX_176
 Alleles in predicted but not in true: ['pepX_175']
 
+Edit distances with the removed allele:[1, 59, 61, 94, 95, 96, 98, 113, 114, 121, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161]
 Minimum edit distance for pepX_176 : 1
 Maximum edit distance for pepX_176: 161
 Average edit distance for pepX_176: 150.289473684
@@ -232,12 +249,13 @@ pepX_175 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 17 ====================================================
 
-Time taken to run ADP: 0.218681236108 min
+Time taken to run ADP: 0.243887714545 min
 True alleles: ['pepX_116', 'pepX_136', 'pepX_187', 'pepX_35', 'pepX_88', 'pepX_91', 'pepX_96']
 Predicted alleles: ['pepX_116', 'pepX_136', 'pepX_149', 'pepX_187', 'pepX_35', 'pepX_88', 'pepX_96']
 Removed: pepX_91
 Alleles in predicted but not in true: ['pepX_149']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 26, 28, 30, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 50, 51, 52, 53, 141, 143, 144, 147, 150, 152, 153, 154, 157, 159, 161]
 Minimum edit distance for pepX_91 : 1
 Maximum edit distance for pepX_91: 161
 Average edit distance for pepX_91: 36.7
@@ -246,12 +264,13 @@ pepX_149 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 18 ====================================================
 
-Time taken to run ADP: 0.0515154004097 min
+Time taken to run ADP: 0.0504727681478 min
 True alleles: ['pepX_109', 'pepX_160', 'pepX_174', 'pepX_25', 'pepX_68']
 Predicted alleles: ['pepX_109', 'pepX_160', 'pepX_169', 'pepX_174', 'pepX_68']
 Removed: pepX_25
 Alleles in predicted but not in true: ['pepX_169']
 
+Edit distances with the removed allele:[1, 3, 4, 8, 9, 10, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 51, 52, 53, 54, 55, 56, 57, 58, 59, 63, 135, 140, 141, 142, 145, 146, 148, 152, 153, 154, 155, 159]
 Minimum edit distance for pepX_25 : 1
 Maximum edit distance for pepX_25: 159
 Average edit distance for pepX_25: 52.4578947368
@@ -260,12 +279,13 @@ pepX_169 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 19 ====================================================
 
-Time taken to run ADP: 0.461040083567 min
+Time taken to run ADP: 0.50756516854 min
 True alleles: ['pepX_112', 'pepX_135', 'pepX_157', 'pepX_164']
 Predicted alleles: ['pepX_135', 'pepX_157', 'pepX_164', 'pepX_38', 'pepX_41']
 Removed: pepX_112
 Alleles in predicted but not in true: ['pepX_38', 'pepX_41']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 27, 29, 31, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 51, 52, 53, 55, 141, 143, 144, 147, 149, 151, 152, 154, 157, 159, 161]
 Minimum edit distance for pepX_112 : 1
 Maximum edit distance for pepX_112: 161
 Average edit distance for pepX_112: 37.1
@@ -275,12 +295,13 @@ pepX_41 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 20 ====================================================
 
-Time taken to run ADP: 0.088692565759 min
+Time taken to run ADP: 0.0926090995471 min
 True alleles: ['pepX_100', 'pepX_106', 'pepX_51', 'pepX_65', 'pepX_72']
 Predicted alleles: ['pepX_100', 'pepX_106', 'pepX_51', 'pepX_72', 'pepX_73']
 Removed: pepX_65
 Alleles in predicted but not in true: ['pepX_73']
 
+Edit distances with the removed allele:[2, 5, 6, 7, 8, 10, 15, 16, 17, 20, 21, 30, 44, 45, 46, 47, 48, 49, 50, 52, 53, 54, 55, 56, 57, 58, 59, 60, 62, 63, 144, 145, 148, 149, 152, 153, 154, 158, 159, 165]
 Minimum edit distance for pepX_65 : 2
 Maximum edit distance for pepX_65: 165
 Average edit distance for pepX_65: 53.9526315789
@@ -289,12 +310,13 @@ pepX_73 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 21 ====================================================
 
-Time taken to run ADP: 0.0871564825376 min
+Time taken to run ADP: 0.0893543322881 min
 True alleles: ['pepX_168', 'pepX_175', 'pepX_180', 'pepX_37']
 Predicted alleles: ['pepX_168', 'pepX_176', 'pepX_180', 'pepX_37']
 Removed: pepX_175
 Alleles in predicted but not in true: ['pepX_176']
 
+Edit distances with the removed allele:[1, 59, 61, 93, 94, 95, 97, 112, 113, 120, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161]
 Minimum edit distance for pepX_175 : 1
 Maximum edit distance for pepX_175: 161
 Average edit distance for pepX_175: 149.473684211
@@ -303,12 +325,13 @@ pepX_176 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 22 ====================================================
 
-Time taken to run ADP: 0.0305872480075 min
+Time taken to run ADP: 0.0306738336881 min
 True alleles: ['pepX_118', 'pepX_147', 'pepX_152']
 Predicted alleles: ['pepX_124', 'pepX_125', 'pepX_129', 'pepX_147', 'pepX_152']
 Removed: pepX_118
 Alleles in predicted but not in true: ['pepX_124', 'pepX_125', 'pepX_129']
 
+Edit distances with the removed allele:[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 30, 32, 33, 34, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 53, 54, 55, 142, 145, 146, 148, 150, 153, 154, 157, 159, 161, 163]
 Minimum edit distance for pepX_118 : 2
 Maximum edit distance for pepX_118: 163
 Average edit distance for pepX_118: 39.5157894737
@@ -319,12 +342,13 @@ pepX_129 is not the closest allele to the removed allele, its edit distance from
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 23 ====================================================
 
-Time taken to run ADP: 0.162830646833 min
+Time taken to run ADP: 0.178213834763 min
 True alleles: ['pepX_102', 'pepX_27', 'pepX_43', 'pepX_51', 'pepX_7', 'pepX_92']
 Predicted alleles: ['pepX_102', 'pepX_27', 'pepX_38', 'pepX_43', 'pepX_51', 'pepX_7']
 Removed: pepX_92
 Alleles in predicted but not in true: ['pepX_38']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 17, 28, 30, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 56, 143, 146, 147, 149, 150, 154, 155, 159, 161, 163]
 Minimum edit distance for pepX_92 : 1
 Maximum edit distance for pepX_92: 163
 Average edit distance for pepX_92: 39.1368421053
@@ -333,26 +357,29 @@ pepX_38 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 24 ====================================================
 
-Time taken to run ADP: 0.773711315791 min
+Time taken to run ADP: 0.882246033351 min
 True alleles: ['pepX_172', 'pepX_180', 'pepX_29', 'pepX_38', 'pepX_50', 'pepX_90']
 Predicted alleles: ['pepX_172', 'pepX_182', 'pepX_32', 'pepX_38', 'pepX_50', 'pepX_90']
 Removed: pepX_29
 Alleles in predicted but not in true: ['pepX_182', 'pepX_32']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 56, 57, 58, 59, 133, 139, 142, 143, 144, 145, 146, 153, 154, 155, 156, 159]
 Minimum edit distance for pepX_29 : 1
 Maximum edit distance for pepX_29: 159
 Average edit distance for pepX_29: 44.4789473684
 
 pepX_182 is not the closest allele to the removed allele, its edit distance from the removed allele is 3.
 pepX_32 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 25 ====================================================
 
-Time taken to run ADP: 0.223590600491 min
+Time taken to run ADP: 0.239548901717 min
 True alleles: ['pepX_21', 'pepX_51', 'pepX_6']
 Predicted alleles: ['pepX_21', 'pepX_53', 'pepX_6', 'pepX_61']
 Removed: pepX_51
 Alleles in predicted but not in true: ['pepX_53', 'pepX_61']
 
+Edit distances with the removed allele:[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 27, 29, 31, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 49, 50, 51, 53, 54, 57, 59, 140, 145, 146, 149, 153, 154, 157, 158, 159, 161]
 Minimum edit distance for pepX_51 : 2
 Maximum edit distance for pepX_51: 161
 Average edit distance for pepX_51: 38.7894736842
@@ -361,13 +388,14 @@ pepX_53 is one of the closest allele to the removed allele.
 pepX_61 is not the closest allele to the removed allele, its edit distance from the removed allele is 9.
 ======================================== SIMULATION 26 ====================================================
 
-Time taken to run ADP: 0.146784333388 min
+Time taken to run ADP: 0.182696266969 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['pepX_109', 'pepX_157', 'pepX_96']
 Predicted alleles: ['pepX_103', 'pepX_108', 'pepX_155', 'pepX_157', 'pepX_96']
 Removed: pepX_109
 Alleles in predicted but not in true: ['pepX_103', 'pepX_108', 'pepX_155']
 
+Edit distances with the removed allele:[3, 5, 20, 21, 22, 23, 24, 28, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 64, 65, 132, 137, 139, 142, 144, 145, 147, 149, 150, 151, 153]
 Minimum edit distance for pepX_109 : 3
 Maximum edit distance for pepX_109: 153
 Average edit distance for pepX_109: 52.8
@@ -377,12 +405,13 @@ pepX_108 is one of the closest allele to the removed allele.
 pepX_155 is not the closest allele to the removed allele, its edit distance from the removed allele is 20.
 ======================================== SIMULATION 27 ====================================================
 
-Time taken to run ADP: 0.28933681647 min
+Time taken to run ADP: 0.310907149315 min
 True alleles: ['pepX_38', 'pepX_57', 'pepX_77']
 Predicted alleles: ['pepX_113', 'pepX_57', 'pepX_77', 'pepX_97']
 Removed: pepX_38
 Alleles in predicted but not in true: ['pepX_113', 'pepX_97']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 27, 29, 31, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 55, 142, 145, 146, 148, 149, 153, 154, 158, 160, 162]
 Minimum edit distance for pepX_38 : 1
 Maximum edit distance for pepX_38: 162
 Average edit distance for pepX_38: 38.1842105263
@@ -392,12 +421,13 @@ pepX_97 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 28 ====================================================
 
-Time taken to run ADP: 0.154549098015 min
+Time taken to run ADP: 0.165705033143 min
 True alleles: ['pepX_120', 'pepX_152', 'pepX_177', 'pepX_56', 'pepX_9']
 Predicted alleles: ['pepX_120', 'pepX_130', 'pepX_152', 'pepX_168', 'pepX_177', 'pepX_53', 'pepX_9']
 Removed: pepX_56
 Alleles in predicted but not in true: ['pepX_130', 'pepX_168', 'pepX_53']
 
+Edit distances with the removed allele:[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 29, 31, 33, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 51, 52, 54, 57, 140, 146, 147, 148, 149, 150, 155, 156, 157, 158, 159, 161]
 Minimum edit distance for pepX_56 : 2
 Maximum edit distance for pepX_56: 161
 Average edit distance for pepX_56: 40.3
@@ -408,12 +438,13 @@ pepX_53 is not the closest allele to the removed allele, its edit distance from 
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 29 ====================================================
 
-Time taken to run ADP: 0.024621117115 min
+Time taken to run ADP: 0.0243701179822 min
 True alleles: ['pepX_172', 'pepX_31']
 Predicted alleles: ['pepX_188', 'pepX_31']
 Removed: pepX_172
 Alleles in predicted but not in true: ['pepX_188']
 
+Edit distances with the removed allele:[15, 53, 59, 66, 70, 71, 83, 84, 89, 97, 98, 124, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 145, 146, 147, 148, 149, 151]
 Minimum edit distance for pepX_172 : 15
 Maximum edit distance for pepX_172: 151
 Average edit distance for pepX_172: 133.605263158
@@ -422,12 +453,13 @@ pepX_188 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 30 ====================================================
 
-Time taken to run ADP: 0.125343298912 min
+Time taken to run ADP: 0.136600836118 min
 True alleles: ['pepX_110', 'pepX_112', 'pepX_156', 'pepX_25', 'pepX_4', 'pepX_8']
 Predicted alleles: ['pepX_110', 'pepX_112', 'pepX_120', 'pepX_156', 'pepX_25', 'pepX_4', 'pepX_7']
 Removed: pepX_8
 Alleles in predicted but not in true: ['pepX_120', 'pepX_7']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 12, 27, 29, 32, 34, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 62, 138, 143, 144, 145, 146, 148, 150, 157, 158, 159]
 Minimum edit distance for pepX_8 : 1
 Maximum edit distance for pepX_8: 159
 Average edit distance for pepX_8: 45.5210526316
@@ -437,12 +469,13 @@ pepX_7 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 31 ====================================================
 
-Time taken to run ADP: 0.1109953324 min
+Time taken to run ADP: 0.119870384534 min
 True alleles: ['pepX_126', 'pepX_136', 'pepX_138', 'pepX_142', 'pepX_148', 'pepX_180', 'pepX_8']
 Predicted alleles: ['pepX_120', 'pepX_126', 'pepX_136', 'pepX_138', 'pepX_142', 'pepX_148', 'pepX_180', 'pepX_7']
 Removed: pepX_8
 Alleles in predicted but not in true: ['pepX_120', 'pepX_7']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 12, 27, 29, 32, 34, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 62, 138, 143, 144, 145, 146, 148, 150, 157, 158, 159]
 Minimum edit distance for pepX_8 : 1
 Maximum edit distance for pepX_8: 159
 Average edit distance for pepX_8: 45.5210526316
@@ -452,12 +485,13 @@ pepX_7 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 32 ====================================================
 
-Time taken to run ADP: 0.0992120146751 min
+Time taken to run ADP: 0.102411584059 min
 True alleles: ['pepX_109', 'pepX_121', 'pepX_141', 'pepX_143', 'pepX_152', 'pepX_157']
 Predicted alleles: ['pepX_109', 'pepX_121', 'pepX_127', 'pepX_133', 'pepX_141', 'pepX_152', 'pepX_157']
 Removed: pepX_143
 Alleles in predicted but not in true: ['pepX_127', 'pepX_133']
 
+Edit distances with the removed allele:[2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 28, 30, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 54, 56, 143, 145, 146, 149, 151, 152, 153, 157, 159, 161]
 Minimum edit distance for pepX_143 : 2
 Maximum edit distance for pepX_143: 161
 Average edit distance for pepX_143: 37.9105263158
@@ -467,12 +501,13 @@ pepX_133 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 33 ====================================================
 
-Time taken to run ADP: 0.0869650006294 min
+Time taken to run ADP: 0.0971460342407 min
 True alleles: ['pepX_176', 'pepX_181', 'pepX_22', 'pepX_45', 'pepX_81']
 Predicted alleles: ['pepX_104', 'pepX_105', 'pepX_176', 'pepX_181', 'pepX_22', 'pepX_45']
 Removed: pepX_81
 Alleles in predicted but not in true: ['pepX_104', 'pepX_105']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 20, 21, 22, 23, 25, 36, 37, 38, 39, 40, 41, 42, 44, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 65, 135, 141, 144, 145, 147, 148, 149, 150, 152, 153]
 Minimum edit distance for pepX_81 : 1
 Maximum edit distance for pepX_81: 153
 Average edit distance for pepX_81: 54.4052631579
@@ -481,12 +516,13 @@ pepX_104 is one of the closest allele to the removed allele.
 pepX_105 is not the closest allele to the removed allele, its edit distance from the removed allele is 4.
 ======================================== SIMULATION 34 ====================================================
 
-Time taken to run ADP: 0.524453949928 min
+Time taken to run ADP: 0.566155914466 min
 True alleles: ['pepX_110', 'pepX_76', 'pepX_95']
 Predicted alleles: ['pepX_110', 'pepX_18', 'pepX_2', 'pepX_76']
 Removed: pepX_95
 Alleles in predicted but not in true: ['pepX_18', 'pepX_2']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 13, 28, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 50, 52, 53, 54, 55, 56, 57, 58, 63, 136, 141, 142, 143, 144, 147, 148, 155, 157, 158, 159]
 Minimum edit distance for pepX_95 : 1
 Maximum edit distance for pepX_95: 159
 Average edit distance for pepX_95: 45.5157894737
@@ -496,12 +532,13 @@ pepX_2 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 35 ====================================================
 
-Time taken to run ADP: 0.128280433019 min
+Time taken to run ADP: 0.134733049075 min
 True alleles: ['pepX_183', 'pepX_23', 'pepX_41', 'pepX_44', 'pepX_73']
 Predicted alleles: ['pepX_183', 'pepX_23', 'pepX_41', 'pepX_44', 'pepX_65', 'pepX_68']
 Removed: pepX_73
 Alleles in predicted but not in true: ['pepX_65', 'pepX_68']
 
+Edit distances with the removed allele:[2, 3, 4, 5, 6, 8, 13, 14, 15, 18, 19, 28, 42, 43, 44, 45, 46, 47, 48, 49, 51, 52, 53, 54, 55, 56, 57, 58, 59, 62, 63, 143, 144, 147, 148, 152, 153, 157, 158, 164]
 Minimum edit distance for pepX_73 : 2
 Maximum edit distance for pepX_73: 164
 Average edit distance for pepX_73: 52.4368421053
@@ -511,12 +548,13 @@ pepX_68 is not the closest allele to the removed allele, its edit distance from 
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 36 ====================================================
 
-Time taken to run ADP: 0.127951816718 min
+Time taken to run ADP: 0.128688800335 min
 True alleles: ['pepX_134', 'pepX_167']
 Predicted alleles: ['pepX_134', 'pepX_151']
 Removed: pepX_167
 Alleles in predicted but not in true: ['pepX_151']
 
+Edit distances with the removed allele:[1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 30, 32, 34, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 51, 52, 55, 57, 138, 144, 146, 147, 153, 154, 155, 157, 158, 161]
 Minimum edit distance for pepX_167 : 1
 Maximum edit distance for pepX_167: 161
 Average edit distance for pepX_167: 40.8842105263
@@ -525,12 +563,13 @@ pepX_151 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 37 ====================================================
 
-Time taken to run ADP: 0.199649933974 min
+Time taken to run ADP: 0.208300785224 min
 True alleles: ['pepX_2', 'pepX_4', 'pepX_51', 'pepX_93']
 Predicted alleles: ['pepX_138', 'pepX_2', 'pepX_4', 'pepX_51', 'pepX_8']
 Removed: pepX_93
 Alleles in predicted but not in true: ['pepX_138', 'pepX_8']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 13, 28, 32, 33, 35, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 62, 138, 143, 144, 145, 146, 148, 150, 157, 158, 159]
 Minimum edit distance for pepX_93 : 1
 Maximum edit distance for pepX_93: 159
 Average edit distance for pepX_93: 46.2315789474
@@ -540,12 +579,13 @@ pepX_8 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 38 ====================================================
 
-Time taken to run ADP: 0.301999266942 min
+Time taken to run ADP: 0.346543431282 min
 True alleles: ['pepX_103', 'pepX_76', 'pepX_77']
 Predicted alleles: ['pepX_103', 'pepX_129', 'pepX_133', 'pepX_51', 'pepX_77', 'pepX_91']
 Removed: pepX_76
 Alleles in predicted but not in true: ['pepX_129', 'pepX_133', 'pepX_51', 'pepX_91']
 
+Edit distances with the removed allele:[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 26, 28, 30, 31, 32, 33, 34, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 48, 49, 50, 52, 142, 145, 146, 148, 151, 153, 154, 157, 159, 161]
 Minimum edit distance for pepX_76 : 3
 Maximum edit distance for pepX_76: 161
 Average edit distance for pepX_76: 36.2263157895
@@ -556,12 +596,13 @@ pepX_51 is not the closest allele to the removed allele, its edit distance from 
 pepX_91 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 39 ====================================================
 
-Time taken to run ADP: 0.0546250661214 min
+Time taken to run ADP: 0.0543621699015 min
 True alleles: ['pepX_1', 'pepX_146', 'pepX_47']
 Predicted alleles: ['pepX_146', 'pepX_2', 'pepX_47']
 Removed: pepX_1
 Alleles in predicted but not in true: ['pepX_2']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 13, 28, 30, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 50, 52, 53, 54, 55, 56, 57, 58, 63, 136, 141, 142, 143, 144, 147, 148, 153, 155, 157, 158]
 Minimum edit distance for pepX_1 : 1
 Maximum edit distance for pepX_1: 158
 Average edit distance for pepX_1: 45.3157894737
@@ -570,12 +611,13 @@ pepX_2 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 40 ====================================================
 
-Time taken to run ADP: 0.0266676147779 min
+Time taken to run ADP: 0.0269320170085 min
 True alleles: ['pepX_108', 'pepX_153', 'pepX_171', 'pepX_175', 'pepX_20']
 Predicted alleles: ['pepX_108', 'pepX_153', 'pepX_175', 'pepX_20']
 Removed: pepX_171
 Alleles in predicted but not in true: []
 
+Edit distances with the removed allele:[50, 53, 67, 69, 73, 77, 85, 86, 87, 95, 96, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153]
 Minimum edit distance for pepX_171 : 50
 Maximum edit distance for pepX_171: 153
 Average edit distance for pepX_171: 141.221052632
@@ -584,4 +626,4 @@ All predicted alleles which are not in true are top 3 closest to the removed all
 ======================================== pepX: SUMMARY STATISTICS ====================================================
 
 Out of 40 simulations, 21 simulations we found the closest allele to the removed one.
-Out of 40 simulations, 31 simulations we found the top 3 closest allele to the removed one.
+Out of 40 simulations, 33 simulations we found the top 3 closest allele to the removed one.

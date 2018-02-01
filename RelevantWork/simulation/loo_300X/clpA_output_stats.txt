@@ -1,11 +1,12 @@
 ======================================== SIMULATION 1 ====================================================
 
-Time taken to run ADP: 0.147031434377 min
+Time taken to run ADP: 0.150213301182 min
 True alleles: ['clpA_193', 'clpA_204', 'clpA_56', 'clpA_73']
 Predicted alleles: ['clpA_193', 'clpA_202', 'clpA_203', 'clpA_56', 'clpA_73']
 Removed: clpA_204
 Alleles in predicted but not in true: ['clpA_202', 'clpA_203']
 
+Edit distances with the removed allele:[1, 2, 61, 62, 66, 74, 77, 80, 87, 88, 109, 111, 114, 172, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 188, 189]
 Minimum edit distance for clpA_204 : 1
 Maximum edit distance for clpA_204: 189
 Average edit distance for clpA_204: 175.451612903
@@ -15,12 +16,13 @@ clpA_203 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 2 ====================================================
 
-Time taken to run ADP: 0.199495685101 min
+Time taken to run ADP: 0.202969400088 min
 True alleles: ['clpA_6', 'clpA_85']
 Predicted alleles: ['clpA_146', 'clpA_150', 'clpA_6', 'clpA_62']
 Removed: clpA_85
 Alleles in predicted but not in true: ['clpA_146', 'clpA_150', 'clpA_62']
 
+Edit distances with the removed allele:[4, 5, 6, 7, 8, 9, 11, 12, 15, 16, 17, 18, 19, 20, 21, 45, 46, 47, 48, 49, 50, 51, 53, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 68, 69, 74, 177, 178, 180, 181, 182, 183, 187, 188, 190]
 Minimum edit distance for clpA_85 : 4
 Maximum edit distance for clpA_85: 190
 Average edit distance for clpA_85: 49.9078341014
@@ -30,12 +32,13 @@ clpA_150 is not the closest allele to the removed allele, its edit distance from
 clpA_62 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 3 ====================================================
 
-Time taken to run ADP: 0.116993618011 min
+Time taken to run ADP: 0.121447233359 min
 True alleles: ['clpA_113', 'clpA_133', 'clpA_198', 'clpA_209', 'clpA_38', 'clpA_83', 'clpA_98']
 Predicted alleles: ['clpA_113', 'clpA_133', 'clpA_181', 'clpA_198', 'clpA_209', 'clpA_83', 'clpA_98']
 Removed: clpA_38
 Alleles in predicted but not in true: ['clpA_181']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 66, 67, 68, 78, 177, 182, 183, 184, 185, 186, 187, 188, 189, 190, 193]
 Minimum edit distance for clpA_38 : 1
 Maximum edit distance for clpA_38: 193
 Average edit distance for clpA_38: 53.7373271889
@@ -44,12 +47,13 @@ clpA_181 is not the closest allele to the removed allele, its edit distance from
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 4 ====================================================
 
-Time taken to run ADP: 0.186846180757 min
+Time taken to run ADP: 0.183797899882 min
 True alleles: ['clpA_14', 'clpA_155', 'clpA_164', 'clpA_68', 'clpA_85']
 Predicted alleles: ['clpA_14', 'clpA_146', 'clpA_150', 'clpA_155', 'clpA_164', 'clpA_62', 'clpA_68']
 Removed: clpA_85
 Alleles in predicted but not in true: ['clpA_146', 'clpA_150', 'clpA_62']
 
+Edit distances with the removed allele:[4, 5, 6, 7, 8, 9, 11, 12, 15, 16, 17, 18, 19, 20, 21, 45, 46, 47, 48, 49, 50, 51, 53, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 68, 69, 74, 177, 178, 180, 181, 182, 183, 187, 188, 190]
 Minimum edit distance for clpA_85 : 4
 Maximum edit distance for clpA_85: 190
 Average edit distance for clpA_85: 49.9078341014
@@ -59,12 +63,13 @@ clpA_150 is not the closest allele to the removed allele, its edit distance from
 clpA_62 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 5 ====================================================
 
-Time taken to run ADP: 0.102506581942 min
+Time taken to run ADP: 0.101325233777 min
 True alleles: ['clpA_11', 'clpA_197', 'clpA_200', 'clpA_47', 'clpA_79']
 Predicted alleles: ['clpA_11', 'clpA_139', 'clpA_197', 'clpA_200', 'clpA_46', 'clpA_79']
 Removed: clpA_47
 Alleles in predicted but not in true: ['clpA_139', 'clpA_46']
 
+Edit distances with the removed allele:[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 44, 45, 46, 47, 48, 49, 50, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 77, 179, 180, 182, 183, 184, 185, 189]
 Minimum edit distance for clpA_47 : 2
 Maximum edit distance for clpA_47: 189
 Average edit distance for clpA_47: 48.7419354839
@@ -74,12 +79,13 @@ clpA_46 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 6 ====================================================
 
-Time taken to run ADP: 0.0558489004771 min
+Time taken to run ADP: 0.0550542155902 min
 True alleles: ['clpA_110', 'clpA_124', 'clpA_143', 'clpA_19', 'clpA_81']
 Predicted alleles: ['clpA_110', 'clpA_127', 'clpA_143', 'clpA_19', 'clpA_81']
 Removed: clpA_124
 Alleles in predicted but not in true: ['clpA_127']
 
+Edit distances with the removed allele:[2, 4, 5, 24, 26, 27, 28, 29, 30, 38, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 79, 87, 170, 171, 178, 179, 180, 181, 182, 183]
 Minimum edit distance for clpA_124 : 2
 Maximum edit distance for clpA_124: 183
 Average edit distance for clpA_124: 61.5069124424
@@ -88,12 +94,13 @@ clpA_127 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 7 ====================================================
 
-Time taken to run ADP: 0.0831204811732 min
+Time taken to run ADP: 0.0851563334465 min
 True alleles: ['clpA_125', 'clpA_149', 'clpA_166', 'clpA_30', 'clpA_84', 'clpA_9']
 Predicted alleles: ['clpA_125', 'clpA_149', 'clpA_166', 'clpA_30', 'clpA_8', 'clpA_84']
 Removed: clpA_9
 Alleles in predicted but not in true: ['clpA_8']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 31, 34, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 57, 58, 59, 60, 61, 62, 63, 64, 65, 67, 68, 80, 176, 179, 181, 182, 184, 186, 187, 188, 189, 194]
 Minimum edit distance for clpA_9 : 1
 Maximum edit distance for clpA_9: 194
 Average edit distance for clpA_9: 54.2304147465
@@ -102,12 +109,13 @@ clpA_8 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 8 ====================================================
 
-Time taken to run ADP: 0.118741734823 min
+Time taken to run ADP: 0.119825434685 min
 True alleles: ['clpA_130', 'clpA_24', 'clpA_65', 'clpA_80']
 Predicted alleles: ['clpA_130', 'clpA_24', 'clpA_65', 'clpA_75', 'clpA_77', 'clpA_89']
 Removed: clpA_80
 Alleles in predicted but not in true: ['clpA_75', 'clpA_77', 'clpA_89']
 
+Edit distances with the removed allele:[9, 10, 11, 12, 13, 14, 15, 16, 43, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 87, 175, 178, 179, 181, 183, 184, 186, 187, 188, 192]
 Minimum edit distance for clpA_80 : 9
 Maximum edit distance for clpA_80: 192
 Average edit distance for clpA_80: 63.6774193548
@@ -117,12 +125,13 @@ clpA_77 is not the closest allele to the removed allele, its edit distance from 
 clpA_89 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 9 ====================================================
 
-Time taken to run ADP: 0.581324835618 min
+Time taken to run ADP: 0.574435015519 min
 True alleles: ['clpA_103', 'clpA_15', 'clpA_160', 'clpA_183', 'clpA_194', 'clpA_32', 'clpA_66']
 Predicted alleles: ['clpA_103', 'clpA_15', 'clpA_159', 'clpA_183', 'clpA_32', 'clpA_46', 'clpA_66', 'clpA_67']
 Removed: clpA_194
 Alleles in predicted but not in true: ['clpA_159', 'clpA_46', 'clpA_67']
 
+Edit distances with the removed allele:[2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 46, 47, 48, 49, 50, 51, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 75, 178, 179, 180, 181, 182, 183, 185, 189]
 Minimum edit distance for clpA_194 : 2
 Maximum edit distance for clpA_194: 189
 Average edit distance for clpA_194: 49.5806451613
@@ -132,12 +141,13 @@ clpA_46 is one of the closest allele to the removed allele.
 clpA_67 is not the closest allele to the removed allele, its edit distance from the removed allele is 3.
 ======================================== SIMULATION 10 ====================================================
 
-Time taken to run ADP: 0.144569746653 min
+Time taken to run ADP: 0.147047833602 min
 True alleles: ['clpA_62', 'clpA_87']
 Predicted alleles: ['clpA_70', 'clpA_73', 'clpA_87']
 Removed: clpA_62
 Alleles in predicted but not in true: ['clpA_70', 'clpA_73']
 
+Edit distances with the removed allele:[2, 4, 5, 6, 7, 8, 9, 11, 12, 15, 16, 17, 18, 19, 20, 21, 47, 48, 49, 50, 51, 52, 55, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 68, 69, 75, 178, 179, 180, 181, 182, 183, 184, 186, 188]
 Minimum edit distance for clpA_62 : 2
 Maximum edit distance for clpA_62: 188
 Average edit distance for clpA_62: 50.6774193548
@@ -147,12 +157,13 @@ clpA_73 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 11 ====================================================
 
-Time taken to run ADP: 0.077483300368 min
+Time taken to run ADP: 0.0775669018428 min
 True alleles: ['clpA_15', 'clpA_180', 'clpA_191', 'clpA_3']
 Predicted alleles: ['clpA_15', 'clpA_191', 'clpA_3']
 Removed: clpA_180
 Alleles in predicted but not in true: []
 
+Edit distances with the removed allele:[51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 71, 72, 73, 84, 175, 177, 178, 180, 181, 182, 184, 185, 187]
 Minimum edit distance for clpA_180 : 51
 Maximum edit distance for clpA_180: 187
 Average edit distance for clpA_180: 66.9769585253
@@ -160,12 +171,13 @@ Average edit distance for clpA_180: 66.9769585253
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 12 ====================================================
 
-Time taken to run ADP: 0.101201899846 min
+Time taken to run ADP: 0.103222882748 min
 True alleles: ['clpA_14', 'clpA_152', 'clpA_180', 'clpA_59', 'clpA_75']
 Predicted alleles: ['clpA_14', 'clpA_152', 'clpA_180', 'clpA_59', 'clpA_76', 'clpA_79', 'clpA_80']
 Removed: clpA_75
 Alleles in predicted but not in true: ['clpA_76', 'clpA_79', 'clpA_80']
 
+Edit distances with the removed allele:[5, 8, 9, 10, 11, 12, 20, 21, 22, 23, 49, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 90, 179, 180, 181, 184, 187, 188, 189, 190, 194]
 Minimum edit distance for clpA_75 : 5
 Maximum edit distance for clpA_75: 194
 Average edit distance for clpA_75: 68.1198156682
@@ -175,12 +187,13 @@ clpA_79 is not the closest allele to the removed allele, its edit distance from 
 clpA_80 is not the closest allele to the removed allele, its edit distance from the removed allele is 11.
 ======================================== SIMULATION 13 ====================================================
 
-Time taken to run ADP: 0.0258565862974 min
+Time taken to run ADP: 0.0266646822294 min
 True alleles: ['clpA_152', 'clpA_5']
 Predicted alleles: ['clpA_5']
 Removed: clpA_152
 Alleles in predicted but not in true: []
 
+Edit distances with the removed allele:[50, 51, 53, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 76, 79, 89, 181, 182, 183, 184, 185, 186, 188, 189, 190, 191]
 Minimum edit distance for clpA_152 : 50
 Maximum edit distance for clpA_152: 191
 Average edit distance for clpA_152: 73.2258064516
@@ -188,12 +201,13 @@ Average edit distance for clpA_152: 73.2258064516
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 14 ====================================================
 
-Time taken to run ADP: 0.0349351326625 min
+Time taken to run ADP: 0.0350967327754 min
 True alleles: ['clpA_100', 'clpA_117']
 Predicted alleles: ['clpA_100', 'clpA_119']
 Removed: clpA_117
 Alleles in predicted but not in true: ['clpA_119']
 
+Edit distances with the removed allele:[1, 2, 4, 5, 6, 9, 10, 26, 28, 29, 34, 39, 40, 41, 42, 43, 44, 45, 46, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 67, 69, 72, 85, 179, 180, 181, 182, 183, 184, 186, 191]
 Minimum edit distance for clpA_117 : 1
 Maximum edit distance for clpA_117: 191
 Average edit distance for clpA_117: 60.4285714286
@@ -202,12 +216,13 @@ clpA_119 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 15 ====================================================
 
-Time taken to run ADP: 0.0878182331721 min
+Time taken to run ADP: 0.0888257821401 min
 True alleles: ['clpA_127', 'clpA_140', 'clpA_187', 'clpA_35', 'clpA_74', 'clpA_78']
 Predicted alleles: ['clpA_101', 'clpA_127', 'clpA_140', 'clpA_187', 'clpA_30', 'clpA_35', 'clpA_78']
 Removed: clpA_74
 Alleles in predicted but not in true: ['clpA_101', 'clpA_30']
 
+Edit distances with the removed allele:[4, 5, 6, 7, 8, 9, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 65, 74, 170, 176, 177, 178, 179, 180, 182, 186, 187, 190]
 Minimum edit distance for clpA_74 : 4
 Maximum edit distance for clpA_74: 190
 Average edit distance for clpA_74: 55.2165898618
@@ -216,12 +231,13 @@ clpA_101 is one of the closest allele to the removed allele.
 clpA_30 is not the closest allele to the removed allele, its edit distance from the removed allele is 7.
 ======================================== SIMULATION 16 ====================================================
 
-Time taken to run ADP: 0.065971549352 min
+Time taken to run ADP: 0.0652770837148 min
 True alleles: ['clpA_108', 'clpA_165', 'clpA_201', 'clpA_96']
 Predicted alleles: ['clpA_108', 'clpA_165', 'clpA_199', 'clpA_96']
 Removed: clpA_201
 Alleles in predicted but not in true: ['clpA_199']
 
+Edit distances with the removed allele:[18, 21, 89, 90, 93, 95, 107, 108, 109, 110, 111, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191]
 Minimum edit distance for clpA_201 : 18
 Maximum edit distance for clpA_201: 191
 Average edit distance for clpA_201: 176.797235023
@@ -230,12 +246,13 @@ clpA_199 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 17 ====================================================
 
-Time taken to run ADP: 0.094777349631 min
+Time taken to run ADP: 0.0938074191411 min
 True alleles: ['clpA_100', 'clpA_104', 'clpA_109', 'clpA_133', 'clpA_156', 'clpA_213', 'clpA_40']
 Predicted alleles: ['clpA_100', 'clpA_109', 'clpA_11', 'clpA_133', 'clpA_156', 'clpA_213', 'clpA_25', 'clpA_40']
 Removed: clpA_104
 Alleles in predicted but not in true: ['clpA_11', 'clpA_25']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 33, 36, 37, 40, 41, 42, 43, 44, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 70, 81, 177, 180, 182, 183, 185, 186, 188, 189, 190, 195]
 Minimum edit distance for clpA_104 : 1
 Maximum edit distance for clpA_104: 195
 Average edit distance for clpA_104: 55.1290322581
@@ -245,12 +262,13 @@ clpA_25 is not the closest allele to the removed allele, its edit distance from 
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 18 ====================================================
 
-Time taken to run ADP: 0.0787479321162 min
+Time taken to run ADP: 0.0788195172946 min
 True alleles: ['clpA_125', 'clpA_183', 'clpA_199', 'clpA_28', 'clpA_77']
 Predicted alleles: ['clpA_125', 'clpA_183', 'clpA_199', 'clpA_29', 'clpA_30', 'clpA_77']
 Removed: clpA_28
 Alleles in predicted but not in true: ['clpA_29', 'clpA_30']
 
+Edit distances with the removed allele:[1, 2, 4, 8, 10, 11, 12, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 62, 63, 73, 172, 178, 179, 180, 181, 182, 184, 187, 190, 192]
 Minimum edit distance for clpA_28 : 1
 Maximum edit distance for clpA_28: 192
 Average edit distance for clpA_28: 54.7557603687
@@ -260,12 +278,13 @@ clpA_30 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 19 ====================================================
 
-Time taken to run ADP: 0.0981350024541 min
+Time taken to run ADP: 0.0987602353096 min
 True alleles: ['clpA_128', 'clpA_154', 'clpA_179', 'clpA_187']
 Predicted alleles: ['clpA_154', 'clpA_179', 'clpA_182', 'clpA_187', 'clpA_23', 'clpA_8']
 Removed: clpA_128
 Alleles in predicted but not in true: ['clpA_182', 'clpA_23', 'clpA_8']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 31, 34, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 57, 58, 59, 60, 61, 62, 63, 64, 65, 67, 69, 79, 174, 177, 179, 180, 182, 184, 185, 186, 187, 192]
 Minimum edit distance for clpA_128 : 1
 Maximum edit distance for clpA_128: 192
 Average edit distance for clpA_128: 53.8847926267
@@ -273,14 +292,16 @@ Average edit distance for clpA_128: 53.8847926267
 clpA_182 is one of the closest allele to the removed allele.
 clpA_23 is not the closest allele to the removed allele, its edit distance from the removed allele is 2.
 clpA_8 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 20 ====================================================
 
-Time taken to run ADP: 0.113037598133 min
+Time taken to run ADP: 0.113828353087 min
 True alleles: ['clpA_114', 'clpA_121', 'clpA_58', 'clpA_74', 'clpA_82']
 Predicted alleles: ['clpA_101', 'clpA_114', 'clpA_121', 'clpA_27', 'clpA_30', 'clpA_58', 'clpA_82']
 Removed: clpA_74
 Alleles in predicted but not in true: ['clpA_101', 'clpA_27', 'clpA_30']
 
+Edit distances with the removed allele:[4, 5, 6, 7, 8, 9, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 65, 74, 170, 176, 177, 178, 179, 180, 182, 186, 187, 190]
 Minimum edit distance for clpA_74 : 4
 Maximum edit distance for clpA_74: 190
 Average edit distance for clpA_74: 55.2165898618
@@ -290,12 +311,13 @@ clpA_27 is not the closest allele to the removed allele, its edit distance from 
 clpA_30 is not the closest allele to the removed allele, its edit distance from the removed allele is 7.
 ======================================== SIMULATION 21 ====================================================
 
-Time taken to run ADP: 0.104573965073 min
+Time taken to run ADP: 0.103615717093 min
 True alleles: ['clpA_192', 'clpA_200', 'clpA_206', 'clpA_42']
 Predicted alleles: ['clpA_192', 'clpA_199', 'clpA_206', 'clpA_42']
 Removed: clpA_200
 Alleles in predicted but not in true: ['clpA_199']
 
+Edit distances with the removed allele:[5, 21, 92, 94, 95, 97, 98, 109, 110, 113, 114, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 195]
 Minimum edit distance for clpA_200 : 5
 Maximum edit distance for clpA_200: 195
 Average edit distance for clpA_200: 181.165898618
@@ -304,12 +326,13 @@ clpA_199 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 22 ====================================================
 
-Time taken to run ADP: 0.102186965942 min
+Time taken to run ADP: 0.099919184049 min
 True alleles: ['clpA_135', 'clpA_168', 'clpA_173']
 Predicted alleles: ['clpA_114', 'clpA_168', 'clpA_173']
 Removed: clpA_135
 Alleles in predicted but not in true: ['clpA_114']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 65, 66, 67, 76, 176, 182, 183, 184, 185, 186, 187, 188, 189, 192]
 Minimum edit distance for clpA_135 : 1
 Maximum edit distance for clpA_135: 192
 Average edit distance for clpA_135: 53.3686635945
@@ -318,12 +341,13 @@ clpA_114 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 23 ====================================================
 
-Time taken to run ADP: 0.358983866374 min
+Time taken to run ADP: 0.360814452171 min
 True alleles: ['clpA_105', 'clpA_116', 'clpA_31', 'clpA_49', 'clpA_58', 'clpA_8']
 Predicted alleles: ['clpA_107', 'clpA_116', 'clpA_25', 'clpA_31', 'clpA_49', 'clpA_58', 'clpA_8']
 Removed: clpA_105
 Alleles in predicted but not in true: ['clpA_107', 'clpA_25']
 
+Edit distances with the removed allele:[3, 4, 5, 6, 7, 8, 13, 14, 15, 16, 34, 37, 38, 41, 42, 43, 44, 45, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 67, 68, 69, 81, 175, 178, 180, 181, 183, 184, 185, 186, 187, 192]
 Minimum edit distance for clpA_105 : 3
 Maximum edit distance for clpA_105: 192
 Average edit distance for clpA_105: 55.1889400922
@@ -333,12 +357,13 @@ clpA_25 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 24 ====================================================
 
-Time taken to run ADP: 0.201089266936 min
+Time taken to run ADP: 0.205664801598 min
 True alleles: ['clpA_103', 'clpA_196', 'clpA_206', 'clpA_33', 'clpA_43', 'clpA_57']
 Predicted alleles: ['clpA_101', 'clpA_103', 'clpA_196', 'clpA_206', 'clpA_43', 'clpA_57']
 Removed: clpA_33
 Alleles in predicted but not in true: ['clpA_101']
 
+Edit distances with the removed allele:[1, 2, 3, 5, 10, 11, 12, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 66, 73, 171, 175, 177, 178, 179, 180, 181, 184, 186, 189]
 Minimum edit distance for clpA_33 : 1
 Maximum edit distance for clpA_33: 189
 Average edit distance for clpA_33: 57.6497695853
@@ -347,12 +372,13 @@ clpA_101 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 25 ====================================================
 
-Time taken to run ADP: 0.215860263507 min
+Time taken to run ADP: 0.215690366427 min
 True alleles: ['clpA_24', 'clpA_58', 'clpA_7']
 Predicted alleles: ['clpA_24', 'clpA_40', 'clpA_67', 'clpA_7', 'clpA_88']
 Removed: clpA_58
 Alleles in predicted but not in true: ['clpA_40', 'clpA_67', 'clpA_88']
 
+Edit distances with the removed allele:[2, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 46, 47, 48, 49, 50, 51, 52, 53, 54, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 76, 181, 183, 184, 185, 189, 193]
 Minimum edit distance for clpA_58 : 2
 Maximum edit distance for clpA_58: 193
 Average edit distance for clpA_58: 51.3732718894
@@ -362,12 +388,13 @@ clpA_67 is not the closest allele to the removed allele, its edit distance from 
 clpA_88 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 26 ====================================================
 
-Time taken to run ADP: 0.035495531559 min
+Time taken to run ADP: 0.0365228017171 min
 True alleles: ['clpA_109', 'clpA_124', 'clpA_179']
 Predicted alleles: ['clpA_109', 'clpA_127', 'clpA_179']
 Removed: clpA_124
 Alleles in predicted but not in true: ['clpA_127']
 
+Edit distances with the removed allele:[2, 4, 5, 24, 26, 27, 28, 29, 30, 38, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 79, 87, 170, 171, 178, 179, 180, 181, 182, 183]
 Minimum edit distance for clpA_124 : 2
 Maximum edit distance for clpA_124: 183
 Average edit distance for clpA_124: 61.5069124424
@@ -376,12 +403,13 @@ clpA_127 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 27 ====================================================
 
-Time taken to run ADP: 0.297546299299 min
+Time taken to run ADP: 0.30085460345 min
 True alleles: ['clpA_43', 'clpA_65', 'clpA_88']
 Predicted alleles: ['clpA_103', 'clpA_192', 'clpA_65', 'clpA_88']
 Removed: clpA_43
 Alleles in predicted but not in true: ['clpA_103', 'clpA_192']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 45, 46, 47, 48, 49, 50, 51, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 76, 178, 179, 180, 181, 182, 183, 184, 185, 188]
 Minimum edit distance for clpA_43 : 1
 Maximum edit distance for clpA_43: 188
 Average edit distance for clpA_43: 49.4331797235
@@ -391,12 +419,13 @@ clpA_192 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 28 ====================================================
 
-Time taken to run ADP: 0.0968996683757 min
+Time taken to run ADP: 0.0974052151044 min
 True alleles: ['clpA_10', 'clpA_137', 'clpA_173', 'clpA_202', 'clpA_64']
 Predicted alleles: ['clpA_10', 'clpA_137', 'clpA_139', 'clpA_143', 'clpA_173', 'clpA_202', 'clpA_59']
 Removed: clpA_64
 Alleles in predicted but not in true: ['clpA_139', 'clpA_143', 'clpA_59']
 
+Edit distances with the removed allele:[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 48, 49, 50, 51, 52, 53, 54, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 77, 178, 179, 180, 182, 183, 185, 189]
 Minimum edit distance for clpA_64 : 3
 Maximum edit distance for clpA_64: 189
 Average edit distance for clpA_64: 51.5852534562
@@ -406,12 +435,13 @@ clpA_143 is one of the closest allele to the removed allele.
 clpA_59 is not the closest allele to the removed allele, its edit distance from the removed allele is 14.
 ======================================== SIMULATION 29 ====================================================
 
-Time taken to run ADP: 0.175250351429 min
+Time taken to run ADP: 0.17964558204 min
 True alleles: ['clpA_197', 'clpA_35']
 Predicted alleles: ['clpA_147', 'clpA_173', 'clpA_35', 'clpA_62']
 Removed: clpA_197
 Alleles in predicted but not in true: ['clpA_147', 'clpA_173', 'clpA_62']
 
+Edit distances with the removed allele:[2, 4, 5, 6, 7, 8, 9, 11, 12, 15, 16, 17, 18, 19, 20, 21, 47, 48, 49, 50, 51, 52, 53, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 68, 69, 75, 180, 181, 182, 183, 185, 186, 187, 189]
 Minimum edit distance for clpA_197 : 2
 Maximum edit distance for clpA_197: 189
 Average edit distance for clpA_197: 50.4239631336
@@ -419,14 +449,16 @@ Average edit distance for clpA_197: 50.4239631336
 clpA_147 is not the closest allele to the removed allele, its edit distance from the removed allele is 5.
 clpA_173 is one of the closest allele to the removed allele.
 clpA_62 is not the closest allele to the removed allele, its edit distance from the removed allele is 4.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 30 ====================================================
 
-Time taken to run ADP: 0.0768914699554 min
+Time taken to run ADP: 0.0773055990537 min
 True alleles: ['clpA_125', 'clpA_128', 'clpA_178', 'clpA_28', 'clpA_4', 'clpA_9']
 Predicted alleles: ['clpA_125', 'clpA_128', 'clpA_178', 'clpA_28', 'clpA_4', 'clpA_8']
 Removed: clpA_9
 Alleles in predicted but not in true: ['clpA_8']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 31, 34, 38, 39, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 57, 58, 59, 60, 61, 62, 63, 64, 65, 67, 68, 80, 176, 179, 181, 182, 184, 186, 187, 188, 189, 194]
 Minimum edit distance for clpA_9 : 1
 Maximum edit distance for clpA_9: 194
 Average edit distance for clpA_9: 54.2304147465
@@ -435,12 +467,13 @@ clpA_8 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 31 ====================================================
 
-Time taken to run ADP: 0.150815232595 min
+Time taken to run ADP: 0.155498083433 min
 True alleles: ['clpA_143', 'clpA_156', 'clpA_157', 'clpA_162', 'clpA_205', 'clpA_206', 'clpA_9']
 Predicted alleles: ['clpA_130', 'clpA_139', 'clpA_156', 'clpA_157', 'clpA_162', 'clpA_205', 'clpA_206', 'clpA_64', 'clpA_9']
 Removed: clpA_143
 Alleles in predicted but not in true: ['clpA_130', 'clpA_139', 'clpA_64']
 
+Edit distances with the removed allele:[3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 49, 50, 51, 52, 53, 54, 55, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 80, 178, 179, 181, 183, 184, 186, 190]
 Minimum edit distance for clpA_143 : 3
 Maximum edit distance for clpA_143: 190
 Average edit distance for clpA_143: 52.5576036866
@@ -450,12 +483,13 @@ clpA_139 is not the closest allele to the removed allele, its edit distance from
 clpA_64 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 32 ====================================================
 
-Time taken to run ADP: 0.201990501086 min
+Time taken to run ADP: 0.204624199867 min
 True alleles: ['clpA_124', 'clpA_138', 'clpA_161', 'clpA_163', 'clpA_173', 'clpA_3']
 Predicted alleles: ['clpA_124', 'clpA_161', 'clpA_163', 'clpA_171', 'clpA_173', 'clpA_192', 'clpA_196', 'clpA_3', 'clpA_45']
 Removed: clpA_138
 Alleles in predicted but not in true: ['clpA_171', 'clpA_192', 'clpA_196', 'clpA_45']
 
+Edit distances with the removed allele:[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 75, 176, 178, 180, 181, 182, 186]
 Minimum edit distance for clpA_138 : 2
 Maximum edit distance for clpA_138: 186
 Average edit distance for clpA_138: 49.8156682028
@@ -466,12 +500,13 @@ clpA_196 is one of the closest allele to the removed allele.
 clpA_45 is not the closest allele to the removed allele, its edit distance from the removed allele is 5.
 ======================================== SIMULATION 33 ====================================================
 
-Time taken to run ADP: 0.0780233184497 min
+Time taken to run ADP: 0.0796127478282 min
 True alleles: ['clpA_101', 'clpA_201', 'clpA_207', 'clpA_25', 'clpA_51', 'clpA_92']
 Predicted alleles: ['clpA_101', 'clpA_122', 'clpA_174', 'clpA_177', 'clpA_201', 'clpA_207', 'clpA_25', 'clpA_51', 'clpA_93']
 Removed: clpA_92
 Alleles in predicted but not in true: ['clpA_122', 'clpA_174', 'clpA_177', 'clpA_93']
 
+Edit distances with the removed allele:[7, 8, 9, 10, 11, 27, 29, 30, 31, 37, 41, 42, 43, 44, 45, 46, 47, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 76, 82, 176, 180, 181, 183, 184, 185, 190]
 Minimum edit distance for clpA_92 : 7
 Maximum edit distance for clpA_92: 190
 Average edit distance for clpA_92: 60.3824884793
@@ -482,12 +517,13 @@ clpA_177 is not the closest allele to the removed allele, its edit distance from
 clpA_93 is not the closest allele to the removed allele, its edit distance from the removed allele is 9.
 ======================================== SIMULATION 34 ====================================================
 
-Time taken to run ADP: 0.144323718548 min
+Time taken to run ADP: 0.146036064625 min
 True alleles: ['clpA_108', 'clpA_126', 'clpA_87']
 Predicted alleles: ['clpA_126', 'clpA_66', 'clpA_69', 'clpA_87']
 Removed: clpA_108
 Alleles in predicted but not in true: ['clpA_66', 'clpA_69']
 
+Edit distances with the removed allele:[1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17, 46, 47, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 78, 178, 179, 180, 181, 182, 185, 189]
 Minimum edit distance for clpA_108 : 1
 Maximum edit distance for clpA_108: 189
 Average edit distance for clpA_108: 49.33640553
@@ -496,12 +532,13 @@ clpA_66 is one of the closest allele to the removed allele.
 clpA_69 is not the closest allele to the removed allele, its edit distance from the removed allele is 12.
 ======================================== SIMULATION 35 ====================================================
 
-Time taken to run ADP: 0.0994570175807 min
+Time taken to run ADP: 0.0993962009748 min
 True alleles: ['clpA_209', 'clpA_27', 'clpA_47', 'clpA_50', 'clpA_83']
 Predicted alleles: ['clpA_209', 'clpA_27', 'clpA_47', 'clpA_50', 'clpA_76', 'clpA_78', 'clpA_84']
 Removed: clpA_83
 Alleles in predicted but not in true: ['clpA_76', 'clpA_78', 'clpA_84']
 
+Edit distances with the removed allele:[1, 4, 6, 7, 9, 10, 11, 12, 19, 20, 21, 22, 49, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 90, 175, 176, 178, 179, 181, 182, 183, 184, 185, 188, 189, 193]
 Minimum edit distance for clpA_83 : 1
 Maximum edit distance for clpA_83: 193
 Average edit distance for clpA_83: 68.1152073733
@@ -512,12 +549,13 @@ clpA_84 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 36 ====================================================
 
-Time taken to run ADP: 0.131174381574 min
+Time taken to run ADP: 0.134578784307 min
 True alleles: ['clpA_153', 'clpA_191']
 Predicted alleles: ['clpA_139', 'clpA_153', 'clpA_171', 'clpA_211']
 Removed: clpA_191
 Alleles in predicted but not in true: ['clpA_139', 'clpA_171', 'clpA_211']
 
+Edit distances with the removed allele:[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 45, 46, 47, 48, 49, 50, 51, 53, 54, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 76, 179, 180, 181, 182, 183, 184, 188, 192]
 Minimum edit distance for clpA_191 : 2
 Maximum edit distance for clpA_191: 192
 Average edit distance for clpA_191: 48.7926267281
@@ -528,12 +566,13 @@ clpA_211 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 37 ====================================================
 
-Time taken to run ADP: 0.123244186242 min
+Time taken to run ADP: 0.123661299547 min
 True alleles: ['clpA_106', 'clpA_2', 'clpA_5', 'clpA_58']
 Predicted alleles: ['clpA_2', 'clpA_5', 'clpA_58', 'clpA_8']
 Removed: clpA_106
 Alleles in predicted but not in true: ['clpA_8']
 
+Edit distances with the removed allele:[2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 32, 35, 37, 40, 41, 42, 43, 44, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 70, 81, 175, 178, 179, 180, 181, 183, 184, 186, 187, 188, 189, 194]
 Minimum edit distance for clpA_106 : 2
 Maximum edit distance for clpA_106: 194
 Average edit distance for clpA_106: 54.8248847926
@@ -542,12 +581,13 @@ clpA_8 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 38 ====================================================
 
-Time taken to run ADP: 0.0863578160604 min
+Time taken to run ADP: 0.0851949652036 min
 True alleles: ['clpA_118', 'clpA_4', 'clpA_87']
 Predicted alleles: ['clpA_118', 'clpA_166', 'clpA_4', 'clpA_56', 'clpA_86']
 Removed: clpA_87
 Alleles in predicted but not in true: ['clpA_166', 'clpA_56', 'clpA_86']
 
+Edit distances with the removed allele:[4, 5, 6, 7, 8, 9, 10, 13, 14, 15, 16, 17, 18, 19, 45, 46, 47, 48, 49, 50, 52, 53, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 70, 71, 73, 179, 180, 181, 182, 185, 186, 188]
 Minimum edit distance for clpA_87 : 4
 Maximum edit distance for clpA_87: 188
 Average edit distance for clpA_87: 49.5806451613
@@ -555,14 +595,16 @@ Average edit distance for clpA_87: 49.5806451613
 clpA_166 is not the closest allele to the removed allele, its edit distance from the removed allele is 6.
 clpA_56 is not the closest allele to the removed allele, its edit distance from the removed allele is 6.
 clpA_86 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 39 ====================================================
 
-Time taken to run ADP: 0.0661325534185 min
+Time taken to run ADP: 0.065341480573 min
 True alleles: ['clpA_1', 'clpA_116', 'clpA_135', 'clpA_214']
 Predicted alleles: ['clpA_1', 'clpA_116', 'clpA_135', 'clpA_71']
 Removed: clpA_214
 Alleles in predicted but not in true: ['clpA_71']
 
+Edit distances with the removed allele:[10, 57, 64, 67, 74, 75, 85, 86, 88, 90, 94, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191]
 Minimum edit distance for clpA_214 : 10
 Maximum edit distance for clpA_214: 191
 Average edit distance for clpA_214: 177.949308756
@@ -571,12 +613,13 @@ clpA_71 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 40 ====================================================
 
-Time taken to run ADP: 0.08155768315 min
+Time taken to run ADP: 0.0860028028488 min
 True alleles: ['clpA_110', 'clpA_130', 'clpA_6', 'clpA_71', 'clpA_74', 'clpA_77', 'clpA_78']
 Predicted alleles: ['clpA_130', 'clpA_50', 'clpA_6', 'clpA_71', 'clpA_74', 'clpA_77', 'clpA_78']
 Removed: clpA_110
 Alleles in predicted but not in true: ['clpA_50']
 
+Edit distances with the removed allele:[1, 2, 5, 13, 14, 15, 17, 18, 19, 20, 21, 38, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 83, 175, 176, 179, 180, 182, 183, 184, 186, 188, 192]
 Minimum edit distance for clpA_110 : 1
 Maximum edit distance for clpA_110: 192
 Average edit distance for clpA_110: 62.5069124424
@@ -586,4 +629,4 @@ All predicted alleles which are not in true are top 3 closest to the removed all
 ======================================== clpA: SUMMARY STATISTICS ====================================================
 
 Out of 40 simulations, 16 simulations we found the closest allele to the removed one.
-Out of 40 simulations, 24 simulations we found the top 3 closest allele to the removed one.
+Out of 40 simulations, 27 simulations we found the top 3 closest allele to the removed one.

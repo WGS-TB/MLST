@@ -1,11 +1,12 @@
 ======================================== SIMULATION 1 ====================================================
 
-Time taken to run ADP: 0.00666388670603 min
+Time taken to run ADP: 0.00657356580098 min
 True alleles: ['uvrA_171', 'uvrA_181', 'uvrA_50', 'uvrA_65']
 Predicted alleles: ['uvrA_153', 'uvrA_171', 'uvrA_180', 'uvrA_50', 'uvrA_65']
 Removed: uvrA_181
 Alleles in predicted but not in true: ['uvrA_153', 'uvrA_180']
 
+Edit distances with the removed allele:[3, 9, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 61, 121, 122, 123, 124, 126, 127, 128, 129, 137]
 Minimum edit distance for uvrA_181 : 3
 Maximum edit distance for uvrA_181: 137
 Average edit distance for uvrA_181: 52.9635416667
@@ -15,13 +16,14 @@ uvrA_180 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 2 ====================================================
 
-Time taken to run ADP: 0.00269128084183 min
+Time taken to run ADP: 0.00277913411458 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_6', 'uvrA_76']
 Predicted alleles: ['uvrA_10']
 Removed: uvrA_76
 Alleles in predicted but not in true: ['uvrA_10']
 
+Edit distances with the removed allele:[38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 60, 116, 117, 120, 121, 122, 123, 124, 125, 132]
 Minimum edit distance for uvrA_76 : 38
 Maximum edit distance for uvrA_76: 132
 Average edit distance for uvrA_76: 52.7291666667
@@ -29,12 +31,13 @@ Average edit distance for uvrA_76: 52.7291666667
 uvrA_10 is not the closest allele to the removed allele, its edit distance from the removed allele is 44.
 ======================================== SIMULATION 3 ====================================================
 
-Time taken to run ADP: 0.00992648601532 min
+Time taken to run ADP: 0.0092132806778 min
 True alleles: ['uvrA_100', 'uvrA_118', 'uvrA_176', 'uvrA_185', 'uvrA_33', 'uvrA_74', 'uvrA_86']
 Predicted alleles: ['uvrA_100', 'uvrA_118', 'uvrA_176', 'uvrA_185', 'uvrA_74', 'uvrA_82', 'uvrA_86']
 Removed: uvrA_33
 Alleles in predicted but not in true: ['uvrA_82']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 49, 118, 119, 120, 122, 123, 124, 131]
 Minimum edit distance for uvrA_33 : 1
 Maximum edit distance for uvrA_33: 131
 Average edit distance for uvrA_33: 29.9635416667
@@ -43,13 +46,14 @@ uvrA_82 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 4 ====================================================
 
-Time taken to run ADP: 0.0093342979749 min
+Time taken to run ADP: 0.00927660067876 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_12', 'uvrA_138', 'uvrA_145', 'uvrA_60', 'uvrA_75']
 Predicted alleles: ['uvrA_107', 'uvrA_12', 'uvrA_145', 'uvrA_60', 'uvrA_73', 'uvrA_74']
 Removed: uvrA_75
 Alleles in predicted but not in true: ['uvrA_107', 'uvrA_73', 'uvrA_74']
 
+Edit distances with the removed allele:[2, 3, 4, 9, 14, 16, 17, 18, 20, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 51, 53, 54, 55, 56, 58, 116, 118, 119, 120, 121, 122, 123, 124, 125, 126]
 Minimum edit distance for uvrA_75 : 2
 Maximum edit distance for uvrA_75: 126
 Average edit distance for uvrA_75: 40.3125
@@ -59,13 +63,14 @@ uvrA_73 is not the closest allele to the removed allele, its edit distance from 
 uvrA_74 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 5 ====================================================
 
-Time taken to run ADP: 0.00581761598587 min
+Time taken to run ADP: 0.00592763026555 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_10', 'uvrA_175', 'uvrA_177', 'uvrA_42', 'uvrA_70']
 Predicted alleles: ['uvrA_10', 'uvrA_111', 'uvrA_175', 'uvrA_177', 'uvrA_70']
 Removed: uvrA_42
 Alleles in predicted but not in true: ['uvrA_111']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 45, 46, 47, 50, 118, 120, 121, 122, 123, 124, 126, 127, 131]
 Minimum edit distance for uvrA_42 : 1
 Maximum edit distance for uvrA_42: 131
 Average edit distance for uvrA_42: 30.9583333333
@@ -74,12 +79,13 @@ uvrA_111 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 6 ====================================================
 
-Time taken to run ADP: 0.00709625085195 min
+Time taken to run ADP: 0.00721723238627 min
 True alleles: ['uvrA_110', 'uvrA_127', 'uvrA_17', 'uvrA_72', 'uvrA_98']
 Predicted alleles: ['uvrA_109', 'uvrA_127', 'uvrA_17', 'uvrA_72', 'uvrA_98']
 Removed: uvrA_110
 Alleles in predicted but not in true: ['uvrA_109']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 42, 43, 44, 45, 47, 116, 118, 119, 120, 121, 122, 130]
 Minimum edit distance for uvrA_110 : 1
 Maximum edit distance for uvrA_110: 130
 Average edit distance for uvrA_110: 29.1666666667
@@ -88,13 +94,14 @@ uvrA_109 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 7 ====================================================
 
-Time taken to run ADP: 0.0106416861216 min
+Time taken to run ADP: 0.0110177834829 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_111', 'uvrA_132', 'uvrA_147', 'uvrA_27', 'uvrA_74', 'uvrA_8']
 Predicted alleles: ['uvrA_102', 'uvrA_111', 'uvrA_132', 'uvrA_147', 'uvrA_19', 'uvrA_74']
 Removed: uvrA_8
 Alleles in predicted but not in true: ['uvrA_102', 'uvrA_19']
 
+Edit distances with the removed allele:[1, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 19, 20, 26, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 48, 49, 50, 53, 54, 118, 119, 120, 122, 123, 124, 125, 128, 131, 132]
 Minimum edit distance for uvrA_8 : 1
 Maximum edit distance for uvrA_8: 132
 Average edit distance for uvrA_8: 37.4583333333
@@ -103,13 +110,14 @@ uvrA_102 is not the closest allele to the removed allele, its edit distance from
 uvrA_19 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 8 ====================================================
 
-Time taken to run ADP: 0.00806201696396 min
+Time taken to run ADP: 0.00800291697184 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_115', 'uvrA_21', 'uvrA_58', 'uvrA_71']
 Predicted alleles: ['uvrA_111', 'uvrA_115', 'uvrA_21', 'uvrA_58']
 Removed: uvrA_71
 Alleles in predicted but not in true: ['uvrA_111']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 46, 47, 48, 51, 118, 120, 121, 122, 123, 124, 126, 127, 131]
 Minimum edit distance for uvrA_71 : 1
 Maximum edit distance for uvrA_71: 131
 Average edit distance for uvrA_71: 31.8645833333
@@ -118,13 +126,14 @@ uvrA_111 is not the closest allele to the removed allele, its edit distance from
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 9 ====================================================
 
-Time taken to run ADP: 0.0119698365529 min
+Time taken to run ADP: 0.0121742844582 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_13', 'uvrA_142', 'uvrA_162', 'uvrA_171', 'uvrA_28', 'uvrA_59', 'uvrA_91']
 Predicted alleles: ['uvrA_102', 'uvrA_13', 'uvrA_142', 'uvrA_173', 'uvrA_28', 'uvrA_46', 'uvrA_59', 'uvrA_91']
 Removed: uvrA_171
 Alleles in predicted but not in true: ['uvrA_102', 'uvrA_173', 'uvrA_46']
 
+Edit distances with the removed allele:[3, 4, 5, 7, 8, 9, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 45, 46, 47, 48, 49, 52, 113, 115, 116, 117, 118, 119, 120, 122, 123, 125]
 Minimum edit distance for uvrA_171 : 3
 Maximum edit distance for uvrA_171: 125
 Average edit distance for uvrA_171: 41.859375
@@ -132,14 +141,16 @@ Average edit distance for uvrA_171: 41.859375
 uvrA_102 is not the closest allele to the removed allele, its edit distance from the removed allele is 4.
 uvrA_173 is one of the closest allele to the removed allele.
 uvrA_46 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 10 ====================================================
 
-Time taken to run ADP: 0.00532206694285 min
+Time taken to run ADP: 0.00539468129476 min
 True alleles: ['uvrA_55', 'uvrA_77']
 Predicted alleles: ['uvrA_184', 'uvrA_77']
 Removed: uvrA_55
 Alleles in predicted but not in true: ['uvrA_184']
 
+Edit distances with the removed allele:[1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 45, 48, 49, 53, 121, 123, 124, 125, 126, 127, 128, 129, 130, 133]
 Minimum edit distance for uvrA_55 : 1
 Maximum edit distance for uvrA_55: 133
 Average edit distance for uvrA_55: 32.7864583333
@@ -148,13 +159,14 @@ uvrA_184 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 11 ====================================================
 
-Time taken to run ADP: 0.00963698625565 min
+Time taken to run ADP: 0.00994556744893 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_13', 'uvrA_159', 'uvrA_169', 'uvrA_3']
 Predicted alleles: ['uvrA_13', 'uvrA_169', 'uvrA_2', 'uvrA_30']
 Removed: uvrA_159
 Alleles in predicted but not in true: ['uvrA_2', 'uvrA_30']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 48, 49, 50, 51, 52, 55, 116, 117, 118, 119, 120, 121, 122, 123, 124, 129]
 Minimum edit distance for uvrA_159 : 1
 Maximum edit distance for uvrA_159: 129
 Average edit distance for uvrA_159: 43.9479166667
@@ -163,13 +175,14 @@ uvrA_2 is not the closest allele to the removed allele, its edit distance from t
 uvrA_30 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 12 ====================================================
 
-Time taken to run ADP: 0.00761246681213 min
+Time taken to run ADP: 0.00720968643824 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_13', 'uvrA_134', 'uvrA_159', 'uvrA_52', 'uvrA_67']
 Predicted alleles: ['uvrA_111', 'uvrA_13', 'uvrA_134', 'uvrA_159', 'uvrA_52']
 Removed: uvrA_67
 Alleles in predicted but not in true: ['uvrA_111']
 
+Edit distances with the removed allele:[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 48, 49, 50, 53, 121, 123, 124, 125, 126, 127, 128, 129, 134]
 Minimum edit distance for uvrA_67 : 3
 Maximum edit distance for uvrA_67: 134
 Average edit distance for uvrA_67: 33.6666666667
@@ -178,13 +191,14 @@ uvrA_111 is not the closest allele to the removed allele, its edit distance from
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 13 ====================================================
 
-Time taken to run ADP: 0.0134731491407 min
+Time taken to run ADP: 0.0135709643364 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_135', 'uvrA_4']
 Predicted alleles: ['uvrA_111', 'uvrA_116', 'uvrA_20']
 Removed: uvrA_135
 Alleles in predicted but not in true: ['uvrA_111', 'uvrA_116', 'uvrA_20']
 
+Edit distances with the removed allele:[2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 43, 45, 47, 48, 50, 117, 119, 120, 121, 122, 123, 125, 126, 130]
 Minimum edit distance for uvrA_135 : 2
 Maximum edit distance for uvrA_135: 130
 Average edit distance for uvrA_135: 31.6666666667
@@ -194,13 +208,14 @@ uvrA_116 is not the closest allele to the removed allele, its edit distance from
 uvrA_20 is not the closest allele to the removed allele, its edit distance from the removed allele is 30.
 ======================================== SIMULATION 14 ====================================================
 
-Time taken to run ADP: 0.00468204816182 min
+Time taken to run ADP: 0.00468321641286 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_104', 'uvrA_88']
 Predicted alleles: ['uvrA_12', 'uvrA_2', 'uvrA_88']
 Removed: uvrA_104
 Alleles in predicted but not in true: ['uvrA_12', 'uvrA_2']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 11, 12, 13, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 50, 55, 118, 119, 120, 123, 126, 128, 129, 131, 132]
 Minimum edit distance for uvrA_104 : 1
 Maximum edit distance for uvrA_104: 132
 Average edit distance for uvrA_104: 36.2239583333
@@ -210,12 +225,13 @@ uvrA_2 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 15 ====================================================
 
-Time taken to run ADP: 0.00832033554713 min
+Time taken to run ADP: 0.00845373074214 min
 True alleles: ['uvrA_113', 'uvrA_124', 'uvrA_166', 'uvrA_31', 'uvrA_65', 'uvrA_69']
 Predicted alleles: ['uvrA_124', 'uvrA_166', 'uvrA_31', 'uvrA_45', 'uvrA_56', 'uvrA_58', 'uvrA_62', 'uvrA_69']
 Removed: uvrA_65
 Alleles in predicted but not in true: ['uvrA_45', 'uvrA_56', 'uvrA_58', 'uvrA_62']
 
+Edit distances with the removed allele:[3, 4, 5, 6, 10, 18, 19, 20, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 46, 47, 48, 50, 54, 116, 118, 119, 120, 121, 122, 123, 124]
 Minimum edit distance for uvrA_65 : 3
 Maximum edit distance for uvrA_65: 124
 Average edit distance for uvrA_65: 42.40625
@@ -226,12 +242,13 @@ uvrA_58 is not the closest allele to the removed allele, its edit distance from 
 uvrA_62 is not the closest allele to the removed allele, its edit distance from the removed allele is 6.
 ======================================== SIMULATION 16 ====================================================
 
-Time taken to run ADP: 0.00641215244929 min
+Time taken to run ADP: 0.0063772837321 min
 True alleles: ['uvrA_146', 'uvrA_178', 'uvrA_85', 'uvrA_96']
 Predicted alleles: ['uvrA_146', 'uvrA_179', 'uvrA_85', 'uvrA_96']
 Removed: uvrA_178
 Alleles in predicted but not in true: ['uvrA_179']
 
+Edit distances with the removed allele:[1, 6, 65, 68, 76, 77, 78, 79, 82, 86, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 135]
 Minimum edit distance for uvrA_178 : 1
 Maximum edit distance for uvrA_178: 135
 Average edit distance for uvrA_178: 121.322916667
@@ -240,25 +257,28 @@ uvrA_179 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 17 ====================================================
 
-Time taken to run ADP: 0.00741238196691 min
+Time taken to run ADP: 0.00768444935481 min
 True alleles: ['uvrA_118', 'uvrA_138', 'uvrA_189', 'uvrA_35', 'uvrA_89', 'uvrA_92', 'uvrA_97']
 Predicted alleles: ['uvrA_118', 'uvrA_138', 'uvrA_189', 'uvrA_35', 'uvrA_89', 'uvrA_91', 'uvrA_97']
 Removed: uvrA_92
 Alleles in predicted but not in true: ['uvrA_91']
 
+Edit distances with the removed allele:[3, 4, 5, 10, 15, 17, 18, 19, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 51, 52, 54, 56, 57, 117, 119, 120, 121, 122, 123, 126, 127]
 Minimum edit distance for uvrA_92 : 3
 Maximum edit distance for uvrA_92: 127
 Average edit distance for uvrA_92: 40.375
 
 uvrA_91 is not the closest allele to the removed allele, its edit distance from the removed allele is 5.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 18 ====================================================
 
-Time taken to run ADP: 0.00549741586049 min
+Time taken to run ADP: 0.0056091149648 min
 True alleles: ['uvrA_110', 'uvrA_162', 'uvrA_176', 'uvrA_25', 'uvrA_68']
 Predicted alleles: ['uvrA_110', 'uvrA_162', 'uvrA_176', 'uvrA_23', 'uvrA_68']
 Removed: uvrA_25
 Alleles in predicted but not in true: ['uvrA_23']
 
+Edit distances with the removed allele:[3, 4, 7, 8, 9, 10, 12, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 55, 114, 115, 116, 118, 119, 120, 121, 122, 123, 125]
 Minimum edit distance for uvrA_25 : 3
 Maximum edit distance for uvrA_25: 125
 Average edit distance for uvrA_25: 42.0625
@@ -267,12 +287,13 @@ uvrA_23 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 19 ====================================================
 
-Time taken to run ADP: 0.00656883319219 min
+Time taken to run ADP: 0.00661183595657 min
 True alleles: ['uvrA_113', 'uvrA_136', 'uvrA_159', 'uvrA_166']
 Predicted alleles: ['uvrA_136', 'uvrA_159', 'uvrA_166', 'uvrA_45']
 Removed: uvrA_113
 Alleles in predicted but not in true: ['uvrA_45']
 
+Edit distances with the removed allele:[1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 45, 46, 47, 50, 52, 118, 120, 123, 124, 125, 126, 127, 128, 129, 134]
 Minimum edit distance for uvrA_113 : 1
 Maximum edit distance for uvrA_113: 134
 Average edit distance for uvrA_113: 33.5885416667
@@ -281,13 +302,14 @@ uvrA_45 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 20 ====================================================
 
-Time taken to run ADP: 0.00713583628337 min
+Time taken to run ADP: 0.00718703269958 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_101', 'uvrA_107', 'uvrA_51', 'uvrA_66', 'uvrA_73']
 Predicted alleles: ['uvrA_101', 'uvrA_107', 'uvrA_51', 'uvrA_63', 'uvrA_70', 'uvrA_73']
 Removed: uvrA_66
 Alleles in predicted but not in true: ['uvrA_63', 'uvrA_70']
 
+Edit distances with the removed allele:[8, 11, 58, 65, 66, 68, 75, 80, 81, 82, 84, 85, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130]
 Minimum edit distance for uvrA_66 : 8
 Maximum edit distance for uvrA_66: 130
 Average edit distance for uvrA_66: 118.875
@@ -297,12 +319,13 @@ uvrA_70 is not the closest allele to the removed allele, its edit distance from 
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 21 ====================================================
 
-Time taken to run ADP: 0.0080811659495 min
+Time taken to run ADP: 0.00781328280767 min
 True alleles: ['uvrA_170', 'uvrA_177', 'uvrA_182', 'uvrA_38']
 Predicted alleles: ['uvrA_170', 'uvrA_179', 'uvrA_182', 'uvrA_38']
 Removed: uvrA_177
 Alleles in predicted but not in true: ['uvrA_179']
 
+Edit distances with the removed allele:[5, 6, 63, 66, 74, 75, 76, 77, 79, 80, 85, 117, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 135]
 Minimum edit distance for uvrA_177 : 5
 Maximum edit distance for uvrA_177: 135
 Average edit distance for uvrA_177: 121.557291667
@@ -311,12 +334,13 @@ uvrA_179 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 22 ====================================================
 
-Time taken to run ADP: 0.00199523369471 min
+Time taken to run ADP: 0.00197430054347 min
 True alleles: ['uvrA_120', 'uvrA_149', 'uvrA_153']
 Predicted alleles: ['uvrA_149', 'uvrA_153']
 Removed: uvrA_120
 Alleles in predicted but not in true: []
 
+Edit distances with the removed allele:[33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 58, 59, 64, 119, 120, 121, 122, 123, 125, 126, 127, 128]
 Minimum edit distance for uvrA_120 : 33
 Maximum edit distance for uvrA_120: 128
 Average edit distance for uvrA_120: 48.0104166667
@@ -324,12 +348,13 @@ Average edit distance for uvrA_120: 48.0104166667
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 23 ====================================================
 
-Time taken to run ADP: 0.0120405157407 min
+Time taken to run ADP: 0.0115887006124 min
 True alleles: ['uvrA_103', 'uvrA_27', 'uvrA_43', 'uvrA_51', 'uvrA_7', 'uvrA_93']
 Predicted alleles: ['uvrA_103', 'uvrA_43', 'uvrA_51', 'uvrA_7', 'uvrA_75', 'uvrA_94']
 Removed: uvrA_93
 Alleles in predicted but not in true: ['uvrA_75', 'uvrA_94']
 
+Edit distances with the removed allele:[2, 3, 4, 9, 14, 16, 17, 18, 20, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 51, 53, 54, 55, 56, 58, 118, 119, 120, 121, 123, 125, 126, 127]
 Minimum edit distance for uvrA_93 : 2
 Maximum edit distance for uvrA_93: 127
 Average edit distance for uvrA_93: 40.4010416667
@@ -339,12 +364,13 @@ uvrA_94 is not the closest allele to the removed allele, its edit distance from 
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 24 ====================================================
 
-Time taken to run ADP: 0.0102168679237 min
+Time taken to run ADP: 0.0100541989009 min
 True alleles: ['uvrA_174', 'uvrA_182', 'uvrA_29', 'uvrA_38', 'uvrA_50', 'uvrA_91']
 Predicted alleles: ['uvrA_174', 'uvrA_182', 'uvrA_38', 'uvrA_50', 'uvrA_78', 'uvrA_91']
 Removed: uvrA_29
 Alleles in predicted but not in true: ['uvrA_78']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 48, 49, 50, 54, 118, 119, 120, 121, 122, 123, 124, 125, 126, 131]
 Minimum edit distance for uvrA_29 : 1
 Maximum edit distance for uvrA_29: 131
 Average edit distance for uvrA_29: 42.9947916667
@@ -353,13 +379,14 @@ uvrA_78 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 25 ====================================================
 
-Time taken to run ADP: 0.0109279473623 min
+Time taken to run ADP: 0.0110762000084 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_22', 'uvrA_51', 'uvrA_6']
 Predicted alleles: ['uvrA_10', 'uvrA_182', 'uvrA_22', 'uvrA_49']
 Removed: uvrA_51
 Alleles in predicted but not in true: ['uvrA_10', 'uvrA_182', 'uvrA_49']
 
+Edit distances with the removed allele:[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 49, 118, 119, 120, 121, 122, 123, 124, 125, 131]
 Minimum edit distance for uvrA_51 : 2
 Maximum edit distance for uvrA_51: 131
 Average edit distance for uvrA_51: 30.3489583333
@@ -369,12 +396,13 @@ uvrA_182 is not the closest allele to the removed allele, its edit distance from
 uvrA_49 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 26 ====================================================
 
-Time taken to run ADP: 0.00613024632136 min
+Time taken to run ADP: 0.00670590003332 min
 True alleles: ['uvrA_110', 'uvrA_159', 'uvrA_97']
 Predicted alleles: ['uvrA_109', 'uvrA_159', 'uvrA_97']
 Removed: uvrA_110
 Alleles in predicted but not in true: ['uvrA_109']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 42, 43, 44, 45, 47, 116, 118, 119, 120, 121, 122, 130]
 Minimum edit distance for uvrA_110 : 1
 Maximum edit distance for uvrA_110: 130
 Average edit distance for uvrA_110: 29.1666666667
@@ -383,12 +411,13 @@ uvrA_109 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 27 ====================================================
 
-Time taken to run ADP: 0.00601367950439 min
+Time taken to run ADP: 0.00600110292435 min
 True alleles: ['uvrA_38', 'uvrA_58', 'uvrA_78']
 Predicted alleles: ['uvrA_36', 'uvrA_58', 'uvrA_78']
 Removed: uvrA_38
 Alleles in predicted but not in true: ['uvrA_36']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 27, 28, 29, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 52, 118, 119, 120, 122, 123, 124, 132]
 Minimum edit distance for uvrA_38 : 1
 Maximum edit distance for uvrA_38: 132
 Average edit distance for uvrA_38: 31.96875
@@ -397,26 +426,29 @@ uvrA_36 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 28 ====================================================
 
-Time taken to run ADP: 0.00553297996521 min
+Time taken to run ADP: 0.00584625005722 min
 True alleles: ['uvrA_121', 'uvrA_154', 'uvrA_179', 'uvrA_57', 'uvrA_9']
 Predicted alleles: ['uvrA_121', 'uvrA_154', 'uvrA_179', 'uvrA_56', 'uvrA_60', 'uvrA_9']
 Removed: uvrA_57
 Alleles in predicted but not in true: ['uvrA_56', 'uvrA_60']
 
+Edit distances with the removed allele:[2, 5, 7, 15, 18, 19, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 48, 51, 53, 115, 117, 118, 119, 120, 121, 122, 123, 125]
 Minimum edit distance for uvrA_57 : 2
 Maximum edit distance for uvrA_57: 125
 Average edit distance for uvrA_57: 42.484375
 
 uvrA_56 is one of the closest allele to the removed allele.
 uvrA_60 is not the closest allele to the removed allele, its edit distance from the removed allele is 7.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 29 ====================================================
 
-Time taken to run ADP: 0.00461413462957 min
+Time taken to run ADP: 0.00463809967041 min
 True alleles: ['uvrA_174', 'uvrA_31']
 Predicted alleles: ['uvrA_189', 'uvrA_31']
 Removed: uvrA_174
 Alleles in predicted but not in true: ['uvrA_189']
 
+Edit distances with the removed allele:[2, 6, 63, 64, 65, 67, 69, 70, 73, 80, 81, 84, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129]
 Minimum edit distance for uvrA_174 : 2
 Maximum edit distance for uvrA_174: 129
 Average edit distance for uvrA_174: 117.661458333
@@ -425,13 +457,14 @@ uvrA_189 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 30 ====================================================
 
-Time taken to run ADP: 0.0108186364174 min
+Time taken to run ADP: 0.0108491977056 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_111', 'uvrA_113', 'uvrA_157', 'uvrA_25', 'uvrA_4', 'uvrA_8']
 Predicted alleles: ['uvrA_111', 'uvrA_113', 'uvrA_157', 'uvrA_19', 'uvrA_20', 'uvrA_25']
 Removed: uvrA_8
 Alleles in predicted but not in true: ['uvrA_19', 'uvrA_20']
 
+Edit distances with the removed allele:[1, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 19, 20, 26, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 48, 49, 50, 53, 54, 118, 119, 120, 122, 123, 124, 125, 128, 131, 132]
 Minimum edit distance for uvrA_8 : 1
 Maximum edit distance for uvrA_8: 132
 Average edit distance for uvrA_8: 37.4583333333
@@ -440,12 +473,13 @@ uvrA_19 is one of the closest allele to the removed allele.
 uvrA_20 is not the closest allele to the removed allele, its edit distance from the removed allele is 9.
 ======================================== SIMULATION 31 ====================================================
 
-Time taken to run ADP: 0.00826069911321 min
+Time taken to run ADP: 0.00851808389028 min
 True alleles: ['uvrA_127', 'uvrA_138', 'uvrA_139', 'uvrA_144', 'uvrA_150', 'uvrA_182', 'uvrA_8']
 Predicted alleles: ['uvrA_107', 'uvrA_127', 'uvrA_139', 'uvrA_144', 'uvrA_150', 'uvrA_182', 'uvrA_19']
 Removed: uvrA_8
 Alleles in predicted but not in true: ['uvrA_107', 'uvrA_19']
 
+Edit distances with the removed allele:[1, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 19, 20, 26, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 48, 49, 50, 53, 54, 118, 119, 120, 122, 123, 124, 125, 128, 131, 132]
 Minimum edit distance for uvrA_8 : 1
 Maximum edit distance for uvrA_8: 132
 Average edit distance for uvrA_8: 37.4583333333
@@ -454,12 +488,13 @@ uvrA_107 is not the closest allele to the removed allele, its edit distance from
 uvrA_19 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 32 ====================================================
 
-Time taken to run ADP: 0.00811596711477 min
+Time taken to run ADP: 0.0077027519544 min
 True alleles: ['uvrA_110', 'uvrA_122', 'uvrA_142', 'uvrA_145', 'uvrA_153', 'uvrA_159']
 Predicted alleles: ['uvrA_110', 'uvrA_122', 'uvrA_142', 'uvrA_153', 'uvrA_159']
 Removed: uvrA_145
 Alleles in predicted but not in true: []
 
+Edit distances with the removed allele:[1, 4, 5, 6, 7, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 55, 118, 119, 121, 123, 124, 127, 128, 129, 132]
 Minimum edit distance for uvrA_145 : 1
 Maximum edit distance for uvrA_145: 132
 Average edit distance for uvrA_145: 44.984375
@@ -467,12 +502,13 @@ Average edit distance for uvrA_145: 44.984375
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 33 ====================================================
 
-Time taken to run ADP: 0.00729809999466 min
+Time taken to run ADP: 0.00724400281906 min
 True alleles: ['uvrA_178', 'uvrA_183', 'uvrA_22', 'uvrA_45', 'uvrA_82']
 Predicted alleles: ['uvrA_178', 'uvrA_183', 'uvrA_22', 'uvrA_33', 'uvrA_45']
 Removed: uvrA_82
 Alleles in predicted but not in true: ['uvrA_33']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 49, 50, 118, 119, 120, 122, 123, 124, 130]
 Minimum edit distance for uvrA_82 : 1
 Maximum edit distance for uvrA_82: 130
 Average edit distance for uvrA_82: 30.5052083333
@@ -481,13 +517,14 @@ uvrA_33 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 34 ====================================================
 
-Time taken to run ADP: 0.00653071800868 min
+Time taken to run ADP: 0.00645590225856 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_111', 'uvrA_77', 'uvrA_96']
 Predicted alleles: ['uvrA_111', 'uvrA_77', 'uvrA_97']
 Removed: uvrA_96
 Alleles in predicted but not in true: ['uvrA_97']
 
+Edit distances with the removed allele:[1, 14, 15, 16, 17, 18, 19, 20, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 51, 59, 122, 123, 124, 125, 126, 127, 131]
 Minimum edit distance for uvrA_96 : 1
 Maximum edit distance for uvrA_96: 131
 Average edit distance for uvrA_96: 41.5885416667
@@ -496,13 +533,14 @@ uvrA_97 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 35 ====================================================
 
-Time taken to run ADP: 0.0201287984848 min
+Time taken to run ADP: 0.020486998558 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_185', 'uvrA_24', 'uvrA_42', 'uvrA_45', 'uvrA_74']
 Predicted alleles: ['uvrA_111', 'uvrA_185', 'uvrA_24', 'uvrA_45', 'uvrA_73', 'uvrA_93']
 Removed: uvrA_74
 Alleles in predicted but not in true: ['uvrA_111', 'uvrA_73', 'uvrA_93']
 
+Edit distances with the removed allele:[2, 3, 4, 9, 14, 16, 17, 18, 20, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 47, 50, 53, 55, 56, 57, 116, 118, 119, 120, 121, 122, 123, 124, 125]
 Minimum edit distance for uvrA_74 : 2
 Maximum edit distance for uvrA_74: 125
 Average edit distance for uvrA_74: 40.015625
@@ -512,13 +550,14 @@ uvrA_73 is not the closest allele to the removed allele, its edit distance from 
 uvrA_93 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 36 ====================================================
 
-Time taken to run ADP: 0.0109977165858 min
+Time taken to run ADP: 0.0117307504018 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_135', 'uvrA_169']
 Predicted alleles: ['uvrA_111', 'uvrA_135', 'uvrA_147']
 Removed: uvrA_169
 Alleles in predicted but not in true: ['uvrA_111', 'uvrA_147']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 44, 46, 47, 48, 49, 117, 119, 120, 121, 122, 123, 125, 126, 130]
 Minimum edit distance for uvrA_169 : 1
 Maximum edit distance for uvrA_169: 130
 Average edit distance for uvrA_169: 31.09375
@@ -528,12 +567,13 @@ uvrA_147 is not the closest allele to the removed allele, its edit distance from
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 37 ====================================================
 
-Time taken to run ADP: 0.00689788262049 min
+Time taken to run ADP: 0.00701864957809 min
 True alleles: ['uvrA_2', 'uvrA_4', 'uvrA_52', 'uvrA_94']
 Predicted alleles: ['uvrA_2', 'uvrA_4', 'uvrA_52', 'uvrA_90', 'uvrA_95']
 Removed: uvrA_94
 Alleles in predicted but not in true: ['uvrA_90', 'uvrA_95']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 6, 13, 15, 16, 17, 19, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 50, 52, 53, 54, 55, 57, 118, 120, 121, 122, 123, 124, 125, 126]
 Minimum edit distance for uvrA_94 : 1
 Maximum edit distance for uvrA_94: 126
 Average edit distance for uvrA_94: 39.484375
@@ -542,13 +582,14 @@ uvrA_90 is one of the closest allele to the removed allele.
 uvrA_95 is not the closest allele to the removed allele, its edit distance from the removed allele is 6.
 ======================================== SIMULATION 38 ====================================================
 
-Time taken to run ADP: 0.00884943008423 min
+Time taken to run ADP: 0.0090012828509 min
 More than 1 solution having minimum negative log likelihood score.
 True alleles: ['uvrA_105', 'uvrA_4', 'uvrA_77']
 Predicted alleles: ['uvrA_105', 'uvrA_20', 'uvrA_34', 'uvrA_35']
 Removed: uvrA_77
 Alleles in predicted but not in true: ['uvrA_20', 'uvrA_34', 'uvrA_35']
 
+Edit distances with the removed allele:[1, 3, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 46, 47, 48, 49, 115, 117, 119, 120, 121, 122, 123, 129]
 Minimum edit distance for uvrA_77 : 1
 Maximum edit distance for uvrA_77: 129
 Average edit distance for uvrA_77: 32.7135416667
@@ -558,12 +599,13 @@ uvrA_34 is not the closest allele to the removed allele, its edit distance from 
 uvrA_35 is one of the closest allele to the removed allele.
 ======================================== SIMULATION 39 ====================================================
 
-Time taken to run ADP: 0.0068877975146 min
+Time taken to run ADP: 0.00682673454285 min
 True alleles: ['uvrA_1', 'uvrA_103', 'uvrA_119', 'uvrA_190']
 Predicted alleles: ['uvrA_1', 'uvrA_103', 'uvrA_119', 'uvrA_176']
 Removed: uvrA_190
 Alleles in predicted but not in true: ['uvrA_176']
 
+Edit distances with the removed allele:[13, 42, 47, 62, 63, 66, 68, 69, 70, 74, 75, 76, 112, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129]
 Minimum edit distance for uvrA_190 : 13
 Maximum edit distance for uvrA_190: 129
 Average edit distance for uvrA_190: 117.828125
@@ -572,12 +614,13 @@ uvrA_176 is one of the closest allele to the removed allele.
 All predicted alleles which are not in true are top 3 closest to the removed allele.
 ======================================== SIMULATION 40 ====================================================
 
-Time taken to run ADP: 0.00801126559575 min
+Time taken to run ADP: 0.0078423500061 min
 True alleles: ['uvrA_115', 'uvrA_5', 'uvrA_63', 'uvrA_65', 'uvrA_69', 'uvrA_91', 'uvrA_97']
 Predicted alleles: ['uvrA_115', 'uvrA_5', 'uvrA_63', 'uvrA_65', 'uvrA_69', 'uvrA_73', 'uvrA_89', 'uvrA_97']
 Removed: uvrA_91
 Alleles in predicted but not in true: ['uvrA_73', 'uvrA_89']
 
+Edit distances with the removed allele:[1, 2, 3, 4, 5, 9, 12, 14, 15, 16, 20, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 47, 51, 52, 54, 55, 58, 117, 119, 120, 121, 122, 124, 125, 126]
 Minimum edit distance for uvrA_91 : 1
 Maximum edit distance for uvrA_91: 126
 Average edit distance for uvrA_91: 40.0364583333
@@ -588,4 +631,4 @@ All predicted alleles which are not in true are top 3 closest to the removed all
 ======================================== uvrA: SUMMARY STATISTICS ====================================================
 
 Out of 40 simulations, 17 simulations we found the closest allele to the removed one.
-Out of 40 simulations, 25 simulations we found the top 3 closest allele to the removed one.
+Out of 40 simulations, 28 simulations we found the top 3 closest allele to the removed one.
