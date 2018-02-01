@@ -1,0 +1,593 @@
+======================================== SIMULATION 1 ====================================================
+
+Time taken to run ADP: 0.00768109957377 min
+True alleles: ['clpX_161', 'clpX_171', 'clpX_47', 'clpX_61']
+Predicted alleles: ['clpX_161', 'clpX_172', 'clpX_47', 'clpX_61']
+Removed: clpX_171
+Alleles in predicted but not in true: ['clpX_172']
+
+Minimum edit distance for clpX_171 : 2
+Maximum edit distance for clpX_171: 121
+Average edit distance for clpX_171: 36.8895027624
+
+clpX_172 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 2 ====================================================
+
+Time taken to run ADP: 0.00477911631266 min
+True alleles: ['clpX_5', 'clpX_71']
+Predicted alleles: ['clpX_5', 'clpX_70']
+Removed: clpX_71
+Alleles in predicted but not in true: ['clpX_70']
+
+Minimum edit distance for clpX_71 : 1
+Maximum edit distance for clpX_71: 122
+Average edit distance for clpX_71: 39.9889502762
+
+clpX_70 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 3 ====================================================
+
+Time taken to run ADP: 0.00740660031637 min
+True alleles: ['clpX_111', 'clpX_166', 'clpX_175', 'clpX_32', 'clpX_70', 'clpX_82', 'clpX_95']
+Predicted alleles: ['clpX_111', 'clpX_166', 'clpX_175', 'clpX_70', 'clpX_73', 'clpX_82', 'clpX_95']
+Removed: clpX_32
+Alleles in predicted but not in true: ['clpX_73']
+
+Minimum edit distance for clpX_32 : 1
+Maximum edit distance for clpX_32: 123
+Average edit distance for clpX_32: 31.2596685083
+
+clpX_73 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 4 ====================================================
+
+Time taken to run ADP: 0.00709686676661 min
+True alleles: ['clpX_12', 'clpX_130', 'clpX_137', 'clpX_57', 'clpX_71']
+Predicted alleles: ['clpX_12', 'clpX_130', 'clpX_137', 'clpX_57', 'clpX_70']
+Removed: clpX_71
+Alleles in predicted but not in true: ['clpX_70']
+
+Minimum edit distance for clpX_71 : 1
+Maximum edit distance for clpX_71: 122
+Average edit distance for clpX_71: 39.9889502762
+
+clpX_70 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 5 ====================================================
+
+Time taken to run ADP: 0.0050793170929 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['clpX_165', 'clpX_167', 'clpX_40', 'clpX_66', 'clpX_9']
+Predicted alleles: ['clpX_13', 'clpX_165', 'clpX_167', 'clpX_24', 'clpX_66']
+Removed: clpX_40
+Alleles in predicted but not in true: ['clpX_13', 'clpX_24']
+
+Minimum edit distance for clpX_40 : 1
+Maximum edit distance for clpX_40: 120
+Average edit distance for clpX_40: 36.0110497238
+
+clpX_13 is not the closest allele to the removed allele, its edit distance from the removed allele is 40.
+clpX_24 is one of the closest allele to the removed allele.
+======================================== SIMULATION 6 ====================================================
+
+Time taken to run ADP: 0.0106124520302 min
+True alleles: ['clpX_104', 'clpX_119', 'clpX_16', 'clpX_68', 'clpX_92']
+Predicted alleles: ['clpX_119', 'clpX_16', 'clpX_64', 'clpX_68', 'clpX_92']
+Removed: clpX_104
+Alleles in predicted but not in true: ['clpX_64']
+
+Minimum edit distance for clpX_104 : 1
+Maximum edit distance for clpX_104: 119
+Average edit distance for clpX_104: 27.0497237569
+
+clpX_64 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 7 ====================================================
+
+Time taken to run ADP: 0.00877016782761 min
+True alleles: ['clpX_104', 'clpX_125', 'clpX_139', 'clpX_25', 'clpX_70', 'clpX_8']
+Predicted alleles: ['clpX_10', 'clpX_104', 'clpX_121', 'clpX_125', 'clpX_139', 'clpX_182', 'clpX_25', 'clpX_70']
+Removed: clpX_8
+Alleles in predicted but not in true: ['clpX_10', 'clpX_121', 'clpX_182']
+
+Minimum edit distance for clpX_8 : 6
+Maximum edit distance for clpX_8: 126
+Average edit distance for clpX_8: 41.3867403315
+
+clpX_10 is not the closest allele to the removed allele, its edit distance from the removed allele is 9.
+clpX_121 is not the closest allele to the removed allele, its edit distance from the removed allele is 7.
+clpX_182 is not the closest allele to the removed allele, its edit distance from the removed allele is 23.
+======================================== SIMULATION 8 ====================================================
+
+Time taken to run ADP: 0.00899558464686 min
+True alleles: ['clpX_109', 'clpX_20', 'clpX_54', 'clpX_67']
+Predicted alleles: ['clpX_109', 'clpX_20', 'clpX_54']
+Removed: clpX_67
+Alleles in predicted but not in true: []
+
+Minimum edit distance for clpX_67 : 1
+Maximum edit distance for clpX_67: 118
+Average edit distance for clpX_67: 27.4917127072
+
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 9 ====================================================
+
+Time taken to run ADP: 0.0093498190244 min
+True alleles: ['clpX_12', 'clpX_134', 'clpX_153', 'clpX_162', 'clpX_27', 'clpX_55', 'clpX_86']
+Predicted alleles: ['clpX_12', 'clpX_153', 'clpX_27', 'clpX_53', 'clpX_55', 'clpX_86']
+Removed: clpX_162
+Alleles in predicted but not in true: ['clpX_53']
+
+Minimum edit distance for clpX_162 : 1
+Maximum edit distance for clpX_162: 120
+Average edit distance for clpX_162: 29.2928176796
+
+clpX_53 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 10 ====================================================
+
+Time taken to run ADP: 0.00795670350393 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['clpX_52', 'clpX_73']
+Predicted alleles: ['clpX_21', 'clpX_73']
+Removed: clpX_52
+Alleles in predicted but not in true: ['clpX_21']
+
+Minimum edit distance for clpX_52 : 1
+Maximum edit distance for clpX_52: 119
+Average edit distance for clpX_52: 35.4475138122
+
+clpX_21 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 11 ====================================================
+
+Time taken to run ADP: 0.0108701308568 min
+True alleles: ['clpX_12', 'clpX_150', 'clpX_159', 'clpX_3']
+Predicted alleles: ['clpX_12', 'clpX_159', 'clpX_24', 'clpX_3', 'clpX_82']
+Removed: clpX_150
+Alleles in predicted but not in true: ['clpX_24', 'clpX_82']
+
+Minimum edit distance for clpX_150 : 1
+Maximum edit distance for clpX_150: 121
+Average edit distance for clpX_150: 36.0883977901
+
+clpX_24 is one of the closest allele to the removed allele.
+clpX_82 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 12 ====================================================
+
+Time taken to run ADP: 0.0189308842023 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['clpX_12', 'clpX_127', 'clpX_150', 'clpX_49', 'clpX_63']
+Predicted alleles: ['clpX_1', 'clpX_127', 'clpX_150', 'clpX_49', 'clpX_64']
+Removed: clpX_63
+Alleles in predicted but not in true: ['clpX_1', 'clpX_64']
+
+Minimum edit distance for clpX_63 : 2
+Maximum edit distance for clpX_63: 119
+Average edit distance for clpX_63: 29.5082872928
+
+clpX_1 is not the closest allele to the removed allele, its edit distance from the removed allele is 39.
+clpX_64 is one of the closest allele to the removed allele.
+======================================== SIMULATION 13 ====================================================
+
+Time taken to run ADP: 0.0122308651606 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['clpX_127', 'clpX_4']
+Predicted alleles: ['clpX_125', 'clpX_134', 'clpX_4', 'clpX_64', 'clpX_93']
+Removed: clpX_127
+Alleles in predicted but not in true: ['clpX_125', 'clpX_134', 'clpX_64', 'clpX_93']
+
+Minimum edit distance for clpX_127 : 3
+Maximum edit distance for clpX_127: 120
+Average edit distance for clpX_127: 28.9723756906
+
+clpX_125 is not the closest allele to the removed allele, its edit distance from the removed allele is 9.
+clpX_134 is not the closest allele to the removed allele, its edit distance from the removed allele is 5.
+clpX_64 is one of the closest allele to the removed allele.
+clpX_93 is not the closest allele to the removed allele, its edit distance from the removed allele is 10.
+======================================== SIMULATION 14 ====================================================
+
+Time taken to run ADP: 0.00722451607386 min
+True alleles: ['clpX_83', 'clpX_98']
+Predicted alleles: ['clpX_59', 'clpX_61', 'clpX_83']
+Removed: clpX_98
+Alleles in predicted but not in true: ['clpX_59', 'clpX_61']
+
+Minimum edit distance for clpX_98 : 7
+Maximum edit distance for clpX_98: 123
+Average edit distance for clpX_98: 43.7955801105
+
+clpX_59 is one of the closest allele to the removed allele.
+clpX_61 is not the closest allele to the removed allele, its edit distance from the removed allele is 8.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 15 ====================================================
+
+Time taken to run ADP: 0.00935568412145 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['clpX_106', 'clpX_117', 'clpX_157', 'clpX_30', 'clpX_62', 'clpX_65']
+Predicted alleles: ['clpX_106', 'clpX_117', 'clpX_157', 'clpX_30', 'clpX_36', 'clpX_57', 'clpX_58', 'clpX_59', 'clpX_61', 'clpX_65']
+Removed: clpX_62
+Alleles in predicted but not in true: ['clpX_36', 'clpX_57', 'clpX_58', 'clpX_59', 'clpX_61']
+
+Minimum edit distance for clpX_62 : 6
+Maximum edit distance for clpX_62: 121
+Average edit distance for clpX_62: 44.0939226519
+
+clpX_36 is not the closest allele to the removed allele, its edit distance from the removed allele is 17.
+clpX_57 is not the closest allele to the removed allele, its edit distance from the removed allele is 17.
+clpX_58 is not the closest allele to the removed allele, its edit distance from the removed allele is 10.
+clpX_59 is not the closest allele to the removed allele, its edit distance from the removed allele is 7.
+clpX_61 is one of the closest allele to the removed allele.
+======================================== SIMULATION 16 ====================================================
+
+Time taken to run ADP: 0.00650713443756 min
+True alleles: ['clpX_138', 'clpX_168', 'clpX_81', 'clpX_90']
+Predicted alleles: ['clpX_138', 'clpX_169', 'clpX_170', 'clpX_81', 'clpX_90']
+Removed: clpX_168
+Alleles in predicted but not in true: ['clpX_169', 'clpX_170']
+
+Minimum edit distance for clpX_168 : 4
+Maximum edit distance for clpX_168: 123
+Average edit distance for clpX_168: 112.480662983
+
+clpX_169 is one of the closest allele to the removed allele.
+clpX_170 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 17 ====================================================
+
+Time taken to run ADP: 0.0077959338824 min
+True alleles: ['clpX_111', 'clpX_130', 'clpX_178', 'clpX_33', 'clpX_84', 'clpX_87', 'clpX_91']
+Predicted alleles: ['clpX_111', 'clpX_130', 'clpX_178', 'clpX_33', 'clpX_84', 'clpX_88', 'clpX_91']
+Removed: clpX_87
+Alleles in predicted but not in true: ['clpX_88']
+
+Minimum edit distance for clpX_87 : 4
+Maximum edit distance for clpX_87: 123
+Average edit distance for clpX_87: 41.7237569061
+
+clpX_88 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 18 ====================================================
+
+Time taken to run ADP: 0.00958201885223 min
+True alleles: ['clpX_104', 'clpX_153', 'clpX_166', 'clpX_23', 'clpX_64']
+Predicted alleles: ['clpX_153', 'clpX_166', 'clpX_24', 'clpX_64']
+Removed: clpX_23
+Alleles in predicted but not in true: ['clpX_24']
+
+Minimum edit distance for clpX_23 : 1
+Maximum edit distance for clpX_23: 122
+Average edit distance for clpX_23: 37.1049723757
+
+clpX_24 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 19 ====================================================
+
+Time taken to run ADP: 0.00937844912211 min
+True alleles: ['clpX_107', 'clpX_128', 'clpX_150', 'clpX_156']
+Predicted alleles: ['clpX_128', 'clpX_150', 'clpX_156', 'clpX_26', 'clpX_64']
+Removed: clpX_107
+Alleles in predicted but not in true: ['clpX_26', 'clpX_64']
+
+Minimum edit distance for clpX_107 : 5
+Maximum edit distance for clpX_107: 120
+Average edit distance for clpX_107: 29.3591160221
+
+clpX_26 is not the closest allele to the removed allele, its edit distance from the removed allele is 6.
+clpX_64 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 20 ====================================================
+
+Time taken to run ADP: 0.00885856548945 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['clpX_101', 'clpX_48', 'clpX_62', 'clpX_68', 'clpX_95']
+Predicted alleles: ['clpX_101', 'clpX_36', 'clpX_48', 'clpX_57', 'clpX_58', 'clpX_59', 'clpX_61', 'clpX_68', 'clpX_95']
+Removed: clpX_62
+Alleles in predicted but not in true: ['clpX_36', 'clpX_57', 'clpX_58', 'clpX_59', 'clpX_61']
+
+Minimum edit distance for clpX_62 : 6
+Maximum edit distance for clpX_62: 121
+Average edit distance for clpX_62: 44.0939226519
+
+clpX_36 is not the closest allele to the removed allele, its edit distance from the removed allele is 17.
+clpX_57 is not the closest allele to the removed allele, its edit distance from the removed allele is 17.
+clpX_58 is not the closest allele to the removed allele, its edit distance from the removed allele is 10.
+clpX_59 is not the closest allele to the removed allele, its edit distance from the removed allele is 7.
+clpX_61 is one of the closest allele to the removed allele.
+======================================== SIMULATION 21 ====================================================
+
+Time taken to run ADP: 0.00700588226318 min
+True alleles: ['clpX_160', 'clpX_167', 'clpX_172', 'clpX_35']
+Predicted alleles: ['clpX_112', 'clpX_117', 'clpX_160', 'clpX_172', 'clpX_35']
+Removed: clpX_167
+Alleles in predicted but not in true: ['clpX_112', 'clpX_117']
+
+Minimum edit distance for clpX_167 : 14
+Maximum edit distance for clpX_167: 124
+Average edit distance for clpX_167: 112.878453039
+
+clpX_112 is not the closest allele to the removed allele, its edit distance from the removed allele is 18.
+clpX_117 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 22 ====================================================
+
+Time taken to run ADP: 0.00636246601741 min
+True alleles: ['clpX_113', 'clpX_140', 'clpX_145']
+Predicted alleles: ['clpX_140', 'clpX_145', 'clpX_76']
+Removed: clpX_113
+Alleles in predicted but not in true: ['clpX_76']
+
+Minimum edit distance for clpX_113 : 1
+Maximum edit distance for clpX_113: 121
+Average edit distance for clpX_113: 30.8784530387
+
+clpX_76 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 23 ====================================================
+
+Time taken to run ADP: 0.00922391812007 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['clpX_26', 'clpX_41', 'clpX_48', 'clpX_7', 'clpX_87', 'clpX_97']
+Predicted alleles: ['clpX_126', 'clpX_21', 'clpX_26', 'clpX_48', 'clpX_7', 'clpX_88']
+Removed: clpX_87
+Alleles in predicted but not in true: ['clpX_126', 'clpX_21', 'clpX_88']
+
+Minimum edit distance for clpX_87 : 4
+Maximum edit distance for clpX_87: 123
+Average edit distance for clpX_87: 41.7237569061
+
+clpX_126 is not the closest allele to the removed allele, its edit distance from the removed allele is 41.
+clpX_21 is not the closest allele to the removed allele, its edit distance from the removed allele is 36.
+clpX_88 is one of the closest allele to the removed allele.
+======================================== SIMULATION 24 ====================================================
+
+Time taken to run ADP: 0.00693879922231 min
+True alleles: ['clpX_164', 'clpX_172', 'clpX_27', 'clpX_36', 'clpX_48', 'clpX_86']
+Predicted alleles: ['clpX_158', 'clpX_164', 'clpX_172', 'clpX_36', 'clpX_48', 'clpX_86']
+Removed: clpX_27
+Alleles in predicted but not in true: ['clpX_158']
+
+Minimum edit distance for clpX_27 : 2
+Maximum edit distance for clpX_27: 119
+Average edit distance for clpX_27: 28.7624309392
+
+clpX_158 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 25 ====================================================
+
+Time taken to run ADP: 0.00766903559367 min
+True alleles: ['clpX_20', 'clpX_49', 'clpX_6']
+Predicted alleles: ['clpX_116', 'clpX_20', 'clpX_6']
+Removed: clpX_49
+Alleles in predicted but not in true: ['clpX_116']
+
+Minimum edit distance for clpX_49 : 1
+Maximum edit distance for clpX_49: 122
+Average edit distance for clpX_49: 29.1215469613
+
+clpX_116 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 26 ====================================================
+
+Time taken to run ADP: 0.0146810809771 min
+True alleles: ['clpX_104', 'clpX_150', 'clpX_91']
+Predicted alleles: ['clpX_150', 'clpX_54', 'clpX_64', 'clpX_91']
+Removed: clpX_104
+Alleles in predicted but not in true: ['clpX_54', 'clpX_64']
+
+Minimum edit distance for clpX_104 : 1
+Maximum edit distance for clpX_104: 119
+Average edit distance for clpX_104: 27.0497237569
+
+clpX_54 is one of the closest allele to the removed allele.
+clpX_64 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 27 ====================================================
+
+Time taken to run ADP: 0.00611133178075 min
+True alleles: ['clpX_36', 'clpX_55', 'clpX_73']
+Predicted alleles: ['clpX_39', 'clpX_55', 'clpX_73']
+Removed: clpX_36
+Alleles in predicted but not in true: ['clpX_39']
+
+Minimum edit distance for clpX_36 : 1
+Maximum edit distance for clpX_36: 124
+Average edit distance for clpX_36: 38.9281767956
+
+clpX_39 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 28 ====================================================
+
+Time taken to run ADP: 0.00871401627858 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['clpX_114', 'clpX_145', 'clpX_168', 'clpX_54', 'clpX_9']
+Predicted alleles: ['clpX_104', 'clpX_114', 'clpX_13', 'clpX_145', 'clpX_168']
+Removed: clpX_54
+Alleles in predicted but not in true: ['clpX_104', 'clpX_13']
+
+Minimum edit distance for clpX_54 : 1
+Maximum edit distance for clpX_54: 120
+Average edit distance for clpX_54: 27.5580110497
+
+clpX_104 is one of the closest allele to the removed allele.
+clpX_13 is not the closest allele to the removed allele, its edit distance from the removed allele is 33.
+======================================== SIMULATION 29 ====================================================
+
+Time taken to run ADP: 0.00391291777293 min
+True alleles: ['clpX_164', 'clpX_29']
+Predicted alleles: ['clpX_29']
+Removed: clpX_164
+Alleles in predicted but not in true: []
+
+Minimum edit distance for clpX_164 : 55
+Maximum edit distance for clpX_164: 117
+Average edit distance for clpX_164: 107.348066298
+
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 30 ====================================================
+
+Time taken to run ADP: 0.0195404330889 min
+True alleles: ['clpX_104', 'clpX_107', 'clpX_148', 'clpX_24', 'clpX_4', 'clpX_8']
+Predicted alleles: ['clpX_1', 'clpX_104', 'clpX_107', 'clpX_121', 'clpX_148', 'clpX_182', 'clpX_24', 'clpX_4']
+Removed: clpX_8
+Alleles in predicted but not in true: ['clpX_1', 'clpX_121', 'clpX_182']
+
+Minimum edit distance for clpX_8 : 6
+Maximum edit distance for clpX_8: 126
+Average edit distance for clpX_8: 41.3867403315
+
+clpX_1 is one of the closest allele to the removed allele.
+clpX_121 is not the closest allele to the removed allele, its edit distance from the removed allele is 7.
+clpX_182 is not the closest allele to the removed allele, its edit distance from the removed allele is 23.
+======================================== SIMULATION 31 ====================================================
+
+Time taken to run ADP: 0.0174412171046 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['clpX_120', 'clpX_130', 'clpX_131', 'clpX_136', 'clpX_172', 'clpX_7', 'clpX_8']
+Predicted alleles: ['clpX_114', 'clpX_120', 'clpX_136', 'clpX_172', 'clpX_7', 'clpX_73', 'clpX_8', 'clpX_80']
+Removed: clpX_130
+Alleles in predicted but not in true: ['clpX_114', 'clpX_73', 'clpX_80']
+
+Minimum edit distance for clpX_130 : 5
+Maximum edit distance for clpX_130: 122
+Average edit distance for clpX_130: 31.0552486188
+
+clpX_114 is not the closest allele to the removed allele, its edit distance from the removed allele is 7.
+clpX_73 is not the closest allele to the removed allele, its edit distance from the removed allele is 7.
+clpX_80 is one of the closest allele to the removed allele.
+======================================== SIMULATION 32 ====================================================
+
+Time taken to run ADP: 0.00955969889959 min
+True alleles: ['clpX_103', 'clpX_115', 'clpX_134', 'clpX_145', 'clpX_3']
+Predicted alleles: ['clpX_103', 'clpX_131', 'clpX_134', 'clpX_145', 'clpX_3']
+Removed: clpX_115
+Alleles in predicted but not in true: ['clpX_131']
+
+Minimum edit distance for clpX_115 : 1
+Maximum edit distance for clpX_115: 122
+Average edit distance for clpX_115: 30.0828729282
+
+clpX_131 is not the closest allele to the removed allele, its edit distance from the removed allele is 2.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 33 ====================================================
+
+Time taken to run ADP: 0.00947320063909 min
+True alleles: ['clpX_153', 'clpX_172', 'clpX_179', 'clpX_43', 'clpX_84']
+Predicted alleles: ['clpX_156', 'clpX_172', 'clpX_179', 'clpX_43', 'clpX_64', 'clpX_84']
+Removed: clpX_153
+Alleles in predicted but not in true: ['clpX_156', 'clpX_64']
+
+Minimum edit distance for clpX_153 : 1
+Maximum edit distance for clpX_153: 120
+Average edit distance for clpX_153: 27.5138121547
+
+clpX_156 is not the closest allele to the removed allele, its edit distance from the removed allele is 3.
+clpX_64 is one of the closest allele to the removed allele.
+======================================== SIMULATION 34 ====================================================
+
+Time taken to run ADP: 0.00806045134862 min
+True alleles: ['clpX_105', 'clpX_115', 'clpX_123', 'clpX_73']
+Predicted alleles: ['clpX_105', 'clpX_115', 'clpX_24', 'clpX_73']
+Removed: clpX_123
+Alleles in predicted but not in true: ['clpX_24']
+
+Minimum edit distance for clpX_123 : 1
+Maximum edit distance for clpX_123: 122
+Average edit distance for clpX_123: 37.4972375691
+
+clpX_24 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 35 ====================================================
+
+Time taken to run ADP: 0.0101491173108 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['clpX_175', 'clpX_22', 'clpX_40', 'clpX_42', 'clpX_69', 'clpX_87']
+Predicted alleles: ['clpX_175', 'clpX_22', 'clpX_24', 'clpX_42', 'clpX_69', 'clpX_87']
+Removed: clpX_40
+Alleles in predicted but not in true: ['clpX_24']
+
+Minimum edit distance for clpX_40 : 1
+Maximum edit distance for clpX_40: 120
+Average edit distance for clpX_40: 36.0110497238
+
+clpX_24 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 36 ====================================================
+
+Time taken to run ADP: 0.00983370145162 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['clpX_1', 'clpX_19', 'clpX_77']
+Predicted alleles: ['clpX_13', 'clpX_18', 'clpX_77']
+Removed: clpX_1
+Alleles in predicted but not in true: ['clpX_13', 'clpX_18']
+
+Minimum edit distance for clpX_1 : 1
+Maximum edit distance for clpX_1: 128
+Average edit distance for clpX_1: 40.408839779
+
+clpX_13 is not the closest allele to the removed allele, its edit distance from the removed allele is 2.
+clpX_18 is not the closest allele to the removed allele, its edit distance from the removed allele is 43.
+======================================== SIMULATION 37 ====================================================
+
+Time taken to run ADP: 0.0100660165151 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['clpX_129', 'clpX_3', 'clpX_36', 'clpX_59', 'clpX_7', 'clpX_73', 'clpX_99']
+Predicted alleles: ['clpX_129', 'clpX_3', 'clpX_36', 'clpX_42', 'clpX_5', 'clpX_59', 'clpX_73']
+Removed: clpX_7
+Alleles in predicted but not in true: ['clpX_42', 'clpX_5']
+
+Minimum edit distance for clpX_7 : 1
+Maximum edit distance for clpX_7: 130
+Average edit distance for clpX_7: 42.2541436464
+
+clpX_42 is not the closest allele to the removed allele, its edit distance from the removed allele is 40.
+clpX_5 is one of the closest allele to the removed allele.
+======================================== SIMULATION 38 ====================================================
+
+Time taken to run ADP: 0.00847669839859 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['clpX_103', 'clpX_163', 'clpX_167', 'clpX_170', 'clpX_181', 'clpX_67', 'clpX_90']
+Predicted alleles: ['clpX_103', 'clpX_109', 'clpX_163', 'clpX_167', 'clpX_170', 'clpX_181', 'clpX_90']
+Removed: clpX_67
+Alleles in predicted but not in true: ['clpX_109']
+
+Minimum edit distance for clpX_67 : 1
+Maximum edit distance for clpX_67: 118
+Average edit distance for clpX_67: 27.4917127072
+
+clpX_109 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 39 ====================================================
+
+Time taken to run ADP: 0.00880302985509 min
+True alleles: ['clpX_108', 'clpX_171', 'clpX_31', 'clpX_56', 'clpX_62', 'clpX_85']
+Predicted alleles: ['clpX_171', 'clpX_31', 'clpX_56', 'clpX_62', 'clpX_67', 'clpX_85']
+Removed: clpX_108
+Alleles in predicted but not in true: ['clpX_67']
+
+Minimum edit distance for clpX_108 : 1
+Maximum edit distance for clpX_108: 119
+Average edit distance for clpX_108: 28.0828729282
+
+clpX_67 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 40 ====================================================
+
+Time taken to run ADP: 0.00506306489309 min
+True alleles: ['clpX_120', 'clpX_156', 'clpX_164', 'clpX_90']
+Predicted alleles: ['clpX_120', 'clpX_156', 'clpX_164', 'clpX_58']
+Removed: clpX_90
+Alleles in predicted but not in true: ['clpX_58']
+
+Minimum edit distance for clpX_90 : 4
+Maximum edit distance for clpX_90: 125
+Average edit distance for clpX_90: 44.6961325967
+
+clpX_58 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== clpX: SUMMARY STATISTICS ====================================================
+
+Out of 40 simulations, 23 simulations we found the closest allele to the removed one.
+Out of 40 simulations, 27 simulations we found the top 3 closest allele to the removed one.

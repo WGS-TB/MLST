@@ -1,0 +1,580 @@
+======================================== SIMULATION 1 ====================================================
+
+Time taken to run ADP: 0.00879098176956 min
+True alleles: ['rplB_154', 'rplB_163', 'rplB_45', 'rplB_58']
+Predicted alleles: ['rplB_139', 'rplB_154', 'rplB_164', 'rplB_45', 'rplB_58']
+Removed: rplB_163
+Alleles in predicted but not in true: ['rplB_139', 'rplB_164']
+
+Minimum edit distance for rplB_163 : 4
+Maximum edit distance for rplB_163: 134
+Average edit distance for rplB_163: 39.2947976879
+
+rplB_139 is not the closest allele to the removed allele, its edit distance from the removed allele is 7.
+rplB_164 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 2 ====================================================
+
+Time taken to run ADP: 0.0120162526766 min
+True alleles: ['rplB_5', 'rplB_68']
+Predicted alleles: ['rplB_110', 'rplB_115', 'rplB_5']
+Removed: rplB_68
+Alleles in predicted but not in true: ['rplB_110', 'rplB_115']
+
+Minimum edit distance for rplB_68 : 1
+Maximum edit distance for rplB_68: 127
+Average edit distance for rplB_68: 29.0693641618
+
+rplB_110 is not the closest allele to the removed allele, its edit distance from the removed allele is 3.
+rplB_115 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 3 ====================================================
+
+Time taken to run ADP: 0.00954020023346 min
+True alleles: ['rplB_106', 'rplB_158', 'rplB_167', 'rplB_30', 'rplB_67', 'rplB_78', 'rplB_91']
+Predicted alleles: ['rplB_106', 'rplB_144', 'rplB_158', 'rplB_167', 'rplB_67', 'rplB_78', 'rplB_91']
+Removed: rplB_30
+Alleles in predicted but not in true: ['rplB_144']
+
+Minimum edit distance for rplB_30 : 1
+Maximum edit distance for rplB_30: 129
+Average edit distance for rplB_30: 30.838150289
+
+rplB_144 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 4 ====================================================
+
+Time taken to run ADP: 0.0132878700892 min
+True alleles: ['rplB_11', 'rplB_124', 'rplB_131', 'rplB_55', 'rplB_68']
+Predicted alleles: ['rplB_11', 'rplB_110', 'rplB_115', 'rplB_124', 'rplB_131', 'rplB_55']
+Removed: rplB_68
+Alleles in predicted but not in true: ['rplB_110', 'rplB_115']
+
+Minimum edit distance for rplB_68 : 1
+Maximum edit distance for rplB_68: 127
+Average edit distance for rplB_68: 29.0693641618
+
+rplB_110 is not the closest allele to the removed allele, its edit distance from the removed allele is 3.
+rplB_115 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 5 ====================================================
+
+Time taken to run ADP: 0.00689478317897 min
+True alleles: ['rplB_158', 'rplB_160', 'rplB_38', 'rplB_63', 'rplB_9']
+Predicted alleles: ['rplB_110', 'rplB_158', 'rplB_160', 'rplB_63', 'rplB_9']
+Removed: rplB_38
+Alleles in predicted but not in true: ['rplB_110']
+
+Minimum edit distance for rplB_38 : 1
+Maximum edit distance for rplB_38: 128
+Average edit distance for rplB_38: 30.2080924855
+
+rplB_110 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 6 ====================================================
+
+Time taken to run ADP: 0.0135538140933 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['rplB_114', 'rplB_15', 'rplB_65', 'rplB_88', 'rplB_99']
+Predicted alleles: ['rplB_114', 'rplB_140', 'rplB_15', 'rplB_65', 'rplB_88']
+Removed: rplB_99
+Alleles in predicted but not in true: ['rplB_140']
+
+Minimum edit distance for rplB_99 : 1
+Maximum edit distance for rplB_99: 128
+Average edit distance for rplB_99: 34.6705202312
+
+rplB_140 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 7 ====================================================
+
+Time taken to run ADP: 0.00929390192032 min
+True alleles: ['rplB_100', 'rplB_119', 'rplB_133', 'rplB_24', 'rplB_67', 'rplB_7']
+Predicted alleles: ['rplB_100', 'rplB_119', 'rplB_133', 'rplB_137', 'rplB_24', 'rplB_5', 'rplB_67', 'rplB_9']
+Removed: rplB_7
+Alleles in predicted but not in true: ['rplB_137', 'rplB_5', 'rplB_9']
+
+Minimum edit distance for rplB_7 : 5
+Maximum edit distance for rplB_7: 127
+Average edit distance for rplB_7: 34.7803468208
+
+rplB_137 is not the closest allele to the removed allele, its edit distance from the removed allele is 18.
+rplB_5 is one of the closest allele to the removed allele.
+rplB_9 is not the closest allele to the removed allele, its edit distance from the removed allele is 8.
+======================================== SIMULATION 8 ====================================================
+
+Time taken to run ADP: 0.0101698160172 min
+True alleles: ['rplB_104', 'rplB_19', 'rplB_52', 'rplB_64']
+Predicted alleles: ['rplB_104', 'rplB_166', 'rplB_19', 'rplB_52']
+Removed: rplB_64
+Alleles in predicted but not in true: ['rplB_166']
+
+Minimum edit distance for rplB_64 : 3
+Maximum edit distance for rplB_64: 127
+Average edit distance for rplB_64: 30.0520231214
+
+rplB_166 is not the closest allele to the removed allele, its edit distance from the removed allele is 4.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 9 ====================================================
+
+Time taken to run ADP: 0.00937766631444 min
+True alleles: ['rplB_12', 'rplB_128', 'rplB_147', 'rplB_155', 'rplB_26', 'rplB_53', 'rplB_82']
+Predicted alleles: ['rplB_12', 'rplB_128', 'rplB_147', 'rplB_26', 'rplB_53', 'rplB_74', 'rplB_82']
+Removed: rplB_155
+Alleles in predicted but not in true: ['rplB_74']
+
+Minimum edit distance for rplB_155 : 1
+Maximum edit distance for rplB_155: 131
+Average edit distance for rplB_155: 35.6473988439
+
+rplB_74 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 10 ====================================================
+
+Time taken to run ADP: 0.00483678181966 min
+True alleles: ['rplB_50', 'rplB_70']
+Predicted alleles: ['rplB_112', 'rplB_70']
+Removed: rplB_50
+Alleles in predicted but not in true: ['rplB_112']
+
+Minimum edit distance for rplB_50 : 2
+Maximum edit distance for rplB_50: 131
+Average edit distance for rplB_50: 31.2080924855
+
+rplB_112 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 11 ====================================================
+
+Time taken to run ADP: 0.0103128671646 min
+True alleles: ['rplB_12', 'rplB_144', 'rplB_152', 'rplB_3']
+Predicted alleles: ['rplB_12', 'rplB_152', 'rplB_3', 'rplB_30']
+Removed: rplB_144
+Alleles in predicted but not in true: ['rplB_30']
+
+Minimum edit distance for rplB_144 : 1
+Maximum edit distance for rplB_144: 128
+Average edit distance for rplB_144: 30.3641618497
+
+rplB_30 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 12 ====================================================
+
+Time taken to run ADP: 0.0103633324305 min
+True alleles: ['rplB_12', 'rplB_121', 'rplB_144', 'rplB_47', 'rplB_60']
+Predicted alleles: ['rplB_12', 'rplB_121', 'rplB_144', 'rplB_47', 'rplB_53', 'rplB_63']
+Removed: rplB_60
+Alleles in predicted but not in true: ['rplB_53', 'rplB_63']
+
+Minimum edit distance for rplB_60 : 1
+Maximum edit distance for rplB_60: 131
+Average edit distance for rplB_60: 50.1329479769
+
+rplB_53 is one of the closest allele to the removed allele.
+rplB_63 is not the closest allele to the removed allele, its edit distance from the removed allele is 7.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 13 ====================================================
+
+Time taken to run ADP: 0.00655433336894 min
+True alleles: ['rplB_121', 'rplB_4']
+Predicted alleles: ['rplB_129', 'rplB_4']
+Removed: rplB_121
+Alleles in predicted but not in true: ['rplB_129']
+
+Minimum edit distance for rplB_121 : 1
+Maximum edit distance for rplB_121: 127
+Average edit distance for rplB_121: 39.1676300578
+
+rplB_129 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 14 ====================================================
+
+Time taken to run ADP: 0.00932017962138 min
+True alleles: ['rplB_80', 'rplB_94']
+Predicted alleles: ['rplB_1', 'rplB_80']
+Removed: rplB_94
+Alleles in predicted but not in true: ['rplB_1']
+
+Minimum edit distance for rplB_94 : 1
+Maximum edit distance for rplB_94: 130
+Average edit distance for rplB_94: 34.225433526
+
+rplB_1 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 15 ====================================================
+
+Time taken to run ADP: 0.00872623523076 min
+True alleles: ['rplB_102', 'rplB_112', 'rplB_150', 'rplB_28', 'rplB_59', 'rplB_62']
+Predicted alleles: ['rplB_112', 'rplB_150', 'rplB_28', 'rplB_51', 'rplB_60', 'rplB_62']
+Removed: rplB_59
+Alleles in predicted but not in true: ['rplB_51', 'rplB_60']
+
+Minimum edit distance for rplB_59 : 3
+Maximum edit distance for rplB_59: 129
+Average edit distance for rplB_59: 50.3699421965
+
+rplB_51 is not the closest allele to the removed allele, its edit distance from the removed allele is 11.
+rplB_60 is one of the closest allele to the removed allele.
+======================================== SIMULATION 16 ====================================================
+
+Time taken to run ADP: 0.00703103542328 min
+True alleles: ['rplB_132', 'rplB_160', 'rplB_77', 'rplB_86']
+Predicted alleles: ['rplB_132', 'rplB_159', 'rplB_161', 'rplB_77', 'rplB_86']
+Removed: rplB_160
+Alleles in predicted but not in true: ['rplB_159', 'rplB_161']
+
+Minimum edit distance for rplB_160 : 14
+Maximum edit distance for rplB_160: 135
+Average edit distance for rplB_160: 124.497109827
+
+rplB_159 is not the closest allele to the removed allele, its edit distance from the removed allele is 15.
+rplB_161 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 17 ====================================================
+
+Time taken to run ADP: 0.00880144834518 min
+True alleles: ['rplB_106', 'rplB_124', 'rplB_170', 'rplB_32', 'rplB_80', 'rplB_83', 'rplB_87']
+Predicted alleles: ['rplB_124', 'rplB_170', 'rplB_32', 'rplB_80', 'rplB_87', 'rplB_89']
+Removed: rplB_83
+Alleles in predicted but not in true: ['rplB_89']
+
+Minimum edit distance for rplB_83 : 2
+Maximum edit distance for rplB_83: 125
+Average edit distance for rplB_83: 39.6184971098
+
+rplB_89 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 18 ====================================================
+
+Time taken to run ADP: 0.0077699859937 min
+More than 1 solution having minimum negative log likelihood score.
+True alleles: ['rplB_100', 'rplB_146', 'rplB_159', 'rplB_22', 'rplB_62']
+Predicted alleles: ['rplB_100', 'rplB_146', 'rplB_159', 'rplB_23', 'rplB_62']
+Removed: rplB_22
+Alleles in predicted but not in true: ['rplB_23']
+
+Minimum edit distance for rplB_22 : 1
+Maximum edit distance for rplB_22: 127
+Average edit distance for rplB_22: 33.9248554913
+
+rplB_23 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 19 ====================================================
+
+Time taken to run ADP: 0.0190824468931 min
+True alleles: ['rplB_102', 'rplB_123', 'rplB_143', 'rplB_150']
+Predicted alleles: ['rplB_106', 'rplB_123', 'rplB_143', 'rplB_150']
+Removed: rplB_102
+Alleles in predicted but not in true: ['rplB_106']
+
+Minimum edit distance for rplB_102 : 1
+Maximum edit distance for rplB_102: 132
+Average edit distance for rplB_102: 30.0520231214
+
+rplB_106 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 20 ====================================================
+
+Time taken to run ADP: 0.00936478376389 min
+True alleles: ['rplB_46', 'rplB_59', 'rplB_65', 'rplB_91', 'rplB_96']
+Predicted alleles: ['rplB_46', 'rplB_51', 'rplB_60', 'rplB_65', 'rplB_91', 'rplB_96']
+Removed: rplB_59
+Alleles in predicted but not in true: ['rplB_51', 'rplB_60']
+
+Minimum edit distance for rplB_59 : 3
+Maximum edit distance for rplB_59: 129
+Average edit distance for rplB_59: 50.3699421965
+
+rplB_51 is not the closest allele to the removed allele, its edit distance from the removed allele is 11.
+rplB_60 is one of the closest allele to the removed allele.
+======================================== SIMULATION 21 ====================================================
+
+Time taken to run ADP: 0.00714243650436 min
+True alleles: ['rplB_153', 'rplB_160', 'rplB_164', 'rplB_34']
+Predicted alleles: ['rplB_153', 'rplB_159', 'rplB_161', 'rplB_164', 'rplB_34']
+Removed: rplB_160
+Alleles in predicted but not in true: ['rplB_159', 'rplB_161']
+
+Minimum edit distance for rplB_160 : 14
+Maximum edit distance for rplB_160: 135
+Average edit distance for rplB_160: 124.497109827
+
+rplB_159 is not the closest allele to the removed allele, its edit distance from the removed allele is 15.
+rplB_161 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 22 ====================================================
+
+Time taken to run ADP: 0.00510259866714 min
+True alleles: ['rplB_108', 'rplB_134', 'rplB_138']
+Predicted alleles: ['rplB_134', 'rplB_138', 'rplB_41']
+Removed: rplB_108
+Alleles in predicted but not in true: ['rplB_41']
+
+Minimum edit distance for rplB_108 : 1
+Maximum edit distance for rplB_108: 128
+Average edit distance for rplB_108: 30.5549132948
+
+rplB_41 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 23 ====================================================
+
+Time taken to run ADP: 0.0109224836032 min
+True alleles: ['rplB_25', 'rplB_39', 'rplB_46', 'rplB_7', 'rplB_84', 'rplB_93']
+Predicted alleles: ['rplB_25', 'rplB_39', 'rplB_46', 'rplB_7', 'rplB_89', 'rplB_93']
+Removed: rplB_84
+Alleles in predicted but not in true: ['rplB_89']
+
+Minimum edit distance for rplB_84 : 1
+Maximum edit distance for rplB_84: 126
+Average edit distance for rplB_84: 38.9248554913
+
+rplB_89 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 24 ====================================================
+
+Time taken to run ADP: 0.0075562675794 min
+True alleles: ['rplB_157', 'rplB_164', 'rplB_26', 'rplB_34', 'rplB_46', 'rplB_82']
+Predicted alleles: ['rplB_112', 'rplB_157', 'rplB_164', 'rplB_31', 'rplB_34', 'rplB_46', 'rplB_66', 'rplB_82']
+Removed: rplB_26
+Alleles in predicted but not in true: ['rplB_112', 'rplB_31', 'rplB_66']
+
+Minimum edit distance for rplB_26 : 4
+Maximum edit distance for rplB_26: 129
+Average edit distance for rplB_26: 30.7052023121
+
+rplB_112 is one of the closest allele to the removed allele.
+rplB_31 is not the closest allele to the removed allele, its edit distance from the removed allele is 15.
+rplB_66 is not the closest allele to the removed allele, its edit distance from the removed allele is 6.
+======================================== SIMULATION 25 ====================================================
+
+Time taken to run ADP: 0.013735349973 min
+True alleles: ['rplB_19', 'rplB_46', 'rplB_5']
+Predicted alleles: ['rplB_128', 'rplB_169', 'rplB_19', 'rplB_42', 'rplB_5', 'rplB_92']
+Removed: rplB_46
+Alleles in predicted but not in true: ['rplB_128', 'rplB_169', 'rplB_42', 'rplB_92']
+
+Minimum edit distance for rplB_46 : 3
+Maximum edit distance for rplB_46: 129
+Average edit distance for rplB_46: 29.8959537572
+
+rplB_128 is not the closest allele to the removed allele, its edit distance from the removed allele is 12.
+rplB_169 is not the closest allele to the removed allele, its edit distance from the removed allele is 7.
+rplB_42 is one of the closest allele to the removed allele.
+rplB_92 is not the closest allele to the removed allele, its edit distance from the removed allele is 4.
+======================================== SIMULATION 26 ====================================================
+
+Time taken to run ADP: 0.00740633408229 min
+True alleles: ['rplB_143', 'rplB_87', 'rplB_99']
+Predicted alleles: ['rplB_140', 'rplB_143', 'rplB_87']
+Removed: rplB_99
+Alleles in predicted but not in true: ['rplB_140']
+
+Minimum edit distance for rplB_99 : 1
+Maximum edit distance for rplB_99: 128
+Average edit distance for rplB_99: 34.6705202312
+
+rplB_140 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 27 ====================================================
+
+Time taken to run ADP: 0.0080620487531 min
+True alleles: ['rplB_35', 'rplB_52', 'rplB_70']
+Predicted alleles: ['rplB_34', 'rplB_52', 'rplB_56', 'rplB_70']
+Removed: rplB_35
+Alleles in predicted but not in true: ['rplB_34', 'rplB_56']
+
+Minimum edit distance for rplB_35 : 1
+Maximum edit distance for rplB_35: 129
+Average edit distance for rplB_35: 39.8497109827
+
+rplB_34 is one of the closest allele to the removed allele.
+rplB_56 is not the closest allele to the removed allele, its edit distance from the removed allele is 20.
+======================================== SIMULATION 28 ====================================================
+
+Time taken to run ADP: 0.00765068133672 min
+True alleles: ['rplB_109', 'rplB_139', 'rplB_161', 'rplB_51', 'rplB_8']
+Predicted alleles: ['rplB_109', 'rplB_139', 'rplB_161', 'rplB_59', 'rplB_63', 'rplB_8']
+Removed: rplB_51
+Alleles in predicted but not in true: ['rplB_59', 'rplB_63']
+
+Minimum edit distance for rplB_51 : 7
+Maximum edit distance for rplB_51: 132
+Average edit distance for rplB_51: 45.3757225434
+
+rplB_59 is not the closest allele to the removed allele, its edit distance from the removed allele is 11.
+rplB_63 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 29 ====================================================
+
+Time taken to run ADP: 0.00543909867605 min
+True alleles: ['rplB_157', 'rplB_28']
+Predicted alleles: ['rplB_158', 'rplB_28']
+Removed: rplB_157
+Alleles in predicted but not in true: ['rplB_158']
+
+Minimum edit distance for rplB_157 : 37
+Maximum edit distance for rplB_157: 127
+Average edit distance for rplB_157: 116.49132948
+
+rplB_158 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 30 ====================================================
+
+Time taken to run ADP: 0.0166473984718 min
+True alleles: ['rplB_100', 'rplB_102', 'rplB_142', 'rplB_23', 'rplB_4', 'rplB_8']
+Predicted alleles: ['rplB_100', 'rplB_102', 'rplB_142', 'rplB_23', 'rplB_4', 'rplB_5']
+Removed: rplB_8
+Alleles in predicted but not in true: ['rplB_5']
+
+Minimum edit distance for rplB_8 : 1
+Maximum edit distance for rplB_8: 127
+Average edit distance for rplB_8: 32.1271676301
+
+rplB_5 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 31 ====================================================
+
+Time taken to run ADP: 0.0079293847084 min
+True alleles: ['rplB_115', 'rplB_124', 'rplB_125', 'rplB_126', 'rplB_130', 'rplB_164', 'rplB_7']
+Predicted alleles: ['rplB_115', 'rplB_125', 'rplB_126', 'rplB_130', 'rplB_164', 'rplB_23', 'rplB_7']
+Removed: rplB_124
+Alleles in predicted but not in true: ['rplB_23']
+
+Minimum edit distance for rplB_124 : 1
+Maximum edit distance for rplB_124: 127
+Average edit distance for rplB_124: 33.3526011561
+
+rplB_23 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 32 ====================================================
+
+Time taken to run ADP: 0.00910871823629 min
+True alleles: ['rplB_111', 'rplB_135']
+Predicted alleles: ['rplB_110', 'rplB_135', 'rplB_166']
+Removed: rplB_111
+Alleles in predicted but not in true: ['rplB_110', 'rplB_166']
+
+Minimum edit distance for rplB_111 : 2
+Maximum edit distance for rplB_111: 127
+Average edit distance for rplB_111: 30.8612716763
+
+rplB_110 is not the closest allele to the removed allele, its edit distance from the removed allele is 3.
+rplB_166 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 33 ====================================================
+
+Time taken to run ADP: 0.00775441726049 min
+True alleles: ['rplB_110', 'rplB_128', 'rplB_138']
+Predicted alleles: ['rplB_110', 'rplB_115', 'rplB_138']
+Removed: rplB_128
+Alleles in predicted but not in true: ['rplB_115']
+
+Minimum edit distance for rplB_128 : 4
+Maximum edit distance for rplB_128: 129
+Average edit distance for rplB_128: 30.289017341
+
+rplB_115 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 34 ====================================================
+
+Time taken to run ADP: 0.00893536408742 min
+True alleles: ['rplB_147', 'rplB_165', 'rplB_171', 'rplB_41', 'rplB_81']
+Predicted alleles: ['rplB_145', 'rplB_165', 'rplB_171', 'rplB_41', 'rplB_81']
+Removed: rplB_147
+Alleles in predicted but not in true: ['rplB_145']
+
+Minimum edit distance for rplB_147 : 1
+Maximum edit distance for rplB_147: 133
+Average edit distance for rplB_147: 30.936416185
+
+rplB_145 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 35 ====================================================
+
+Time taken to run ADP: 0.0108425656954 min
+True alleles: ['rplB_100', 'rplB_110', 'rplB_118', 'rplB_69']
+Predicted alleles: ['rplB_100', 'rplB_110', 'rplB_4', 'rplB_69']
+Removed: rplB_118
+Alleles in predicted but not in true: ['rplB_4']
+
+Minimum edit distance for rplB_118 : 1
+Maximum edit distance for rplB_118: 130
+Average edit distance for rplB_118: 33.5433526012
+
+rplB_4 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 36 ====================================================
+
+Time taken to run ADP: 0.0104400515556 min
+True alleles: ['rplB_167', 'rplB_21', 'rplB_38', 'rplB_40', 'rplB_66', 'rplB_84']
+Predicted alleles: ['rplB_110', 'rplB_167', 'rplB_21', 'rplB_40', 'rplB_66', 'rplB_84']
+Removed: rplB_38
+Alleles in predicted but not in true: ['rplB_110']
+
+Minimum edit distance for rplB_38 : 1
+Maximum edit distance for rplB_38: 128
+Average edit distance for rplB_38: 30.2080924855
+
+rplB_110 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 37 ====================================================
+
+Time taken to run ADP: 0.00801966587702 min
+True alleles: ['rplB_1', 'rplB_18', 'rplB_74']
+Predicted alleles: ['rplB_18', 'rplB_74', 'rplB_94']
+Removed: rplB_1
+Alleles in predicted but not in true: ['rplB_94']
+
+Minimum edit distance for rplB_1 : 1
+Maximum edit distance for rplB_1: 129
+Average edit distance for rplB_1: 33.3179190751
+
+rplB_94 is one of the closest allele to the removed allele.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 38 ====================================================
+
+Time taken to run ADP: 0.0100063363711 min
+True alleles: ['rplB_123', 'rplB_3', 'rplB_34', 'rplB_56', 'rplB_7', 'rplB_70', 'rplB_94']
+Predicted alleles: ['rplB_123', 'rplB_137', 'rplB_3', 'rplB_34', 'rplB_56', 'rplB_70', 'rplB_9', 'rplB_94']
+Removed: rplB_7
+Alleles in predicted but not in true: ['rplB_137', 'rplB_9']
+
+Minimum edit distance for rplB_7 : 5
+Maximum edit distance for rplB_7: 127
+Average edit distance for rplB_7: 34.7803468208
+
+rplB_137 is not the closest allele to the removed allele, its edit distance from the removed allele is 18.
+rplB_9 is not the closest allele to the removed allele, its edit distance from the removed allele is 8.
+======================================== SIMULATION 39 ====================================================
+
+Time taken to run ADP: 0.0158114830653 min
+True alleles: ['rplB_156', 'rplB_160', 'rplB_163', 'rplB_173', 'rplB_64', 'rplB_86', 'rplB_98']
+Predicted alleles: ['rplB_113', 'rplB_156', 'rplB_160', 'rplB_163', 'rplB_166', 'rplB_173', 'rplB_86', 'rplB_98']
+Removed: rplB_64
+Alleles in predicted but not in true: ['rplB_113', 'rplB_166']
+
+Minimum edit distance for rplB_64 : 3
+Maximum edit distance for rplB_64: 127
+Average edit distance for rplB_64: 30.0520231214
+
+rplB_113 is not the closest allele to the removed allele, its edit distance from the removed allele is 4.
+rplB_166 is not the closest allele to the removed allele, its edit distance from the removed allele is 4.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== SIMULATION 40 ====================================================
+
+Time taken to run ADP: 0.00853728453318 min
+True alleles: ['rplB_103', 'rplB_163', 'rplB_29', 'rplB_54', 'rplB_59', 'rplB_82']
+Predicted alleles: ['rplB_163', 'rplB_29', 'rplB_42', 'rplB_45', 'rplB_54', 'rplB_59', 'rplB_82']
+Removed: rplB_103
+Alleles in predicted but not in true: ['rplB_42', 'rplB_45']
+
+Minimum edit distance for rplB_103 : 2
+Maximum edit distance for rplB_103: 130
+Average edit distance for rplB_103: 29.6936416185
+
+rplB_42 is one of the closest allele to the removed allele.
+rplB_45 is not the closest allele to the removed allele, its edit distance from the removed allele is 3.
+All predicted alleles which are not in true are top 3 closest to the removed allele.
+======================================== rplB: SUMMARY STATISTICS ====================================================
+
+Out of 40 simulations, 22 simulations we found the closest allele to the removed one.
+Out of 40 simulations, 33 simulations we found the top 3 closest allele to the removed one.
