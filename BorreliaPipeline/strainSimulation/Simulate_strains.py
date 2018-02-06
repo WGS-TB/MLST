@@ -395,7 +395,7 @@ def Simulate_strains(numIter,strainRef,sampleDir,outputDir,samplesDir,simFilesDi
         #Compute the simulation statistics
         os.chdir(samplesDir)
         #os.remove(samplesDir+'/borreliaLP.lp')
-        strain_df = pf.strainSolver(samplesDir,strainRef,outputDir,loci,'all','all',10800,5)
+        strain_df = pf.strainSolver(samplesDir,strainRef,outputDir,loci,'noProp','all',10800,5)
         pre,rec,tvd = Compute_Prec_and_rec(strain_dict,strain_df)
         #compute the time taken
         time_taken = time.time() - start

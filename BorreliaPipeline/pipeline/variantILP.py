@@ -10,15 +10,28 @@ Created on Mon Apr 24 11:34:31 2017
 import pandas as pd
 import numpy as np
 import cplex
+import itertools
+import time
+
+#def calculateProp(data_matrix, qMatrix, model, yCovered):
+#    prop = {allele:0 for allele in data_matrix.columns.tolist()}
+
+    
 
 
 ''' dataMatrix: data frame 
     Return: Objective value, variants predicted, reads covered by these variants, all optimal solutions, objective values of optimal solutions
 '''
-def solver(dataMatrix):
+def solver(dataMatrix, qMatrix, option):
 #    data_matrix = returnDataMatrix("/home/glgan/Documents/Borrelia/data/simData/clpA_7_weighted.csv")
 #    data_matrix = returnDataMatrix(dataFile+fileName)
+    #h=10.0
+    #norm_qMat = h*(qMatrix - qMatrix.min())/(qMatrix.max() - qMatrix.min())
+    start = time.time()
+    norm_qMat = qMatrix
+    #print norm_qMat
     data_matrix = dataMatrix
+    nonNeg = (data_matrix != -1).sum().sum()
     total_read = data_matrix.shape[0]
     total_var = data_matrix.shape[1]  #As first column are reads
     
@@ -30,10 +43,18 @@ def solver(dataMatrix):
     
     #Grab unique set of mismatches for each read 
     for row in data_matrix.itertuples():
-        varMM = list(set(list(row[1:])))
-        varMM = [int(mm) for mm in varMM if mm != -1]
-        readAndMM.append(varMM)
-            
+        #print qMatrix.loc[row[0],:]
+        mm_list = list(row[1:])
+        q_list = norm_qMat.loc[row[0],:].tolist()
+        #score_list = [i[0]+i[1] for i in itertools.izip(mm_list, q_list) if i[0] != -1]
+        score_list = [i[1] for i in itertools.izip(mm_list, q_list) if i[0] != -1]
+        score_list = [round(j,3) for j in score_list]
+        score_list= list(set(score_list))
+        #varMM = list(set(list(row[1:])))
+        #varMM = [int(mm) for mm in varMM if mm != -1]
+        #readAndMM.append(varMM)
+        readAndMM.append(score_list)
+    
     readAndMMVariable = [[[j,"y{0}_{1}".format(i+1, j)] for j in readAndMM[i]] for i in range(total_read)]
     yIsRead = pd.DataFrame(data=reads, columns=["Read"])
     yIsRead["Variable"] = readAndMMVariable
@@ -61,10 +82,11 @@ def solver(dataMatrix):
     y_variables = [mm[1] for mmName in readAndMMVariable for mm in mmName]
     model.variables.add(obj=y_weights, names=y_variables, types=[model.variables.type.binary]*len(y_variables))
     
-    #Constraint: Cover most of the read
+   #Constraint: Cover most of the read
     keep_alpha = 1.0
     model.linear_constraints.add(lin_expr=[[y_variables, [1]*len(y_variables)]], senses=["G"], rhs=[keep_alpha*total_read], names=["c{0}".format(1+model.linear_constraints.get_num())])
     
+
     #Constraint: For each read i, only allow it to be covered with a unique number of mismatch i.e. 
     #only one of y_i0, y_i1, y_i2, y_i3 is =1
     uniqueMMConstr = list()
@@ -88,17 +110,23 @@ def solver(dataMatrix):
     readVar_variant_dict = dict()   #key is read variable name, value is the list of variants covering that read(with the particular mm)
     for row in data_matrix.itertuples():
         read = row[0]
-        uniqueMm = list(set(row[1:]))
-        uniqueMm = [int(mm) for mm in uniqueMm if mm!=-1]
-        
-        for mm in uniqueMm:
-            temp = [i for i in range(len(list(row[1:]))) if list(row[1:])[i] == mm]
-            
+        mm_list = list(row[1:])
+        q_list = norm_qMat.loc[row[0],:].tolist()
+        #score_list = [i[0]+i[1] for i in itertools.izip(mm_list, q_list) if i[0] != -1]
+        score_list = [i[1] for i in itertools.izip(mm_list, q_list) if i[0] != -1]
+        score_list = [round(j,3) for j in score_list]
+        unique_score_list= list(set(score_list))
+    
+        for score in unique_score_list:
+            #grab alleles which has this particular score and the alleles are mapped by the read
+            #temp = [i for i in range(len(list(row[1:]))) if (round(mm_list[i]+q_list[i],3) == score and mm_list[i] != -1 )]
+            temp = [i for i in range(len(list(row[1:]))) if (round(q_list[i],3) == score and mm_list[i] != -1 )]
+
             xVariable = [variantName_variable_dict[variant] for variant in data_matrix.columns[temp].tolist()]
-            yVariable = [ readMM_varName_dict[read, mm] ]
-            readVar_variant_dict[readMM_varName_dict[read, mm]] = xVariable
+            yVariable = [ readMM_varName_dict[read, score] ]
+            readVar_variant_dict[readMM_varName_dict[read, score]] = xVariable
             yCoverConstr.append([ xVariable + yVariable, [1]*len(xVariable) + [-1]*len(yVariable) ])
-        
+
     #Constraint: If y_ik is chosen, it must be covered by some variant j with k mm
     model.linear_constraints.add(lin_expr=yCoverConstr, senses=["G"]*len(y_variables), rhs=[0]*len(y_variables), names=["c{0}".format(i+1+model.linear_constraints.get_num()) for i in range(len(y_variables))])
     
@@ -130,7 +158,7 @@ def solver(dataMatrix):
 
     yCovered = present[present["Decision Variable"].str.contains(u"y.*")]["Decision Variable"].tolist()
     readsCovered = [varName_read_dict[y] for y in yCovered]
-    
+   
     allSol = list()
     allObjValue = list()
     for i in range(model.solution.pool.get_num()):
@@ -147,4 +175,10 @@ def solver(dataMatrix):
         allSol.append(varPresentList)
         allObjValue.append(objvalue)
     
+    #print allObjValue
+    allSol = [sorted(i) for i in allSol]
+    allSol.sort()
+    varPresentList = allSol[0]
+    print("Time taken to run ADP: {} min".format((time.time()-start)/60))
+    #return objvalue, varPresentList, readsCovered, allSol, allObjValue, total_var,total_read, model.linear_constraints.get_num(), model.variables.get_num(), nonNeg
     return objvalue, varPresentList, readsCovered, allSol, allObjValue
