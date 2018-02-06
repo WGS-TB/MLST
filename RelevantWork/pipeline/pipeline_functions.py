@@ -101,9 +101,9 @@ Output: The proportions of variants (type list)
 def compute_proportions(dataframe):
     #computes the proportion of a set of variants given a set of reads uing probabilistic methods
     prob_list = [0.0]*dataframe.shape[1]
-    
     for row in dataframe.itertuples(index=False):
-        mmInfo = [i for i in list(row) if i>=0]
+        #mmInfo = [i for i in list(row) if i>=0]
+        mmInfo = [i for i in list(row) if i!=6]
         min_mm = min(mmInfo)
         numOfVar_minMm = len([i for i in list(row) if i== min_mm])
         
@@ -251,8 +251,9 @@ def returnQuality(quality, mm_pos):
             calculate_quality_pos.append(calculate_quality_pos[j-1] + temp[j] + 1)
 #        print(calculate_quality_pos)
         q = [ord( (quality[index])[k] ) for k in calculate_quality_pos]
+        q = [(k-33)/93 for k in q]
         q_list.append(sum(q))
-            
+
     return q_list
 
 '''
@@ -280,11 +281,11 @@ def returnQualityMatrix(path, option):
     
     tempDF.reset_index(inplace=True, drop=True)    
     matrix = tempDF.pivot(index="Read", columns="Allele", values="Quality")
-    
+    #The max quality score is 93.As we limit to 3 mismatches, hence the maximum of an entry is 93*3
     if option == "paired":
-        matrix = matrix.fillna(186)
+        matrix = matrix.fillna(6)
     else:
-        matrix = matrix.fillna(93)
+        matrix = matrix.fillna(3)
         
     return matrix
 
@@ -305,50 +306,42 @@ def getVarAndProp(gene, paired_path, samp):
     Qmatrix = returnQualityMatrix(paired_path, "paired")
     
     #predict variants
-    pred_object_val,var_predicted,reads_cov, all_solutions, all_objective = varSolver.solver(dataMatrixDF)
+    pred_object_val,var_predicted,reads_cov, all_solutions, all_objective = varSolver.solver(dataMatrixDF, Qmatrix, "paired")
     
-    #Calculate quality scores of solutions
-    Qscores = list()
-    minVar_Qscores = list()
+    score_list = list()
+    min_score = sys.maxint
+
+    #Compute negative log likelihood score for each solution
     for i in range(len(all_solutions)):
-        Qscores.append(compute_QSum(Qmatrix.loc[reads_cov,all_solutions[i]]))
-        
-    print("Quality scores for all solutions: {}".format(Qscores))
-    print("Solutions: {}".format(all_solutions))
-    
-    #The required alleles
-    dataMatrix_pred = dataMatrixDF.loc[reads_cov,var_predicted]
-#    minVar_solutions = [sol for sol in all_solutions if len(sol) == min(map(len,all_solutions))]
-    minVar_solutions = all_solutions
-    
-    #Calculate quality scores for minimum alleles
-    for i in range(len(minVar_solutions)):
-        minVar_Qscores.append(compute_QSum(Qmatrix.loc[reads_cov, minVar_solutions[i]]))
-        
-    print("Quality scores for solutions with minimum alleles: {}".format(minVar_Qscores))
-    print("Minimum alleles solutions: {}".format(minVar_solutions))
-    
-#    Return solutions with minimum quality scores
-    min_qscore = min(Qscores)
-    minQscore_sol = [minVar_solutions[i] for i in range(len(minVar_solutions)) if Qscores[i] == min_qscore]
-    print("Min quality score: {}".format(min_qscore))
-    print("Solutions with minimum quality score: {}".format(minQscore_sol))
-    if len(minQscore_sol) > 1:
-        print("@@@@@@@@@@@@ More than 1 solution having minimum quality score @@@@@@@@@@@@")
+        score = compute_likelihood(dataMatrixDF.loc[reads_cov, all_solutions[i]], 6)
+        score_list.append(score)
+
+
+        if score <= min_score:
+            min_score = score
+
+    argmin_score_list = [i for i in range(len(all_solutions)) if score_list[i] == min_score]
+    if len(argmin_score_list) > 1:
+        print("More than 1 solution having minimum negative log likelihood score.")
+        lexico_min_score_sol = [all_solutions[i] for i in argmin_score_list]
+        lexico_min_score_sol = sorted(lexico_min_score_sol)
+        var_predicted = lexico_min_score_sol[0]
+    else:
+        var_predicted = all_solutions[argmin_score_list[0]]
+
     
     ''' ====== '''
     #compute proportions
     #solutionsAndProp_dict is a dictionary in which the keys are just indices and values are dictionaries, with variant as key and proportion as value
     solutionsAndProp_dict = dict()
-    track=0
-    for sol in minQscore_sol:
-        dataMatrix_pred = dataMatrixDF.loc[reads_cov, sol]
-        prop = compute_proportions(dataMatrix_pred)
-        pred_prop = create_dictionary(sol, prop)
-        solutionsAndProp_dict[track] = pred_prop
-        track += 1
-     
-    return solutionsAndProp_dict
+    dataMatrix_pred = Qmatrix.loc[reads_cov, var_predicted]
+    prop = compute_proportions(dataMatrix_pred)
+    pred_prop = create_dictionary(var_predicted, prop)
+    solutionsAndProp_dict[0] = pred_prop
+    
+    print("Solutions:{}".format(all_solutions))
+    print("Score:{}".format(score_list)) 
+    return solutionsAndProp_dict, len(all_solutions)
 
 '''
 This function is needed only if compatibility and quality score filtering are not discriminative enough. 
@@ -1380,7 +1373,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     #add the decision variables for unqiue strain types
     model.variables.add(obj=strainWeightDecVarDF['Weights'].values.tolist(), names=strainWeightDecVarDF['Decision Variable'], types = [model.variables.type.binary]* len(strainWeightDecVarDF['Weights'].values.tolist()))
     #add proportions decision variables
-    if objectiveOption == "noPropAndErr":
+    if objectiveOption == "noPropAndErr" or "noProp":
         model.variables.add(lb=[0]*proportionWeightDecVarDF.shape[0], ub=[propFormat]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))
     else:
         model.variables.add(obj=[i for i in proportionWeightDecVarDF['Weights'].values.tolist()],lb=[0]*proportionWeightDecVarDF.shape[0],ub=[propFormat]*proportionWeightDecVarDF['Weights'].shape[0], names=proportionWeightDecVarDF["Decision Variable"], types=[model.variables.type.continuous] * len(proportionWeightDecVarDF['Weights'].values.tolist()))

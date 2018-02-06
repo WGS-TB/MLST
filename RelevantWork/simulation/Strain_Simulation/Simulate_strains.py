@@ -252,7 +252,7 @@ def Simulate_strains(numIter,strainRef,sampleDir,outputDir,samplesDir,simFilesDi
         simFilesDir: The directory to store the intermediate files generated
     '''
 
-    print ('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~You have chosen to run {0} type simulation. Now running simulation based on {1}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format(sim_type,sim_type))
+    print ('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~You have chosen to run {0} case simulation for type {1}. Now running simulation~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format(Type,sim_type))
     if sim_type == 'Mutation':
         if Type == 1:
             numStrains = 2
@@ -374,14 +374,14 @@ def Simulate_strains(numIter,strainRef,sampleDir,outputDir,samplesDir,simFilesDi
                     else:
                         uvrA[gene_key] += gene_dict[gene_key]
 
-	print sum(clpA.values())
-	print sum(clpX.values())
-	print sum(nifS.values())
-	print sum(pepX.values())
-	print sum(pyrG.values())
-	print sum(recG.values())
-	print sum(rplB.values())
-	print sum(uvrA.values())
+	#print sum(clpA.values())
+	#print sum(clpX.values())
+	#print sum(nifS.values())
+	#print sum(pepX.values())
+	#print sum(pyrG.values())
+	#print sum(recG.values())
+	#print sum(rplB.values())
+	#print sum(uvrA.values())
         #if sum(clpA.values()) != 1:
             #continue
         filesHere = [d for d in os.listdir(".") if os.path.isfile(d)]
@@ -395,7 +395,7 @@ def Simulate_strains(numIter,strainRef,sampleDir,outputDir,samplesDir,simFilesDi
         #Compute the simulation statistics
         os.chdir(samplesDir)
         #os.remove(samplesDir+'/borreliaLP.lp')
-        strain_df = pf.strainSolver(samplesDir,strainRef,outputDir,loci,'all','all',10800,5)
+        strain_df = pf.strainSolver(samplesDir,strainRef,outputDir,loci,'noProp','all',10800,5)
         pre,rec,tvd = Compute_Prec_and_rec(strain_dict,strain_df)
         #compute the time taken
         time_taken = time.time() - start
@@ -417,11 +417,11 @@ def main():
     #get and parse the arguments
     ap = argparse.ArgumentParser()
     ap.add_argument("-n", "--numOfiter", required=False, default=40, type=int, help="The number of simulation iterations default = 40")
-    ap.add_argument("-d", "--masterDir", required=False, default=os.getcwd(), help="The master directory to run the simulation and store the results")
-    ap.add_argument("-r", "--strainRef", required=True, help="The absolute path to the text file containing the reference strains")
+    ap.add_argument("-d", "--masterDir", required=False, default='Results',type=str, help="The name of the master directory to run the simulation and store the results. Default = Created folder called Results")
+    ap.add_argument("-r", "--strainRef", required=True, help="Name of the text file containing the reference strains that is stored in this directory")
     ap.add_argument("-t", "--Sim_Type", required=False, default='Mutation', type=str, help="The type of simulation you would like to run (Mutation or Recombination). Default = Mutation")
     ap.add_argument("-hd", "--HammingDist", required=False, default=2, type=int, help="The total number of mutations you would like to make to a strain. Default = 2")
-    ap.add_argument("-st", "--Mut_Rec_Type", required=False, default=1, type=int, help="The type of simulation to run. Default = Type 1")
+    ap.add_argument("-st", "--Mut_Rec_Type", required=False, default=1, type=int, help="The type of simulation to run. Default = 1 which is the simple case, and 2 = the complex case")
     args = vars(ap.parse_args())
 
     if args["Sim_Type"] == "Mutation":
@@ -434,7 +434,11 @@ def main():
         sampleDir = "{}_Simulation_Samples".format(args['Sim_Type'])
         sample = "{}_Simulation_001".format(args['Sim_Type'])
         tempDir = "{}_Simulation_files".format(args["Sim_Type"])
-
+    directories = [d for d in os.listdir(".") if os.path.isdir(d)]
+    strainRef = os.path.join(str(os.getcwd()),"strain_ref.txt")
+    if args['masterDir'] not in directories:
+        os.mkdir(args['masterDir'])
+    masterDir = os.path.join(str(os.getcwd()), args['masterDir'])
     os.chdir(args["masterDir"]) #change into the master directory
     directoriesHere = [d for d in os.listdir(".") if os.path.isdir(d)]
     if sampleDir not in directoriesHere and sample not in directoriesHere and outputDir not in directoriesHere and tempDir not in directoriesHere:
@@ -448,21 +452,22 @@ def main():
         filesHere = [d for d in os.listdir(".") if os.path.isfile(d)]
         for old_file in filesHere:
             os.remove(old_file)
-
+    
     #run the simulation
-    precision,recall,total_var_dist,times = Simulate_strains(args["numOfiter"],args["strainRef"],args["masterDir"]+'/'+sampleDir+"/"+sample,args["masterDir"]+'/'+outputDir,args["masterDir"]+'/'+sampleDir,args["masterDir"]+'/'+tempDir,args['Sim_Type'],args["HammingDist"],args["Mut_Rec_Type"])
+    precision,recall,total_var_dist,times = Simulate_strains(args["numOfiter"],strainRef,os.path.join(masterDir, sampleDir, sample),os.path.join(masterDir, outputDir),os.path.join(masterDir, sampleDir),os.path.join(masterDir, tempDir),args['Sim_Type'],args["HammingDist"],args["Mut_Rec_Type"])
     my_list = [precision,recall,total_var_dist]
     my_df = pd.DataFrame(my_list)
     my_df.to_csv('Values_for_plot.csv')
     #plot the results
     print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Creating plots ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-
+    
+    os.chdir(os.path.join(masterDir, outputDir))
     plt.figure()
     plt.hist(recall, bins=np.linspace(0,2))
     plt.title("Plot of simulation recall for {}".format(args['Sim_Type']))
     plt.xlabel("Recall")
     plt.ylabel("Frequency")
-    plt.savefig(args["masterDir"]+'/'+outputDir+'/recall_plot')
+    plt.savefig('Recall_plot')
     #Save the plot for boxplot plotting
     recallDF = pd.DataFrame(recall)
     recallDF = recallDF.T
@@ -473,7 +478,7 @@ def main():
     plt.title("Plot of simulation precision for {}".format(args['Sim_Type']))
     plt.xlabel("Precision")
     plt.ylabel("Frequency")
-    plt.savefig(args["masterDir"]+'/'+outputDir+'/Precision_plot')
+    plt.savefig('Precision_plot')
     #save the plot for boxplot plotting
     precisionDF = pd.DataFrame(precision)
     precisionDF = precisionDF.T
@@ -484,7 +489,7 @@ def main():
     plt.title("Plot of simulation Total variation distance for {}".format(args['Sim_Type']))
     plt.xlabel("Total Variation Distance")
     plt.ylabel("Frequency")
-    plt.savefig(args["masterDir"]+'/'+outputDir+'/Total_variation_Distance_plot')
+    plt.savefig('Total_variation_Distance_plot')
     #save the plot for boxplot plotting
     total_var_distDF = pd.DataFrame(total_var_dist)
     total_var_distDF = total_var_distDF.T
@@ -495,7 +500,7 @@ def main():
     plt.title("Plot of simulation Total time taken for {}".format(args['Sim_Type']))
     plt.xlabel("Total time taken")
     plt.ylabel("Frequency")
-    plt.savefig(args["masterDir"]+'/'+outputDir+'/Totat_time_taken_plot')
+    plt.savefig('Totat_time_taken_plot')
 
     print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Done ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 

@@ -12,7 +12,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("-o", "--output", required=False, help="Name of output folder. Default is strainsAndProp", default="strainsAndProp")
 #ap.add_argument("-go", "--globalOption", required=True, help="Version of optimization program to use. 'mixed': mixed ILP, 'separated': pure ILP + LP")
 #Only for mixed version
-ap.add_argument("-oc", "--objectiveComponent", required=False, default="all", help="Objective components. Default: 'all'. 'noPropAndErr': Does not include proportion and error in objective function")
+ap.add_argument("-oc", "--objectiveComponent", required=False, default="all", help="Objective components. Default: 'all'. 'noProp': Does not include proportion component, 'noPropAndErr': Does not include proportion and error in objective function")
 ap.add_argument("-timelim", "--timeLimit", required=False, help="Time limit in integer(sec) for cplex solver for mixed ILP. Default:600sec", default=600)
 ap.add_argument("-g", "--gap", required=False, help="Relative gap tolerance(in percent) for cplex solver for mixed ILP. Default: 5", default=5)
 #ap.add_argument("-r", "--ref", required=False, help="Reference strains file name", default="strain_ref.txt")

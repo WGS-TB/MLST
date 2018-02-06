@@ -13,6 +13,7 @@ import pandas as pd
 import csv
 import time
 import argparse
+import numpy as np
 
 def writePropToCsv(aDict):
     for gene in aDict.keys():
@@ -55,7 +56,8 @@ else:
 os.chdir("variantsAndProp")
 
 ''' $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Predicting Variant and Proportions $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$''' 
-numOfMinQualSol = list()
+#numOfMinQualSol = list()
+numOfSol = list()
 for samp in samples:
     #currentpath=/pipeline/variantsAndProp/samp
     os.chdir(samp)
@@ -66,6 +68,11 @@ for samp in samples:
     
     #Key=gene, value=dictionary which contains the information about multiple optimal solution
     gene_solProp_dict = dict()
+    #alt_read = list()
+    #alt_allele =list()
+    #lc_list = list()
+    #allele_list= list()
+    #nonNeg_list = list()
     for gene in loci:
         print("")
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~ Gene {} ~~~~~~~~~~~~~~~~~~~~~~~~~~~~".format(gene))
@@ -74,42 +81,58 @@ for samp in samples:
         #Generate matrix, predict variants and their proportions
         print("..... Predicting variants .....")
         print("")
-        solutionsAndProp_dict = pf.getVarAndProp(gene,"{0}_{1}_paired_reads.txt".format(samp, gene), samp )
+        #solutionsAndProp_dict, tv, tr,lc, v, nonNeg = pf.getVarAndProp(gene,"{0}_{1}_paired_reads.txt".format(samp, gene), samp )
+        solutionsAndProp_dict, numSol = pf.getVarAndProp(gene,"{0}_{1}_paired_reads.txt".format(samp, gene), samp )
+        #alt_read.append(tr)
+        #alt_allele.append(tv)
+        #lc_list.append(lc)
+        #allele_list.append(v)
+        #nonNeg_list.append(nonNeg)
         gene_solProp_dict[gene] = solutionsAndProp_dict
-        numOfMinQualSol.append(len(solutionsAndProp_dict))
-        
+        #numOfMinQualSol.append(len(solutionsAndProp_dict))
+        numOfSol.append(numSol)   
+    #print("Average # reads: {}".format(np.mean(alt_read)))
+    #print("Average # allele: {}".format(np.mean(alt_allele)))
+    #print("Average # lc: {}".format(np.mean(lc_list)))
+    #print("Average # allele variables: {}".format(np.mean(allele_list)))
+    #print("Average # nonNeg mm: {}".format(np.mean(nonNeg_list)))
     #gene_keys = [[0,1], [0,1,2],...] indices of solutions in each gene
     gene_keys = [gene_solProp_dict[gene].keys() for gene in loci ]
     #Combination of multiple optimal solutions across all genes
     combinationsTuple = [comb for comb in itertools.product(*gene_keys)]
     
-    #If each gene has a unique optimal solution
-    if all(i == 1 for i in numOfMinQualSol):
-    #    Print and write to file
-        write_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, combinationsTuple[0])}
-        writePropToCsv(write_dict)
-    else:   #when there are indistinguishable solutions based on quality score
-        #Choose an optimal solution which maximizes number of existing strains, similar flavour as 2nd ILP
-        print("\n... There are at least one gene having multiple optimal solutions ...")
-        print("\n... Picking a good set of variants among the multiple optimal solutions ...")
-    
-        compatible_tuples = pf.compatibleFilter(combinationsTuple, gene_solProp_dict, loci, reference)
-        localMinimizer_dict = dict()
-        objValue_list = list()
-        track = 1
-        
-        #Only one compatible distribution, output it
-        if len(compatible_tuples) == 1:
-            localMinimizer_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, compatible_tuples[0])}
-            writePropToCsv(localMinimizer_dict)
-        else:
-            #Only new strains can describe
-            if len(compatible_tuples) == 0:
-                localMinimizer_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, combinationsTuple[0])}
-            else:
-                localMinimizer_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, compatible_tuples[0])}
-                
-            writePropToCsv(localMinimizer_dict)
+    print("\n~~~~~~~~~ The alleles and proportions at each gene ~~~~~~~~~") 
+    write_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, combinationsTuple[0])}
+    writePropToCsv(write_dict)
+    print("\nNumber of optimal solutions at each gene: {}".format(numOfSol))
+    ##If each gene has a unique optimal solution
+    #if all(i == 1 for i in numOfMinQualSol):
+    ##    Print and write to file
+    #    write_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, combinationsTuple[0])}
+    #    writePropToCsv(write_dict)
+    #    print("Number of optimal solutions: {}".format(numOfSol))
+    #else:   #when there are indistinguishable solutions based on quality score
+    #    #Choose an optimal solution which maximizes number of existing strains, similar flavour as 2nd ILP
+    #    print("\n... There are at least one gene having multiple optimal solutions ...")
+    #    print("\n... Picking a good set of variants among the multiple optimal solutions ...")
+    #
+    #    compatible_tuples = pf.compatibleFilter(combinationsTuple, gene_solProp_dict, loci, reference)
+    #    localMinimizer_dict = dict()
+    #    objValue_list = list()
+    #    track = 1
+    #    
+    #    #Only one compatible distribution, output it
+    #    if len(compatible_tuples) == 1:
+    #        localMinimizer_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, compatible_tuples[0])}
+    #        writePropToCsv(localMinimizer_dict)
+    #    else:
+    #        #Only new strains can describe
+    #        if len(compatible_tuples) == 0:
+    #            localMinimizer_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, combinationsTuple[0])}
+    #        else:
+    #            localMinimizer_dict = {gene: gene_solProp_dict[gene][i] for (gene, i) in itertools.izip(loci, compatible_tuples[0])}
+    #            
+    #        writePropToCsv(localMinimizer_dict)
 #            if len(compatible_tuples) == 0:
 #                if args["localOption"] == "mixed":
 #                    localMinimizer_dict = pf.localMinimizer(samp, combinationsTuple, gene_solProp_dict, loci, reference, args["objectiveComponent"],args["timeLimit"], args["gap"])
@@ -131,6 +154,6 @@ for samp in samples:
     os.chdir("..")
 
 print("")
-print("Script done.")
+print("Script done and results are written in variantsAndProp folder.")
 print("Time taken : {} hr(s)".format((time.time() - start_time)/3600))
     

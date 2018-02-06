@@ -23,16 +23,16 @@ matplotlib.style.use('ggplot')
 def construct_boxPlot(csv,type_of_data,name,coverage, iteration):
     if type_of_data == 'Recall':
         label = type_of_data
-        limit = [0,2]
+        limit = [-0.1,1.1]
     elif  type_of_data == 'Precision':
         label = type_of_data
-        limit = [0,2]
+        limit = [-0.1,1.1]
     elif type_of_data == 'DiffObjVal':
         label="Difference in Objective Value: Predicted - True"
         limit = [-10, 10]
     else:
         label = 'Total Variation Distance'
-        limit = [-20,100]
+        limit = [-1,101]
     #read in the dataframe
     df = pd.read_csv(csv, sep='\t')
     df.drop(df.columns[[0]], axis=1,inplace=True)

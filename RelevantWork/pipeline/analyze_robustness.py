@@ -9,6 +9,7 @@ Created on Sat Oct 28 17:02:13 2017
 import pandas as pd
 import os
 import matplotlib.pyplot as plt
+import numpy as np
 
 def returnStrainsAndPropDF(folder):
     strainsAndPropFolder = folder
@@ -61,78 +62,94 @@ def totalVarDist(df_ori, df_ran):
     return tvd
     
 loci = ['clpA', 'clpX', 'nifS', 'pepX', 'pyrG', 'recG', 'rplB', 'uvrA']
-currentPath = "/home/glgan/Documents/Borrelia/pipeline"
+currentPath = "/home/glgan/Documents/Borrelia/RelevantWork/pipeline"
 ''' ===== Analysis ===='''
-df_ori = returnStrainsAndPropDF("/home/glgan/Documents/Borrelia/pipeline/strainsAndProp_3hr")
+df_ori = returnStrainsAndPropDF("/home/glgan/Documents/Borrelia/RelevantWork/pipeline/strainsAndPropNew_23hr")
+#ref = pd.read_csv("strain_ref.txt", index_col=False, sep="\t", usecols=loci)
+##print ref.shape
+#for i in range(12):
+#    df_ran = pd.read_csv(os.path.join(currentPath, "references_robust", "exist_strain_newRef{}.txt".format(i)), usecols=loci, index_col=False, sep="\t")
+#    #print df_ran.shape
+#    #print df_ran.head(10)
+#    df_merged = ref.merge(df_ran,on=loci, indicator=True, how="outer")
+#    print df_merged[df_merged["_merge"]=="left_only"]
 
 ''' All removed new strains found? '''
-for i in range(1,11):
-    print(booleanAllAddedFound(currentPath+"/added_to_ref{}.csv".format(i), currentPath+"/robust_new/strainsAndProp_3hr_ran{}".format(i)))
+#for i in range(1,11):
+#    print(booleanAllAddedFound(currentPath+"/references_robust/added_to_ref{}.csv".format(i), currentPath+"/new_robust_add/add_robust_{}_strainsAndProp_15hr".format(i)))
 
 ''' Removed existing strain found? '''
-df_remExist = returnStrainsAndPropDF(currentPath+"/robust_exist/e_strainsAndProp_3hr_ref{}".format(80))
+df_justStrains_exist = df_ori.drop_duplicates(subset=loci)
+df_remExist = returnStrainsAndPropDF(currentPath+"/new_robust_remove/remove_robust_{}_strainsAndProp_15hr".format(4))
 merged_exist = df_justStrains_exist[loci].merge(df_remExist.drop_duplicates(subset=loci), indicator=True, how='left')
-print merged_exist
+print merged_exist[merged_exist["_merge"] == "left_only"]
 
 ''' Precision, recall and tvd? for first experiment'''
-precision = list()
-recall = list()
-tvd = list()
-
-for i in range(1,11):
-    df_exp = returnStrainsAndPropDF(currentPath+"/robust_new/strainsAndProp_3hr_ran{}".format(i))
-    p, r = prec_recall(df_ori, df_exp)
-    t = totalVarDist(df_ori, df_exp)
-    precision.append(p)
-    recall.append(r)
-    tvd.append(t)
+#precision = list()
+#recall = list()
+#tvd = list()
+#
+#for i in range(1,11):
+#    df_exp = returnStrainsAndPropDF(currentPath+"/new_robust_add/add_robust_{}_strainsAndProp_15hr".format(i))
+#    p, r = prec_recall(df_ori, df_exp)
+#    t = totalVarDist(df_ori, df_exp)
+#    precision.append(p)
+#    recall.append(r)
+#    tvd.append(t)
+#
+#print("Precison: {}".format(np.mean(precision))) 
+#print("Recall: {}".format(np.mean(recall))) 
     
-plt.figure()
-plt.boxplot([precision, recall])
-plt.xticks([1,2], ["Precision", "Recall"])
-plt.xlabel("Statistics")
-plt.ylabel("Value")
-plt.title("Precision and recall across 10 experiments \nwhere half of new strains are added")
-plt.tight_layout()
-plt.savefig("prec_recall_addNewStr.png", dpi=1000)
-
-plt.figure()
-plt.boxplot(tvd)
-plt.xticks([1], ["Total Variation Distance"])
-plt.ylabel("Value")
-plt.title("Total Variation Distance across 10 experiments \nwhere half of new strains are added")
-plt.tight_layout()
-plt.savefig("tvd_addNewStr.png", dpi=1000)
-    
+#plt.figure()
+#plt.boxplot([precision, recall])
+#plt.xticks([1,2], ["Precision", "Recall"])
+#plt.xlabel("Statistics")
+#plt.ylabel("Value")
+#plt.title("Precision and recall across 10 experiments \nwhere half of new strains are added")
+#plt.tight_layout()
+#plt.savefig("prec_recall_addNewStr.png", dpi=1000)
+#
+#plt.figure()
+#plt.boxplot(tvd)
+#plt.xticks([1], ["Total Variation Distance"])
+#plt.ylabel("Value")
+#plt.title("Total Variation Distance across 10 experiments \nwhere half of new strains are added")
+#plt.tight_layout()
+#plt.savefig("tvd_addNewStr.png", dpi=1000)
+#    
 ''' Precision...for 2nd experiment '''
-indexRem = [0,1,3,4,11,23,26,42,45,47,49,50,62,80]
+#indexRem = [0,1,3,4,11,23,26,42,45,47,49,50,62,80]
 precision_2 = list()
 recall_2 = list()
 tvd_2 = list()
-for i in indexRem:
-    df_remExist = returnStrainsAndPropDF(currentPath+"/robust_exist/e_strainsAndProp_3hr_ref{}".format(i))
+for i in range(12):
+    if i == 4:
+        continue
+    df_remExist = returnStrainsAndPropDF(currentPath+"/new_robust_remove/remove_robust_{}_strainsAndProp_15hr".format(i))
     p,r = prec_recall(df_ori, df_remExist)
     t = totalVarDist(df_ori, df_remExist)
     precision_2.append(p)
     recall_2.append(r)
     tvd_2.append(t)
     
-plt.figure()
-plt.boxplot([precision_2, recall_2])
-plt.xticks([1,2], ["Precision", "Recall"])
-plt.xlabel("Statistics")
-plt.ylabel("Value")
-plt.title("Precision and recall across 14 experiments \nwhere an existing strain is removed")
-plt.tight_layout()
-plt.savefig("prec_recall_removeExisting.png", dpi=1000)
-
-plt.figure()
-plt.boxplot(tvd_2)
-plt.xticks([1], ["Total Variation Distance"])
-plt.ylabel("Value")
-plt.title("Total Variation Distance across 10 experiments \nwhere an existing strain is removed")
-plt.tight_layout()
-plt.savefig("tvd_removeExisting.png", dpi=1000)
+print np.mean(precision_2)
+print np.mean(recall_2)
+#plt.figure()
+#plt.boxplot([precision_2, recall_2])
+#plt.xticks([1,2], ["Precision", "Recall"])
+#plt.xlabel("Statistics")
+#plt.ylabel("Value")
+#plt.title("Precision and recall across 14 experiments \nwhere an existing strain is removed")
+#plt.tight_layout()
+#plt.savefig("prec_recall_removeExisting.png", dpi=1000)
+#
+#plt.figure()
+#plt.boxplot(tvd_2)
+#plt.xticks([1], ["Total Variation Distance"])
+#plt.ylabel("Value")
+#plt.title("Total Variation Distance across 10 experiments \nwhere an existing strain is removed")
+#plt.tight_layout()
+#plt.savefig("tvd_removeExisting.png", dpi=1000)
 
 ''' Compare samples before and after '''
 #i=1
