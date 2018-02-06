@@ -64,25 +64,21 @@ ap.add_argument("-c", "--coverage", required=False, default=30,type=int, help="C
 #ap.add_argument("-b", "--bowtie", required=False, default="",help="Path to folder containing bowtie and bowtie-build. Default assumes both bowtie and bowtie-build in user's bin file")
 #ap.add_argument("-s", "--samtools", required=False, default="samtools",help="Path to samtools. Default assumes in user's bin file.")
 ap.add_argument("-a", "--art", required=False, default="art_illumina",help="Path to art_illumina. Default assumes in user's bin file")
+ap.add_argument("-k", "--kal", required=False, default="kallisto",help="Path to kallisto. Default assumes in user's bin file")
 
 #ap.add_argument("-p", "--proportionMethod", required=True)
 args = vars(ap.parse_args())
 
 sim_folder = os.path.abspath(args["simulationResultFolder"])
-if args["bowtie"] == "":
-    bt = ""
-else:
-    bt=os.path.abspath(args["bowtie"]) +"/"
-    
-if args["samtools"] != "samtools":
-    samTools = os.path.abspath(args["samtools"])
-else:
-    samTools = args["samtools"]
-    
 if args["art"] != "art_illumina":
     art = os.path.abspath(args["art"])
 else:
     art = args["art"]
+
+if args["kal"] != "kallisto":
+    kal = os.path.abspath(args["kal"])
+else:
+    kal = args["art"]
 
 #Make directory for simulation results
 directoriesHere = [d for d in os.listdir(".") if os.path.isdir(d)]
@@ -118,7 +114,7 @@ for locus in genes:
     
     #Function to run simulation imported    
     #precision, recall, diff_obj_vals, totalVarDist_count= sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"],bt,samTools,art)
-    precision, recall, totalVarDist_count= sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"])
+    precision, recall, totalVarDist_count= sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"], art, kal)
     precision_list.append(precision)
     recall_list.append(recall)
     totalVarDist_count_list.append(totalVarDist_count)

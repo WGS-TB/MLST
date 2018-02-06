@@ -19,7 +19,6 @@ import os
 import matplotlib.pyplot as plt
 import itertools
 import sys
-import variantILP as varSolver
 import linecache
 import re
 
@@ -76,7 +75,7 @@ def create_dictionary(keys, vals):
             my_dict[keys[i]] = vals[i]
     return my_dict 
 
-def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage):
+def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage, art, kal):
     ''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Defining some parameters ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ '''
     #Record true variants and their fractions for all simulations
     true_ratios_list = []
@@ -156,7 +155,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
                 sequence_file.write(variant_sequence)
             
             #Set the ART command, I have included a random seed for reproducibility, and a coverage parameter
-            ART_command = "art_illumina -qL 33 -qs -10 -k 3 -rs {} -q -ss HS25 -sam -i ".format(seed) +file_name+" -p -l 76 -f "+str(covOfThisVar)+" -m 200 -s 10 -o "+simulation_name + ' >/dev/null 2>&1'
+            ART_command = art + " -qL 33 -qs -10 -k 3 -rs {} -q -ss HS25 -sam -i ".format(seed) +file_name+" -p -l 76 -f "+str(covOfThisVar)+" -m 200 -s 10 -o "+simulation_name + ' >/dev/null 2>&1'
             os.system(ART_command)
         
         #Putting the pairs together for all variants
@@ -167,7 +166,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         #run kallisto command
         os.system("rm {}*".format(gene))
         
-        Kallisto_cmd = 'kallisto quant -t 8 -i {0} -o simulation_{1} ./{2}_{1}_1.fa ./{2}_{1}_2.fa >/dev/null 2>&1'.format(ref,str(iteration),upperfirst(gene))
+        Kallisto_cmd = kal + ' quant -t 8 -i {0} -o simulation_{1} ./{2}_{1}_1.fa ./{2}_{1}_2.fa >/dev/null 2>&1'.format(ref,str(iteration),upperfirst(gene))
         os.system(Kallisto_cmd)
         os.chdir('simulation_{}'.format(str(iteration)))
         output_file = pd.read_csv('abundance.tsv',sep='\t')

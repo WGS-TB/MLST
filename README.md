@@ -18,7 +18,7 @@ git checkout origin/master -- BorreliaPipeline
 
 6) Samtools v1.3.1: For extracting information from sam files. Please download it here: https://sourceforge.net/projects/samtools/files/samtools/1.3.1/. You will need `samtools`, copy it into your bin folder or provide the path to `samtools` to `mapSamples.py`. The python script calls the `samtools` command while extracting information from sam files after mapping. 
 
-7) Possible Python packages you will need: numpy, pandas, matplotlib, linecache, argparse . Please use `pip install` to install these packages if you do not have any of the packages.
+7) In computing edit distance, we used the package by https://github.com/aflc/editdistance and we hereby acknowledge Hiroyuki Tanaka, where the algorithm is proposed by Heikki Hyyrö, "Explaining and extending the bit-parallel approximate string matching algorithm of Myers", (2001). Possible Python packages you will need: numpy, pandas, matplotlib, linecache, argparse . Please use `pip install` to install these packages if you do not have any of the packages.
 
 
 ## Instructions to run the pipeline
@@ -52,6 +52,21 @@ The script will output some intermediate results for you to keep track. It will 
 python run_sim.py [-h] [-i NUMOFITER] [-f SIMULATIONRESULTFOLDER] [-c COVERAGE] [-b BOWTIE] [-s SAMTOOLS] [-a ART]
 ``` 
 `-i` specifies the number of simulations on each gene, default is 40. `-f` specifies the name of the folder to store the results, default is simulation_results. `-c` specifies the coverage to test on, default is 30. `-b` specifies the path to the folder containing `bowtie` and `bowtie-build` commands, default assumes that both commands are in user's bin folder. `-s` specifies the path to `samtools`, default assumes it's in your bin folder. `-a` specifies the path to `art_illumina`, default assumes that it's in the user's bin folder. In the results folder, it will contain .csv and .png files representing different statistics. 
+
+3) You will need to install `kallisto` and the link is provided here: https://pachterlab.github.io/kallisto/download. To run simulation using kallisto, run
+```
+run_kallisto_sim.py [-h] [-i NUMOFITER] [-f SIMULATIONRESULTFOLDER] [-c COVERAGE] [-a ART] [-k KAL]                                                      
+```
+
+Instructions are similar to `run_sim.py`, with`-k` refers to the path to `kallisto` and default assumes it is in user's bin folder.
+
+4) To run novel allele experiment, run
+```
+python run_loo_sim.py [-h] [-i NUMOFITER] [-f SIMULATIONRESULTFOLDER] [-c COVERAGE] [-b BOWTIE] [-s SAMTOOLS] [-a ART]
+```
+
+Instructions are the same as running `run_sim.py`
+
 ## Instructions to run the strain diversity simulation
 1) The required scripts and files to run the simualtions are in the `strainSimulation` folder in the `BorreliaPipeline` folder
 
