@@ -179,6 +179,6 @@ def solver(dataMatrix, qMatrix, option):
     allSol = [sorted(i) for i in allSol]
     allSol.sort()
     varPresentList = allSol[0]
-    print("Time taken to run ADP: {} min".format((time.time()-start)/60))
+    print("Time taken to run ADP: {} min\n".format((time.time()-start)/60))
     #return objvalue, varPresentList, readsCovered, allSol, allObjValue, total_var,total_read, model.linear_constraints.get_num(), model.variables.get_num(), nonNeg
     return objvalue, varPresentList, readsCovered, allSol, allObjValue

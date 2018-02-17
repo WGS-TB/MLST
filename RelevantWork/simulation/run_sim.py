@@ -60,6 +60,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("-i", "--numOfIter", required = False, default = 40, type=int, help="Number of simulations for each gene")
 ap.add_argument("-f", "--simulationResultFolder", required=False, default="simulation_results", help="Folder name to store simulation results, folder with this name will be created in current directory. Default creates a folder named `simulation_results` in current directory.")
 ap.add_argument("-c", "--coverage", required=False, default=30,type=int, help="Coverage to test on. Default is 30")
+ap.add_argument("-e", "--editDist", required=True, default=10,type=int, help="Maximum edit distance from seed allele to filter alleles for simulation. Default is 5")
 ap.add_argument("-b", "--bowtie", required=False, default="",help="Path to folder containing bowtie and bowtie-build. Default assumes both bowtie and bowtie-build in user's bin file")
 ap.add_argument("-s", "--samtools", required=False, default="samtools",help="Path to samtools. Default assumes in user's bin file.")
 ap.add_argument("-a", "--art", required=False, default="art_illumina",help="Path to art_illumina. Default assumes in user's bin file")
@@ -117,7 +118,7 @@ for locus in genes:
         print("==== Removed previous .fa files ====")
     
     #Function to run simulation imported    
-    precision, recall, totalVarDist_count= sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"],bt,samTools,art)
+    precision, recall, totalVarDist_count= sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"], args["editDist"],bt,samTools,art)
     #precision, recall, diff_obj_vals, totalVarDist_count= sim.simulation(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"],bt,samTools,art)
     precision_list.append(precision)
     recall_list.append(recall)

@@ -4,6 +4,7 @@ import sh
 import math
 import numpy as np
 import random
+import pandas as pd
 import os
 import itertools
 import sys
@@ -141,7 +142,7 @@ def compute_obj_diff(predicted, true):
 #        writer.writerows(matrixForML)
             
         
-def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage, bt, samtools, art):
+def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage, maxEditDist, bt, samtools, art):
     ''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Defining some parameters ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ '''
     #Record true variants and their fractions for all simulations
     true_ratios_list = []
@@ -176,26 +177,37 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     iteration = 1
     numSimHavingMultSol = 0
     multSolCorrect = 0
+    gene_editDist = pd.read_csv(os.path.join(originalPath, "sim_data", gene, "editDistanceMatrix_{}.csv".format(gene)), index_col=0)
+    alleles_list = returnAllele(gene, os.path.join(os.path.abspath(originalPath), "sim_data"))
+    
     while(iteration < numOfIter+1):  
         true_prop = dict()#dictionary to store the true proportions
         k =random.randint(2,7) #generate a random integer k between 2 and 7
+        
         #generate k random fractions that sum up to 1
         fractions = [random.random() for j in range(k)] 
         s = sum(fractions)
         fractions = [ i/s for i in fractions ]
-        #print fractions
         true_variants = []
+        
         #randomly select variants to use for simulated data
-        randomVarIndex = random.sample(xrange(1,num_variants+1), k) #start from 1 to num_variants+1 because 0 index of linecache is ''
-        for index in randomVarIndex:
-            variant =linecache.getline(variantsTxtPath,index) #extract the random variant
-            #print variant
-            variant = str(variant) 
-            variant = variant.rstrip() #remove the "\n" character that is returned by bash
-            string1= variant.split(">")
-            true_variants.append(string1[1]) #append the variant to the list          
-        #print num
-        #print true_variants
+        randomSeedIndex = random.randint(0, len(alleles_list))      #choose a random seed allele
+        seed_allele = alleles_list[randomSeedIndex]
+        true_variants.append(seed_allele)
+        pool_allele = gene_editDist.loc[seed_allele, :]             #get a pool of alleles which is within maxEditDist from seed allele
+        pool_allele = pool_allele[ (pool_allele < maxEditDist)].index.tolist()
+        pool_allele = [i for i in pool_allele if i!= seed_allele]   #not including seed allele itself
+        pick_num = (k-1) if (k-1) < len(pool_allele) else len(pool_allele)  #pick a subset 
+        randomVarIndex = random.sample(xrange(0, len(pool_allele)), pick_num)
+       
+        for ind in randomVarIndex:
+            added_allele = pool_allele[ind]
+            true_variants.append(added_allele)
+         
+        #generate random fractions that sum up to 1
+        fractions = [random.random() for j in range(pick_num+1)]    #total of pick_num+1(seed allele) allels
+        s = sum(fractions)
+        fractions = [ i/s for i in fractions ]
         
         '''======== Generate the reads using ART ========'''
         total_variants_sequence = ''
