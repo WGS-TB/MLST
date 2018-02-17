@@ -3,6 +3,7 @@ from __future__ import division
 import sh
 import math
 import numpy as np
+import pandas as pd
 import random
 import os
 import itertools
@@ -596,7 +597,10 @@ def loo_simulation(gene, numOfIter, originalPath, simulation_result_folder, cove
     alleles_list = returnAllele(gene, os.path.join(os.path.abspath(originalPath), "sim_data"))
     alleleSeq_dict = returnAlleleSeqDict(gene,os.path.join(os.path.abspath(originalPath), "sim_data"), alleles_list )
     editDist_dict = returnEditDistDict(alleleSeq_dict)
-    plotDistDistribution(gene, editDist_dict, os.path.join(os.path.abspath(originalPath), "sim_data", gene))
+    editDist_df = pd.Series(editDist_dict).reset_index()
+    editDist_df = pd.pivot_table(editDist_df, values=0, index="level_0", columns="level_1") 
+    editDist_df.to_csv(os.path.join(os.path.abspath(originalPath), "sim_data", gene, "editDistanceMatrix_{}.csv".format(gene)))
+    #plotDistDistribution(gene, editDist_dict, os.path.join(os.path.abspath(originalPath), "sim_data", gene))
  
     '''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Simulation starts here ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
     
