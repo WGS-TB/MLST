@@ -165,7 +165,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     
     #Handling some output files
 #    outputFolderPath = "{0}/{1}/".format(originalPath, simulation_result_folder)
-    outputResultTxtFile = "{0}/{1}/{2}_output_stats.txt".format(originalPath, simulation_result_folder, gene)
+    outputResultTxtFile = "{0}/{1}/{2}_{3}Ed_{4}X_output_stats.txt".format(originalPath, simulation_result_folder, gene, maxEditDist, coverage)
     sys.stdout = open(outputResultTxtFile, "w")        #Write print codes to outputResultTxtFile
     
     #Count the number of variants for this gene
@@ -487,7 +487,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     
     sys.stdout.close()
     #return precision_list, recall_list, diff_obj_vals, totalVarDist_count
-    return precision_list, recall_list, totalVarDist_count
+    return precision_list, recall_list, totalVarDist_count, numOfOptimalSol
 
 #Return all alleles for gene
 def returnAllele(gene, simDataPath):
