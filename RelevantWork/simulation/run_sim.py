@@ -66,7 +66,11 @@ def fullPaper_avg_writeToCsv(stats, simulationFolderPath, outputFolderName, covE
 def fullPaper_boxplot(originalPath, sim_result_folder, csv, type_of_data, gene, iteration):
     df = pd.read_csv(os.path.join(originalPath, sim_result_folder, csv), sep="\t")
     df.rename(columns={"Unnamed: 0" : "CovEd"}, inplace=True)
-
+    df["CovEd"] = df["CovEd"].str.replace("'5ED'", "'05ED'")
+    df["CovEd"] = df["CovEd"].str.replace("'30X'", "'030X'")
+    df.sort_values(by="CovEd", inplace=True)
+    df.set_index("CovEd", inplace=True, drop=True)
+    df= df.T
     if type_of_data == 'Recall':
         label = type_of_data
         limit = [-0.1,1.1]
@@ -84,11 +88,12 @@ def fullPaper_boxplot(originalPath, sim_result_folder, csv, type_of_data, gene, 
     #create a plot object
     plt.figure()
     #plot the data
-    ax = df.plot(kind='box',xlim=[0,df.shape[0]+1],ylim=limit,title="Locus {}".format(gene), grid=True)
+    ax = df.plot(kind='box',xlim=[0,df.shape[1]+1],ylim=limit,title="Locus {}".format(gene), grid=True)
     ax.set_xlabel('Experiments: {} simulations each'.format(iteration))
     ax.set_ylabel(label)
-    plt.xticks(range(1, df.shape[0]+1), df["CovEd"].tolist())
-    plt.savefig(os.path.join(originalPath, sim_result_folder, "{0}_{1}.png".format(gene, type_of_data)))
+    plt.xticks(range(1, df.shape[1]+1), df.columns, rotation="vertical")
+    plt.tight_layout()
+    plt.savefig(os.path.join(originalPath, sim_result_folder, "{0}_{1}.png".format(gene, type_of_data)), dpi=800)
     plt.close('all')
 
 def main_simulationFunc(locus, iteration, originalPath, simulationResultFolder, cov, ed, bt, samtools, art):
@@ -172,9 +177,9 @@ numOfOptSol = list()
 #2D parameters
 if args["fullPaper"] == True:
     maxEditDist = [5,10,15,20,25]
-    maxEditDist=[5,10]
+#    maxEditDist=[5,10]
     coverage=[30,100,300]
-    coverage=[30]
+#    coverage=[30]
     gene_covEd_precision = dict()   #key=gene name, value=dictionary, where key=(coverage, editDistance) and value=a list of values
     gene_covEd_recall = dict()
     gene_covEd_tvd = dict()
@@ -196,14 +201,14 @@ for locus in genes:
         covEd_tvd = dict()
         covEd_opt = dict()
         for cov in coverage:
-            print cov
+#            print cov
             for ed in maxEditDist:
-                print ed
+#                print ed
                 precision, recall, totalVarDist_count, numOfOptSol = main_simulationFunc(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], cov, ed,bt,samTools,art)
-                covEd_prec[("{}X".format(cov), "{}editDist".format(ed))] = precision
-                covEd_rec[("{}X".format(cov), "{}editDist".format(ed))] = recall
-                covEd_tvd[("{}X".format(cov), "{}editDist".format(ed))] = totalVarDist_count
-                covEd_opt[("{}X".format(cov), "{}editDist".format(ed))] = numOfOptSol
+                covEd_prec[("{}X".format(cov), "{}ED".format(ed))] = precision
+                covEd_rec[("{}X".format(cov), "{}ED".format(ed))] = recall
+                covEd_tvd[("{}X".format(cov), "{}ED".format(ed))] = totalVarDist_count
+                covEd_opt[("{}X".format(cov), "{}ED".format(ed))] = numOfOptSol
                 os.chdir(locus)
 
         gene_covEd_precision[locus] = covEd_prec        
