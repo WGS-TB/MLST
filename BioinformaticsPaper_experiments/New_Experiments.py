@@ -57,6 +57,7 @@ uvrA_df = pd.read_csv(os.path.join(project_path, 'editDistanceMatrix_uvrA.csv'),
 #read in the reference strain database
 loci = ['clpA','clpX','nifS','pepX','pyrG','recG','rplB','uvrA']
 genes_df = [clpA_df,clpX_df,nifS_df,pepX_df,pyrG_df,recG_df,rplB_df,uvrA_df]
+genes_dict = {locus:[genes_df[i]] for i,locus in enumerate(loci)}
 reference = pd.read_csv(os.path.join(project_path, 'New_strain_ref.txt'),sep="\t",usecols=range(1,len(loci)+1))
 #parse the database
 for name in loci:
@@ -193,7 +194,7 @@ def Compute_Variant_proportions(strain,strain_prop):
     return variant_proportions
 
 
-def Generate_reads(strains, seed, iteration, editDist):
+def Generate_reads(strains, seed, iteration, editDist, art_cmd):
     genes = ['clpA', 'clpX', 'nifS', 'pepX', 'pyrG', 'recG', 'rplB', 'uvrA']
     nums = [random.uniform(0,1) for x in range(0,len(strains))]
     Sum = reduce(lambda x,y: x+y, nums)
@@ -212,7 +213,7 @@ def Generate_reads(strains, seed, iteration, editDist):
         #store
         sequence_file.close()
         #Set the ART command, I have included a random seed for reproducibility, and a coverage parameter
-        ART_command = "art_illumina -qL 33 -qs 10 -qs2 15 -k 3 -rs {0} -q -ss HS25 -sam -i {1} -p -l 76 -f {2} -m 149.45 -s 41.35 -o {3}".format(seed, 'editDist_{}_iteration_{}_Strain_{}_sequences.fas >/dev/null 2>&1'.format(editDist,iteration,i),proportions[i]*100, output_file_name)
+        ART_command = art_cmd + " -qL 33 -qs 10 -qs2 15 -k 3 -rs {0} -q -ss HS25 -sam -i {1} -p -l 76 -f {2} -m 149.45 -s 41.35 -o {3}".format(seed, 'editDist_{}_iteration_{}_Strain_{}_sequences.fas >/dev/null 2>&1'.format(editDist,iteration,i),proportions[i]*100, output_file_name)
         os.system(ART_command)
     appendFirst_cmd = "cat *_1.fq > editDist_{}_iteration_{}_all_Strains_1.fa".format(editDist,iteration) #append all the first of the pairs together
     appendSecond_cmd ="cat *_2.fq > editDist_{}_iteration_{}_all_Strains_2.fa".format(editDist,iteration) #append all the second of the pairs together
@@ -338,10 +339,111 @@ def Compute_Soft_Prec_and_Rec(strain_dict, strain_df, editDist):
         soft_precision = 1.0
     if soft_recall > 1.0:
         soft_recall = 1.0
-    
+
 
     return soft_precision, soft_recall
 
+'''
+Returns the edit distance between two alleles
+Input:
+        allele_p: predicted allele, a string
+        allele_t: true_allele, a string
+        gene: a string
+'''
+
+def compute_distance_by_gene(allele_p, allele_t,gene):
+    assert(gene in genes_dict.keys()), "{} not in the list of genes".format(gene)
+    assert(allele_p in genes_dict[gene][0].columns), "{} not in the allele list".format(allele_p)
+    assert(allele_t in genes_dict[gene][0].columns), "{} not in the allele list".format(allele_t)
+    return int( genes_dict[gene][0].loc[ genes_dict[gene][0]['level_0'] == allele_p ][allele_t] )
+
+'''
+Computes the distance between two strains. It is assumed that pred and true has the same length and each position represents the same gene.
+Input:
+        pred: a list, containing an allele at each gene/position. Represents predicted strains
+        true: '' Represents true strains
+        mode: 'snp' computes edit distances in terms of bases, 'hamming' computes hamming distance in terms of gene
+'''
+
+def compute_strain_distance(pred, true, mode="snp"):
+    assert(len(pred) == len(true)), "pred and true needs to be the same length"
+    assert(mode == "snp" or mode == "hamming"), "Only 'snp' or 'hamming' options are permitted"
+
+    if mode == "hamming":
+        from scipy.spatial.distance import hamming
+        dist = hamming(pred, true)
+    else:
+        strain_length = len(pred)
+        
+        dist = 0
+        for i in range(strain_length):
+            p_gene = pred[i].split("_")[0]
+            t_gene = true[i].split("_")[0]
+
+            assert(p_gene == t_gene), "pred and true have different genes at position {}".format(i)
+            dist += compute_distance_by_gene(pred[i], true[i], p_gene)
+
+    return dist
+
+
+'''
+Returns the Earth-Mover's distance between predicted strains and true strains.
+Input:
+        pred_dict: A dictionary for predicted strains, where key=strain(tuple/list of multi-loci), value=proportion of the strain
+        true_dict: A dictionary for true strains, where ...
+        mode: 'hamming' or 'snp'. 'hamming' computes the distance in terms of gene and 'snp' is in terms bases.
+'''
+
+def compute_EMD(pred_dict, true_dict, mode="snp"):
+    #Check if pred_list and true_list are dictionaries
+    #assert(type(pred_dict) is dict), "pred_dict is not a dictionary"
+    #assert(type(true_dict) is dict), "true_dictionary is not a dictionary"
+
+    #Convert to lists.
+    pred_list = pred_dict.keys()
+    true_list = true_dict.keys()
+
+    #Makes sure gene are comparable. Convert to list if it isn't
+    #pred_list = [sorted(list(i)) for i in pred_list]
+    #true_list = [sorted(list(i)) for i in true_list]
+
+    #Create a dictionary for keeping track strains
+    pred_s_dict = {"p{}".format(i): strain for i,strain in enumerate(pred_list)}
+    true_s_dict = {"t{}".format(i): strain for i,strain in enumerate(true_list)}
+
+    #Short form 
+    pred_s_list = np.array(pred_s_dict.keys())
+    true_s_list = np.array(true_s_dict.keys())
+
+    #Convert proportions to numpy array, it serves as an input to emd weights
+    pred_prop = np.array([pred_dict[ tuple(pred_s_dict[s]) ] for s in pred_s_list])
+    true_prop = np.array([true_dict[ tuple(true_s_dict[s]) ] for s in true_s_list])
+
+    distance_dict = {}
+    distance_mat = np.zeros((pred_s_list.shape[0], true_s_list.shape[0]))
+
+    for i,p in enumerate(pred_s_list):
+        for j,t in enumerate(true_s_list):
+            if pred_s_dict[p] == true_s_dict[t]:
+                distance_dict[(p,t)] = 0
+                distance_mat[i][j] = 0
+            else:
+                d = compute_strain_distance(pred_s_dict[p],true_s_dict[t],mode)
+                distance_dict[(p,t)] = d
+                distance_mat[i][j] = d
+
+    #Compute emd
+    from emd import emd
+    #emd function only accepts np array
+    pred_s_array = np.array(pred_s_list).reshape(len(pred_s_list),-1)
+    true_s_array = np.array(true_s_list).reshape(len(true_s_list), -1)
+
+    EMD = emd(pred_s_array, true_s_array,X_weights=pred_prop, Y_weights=true_prop, distance='precomputed', D=distance_mat)
+    #import pdb
+    #pdb.set_trace()
+    return EMD 
+    
+    
 
 def Compute_EditDist_Stats(strain_dict, strain_df):
     '''
@@ -386,7 +488,7 @@ def Compute_EditDist_Stats(strain_dict, strain_df):
 
     #Keep track the mapping of FP to which true strain
     track_FP = {i: None for i in FP}
-    
+
     #Number of times random section of the algo is utilized
     numRand = 0
 
@@ -394,7 +496,7 @@ def Compute_EditDist_Stats(strain_dict, strain_df):
     for fp in FP:
         ed_list = list()
 
-        for ts in TrueStrains: 
+        for ts in TrueStrains:
             sumOfEd = 0
             for locus in range(len(ts)):
                 #If same allele
@@ -447,7 +549,7 @@ def Compute_EditDist_Stats(strain_dict, strain_df):
         if len(min_ed_trueS) == 1:
             count_TrueS[min_ed_trueS[0]] += 1
             track_FP[fp] = min_ed_trueS[0]
-            
+
         #If there are more than one minimum strains
         else:
         #match to the one with smallest degree
@@ -475,7 +577,7 @@ def Compute_EditDist_Stats(strain_dict, strain_df):
                         finalMatch = s
 
                 count_TrueS[finalMatch] += 1
-                track_FP[fp] = finalMatch                         
+                track_FP[fp] = finalMatch
 
     #Check if any true strains are not mapped yet. Suffices to check those in FN
     unmapped_FN = [i for i in FN if count_TrueS[i] == 0]
@@ -631,7 +733,43 @@ def Write_Proportions(strains, proportions, iteration, editDist, Type):
     os.chdir('../')
     return strain_prop_dict
 
+#A function to compute the set of known strains in the library without the
+#new strains to the set of predicted strains.
+def CompareKnown(true, predicted):
+    count = 0
+    total_var_dist = 0
+    predicted_dict = defaultdict(list)
+    #convert the dataframe into a dictionary
+    for i in range(predicted.shape[0]):
+        row = predicted.iloc[i].tolist()
+        if row[1] == 'Existing':
+            temp_key = tuple(row[2:10])
+            predicted_dict[temp_key] = float(row[10])
+    print ('The Known strains and their proportions are {}\n'.format(true))
+    print ('The Predicted strains and their proportions are\n {}'.format(predicted_dict))
+    #Compute the total variation distance
+    for key in predicted_dict.keys():
+        if key in true.keys():
+            total_var_dist += abs(round(true[key],3)-predicted_dict[key])
+            count += 1
+        else:
+            total_var_dist += predicted_dict[key]
+    for key in true.keys():
+	if key not in predicted_dict.keys():
+	    total_var_dist += true[key]
+    #compute the precision
+    try:
+        precision = count/len(predicted_dict)
+    except ZeroDivisionError:
+        precision = 0
 
+    #compute the recall
+    try:
+        recall = count/len(true)
+    except ZeroDivisionError:
+        recall = 0
+        
+    return precision, recall, total_var_dist/2.0
 
 
 
@@ -648,7 +786,7 @@ EvoMod1 (Result in 2 strains)
 5) Input into SDP, compute Precision, TVD, Recall and number of optimal solutions from SDP
 
 '''
-def EvoMod1(reference, editDist, num_mut, iteration, Type, Etype):
+def EvoMod1(reference, editDist, num_mut, iteration, Type, Etype, distance_mode='snp',art_cmd="art_illumina"):
     project_path = os.getcwd()
     strainRef = os.path.join(project_path,'New_strain_ref.txt')
     samplesDir = os.path.join(project_path, 'Type_1_editDist_{}_iteration_{}_SDP_Samples'.format(editDist,iteration))
@@ -675,7 +813,7 @@ def EvoMod1(reference, editDist, num_mut, iteration, Type, Etype):
     true_all = defaultdict(int)
 
     #Generate the reads
-    proportions = Generate_reads(strains, seed, iteration, editDist)
+    proportions = Generate_reads(strains, seed, iteration, editDist, art_cmd)
     for strain in strains:
         strain = list(strain)
         for gene in strain:
@@ -690,6 +828,16 @@ def EvoMod1(reference, editDist, num_mut, iteration, Type, Etype):
         strain_prop_dict = Write_Proportions(strains, proportions, iteration, editDist, Type)
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         strain_df = pf.strainSolver(samplesDir,strainRef,outputDir,genes,'noProp','s',10800,5)
+        true_dict = strain_prop_dict
+        pred_dict = dict()
+        for i in range(strain_df.shape[0]):
+            row = strain_df.iloc[i].tolist()
+            temp_key = tuple(row[2:10])
+            pred_dict[temp_key] = float(row[10])
+
+        #Sort the genes in the strains to be consistent
+        true_dict = {tuple(sorted(i)):true_dict[i] for i in true_dict.keys()}
+        pred_dict = {tuple(sorted(i)):pred_dict[i] for i in pred_dict.keys()}
         #compute the precision and recall
         SDP_list = []
         for row in strain_df.iterrows():
@@ -697,8 +845,9 @@ def EvoMod1(reference, editDist, num_mut, iteration, Type, Etype):
             SDP_list.append(data.tolist()[0:8])
         prec, rec, tvd = Compute_Prec_and_rec(strain_prop_dict, strain_df)
         soft_prec, soft_rec = Compute_Soft_Prec_and_Rec(strain_prop_dict, strain_df, EDITDIST)
-        weight, numRand = Compute_EditDist_Stats(strain_prop_dict, strain_df)
-        return prec, rec, tvd, weight, numRand, soft_prec, soft_rec
+        EMD = compute_EMD(pred_dict, true_dict, distance_mode)
+        #weight, numRand = Compute_EditDist_Stats(strain_prop_dict, strain_df)
+        return prec, rec, tvd, soft_prec, soft_rec, EMD
     #if we are running the fourth experiment
     elif Etype == 2:
 
@@ -708,6 +857,15 @@ def EvoMod1(reference, editDist, num_mut, iteration, Type, Etype):
         #run the ADP algorithm
         ADP_dict, ADP_alleles, ADP_prop = run_ADP(editDist, iteration)
         strain_df = pf.strainSolver(cwd,strainRef,outputDir,genes,'noProp','s',10800,5)
+        true_dict = strain_prop_dict
+        pred_dict = dict()
+        for i in range(strain_df.shape[0]):
+            row = strain_df.iloc[i].tolist()
+            temp_key = tuple(row[2:10])
+            pred_dict[temp_key] = float(row[10])
+        #Sort the genes in the strains to be consistent
+        true_dict = {tuple(sorted(i)):true_dict[i] for i in true_dict.keys()}
+        pred_dict = {tuple(sorted(i)):pred_dict[i] for i in pred_dict.keys()}
         SDP_list = []
         ADP_alleles = set(item for sublist in ADP_alleles for item in sublist)
         #compute the precision and recall for the SDP output
@@ -717,8 +875,9 @@ def EvoMod1(reference, editDist, num_mut, iteration, Type, Etype):
             SDP_list.append(data.tolist()[0:8])
         prec, rec, tvd = Compute_Prec_and_rec(strain_prop_dict, strain_df)
         soft_prec, soft_rec = Compute_Soft_Prec_and_Rec(strain_prop_dict, strain_df, EDITDIST)
-        weight, numRand = Compute_EditDist_Stats(strain_prop_dict, strain_df)
-        return prec, rec, tvd, weight, numRand, soft_prec, soft_rec, ADP_pred, ADP_recall, ADP_tvd
+        EMD = compute_EMD(pred_dict, true_dict, distance_mode)
+        #weight, numRand = Compute_EditDist_Stats(strain_prop_dict, strain_df)
+        return prec, rec, tvd, soft_prec, soft_rec, EMD, ADP_pred, ADP_recall, ADP_tvd
 
 '''
 EvoMod2 (Result in 4 strains, 2 new 2 existing)
@@ -728,18 +887,21 @@ EvoMod2 (Result in 4 strains, 2 new 2 existing)
 4) Same stuff as above
 '''
 
-def EvoMod2(reference, editDist, num_mut, iteration, Type, Etype):
-    strainRef = '/home/elijah/Documents/Borellia/New_Experiments/New_strain_ref.txt'
-    samplesDir = '/home/elijah/Documents/Borellia/New_Experiments/Type_2_editDist_{}_iteration_{}_SDP_Samples'.format(editDist,iteration)
-    outputDir = '/home/elijah/Documents/Borellia/New_Experiments/Type_2_editDist_{}_iteration_{}_SDP_output'.format(editDist,iteration)
+def EvoMod2(reference, editDist, num_mut, iteration, Type, Etype, distance_mode='snp',art_cmd="art_illumina"):
+    project_path = os.getcwd()
+    strainRef = os.path.join(project_path,'New_strain_ref.txt')
+    samplesDir = os.path.join(project_path, 'Type_2_editDist_{}_iteration_{}_SDP_Samples'.format(editDist,iteration))
+    outputDir = os.path.join(project_path, 'Type_2_editDist_{}_iteration_{}_SDP_output'.format(editDist,iteration))
     genes = ['clpA', 'clpX', 'nifS', 'pepX', 'pyrG', 'recG', 'rplB', 'uvrA']
     strains = []
-    #get the indices of the strains to use
+     #get the indices of the strains to use
     indices = random.sample(range(1, 696), 2)
-
+    known_strains = defaultdict(int)
     for index in indices:
         S1 = reference.iloc[index,:].values.tolist()
         strains.append(S1)
+        #add the known strains to dictionary
+        known_strains[tuple(S1)] = 1
         flag = True
         S2 = Mutate_strain(S1, editDist, num_mut)
         while flag:
@@ -752,8 +914,11 @@ def EvoMod2(reference, editDist, num_mut, iteration, Type, Etype):
     true_all = defaultdict(int)
 
     #Generate the reads
-    proportions = Generate_reads(strains, seed, iteration, editDist)
+    proportions = Generate_reads(strains, seed, iteration, editDist, art_cmd)
     for strain in strains:
+        #if this is a strain already in the database, update its proportions
+        if strain in known_strains.keys():
+            known_strains[strain] = proportions[strains.index(strain)]
         strain = list(strain)
         for gene in strain:
             if gene not in true_all:
@@ -768,6 +933,15 @@ def EvoMod2(reference, editDist, num_mut, iteration, Type, Etype):
         strain_prop_dict = Write_Proportions(strains, proportions, iteration, editDist, Type)
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         strain_df = pf.strainSolver(samplesDir,strainRef,outputDir,genes,'noProp','s',10800,5)
+        true_dict = strain_prop_dict
+        pred_dict = dict()
+        for i in range(strain_df.shape[0]):
+            row = strain_df.iloc[i].tolist()
+            temp_key = tuple(row[2:10])
+            pred_dict[temp_key] = float(row[10])
+        #Sort the genes in the strains to be consistent
+        true_dict = {tuple(sorted(i)):true_dict[i] for i in true_dict.keys()}
+        pred_dict = {tuple(sorted(i)):pred_dict[i] for i in pred_dict.keys()}
         #compute the precision and recall
         SDP_list = []
         for row in strain_df.iterrows():
@@ -775,8 +949,9 @@ def EvoMod2(reference, editDist, num_mut, iteration, Type, Etype):
             SDP_list.append(data.tolist()[0:8])
         prec, rec, tvd = Compute_Prec_and_rec(strain_prop_dict, strain_df)
         soft_prec, soft_rec = Compute_Soft_Prec_and_Rec(strain_prop_dict, strain_df, EDITDIST)
-        weight, numRand = Compute_EditDist_Stats(strain_prop_dict, strain_df)
-        return prec, rec, tvd, weight, numRand, soft_prec, soft_rec
+        EMD = compute_EMD(pred_dict, true_dict, distance_mode)
+        #weight, numRand = Compute_EditDist_Stats(strain_prop_dict, strain_df)
+        return prec, rec, tvd, soft_prec, soft_rec, EMD
     #if we are running the fourth experiment
     elif Etype == 2:
 
@@ -786,18 +961,28 @@ def EvoMod2(reference, editDist, num_mut, iteration, Type, Etype):
         #run the ADP algorithm
         ADP_dict, ADP_alleles, ADP_prop = run_ADP(editDist, iteration)
         strain_df = pf.strainSolver(cwd,strainRef,outputDir,genes,'noProp','s',10800,5)
+        true_dict = strain_prop_dict
+        pred_dict = dict()
+        for i in range(strain_df.shape[0]):
+            row = strain_df.iloc[i].tolist()
+            temp_key = tuple(row[2:10])
+            pred_dict[temp_key] = float(row[10])
+        #Sort the genes in the strains to be consistent
+        true_dict = {tuple(sorted(i)):true_dict[i] for i in true_dict.keys()}
+        pred_dict = {tuple(sorted(i)):pred_dict[i] for i in pred_dict.keys()}
         SDP_list = []
         for row in strain_df.iterrows():
             index, data = row
             SDP_list.append(data.tolist()[0:8])
         prec, rec, tvd = Compute_Prec_and_rec(strain_prop_dict, strain_df)
         soft_prec, soft_rec = Compute_Soft_Prec_and_Rec(strain_prop_dict, strain_df, EDITDIST)
-        weight, numRand = Compute_EditDist_Stats(strain_prop_dict, strain_df)
         ADP_alleles = set(item for sublist in ADP_alleles for item in sublist)
         #compute the precision and recall for the SDP output
         ADP_pred, ADP_recall, ADP_tvd = Compute_ADP_Prec_and_rec(true_all, ADP_dict)
-        weight, numRand = Compute_EditDist_Stats(strain_prop_dict, strain_df)
-        return prec, rec, tvd, weight, numRand,  soft_prec, soft_rec, ADP_pred, ADP_recall, ADP_tvd
+        #weight, numRand = Compute_EditDist_Stats(strain_prop_dict, strain_df)
+        EMD = compute_EMD(pred_dict, true_dict, distance_mode)
+        known_prec, known_rec, known_tvd = CompareKnown(known_strains, strain_df)
+        return prec, rec, tvd, soft_prec, soft_rec, EMD, ADP_pred, ADP_recall, ADP_tvd, known_prec, known_rec
 
 
 '''
@@ -808,11 +993,12 @@ EvoMod3(Result in 5 strains, 3 new 2 existing)
 4) ...
 '''
 
-def EvoMod3(reference, editDist, num_mut, iteration, Type, Etype):
+def EvoMod3(reference, editDist, num_mut, iteration, Type, Etype, distance_mode='snp', art_cmd="art_illumina"):
     #do EveMod2
-    strainRef = '/home/elijah/Documents/Borellia/New_Experiments/New_strain_ref.txt'
-    samplesDir = '/home/elijah/Documents/Borellia/New_Experiments/Type_3_editDist_{}_iteration_{}_SDP_Samples'.format(editDist,iteration)
-    outputDir = '/home/elijah/Documents/Borellia/New_Experiments/Type_3_editDist_{}_iteration_{}_SDP_output'.format(editDist,iteration)
+    project_path = os.getcwd()
+    strainRef = os.path.join(project_path,'New_strain_ref.txt')
+    samplesDir = os.path.join(project_path, 'Type_3_editDist_{}_iteration_{}_SDP_Samples'.format(editDist,iteration))
+    outputDir = os.path.join(project_path, 'Type_3_editDist_{}_iteration_{}_SDP_output'.format(editDist,iteration))
     genes = ['clpA', 'clpX', 'nifS', 'pepX', 'pyrG', 'recG', 'rplB', 'uvrA']
     strains = []
     #get the indices of the strains to use
@@ -844,7 +1030,7 @@ def EvoMod3(reference, editDist, num_mut, iteration, Type, Etype):
     true_all = defaultdict(int)
 
     #Generate the reads
-    proportions = Generate_reads(strains, seed, iteration, editDist)
+    proportions = Generate_reads(strains, seed, iteration, editDist, art_cmd)
     for strain in strains:
         strain = list(strain)
         for gene in strain:
@@ -860,6 +1046,15 @@ def EvoMod3(reference, editDist, num_mut, iteration, Type, Etype):
         strain_prop_dict = Write_Proportions(strains, proportions, iteration, editDist, Type)
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
         strain_df = pf.strainSolver(samplesDir,strainRef,outputDir,genes,'noProp','s',10800,5)
+        true_dict = strain_prop_dict
+        pred_dict = dict()
+        for i in range(strain_df.shape[0]):
+            row = strain_df.iloc[i].tolist()
+            temp_key = tuple(row[2:10])
+            pred_dict[temp_key] = float(row[10])
+        #Sort the genes in the strains to be consistent
+        true_dict = {tuple(sorted(i)):true_dict[i] for i in true_dict.keys()}
+        pred_dict = {tuple(sorted(i)):pred_dict[i] for i in pred_dict.keys()}
         #compute the precision and recall
         SDP_list = []
         for row in strain_df.iterrows():
@@ -867,8 +1062,9 @@ def EvoMod3(reference, editDist, num_mut, iteration, Type, Etype):
             SDP_list.append(data.tolist()[0:8])
         prec, rec, tvd = Compute_Prec_and_rec(strain_prop_dict, strain_df)
         soft_prec, soft_rec = Compute_Soft_Prec_and_Rec(strain_prop_dict, strain_df, EDITDIST)
-        weight, numRand = Compute_EditDist_Stats(strain_prop_dict, strain_df)
-        return prec, rec, weight, numRand, tvd, soft_prec, soft_rec
+        EMD = compute_EMD(pred_dict, true_dict, distance_mode)
+        #weight, numRand = Compute_EditDist_Stats(strain_prop_dict, strain_df)
+        return prec, rec, tvd, soft_prec, soft_rec, EMD
     #if we are running the fourth experiment
     elif Etype == 2:
 
@@ -878,17 +1074,26 @@ def EvoMod3(reference, editDist, num_mut, iteration, Type, Etype):
         #run the ADP algorithm
         ADP_dict, ADP_alleles, ADP_prop = run_ADP(editDist, iteration)
         strain_df = pf.strainSolver(cwd,strainRef,outputDir,genes,'noProp','s',10800,5)
+        true_dict = strain_prop_dict
+        pred_dict = dict()
+        for i in range(strain_df.shape[0]):
+            row = strain_df.iloc[i].tolist()
+            temp_key = tuple(row[2:10])
+            pred_dict[temp_key] = float(row[10])
+        #Sort the genes in the strains to be consistent
+        true_dict = {tuple(sorted(i)):true_dict[i] for i in true_dict.keys()}
+        pred_dict = {tuple(sorted(i)):pred_dict[i] for i in pred_dict.keys()}
         SDP_list = []
         for row in strain_df.iterrows():
             index, data = row
             SDP_list.append(data.tolist()[0:8])
         prec, rec, tvd = Compute_Prec_and_rec(strain_prop_dict, strain_df)
         soft_prec, soft_rec = Compute_Soft_Prec_and_Rec(strain_prop_dict, strain_df, EDITDIST)
-        weight, numRand = Compute_EditDist_Stats(strain_prop_dict, strain_df)
+        #weight, numRand = Compute_EditDist_Stats(strain_prop_dict, strain_df)
         ADP_alleles = set(item for sublist in ADP_alleles for item in sublist)
         #compute the precision and recall for the SDP output
         ADP_pred, ADP_recall, ADP_tvd = Compute_ADP_Prec_and_rec(true_all, ADP_dict)
-        return prec, rec, tvd, weight, numRand, soft_prec, soft_rec, ADP_pred, ADP_recall, ADP_tvd
+        return prec, rec, tvd, soft_prec, soft_rec, EMD, ADP_pred, ADP_recall, ADP_tvd
 
 def upperFirst(x):
     return x[0].upper() + x[1:]
@@ -976,6 +1181,8 @@ if __name__ == "__main__":
     ap.add_argument("-nm", "--numMut", required=False, default=1, type=int, help="The number of mutations to introduce. Default = 1")
     ap.add_argument("-st", "--modType", required=False, default="Type_1", type=str, help="The type of evolution experiment to run. Default = Type 1")
     ap.add_argument("-et", "--experimentType", required=False, default=1, type=int, help="The type of experiment to run. Default = 1")
+    ap.add_argument("-emd", "--emdDistMode", required=False, default='snp', help="The distance used for EMD calculation. 'snp' compares strains by bases, 'hamming' by genes. Default = 'snp'.")
+    ap.add_argument("-art", "--art", required=False, default="art_illumina", help="Path to art_illumina binary file. Default is 'art_illumina'.")
     args = vars(ap.parse_args())
 
     directories = [d for d in os.listdir(".") if os.path.isdir(d)]
@@ -984,120 +1191,149 @@ if __name__ == "__main__":
 
     precision = []
     soft_precision = []
-    weight_list = []
-    numRand_list = []
+    #weight_list = []
+    #numRand_list = []
+    emd = []
     soft_recall = []
     recall = []
     total_var_dist = []
     ADP_prec_vals = []
     ADP_rec_vals = []
     ADP_tvd_vals = []
+    #known_prec_list = []
+    #known_rec_list = []
     if args["experimentType"] == 1:
         if args["modType"] == "Type_1":
             for i in range(args["numOfiter"]):
                 print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration {} based on Experiment {} of Type {}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format((i+1),args["modType"],args["experimentType"])
-                pre, rec, tvd, weight, numRand, soft_prec, soft_rec = EvoMod1(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"])
+                pre, rec, tvd, soft_prec, soft_rec, EMD = EvoMod1(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"],args["emdDistMode"], args["art"])
                 precision.append(pre)
                 recall.append(rec)
                 total_var_dist.append(tvd)
                 soft_precision.append(soft_prec)
                 soft_recall.append(soft_rec)
-                weight_list.append(weight)
-                numRand_list.append(numRand)
+                emd.append(EMD)
+                #weight_list.append(weight)
+                #numRand_list.append(numRand)
         elif args["modType"] == "Type_2":
             for i in range(args["numOfiter"]):
                 print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration {} based on Experiment {} of Type {}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format((i+1),args["modType"],args["experimentType"])
-                pre, rec, tvd, weight, numRand, soft_prec, soft_rec = EvoMod2(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"])
+                pre, rec, tvd, soft_prec, soft_rec, EMD = EvoMod2(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"], args["emdDistMode"], args["art"])
                 precision.append(pre)
                 recall.append(rec)
                 total_var_dist.append(tvd)
                 soft_precision.append(soft_prec)
                 soft_recall.append(soft_rec)
-                weight_list.append(weight)
-                numRand_list.append(numRand)
+                emd.append(EMD)
+                #weight_list.append(weight)
+                #numRand_list.append(numRand)
         elif args["modType"] == "Type_3":
             for i in range(args["numOfiter"]):
                 print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration {} based on Experiment {} of Type {}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format((i+1),args["modType"],args["experimentType"])
-                pre, rec, tvd, weight, numRand, soft_prec, soft_rec = EvoMod3(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"])
+                pre, rec, tvd, soft_prec, soft_rec, EMD = EvoMod3(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"], args["emdDistMode"], args["art"])
                 precision.append(pre)
                 recall.append(rec)
                 total_var_dist.append(tvd)
                 soft_precision.append(soft_prec)
                 soft_recall.append(soft_rec)
-                weight_list.append(weight)
-                numRand_list.append(numRand)
+                emd.append(EMD)
+                #weight_list.append(weight)
+                #numRand_list.append(numRand)
 
     elif args["experimentType"] == 2:
         if args["modType"] == "Type_1":
             for i in range(args["numOfiter"]):
                 print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration {} based on Experiment {} of Type {}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format((i+1),args["modType"],args["experimentType"])
-                pre, rec, tvd, weight, numRand, soft_prec, soft_rec, ADP_prec, ADP_rec, ADP_tvd = EvoMod1(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"])
+                pre, rec, tvd, soft_prec, soft_rec, EMD, ADP_prec, ADP_rec, ADP_tvd = EvoMod1(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"], args["emdDistMode"], args["art"])
                 precision.append(pre)
                 recall.append(rec)
                 total_var_dist.append(tvd)
                 soft_precision.append(soft_prec)
                 soft_recall.append(soft_rec)
-                weight_list.append(weight)
-                numRand_list.append(numRand)
+                emd.append(EMD)
+                #weight_list.append(weight)
+                #numRand_list.append(numRand)
                 ADP_prec_vals.append(ADP_prec)
                 ADP_rec_vals.append(ADP_rec)
                 ADP_tvd_vals.append(ADP_tvd)
         elif args["modType"] == "Type_2":
             for i in range(args["numOfiter"]):
                 print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration {} based on Experiment {} of Type {}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format((i+1),args["modType"],args["experimentType"])
-                pre, rec, tvd, weight, numRand, soft_prec, soft_rec, ADP_prec, ADP_rec, ADP_tvd = EvoMod2(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"])
+                pre, rec, tvd, soft_prec, soft_rec, EMD, ADP_prec, ADP_rec, ADP_tvd, known_prec, known_rec = EvoMod2(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"], args["emdDistMode"], args["art"])
                 precision.append(pre)
                 recall.append(rec)
                 total_var_dist.append(tvd)
                 soft_precision.append(soft_prec)
                 soft_recall.append(soft_rec)
-                weight_list.append(weight)
-                numRand_list.append(numRand)
+                emd.append(EMD)
+                #weight_list.append(weight)
+                #numRand_list.append(numRand)
                 ADP_prec_vals.append(ADP_prec)
                 ADP_rec_vals.append(ADP_rec)
                 ADP_tvd_vals.append(ADP_tvd)
+                #known_prec_list.append(known_prec)
+                #known_rec_list.append(known_rec)
         elif args["modType"] == "Type_3":
             for i in range(args["numOfiter"]):
                 print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration {} based on Experiment {} of Type {}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format((i+1),args["modType"],args["experimentType"])
-                pre, rec, tvd, weight, numRand, soft_prec, soft_rec,  ADP_prec, ADP_rec, ADP_tvd = EvoMod3(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"])
+                pre, rec, tvd, soft_prec, soft_rec, EMD, ADP_prec, ADP_rec, ADP_tvd = EvoMod3(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"], args["emdDistMode"], args["art"])
                 precision.append(pre)
                 recall.append(rec)
                 total_var_dist.append(tvd)
                 soft_precision.append(soft_prec)
                 soft_recall.append(soft_rec)
-                weight_list.append(weight)
-                numRand_list.append(numRand)
+                emd.append(EMD)
+                #weight_list.append(weight)
+                #numRand_list.append(numRand)
                 ADP_prec_vals.append(ADP_prec)
                 ADP_rec_vals.append(ADP_rec)
                 ADP_tvd_vals.append(ADP_tvd)
 
 
     print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Done ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    stats=0
+    #print("Statistics {}".format(stats+1))
+    #stats += 1
+    #avg_kprec = float(sum(known_prec_list))/len(known_prec_list)
+    #std_kprec = np.std(np.array(known_prec_list))
+    #print 'Precision for known strains:', known_prec_list, "\n"
+    #print "Average of precision is: ", avg_kprec, "\n"
+    #print "Standard deviation of precision is: ", std_kprec, "\n"
 
-    avg_weight = float(sum(weight_list))/len(weight_list)
-    std_weight = np.std(np.array(weight_list))
-    print 'Sum of weights for bipartite matching is:', weight_list, "\n"
-    print "Average of weights is: ", avg_weight, "\n"
-    print "Standard deviation of weight is: ", std_weight, "\n"
+    #print("Statistics {}".format(stats+1))
+    #stats += 1
+    #avg_krec = float(sum(known_rec_list))/len(known_rec_list)
+    #std_krec = np.std(np.array(known_rec_list))
+    #print 'Recall for known strains:', known_rec_list, "\n"
+    #print "Average of recall is: ", avg_krec, "\n"
+    #print "Standard deviation of recall is: ", std_krec, "\n"
 
-    avg_rand = float(sum(numRand_list))/len(numRand_list)
-    std_rand = np.std(np.array(numRand_list))
-    print 'Number of randomized events for each iteration is:', numRand_list, "\n"
-    print "Average of # of randomized events is: ", avg_rand, "\n"
-    print "Standard deviation of # of randomized events is: ", std_rand, "\n"
-
+    print("Statistics {}".format(stats+1))
+    stats += 1
     avg_soft_prec = float(sum(soft_precision))/len(soft_precision)
     std_soft_prec = np.std(np.array(soft_precision))
     print 'Soft Precision is:', soft_precision, "\n"
     print "Average of Soft Precision is: ", avg_soft_prec, "\n"
     print "Standard deviation of Soft Precision is: ", std_soft_prec, "\n"
 
+    print("Statistics {}".format(stats+1))
+    stats += 1
     avg_soft_rec = float(sum(soft_recall))/len(soft_recall)
     std_soft_rec = np.std(np.array(soft_recall))
     print 'Soft Recall is:', soft_recall, "\n"
     print "Average of Soft Recall is: ", avg_soft_rec, "\n"
     print "Standard deviation of Soft Recall is: ", std_soft_rec, "\n"
 
+    print("Statistics {}".format(stats+1))
+    stats += 1
+    avg_emd = float(sum(emd))/len(emd)
+    std_emd = np.std(np.array(emd))
+    print 'Earth Movers distance is:', emd, "\n"
+    print "Average of EMD is: ", avg_emd, "\n"
+    print "Standard deviation of EMD is: ", std_emd, "\n"
+    
+    print("Statistics {}".format(stats+1))
+    stats += 1
     avg_prec = sum(precision)/len(precision)
     std_prec = np.std(np.array(precision))
     print 'Precision is:', precision, "\n"
@@ -1105,12 +1341,16 @@ if __name__ == "__main__":
     print "Standard deviation of precision is: ", std_prec, "\n"
 
 
+    print("Statistics {}".format(stats+1))
+    stats += 1
     avg_rec = sum(recall)/len(recall)
     std_rec = np.std(np.array(recall))
     print 'Recall is:', recall, "\n"
     print "Average of recall is: ", avg_rec, "\n"
     print "Standard deviation of recall is: ", std_rec, "\n"
 
+    print("Statistics {}".format(stats+1))
+    stats += 1
     avg_TVD = sum(total_var_dist)/len(total_var_dist)
     std_TVD = np.std(np.array(total_var_dist))
     print 'Total Variation Distance is:', total_var_dist, "\n"
@@ -1120,6 +1360,8 @@ if __name__ == "__main__":
     if args["experimentType"] == 2:
         os.chdir(args["masterDir"])
 
+        print("Statistics {}".format(stats+1))
+        stats += 1
         avg_ADP_prec = sum(ADP_prec_vals)/len(ADP_prec_vals)
         std_ADP_prec = np.std(np.array(ADP_prec_vals))
         print 'Precision for ADP is:', ADP_prec_vals, "\n"
@@ -1130,7 +1372,8 @@ if __name__ == "__main__":
         ADPprecisionDF = ADPprecisionDF.T
         ADPprecisionDF.to_csv('ADP_{}_editDist_{}_Precision_values.csv'.format(args["modType"], args["editDist"]),sep = '\t')
 
-
+        print("Statistics {}".format(stats+1))
+        stats += 1
         avg_ADP_rec = sum(ADP_rec_vals)/len(ADP_rec_vals)
         std_ADP_rec = np.std(np.array(ADP_rec_vals))
         print 'Recall for ADP is:', ADP_rec_vals, "\n"
@@ -1141,6 +1384,8 @@ if __name__ == "__main__":
         ADPrecallDF = ADPrecallDF.T
         ADPrecallDF.to_csv('ADP_{}_editDist_{}_Recall_values.csv'.format(args["modType"],args["editDist"]), sep = '\t')
 
+        print("Statistics {}".format(stats+1))
+        stats += 1
         ADP_avg_TVD = sum(ADP_tvd_vals)/len(ADP_tvd_vals)
         ADP_std_TVD = np.std(np.array(ADP_tvd_vals))
         print 'ADP Total Variation Distance is:', ADP_tvd_vals, "\n"
@@ -1157,17 +1402,17 @@ if __name__ == "__main__":
     os.chdir(args["masterDir"])
 
 
-    #weight
+    #EMD
     plt.figure()
-    plt.hist(weight_list, bins=np.linspace(-1,1))
-    plt.title("Plot of simulation Weights for {} for edit Distance {}".format(args["modType"], args["editDist"]))
-    plt.xlabel("Sum of Weights")
+    plt.hist(emd, bins=np.linspace(-1,1))
+    plt.title("Plot of EMD for edit distance {}".format(args["modType"], args["editDist"]))
+    plt.xlabel("EMD")
     plt.ylabel("Frequency")
-    plt.savefig('{}_editDist_{}_Weight_plot'.format(args["modType"],args["editDist"]))
+    plt.savefig('{}_editDist_{}_EMD_plot'.format(args["modType"],args["editDist"]))
     #Save the plot for boxplot plotting
-    weightDF = pd.DataFrame(weight_list)
-    weightDF = weightDF.T
-    weightDF.to_csv('{}_editDist_{}_Weight_values.csv'.format(args["modType"],args["editDist"]), sep = '\t')
+    emdDF = pd.DataFrame(emd)
+    emdDF = emdDF.T
+    emdDF.to_csv('{}_editDist_{}_EMD_values.csv'.format(args["modType"],args["editDist"]), sep = '\t')
 
     #Soft recall
     plt.figure()
