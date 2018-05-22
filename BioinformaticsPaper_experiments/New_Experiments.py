@@ -1107,7 +1107,7 @@ def Process_reads(gene, editDist, iteration):
     print("The minimum negative log likelihood score(s) are: {}".format(score_list))
     print("The chosen solution based on minimum negative log likelihood is: {}".format(var_predicted))
     predicted_DF = dataMatrix.loc[reads_cov,var_predicted]
-    kal_prop = True
+    kal_prop = False
 
     #Get sequences of each allele for kallisto
     if kal_prop == True:
