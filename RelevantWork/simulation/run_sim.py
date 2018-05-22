@@ -96,7 +96,7 @@ def fullPaper_boxplot(originalPath, sim_result_folder, csv, type_of_data, gene, 
     plt.savefig(os.path.join(originalPath, sim_result_folder, "{0}_{1}.png".format(gene, type_of_data)), dpi=800)
     plt.close('all')
 
-def main_simulationFunc(locus, iteration, originalPath, simulationResultFolder, cov, ed, bt, samtools, art):
+def main_simulationFunc(locus, iteration, originalPath, simulationResultFolder, cov, ed, bt, samtools, art, x_restrict=1):
     currentDir = os.listdir(".")
     readsFiles = [i for i in currentDir if i.endswith("reads.txt")]
     faFiles = [i for i in currentDir if i.endswith(".fa")]
@@ -113,7 +113,7 @@ def main_simulationFunc(locus, iteration, originalPath, simulationResultFolder, 
         print("==== Removed previous .fa files ====")
     
     #Function to run simulation imported    
-    precision, recall, totalVarDist_count, numOfOptSol = sim.simulation(locus,iteration,originalPath, simulationResultFolder, cov, ed ,bt,samTools,art)
+    precision, recall, totalVarDist_count, numOfOptSol = sim.simulation(locus,iteration,originalPath, simulationResultFolder, cov, ed ,bt,samTools,art, x_restrict)
     precision_list.append(precision)
     recall_list.append(recall)
     totalVarDist_count_list.append(totalVarDist_count)
@@ -138,6 +138,7 @@ ap.add_argument("-fp", "--fullPaper", required=False, default=False, type=bool, 
 ap.add_argument("-b", "--bowtie", required=False, default="",help="Path to folder containing bowtie and bowtie-build. Default assumes both bowtie and bowtie-build in user's bin file")
 ap.add_argument("-s", "--samtools", required=False, default="samtools",help="Path to samtools. Default assumes in user's bin file.")
 ap.add_argument("-a", "--art", required=False, default="art_illumina",help="Path to art_illumina. Default assumes in user's bin file")
+ap.add_argument("-x_r", "--x_restrict", required=False, default=1, type=float, help="The weightage for variant component of ADP's ILP.")
 
 #ap.add_argument("-p", "--proportionMethod", required=True)
 args = vars(ap.parse_args())
@@ -190,7 +191,7 @@ for locus in genes:
     os.chdir(locus)
     
     if args["fullPaper"] == False:
-        precision, recall, totalVarDist_count, numOfOpt = main_simulationFunc(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"], args["editDist"],bt,samTools,art)
+        precision, recall, totalVarDist_count, numOfOpt = main_simulationFunc(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], args["coverage"], args["editDist"],bt,samTools,art, args["x_restrict"])
         precision_list.append(precision)
         recall_list.append(recall)
         totalVarDist_count_list.append(totalVarDist_count)
@@ -204,7 +205,7 @@ for locus in genes:
 #            print cov
             for ed in maxEditDist:
 #                print ed
-                precision, recall, totalVarDist_count, numOfOptSol = main_simulationFunc(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], cov, ed,bt,samTools,art)
+                precision, recall, totalVarDist_count, numOfOptSol = main_simulationFunc(locus,args["numOfIter"],originalPath, args["simulationResultFolder"], cov, ed,bt,samTools,art, args["x_restrict"])
                 covEd_prec[("{}X".format(cov), "{}ED".format(ed))] = precision
                 covEd_rec[("{}X".format(cov), "{}ED".format(ed))] = recall
                 covEd_tvd[("{}X".format(cov), "{}ED".format(ed))] = totalVarDist_count
@@ -247,9 +248,9 @@ else:
     fullPaper_writeToCsv( "tvd", originalPath, args["simulationResultFolder"], gene_covEd_tvd)
     fullPaper_writeToCsv( "numOfOpt", originalPath, args["simulationResultFolder"], gene_covEd_numOfOpt)
 
-    for g in genes:
-        fullPaper_boxplot(originalPath, args["simulationResultFolder"], "fullPaper_{}_precision.csv".format(g), "Precision", g, args["numOfIter"])    
-        fullPaper_boxplot(originalPath, args["simulationResultFolder"], "fullPaper_{}_recall.csv".format(g), "Recall", g, args["numOfIter"])    
-        fullPaper_boxplot(originalPath, args["simulationResultFolder"], "fullPaper_{}_tvd.csv".format(g), "Total Variation Distance", g, args["numOfIter"])    
-        fullPaper_boxplot(originalPath, args["simulationResultFolder"], "fullPaper_{}_numOfOpt.csv".format(g), "NumOfOpt", g, args["numOfIter"])    
+#    for g in genes:
+#        fullPaper_boxplot(originalPath, args["simulationResultFolder"], "fullPaper_{}_precision.csv".format(g), "Precision", g, args["numOfIter"])    
+#        fullPaper_boxplot(originalPath, args["simulationResultFolder"], "fullPaper_{}_recall.csv".format(g), "Recall", g, args["numOfIter"])    
+#        fullPaper_boxplot(originalPath, args["simulationResultFolder"], "fullPaper_{}_tvd.csv".format(g), "Total Variation Distance", g, args["numOfIter"])    
+#        fullPaper_boxplot(originalPath, args["simulationResultFolder"], "fullPaper_{}_numOfOpt.csv".format(g), "NumOfOpt", g, args["numOfIter"])    
     

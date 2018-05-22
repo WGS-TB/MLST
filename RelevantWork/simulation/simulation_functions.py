@@ -143,7 +143,7 @@ def compute_obj_diff(predicted, true):
 #        writer.writerows(matrixForML)
             
         
-def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage, maxEditDist, bt, samtools, art):
+def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage, maxEditDist, bt, samtools, art, x_restrict=1):
     ''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Defining some parameters ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ '''
     #Record true variants and their fractions for all simulations
     true_ratios_list = []
@@ -231,6 +231,14 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
             ART_command = art+" -qL 33 -qs 10 -qs2 15 -k 3 -rs {} -q -ss HS25 -sam -i ".format(seed) +file_name+" -p -l 76 -f "+str(covOfThisVar)+" -m 200 -s 10 -o "+simulation_name + ' >/dev/null 2>&1'
             os.system(ART_command)
         
+        kal_prop = False
+        #Get the sequences of each allele for kallisto
+        if kal_prop == True:
+            with open("{0}/sim_data/{1}/linear.txt".format(originalPath,gene)) as f:
+                seq = f.readlines()
+
+            seq_dict = {seq[i].split("\n")[0]:seq[i+1].split("\n")[0] for i in range(len(seq)) if i % 2 == 0}        
+
         #Putting the pairs together for all variants
         appendFirst_cmd = "cat *_1.fq > "+str(upperfirst(gene)) + "_"+str(iteration)+"_1.fa" #append all the first of the pairs together
         appendSecond_cmd ="cat *_2.fq > "+str(upperfirst(gene))+"_"+str(iteration)+"_2.fa" #append all the second of the pairs together
@@ -283,7 +291,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         Qmatrix = paired_Qmatrix
         
         #Run the ILP solver
-        pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = varSolver.solver(dataMatrix, Qmatrix, "paired")
+        pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = varSolver.solver(dataMatrix, Qmatrix, "paired", x_restrict)
         #pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = varSolver.solver(dataMatrix)
         #print all_solutions
         #print dataMatrix
@@ -334,13 +342,14 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
 #        true_DF =  true_DF[(true_DF.T != -1).any()]
         #predicted_DF = dataMatrix.loc[reads_cov,var_predicted]
         predicted_DF = Qmatrix.loc[reads_cov,var_predicted]
-        prop_count = pf.compute_proportions(predicted_DF)
-        #prop_bayes = bayes_compute_proportions(predicted_DF)
-#        if proportion_method == "count":
-#            prop = count_compute_proportions(predicted_DF)
-#        elif proportion_method == "bayes":
-#            prop = bayes_compute_proportions(predicted_DF)
-        pred_prop_count = pf.create_dictionary(var_predicted, prop_count)
+        if kal_prop == True:
+            kal_cmd="kallisto"
+            pred_prop_count = pf.kallisto_proportions(var_predicted, kal_cmd, seq_dict, iteration, upperfirst(gene))
+            if len(pred_prop_count) != len(var_predicted):
+                print("Kallisto has different alleles")
+        else:
+            prop_count = pf.compute_proportions(predicted_DF)
+            pred_prop_count = pf.create_dictionary(var_predicted, prop_count)
         #pred_prop_bayes = create_dictionary(var_predicted, prop_bayes)
         val_count = 100.0*totalVariationDist(pred_prop_count, true_prop)
         #val_bayes = totalVariationDist(pred_prop_bayes, true_prop)

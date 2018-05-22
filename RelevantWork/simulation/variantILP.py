@@ -22,7 +22,7 @@ import time
 ''' dataMatrix: data frame 
     Return: Objective value, variants predicted, reads covered by these variants, all optimal solutions, objective values of optimal solutions
 '''
-def solver(dataMatrix, qMatrix, option):
+def solver(dataMatrix, qMatrix, option, x_restrict):
 #    data_matrix = returnDataMatrix("/home/glgan/Documents/Borrelia/data/simData/clpA_7_weighted.csv")
 #    data_matrix = returnDataMatrix(dataFile+fileName)
     #h=10.0
@@ -74,7 +74,7 @@ def solver(dataMatrix, qMatrix, option):
     model = cplex.Cplex()
     model.objective.set_sense(model.objective.sense.minimize)
     #add variables related to variants, x_j represents variant j
-    model.variables.add(obj=[1]*total_var, names=xIsVariant["Variable"].tolist(), types=[model.variables.type.binary]*total_var)
+    model.variables.add(obj=[x_restrict]*total_var, names=xIsVariant["Variable"].tolist(), types=[model.variables.type.binary]*total_var)
     #model.variables.add(names=xIsVariant["Variable"].tolist(), types=[model.variables.type.binary]*total_var)
     
     #add variables related to reads, y_ik means read i with k mismatches
