@@ -15,6 +15,7 @@ ap.add_argument("-o", "--output", required=False, help="Name of output folder. D
 ap.add_argument("-oc", "--objectiveComponent", required=False, default="all", help="Objective components. Default: 'all'. 'noProp': Does not include proportion component, 'noPropAndErr': Does not include proportion and error in objective function")
 ap.add_argument("-timelim", "--timeLimit", required=False, help="Time limit in integer(sec) for cplex solver for mixed ILP. Default:600sec", default=600)
 ap.add_argument("-g", "--gap", required=False, help="Relative gap tolerance(in percent) for cplex solver for mixed ILP. Default: 5", default=5)
+ap.add_argument("-pathToDistMat", "--ptdm", required=True, help="Folder name which contains editDistance matrices")
 #ap.add_argument("-r", "--ref", required=False, help="Reference strains file name", default="strain_ref.txt")
 
 args = vars(ap.parse_args())
@@ -32,7 +33,7 @@ for name in loci:
 if not os.path.exists(os.path.abspath(args["output"])):
     os.mkdir(os.path.abspath(args["output"]))
 
-pf.strainSolver(os.path.join(currentPath,"variantsAndProp"), ref_strains, os.path.join(currentPath,args["output"]), loci, args["objectiveComponent"], globalSamp, args["timeLimit"], args["gap"])
+pf.strainSolver(os.path.join(currentPath,"variantsAndProp"), ref_strains, os.path.join(currentPath,args["output"]), args["objectiveComponent"], globalSamp, args["timeLimit"], args["gap"], loci, args["ptdm"])
 #if args["globalOption"] == "mixed":
 #    if args["sample"] != "all":
 #        pf.strainSolver(currentPath+"/variantsAndProp/{}".format(args["sample"]), ref_strains, currentPath+"/"+args["output"], loci, args["objectiveComponent"], args["sample"], args["timeLimit"], args["gap"])

@@ -10,11 +10,13 @@ import pandas as pd
 import numpy as np
 import os
 import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from scipy.spatial.distance import hamming
 import itertools
 
 matplotlib.style.use('ggplot')
+dpi=350
 
 def generateNewRefNewStr(refStrains, loci, writePath, df_justStrains_new):
     seed=13
@@ -86,7 +88,7 @@ def plotDistribution(df_justStrains, loci, name):
     plt.ylabel('Frequency')
     plt.title('Distribution of pairwise hamming distances \namong {} strains'.format(name))
     #plt.tight_layout()
-    plt.savefig('hamDist_distribution_{}.png'.format(name), dpi=800)
+    plt.savefig('hamDist_distribution_{}.png'.format(name), dpi=dpi)
     
     return hammingMatrix, hammingMatrix_asdict, matrix_onlyIndex
 
@@ -116,7 +118,7 @@ def split_into_clusters(link_mat,thresh,n):
       else:
           return clusters
 
-strainsAndPropFolder = "/home/glgan/Documents/Borrelia/RelevantWork/pipeline/strainsAndPropNew_23hr"
+strainsAndPropFolder = "/home/glgan/Documents/Borrelia/RelevantWork/pipeline/newS"
 allCsv = [i for i in os.listdir(strainsAndPropFolder) if (i.startswith("SRR") and i.endswith(".csv"))]
 df = pd.DataFrame()
 loci = ['clpA', 'clpX', 'nifS', 'pepX', 'pyrG', 'recG', 'rplB', 'uvrA']
@@ -133,52 +135,54 @@ for csv in allCsv:
 '''Number of novel and existing strains'''
 df_new = df[df["New/Existing"] =="New"]
 df_exist = df[df["New/Existing"] == "Existing"]
-print df_exist
-#print("Number of novel strains: {}".format(df_new.drop_duplicates(subset=loci).shape[0]))
-#print("Number of existing strains: {}".format(df_exist.drop_duplicates(subset=loci).shape[0]))
+#print df_exist
+print("Number of novel strains: {}".format(df_new.drop_duplicates(subset=loci).shape[0]))
+print("Number of existing strains: {}".format(df_exist.drop_duplicates(subset=loci).shape[0]))
 df_justStrains=df.drop_duplicates(subset=loci)
-#print("Number of strains found: {}".format(df_justStrains.shape[0]))
-#df_justStrains[["ST", "New/Existing"]+ loci].to_csv("foundStrains.csv")
+print("Number of strains found: {}".format(df_justStrains.shape[0]))
+df_justStrains[["ST", "New/Existing"]+ loci].to_csv("foundStrains.csv")
 
-for ind in df_justStrains["ST"].unique():
-    temp_df = df[df["ST"] == ind]
-
-    if temp_df.shape[0] > 1:
-        print temp_df
+#for ind in df_justStrains["ST"].unique():
+#    temp_df = df[df["ST"] == ind]
+#
+#    if temp_df.shape[0] > 1:
+#        print temp_df
 
 ''' Generate graph where y=#of strains x=sample '''
-#samp_df_new_pivot = df.replace({"New":True, "Existing":False}).pivot_table(index="Sample", columns="ST", values="New/Existing")
-#samp_df_new_pivot["New strains"] = samp_df_new_pivot[samp_df_new_pivot == True].count(axis=1)
-#samp_df_new_pivot["Existing strains"] = samp_df_new_pivot[samp_df_new_pivot == False].count(axis=1)
-#
-#samp_df_new_pivot[["Existing strains", "New strains"]].plot(kind='bar', legend=True, cmap=plt.cm.Paired)
-#plt.xlabel("Sample")
-#plt.ylabel("Number of strains")
-#plt.title("Number of strains for each sample")
-#plt.tight_layout()
-#plt.savefig("sample_strainFreq.png",dpi=1000)
+samp_df_new_pivot = df.replace({"New":True, "Existing":False}).pivot_table(index="Sample", columns="ST", values="New/Existing")
+samp_df_new_pivot["New strains"] = samp_df_new_pivot[samp_df_new_pivot == True].count(axis=1)
+samp_df_new_pivot["Existing strains"] = samp_df_new_pivot[samp_df_new_pivot == False].count(axis=1)
+
+samp_df_new_pivot[["Existing strains", "New strains"]].plot(kind='bar', legend=True, cmap=plt.cm.Paired)
+plt.xlabel("Sample")
+plt.ylabel("Number of strains")
+plt.title("Number of strains for each sample")
+plt.tight_layout()
+plt.savefig("sample_strainFreq.png",dpi=dpi)
 
 
 ''' Generate graph of strain composition '''
-#newStrComp = df_new.pivot(index='ST', columns='Sample', values='Proportion')
-#newStrComp["Sum"] = newStrComp.sum(axis=1)
-#newStrComp.sort_values(by='Sum', inplace=True, ascending=False)
-#newStrComp.drop(['Sum'], axis=1).plot(kind='bar', stacked=True, legend=False, sort_columns=True, cmap=plt.cm.Paired)
-#plt.xlabel('Strain type')
-#plt.ylabel('Proportions')
-#plt.title('Cumulated proportions of new strains in different samples')
-#plt.tight_layout()
-#plt.savefig("newStrainsComposition.png", dpi=1000)
-#
-#existStrComp = df_exist.pivot(index='ST', columns='Sample', values='Proportion')
-#existStrComp["Sum"] = existStrComp.sum(axis=1)
-#existStrComp.sort_values(by='Sum', inplace=True, ascending=False)
-#existStrComp.drop(['Sum'], axis=1).plot(kind='bar', stacked=True, legend=False, sort_columns=True, cmap=plt.cm.Paired)
-#plt.xlabel('Strain type')
-#plt.ylabel('Proportions')
-#plt.title('Cumulated proportions of existing strains in different samples')
-#plt.tight_layout()
-#plt.savefig("existingStrainsComposition.png", dpi=1000)
+newStrComp = df_new.pivot(index='ST', columns='Sample', values='Proportion')
+newStrComp.to_csv("newStrComp.csv")
+newStrComp["Sum"] = newStrComp.sum(axis=1)
+newStrComp.sort_values(by='Sum', inplace=True, ascending=False)
+newStrComp.drop(['Sum'], axis=1).plot(kind='bar', stacked=True, legend=False, sort_columns=True, cmap=plt.cm.Paired)
+plt.xlabel('Strain type')
+plt.ylabel('Proportions')
+plt.title('Cumulated proportions of new strains in different samples')
+plt.tight_layout()
+plt.savefig("newStrainsComposition.png", dpi=dpi)
+
+existStrComp = df_exist.pivot(index='ST', columns='Sample', values='Proportion')
+existStrComp.to_csv("existStrComp.csv")
+existStrComp["Sum"] = existStrComp.sum(axis=1)
+existStrComp.sort_values(by='Sum', inplace=True, ascending=False)
+existStrComp.drop(['Sum'], axis=1).plot(kind='bar', stacked=True, legend=False, sort_columns=True, cmap=plt.cm.Paired)
+plt.xlabel('Strain type')
+plt.ylabel('Proportions')
+plt.title('Cumulated proportions of existing strains in different samples')
+plt.tight_layout()
+plt.savefig("existingStrainsComposition.png", dpi=dpi)
 
 ''' Generate new reference with half of new strains added to library  '''
 #refStrains="strain_ref.txt"
