@@ -134,7 +134,7 @@ ap.add_argument("-i", "--numOfIter", required = False, default = 40, type=int, h
 ap.add_argument("-f", "--simulationResultFolder", required=False, default="simulation_results", help="Folder name to store simulation results, folder with this name will be created in current directory. Default creates a folder named `simulation_results` in current directory.")
 ap.add_argument("-c", "--coverage", required=False, default=30,type=int, help="Coverage to test on. Default is 30")
 ap.add_argument("-e", "--editDist", required=False, default=10,type=int, help="Maximum edit distance from seed allele to filter alleles for simulation. Default is 5")
-ap.add_argument("-fp", "--fullPaper", required=False, default=False, type=bool, help="Full simulation of ADP on 2 dimensional parameters, coverage and maxEditDist. If this is set, then any settings of -e and -c are ignored")
+ap.add_argument("-fp", "--fullPaper", required=False, default=False, type=bool, help="Full simulation of ADP on 2 dimensional parameters, coverage and maxEditDist. If this is set to True, then any settings of -e and -c are ignored. Available choices are the boolean True/False")
 ap.add_argument("-b", "--bowtie", required=False, default="",help="Path to folder containing bowtie and bowtie-build. Default assumes both bowtie and bowtie-build in user's bin file")
 ap.add_argument("-s", "--samtools", required=False, default="samtools",help="Path to samtools. Default assumes in user's bin file.")
 ap.add_argument("-a", "--art", required=False, default="art_illumina",help="Path to art_illumina. Default assumes in user's bin file")
