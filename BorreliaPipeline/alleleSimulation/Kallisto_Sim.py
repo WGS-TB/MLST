@@ -75,7 +75,7 @@ def create_dictionary(keys, vals):
             my_dict[keys[i]] = vals[i]
     return my_dict 
 
-def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage, art, kal):
+def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage, maxEditDist, art, kal):
     ''' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Defining some parameters ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ '''
     #Record true variants and their fractions for all simulations
     true_ratios_list = []
@@ -85,57 +85,51 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     totalVarDist_bayes = []
     precision_list = []
     recall_list = []
-    pred_object_vals = []
-    true_Objective_vals = []
-    diff_obj_vals = []
-    likelihoodCalibration = []
-    numOfOptimalSol = list()
     #Some counts
     predictedCorrect_count = 0
     predCorrect_bool_list = []
-#    minNegLogLike_correct = 0
-#    minSizeOpt_count = 0
-#    minNegLogLike_hasTrue = 0
     #Reproducible results, set seed
     seed = 1994
     random.seed(seed)
     
     #Handling some output files
 #    outputFolderPath = "{0}/{1}/".format(originalPath, simulation_result_folder)
-    outputResultTxtFile = "{0}/{1}/{2}_output_stats.txt".format(originalPath, simulation_result_folder, gene)
+    outputResultTxtFile = "{0}/{1}/{2}_{3}Ed_{4}X_output_stats.txt".format(originalPath, simulation_result_folder, gene, maxEditDist, coverage)
     sys.stdout = open(outputResultTxtFile, "w")        #Write print codes to outputResultTxtFile
     
     #Count the number of variants for this gene
     variantsTxtPath = "{0}/sim_data/{1}/variants.txt".format(originalPath,gene)
     num_variants = sum(1 for line in open(variantsTxtPath))
     
-    #Randomly choose some simulations to plot the likelihood graphs
-#    randomNum_negLogCharts = random.sample(xrange(1, numOfIter), 10)
-    
     '''~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Simulation starts here ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'''
     ref = upperfirst(gene)+'.idx'
-    
-    for iteration in range(1,numOfIter+1):  
-        print "======================================== SIMULATION " + str(iteration) + " ====================================================" +  "\n"    
+    iteration=1
+    gene_editDist = pd.read_csv(os.path.join(originalPath, "sim_data", gene, "editDistanceMatrix_{}.csv".format(gene)), index_col=0)
+    alleles_list = returnAllele(gene, os.path.join(os.path.abspath(originalPath), "sim_data"))
+
+    while(iteration < numOfIter+1):  
         true_prop = dict()#dictionary to store the true proportions
         k =random.randint(2,7) #generate a random integer k between 2 and 7
-        #generate k random fractions that sum up to 1
-        fractions = [random.random() for j in range(k)] 
+        true_variants = list()        
+
+        #randomly select variants to use for simulated data
+        randomSeedIndex = random.randint(0, len(alleles_list))      #choose a random seed allele
+        seed_allele = alleles_list[randomSeedIndex]
+        true_variants.append(seed_allele)
+        pool_allele = gene_editDist.loc[seed_allele, :]             #get a pool of alleles which is within maxEditDist from seed allele
+        pool_allele = pool_allele[ (pool_allele < maxEditDist)].index.tolist()
+        pool_allele = [i for i in pool_allele if i!= seed_allele]   #not including seed allele itself
+        pick_num = (k-1) if (k-1) < len(pool_allele) else len(pool_allele)  #pick a subset 
+        randomVarIndex = random.sample(xrange(0, len(pool_allele)), pick_num)
+
+        for ind in randomVarIndex:
+            added_allele = pool_allele[ind]
+            true_variants.append(added_allele)
+
+        #generate random fractions that sum up to 1
+        fractions = [random.random() for j in range(pick_num+1)]    #total of pick_num+1(seed allele) allels
         s = sum(fractions)
         fractions = [ i/s for i in fractions ]
-        #print fractions
-        true_variants = []
-        #randomly select variants to use for simulated data
-        randomVarIndex = random.sample(xrange(1,num_variants+1), k) #start from 1 to num_variants+1 because 0 index of linecache is ''
-        for index in randomVarIndex:
-            variant =linecache.getline(variantsTxtPath,index) #extract the random variant
-            #print variant
-            variant = str(variant) 
-            variant = variant.rstrip() #remove the "\n" character that is returned by bash
-            string1= variant.split(">")
-            true_variants.append(string1[1]) #append the variant to the list          
-        #print num
-        #print true_variants
         
         '''======== Generate the reads using ART ========'''
         total_variants_sequence = ''
@@ -166,8 +160,11 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         #run kallisto command
         os.system("rm {}*".format(gene))
         
-        Kallisto_cmd = kal + ' quant -t 8 -i {0} -o simulation_{1} ./{2}_{1}_1.fa ./{2}_{1}_2.fa >/dev/null 2>&1'.format(ref,str(iteration),upperfirst(gene))
+        Kallisto_cmd = kal + ' quant -t 4 -i {0} -o simulation_{1} ./{2}_{1}_1.fa ./{2}_{1}_2.fa >/dev/null 2>&1'.format(ref,str(iteration),upperfirst(gene))
         os.system(Kallisto_cmd)
+        #if not os.isdir("simulation_{}".format(str(iteration))):
+        #    os.mkdir("simulation_{}".format(str(iteration)))
+
         os.chdir('simulation_{}'.format(str(iteration)))
         output_file = pd.read_csv('abundance.tsv',sep='\t')
         DF = output_file.loc[:,['target_id','est_counts']]
@@ -198,6 +195,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
         
         
         #Print true and predicted variants
+        print "======================================== SIMULATION " + str(iteration) + " ====================================================" +  "\n"
         print("True variants are: {}\n".format(true_variants))
         print("Predicted variants are: {}\n".format(var_predicted))
         print("True proportions are: {}\n".format(true_prop))
@@ -210,6 +208,7 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
                 predCorrect_bool_list.append(False)
         
         #go up a directory
+        iteration += 1
         os.chdir('..')
         
         
@@ -267,3 +266,39 @@ def simulation(gene, numOfIter, originalPath, simulation_result_folder, coverage
     
     sys.stdout.close()
     return precision_list, recall_list, totalVarDist_count
+
+#Return all alleles for gene
+def returnAllele(gene, simDataPath):
+    allele_list = list()
+    with open(os.path.join(os.path.abspath(simDataPath), gene, "variants.txt")) as f:
+        for line in f:
+            allele_list.append(line.split(">")[1].rstrip())
+
+    return allele_list
+
+#Return a dictionary which contains the edit distance between any two alleles 
+#Input: Dictionary where key=allele, value=sequences in string
+def returnEditDistDict(alleleSeqDict):
+    alleles = alleleSeqDict.keys()
+    editDistDict = {(i,j):0 for (i,j) in itertools.product(alleles, alleles)}
+
+    for i in range(len(alleles)):
+        for j in range(i+1, len(alleles)):
+            editDistDict[(alleles[i], alleles[j])] = int(ed.eval(alleleSeqDict[alleles[i]], alleleSeqDict[alleles[j]]))
+            editDistDict[(alleles[j], alleles[i])] = editDistDict[(alleles[i], alleles[j])]
+
+    return editDistDict
+
+#Return a dictionary where key=allele, value=sequences in string
+def returnAlleleSeqDict(gene, simDataPath, allele_list):
+    alleleSeq_dict = dict()
+    for a in allele_list:
+        temp_seq = sh.grep(a, os.path.join(os.path.abspath(simDataPath), gene, "linear.txt"),"-w","-A1")
+        temp_seq = temp_seq.rstrip()
+        temp_seq = str(temp_seq)
+        temp_seq = temp_seq.split('\n')[1]
+        alleleSeq_dict[a] = temp_seq
+        #print len(temp_seq)
+
+    return alleleSeq_dict
+
