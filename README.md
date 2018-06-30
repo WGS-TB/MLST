@@ -20,6 +20,7 @@ git checkout origin/master -- BorreliaPipeline
 
 7) In computing edit distance, we used the package by https://github.com/aflc/editdistance and we hereby acknowledge Hiroyuki Tanaka, where the algorithm is proposed by Heikki Hyyrö, "Explaining and extending the bit-parallel approximate string matching algorithm of Myers", (2001). Possible Python packages you will need: numpy, pandas, matplotlib, linecache, argparse . Please use `pip install` to install these packages if you do not have any of the packages.
 
+8) We are not sure if we cover all the Python packages here, please let us know if we miss any!
 
 ## Instructions to run the pipeline
 1) The required scripts and files are in `pipeline` folder in `BorreliaPipeline` folder (except for sample reads as the files are big). 
@@ -38,24 +39,24 @@ The script will output some intermediate results for you to keep track.
 
 5) To solve the global strain diversity problem, run the following script:
 ```
-python globalStrainDiversity.py [-h] [-o OUTPUT] [-oc OBJECTIVECOMPONENT] [-timelim TIMELIMIT] [-g GAP]
+python globalStrainDiversity.py [-h] [-o OUTPUT] [-oc OBJECTIVECOMPONENT] [-timelim TIMELIMIT] [-g GAP] [-pathToDistMat PTDM]
 ```
-Specify `-o`, the folder name for the results to be stored. Default will be `strainsAndProp`. The `-oc` argument specifies different formulation of the objective function, 'all' includes all components of the objective function, 'noPropAndErr' omits the proportion and error component. `-g` specifies the relative gap in % to stop the solver, default is 5%. `-timelim` specifies the maximum time limit in seconds before stopping the solver, default is 600 seconds. The program will stop if and only if `-g` and `-timelim` are both satisfied. For example, if `-g` is 5 and `timelim` is 600, if the relative gap is above 5% and the 600 seconds have passed, the program will not stop until gap of 5% is reached.
+Specify `-o`, the folder name for the results to be stored. Default will be `strainsAndProp`. The `-oc` argument specifies different formulation of the objective function, 'all' includes all components of the objective function, 'noPropAndErr' omits the proportion and error component. `-g` specifies the relative gap in % to stop the solver, default is 5%. `-timelim` specifies the maximum time limit in seconds before stopping the solver, default is 600 seconds. The program will stop if and only if `-g` and `-timelim` are both satisfied. For example, if `-g` is 5 and `timelim` is 600, if the relative gap is above 5% and the 600 seconds have passed, the program will not stop until gap of 5% is reached. `-pathToDistMat` is the folder name containing the distance matrices for each gene, which is provided and named 'editDist'.
 
 The script will output some intermediate results for you to keep track. It will create a new folder in your current directory with name specified by `-o`. The folder contains a list of `sampleX_strainsAndProportions.csv` with sampleX corresponds a particular sample, and the csv file contains the strains and their proportions identified in sampleX.
 
-## Instructions to run the allele diversity simulation
+## Instructions to run the allele diversity ADP simulation
 1) The required scripts and files to run the simulation are in the `alleleSimulation` folder in the `BorreliaPipeline` folder.
 
 2) In the `alleleSimulation` folder, you only have to run 
 ```
-python run_sim.py [-h] [-i NUMOFITER] [-f SIMULATIONRESULTFOLDER] [-c COVERAGE] [-b BOWTIE] [-s SAMTOOLS] [-a ART]
+python run_sim.py [-h] [-i NUMOFITER] [-f SIMULATIONRESULTFOLDER] [-c COVERAGE] [-e EDITDIST] [-fp FULLPAPER] [-b BOWTIE] [-s SAMTOOLS] [-a ART]
 ``` 
-`-i` specifies the number of simulations on each gene, default is 40. `-f` specifies the name of the folder to store the results, default is simulation_results. `-c` specifies the coverage to test on, default is 30. `-b` specifies the path to the folder containing `bowtie` and `bowtie-build` commands, default assumes that both commands are in user's bin folder. `-s` specifies the path to `samtools`, default assumes it's in your bin folder. `-a` specifies the path to `art_illumina`, default assumes that it's in the user's bin folder. In the results folder, it will contain .csv and .png files representing different statistics. 
+`-i` specifies the number of simulations on each gene, default is 40. `-f` specifies the name of the folder to store the results, default is simulation_results. `-c` specifies the coverage to test on, default is 30. `-b` specifies the path to the folder containing `bowtie` and `bowtie-build` commands, default assumes that both commands are in user's bin folder. `-s` specifies the path to `samtools`, default assumes it's in your bin folder. `-a` specifies the path to `art_illumina`, default assumes that it's in the user's bin folder. `-fp` set to True means we run a 2D parameters experiments(coverage and editDist), which is presented in our paper. In the results folder, it will contain .csv and .png files representing different statistics. 
 
 3) You will need to install `kallisto` and the link is provided here: https://pachterlab.github.io/kallisto/download. To run simulation using kallisto, run
 ```
-run_kallisto_sim.py [-h] [-i NUMOFITER] [-f SIMULATIONRESULTFOLDER] [-c COVERAGE] [-a ART] [-k KAL]                                                      
+run_kallisto_sim.py [-h] [-i NUMOFITER] [-f SIMULATIONRESULTFOLDER] [-c COVERAGE] [-a ART] [-k KAL] [-fp FULLPAPER]                                                     
 ```
 
 Instructions are similar to `run_sim.py`, with`-k` refers to the path to `kallisto` and default assumes it is in user's bin folder.
@@ -67,15 +68,5 @@ python run_loo_sim.py [-h] [-i NUMOFITER] [-f SIMULATIONRESULTFOLDER] [-c COVERA
 
 Instructions are the same as running `run_sim.py`
 
-## Instructions to run the strain diversity simulation
-1) The required scripts and files to run the simualtions are in the `strainSimulation` folder in the `BorreliaPipeline` folder
-
-2) In the `strainSimulation` folder, you only have to run
-```
-python Simulate_strains.py [-h] [-n NUMOFITER] [-d MASTERDIR] [-r STRAINREF] [-t SIM_TYPE] [-hd HAMMINGDIST] [-st MUT_REC_TYPE]
-``` 
-`-n` specifies the number of simulations iterations to run. The default is 40. `-d` specifies the name of the master directory where one would like the sample files and ther results to be stored. A default directory named 'Result' will be created in the directory where the script is run from. `-r` specifies the name of the text file containing the reference strains. Note, there is no default for this as it is neccessary for the simulations. `-t` specifies the simulation type where the two types are mutation and recombination. The default is set to mutation. `-hd` specifies the hamming distance you would like to use for simulations involving mutations. The default is set to 2. `-st` specifies the type of simulations you would like to run for either mutations or recombinations. Type 1 is the simple case, and type 2 is the complex case. The default is set to simple.
-
-## Regenerating plots for the paper
-
-1) A jupyter notebook `generate_plots.ipynb` to visualize the figures is in the `plot` folder under `BorreliaPipeline` folder. In the `plot` folder, just run `jupyter notebook` to start the notebook.
+## Instructions to run the SDP and full pipeline simulation
+1) In the `BorreliaPipeline` folder, `strainAndFullPipeline_sim` contains the scripts and files to run the SDP simulation(with no reads involved) and full pipeline simulation for our method. `strainEST_compare` contains the scripts to run the full pipeline simulation which compares with strainEST. The link to install strainEST is here: https://github.com/compmetagen/strainest. Details about running these simulations are written in separate README files instead in each of the folder.
