@@ -9,8 +9,10 @@ Project: Illuminating the diversity of pathogenic bacteria Borrelia Burgdorferi 
 
 """
 from __future__ import division
-from collections import defaultdict
+from collections import defaultdict, Counter
 from scipy.misc import comb
+from scipy.stats import entropy
+from math import log
 import pandas as pd
 import csv
 import os
@@ -94,6 +96,34 @@ def bayes_compute_proportions(dataframe):
     prop_list = [100.0*l*(1/total_sum) for l in col_sums]
     return prop_list     
 
+def kallisto_proportions(alleles, kal_cmd, seq_dict, first_fa, second_fa):
+    with open("temp_prop.fas", "w") as f:
+        for a in alleles:
+            f.write(">"+a+"\n")
+            f.write(seq_dict[">"+a]+"\n")
+
+    #kallisto index
+    print os.getcwd()
+    kal_idx_cmd = kal_cmd + ' index -i temp_prop.idx temp_prop.fas >/dev/null 2>&1'
+    os.system(kal_idx_cmd)
+
+    #Run kallisto quantifier
+    kallisto_cmd = kal_cmd + ' quant -t 4 -i temp_prop.idx -o temp_prop {0} {1} >/dev/null 2>&1'.format(first_fa, second_fa)
+    os.system(kallisto_cmd) 
+    output_file = pd.read_csv(os.path.join(os.getcwd(), 'temp_prop', 'abundance.tsv'),sep='\t')
+    DF = output_file.loc[:,['target_id','est_counts']]
+    DF = DF[DF['est_counts'] != 0]
+    DF['est_counts'] = (DF['est_counts']/float(DF['est_counts'].sum()))
+    #DF = DF[DF['est_counts'] > 1.0]
+    #DF['est_counts'] = (DF['est_counts']/DF['est_counts'].sum())
+    var_predicted = DF['target_id'].tolist()
+    props = DF['est_counts'].tolist()
+
+    prop_dict = {var_predicted[i]:props[i] for i in range(len(var_predicted))}
+
+    return prop_dict
+    
+    
 '''
 Input: Dataframe with rows=reads, columns=variants
 Output: The proportions of variants (type list)
@@ -107,11 +137,57 @@ def compute_proportions(dataframe):
         min_mm = min(mmInfo)
         numOfVar_minMm = len([i for i in list(row) if i== min_mm])
         
-        for i in range(len(list(row))):
-            if list(row)[i] == min_mm:
-                prob_list[i] += 1/numOfVar_minMm
-                
-    normalize_term = 1.0/(sum(prob_list))
+        if numOfVar_minMm != len(list(row)) or len(list(row)) == 1:
+        #if numOfVar_minMm == 1:
+            for i in range(len(list(row))):
+                if list(row)[i] == min_mm:
+                    prob_list[i] += 1/numOfVar_minMm
+
+    ##Only run entropy if there are more than 2 alleles
+    #if mismatch_df.shape[1] != 1:            
+    #    #compute entropy
+    #    matrix_mismatch = mismatch_df.as_matrix()
+    #    filtered_matrix_mismatch = list()
+    #    for i in range(matrix_mismatch.shape[0]):
+    #        temp = set(matrix_mismatch[i,:])
+    #        if len(temp) > 1:
+    #            filtered_matrix_mismatch.append(list(matrix_mismatch[i,:]))
+
+    #    filtered_matrix_mismatch = np.array(filtered_matrix_mismatch)
+
+    #    entropy_list = list()
+    #    for i in range(filtered_matrix_mismatch.shape[1]):
+    #        distrib = list(filtered_matrix_mismatch[:,i])        
+
+    #        #In case we encounter -1, we insert different values for -1
+    #        new_distrib = list()
+    #        dummy = max(distrib) + 1
+    #        for d in distrib:
+    #            if d == -1:
+    #                new_distrib.append(dummy)
+    #                dummy += 1
+    #            else:
+    #                new_distrib.append(d)
+    #    
+    #        new_distrib_dict = dict(Counter(new_distrib))
+    #        new_distrib_prop = [float(new_distrib_dict[k])/len(new_distrib) for k in new_distrib_dict.keys()]
+    #        entro = entropy(new_distrib_prop, base=2)
+    #        entropy_list.append(entro)
+    #    
+    #    scaled_entropy_list = [i/log(filtered_matrix_mismatch.shape[0], 2) for i in entropy_list]
+    #    weights = [1-i for i in scaled_entropy_list]
+    #else:
+    #    weights=[1]*len(prob_list)
+
+    ##multiply probs with weights based on entropy
+    #prob_list = [w*p for (w, p) in itertools.izip(weights, prob_list)]
+    
+    try:            
+        normalize_term = 1.0/(sum(prob_list))
+    except ZeroDivisionError:
+        print("no unique first score")
+        normalized_term = 0
+        
     prob_list = [normalize_term * i for i in prob_list]
     return np.round(prob_list,10) 
 
@@ -1276,11 +1352,85 @@ def mapVarAndSampleToStrain(strain, loci, allSamples):
 #                break
 #            
 #    return pd.DataFrame(data=index_hamming_dict.values(), index=index_hamming_dict.keys())
+  
+
+def computeDist_byGene(allele1, allele2, gene, distMat_dict):
     
+    try:
+        d = distMat_dict[gene][0].loc[allele1, allele2]
+    except KeyError:
+        print("{0} or {1} allele is not in the distance matrix dataframe".format(allele1, allele2))
+        d = -1
+        
+    return d
+
+'''
+    Compute the minimum distance between a strain and strains in library
+    Assuming strains in reference are indexed with [gene]_[index] i.e. clpA_1, clpX_5,... As we use a df.isin() method, order
+    does not take into account.
+'''
+def computeStrDist(strain, distMat_dict, loci, reference):
+    sorted_strain = sorted(strain)
+    
+    minDist = float('Inf')
+    for row in reference[loci].itertuples(index=False):
+        sorted_ref = sorted(list(row))
+        assert(len(sorted_ref) == len(sorted_strain)), "Strains are of different length"
+        
+        temp_dist = 0
+        innerLoopBreak = False
+        for i in range(len(sorted_ref)):
+            gene = sorted_ref[i].split("_")[0]
+            d = computeDist_byGene(sorted_ref[i], sorted_strain[i], gene, distMat_dict)
+            
+            if d == -1:
+                innerLoopBreak = True
+                break
+            else:
+                temp_dist += d
+                
+        if innerLoopBreak == True:
+            pass
+        else:
+            if temp_dist < minDist:
+                minDist = temp_dist
+                
+    return minDist
+
+  
+'''
+    Compute the weights for each strain. 0 if existing, min d(s,s') for novel strain s where s' is an existing strain
+'''
+def computeMinDistWeights(strainWeightDecVarDF, distMat_dict, loci, reference):
+    str_df = strainWeightDecVarDF[loci]
+    weight_list = list()
+    
+    for strain in str_df.itertuples(index=False):
+        if reference[loci].isin( list(strain) ).all(axis=1).sum() == 1:
+            weight_list.append(0)
+        else:
+            weight_list.append( computeStrDist(list(strain), distMat_dict, loci, reference) )
+        
+    return weight_list
+
+'''
+    Assuming each edit distance matrix is named as: editDistanceMatrix_[gene].csv
+'''
+def returnDistMat_dict(pathToDistMat, loci):
+    distMat_dict = dict()
+    
+    for l in loci:
+        temp_df = pd.read_csv( os.path.join(pathToDistMat, 'editDistanceMatrix_{}.csv'.format(l)), sep=",").set_index("level_0")
+        distMat_dict[l] = [ temp_df ]
+        
+
+    return distMat_dict
+
 '''
 Predict strains using MILP and output in csv file
 Input:
     dataPath, absolute path to directory containing samples' alleles and proportions
+    pathToDistMat, path to directory containing edit distances matrix for each gene
     refStrains, path to strain_ref.txt
     outputPath, path to output csv file
     loci, list of locus
@@ -1288,10 +1438,11 @@ Input:
     globalILP_option, "all" if running on all samples
 '''
 
-def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, globalILP_option, timelimit, gap):
+def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_option='all', timelimit=600, gap=8,
+                 loci=["clpA","clpX","nifS","pepX","pyrG","recG","rplB","uvrA"],pathToDistMat=None):
     ''' ============================================== Data handling ====================================================== '''
     #paramaters
-    propFormat = 1    #proportion in percentage or fraction
+    propFormat = 1   #proportion in percentage or fraction
     #loci = ['clpA', 'clpX', 'nifS']
     numLoci = len(loci)
     
@@ -1355,6 +1506,16 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
     #strainWeightDecVarDF.loc[temp_changeWeightDF.index, "Weights"] = temp_changeWeightDF.values
     retainCol = loci + ['Weights', 'ST']
     strainWeightDecVarDF = strainWeightDecVarDF[retainCol].reset_index(drop=True)
+    
+    if pathToDistMat == None:
+        pass
+    else:
+        distMat_dict = returnDistMat_dict(pathToDistMat, loci)
+        minDist_W = computeMinDistWeights(strainWeightDecVarDF, distMat_dict, loci, reference)
+        max_ed = max(minDist_W)
+        minDist_W = [float(i)/max_ed for i in minDist_W]
+        strainWeightDecVarDF["Weights"] = minDist_W
+        
     strainWeightDecVarDF["Decision Variable"] = ["a{}".format(i) for i in range(1, strainWeightDecVarDF.shape[0] + 1)]
     
     '''==================================== Forming ILP here ================================================'''
@@ -1526,7 +1687,7 @@ def strainSolver(dataPath, refStrains, outputPath, loci, objectiveOption, global
         output = output[["ST", "New/Existing"]+loci+["Proportion"]]
         print output
         output.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, newNameToOriName[samp]))
-    
+   
 '''
 Solve the pure ILP instance of strain prediction
 Input:
