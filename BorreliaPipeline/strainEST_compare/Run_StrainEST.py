@@ -25,11 +25,12 @@ import argparse
 plt.style.use('ggplot')
 
 #set seed for reproducibility 
-seed = 1995
+seed = 1995   #Have to change for 2e and 2n
+seed=1992
 random.seed(seed)
 
 #function to run the simulation
-def Generate_Data(editDist, num_mut, model, iteration,drop_strain=None):
+def Generate_Data(editDist, num_mut, model, iteration,drop_strain=None, numStrains=1):
     
     ''' 
     A function that sets up the type of simuation we are running and generates the neccessary data
@@ -58,10 +59,13 @@ def Generate_Data(editDist, num_mut, model, iteration,drop_strain=None):
         reference["%s" %name] = name + "_" + reference["%s" %name].astype(str)
         
     #add all the strains to a list    
+    count = 0
     all_strains = []
     for index in range(reference.shape[0]):
+        count += 1
         all_strains.append(reference.iloc[index,:].values.tolist())
-        
+        if count == 99:
+            break
     #if we are running the first evolutionary model
     if model == 'EvoMod_1':
         #run the first evolutionary model
@@ -74,6 +78,9 @@ def Generate_Data(editDist, num_mut, model, iteration,drop_strain=None):
     #if we are running the third evolutionary model    
     elif model == 'EvoMod_3':
         proportions, true_all, true_alleles, strains = uf.EvoMod3(reference, editDist, num_mut, iteration, all_strains, seed)
+    else:
+        proportions, true_all, true_alleles, strains = uf.Generate_Strains(all_strains, numStrains, editDist, seed)
+        
     
     #write the strains and their proportions into a dictionary
     strain_prop_dict = uf.Write_Proportions(strains, proportions)
@@ -83,10 +90,11 @@ def main():
     #get and parse the arguments
     ap = argparse.ArgumentParser()
     ap.add_argument("-n", "--numOfiter", required=False, default=40, type=int, help="The number of simulation iterations default = 40")
-    ap.add_argument("-st", "--modType", required=False, default="EvoMod_1", type=str, help="The type of evolution experiment to run. Default = EvoMod_1")
+    ap.add_argument("-st", "--modType", required=False, default="None", type=str, help="The type of evolution experiment to run. Default = None")
     ap.add_argument("-Ed", "--editDist", required=False, default=15, type=int, help="The maximum edit distance. Default = 15")
     ap.add_argument("-nm", "--numMut", required=False, default=1, type=int, help="The number of mutations to introduce. Default = 1")
     ap.add_argument("-em2v", "--em2v", required=False, default=None, help="'new'/'existing', a variant of evomod2 whether to drop new or existing strain")
+    ap.add_argument("-ns", "--ns", required=False, default=1,type=int, help="Number of strains for existing strains only experiment")
     #parse the arguments
     args = vars(ap.parse_args())
     
@@ -132,7 +140,7 @@ def main():
     for i in range(args["numOfiter"]):
         print('-----------------------------------------------------NOW RUNNING SIMULATION {} -----------------------------------------------------------------------------------------'.format(i))
         #generate the data
-        strains, strains_prop_dict, true_all = Generate_Data(args["editDist"], args["numMut"], args["modType"], i, args['em2v'])
+        strains, strains_prop_dict, true_all = Generate_Data(args["editDist"], args["numMut"], args["modType"], i, args['em2v'], args["ns"])
         
         #compute the alleles
         true_alleles = set([item for sublist in strains for item in sublist])
@@ -200,84 +208,52 @@ def main():
     #print the strain results to consle
     print('~~~~~~~~~~~~~~ StrainEST ~~~~~~~~~~~~~~~~~~~~~')
     print('The StrainEST precision values are: {}'.format(SEST_prec))
-    print('The StrainEST precision average is: {}'.format(sum(SEST_prec)/len(SEST_prec)))
-    print('The StrainEST precision SD is: {}'.format(np.std(np.array(SEST_prec))))
-    print('')
+    print('The StrainEST precision average and std are: {0}, {1}'.format(np.mean(SEST_prec), np.std(SEST_prec)))
     print('The StrainEST Soft precision values are: {}'.format(SEST_softprec))
-    print('The StrainEST Soft precision average is: {}'.format(sum(SEST_softprec)/len(SEST_softprec)))
-    print('The StrainEST Soft precision SD is: {}'.format(np.std(np.array(SEST_softprec))))
-    print('')
+    print('The StrainEST Soft precision average and std: {0}, {1}'.format(np.mean(SEST_softprec), np.std(SEST_softprec)))
     print('The StrainEST recall values are: {}'.format(SEST_rec))
-    print('The StrainEST recall average is: {}'.format(sum(SEST_rec)/len(SEST_rec)))
-    print('The StrainEST recall SD is: {}'.format(np.std(np.array(SEST_rec))))
-    print('')
-    print('The StrainEST soft recall values are: {}'.format(SEST_softrec))
-    print('The StrainEST soft recall average is: {}'.format(sum(SEST_softrec)/len(SEST_softrec)))
-    print('The StrainEST soft recall SD is: {}'.format(np.std(np.array(SEST_softrec))))
-    print('')
+    print('The StrainEST recall average and std: {0}, {1}'.format(np.mean(SEST_rec), np.std(SEST_rec)))
+    print('The StrainEST Soft recall values are: {}'.format(SEST_softrec))
+    print('The StrainEST Soft recall average and std are: {0}, {1}'.format(np.mean(SEST_softrec), np.std(SEST_softrec)))
     print('The StrainEST Total Variation Distances are: {}'.format(SEST_TVD))
-    print('The StrainEST Total Variation Distance average is: {}'.format(sum(SEST_TVD)/len(SEST_TVD)))
-    print('The StrainEST Total Variation Distance SD is: {}'.format(np.std(np.array(SEST_TVD))))
-    print('')
+    print('The StrainEST Total Variation Distance average and std: {0}, {1}'.format(np.mean(SEST_TVD),np.std(SEST_TVD)))
     print('The StrainEST Earth Mover Distances are: {}'.format(SEST_EMD))
-    print('The StrainEST Earth Mover Distance average is: {}'.format(sum(SEST_EMD)/len(SEST_EMD)))
-    print('The StrainEST Earth Mover Distance SD is: {}'.format(np.std(np.array(SEST_EMD))))
+    print('The StrainEST Earth Mover Distance average and std: {0}, {1}'.format(np.mean(SEST_EMD),np.std(SEST_EMD)))
     print('')
 
      #print allele results to consle
     print('The StrainEST Allele precision is: {}'.format(SEST_Allele_prec))
-    print('The StrainEST Allele precision average is: {}'.format(sum(SEST_Allele_prec)/len(SEST_Allele_prec)))
-    print('The StrainEST Allele precision SD is: {}'.format(np.std(np.array(SEST_Allele_prec))))
-    print('')
+    print('The StrainEST Allele precision average and std: {0}, {1}'.format(np.mean(SEST_Allele_prec), np.std(SEST_Allele_prec)))
     print('The StrainEST Allele recall is: {}'.format(SEST_Allele_rec))
-    print('The StrainEST Allele recall average is: {}'.format(sum(SEST_Allele_rec)/len(SEST_Allele_rec)))
-    print('The StrainEST Allele recall SD is: {}'.format(np.std(np.array(SEST_Allele_rec))))
-    print('')
+    print('The StrainEST Allele recall average and std: {0}, {1}'.format(np.mean(SEST_Allele_rec), np.std(SEST_Allele_rec)))
     print('The StrainEST Allele TVD is: {}'.format(SEST_Allele_tvd))
-    print('The StrainEST Allele TVD average is: {}'.format(sum(SEST_Allele_tvd)/len(SEST_Allele_tvd)))
-    print('The StrainEST Allele TVD SD is: {}'.format(np.std(np.array(SEST_Allele_tvd))))
+    print('The StrainEST Allele TVD average and std: {0}, {1}'.format(np.mean(SEST_Allele_tvd), np.std(SEST_Allele_tvd)))
     print('')
 
     print('~~~~~~~~~~~~~~~~~~~~~~~ Our algorithm ~~~~~~~~~~~~~~~~~~~~~')
     #print the ADP results to consle
     print('The ADP precision values are: {}'.format(ADP_prec_list))
-    print('The ADP precision average is: {}'.format(sum(ADP_prec_list)/len(ADP_prec_list)))
-    print('The ADP precision SD is: {}'.format(np.std(np.array(ADP_prec_list))))
-    print('')
+    print('The ADP precision average and std: {0}, {1}'.format(np.mean(ADP_prec_list), np.std(ADP_prec_list)))
     print('The ADP recall values are: {}'.format(ADP_rec_list))
-    print('The ADP recall average is: {}'.format(sum(ADP_rec_list)/len(ADP_rec_list)))
-    print('The ADP recall SD is: {}'.format(np.std(np.array(ADP_rec_list))))
-    print('')
+    print('The ADP recall average and std: {0}, {1}'.format(np.mean(ADP_rec_list), np.std(ADP_rec_list)))
     print('The ADP Total Variation Distances are: {}'.format(ADP_TVD_list))
-    print('The ADP Total Variation Distance average is: {}'.format(sum(ADP_TVD_list)/len(ADP_TVD_list)))
-    print('The ADP Total Variation Distance SD is: {}'.format(np.std(np.array(ADP_TVD_list))))
+    print('The ADP Total Variation Distance average and std: {0}, {1}'.format(np.mean(ADP_TVD_list), np.std(ADP_TVD_list)))
     print('')
     
     #print the SDP results to consle
     print('The SDP precision values are: {}'.format(SDP_prec_list))
-    print('The SDP precision average is: {}'.format(sum(SDP_prec_list)/len(SDP_prec_list)))
-    print('The SDP precision SD is: {}'.format(np.std(np.array(SDP_prec_list))))
-    print('')
+    print('The SDP precision average and std: {0}, {1}'.format(np.mean(SDP_prec_list), np.std(SDP_prec_list)))
     print('The SDP Soft precision values are: {}'.format(SDP_softprec_list))
-    print('The SDP Soft precision average is: {}'.format(sum(SDP_softprec_list)/len(SDP_softprec_list)))
-    print('The SDP Soft precision SD is: {}'.format(np.std(np.array(SDP_softprec_list))))
-    print('')
+    print('The SDP Soft precision average and std: {0}, {1}'.format(np.mean(SDP_softprec_list), np.std(SDP_softprec_list)))
     print('The SDP recall values are: {}'.format(SDP_rec_list))
-    print('The SDP recall average is: {}'.format(sum(SDP_rec_list)/len(SDP_rec_list)))
-    print('The SDP recall SD is: {}'.format(np.std(np.array(SDP_rec_list))))
-    print('')
+    print('The SDP recall average and std: {0}, {1}'.format(np.mean(SDP_rec_list), np.std(SDP_rec_list)))
     print('The SDP Soft recall values are: {}'.format(SDP_softrec_list))
-    print('The SDP Soft recall average is: {}'.format(sum(SDP_softrec_list)/len(SDP_softrec_list)))
-    print('The SDP Soft recall SD is: {}'.format(np.std(np.array(SDP_softrec_list))))
-    print('')
+    print('The SDP Soft recall average and std: {0}, {1}'.format(np.mean(SDP_softrec_list), np.std(SDP_softrec_list)))
     print('The SDP Total Variation Distances are: {}'.format(SDP_TVD_list))
-    print('The SDP Total Variation Distance average is: {}'.format(sum(SDP_TVD_list)/len(SDP_TVD_list)))
-    print('The SDP Total Variation Distance SD is: {}'.format(np.std(np.array(SDP_TVD_list))))
-    print('')
+    print('The SDP Total Variation Distance average and std: {0}, {1}'.format(np.mean(SDP_TVD_list), np.std(SDP_TVD_list)))
     print('The SDP Earth Mover Distances are: {}'.format(SDP_EMD_list))
-    print('The SDP Earth Mover Distance average is: {}'.format(sum(SDP_EMD_list)/len(SDP_EMD_list)))
-    print('The SDP Earth Mover Distance SD is: {}'.format(np.std(np.array(SDP_EMD_list))))
-    print('')
+    print('The SDP Earth Mover Distance average and std: {0}, {1}'.format(np.mean(SDP_EMD_list), np.std(SDP_EMD_list)))
+    print('')    
 
     ''' plot the StrainEST statistics '''
     #create a directory to hold the results
@@ -402,7 +378,7 @@ def main():
     
     #recall
     ADP_Allele_recDF = pd.DataFrame(ADP_rec_list)
-    ADP_Allele_recDF = SEST_Allele_recDF.T
+    ADP_Allele_recDF = ADP_Allele_recDF.T
     ADP_Allele_recDF.to_csv('ADP_Allele_Recall.csv', sep = '\t')
     
     #TVD

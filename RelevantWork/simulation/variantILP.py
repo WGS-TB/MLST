@@ -13,16 +13,11 @@ import cplex
 import itertools
 import time
 
-#def calculateProp(data_matrix, qMatrix, model, yCovered):
-#    prop = {allele:0 for allele in data_matrix.columns.tolist()}
-
-    
-
 
 ''' dataMatrix: data frame 
     Return: Objective value, variants predicted, reads covered by these variants, all optimal solutions, objective values of optimal solutions
 '''
-def solver(dataMatrix, qMatrix, option, x_restrict):
+def solver(dataMatrix, qMatrix, option, x_restrict=1):
 #    data_matrix = returnDataMatrix("/home/glgan/Documents/Borrelia/data/simData/clpA_7_weighted.csv")
 #    data_matrix = returnDataMatrix(dataFile+fileName)
     #h=10.0

@@ -756,8 +756,45 @@ def Compute_EditDist_Stats(strain_dict, strain_df):
     print("*****************\n")
 
     return weight, numRand
-    
-    
+
+def Generate_Strains(all_strains, numStrains, editDist, seed):
+    '''
+    A function that generates a set of known strains for the StrainEST algorithm and returns a set of strains and their proportions
+
+    Inputs: 
+    all_strains-A list containing the total set of strains
+    numStrains-The total number of strains to select
+
+    Outputs: 
+    The selected strains
+    The generated proportions
+    The selected alleles and their proportions
+    '''
+    #select the strains to use at random
+    strains = [random.choice(all_strains) for _ in range(numStrains)]
+
+    #assign proportions and generate the reads
+    proportions = Generate_reads(strains, seed, editDist)
+
+    #define a dictionary to hold all alleles
+    true_all = defaultdict(int)
+
+    proportions = Generate_reads(strains, seed, editDist)
+
+    #update the true_alleles dictionary
+    for strain in strains:
+        strain = list(strain)
+        for gene in strain:
+            if gene not in true_all:
+                true_all[gene] = proportions[strains.index(strain)]
+            else:
+                true_all[gene] = true_all[gene] + proportions[strains.index(strain)]  
+    #get the set of true alleles  
+    true_alleles = set([item for sublist in strains for item in sublist])
+
+    #return
+    return proportions, true_all, true_alleles, strains
+
 def EvoMod1(reference, editDist, num_mut, iteration, all_strains, seed, art_cmd="art_illumina", pathToDistMat=None):
     strains = []
     #select random strain from the first 100
