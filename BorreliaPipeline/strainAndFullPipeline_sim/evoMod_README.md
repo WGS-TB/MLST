@@ -1,5 +1,5 @@
 # How to run simulations described in our paper?
-We assume that all bioinformatics tools that we described in our main page of the github repo is in the user's bin file
+We assume that all bioinformatics tools that we described in our main page of the github repo is in the user's bin file. We ran all of the simulations on a cluster, with the maximum resource used being 32 cores, 32GB RAM, walltime 6 hours. After and while running the simulations, lots of intermediate files are produced in the current directory for reproducibility and sanity checking. 
 
 1. 
 ```

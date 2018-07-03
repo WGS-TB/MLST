@@ -1528,7 +1528,10 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     timelim_cb.timelimit = timelimit
     timelim_cb.acceptablegap = gap
     timelim_cb.aborted = False
-    
+
+    model.parameters.mip.strategy.file.set(3) #node file storage on disk and compressed
+    model.parameters.mip.strategy.variableselect.set(3)  #Strong branching for variable selection
+ 
     #minimize problem
     model.objective.set_sense(model.objective.sense.minimize)
     #add the decision variables for unqiue strain types
