@@ -20,7 +20,9 @@ git checkout origin/master -- BorreliaPipeline
 
 7) In computing edit distance, we used the package by https://github.com/aflc/editdistance and we hereby acknowledge Hiroyuki Tanaka, where the algorithm is proposed by Heikki Hyyrö, "Explaining and extending the bit-parallel approximate string matching algorithm of Myers", (2001). Possible Python packages you will need: numpy, pandas, matplotlib, linecache, argparse . Please use `pip install` to install these packages if you do not have any of the packages.
 
-8) We are not sure if we cover all the Python packages here, please let us know if we miss any!
+8) We also use the package PyEMD for EMD calculations, where we hereby acknowledge Gary Doran for his PyEMD package: https://github.com/garydoranjr/pyemd.
+
+9) We are not sure if we cover all the Python packages here, please let us know if we miss any!
 
 ## Instructions to run the pipeline
 1) The required scripts and files are in `pipeline` folder in `BorreliaPipeline` folder (except for sample reads as the files are big). 
