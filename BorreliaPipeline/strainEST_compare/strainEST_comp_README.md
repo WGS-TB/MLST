@@ -17,3 +17,5 @@ Run_StrainEST.py [-h] [-n NUMOFITER] [-st MODTYPE] [-Ed EDITDIST]
 * EvoMod1: `python Run_StrainEST.py -st EvoMod_1 -nm 2`
 * EvoMod2: `python Run_StrainEST.py -st EvoMod_2 -nm 2`
 * EvoMod2e and EvoMod2n: `python Run_StrainEST.py -st EvoMOd_2 -nm 2 -em2v [existing/new]` (input accordingly for `em2v`. ** Remember to change the seed to 1992 in Run_StrainEST.py when running EvoMod2e and EvoMod2n **
+
+All simulations will produce `SDP_Output` and `Results` folders, where `SDP_Output` contains some intermediate files corresponding to the output of our algorithm and `Results` contain the statistics.
