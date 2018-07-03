@@ -70,3 +70,6 @@ Instructions are the same as running `run_sim.py`
 
 ## Instructions to run the SDP and full pipeline simulation
 1) In the `BorreliaPipeline` folder, `strainAndFullPipeline_sim` contains the scripts and files to run the SDP simulation(with no reads involved) and full pipeline simulation for our method. `strainEST_compare` contains the scripts to run the full pipeline simulation which compares with strainEST. The link to install strainEST is here: https://github.com/compmetagen/strainest. Details about running these simulations are written in separate README files instead in each of the folder.
+
+## For Minimum Spanning Tree Analysis
+A sample script to compute the MST is in the `pipeline` folder and can be altered for your own analysis.
