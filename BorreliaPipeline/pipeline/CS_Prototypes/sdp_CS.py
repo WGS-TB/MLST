@@ -5,8 +5,8 @@ import sys
 import csv
 
 # change the path to the adp's output for a sample
-os.chdir(sys.argv[1])
-# os.chdir("C:\\Users\\parha\\Downloads\\Compressed\\SRR2034333")
+# os.chdir(sys.argv[1])
+os.chdir("./sample_data")
 print
 #----------------------------------------------------------------------
 #               Creating the matrices used in LP
