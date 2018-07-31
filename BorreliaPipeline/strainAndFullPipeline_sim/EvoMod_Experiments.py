@@ -25,7 +25,7 @@ import variantILP as varSolver
 import sh
 import sys
 import os
-import cs/cs_sim_strainSolver as cs
+import cs_sim_strainSolver as cs
 plt.style.use('ggplot')
 
 
