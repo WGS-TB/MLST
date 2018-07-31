@@ -25,6 +25,7 @@ import variantILP as varSolver
 import sh
 import sys
 import os
+import cs/cs_sim_strainSolver as cs
 plt.style.use('ggplot')
 
 
@@ -783,7 +784,7 @@ def EvoMod0(k, reference, editDist, iteration, Type, Etype, loci, distance_mode=
     if Etype == 1:
         strain_prop_dict = Write_Proportions(strains, proportions, iteration, editDist, Type)
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        strain_df = pf.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+        strain_df = cs.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
         true_dict = strain_prop_dict
         pred_dict = dict()
         for i in range(strain_df.shape[0]):
@@ -812,7 +813,7 @@ def EvoMod0(k, reference, editDist, iteration, Type, Etype, loci, distance_mode=
         cwd = os.getcwd()
         #run the ADP algorithm
         ADP_dict, ADP_alleles, ADP_prop = run_ADP(editDist, iteration)
-        strain_df = pf.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+        strain_df = cs.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
         true_dict = strain_prop_dict
         pred_dict = dict()
         for i in range(strain_df.shape[0]):
@@ -878,7 +879,7 @@ def EvoMod1(reference, editDist, num_mut, iteration, Type, Etype, loci, distance
     if Etype == 1:
         strain_prop_dict = Write_Proportions(strains, proportions, iteration, editDist, Type)
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        strain_df = pf.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+        strain_df = cs.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
         true_dict = strain_prop_dict
         pred_dict = dict()
         for i in range(strain_df.shape[0]):
@@ -907,7 +908,7 @@ def EvoMod1(reference, editDist, num_mut, iteration, Type, Etype, loci, distance
         cwd = os.getcwd()
         #run the ADP algorithm
         ADP_dict, ADP_alleles, ADP_prop = run_ADP(editDist, iteration)
-        strain_df = pf.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+        strain_df = cs.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
         true_dict = strain_prop_dict
         pred_dict = dict()
         for i in range(strain_df.shape[0]):
@@ -992,7 +993,7 @@ def EvoMod2(reference, editDist, num_mut, iteration, Type, Etype, loci,distance_
     if Etype == 1:
         strain_prop_dict = Write_Proportions(strains, proportions, iteration, editDist, Type)
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        strain_df = pf.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+        strain_df = cs.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
         true_dict = strain_prop_dict
         pred_dict = dict()
         for i in range(strain_df.shape[0]):
@@ -1020,7 +1021,7 @@ def EvoMod2(reference, editDist, num_mut, iteration, Type, Etype, loci,distance_
         cwd = os.getcwd()
         #run the ADP algorithm
         ADP_dict, ADP_alleles, ADP_prop = run_ADP(editDist, iteration)
-        strain_df = pf.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+        strain_df = cs.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
         true_dict = strain_prop_dict
         pred_dict = dict()
         for i in range(strain_df.shape[0]):
@@ -1105,7 +1106,7 @@ def EvoMod3(reference, editDist, num_mut, iteration, Type, Etype, loci,distance_
     if Etype == 1:
         strain_prop_dict = Write_Proportions(strains, proportions, iteration, editDist, Type)
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        strain_df = pf.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+        strain_df = cs.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
         true_dict = strain_prop_dict
         pred_dict = dict()
         for i in range(strain_df.shape[0]):
@@ -1133,7 +1134,7 @@ def EvoMod3(reference, editDist, num_mut, iteration, Type, Etype, loci,distance_
         cwd = os.getcwd()
         #run the ADP algorithm
         ADP_dict, ADP_alleles, ADP_prop = run_ADP(editDist, iteration)
-        strain_df = pf.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+        strain_df = cs.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
         true_dict = strain_prop_dict
         pred_dict = dict()
         for i in range(strain_df.shape[0]):
