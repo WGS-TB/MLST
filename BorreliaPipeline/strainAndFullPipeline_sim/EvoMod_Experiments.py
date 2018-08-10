@@ -838,7 +838,7 @@ def EvoMod0(k, reference, editDist, iteration, Type, Etype, loci, distance_mode=
     
 
 
-def EvoMod1(reference, editDist, num_mut, iteration, Type, Etype, loci, distance_mode='snp',art_cmd="art_illumina", pathToDistMat=None):
+def EvoMod1(reference, editDist, num_mut, iteration, Type, Etype, loci, distance_mode='snp',art_cmd="art_illumina", pathToDistMat=None, cs_flag=False, epsilon=0.01):
     project_path = os.getcwd()
     strainRef = os.path.join(project_path,'New_strain_ref.txt')
     samplesDir = os.path.join(project_path, 'Type_1_editDist_{}_iteration_{}_SDP_Samples'.format(editDist,iteration))
@@ -879,7 +879,10 @@ def EvoMod1(reference, editDist, num_mut, iteration, Type, Etype, loci, distance
     if Etype == 1:
         strain_prop_dict = Write_Proportions(strains, proportions, iteration, editDist, Type)
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        strain_df = cs.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+        if cs_flag:
+	    strain_df = cs.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat, eps=epsilon)
+	else:
+     	    strain_df = pf.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
         true_dict = strain_prop_dict
         pred_dict = dict()
         for i in range(strain_df.shape[0]):
@@ -908,7 +911,10 @@ def EvoMod1(reference, editDist, num_mut, iteration, Type, Etype, loci, distance
         cwd = os.getcwd()
         #run the ADP algorithm
         ADP_dict, ADP_alleles, ADP_prop = run_ADP(editDist, iteration)
-        strain_df = cs.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+        if cs_flag:
+	    strain_df = cs.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat, eps=epsilon)
+	else:
+	    strain_df = pf.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
         true_dict = strain_prop_dict
         pred_dict = dict()
         for i in range(strain_df.shape[0]):
@@ -939,7 +945,7 @@ EvoMod2 (Result in 4 strains, 2 new 2 existing)
 4) Same stuff as above
 '''
 
-def EvoMod2(reference, editDist, num_mut, iteration, Type, Etype, loci,distance_mode='snp',art_cmd="art_illumina",pathToDistMat=None,dropStrain=None):
+def EvoMod2(reference, editDist, num_mut, iteration, Type, Etype, loci,distance_mode='snp',art_cmd="art_illumina",pathToDistMat=None,dropStrain=None, cs_flag=False, epsilon=0.01):
     project_path = os.getcwd()
     strainRef = os.path.join(project_path,'New_strain_ref.txt')
     samplesDir = os.path.join(project_path, 'Type_2_editDist_{}_iteration_{}_SDP_Samples'.format(editDist,iteration))
@@ -993,7 +999,10 @@ def EvoMod2(reference, editDist, num_mut, iteration, Type, Etype, loci,distance_
     if Etype == 1:
         strain_prop_dict = Write_Proportions(strains, proportions, iteration, editDist, Type)
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        strain_df = cs.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+        if cs_flag:
+	    strain_df = cs.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat, eps=epsilon)
+	else:
+	    strain_df = pf.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
         true_dict = strain_prop_dict
         pred_dict = dict()
         for i in range(strain_df.shape[0]):
@@ -1021,7 +1030,10 @@ def EvoMod2(reference, editDist, num_mut, iteration, Type, Etype, loci,distance_
         cwd = os.getcwd()
         #run the ADP algorithm
         ADP_dict, ADP_alleles, ADP_prop = run_ADP(editDist, iteration)
-        strain_df = cs.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+        if cs_flag:
+	    strain_df = cs.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat, eps=epsilon)
+	else:
+	    strain_df = pf.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
         true_dict = strain_prop_dict
         pred_dict = dict()
         for i in range(strain_df.shape[0]):
@@ -1054,7 +1066,7 @@ EvoMod3(Result in 5 strains, 3 new 2 existing)
 4) ...
 '''
 
-def EvoMod3(reference, editDist, num_mut, iteration, Type, Etype, loci,distance_mode='snp', art_cmd="art_illumina", pathToDistMat=None):
+def EvoMod3(reference, editDist, num_mut, iteration, Type, Etype, loci,distance_mode='snp', art_cmd="art_illumina", pathToDistMat=None, cs_flag=False, epsilon=0.01):
     #do EveMod2
     project_path = os.getcwd()
     strainRef = os.path.join(project_path,'New_strain_ref.txt')
@@ -1106,7 +1118,10 @@ def EvoMod3(reference, editDist, num_mut, iteration, Type, Etype, loci,distance_
     if Etype == 1:
         strain_prop_dict = Write_Proportions(strains, proportions, iteration, editDist, Type)
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-        strain_df = cs.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+        if cs_flag:
+	    strain_df = cs.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat, eps=epsilon)
+	else:
+	    strain_df = pf.strainSolver(samplesDir,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
         true_dict = strain_prop_dict
         pred_dict = dict()
         for i in range(strain_df.shape[0]):
@@ -1134,7 +1149,10 @@ def EvoMod3(reference, editDist, num_mut, iteration, Type, Etype, loci,distance_
         cwd = os.getcwd()
         #run the ADP algorithm
         ADP_dict, ADP_alleles, ADP_prop = run_ADP(editDist, iteration)
-        strain_df = cs.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+        if cs_flag:
+	    strain_df = cs.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat, eps=epsilon)
+	else:
+	    strain_df = pf.strainSolver(cwd,strainRef,outputDir,'noProp','s',10800,5, loci=loci,pathToDistMat=pathToDistMat)
         true_dict = strain_prop_dict
         pred_dict = dict()
         for i in range(strain_df.shape[0]):
@@ -1264,6 +1282,8 @@ if __name__ == "__main__":
     ap.add_argument("-art", "--art", required=False, default="art_illumina", help="Path to art_illumina binary file. Default is 'art_illumina'.")
     ap.add_argument("-pathToDistMat", "--ptdm", required=False, default="editDist", help="The name of folder in current directory containing editDistanceMatrix_gene.csv. Default is 'editDist'.")
     ap.add_argument("-em2_variant", "--em2v", required=False, default=None, help="EvoMod2 variant which result in 3 strains, 'existing' if remove 1 existing, 'new' if remove 1 new. Default is None.")
+    ap.add_argument("-cs", "--compressedsensing", required=False, default=False, help="True if you wanna solve with compressed sensing.")
+    ap.add_argument("-eps", "--epsilon", required=False, default=0.01, type=float, help="epsilon for compressed sensing method")
     #ap.add_argument("-k", "--NumStrains", required=False, default=3, type=int, help="The number of strains you would like to select for EvoMod0, Default = 3")
     args = vars(ap.parse_args())
     em2v = args["em2v"]
@@ -1341,7 +1361,7 @@ if __name__ == "__main__":
         if args["modType"] == "Type_1":
             for i in range(args["numOfiter"]):
                 print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration {} based on Experiment {} of Type {}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format((i+1),args["modType"],args["experimentType"])
-                pre, rec, tvd, soft_prec, soft_rec, EMD = EvoMod1(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"],loci,args["emdDistMode"], args["art"], args["ptdm"])
+                pre, rec, tvd, soft_prec, soft_rec, EMD = EvoMod1(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"],loci,args["emdDistMode"], args["art"], args["ptdm"], args["compressedsensing"], args["epsilon"])
                 precision.append(pre)
                 recall.append(rec)
                 total_var_dist.append(tvd)
@@ -1353,7 +1373,7 @@ if __name__ == "__main__":
         elif args["modType"] == "Type_2":
             for i in range(args["numOfiter"]):
                 print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration {} based on Experiment {} of Type {}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format((i+1),args["modType"],args["experimentType"])
-                pre, rec, tvd, soft_prec, soft_rec, EMD = EvoMod2(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"], loci, args["emdDistMode"], args["art"], args["ptdm"], em2v)
+                pre, rec, tvd, soft_prec, soft_rec, EMD = EvoMod2(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"], loci, args["emdDistMode"], args["art"], args["ptdm"], em2v, args["compressedsensing"], args["epsilon"])
                 precision.append(pre)
                 recall.append(rec)
                 total_var_dist.append(tvd)
@@ -1365,7 +1385,7 @@ if __name__ == "__main__":
         elif args["modType"] == "Type_3":
             for i in range(args["numOfiter"]):
                 print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration {} based on Experiment {} of Type {}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format((i+1),args["modType"],args["experimentType"])
-                pre, rec, tvd, soft_prec, soft_rec, EMD = EvoMod3(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"], loci, args["emdDistMode"], args["art"], args["ptdm"])
+                pre, rec, tvd, soft_prec, soft_rec, EMD = EvoMod3(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"], loci, args["emdDistMode"], args["art"], args["ptdm"], args["compressedsensing"], args["epsilon"])
                 precision.append(pre)
                 recall.append(rec)
                 total_var_dist.append(tvd)
@@ -1395,7 +1415,7 @@ if __name__ == "__main__":
         if args["modType"] == "Type_1":
             for i in range(args["numOfiter"]):
                 print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration {} based on Experiment {} of Type {}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format((i+1),args["modType"],args["experimentType"])
-                pre, rec, tvd, soft_prec, soft_rec, EMD, ADP_prec, ADP_rec, ADP_tvd = EvoMod1(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"],loci, args["emdDistMode"], args["art"], args["ptdm"])
+                pre, rec, tvd, soft_prec, soft_rec, EMD, ADP_prec, ADP_rec, ADP_tvd = EvoMod1(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"],loci, args["emdDistMode"], args["art"], args["ptdm"], args["compressedsensing"], args["epsilon"])
                 precision.append(pre)
                 recall.append(rec)
                 total_var_dist.append(tvd)
@@ -1410,7 +1430,7 @@ if __name__ == "__main__":
         elif args["modType"] == "Type_2":
             for i in range(args["numOfiter"]):
                 print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration {} based on Experiment {} of Type {}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format((i+1),args["modType"],args["experimentType"])
-                pre, rec, tvd, soft_prec, soft_rec, EMD, ADP_prec, ADP_rec, ADP_tvd, known_prec, known_rec = EvoMod2(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"], loci, args["emdDistMode"], args["art"], args["ptdm"], em2v)
+                pre, rec, tvd, soft_prec, soft_rec, EMD, ADP_prec, ADP_rec, ADP_tvd, known_prec, known_rec = EvoMod2(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"], loci, args["emdDistMode"], args["art"], args["ptdm"], em2v, args["compressedsensing"], args["epsilon"])
                 precision.append(pre)
                 recall.append(rec)
                 total_var_dist.append(tvd)
@@ -1427,7 +1447,7 @@ if __name__ == "__main__":
         elif args["modType"] == "Type_3":
             for i in range(args["numOfiter"]):
                 print '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration {} based on Experiment {} of Type {}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format((i+1),args["modType"],args["experimentType"])
-                pre, rec, tvd, soft_prec, soft_rec, EMD, ADP_prec, ADP_rec, ADP_tvd = EvoMod3(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"], loci,args["emdDistMode"], args["art"],args["ptdm"])
+                pre, rec, tvd, soft_prec, soft_rec, EMD, ADP_prec, ADP_rec, ADP_tvd = EvoMod3(reference,args["editDist"],args["numMut"],i,args["modType"], args["experimentType"], loci,args["emdDistMode"], args["art"],args["ptdm"], args["compressedsensing"], args["epsilon"])
                 precision.append(pre)
                 recall.append(rec)
                 total_var_dist.append(tvd)

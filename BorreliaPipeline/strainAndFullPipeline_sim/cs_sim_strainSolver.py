@@ -67,10 +67,10 @@ def solve_cs(A, b, cols, epsilon=0.01):
     for row in A:
         constraints.append([range(cols), [-x for x in row]])
 
-    print
-    for row in constraints:
-	print row, '     ', rhs[constraints.index(row)]
-    print
+    #print
+    #for row in constraints:
+	#print row, '     ', rhs[constraints.index(row)]
+    #print
 
     senses = ""
     for i in range(len(constraints)):
@@ -120,7 +120,7 @@ Input:
 
 
 def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_option='all', timelimit=600, gap=8,
-                 loci=["clpA", "clpX", "nifS", "pepX", "pyrG", "recG", "rplB", "uvrA"], pathToDistMat=None):
+                 loci=["clpA", "clpX", "nifS", "pepX", "pyrG", "recG", "rplB", "uvrA"], pathToDistMat=None, eps=0.01):
     # ------------------------- Data handling ----------------------------
     # Parameters
     propFormat = 1  # proportion in percentage or fraction
@@ -163,7 +163,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     # For each variants, get a mapping of which strains it maps to
     varSampToST = mapVarAndSampleToStrain(strains, loci, allSamples)
 
-    print "\n\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n"
+    print "\n\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n"
 
     # b is the measurements matrix in cs
     b = []
@@ -173,32 +173,43 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     for p in varAndProp['Proportion']:
         if p < 1.0:
 	    b.append(float(p))
+	    
 
-    loci = set(varAndProp['Locus'].tolist())
+    loci = varAndProp['Locus'].tolist()
+    prev = ''
     for l in loci:
+	if prev == l:
+	    continue
+	prev = l
 	if len(varAndProp.index[varAndProp['Locus'] == l]) > 1:
             dims.append(len(varAndProp.index[varAndProp['Locus'] == l]))
-    
 
     # A is the coefficient matrix for the cs problem
     samp, numOfC = numOfComb.popitem()
     A = defineProblem(numOfC, dims)
 
     # Now we solve the cs problem
-    strainProps, sumOfProps, error = solve_cs(A, b, numOfC)
-    print strainProps, sumOfProps, error
+    strainProps, sumOfProps, error = solve_cs(A, b, numOfC, eps)
+    print '~~~', sumOfProps, error
 
     strainNums = np.nonzero(strainProps)[0]
     strainNumsIndexes = [i + 1 for i in strainNums]
 
-    output = pd.DataFrame({'New/Existing': [0 for i in range(len(strainNumsIndexes))], 'ST': strainNumsIndexes})
-    output = pd.merge(output, strains.iloc[strainNums], on='ST')
-    output['Proportions'] = [strainProps[i] for i in strainNums]
-    output.drop('Sample', axis=1, inplace=True)
+    # output fromatting
+    output = strains.merge(reference, indicator=True, how="left")
+    output["_merge"].replace(to_replace="both", value="Existing", inplace=True)
+    output["_merge"].replace(to_replace="left_only", value="New", inplace=True)
+    output = output.rename(columns = {"_merge":"New/Existing"})
+    out = output.drop_duplicates(loci)
+    retainCol = ["ST", "New/Existing"]
+    out = out[retainCol].reset_index(drop=True)
+    out = pd.merge(out, strains.iloc[strainNums], on='ST')
+    out['Proportions'] = [strainProps[i] for i in strainNums]
+    out.drop('Sample', axis=1, inplace=True)
     
-    print output
-    output.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, newNameToOriName[samp]))
+    print out
+    out.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, newNameToOriName[samp]))
 
-    print "\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n"
+    print "\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n"
 
-    return output
+    return out
