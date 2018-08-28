@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy.random
 from cplex.exceptions import CplexError
 from pipeline_functions import *
+from scipy.spatial.distance import hamming
 
 matplotlib.use('Agg')
 plt.style.use('ggplot')
@@ -41,15 +42,15 @@ def defineProblem(cols, dims):
 # ----------------------------------------------------------------------
 
 
-def solve_cs(A, b, cols, epsilon=0.01):
+def solve_cs(A, b, cols, epsilon=0.01, obj=None):
     print "----------------------------------------------------------------------\n                     Solving the CS " \
           "using CPLEX\n---------------------------------------------------------------------- "
     print
 
     # ----------------------- Preparing the Inputs -------------------------
 
-    # epsilon = 0.01  # this can be changed later to determine accuracy
-    obj = [1.0 for x in range(cols)]
+    if obj == None:
+	obj = [1.0 for x in range(cols)]
     ub = [1.0 for x in range(cols)]
     lb = [0.0 for x in range(cols)]
     cnames = ['x' + str(x) for x in range(cols)]
@@ -66,6 +67,12 @@ def solve_cs(A, b, cols, epsilon=0.01):
         constraints.append([range(cols), row])
     for row in A:
         constraints.append([range(cols), [-x for x in row]])
+
+    # Proportions should add up to 1
+    '''rhs.append(1 + 10 * epsilon)
+    rhs.append(-1 + 10 * epsilon)
+    constraints.append([range(cols), [1 for i in row]])
+    constraints.append([range(cols), [-1 for i in row]])'''
 
     #print
     #for row in constraints:
@@ -98,8 +105,9 @@ def solve_cs(A, b, cols, epsilon=0.01):
         #     print prob.variables.get_names()[i], '\t=\t', prob.solution.get_values()[i]
 
         x = prob.solution.get_values()
+	print prob.solution.get_objective_value()
         error = np.sum(numpy.subtract(numpy.dot(A, x), b))
-        return x, prob.solution.get_objective_value(), error
+        return x, sum(x), error
 
     except CplexError, exc:
         print exc
@@ -160,6 +168,43 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     strains = strains.merge(uniqueStrains, indicator=True, how="left")  # assign the index to the combinations(as strain data frame contains duplicated rows)
     strains = strains.drop("_merge", 1)
 
+    alleleSet = []
+    for l in loci:
+        alleleSet.append((l, varAndProp.loc[varAndProp['Locus'] == l]['Variant'].tolist()))
+    noc = 1
+    for g in alleleSet:
+	noc *= len(g[1])
+   
+    distMat = [[8 for x in range(len(reference.values.tolist()))] for x in range(noc)]
+
+    for i in range(len(reference.values.tolist())):
+	rem = noc
+        for g in alleleSet:
+	    refV = reference.iloc[i][g[0]]
+	    for j in range(len(g[1])):
+		v = g[1][j]
+		if refV == v:
+		    for repeat in range(int(noc/rem)):
+			offset = repeat * rem
+			for index in range(int(rem/len(g[1]))):
+			    distMat[index + j * int(rem / len(g[1])) + offset][i] -= 1
+	    rem = int(rem / len(g[1]))
+
+    weights = [-1 if min(i) == 0 else min(i) for i in distMat]
+
+    '''newOrOld = strains.merge(reference, indicator=True, how="left")
+    newOrOld["_merge"].replace(to_replace="both", value= -1.0, inplace=True)
+    newOrOld["_merge"].replace(to_replace="left_only", value=2.0, inplace=True)
+    newOrOld = newOrOld.rename(columns = {"_merge":"Weights"})
+    newOrOld = newOrOld.drop_duplicates(loci)
+
+    for index, row in newOrOld.iterrows():
+	if row["Weights"] == -1.0:
+	    continue
+	newOrOld.at[index, "Weights"] = 8.0 * min([hamming(row[loci].tolist(), l) for l in reference[loci].values.tolist()])
+
+    print newOrOld'''
+
     # For each variants, get a mapping of which strains it maps to
     varSampToST = mapVarAndSampleToStrain(strains, loci, allSamples)
 
@@ -189,7 +234,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     A = defineProblem(numOfC, dims)
 
     # Now we solve the cs problem
-    strainProps, sumOfProps, error = solve_cs(A, b, numOfC, eps)
+    strainProps, sumOfProps, error = solve_cs(A, b, numOfC, eps, weights)
     print '~~~', sumOfProps, error
 
     strainNums = np.nonzero(strainProps)[0]

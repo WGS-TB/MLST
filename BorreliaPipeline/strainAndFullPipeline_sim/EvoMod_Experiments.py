@@ -26,6 +26,7 @@ import sh
 import sys
 import os
 import cs_sim_strainSolver as cs
+import timeit
 plt.style.use('ggplot')
 
 
@@ -1268,6 +1269,7 @@ def run_ADP(editDist, iteration):
 
 #run the main function
 if __name__ == "__main__":
+    sttime = timeit.default_timer()
     #get and parse the arguments
     ap = argparse.ArgumentParser()
     ap.add_argument("-n", "--numOfiter", required=False, default=40, type=int, help="The number of simulation iterations default = 40")
@@ -1462,6 +1464,7 @@ if __name__ == "__main__":
 
 
     print ("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Done ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print 'runtime', timeit.default_timer() - sttime
     stats=0
     #print("Statistics {}".format(stats+1))
     #stats += 1
@@ -1628,6 +1631,7 @@ if __name__ == "__main__":
     plt.xlabel("Precision")
     plt.ylabel("Frequency")
     plt.savefig('{}_editDist_{}_Precision_plot'.format(args["modType"], args["editDist"]))
+
     #save the plot for boxplot plotting
     precisionDF = pd.DataFrame(precision)
     precisionDF = precisionDF.T
@@ -1644,3 +1648,18 @@ if __name__ == "__main__":
     total_var_distDF = pd.DataFrame(total_var_dist)
     total_var_distDF = total_var_distDF.T
     total_var_distDF.to_csv('{}_editDist_{}_Total_Variation_Distance.csv'.format(args["modType"], args["editDist"]), sep = '\t')
+
+    #boxplots
+    plt.figure() 
+    ax = plt.axes()
+    
+    #plt.boxplot(emd, positions=[1.5], widths = 0.5)
+    plt.boxplot(soft_recall, positions=[4.5], widths = 0.5)
+    plt.boxplot(soft_precision, positions=[7.5], widths = 0.5)
+    plt.boxplot(recall, positions=[10.5], widths = 0.5)
+    plt.boxplot(precision, positions=[13.5], widths = 0.5)
+    plt.boxplot(total_var_dist, positions=[16.5], widths = 0.5)
+    ax.set_xticklabels([ 'sr', 'sp', 'r', 'p', 'tvd'])
+    ax.set_xticks([ 4.5, 7.5, 10.5, 13.5, 16.5])
+    plt.savefig('{}_editDist_{}_AllStats_plot'.format(args["modType"], args["editDist"]))
+    
