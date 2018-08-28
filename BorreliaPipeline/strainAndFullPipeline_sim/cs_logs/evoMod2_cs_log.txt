@@ -1,0 +1,1794 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 1 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.48 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.514000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3199999999999995
+     ST New/Existing      clpA     clpX     nifS     pepX     pyrG      recG      rplB     uvrA  Proportions
+0   228          New  clpA_109  clpX_24  nifS_23  pepX_85   pyrG_3  recG_152    rplB_4  uvrA_29        0.059
+1   240          New  clpA_109  clpX_24  nifS_23  pepX_85  pyrG_22   recG_98    rplB_4  uvrA_29        0.174
+2   247          New  clpA_109  clpX_24  nifS_23  pepX_85  pyrG_22    recG_4  rplB_140   uvrA_4        0.003
+3   464          New  clpA_109   clpX_3   nifS_2  pepX_85  pyrG_22    recG_4  rplB_140  uvrA_29        0.003
+4   627          New  clpA_109   clpX_3  nifS_23   pepX_1   pyrG_3    recG_4   rplB_23   uvrA_4        0.207
+5   820          New  clpA_128  clpX_24   nifS_2   pepX_4  pyrG_22  recG_152   rplB_23  uvrA_29        0.078
+6   846          New  clpA_128  clpX_24   nifS_2   pepX_1   pyrG_3    recG_4    rplB_4  uvrA_29        0.113
+7   868          New  clpA_128  clpX_24  nifS_23  pepX_85   pyrG_3   recG_98   rplB_23  uvrA_29        0.019
+8  1007          New  clpA_128   clpX_3  nifS_14  pepX_85  pyrG_22    recG_4    rplB_4   uvrA_4        0.188
+9  1009          New  clpA_128   clpX_3  nifS_14   pepX_4   pyrG_3   recG_98  rplB_140   uvrA_4        0.116
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are: {
+('clpA_109', 'clpX_24', 'nifS_23', 'pepX_85', 'pyrG_22', 'recG_98', 'rplB_23', 'uvrA_29'): 0.3236688819281408,
+('clpA_109', 'clpX_24', 'nifS_23', 'pepX_85', 'pyrG_22', 'recG_152', 'rplB_140', 'uvrA_29'): 0.14242600485237775,
+('clpA_128', 'clpX_3', 'nifS_14', 'pepX_1', 'pyrG_3', 'recG_4', 'rplB_4', 'uvrA_4'): 0.32393709176696983,
+('clpA_128', 'clpX_3', 'nifS_2', 'pepX_4', 'pyrG_3', 'recG_4', 'rplB_4', 'uvrA_4'): 0.20996802145251156
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 2 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.48 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.574000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3199999999999997
+     ST New/Existing      clpA      clpX     nifS     pepX      pyrG      recG     rplB      uvrA  Proportions
+0    22          New   clpA_56   clpX_42  nifS_39  pepX_51  pyrG_122  recG_231  rplB_38  uvrA_143        0.059
+1   217          New   clpA_56   clpX_42  nifS_41  pepX_32   pyrG_44  recG_231  rplB_23   uvrA_42        0.105
+2   279          New   clpA_56   clpX_42  nifS_41  pepX_39   pyrG_44  recG_116  rplB_38   uvrA_42        0.242
+3   432          New   clpA_56  clpX_154  nifS_39  pepX_32   pyrG_47  recG_151  rplB_24  uvrA_143        0.109
+4   579          New   clpA_56  clpX_154  nifS_41  pepX_32   pyrG_47  recG_231  rplB_38   uvrA_42        0.009
+5   616          New   clpA_56  clpX_154  nifS_41  pepX_39  pyrG_122  recG_231  rplB_38  uvrA_143        0.050
+6   858          New  clpA_172   clpX_42  nifS_41  pepX_51   pyrG_47  recG_116  rplB_24  uvrA_143        0.168
+7   975          New  clpA_172  clpX_154  nifS_39  pepX_51   pyrG_44  recG_231  rplB_38   uvrA_42        0.054
+8  1053          New  clpA_172  clpX_154  nifS_39  pepX_32  pyrG_122  recG_116  rplB_38   uvrA_42        0.164
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are: {
+('clpA_56', 'clpX_42', 'nifS_41', 'pepX_39', 'pyrG_122', 'recG_116', 'rplB_38', 'uvrA_42'): 0.29302214752134104,
+('clpA_172', 'clpX_154', 'nifS_39', 'pepX_32', 'pyrG_44', 'recG_231', 'rplB_24', 'uvrA_143'): 0.29685814183583936,
+('clpA_56', 'clpX_42', 'nifS_41', 'pepX_51', 'pyrG_47', 'recG_116', 'rplB_38', 'uvrA_42'): 0.30077530170724753,
+('clpA_172', 'clpX_154', 'nifS_39', 'pepX_32', 'pyrG_44', 'recG_151', 'rplB_23', 'uvrA_143'): 0.10934440893557204
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 3 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.48 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.645000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.31999999999999984
+      ST New/Existing      clpA      clpX      nifS      pepX      pyrG      recG      rplB      uvrA  Proportions
+0     31          New   clpA_77   clpX_35   nifS_37  pepX_133  pyrG_194  recG_131   rplB_35   uvrA_40       0.0250
+1     38          New   clpA_77   clpX_35   nifS_37   pepX_99   pyrG_84   recG_44   rplB_35  uvrA_186       0.0360
+2     51          New   clpA_77   clpX_35   nifS_37   pepX_99   pyrG_38   recG_44  rplB_106   uvrA_40       0.0360
+3    241          New   clpA_77  clpX_118   nifS_37  pepX_133  pyrG_194   recG_44   rplB_35   uvrA_40       0.0250
+4    324          New   clpA_77  clpX_118   nifS_37   pepX_45  pyrG_194  recG_131   rplB_43  uvrA_186       0.1010
+5    433          New   clpA_50   clpX_35   nifS_37  pepX_133   pyrG_84   recG_44   rplB_35   uvrA_40       0.1765
+6    532          New   clpA_50   clpX_35   nifS_37   pepX_45  pyrG_194   recG_44  rplB_106  uvrA_186       0.0055
+7    625          New   clpA_50   clpX_35  nifS_108   pepX_45   pyrG_38   recG_44   rplB_35   uvrA_40       0.1730
+8    715          New   clpA_50  clpX_118   nifS_37   pepX_99  pyrG_194  recG_131   rplB_35   uvrA_40       0.0165
+9    730          New   clpA_50  clpX_118   nifS_37   pepX_45   pyrG_84  recG_131  rplB_106  uvrA_186       0.0305
+10   949          New  clpA_149   clpX_35   nifS_37   pepX_45   pyrG_38   recG_44   rplB_35   uvrA_40       0.1930
+11  1294          New  clpA_149  clpX_118  nifS_108   pepX_45  pyrG_194  recG_131  rplB_106  uvrA_186       0.1420
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are: {
+('clpA_77', 'clpX_35', 'nifS_37', 'pepX_45', 'pyrG_84', 'recG_44', 'rplB_35', 'uvrA_40'): 0.24298950187849067,
+('clpA_149', 'clpX_118', 'nifS_108', 'pepX_99', 'pyrG_194', 'recG_131', 'rplB_43', 'uvrA_186'): 0.10073541494464501, 
+('clpA_50', 'clpX_35', 'nifS_37', 'pepX_45', 'pyrG_38', 'recG_44', 'rplB_35', 'uvrA_40'): 0.42178478594120444, 
+('clpA_149', 'clpX_118', 'nifS_108', 'pepX_133', 'pyrG_194', 'recG_131', 'rplB_106', 'uvrA_186'): 0.23449029723565998
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 4 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.01 sec. (1.48 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.539000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.32000000000000073
+     ST New/Existing     clpA      clpX     nifS      pepX     pyrG     recG      rplB     uvrA  Proportions
+0    57          New   clpA_4  clpX_122   nifS_1  pepX_184   pyrG_1   recG_6    rplB_1   uvrA_7      0.11800
+1   432          New   clpA_4   clpX_91  nifS_29    pepX_1  pyrG_10   recG_6   rplB_32  uvrA_33      0.13375
+2   435          New   clpA_4   clpX_30   nifS_1   pepX_96  pyrG_32  recG_76    rplB_1   uvrA_7      0.14625
+3   622          New   clpA_4   clpX_30  nifS_29    pepX_1  pyrG_32   recG_6    rplB_1  uvrA_33      0.14100
+4   852          New  clpA_46  clpX_122  nifS_29    pepX_1   pyrG_1   recG_6   rplB_32  uvrA_33      0.01775
+5   862          New  clpA_46  clpX_122  nifS_29    pepX_1  pyrG_10   recG_6    rplB_1  uvrA_33      0.12325
+6   901          New  clpA_46   clpX_91   nifS_1  pepX_184  pyrG_32  recG_76  rplB_148   uvrA_7      0.13575
+7   922          New  clpA_46   clpX_91   nifS_1  pepX_184   pyrG_1   recG_6    rplB_1  uvrA_33      0.00525
+8   987          New  clpA_46   clpX_91  nifS_29   pepX_96   pyrG_1  recG_76    rplB_1   uvrA_7      0.00525
+9  1165          New  clpA_46   clpX_30   nifS_1    pepX_1   pyrG_1  recG_76  rplB_148   uvrA_7      0.13375
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are: {
+('clpA_46', 'clpX_30', 'nifS_29', 'pepX_184', 'pyrG_32', 'recG_76', 'rplB_148', 'uvrA_33'): 0.27894891596849297, 
+('clpA_4', 'clpX_91', 'nifS_1', 'pepX_1', 'pyrG_1', 'recG_6', 'rplB_1', 'uvrA_7'): 0.2997564587680374, 
+('clpA_4', 'clpX_122', 'nifS_1', 'pepX_1', 'pyrG_10', 'recG_6', 'rplB_1', 'uvrA_7'): 0.2589665187026722, 
+('clpA_46', 'clpX_30', 'nifS_29', 'pepX_96', 'pyrG_32', 'recG_76', 'rplB_32', 'uvrA_33'): 0.1623281065607974
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 5 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.01 sec. (1.32 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.845000
+Iteration:    73   Dual objective     =             0.960000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000003
+      ST New/Existing     clpA     clpX      nifS     pepX     pyrG      recG     rplB     uvrA  Proportions
+0    360          New  clpA_39   clpX_1  nifS_177   pepX_1  pyrG_10    recG_7   rplB_1  uvrA_29        0.093
+1    383          New  clpA_39   clpX_1  nifS_177   pepX_1  pyrG_98    recG_7   rplB_1   uvrA_1        0.022
+2    645          New   clpA_6  clpX_24  nifS_177   pepX_1  pyrG_10    recG_7  rplB_23   uvrA_1        0.010
+3    851          New   clpA_6  clpX_24    nifS_5   pepX_1   pyrG_1    recG_7   rplB_1   uvrA_1        0.105
+4    887          New   clpA_6   clpX_1  nifS_177  pepX_31  pyrG_10    recG_7   rplB_1   uvrA_1        0.069
+5    945          New   clpA_6   clpX_1  nifS_177   pepX_1   pyrG_1    recG_7  rplB_23   uvrA_1        0.059
+6    947          New   clpA_6   clpX_1  nifS_177   pepX_1   pyrG_1    recG_7   rplB_1   uvrA_1        0.193
+7    960          New   clpA_6   clpX_1  nifS_177   pepX_1  pyrG_98    recG_7   rplB_1  uvrA_29        0.022
+8   1031          New   clpA_6   clpX_1   nifS_24   pepX_1  pyrG_10    recG_7   rplB_1   uvrA_1        0.135
+9   1077          New   clpA_6   clpX_1    nifS_5  pepX_31  pyrG_10    recG_7  rplB_23   uvrA_1        0.046
+10  1115          New   clpA_6   clpX_1    nifS_5   pepX_1  pyrG_97    recG_7   rplB_1   uvrA_1        0.091
+11  1119          New   clpA_6   clpX_1    nifS_5   pepX_1  pyrG_10  recG_240   rplB_1   uvrA_1        0.071
+12  1123          New   clpA_6   clpX_1    nifS_5   pepX_1  pyrG_10   recG_29   rplB_1   uvrA_1        0.044
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are: {
+('clpA_6', 'clpX_1', 'nifS_5', 'pepX_1', 'pyrG_1', 'recG_7', 'rplB_1', 'uvrA_1'): 0.3766050801194571, 
+('clpA_39', 'clpX_24', 'nifS_24', 'pepX_31', 'pyrG_98', 'recG_29', 'rplB_23', 'uvrA_29'): 0.06440533638318097, 
+('clpA_6', 'clpX_1', 'nifS_177', 'pepX_1', 'pyrG_10', 'recG_7', 'rplB_1', 'uvrA_1'): 0.48799376404822303, 
+('clpA_39', 'clpX_24', 'nifS_24', 'pepX_31', 'pyrG_97', 'recG_240', 'rplB_23', 'uvrA_29'): 0.07099581944913905
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 6 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.01 sec. (0.88 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.480000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000002
+    ST New/Existing      clpA      clpX      nifS      pepX      pyrG      recG      rplB     uvrA  Proportions
+0  216          New  clpA_200   clpX_70   nifS_84  pepX_173  pyrG_184  recG_104  rplB_160  uvrA_94        0.079
+1  257          New  clpA_200   clpX_84  nifS_151  pepX_173  pyrG_103  recG_104   rplB_88  uvrA_70        0.099
+2  300          New  clpA_200   clpX_84  nifS_151  pepX_106  pyrG_103  recG_191  rplB_159  uvrA_94        0.020
+3  339          New  clpA_200   clpX_84   nifS_84  pepX_173  pyrG_184  recG_104  rplB_159  uvrA_70        0.282
+4  426          New  clpA_122  clpX_117  nifS_151  pepX_106  pyrG_103  recG_191   rplB_88  uvrA_94        0.285
+5  430          New  clpA_122  clpX_117  nifS_151  pepX_106  pyrG_103  recG_191   rplB_84  uvrA_94        0.076
+6  472          New  clpA_122  clpX_117   nifS_84  pepX_173  pyrG_184  recG_104  rplB_160  uvrA_94        0.020
+7  511          New  clpA_122  clpX_117   nifS_84  pepX_106  pyrG_184  recG_191  rplB_160  uvrA_70        0.099
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are: {
+('clpA_122', 'clpX_84', 'nifS_84', 'pepX_106', 'pyrG_103', 'recG_104', 'rplB_88', 'uvrA_94'): 0.40429453479853183, 
+('clpA_122', 'clpX_70', 'nifS_84', 'pepX_106', 'pyrG_103', 'recG_104', 'rplB_84', 'uvrA_94'): 0.095684263589161, 
+('clpA_200', 'clpX_117', 'nifS_151', 'pepX_173', 'pyrG_184', 'recG_191', 'rplB_159', 'uvrA_70'): 0.2824233552208178, 
+('clpA_200', 'clpX_117', 'nifS_151', 'pepX_173', 'pyrG_184', 'recG_191', 'rplB_160', 'uvrA_70'): 0.21759784639148935
+}
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 7 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.48 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.722000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.31999999999999995
+      ST New/Existing     clpA     clpX     nifS      pepX     pyrG      recG     rplB     uvrA  Proportions
+0    162          New  clpA_60  clpX_24  nifS_23  pepX_183  pyrG_50  recG_153  rplB_41  uvrA_45     0.039667
+1    205          New  clpA_60  clpX_24  nifS_23   pepX_32  pyrG_20   recG_29  rplB_29  uvrA_28     0.027667
+2    445          New  clpA_60  clpX_45  nifS_23   pepX_54  pyrG_50  recG_153  rplB_29  uvrA_28     0.010333
+3    456          New  clpA_60  clpX_45  nifS_23   pepX_54  pyrG_20  recG_173  rplB_41  uvrA_45     0.023667
+4    470          New  clpA_60  clpX_45  nifS_23  pepX_183  pyrG_50  recG_173  rplB_29  uvrA_45     0.055667
+5    501          New  clpA_60  clpX_45  nifS_23  pepX_183  pyrG_20  recG_153  rplB_97  uvrA_28     0.081000
+6    715          New  clpA_36  clpX_24  nifS_44  pepX_183  pyrG_20  recG_153  rplB_29  uvrA_28     0.173000
+7    781          New  clpA_36  clpX_24  nifS_23   pepX_54  pyrG_20   recG_29  rplB_29  uvrA_28     0.204000
+8    815          New  clpA_36  clpX_24  nifS_23  pepX_183  pyrG_20  recG_173  rplB_41  uvrA_28     0.093667
+9    860          New  clpA_36  clpX_24  nifS_23   pepX_32  pyrG_20  recG_153  rplB_29  uvrA_45     0.119000
+10   937          New  clpA_36  clpX_24  nifS_52   pepX_32  pyrG_50  recG_173  rplB_29  uvrA_28     0.065000
+11  1159          New  clpA_36  clpX_45  nifS_23   pepX_32  pyrG_50   recG_29  rplB_29  uvrA_28     0.067333
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are: {
+('clpA_36', 'clpX_24', 'nifS_23', 'pepX_32', 'pyrG_20', 'recG_29', 'rplB_29', 'uvrA_28'): 0.2988797916705753, 
+('clpA_60', 'clpX_45', 'nifS_44', 'pepX_54', 'pyrG_50', 'recG_173', 'rplB_41', 'uvrA_45'): 0.17748275223055124, 
+('clpA_36', 'clpX_24', 'nifS_23', 'pepX_183', 'pyrG_20', 'recG_153', 'rplB_29', 'uvrA_28'): 0.44292113753852425, 
+('clpA_60', 'clpX_45', 'nifS_52', 'pepX_54', 'pyrG_50', 'recG_173', 'rplB_97', 'uvrA_45'): 0.0807163185603491
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 8 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+LP Presolve eliminated 1 rows and 0 columns.
+Reduced LP has 37 rows, 864 columns, and 13536 nonzeros.
+Presolve time = 0.00 sec. (1.34 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.522000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.32000000000000045
+     ST New/Existing      clpA     clpX     nifS     pepX     pyrG     recG     rplB      uvrA  Proportions
+0    34          New  clpA_109  clpX_94  nifS_23  pepX_34  pyrG_21  recG_29  rplB_99  uvrA_145     0.004214
+1   192          New  clpA_109  clpX_24  nifS_23  pepX_31  pyrG_24  recG_29  rplB_99   uvrA_29     0.003857
+2   281          New  clpA_109  clpX_24  nifS_24  pepX_31  pyrG_21  recG_32  rplB_99   uvrA_28     0.137929
+3   356          New   clpA_51  clpX_94  nifS_23  pepX_31  pyrG_21  recG_29  rplB_23   uvrA_28     0.120357
+4   503          New   clpA_51  clpX_24  nifS_23  pepX_31  pyrG_21  recG_29  rplB_99   uvrA_28     0.065929
+5   526          New   clpA_51  clpX_24  nifS_24  pepX_34  pyrG_22  recG_29  rplB_99  uvrA_145     0.184714
+6   577          New   clpA_37  clpX_94  nifS_23  pepX_34  pyrG_24  recG_32  rplB_23  uvrA_145     0.134143
+7   590          New   clpA_37  clpX_94  nifS_23  pepX_34  pyrG_22  recG_32  rplB_23   uvrA_28     0.165929
+8   706          New   clpA_37  clpX_94  nifS_24  pepX_31  pyrG_22  recG_29  rplB_99  uvrA_145     0.092357
+9   787          New   clpA_37  clpX_24  nifS_23  pepX_31  pyrG_21  recG_29  rplB_23  uvrA_145     0.022571
+10  803          New   clpA_37  clpX_24  nifS_24  pepX_34  pyrG_24  recG_29  rplB_99   uvrA_28     0.028000
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are: {
+('clpA_37', 'clpX_24', 'nifS_24', 'pepX_31', 'pyrG_22', 'recG_32', 'rplB_23', 'uvrA_145'): 0.45785455975701045, 
+('clpA_37', 'clpX_24', 'nifS_24', 'pepX_31', 'pyrG_22', 'recG_29', 'rplB_23', 'uvrA_29'): 0.0048716477527426735, 
+('clpA_109', 'clpX_94', 'nifS_23', 'pepX_34', 'pyrG_24', 'recG_29', 'rplB_99', 'uvrA_28'): 0.16610426868480946, 
+('clpA_51', 'clpX_94', 'nifS_23', 'pepX_34', 'pyrG_21', 'recG_29', 'rplB_99', 'uvrA_28'): 0.3711695238054374
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 9 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.19 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.573000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.2400000000000007
+    ST New/Existing      clpA      clpX      nifS     pepX      pyrG     recG     rplB     uvrA  Proportions
+0   17          New  clpA_131  clpX_145   nifS_24  pepX_32   pyrG_92  recG_27  rplB_23  uvrA_28       0.1499
+1   60          New  clpA_131   clpX_82   nifS_24  pepX_31   pyrG_92  recG_92  rplB_23  uvrA_28       0.2277
+2   73          New  clpA_131   clpX_24  nifS_185  pepX_32   pyrG_22  recG_27  rplB_23  uvrA_28       0.0366
+3   99          New  clpA_131   clpX_24  nifS_116  pepX_32  pyrG_166  recG_27  rplB_23  uvrA_28       0.1588
+4  138          New   clpA_39  clpX_145  nifS_116  pepX_32   pyrG_92  recG_92  rplB_23  uvrA_28       0.0361
+5  143          New   clpA_39  clpX_145  nifS_116  pepX_31   pyrG_92  recG_27  rplB_23  uvrA_28       0.0361
+6  147          New   clpA_39   clpX_82  nifS_185  pepX_32  pyrG_166  recG_27  rplB_23  uvrA_28       0.1232
+7  192          New   clpA_39   clpX_24  nifS_185  pepX_31   pyrG_92  recG_92  rplB_23  uvrA_28       0.1232
+8  193          New   clpA_39   clpX_24   nifS_24  pepX_32   pyrG_22  recG_27  rplB_23  uvrA_28       0.0684
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are: {
+('clpA_131', 'clpX_82', 'nifS_24', 'pepX_32', 'pyrG_92', 'recG_27', 'rplB_23', 'uvrA_28'): 0.36124314579885775, 
+('clpA_131', 'clpX_145', 'nifS_116', 'pepX_32', 'pyrG_92', 'recG_27', 'rplB_23', 'uvrA_28'): 0.23137854127960839, 
+('clpA_39', 'clpX_24', 'nifS_185', 'pepX_31', 'pyrG_166', 'recG_92', 'rplB_23', 'uvrA_28'): 0.30244805260719887, 
+('clpA_39', 'clpX_24', 'nifS_24', 'pepX_31', 'pyrG_22', 'recG_92', 'rplB_23', 'uvrA_28'): 0.10493026031433504
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 10 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.01 sec. (0.99 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.565000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000002
+    ST New/Existing     clpA     clpX      nifS     pepX     pyrG     recG     rplB     uvrA  Proportions
+0   60          New  clpA_91  clpX_69   nifS_68  pepX_81  pyrG_14  recG_22  rplB_69  uvrA_23      0.05825
+1  251          New  clpA_91  clpX_18   nifS_68  pepX_21  pyrG_79  recG_22  rplB_69  uvrA_81      0.03650
+2  288          New  clpA_91  clpX_18   nifS_68  pepX_81  pyrG_79  recG_22  rplB_69  uvrA_23      0.03550
+3  326          New  clpA_91  clpX_18   nifS_18  pepX_81  pyrG_77  recG_73  rplB_13  uvrA_81      0.03050
+4  343          New  clpA_91  clpX_18   nifS_18  pepX_81  pyrG_14  recG_22  rplB_13  uvrA_73      0.14225
+5  406          New  clpA_91  clpX_18  nifS_147  pepX_81  pyrG_77  recG_22  rplB_69  uvrA_73      0.09200
+6  479          New  clpA_28  clpX_69   nifS_68  pepX_81  pyrG_77  recG_22  rplB_69  uvrA_81      0.03650
+7  521          New  clpA_28  clpX_69   nifS_18  pepX_21  pyrG_14  recG_73  rplB_69  uvrA_81      0.13625
+8  583          New  clpA_28  clpX_69  nifS_147  pepX_21  pyrG_77  recG_22  rplB_13  uvrA_73      0.16400
+9  663          New  clpA_28  clpX_18   nifS_68  pepX_21  pyrG_14  recG_73  rplB_13  uvrA_23      0.22825
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are: {
+('clpA_28', 'clpX_18', 'nifS_18', 'pepX_21', 'pyrG_14', 'recG_22', 'rplB_13', 'uvrA_23'): 0.32906872361553735, 
+('clpA_28', 'clpX_18', 'nifS_147', 'pepX_21', 'pyrG_14', 'recG_22', 'rplB_13', 'uvrA_81'): 0.2555859019083069, 
+('clpA_91', 'clpX_69', 'nifS_68', 'pepX_81', 'pyrG_79', 'recG_73', 'rplB_69', 'uvrA_73'): 0.07174726476131395, 
+('clpA_91', 'clpX_69', 'nifS_68', 'pepX_81', 'pyrG_77', 'recG_73', 'rplB_69', 'uvrA_73'): 0.3435981097148419
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 11 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.88 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.681000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3199999999999997
+     ST New/Existing      clpA      clpX      nifS      pepX      pyrG      recG      rplB      uvrA  Proportions
+0    10          New  clpA_214  clpX_180   nifS_13  pepX_188  pyrG_198    recG_9  rplB_171  uvrA_190     0.158083
+1   126          New  clpA_214  clpX_180  nifS_163  pepX_188    pyrG_9  recG_206    rplB_7  uvrA_190     0.158083
+2   145          New  clpA_214  clpX_180  nifS_163   pepX_10  pyrG_198  recG_206  rplB_171   uvrA_15     0.009500
+3   148          New  clpA_214  clpX_180  nifS_163   pepX_10  pyrG_198  recG_206  rplB_158  uvrA_190     0.191500
+4   291          New  clpA_214   clpX_10  nifS_163  pepX_188  pyrG_198  recG_206  rplB_158   uvrA_15     0.148583
+5   346          New  clpA_214   clpX_10  nifS_163   pepX_10  pyrG_198    recG_9  rplB_171  uvrA_190     0.015250
+6   469          New   clpA_13  clpX_180   nifS_13   pepX_10    pyrG_9    recG_9    rplB_7   uvrA_15     0.005750
+7   496          New   clpA_13  clpX_180  nifS_163  pepX_188  pyrG_198    recG_9    rplB_6  uvrA_190     0.042917
+8   506          New   clpA_13  clpX_180  nifS_163  pepX_188    pyrG_9  recG_206  rplB_171  uvrA_190     0.115167
+9   581          New   clpA_13   clpX_10   nifS_13  pepX_188  pyrG_198  recG_206    rplB_7   uvrA_15     0.058167
+10  641          New   clpA_13   clpX_10   nifS_13   pepX_10  pyrG_198   recG_13  rplB_171   uvrA_15     0.057000
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are: {
+('clpA_13', 'clpX_10', 'nifS_13', 'pepX_10', 'pyrG_9', 'recG_9', 'rplB_7', 'uvrA_15'): 0.24209129671461047, 
+('clpA_214', 'clpX_180', 'nifS_163', 'pepX_188', 'pyrG_198', 'recG_206', 'rplB_171', 'uvrA_190'): 0.37447201801865043, 
+('clpA_13', 'clpX_10', 'nifS_13', 'pepX_10', 'pyrG_9', 'recG_13', 'rplB_6', 'uvrA_15'): 0.05726255446062894, 
+('clpA_214', 'clpX_180', 'nifS_163', 'pepX_188', 'pyrG_198', 'recG_206', 'rplB_158', 'uvrA_190'): 0.32617413080611013
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 12 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.23 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.495000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.24000000000000032
+    ST New/Existing      clpA      clpX     nifS      pepX      pyrG     recG     rplB     uvrA  Proportions
+0   43          New   clpA_53   clpX_82  nifS_23   pepX_86   pyrG_44  recG_27  rplB_23  uvrA_28     0.126714
+1   56          New   clpA_53  clpX_126  nifS_96  pepX_144   pyrG_44  recG_29  rplB_23  uvrA_28     0.047286
+2  108          New  clpA_243   clpX_82  nifS_23   pepX_86   pyrG_44  recG_29  rplB_23  uvrA_28     0.149429
+3  128          New  clpA_243  clpX_126  nifS_23  pepX_144   pyrG_44  recG_29  rplB_23  uvrA_28     0.141143
+4  166          New   clpA_35   clpX_82  nifS_96  pepX_144  pyrG_119  recG_29  rplB_23  uvrA_28     0.109429
+5  193          New   clpA_36   clpX_48  nifS_96   pepX_86  pyrG_119  recG_27  rplB_23  uvrA_28     0.089000
+6  213          New   clpA_36   clpX_24  nifS_96  pepX_144  pyrG_119  recG_27  rplB_23  uvrA_28     0.166714
+7  218          New   clpA_36   clpX_24  nifS_23   pepX_86  pyrG_119  recG_29  rplB_23  uvrA_28     0.047286
+8  240          New   clpA_36   clpX_82  nifS_23  pepX_144   pyrG_44  recG_29  rplB_23  uvrA_28     0.000429
+9  241          New   clpA_36  clpX_126  nifS_96   pepX_86  pyrG_119  recG_27  rplB_23  uvrA_28     0.082571
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_35', 'clpX_48', 'nifS_96', 'pepX_86', 'pyrG_119', 'recG_29', 'rplB_23', 'uvrA_28'): 0.1087038639135329, 
+('clpA_53', 'clpX_24', 'nifS_23', 'pepX_144', 'pyrG_44', 'recG_27', 'rplB_23', 'uvrA_28'): 0.1938070339051517, 
+('clpA_36', 'clpX_82', 'nifS_96', 'pepX_86', 'pyrG_119', 'recG_29', 'rplB_23', 'uvrA_28'): 0.4061587046463414, 
+('clpA_243', 'clpX_126', 'nifS_23', 'pepX_144', 'pyrG_44', 'recG_27', 'rplB_23', 'uvrA_28'): 0.2913303975349739
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 13 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+LP Presolve eliminated 1 rows and 0 columns.
+Reduced LP has 29 rows, 192 columns, and 2256 nonzeros.
+Presolve time = 0.00 sec. (0.23 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.743000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.23999999999999988
+    ST New/Existing      clpA      clpX     nifS      pepX     pyrG     recG     rplB     uvrA  Proportions
+0   22          New   clpA_53   clpX_40  nifS_23   pepX_31  pyrG_44  recG_27  rplB_23  uvrA_28     0.181667
+1   33          New   clpA_53   clpX_24  nifS_23  pepX_144  pyrG_44  recG_92  rplB_23  uvrA_28     0.090667
+2   44          New   clpA_53   clpX_24  nifS_24  pepX_144  pyrG_22  recG_27  rplB_23  uvrA_28     0.090667
+3   66          New  clpA_181   clpX_40  nifS_23  pepX_144  pyrG_44  recG_27  rplB_23  uvrA_28     0.197333
+4   83          New  clpA_181   clpX_24  nifS_23  pepX_144  pyrG_22  recG_92  rplB_23  uvrA_28     0.126333
+5   86          New  clpA_181   clpX_24  nifS_23   pepX_31  pyrG_44  recG_27  rplB_23  uvrA_28     0.035333
+6   98          New  clpA_102  clpX_150  nifS_23  pepX_144  pyrG_44  recG_27  rplB_23  uvrA_28     0.076667
+7  106          New  clpA_102  clpX_150  nifS_24  pepX_144  pyrG_44  recG_27  rplB_23  uvrA_28     0.126333
+8  178          New  clpA_114   clpX_24  nifS_23  pepX_144  pyrG_44  recG_27  rplB_23  uvrA_28     0.035000
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_102', 'clpX_150', 'nifS_24', 'pepX_31', 'pyrG_22', 'recG_92', 'rplB_23', 'uvrA_28'): 0.22260583073341, 
+('clpA_181', 'clpX_40', 'nifS_23', 'pepX_144', 'pyrG_44', 'recG_27', 'rplB_23', 'uvrA_28'): 0.37949705944049894, 
+('clpA_53', 'clpX_24', 'nifS_23', 'pepX_144', 'pyrG_44', 'recG_27', 'rplB_23', 'uvrA_28'): 0.3832852404643032, 
+('clpA_114', 'clpX_24', 'nifS_24', 'pepX_31', 'pyrG_22', 'recG_92', 'rplB_23', 'uvrA_28'): 0.014611869361787799
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 14 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+LP Presolve eliminated 2 rows and 0 columns.
+Reduced LP has 38 rows, 1152 columns, and 17760 nonzeros.
+Presolve time = 0.00 sec. (1.79 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.613000
+Iteration:    65   Dual objective     =             0.960000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3199999999999999
+      ST New/Existing     clpA     clpX     nifS     pepX     pyrG     recG      rplB     uvrA  Proportions
+0     62          New   clpA_7   clpX_6  nifS_29  pepX_38   pyrG_1  recG_36    rplB_5  uvrA_82     0.002250
+1    375          New   clpA_7  clpX_27  nifS_29  pepX_38  pyrG_29  recG_36  rplB_169   uvrA_5     0.105500
+2    476          New   clpA_7  clpX_27   nifS_6  pepX_10  pyrG_29   recG_5   rplB_27  uvrA_82     0.233250
+3    564          New   clpA_7  clpX_27   nifS_6   pepX_1  pyrG_29  recG_36   rplB_27  uvrA_82     0.006000
+4    643          New  clpA_42   clpX_6  nifS_29  pepX_38   pyrG_1   recG_5   rplB_27   uvrA_5     0.133750
+5    658          New  clpA_42   clpX_6  nifS_29  pepX_38  pyrG_29  recG_36   rplB_11  uvrA_82     0.209875
+6    735          New  clpA_42   clpX_6   nifS_6  pepX_10   pyrG_1  recG_36  rplB_169   uvrA_5     0.001125
+7    874          New  clpA_42  clpX_27  nifS_29  pepX_10   pyrG_1  recG_36   rplB_11  uvrA_82     0.048250
+8    896          New  clpA_42  clpX_27  nifS_29  pepX_10  pyrG_29  recG_55  rplB_169  uvrA_82     0.058375
+9    924          New  clpA_42  clpX_27  nifS_29  pepX_38   pyrG_1  recG_36   rplB_27  uvrA_82     0.055000
+10  1057          New  clpA_42  clpX_27   nifS_6  pepX_38   pyrG_1  recG_55   rplB_11   uvrA_5     0.106625
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_7', 'clpX_6', 'nifS_6', 'pepX_1', 'pyrG_1', 'recG_5', 'rplB_5', 'uvrA_5'): 0.006015061174201362, 
+('clpA_42', 'clpX_27', 'nifS_29', 'pepX_38', 'pyrG_29', 'recG_55', 'rplB_169', 'uvrA_82'): 0.18464862081797964, 
+('clpA_42', 'clpX_27', 'nifS_29', 'pepX_38', 'pyrG_29', 'recG_36', 'rplB_27', 'uvrA_82'): 0.44848520544369713, 
+('clpA_7', 'clpX_6', 'nifS_6', 'pepX_10', 'pyrG_1', 'recG_5', 'rplB_11', 'uvrA_5'): 0.3608511125641219
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 15 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.48 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.555000
+Iteration:    62   Dual objective     =             0.960000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000005
+      ST New/Existing     clpA     clpX      nifS      pepX     pyrG      recG     rplB     uvrA  Proportions
+0    114          New   clpA_7   clpX_6   nifS_45   pepX_65  pyrG_67   recG_61   rplB_5  uvrA_56     0.156687
+1    537          New   clpA_7  clpX_62   nifS_45  pepX_115   pyrG_8  recG_114  rplB_56   uvrA_5     0.225437
+2    573          New   clpA_7  clpX_62   nifS_12   pepX_65   pyrG_8  recG_114  rplB_56   uvrA_5     0.022875
+3    660          New  clpA_79   clpX_6  nifS_189   pepX_65  pyrG_67  recG_114   rplB_5  uvrA_56     0.007563
+4    738          New  clpA_79   clpX_6  nifS_189  pepX_115   pyrG_1   recG_61   rplB_5  uvrA_56     0.109937
+5    772          New  clpA_79   clpX_6   nifS_45   pepX_65   pyrG_1   recG_61  rplB_56  uvrA_56     0.042063
+6    908          New  clpA_79   clpX_6   nifS_12   pepX_50  pyrG_67  recG_114  rplB_57  uvrA_56     0.088750
+7   1012          New  clpA_79  clpX_62  nifS_189   pepX_50  pyrG_67   recG_61  rplB_56  uvrA_56     0.089625
+8   1045          New  clpA_79  clpX_62  nifS_189  pepX_115  pyrG_67   recG_61  rplB_57   uvrA_5     0.025875
+9   1085          New  clpA_79  clpX_62   nifS_45   pepX_65  pyrG_67   recG_61   rplB_5   uvrA_5     0.130812
+10  1268          New  clpA_79  clpX_62   nifS_12  pepX_115  pyrG_67  recG_114  rplB_57  uvrA_56     0.060375
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_7', 'clpX_6', 'nifS_12', 'pepX_115', 'pyrG_1', 'recG_114', 'rplB_5', 'uvrA_5'): 0.17211248552399747, 
+('clpA_7', 'clpX_6', 'nifS_189', 'pepX_115', 'pyrG_8', 'recG_114', 'rplB_5', 'uvrA_5'): 0.25256006371944495, 
+('clpA_79', 'clpX_62', 'nifS_45', 'pepX_65', 'pyrG_67', 'recG_61', 'rplB_56', 'uvrA_56'): 0.3804234587769788, 
+('clpA_79', 'clpX_62', 'nifS_45', 'pepX_50', 'pyrG_67', 'recG_61', 'rplB_57', 'uvrA_56'): 0.19490399197957883
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 16 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.48 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.551000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000005
+      ST New/Existing     clpA     clpX     nifS     pepX     pyrG      recG     rplB      uvrA  Proportions
+0     64          New  clpA_12  clpX_24   nifS_1  pepX_31  pyrG_22   recG_29  rplB_23   uvrA_10     0.119786
+1    208          New  clpA_12  clpX_24  nifS_23  pepX_31   pyrG_1  recG_152  rplB_23   uvrA_10     0.073143
+2    217          New  clpA_12  clpX_24   nifS_6   pepX_7  pyrG_22    recG_6  rplB_23   uvrA_10     0.004286
+3    473          New  clpA_12   clpX_1  nifS_23   pepX_7   pyrG_1   recG_29   rplB_1   uvrA_28     0.138643
+4    488          New  clpA_12   clpX_1  nifS_23  pepX_31  pyrG_22    recG_6  rplB_23   uvrA_28     0.073143
+5    722          New  clpA_37  clpX_24   nifS_1  pepX_31  pyrG_22  recG_152  rplB_23   uvrA_28     0.129214
+6    757          New  clpA_37  clpX_24  nifS_23   pepX_7  pyrG_22    recG_6  rplB_23   uvrA_10     0.068857
+7    922          New  clpA_37  clpX_24   nifS_6  pepX_31  pyrG_22    recG_6   rplB_1   uvrA_10     0.110357
+8    930          New  clpA_37  clpX_24   nifS_6  pepX_31  pyrG_22   recG_29  rplB_23  uvrA_142     0.045357
+9   1116          New  clpA_37   clpX_1  nifS_23   pepX_7   pyrG_1    recG_6  rplB_10  uvrA_142     0.160000
+10  1117          New  clpA_37   clpX_1  nifS_23   pepX_7   pyrG_1   recG_29  rplB_23   uvrA_10     0.037214
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_37', 'clpX_24', 'nifS_23', 'pepX_31', 'pyrG_22', 'recG_29', 'rplB_23', 'uvrA_28'): 0.3613643633475458, 
+('clpA_12', 'clpX_1', 'nifS_1', 'pepX_7', 'pyrG_1', 'recG_6', 'rplB_1', 'uvrA_10'): 0.24920852382309588, 
+('clpA_12', 'clpX_1', 'nifS_6', 'pepX_7', 'pyrG_1', 'recG_6', 'rplB_10', 'uvrA_10'): 0.1796005945989066, 
+('clpA_37', 'clpX_24', 'nifS_23', 'pepX_31', 'pyrG_22', 'recG_152', 'rplB_23', 'uvrA_142'): 0.20982651823045181
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 17 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+LP Presolve eliminated 2 rows and 0 columns.
+Reduced LP has 38 rows, 1296 columns, and 19872 nonzeros.
+Presolve time = 0.01 sec. (2.01 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.630000
+Iteration:    71   Dual objective     =             0.960000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000005
+      ST New/Existing      clpA     clpX     nifS      pepX     pyrG      recG     rplB     uvrA  Proportions
+0     40          New    clpA_7   clpX_6  nifS_66  pepX_201   pyrG_6   recG_59   rplB_5   uvrA_5     0.034000
+1    112          New    clpA_7   clpX_6  nifS_90   pepX_64   pyrG_6   recG_59   rplB_5   uvrA_5     0.034000
+2    166          New    clpA_7   clpX_6  nifS_90  pepX_201  pyrG_60    recG_5  rplB_52   uvrA_5     0.189043
+3    256          New    clpA_7   clpX_6  nifS_12  pepX_201   pyrG_6   recG_59   rplB_5   uvrA_5     0.026174
+4    299          New    clpA_7   clpX_6  nifS_12    pepX_1   pyrG_6    recG_5   rplB_5  uvrA_55     0.196435
+5    471          New    clpA_7  clpX_68  nifS_90  pepX_201   pyrG_6   recG_59   rplB_5  uvrA_55     0.008087
+6    531          New    clpA_7  clpX_68  nifS_90    pepX_1   pyrG_5   recG_59   rplB_5  uvrA_55     0.020000
+7    614          New    clpA_7  clpX_68  nifS_12    pepX_1   pyrG_6   recG_59  rplB_52   uvrA_5     0.102261
+8    620          New    clpA_7  clpX_68  nifS_12    pepX_1   pyrG_6  recG_197   rplB_5   uvrA_5     0.020000
+9    840          New  clpA_145   clpX_6  nifS_90    pepX_1   pyrG_6    recG_5   rplB_5   uvrA_5     0.044870
+10   939          New  clpA_145   clpX_6  nifS_12    pepX_1   pyrG_6   recG_59   rplB_5  uvrA_55     0.105478
+11  1234          New  clpA_145  clpX_68  nifS_12  pepX_201   pyrG_6    recG_5  rplB_52   uvrA_5     0.038696
+12  1284          New  clpA_145  clpX_68  nifS_12    pepX_1  pyrG_60    recG_5   rplB_5   uvrA_5     0.140957
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_145', 'clpX_68', 'nifS_66', 'pepX_64', 'pyrG_60', 'recG_59', 'rplB_52', 'uvrA_55'): 0.034028940996518715, 
+('clpA_7', 'clpX_6', 'nifS_12', 'pepX_1', 'pyrG_6', 'recG_5', 'rplB_5', 'uvrA_5'): 0.6302657945932024, 
+('clpA_7', 'clpX_6', 'nifS_12', 'pepX_1', 'pyrG_5', 'recG_197', 'rplB_5', 'uvrA_5'): 0.020139923955531856, 
+('clpA_145', 'clpX_68', 'nifS_90', 'pepX_201', 'pyrG_60', 'recG_59', 'rplB_52', 'uvrA_55'): 0.31556534045474705
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 18 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.02 sec. (1.48 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.660000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3199999999999994
+      ST New/Existing      clpA     clpX     nifS     pepX     pyrG     recG      rplB     uvrA  Proportions
+0    269          New  clpA_109  clpX_37  nifS_22  pepX_89  pyrG_96  recG_43  rplB_184  uvrA_40     0.074167
+1    492          New  clpA_109  clpX_24  nifS_22  pepX_89  pyrG_38  recG_27  rplB_184  uvrA_28     0.091667
+2    505          New  clpA_109  clpX_24  nifS_23  pepX_45  pyrG_96  recG_27   rplB_35  uvrA_40     0.209333
+3    616          New  clpA_109  clpX_24  nifS_36  pepX_89  pyrG_96  recG_27   rplB_23  uvrA_28     0.267000
+4    620          New  clpA_109  clpX_24  nifS_36  pepX_89  pyrG_96  recG_44   rplB_35  uvrA_28     0.016833
+5    720          New   clpA_50  clpX_36  nifS_22  pepX_89  pyrG_38  recG_43  rplB_184  uvrA_28     0.020000
+6    786          New   clpA_50  clpX_36  nifS_23  pepX_89  pyrG_38  recG_44  rplB_184  uvrA_28     0.047167
+7    936          New   clpA_50  clpX_37  nifS_22  pepX_89  pyrG_38  recG_43  rplB_184  uvrA_28     0.141833
+8   1082          New   clpA_50  clpX_24  nifS_22  pepX_45  pyrG_96  recG_27   rplB_35  uvrA_28     0.074500
+9   1207          New   clpA_50  clpX_24  nifS_23  pepX_89  pyrG_38  recG_27   rplB_35  uvrA_40     0.000333
+10  1229          New   clpA_50  clpX_24  nifS_36  pepX_45  pyrG_96  recG_27  rplB_184  uvrA_40     0.017167
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_109', 'clpX_24', 'nifS_23', 'pepX_89', 'pyrG_96', 'recG_27', 'rplB_23', 'uvrA_28'): 0.2670996313830086, 
+('clpA_50', 'clpX_36', 'nifS_36', 'pepX_45', 'pyrG_38', 'recG_44', 'rplB_35', 'uvrA_40'): 0.08443313295151066, 
+('clpA_109', 'clpX_24', 'nifS_22', 'pepX_89', 'pyrG_96', 'recG_27', 'rplB_184', 'uvrA_28'): 0.4123875011443378, 
+('clpA_50', 'clpX_37', 'nifS_36', 'pepX_45', 'pyrG_38', 'recG_43', 'rplB_35', 'uvrA_40'): 0.23607973452114295
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 19 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+LP Presolve eliminated 2 rows and 0 columns.
+Reduced LP has 38 rows, 1152 columns, and 17760 nonzeros.
+Presolve time = 0.00 sec. (1.79 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.485000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000003
+     ST New/Existing      clpA      clpX      nifS      pepX      pyrG      recG      rplB      uvrA  Proportions
+0   500          New    clpA_4  clpX_144   nifS_16   pepX_14  pyrG_189    recG_4  rplB_139  uvrA_153     0.198000
+1   530          New    clpA_4  clpX_144   nifS_16  pepX_157  pyrG_162  recG_163  rplB_139  uvrA_153     0.026667
+2   642          New    clpA_4    clpX_4  nifS_131  pepX_157  pyrG_189  recG_163    rplB_6    uvrA_1     0.195667
+3   707          New    clpA_4    clpX_4   nifS_16   pepX_14    pyrG_4    recG_4    rplB_6  uvrA_153     0.036667
+4   757          New    clpA_4    clpX_4   nifS_16  pepX_157    pyrG_2  recG_163  rplB_139   uvrA_10     0.039000
+5   863          New  clpA_173  clpX_144  nifS_131  pepX_157    pyrG_2    recG_4    rplB_6  uvrA_153     0.068000
+6   900          New  clpA_173  clpX_144   nifS_16   pepX_14    pyrG_4    recG_4    rplB_6    uvrA_1     0.182333
+7   973          New  clpA_173    clpX_4  nifS_131   pepX_14  pyrG_189  recG_163  rplB_139   uvrA_10     0.068000
+8  1034          New  clpA_173    clpX_4  nifS_131  pepX_157    pyrG_4  recG_163  rplB_139  uvrA_153     0.143333
+9  1121          New  clpA_173    clpX_4   nifS_16  pepX_157  pyrG_189  recG_163    rplB_6  uvrA_153     0.002333
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_173', 'clpX_144', 'nifS_131', 'pepX_157', 'pyrG_189', 'recG_163', 'rplB_139', 'uvrA_153'): 0.48425255162302955, 
+('clpA_4', 'clpX_4', 'nifS_16', 'pepX_14', 'pyrG_2', 'recG_4', 'rplB_6', 'uvrA_10'): 0.1269568328798236, 
+('clpA_4', 'clpX_4', 'nifS_16', 'pepX_14', 'pyrG_4', 'recG_4', 'rplB_6', 'uvrA_1'): 0.3781002985557327, 
+('clpA_180', 'clpX_144', 'nifS_131', 'pepX_157', 'pyrG_162', 'recG_163', 'rplB_139', 'uvrA_153'): 0.01069031694141404
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 20 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.66 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.628000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.28000000000000047
+     ST New/Existing     clpA     clpX      nifS      pepX      pyrG     recG      rplB     uvrA  Proportions
+0   174          New  clpA_51  clpX_82  nifS_119   pepX_86  pyrG_191  recG_27   rplB_29  uvrA_29     0.059133
+1   217          New  clpA_51  clpX_82   nifS_22   pepX_86   pyrG_85  recG_27   rplB_23  uvrA_28     0.217867
+2   322          New  clpA_51  clpX_82   nifS_23   pepX_32   pyrG_20  recG_27  rplB_106  uvrA_29     0.055000
+3   345          New  clpA_35  clpX_23  nifS_119  pepX_141   pyrG_85  recG_27  rplB_106  uvrA_28     0.001733
+4   360          New  clpA_35  clpX_23  nifS_119  pepX_141   pyrG_20  recG_27   rplB_29  uvrA_29     0.057400
+5   361          New  clpA_35  clpX_23  nifS_119   pepX_32   pyrG_85  recG_27   rplB_23  uvrA_28     0.083733
+6   403          New  clpA_35  clpX_23   nifS_22  pepX_141  pyrG_191  recG_27   rplB_23  uvrA_28     0.284867
+7   430          New  clpA_35  clpX_23   nifS_22   pepX_32   pyrG_20  recG_27  rplB_106  uvrA_29     0.145267
+8   434          New  clpA_35  clpX_23   nifS_23   pepX_86   pyrG_85  recG_27   rplB_23  uvrA_29     0.015200
+9   437          New  clpA_35  clpX_23   nifS_23   pepX_86   pyrG_85  recG_27   rplB_29  uvrA_28     0.013467
+10  445          New  clpA_35  clpX_23   nifS_23   pepX_86   pyrG_20  recG_27   rplB_23  uvrA_28     0.026333
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_35', 'clpX_23', 'nifS_22', 'pepX_32', 'pyrG_20', 'recG_27', 'rplB_23', 'uvrA_28'): 0.28390756615857377, 
+('clpA_51', 'clpX_82', 'nifS_23', 'pepX_86', 'pyrG_85', 'recG_27', 'rplB_29', 'uvrA_29'): 0.13048793832187375, 
+('clpA_35', 'clpX_23', 'nifS_22', 'pepX_141', 'pyrG_191', 'recG_27', 'rplB_23', 'uvrA_28'): 0.3638799005130312, 
+('clpA_51', 'clpX_82', 'nifS_119', 'pepX_86', 'pyrG_85', 'recG_27', 'rplB_106', 'uvrA_29'): 0.22172459500652125
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 21 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.48 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.538000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000002
+     ST New/Existing     clpA      clpX     nifS     pepX     pyrG     recG     rplB     uvrA  Proportions
+0   158          New   clpA_5   clpX_42  nifS_41  pepX_51  pyrG_10   recG_5  rplB_38   uvrA_6       0.0988
+1   392          New   clpA_5    clpX_5  nifS_41   pepX_5   pyrG_5   recG_5  rplB_38   uvrA_6       0.0096
+2   432          New   clpA_5    clpX_5  nifS_41   pepX_5  pyrG_10   recG_5  rplB_94   uvrA_6       0.1610
+3   433          New   clpA_5  clpX_178   nifS_4  pepX_51   pyrG_5  recG_46  rplB_38  uvrA_42       0.1080
+4   538          New   clpA_5  clpX_178   nifS_4   pepX_5  pyrG_10   recG_5  rplB_95   uvrA_6       0.0626
+5   622          New   clpA_5  clpX_178  nifS_41   pepX_5  pyrG_47  recG_80  rplB_95   uvrA_6       0.0980
+6   862          New  clpA_56   clpX_42  nifS_41   pepX_5  pyrG_10   recG_5  rplB_95   uvrA_6       0.0546
+7   872          New  clpA_56    clpX_5   nifS_4  pepX_51   pyrG_5  recG_80  rplB_38   uvrA_6       0.0234
+8   884          New  clpA_56    clpX_5   nifS_4  pepX_51  pyrG_47  recG_46  rplB_38   uvrA_6       0.0300
+9   897          New  clpA_56    clpX_5   nifS_4  pepX_51  pyrG_47   recG_5  rplB_95  uvrA_42       0.1618
+10  943          New  clpA_56    clpX_5   nifS_4   pepX_5  pyrG_47  recG_80  rplB_38  uvrA_42       0.1522
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_5', 'clpX_5', 'nifS_4', 'pepX_5', 'pyrG_5', 'recG_5', 'rplB_94', 'uvrA_6'): 0.16049083778987036, 
+('clpA_5', 'clpX_5', 'nifS_4', 'pepX_5', 'pyrG_10', 'recG_5', 'rplB_95', 'uvrA_6'): 0.39733509854311644, 
+('clpA_56', 'clpX_178', 'nifS_41', 'pepX_51', 'pyrG_47', 'recG_80', 'rplB_38', 'uvrA_42'): 0.283947846754341, 
+('clpA_56', 'clpX_42', 'nifS_41', 'pepX_51', 'pyrG_47', 'recG_46', 'rplB_38', 'uvrA_42'): 0.15822621691267227
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 22 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.01 sec. (1.48 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.513000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.32000000000000195
+      ST New/Existing     clpA      clpX     nifS     pepX      pyrG      recG      rplB     uvrA  Proportions
+0      5          New  clpA_40  clpX_130  nifS_15  pepX_36  pyrG_141   recG_18    rplB_7  uvrA_71     0.006810
+1    210          New  clpA_40  clpX_130  nifS_49   pepX_7    pyrG_1  recG_141  rplB_122  uvrA_49     0.156095
+2    432          New  clpA_40  clpX_125  nifS_49   pepX_7    pyrG_1  recG_141    rplB_4  uvrA_49     0.063000
+3    504          New  clpA_40    clpX_1  nifS_15   pepX_7    pyrG_1  recG_141    rplB_4  uvrA_49     0.070286
+4    511          New  clpA_40    clpX_1  nifS_16  pepX_36  pyrG_141   recG_18    rplB_4  uvrA_10     0.105762
+5    599          New  clpA_40    clpX_1  nifS_49  pepX_36    pyrG_1   recG_18    rplB_7  uvrA_71     0.022524
+6    617          New  clpA_40    clpX_1  nifS_49   pepX_7  pyrG_141   recG_18    rplB_7  uvrA_71     0.022524
+7    855          New  clpA_21  clpX_130  nifS_49   pepX_7    pyrG_1   recG_18    rplB_4  uvrA_49     0.043476
+8    861          New  clpA_21  clpX_130  nifS_49   pepX_7    pyrG_1  recG_141    rplB_7  uvrA_49     0.051143
+9    862          New  clpA_21  clpX_130  nifS_49   pepX_7    pyrG_1  recG_141    rplB_4  uvrA_10     0.095333
+10   863          New  clpA_21  clpX_130  nifS_49   pepX_7    pyrG_1  recG_141    rplB_4  uvrA_71     0.011143
+11  1081          New  clpA_21    clpX_1  nifS_15  pepX_36  pyrG_141   recG_18  rplB_122  uvrA_10     0.311905
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_21', 'clpX_1', 'nifS_15', 'pepX_7', 'pyrG_1', 'recG_18', 'rplB_4', 'uvrA_10'): 0.40941485583798415, 
+('clpA_21', 'clpX_1', 'nifS_16', 'pepX_7', 'pyrG_1', 'recG_18', 'rplB_7', 'uvrA_10'): 0.12308527649187669,
+('clpA_40', 'clpX_125', 'nifS_49', 'pepX_36', 'pyrG_141', 'recG_141', 'rplB_122', 'uvrA_71'): 0.08321972475004112, 
+('clpA_40', 'clpX_130', 'nifS_49', 'pepX_36', 'pyrG_141', 'recG_141', 'rplB_122', 'uvrA_49'): 0.384280142920098
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 23 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.01 sec. (0.44 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.720000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.2799999999999999
+    ST New/Existing     clpA      clpX     nifS     pepX     pyrG     recG     rplB     uvrA  Proportions
+0   17          New  clpA_96  clpX_100  nifS_36  pepX_46  pyrG_84  recG_44  rplB_78  uvrA_86     0.014778
+1   51          New  clpA_96   clpX_76  nifS_36  pepX_98  pyrG_84  recG_44  rplB_75  uvrA_86     0.091111
+2   57          New  clpA_96   clpX_76  nifS_36  pepX_98  pyrG_88  recG_44  rplB_78  uvrA_86     0.121778
+3   66          New  clpA_96   clpX_76  nifS_36  pepX_46  pyrG_84  recG_44  rplB_78  uvrA_33     0.121778
+4   69          New  clpA_96   clpX_76  nifS_36  pepX_46  pyrG_84  recG_84  rplB_78  uvrA_86     0.121778
+5   81          New  clpA_96   clpX_76  nifS_36  pepX_91  pyrG_84  recG_44  rplB_78  uvrA_86     0.141778
+6  113          New  clpA_96   clpX_77  nifS_36  pepX_46  pyrG_84  recG_44  rplB_78  uvrA_86     0.107000
+7  192          New  clpA_69  clpX_100  nifS_36  pepX_91  pyrG_88  recG_84  rplB_75  uvrA_33     0.118222
+8  211          New  clpA_69   clpX_76  nifS_36  pepX_46  pyrG_84  recG_44  rplB_75  uvrA_86     0.030667
+9  337          New  clpA_99   clpX_76  nifS_36  pepX_98  pyrG_84  recG_44  rplB_78  uvrA_86     0.091111
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_96', 'clpX_76', 'nifS_36', 'pepX_46', 'pyrG_84', 'recG_44', 'rplB_78', 'uvrA_86'): 0.4161379521633982, 
+('clpA_96', 'clpX_76', 'nifS_36', 'pepX_98', 'pyrG_84', 'recG_44', 'rplB_78', 'uvrA_86'): 0.3240958222329592, 
+('clpA_69', 'clpX_100', 'nifS_36', 'pepX_91', 'pyrG_88', 'recG_84', 'rplB_75', 'uvrA_33'): 0.15314525552053815, 
+('clpA_99', 'clpX_77', 'nifS_36', 'pepX_91', 'pyrG_88', 'recG_84', 'rplB_75', 'uvrA_33'): 0.10662097008310444
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 24 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.01 sec. (1.32 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.547000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000003
+      ST New/Existing     clpA     clpX      nifS      pepX      pyrG     recG      rplB      uvrA  Proportions
+0    271          New  clpA_53  clpX_24  nifS_115    pepX_4   pyrG_44   recG_4    rplB_4   uvrA_78     0.096208
+1    284          New  clpA_53  clpX_24  nifS_115    pepX_4    pyrG_1   recG_4  rplB_124    uvrA_2     0.045667
+2    368          New  clpA_53   clpX_1  nifS_119    pepX_4   pyrG_44   recG_4    rplB_4    uvrA_2     0.030458
+3    383          New  clpA_53   clpX_1  nifS_119    pepX_4    pyrG_1   recG_4    rplB_4   uvrA_78     0.073375
+4    401          New  clpA_53   clpX_1   nifS_16  pepX_144   pyrG_44  recG_27  rplB_124    uvrA_4     0.301292
+5    603          New   clpA_3  clpX_24  nifS_119  pepX_144   pyrG_44   recG_4  rplB_124   uvrA_78     0.055583
+6    641          New   clpA_3  clpX_24  nifS_119    pepX_4   pyrG_44  recG_27  rplB_124    uvrA_4     0.055583
+7    767          New   clpA_3  clpX_24   nifS_16    pepX_4    pyrG_1   recG_4    rplB_4   uvrA_78     0.103833
+8    770          New   clpA_3  clpX_24  nifS_115  pepX_144  pyrG_139  recG_27  rplB_124  uvrA_134     0.081000
+9    806          New   clpA_3  clpX_24  nifS_115  pepX_144    pyrG_1  recG_27    rplB_4  uvrA_134     0.109125
+10  1034          New   clpA_3   clpX_1   nifS_16    pepX_4   pyrG_44   recG_4  rplB_124  uvrA_134     0.007875
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_53', 'clpX_24', 'nifS_115', 'pepX_144', 'pyrG_44', 'recG_27', 'rplB_124', 'uvrA_78'): 0.34884100397007417, 
+('clpA_3', 'clpX_1', 'nifS_16', 'pepX_4', 'pyrG_1', 'recG_4', 'rplB_4', 'uvrA_4'): 0.35202240517787625, 
+('clpA_53', 'clpX_24', 'nifS_119', 'pepX_144', 'pyrG_44', 'recG_27', 'rplB_124', 'uvrA_134'): 0.21784661916000983, 
+('clpA_3', 'clpX_1', 'nifS_16', 'pepX_4', 'pyrG_139', 'recG_4', 'rplB_4', 'uvrA_2'): 0.08128997169203979
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 25 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+LP Presolve eliminated 2 rows and 0 columns.
+Reduced LP has 38 rows, 1296 columns, and 19872 nonzeros.
+Presolve time = 0.00 sec. (2.01 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.852000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000003
+     ST New/Existing     clpA     clpX      nifS     pepX     pyrG     recG      rplB      uvrA  Proportions
+0   571          New  clpA_85  clpX_41   nifS_43  pepX_49  pyrG_43  recG_70   rplB_23   uvrA_49       0.0200
+1   756          New  clpA_85  clpX_63  nifS_146  pepX_76  pyrG_71  recG_70   rplB_64   uvrA_67       0.0115
+2   851          New  clpA_85  clpX_63   nifS_43  pepX_76  pyrG_71  recG_27   rplB_23  uvrA_142       0.0455
+3   856          New  clpA_85  clpX_63   nifS_43  pepX_76  pyrG_71  recG_70  rplB_122   uvrA_49       0.3090
+4   864     Existing  clpA_85  clpX_63   nifS_43  pepX_76  pyrG_71  recG_70   rplB_64   uvrA_67       0.4690
+5   884          New  clpA_36  clpX_41  nifS_146  pepX_49  pyrG_43  recG_27  rplB_122  uvrA_142       0.0540
+6   914          New  clpA_36  clpX_41  nifS_146  pepX_49  pyrG_71  recG_70   rplB_23  uvrA_142       0.0085
+7   949          New  clpA_36  clpX_41  nifS_146  pepX_76  pyrG_43  recG_70   rplB_23   uvrA_49       0.0170
+8  1015          New  clpA_36  clpX_41   nifS_43  pepX_49  pyrG_71  recG_27   rplB_64   uvrA_49       0.0085
+9  1111          New  clpA_36  clpX_63  nifS_146  pepX_49  pyrG_43  recG_70   rplB_23   uvrA_49       0.0170
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-
+
+
+The True strains and their proportions are : {
+('clpA_36', 'clpX_41', 'nifS_146', 'pepX_49', 'pyrG_43', 'recG_27', 'rplB_23', 'uvrA_142'): 0.124450438588825, 
+('clpA_162', 'clpX_41', 'nifS_146', 'pepX_49', 'pyrG_53', 'recG_27', 'rplB_23', 'uvrA_142'): 0.003446418543848479, 
+('clpA_85', 'clpX_63', 'nifS_43', 'pepX_76', 'pyrG_71', 'recG_70', 'rplB_122', 'uvrA_49'): 0.38339777078722564, 
+('clpA_85', 'clpX_63', 'nifS_43', 'pepX_76', 'pyrG_71', 'recG_70', 'rplB_64', 'uvrA_67'): 0.4887053720801009
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 26 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.32 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.624000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000009
+      ST New/Existing      clpA      clpX     nifS     pepX      pyrG     recG     rplB     uvrA  Proportions
+0     10          New   clpA_40   clpX_25  nifS_24  pepX_36  pyrG_122  recG_34  rplB_47  uvrA_49     0.055882
+1     97          New   clpA_40   clpX_25  nifS_26  pepX_36   pyrG_90  recG_91  rplB_25  uvrA_49     0.218235
+2    121          New   clpA_40   clpX_25  nifS_26  pepX_85  pyrG_122  recG_34  rplB_24  uvrA_49     0.145941
+3    270          New   clpA_40   clpX_24  nifS_26  pepX_85  pyrG_122  recG_34  rplB_25  uvrA_30     0.021000
+4    440          New   clpA_40  clpX_155  nifS_24  pepX_36  pyrG_122  recG_91  rplB_25  uvrA_29     0.092529
+5    467          New   clpA_40  clpX_155  nifS_24  pepX_36   pyrG_90  recG_34  rplB_25  uvrA_29     0.055529
+6    520          New   clpA_40  clpX_155  nifS_26  pepX_36  pyrG_122  recG_34  rplB_25  uvrA_49     0.009647
+7    526          New   clpA_40  clpX_155  nifS_26  pepX_36   pyrG_90  recG_91  rplB_24  uvrA_49     0.025235
+8    662          New  clpA_109   clpX_25  nifS_26  pepX_36  pyrG_122  recG_34  rplB_24  uvrA_29     0.166941
+9   1006          New  clpA_109   clpX_77  nifS_26  pepX_85   pyrG_90  recG_34  rplB_25  uvrA_49     0.037000
+10  1060          New  clpA_109  clpX_155  nifS_24  pepX_85  pyrG_122  recG_34  rplB_25  uvrA_49     0.132059
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_109', 'clpX_155', 'nifS_24', 'pepX_85', 'pyrG_90', 'recG_91', 'rplB_24', 'uvrA_29'): 0.3347967338743013, 
+('clpA_40', 'clpX_77', 'nifS_26', 'pepX_36', 'pyrG_122', 'recG_34', 'rplB_47', 'uvrA_49'): 0.05747836922623945, 
+('clpA_109', 'clpX_24', 'nifS_24', 'pepX_85', 'pyrG_90', 'recG_91', 'rplB_24', 'uvrA_30'): 0.021538519362094957, 
+('clpA_40', 'clpX_25', 'nifS_26', 'pepX_36', 'pyrG_122', 'recG_34', 'rplB_25', 'uvrA_49'): 0.5861863775373642
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 27 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+LP Presolve eliminated 2 rows and 0 columns.
+Reduced LP has 38 rows, 1152 columns, and 17760 nonzeros.
+Presolve time = 0.00 sec. (1.79 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.797000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000003
+    ST New/Existing      clpA      clpX      nifS      pepX      pyrG      recG      rplB      uvrA  Proportions
+0  132          New   clpA_15  clpX_151   nifS_12  pepX_126  pyrG_134   recG_17    rplB_8   uvrA_16        0.086
+1  166          New   clpA_15  clpX_151   nifS_12    pepX_8    pyrG_3   recG_17  rplB_106   uvrA_16        0.077
+2  167          New   clpA_15  clpX_151   nifS_12    pepX_8    pyrG_3   recG_17    rplB_8  uvrA_108        0.077
+3  192          New   clpA_15  clpX_151   nifS_12    pepX_8    pyrG_1   recG_17    rplB_8   uvrA_16        0.274
+4  552          New   clpA_15   clpX_13   nifS_12    pepX_8    pyrG_3   recG_17    rplB_8   uvrA_16        0.283
+5  788          New  clpA_140  clpX_115  nifS_102  pepX_126    pyrG_3  recG_129    rplB_8   uvrA_16        0.077
+6  845          New  clpA_140  clpX_115  nifS_102    pepX_8  pyrG_134  recG_129  rplB_106  uvrA_108        0.086
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_140', 'clpX_115', 'nifS_102', 'pepX_126', 'pyrG_134', 'recG_129', 'rplB_106', 'uvrA_108'): 0.17272399450873432, 
+('clpA_15', 'clpX_151', 'nifS_12', 'pepX_8', 'pyrG_3', 'recG_17', 'rplB_8', 'uvrA_16'): 0.5338679933990774, 
+('clpA_15', 'clpX_13', 'nifS_12', 'pepX_8', 'pyrG_1', 'recG_17', 'rplB_8', 'uvrA_16'): 0.2829732746420492, 
+('clpA_140', 'clpX_115', 'nifS_102', 'pepX_126', 'pyrG_126', 'recG_123', 'rplB_106', 'uvrA_108'): 0.010434737450139071
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 28 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.01 sec. (1.32 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.538000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.32000000000000056
+     ST New/Existing      clpA      clpX     nifS     pepX     pyrG     recG     rplB      uvrA  Proportions
+0   111          New    clpA_7    clpX_6  nifS_12  pepX_89   pyrG_2  recG_27  rplB_23   uvrA_83     0.094000
+1   163          New    clpA_7   clpX_24  nifS_23  pepX_14   pyrG_2   recG_5  rplB_23  uvrA_203     0.007667
+2   288          New    clpA_7   clpX_24  nifS_12   pepX_1   pyrG_2   recG_5   rplB_5   uvrA_83     0.021333
+3   384          New    clpA_7  clpX_135  nifS_12  pepX_14   pyrG_2   recG_5   rplB_5   uvrA_83     0.094000
+4   468          New    clpA_7   clpX_13  nifS_23  pepX_89  pyrG_96   recG_5   rplB_5   uvrA_83     0.109333
+5   528          New    clpA_7   clpX_13  nifS_12  pepX_14   pyrG_2   recG_5   rplB_5   uvrA_83     0.211667
+6   625          New  clpA_109    clpX_6  nifS_23   pepX_1  pyrG_96  recG_27  rplB_23  uvrA_203     0.040667
+7   680          New  clpA_109    clpX_6  nifS_12  pepX_89  pyrG_96   recG_5  rplB_23   uvrA_28     0.086333
+8   741          New  clpA_109   clpX_24  nifS_23  pepX_14   pyrG_2   recG_5  rplB_23   uvrA_83     0.007667
+9   761          New  clpA_109   clpX_24  nifS_23  pepX_89   pyrG_2  recG_27   rplB_5   uvrA_28     0.101667
+10  770          New  clpA_109   clpX_24  nifS_23   pepX_1  pyrG_96  recG_27  rplB_23   uvrA_28     0.155000
+11  817          New  clpA_109   clpX_24  nifS_12  pepX_89  pyrG_96  recG_27  rplB_23  uvrA_203     0.030667
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_109', 'clpX_24', 'nifS_23', 'pepX_89', 'pyrG_96', 'recG_27', 'rplB_23', 'uvrA_28'): 0.3435067707440572, 
+('clpA_7', 'clpX_13', 'nifS_12', 'pepX_14', 'pyrG_2', 'recG_5', 'rplB_5', 'uvrA_83'): 0.3414498046185219, 
+('clpA_7', 'clpX_6', 'nifS_12', 'pepX_1', 'pyrG_2', 'recG_5', 'rplB_5', 'uvrA_83'): 0.21648261518275877, 
+('clpA_109', 'clpX_135', 'nifS_23', 'pepX_89', 'pyrG_96', 'recG_27', 'rplB_23', 'uvrA_203'): 0.09856080945466214
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 29 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.32 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.565000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.32
+    ST New/Existing     clpA     clpX     nifS     pepX      pyrG     recG      rplB     uvrA  Proportions
+0  296          New  clpA_46  clpX_31  nifS_29  pepX_43   pyrG_96  recG_28  rplB_106  uvrA_92     0.011333
+1  321          New  clpA_46  clpX_31  nifS_29  pepX_43  pyrG_134  recG_28  rplB_106  uvrA_89     0.070000
+2  337          New  clpA_46  clpX_31  nifS_29  pepX_43   pyrG_34  recG_28  rplB_184  uvrA_37     0.079333
+3  359          New  clpA_46  clpX_31  nifS_29  pepX_43   pyrG_34  recG_40   rplB_31  uvrA_92     0.181333
+4  406          New  clpA_46  clpX_31  nifS_29  pepX_31  pyrG_134  recG_40   rplB_31  uvrA_37     0.051000
+5  508          New  clpA_46  clpX_31  nifS_25  pepX_31   pyrG_96  recG_28   rplB_23  uvrA_37     0.172000
+6  659          New  clpA_36  clpX_24  nifS_29  pepX_31   pyrG_96  recG_28   rplB_31  uvrA_92     0.062333
+7  715          New  clpA_36  clpX_24  nifS_29  pepX_31   pyrG_34  recG_40  rplB_106  uvrA_37     0.109667
+8  736          New  clpA_36  clpX_24  nifS_25  pepX_43   pyrG_96  recG_40   rplB_23  uvrA_37     0.153000
+9  767          New  clpA_36  clpX_24  nifS_25  pepX_43  pyrG_134  recG_40   rplB_31  uvrA_92     0.070000
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_36', 'clpX_24', 'nifS_25', 'pepX_31', 'pyrG_96', 'recG_28', 'rplB_184', 'uvrA_89'): 0.06992795546220396, 
+('clpA_46', 'clpX_31', 'nifS_29', 'pepX_43', 'pyrG_134', 'recG_40', 'rplB_106', 'uvrA_37'): 0.21131271543642147,
+('clpA_36', 'clpX_24', 'nifS_25', 'pepX_31', 'pyrG_96', 'recG_28', 'rplB_23', 'uvrA_92'): 0.34507518477107074, 
+('clpA_46', 'clpX_31', 'nifS_29', 'pepX_43', 'pyrG_34', 'recG_40', 'rplB_31', 'uvrA_37'): 0.373684144330304
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 30 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.20 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.867000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.2800000000000001
+    ST New/Existing     clpA     clpX     nifS     pepX     pyrG      recG      rplB     uvrA  Proportions
+0   29          New  clpA_35  clpX_24  nifS_23  pepX_30  pyrG_46  recG_154  rplB_197  uvrA_41       0.0395
+1   32          New  clpA_35  clpX_24  nifS_23  pepX_30  pyrG_46  recG_154   rplB_23  uvrA_28       0.3115
+2   37          New  clpA_35  clpX_24  nifS_23  pepX_30  pyrG_21   recG_27  rplB_197  uvrA_41       0.0860
+3  118          New  clpA_36  clpX_24  nifS_23  pepX_49  pyrG_21  recG_172  rplB_197  uvrA_28       0.1255
+4  119          New  clpA_36  clpX_24  nifS_23  pepX_49  pyrG_21  recG_172   rplB_23  uvrA_41       0.2515
+5  121          New  clpA_36  clpX_24  nifS_23  pepX_30  pyrG_46   recG_27  rplB_197  uvrA_41       0.0530
+6  161          New  clpA_36  clpX_24  nifS_24  pepX_49  pyrG_21  recG_154  rplB_197  uvrA_41       0.0600
+7  177          New  clpA_36  clpX_24  nifS_24  pepX_30  pyrG_46  recG_172  rplB_197  uvrA_41       0.0330
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_35', 'clpX_24', 'nifS_23', 'pepX_49', 'pyrG_46', 'recG_27', 'rplB_23', 'uvrA_28'): 0.039491843859121106, 
+('clpA_36', 'clpX_24', 'nifS_23', 'pepX_30', 'pyrG_21', 'recG_172', 'rplB_23', 'uvrA_41'): 0.43009175470368843, 
+('clpA_36', 'clpX_24', 'nifS_24', 'pepX_30', 'pyrG_21', 'recG_27', 'rplB_23', 'uvrA_41'): 0.11312474745741698, 
+('clpA_35', 'clpX_24', 'nifS_23', 'pepX_49', 'pyrG_46', 'recG_154', 'rplB_197', 'uvrA_28'): 0.41729165397977347
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 31 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.32 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.591000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000003
+     ST New/Existing     clpA     clpX     nifS     pepX     pyrG     recG     rplB      uvrA  Proportions
+0   106          New  clpA_15  clpX_24  nifS_24   pepX_8  pyrG_22  recG_83  rplB_81   uvrA_20     0.014095
+1   139          New  clpA_15  clpX_24  nifS_24   pepX_8   pyrG_1  recG_29   rplB_8   uvrA_29     0.141238
+2   276          New  clpA_15  clpX_24  nifS_12  pepX_31   pyrG_1  recG_83  rplB_81   uvrA_16     0.077667
+3   409          New  clpA_15   clpX_9  nifS_24   pepX_8   pyrG_1  recG_83  rplB_23  uvrA_145     0.096000
+4   436          New  clpA_15   clpX_9  nifS_24  pepX_31  pyrG_22  recG_83  rplB_23   uvrA_16     0.065714
+5   546          New  clpA_15   clpX_9  nifS_12  pepX_31  pyrG_22  recG_29   rplB_8   uvrA_20     0.196286
+6   710          New  clpA_36  clpX_24  nifS_24   pepX_8   pyrG_1  recG_29  rplB_23   uvrA_20     0.022619
+7   743          New  clpA_36  clpX_24  nifS_24  pepX_31  pyrG_22  recG_29  rplB_81   uvrA_29     0.008857
+8   751          New  clpA_36  clpX_24  nifS_24  pepX_31   pyrG_1  recG_83   rplB_8   uvrA_29     0.020476
+9   771          New  clpA_36  clpX_24  nifS_12   pepX_8  pyrG_22  recG_83  rplB_23   uvrA_29     0.084048
+10  896          New  clpA_36   clpX_9  nifS_14   pepX_8   pyrG_1  recG_83   rplB_8   uvrA_16     0.233000
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_36', 'clpX_24', 'nifS_24', 'pepX_31', 'pyrG_22', 'recG_29', 'rplB_23', 'uvrA_29'): 0.2734776908164457, 
+('clpA_36', 'clpX_24', 'nifS_24', 'pepX_31', 'pyrG_22', 'recG_29', 'rplB_81', 'uvrA_145'): 0.11596218382558872, 
+('clpA_15', 'clpX_9', 'nifS_14', 'pepX_8', 'pyrG_1', 'recG_83', 'rplB_8', 'uvrA_20'): 0.2529781385944212, 
+('clpA_15', 'clpX_9', 'nifS_12', 'pepX_8', 'pyrG_1', 'recG_83', 'rplB_8', 'uvrA_16'): 0.3575819867635442
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 32 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.44 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.592000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.28000000000000025
+     ST New/Existing      clpA      clpX     nifS     pepX     pyrG      recG     rplB     uvrA  Proportions
+0    96          New  clpA_131  clpX_154  nifS_25  pepX_88  pyrG_92  recG_155  rplB_23  uvrA_29     0.180000
+1   192          New  clpA_181  clpX_135  nifS_25  pepX_88  pyrG_92  recG_155  rplB_23  uvrA_29     0.048818
+2   240          New  clpA_181  clpX_154  nifS_25  pepX_88  pyrG_92  recG_155  rplB_23  uvrA_29     0.012000
+3   256          New  clpA_181   clpX_82  nifS_23  pepX_88  pyrG_92  recG_155  rplB_23  uvrA_29     0.048818
+4   261          New  clpA_181   clpX_82  nifS_24  pepX_32  pyrG_92   recG_27  rplB_23  uvrA_28     0.016273
+5   284          New  clpA_181   clpX_82  nifS_25  pepX_88  pyrG_44  recG_155  rplB_23  uvrA_29     0.066091
+6   289          New   clpA_36  clpX_135  nifS_23  pepX_32  pyrG_44   recG_27  rplB_23  uvrA_28     0.127182
+7   402          New   clpA_36   clpX_82  nifS_24  pepX_32  pyrG_44   recG_27  rplB_23  uvrA_29     0.212273
+8   403          New   clpA_36   clpX_82  nifS_24  pepX_32  pyrG_44  recG_155  rplB_23  uvrA_28     0.126182
+9   409          New   clpA_36   clpX_82  nifS_24  pepX_88  pyrG_44   recG_27  rplB_23  uvrA_28     0.036273
+10  423          New   clpA_36   clpX_82  nifS_25  pepX_32  pyrG_92  recG_155  rplB_23  uvrA_28     0.086091
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_36', 'clpX_135', 'nifS_23', 'pepX_32', 'pyrG_44', 'recG_155', 'rplB_23', 'uvrA_29'): 0.17575188148776882, 
+('clpA_36', 'clpX_82', 'nifS_25', 'pepX_32', 'pyrG_44', 'recG_155', 'rplB_23', 'uvrA_29'): 0.4127469929944333, 
+('clpA_131', 'clpX_82', 'nifS_24', 'pepX_88', 'pyrG_92', 'recG_27', 'rplB_23', 'uvrA_28'): 0.19968159450460116, 
+('clpA_181', 'clpX_154', 'nifS_24', 'pepX_88', 'pyrG_92', 'recG_27', 'rplB_23', 'uvrA_28'): 0.21181953101319667
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 33 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+LP Presolve eliminated 2 rows and 0 columns.
+Reduced LP has 38 rows, 1152 columns, and 17760 nonzeros.
+Presolve time = 0.00 sec. (1.79 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.678000
+Iteration:    75   Dual objective     =             0.960000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.32000000000000045
+     ST New/Existing     clpA     clpX      nifS     pepX     pyrG      recG     rplB      uvrA  Proportions
+0    99          New   clpA_4  clpX_51   nifS_16  pepX_14  pyrG_56   recG_55  rplB_47  uvrA_128     0.012154
+1   166          New   clpA_4  clpX_51   nifS_16  pepX_61  pyrG_56   recG_19   rplB_6   uvrA_10     0.114192
+2   400          New   clpA_4   clpX_4   nifS_16  pepX_14  pyrG_56    recG_4   rplB_6   uvrA_10     0.090769
+3   420          New   clpA_4   clpX_4   nifS_16  pepX_14   pyrG_2  recG_126   rplB_6  uvrA_128     0.289846
+4   447          New   clpA_4   clpX_4   nifS_16  pepX_61  pyrG_56    recG_4  rplB_47  uvrA_128     0.040577
+5   527          New   clpA_4   clpX_4  nifS_108  pepX_14   pyrG_2   recG_19   rplB_6   uvrA_51     0.130462
+6   714          New  clpA_67  clpX_51   nifS_16  pepX_14   pyrG_2    recG_4   rplB_6  uvrA_128     0.028423
+7   854          New  clpA_67  clpX_51  nifS_108  pepX_61   pyrG_2    recG_4  rplB_47   uvrA_51     0.127231
+8  1003          New  clpA_67   clpX_4   nifS_16  pepX_14   pyrG_2   recG_19  rplB_47   uvrA_10     0.102038
+9  1079          New  clpA_67   clpX_4  nifS_108  pepX_14  pyrG_56   recG_19   rplB_6   uvrA_51     0.024308
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_67', 'clpX_51', 'nifS_51', 'pepX_61', 'pyrG_56', 'recG_55', 'rplB_47', 'uvrA_51'): 0.004693401991572436, 
+('clpA_4', 'clpX_4', 'nifS_16', 'pepX_14', 'pyrG_2', 'recG_4', 'rplB_6', 'uvrA_10'): 0.3072892310926001, 
+('clpA_4', 'clpX_4', 'nifS_16', 'pepX_14', 'pyrG_2', 'recG_19', 'rplB_6', 'uvrA_128'): 0.3911379299428023, 
+('clpA_67', 'clpX_51', 'nifS_108', 'pepX_61', 'pyrG_56', 'recG_126', 'rplB_47', 'uvrA_51'): 0.29687943697302505
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 34 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.32 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.600000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000002
+     ST New/Existing     clpA      clpX     nifS     pepX     pyrG      recG     rplB      uvrA  Proportions
+0    18          New   clpA_8   clpX_14   nifS_9  pepX_32   pyrG_1   recG_33  rplB_29   uvrA_28     0.077056
+1    41          New   clpA_8   clpX_14   nifS_9   pepX_8   pyrG_1   recG_33  rplB_29  uvrA_128     0.024444
+2   336          New   clpA_8   clpX_24   nifS_9   pepX_8   pyrG_1  recG_137   rplB_4   uvrA_28     0.127389
+3   391          New   clpA_8   clpX_24  nifS_96   pepX_8  pyrG_92   recG_33   rplB_4  uvrA_128     0.091111
+4   459          New   clpA_8    clpX_1   nifS_9   pepX_8  pyrG_92   recG_18   rplB_4  uvrA_128     0.154833
+5   487          New   clpA_8    clpX_1   nifS_9  pepX_88  pyrG_92   recG_33   rplB_4  uvrA_128     0.011833
+6   525          New   clpA_8    clpX_1  nifS_96  pepX_32   pyrG_1  recG_137  rplB_29  uvrA_128     0.113333
+7   625          New  clpA_36   clpX_14   nifS_9  pepX_88  pyrG_92   recG_18  rplB_29  uvrA_128     0.042944
+8   692          New  clpA_36   clpX_14  nifS_96   pepX_8   pyrG_1   recG_33   rplB_4   uvrA_28     0.155556
+9   755          New  clpA_36  clpX_155   nifS_9   pepX_8  pyrG_92  recG_137   rplB_4  uvrA_128     0.059278
+10  781          New  clpA_36  clpX_155   nifS_9  pepX_88   pyrG_1   recG_18  rplB_29  uvrA_128     0.102222
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_36', 'clpX_24', 'nifS_96', 'pepX_32', 'pyrG_92', 'recG_33', 'rplB_29', 'uvrA_28'): 0.2029678749665189, 
+('clpA_8', 'clpX_1', 'nifS_9', 'pepX_8', 'pyrG_1', 'recG_18', 'rplB_4', 'uvrA_128'): 0.3005473626280778, 
+('clpA_36', 'clpX_155', 'nifS_96', 'pepX_88', 'pyrG_92', 'recG_33', 'rplB_29', 'uvrA_28'): 0.17661614291544872, 
+('clpA_8', 'clpX_14', 'nifS_9', 'pepX_8', 'pyrG_1', 'recG_137', 'rplB_4', 'uvrA_128'): 0.3198686194899545
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 35 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.48 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.522000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3199999999999995
+     ST New/Existing      clpA     clpX     nifS      pepX     pyrG      recG     rplB      uvrA  Proportions
+0    29          New  clpA_189  clpX_21   nifS_1    pepX_7   pyrG_1  recG_118  rplB_74   uvrA_10     0.011689
+1    80          New  clpA_189  clpX_21   nifS_1  pepX_161   pyrG_1  recG_118   rplB_1   uvrA_10     0.011689
+2   432          New  clpA_189  clpX_22  nifS_94  pepX_161  pyrG_18    recG_4  rplB_74    uvrA_1     0.050800
+3   439          New  clpA_189   clpX_1   nifS_1    pepX_7  pyrG_19  recG_118   rplB_1  uvrA_173     0.261000
+4   560          New  clpA_189   clpX_1  nifS_94    pepX_7   pyrG_1    recG_2   rplB_1   uvrA_10     0.006778
+5   622          New  clpA_189   clpX_1  nifS_94  pepX_161   pyrG_1  recG_118  rplB_74  uvrA_173     0.180044
+6   846          New    clpA_9  clpX_21  nifS_94  pepX_161   pyrG_1    recG_4  rplB_74    uvrA_1     0.015600
+7   852          New    clpA_9  clpX_21  nifS_94  pepX_161  pyrG_18    recG_2  rplB_74    uvrA_1     0.095600
+8   863          New    clpA_9  clpX_21  nifS_94  pepX_161  pyrG_18    recG_4  rplB_74   uvrA_10     0.115600
+9   883          New    clpA_9  clpX_22   nifS_1    pepX_7   pyrG_1    recG_2   rplB_1  uvrA_173     0.100956
+10  941          New    clpA_9  clpX_22   nifS_1  pepX_161   pyrG_1    recG_2  rplB_74   uvrA_10     0.052667
+11  998          New    clpA_9  clpX_22  nifS_94    pepX_7   pyrG_1  recG_118   rplB_1   uvrA_10     0.057578
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_9', 'clpX_1', 'nifS_1', 'pepX_7', 'pyrG_1', 'recG_4', 'rplB_1', 'uvrA_1'): 0.18201207603818362, 
+('clpA_189', 'clpX_22', 'nifS_94', 'pepX_161', 'pyrG_18', 'recG_118', 'rplB_74', 'uvrA_173'): 0.2816999494897181, 
+('clpA_9', 'clpX_1', 'nifS_1', 'pepX_7', 'pyrG_1', 'recG_2', 'rplB_1', 'uvrA_10'): 0.2755225642046455, 
+('clpA_189', 'clpX_21', 'nifS_94', 'pepX_161', 'pyrG_19', 'recG_118', 'rplB_74', 'uvrA_173'): 0.26076541026745265
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 36 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.17 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.501000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.32000000000000034
+     ST New/Existing     clpA     clpX     nifS     pepX      pyrG      recG     rplB      uvrA  Proportions
+0    15          New  clpA_58  clpX_43  nifS_22  pepX_52   pyrG_48  recG_165  rplB_39   uvrA_28       0.0005
+1   342          New  clpA_58  clpX_23  nifS_22  pepX_32  pyrG_220   recG_47  rplB_39   uvrA_43       0.1520
+2   343          New  clpA_58  clpX_23  nifS_22  pepX_32  pyrG_220   recG_47  rplB_39   uvrA_28       0.1520
+3   384          New  clpA_58  clpX_23  nifS_22  pepX_32   pyrG_20  recG_165  rplB_39  uvrA_169       0.0885
+4   385          New  clpA_58  clpX_23  nifS_42  pepX_52   pyrG_48   recG_47  rplB_23  uvrA_137       0.0660
+5   628          New  clpA_35  clpX_43  nifS_22  pepX_32   pyrG_20   recG_47  rplB_23  uvrA_169       0.0655
+6   681          New  clpA_35  clpX_43  nifS_42  pepX_52  pyrG_111  recG_165  rplB_23  uvrA_137       0.2395
+7   684          New  clpA_35  clpX_43  nifS_42  pepX_52  pyrG_111  recG_165  rplB_23  uvrA_169       0.0475
+8   693          New  clpA_35  clpX_43  nifS_42  pepX_52   pyrG_20   recG_47  rplB_39  uvrA_137       0.0235
+9   699          New  clpA_35  clpX_43  nifS_42  pepX_52   pyrG_20  recG_165  rplB_23   uvrA_28       0.0395
+10  716          New  clpA_35  clpX_43  nifS_42  pepX_32   pyrG_48  recG_165  rplB_23  uvrA_169       0.0430
+11  784          New  clpA_35  clpX_23  nifS_22  pepX_52   pyrG_48  recG_165  rplB_39  uvrA_169       0.0425
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_58', 'clpX_43', 'nifS_42', 'pepX_52', 'pyrG_48', 'recG_47', 'rplB_39', 'uvrA_43'): 0.17183558271270544, 
+('clpA_58', 'clpX_43', 'nifS_42', 'pepX_52', 'pyrG_111', 'recG_47', 'rplB_39', 'uvrA_169'): 0.30675771525193146, 
+('clpA_35', 'clpX_23', 'nifS_22', 'pepX_32', 'pyrG_20', 'recG_165', 'rplB_23', 'uvrA_28'): 0.21228341799961464, 
+('clpA_35', 'clpX_23', 'nifS_22', 'pepX_32', 'pyrG_220', 'recG_165', 'rplB_23', 'uvrA_137'): 0.3091232840357484
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 37 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.32 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.585000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000002
+      ST New/Existing      clpA     clpX      nifS     pepX     pyrG     recG     rplB     uvrA  Proportions
+0     61          New  clpA_109  clpX_24   nifS_15  pepX_85   pyrG_2  recG_20  rplB_96   uvrA_7     0.015531
+1    157          New  clpA_109  clpX_24   nifS_23  pepX_85   pyrG_2  recG_20  rplB_96   uvrA_7     0.100000
+2    384          New  clpA_109   clpX_1   nifS_15  pepX_19   pyrG_2  recG_20  rplB_94  uvrA_29     0.214375
+3    534          New  clpA_109   clpX_1  nifS_115  pepX_85   pyrG_2  recG_98  rplB_96  uvrA_29     0.045094
+4    662          New    clpA_8  clpX_24   nifS_15  pepX_19   pyrG_2  recG_98  rplB_96  uvrA_29     0.053594
+5    771          New    clpA_8  clpX_24  nifS_115  pepX_94  pyrG_22  recG_98  rplB_99   uvrA_7     0.081844
+6    773          New    clpA_8  clpX_24  nifS_115  pepX_94  pyrG_22  recG_98  rplB_96   uvrA_7     0.077781
+7    801          New    clpA_8  clpX_24  nifS_115  pepX_85  pyrG_22  recG_98  rplB_23   uvrA_7     0.046250
+8    887          New    clpA_8   clpX_1   nifS_15  pepX_94   pyrG_2  recG_98  rplB_94   uvrA_7     0.070438
+9    890          New    clpA_8   clpX_1   nifS_15  pepX_94   pyrG_2  recG_20  rplB_23  uvrA_29     0.061938
+10   907          New    clpA_8   clpX_1   nifS_15  pepX_85  pyrG_22  recG_20  rplB_99   uvrA_7     0.169125
+11  1147          New    clpA_8   clpX_1  nifS_115  pepX_19   pyrG_2  recG_20  rplB_99   uvrA_7     0.024031
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_8', 'clpX_1', 'nifS_15', 'pepX_94', 'pyrG_2', 'recG_20', 'rplB_96', 'uvrA_7'): 0.3122750662083658, 
+('clpA_109', 'clpX_24', 'nifS_23', 'pepX_85', 'pyrG_22', 'recG_98', 'rplB_23', 'uvrA_29'): 0.10037286102062265, 
+('clpA_8', 'clpX_1', 'nifS_15', 'pepX_19', 'pyrG_2', 'recG_20', 'rplB_94', 'uvrA_7'): 0.2923048921316526, 
+('clpA_109', 'clpX_24', 'nifS_115', 'pepX_85', 'pyrG_22', 'recG_98', 'rplB_99', 'uvrA_29'): 0.295047180639359
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 38 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (0.99 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.548000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3200000000000003
+     ST New/Existing     clpA     clpX     nifS      pepX     pyrG     recG     rplB     uvrA  Proportions
+0   224          New  clpA_88   clpX_1   nifS_1   pepX_52   pyrG_1   recG_6  rplB_39  uvrA_10     0.016667
+1   256          New  clpA_88   clpX_1  nifS_42    pepX_7   pyrG_1   recG_6  rplB_39  uvrA_10     0.167333
+2   368          New  clpA_12  clpX_43  nifS_42   pepX_52   pyrG_1   recG_6  rplB_39  uvrA_10     0.167333
+3   369          New  clpA_12  clpX_43  nifS_42  pepX_151  pyrG_48  recG_47   rplB_1  uvrA_43     0.184000
+4   374          New  clpA_12  clpX_43  nifS_42  pepX_151  pyrG_48   recG_6   rplB_1  uvrA_10     0.014667
+5   496          New  clpA_12   clpX_1   nifS_1    pepX_7   pyrG_1   recG_6  rplB_39  uvrA_10     0.046000
+6   577          New  clpA_64  clpX_43   nifS_1    pepX_7  pyrG_48  recG_47   rplB_1  uvrA_43     0.016667
+7   611          New  clpA_64  clpX_43   nifS_1  pepX_151  pyrG_48  recG_47  rplB_39  uvrA_43     0.150667
+8   665          New  clpA_64  clpX_43  nifS_42  pepX_151   pyrG_1  recG_47   rplB_1  uvrA_43     0.014667
+9   673          New  clpA_64   clpX_9   nifS_1    pepX_7  pyrG_48  recG_47   rplB_1  uvrA_43     0.139000
+10  769          New  clpA_64   clpX_1   nifS_1    pepX_7  pyrG_48  recG_47   rplB_1  uvrA_43     0.043000
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_88', 'clpX_43', 'nifS_42', 'pepX_52', 'pyrG_48', 'recG_47', 'rplB_39', 'uvrA_43'): 0.1841522408909556, 
+('clpA_12', 'clpX_1', 'nifS_1', 'pepX_7', 'pyrG_1', 'recG_6', 'rplB_1', 'uvrA_10'): 0.2925998791853031, 
+('clpA_12', 'clpX_9', 'nifS_1', 'pepX_7', 'pyrG_1', 'recG_6', 'rplB_1', 'uvrA_10'): 0.139308306271457, 
+('clpA_64', 'clpX_43', 'nifS_42', 'pepX_151', 'pyrG_48', 'recG_47', 'rplB_39', 'uvrA_43'): 0.3839395736522845
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 39 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.48 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.613000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3199999999999996
+     ST New/Existing      clpA      clpX      nifS      pepX      pyrG      recG     rplB      uvrA  Proportions
+0   132          New  clpA_197    clpX_2   nifS_65  pepX_126  pyrG_225  recG_184  rplB_43  uvrA_169     0.086818
+1   172          New  clpA_197    clpX_2  nifS_145  pepX_167  pyrG_174  recG_184  rplB_43  uvrA_169     0.095636
+2   312          New  clpA_197  clpX_161   nifS_65   pepX_14    pyrG_2   recG_16  rplB_43  uvrA_169     0.042818
+3   344          New  clpA_197  clpX_161   nifS_65  pepX_126  pyrG_174   recG_16  rplB_43  uvrA_169     0.213182
+4   361          New  clpA_197  clpX_161  nifS_145   pepX_14  pyrG_174  recG_184   rplB_1   uvrA_10     0.046091
+5   432          New  clpA_197  clpX_161  nifS_145  pepX_126    pyrG_2   recG_16  rplB_43  uvrA_169     0.037455
+6   433          New  clpA_197    clpX_1    nifS_1   pepX_14  pyrG_174  recG_184   rplB_1   uvrA_10     0.062818
+7   505          New  clpA_197    clpX_1   nifS_65   pepX_14  pyrG_174  recG_184   rplB_1   uvrA_10     0.028182
+8   720          New    clpA_8    clpX_2    nifS_1  pepX_126    pyrG_2   recG_16  rplB_43  uvrA_169     0.010727
+9   856          New    clpA_8    clpX_2  nifS_145  pepX_126  pyrG_225   recG_16  rplB_43  uvrA_169     0.042818
+10  866          New    clpA_8  clpX_161    nifS_1   pepX_14  pyrG_174  recG_184   rplB_1  uvrA_169     0.083545
+11  867          New    clpA_8  clpX_161    nifS_1   pepX_14  pyrG_174  recG_184  rplB_43   uvrA_10     0.083545
+12  897          New    clpA_8  clpX_161    nifS_1  pepX_167  pyrG_225  recG_184   rplB_1   uvrA_10     0.126364
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_8', 'clpX_2', 'nifS_1', 'pepX_14', 'pyrG_225', 'recG_16', 'rplB_1', 'uvrA_10'): 0.25563800612721715, 
+('clpA_197', 'clpX_161', 'nifS_65', 'pepX_126', 'pyrG_174', 'recG_184', 'rplB_43', 'uvrA_169'): 0.39128801373934785, 
+('clpA_197', 'clpX_161', 'nifS_145', 'pepX_167', 'pyrG_174', 'recG_184', 'rplB_43', 'uvrA_169'): 0.2416899351996426, 
+('clpA_8', 'clpX_1', 'nifS_1', 'pepX_14', 'pyrG_2', 'recG_16', 'rplB_1', 'uvrA_10'): 0.1113840449337924
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Now running Iteration 40 based on Experiment Type_2 of Type 1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW RUNNING THE STRAIN DETECTION ALGORITHM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+....Checking sum of proportions at each locus for each sample are equal to 1....
+Sum of proportions at each locus for each sample are equal to 1
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+----------------------------------------------------------------------
+               Creating the matrices used in LP
+---------------------------------------------------------------------- 
+----------------------------------------------------------------------
+                     Solving the CS using CPLEX
+---------------------------------------------------------------------- 
+
+CPXPARAM_Read_DataCheck                          1
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.48 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =             0.606000
+Solution status: 1 optimal
+**** Sum and Error:  0.96 -0.3199999999999999
+     ST New/Existing     clpA     clpX      nifS     pepX      pyrG     recG      rplB     uvrA  Proportions
+0   432          New  clpA_16   clpX_1   nifS_52   pepX_1    pyrG_1  recG_57    rplB_1  uvrA_10       0.0848
+1   469          New  clpA_16   clpX_1   nifS_11  pepX_69    pyrG_1   recG_1   rplB_66  uvrA_69       0.2836
+2   500          New  clpA_16   clpX_1   nifS_11   pepX_1  pyrG_146  recG_57  rplB_186  uvrA_13       0.1092
+3   639          New  clpA_16   clpX_1  nifS_101   pepX_1    pyrG_1   recG_1    rplB_1  uvrA_10       0.1284
+4   706          New  clpA_87  clpX_65   nifS_52   pepX_1  pyrG_146   recG_1  rplB_186  uvrA_69       0.0332
+5   828          New  clpA_87  clpX_65   nifS_11   pepX_1  pyrG_146  recG_57    rplB_1  uvrA_10       0.0364
+6   831          New  clpA_87  clpX_65   nifS_11   pepX_1   pyrG_73   recG_1   rplB_66  uvrA_10       0.0532
+7   861          New  clpA_87  clpX_65   nifS_11   pepX_1    pyrG_1  recG_57  rplB_186  uvrA_10       0.0452
+8   863          New  clpA_87  clpX_65   nifS_11   pepX_1    pyrG_1  recG_57    rplB_1  uvrA_13       0.0784
+9   887          New  clpA_87  clpX_65  nifS_101  pepX_69   pyrG_73   recG_1  rplB_186  uvrA_13       0.0704
+10  919          New  clpA_87  clpX_65  nifS_101   pepX_1  pyrG_146   recG_1   rplB_66  uvrA_69       0.0372
+
+-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+
+The True strains and their proportions are : {
+('clpA_16', 'clpX_1', 'nifS_11', 'pepX_1', 'pyrG_1', 'recG_1', 'rplB_186', 'uvrA_13'): 0.27838827237100455, 
+('clpA_87', 'clpX_65', 'nifS_101', 'pepX_69', 'pyrG_146', 'recG_57', 'rplB_66', 'uvrA_69'): 0.23574533743586837, 
+('clpA_16', 'clpX_1', 'nifS_11', 'pepX_1', 'pyrG_1', 'recG_1', 'rplB_1', 'uvrA_10'): 0.3479490830717937, 
+('clpA_87', 'clpX_65', 'nifS_52', 'pepX_69', 'pyrG_73', 'recG_57', 'rplB_66', 'uvrA_69'): 0.13791730712133346
+}
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Done ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Statistics 1
+Soft Precision is: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.36363636363636365, 0.6666666666666666, 0.0, 0.0, 0.4, 0.5555555555555556, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.36363636363636365, 0.0, 0.0, 0.1, 0.0, 0.2, 0.0, 0.2857142857142857, 0.08333333333333333, 0.0, 0.75, 0.09090909090909091, 0.5454545454545454, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+Average of Soft Precision is:  0.110122655123 
+Standard deviation of Soft Precision is:  0.2061147425763453 
+
+Statistics 2
+Soft Recall is: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.25, 0.0, 0.5, 0.0, 0.5, 0.25, 0.0, 1.0, 0.25, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+Average of Soft Recall is:  0.21875 
+Standard deviation of Soft Recall is:  0.3799156978857283 
+
+Statistics 3
+Earth Movers distance is: [94.99925699482105, 96.93648190819988, 75.24062505630374, 121.87994667828902, 67.91017792313714, 430.60401905811824, 65.0730827375288, 7.292104268684809, 4.089533926741862, 128.498793362098, 323.9809048203019, 5.86064038107315, 5.014647061657216, 115.1412363854197, 117.33574560233687, 118.70009157844142, 125.67036984705119, 96.21811925107431, 132.461006510272, 6.291077226005358, 118.53036610735337, 126.1722632969054, 52.11920943968229, 128.91126585041798, 17.011258019145348, 107.93955031562825, 29.45171670341433, 66.54567667900646, 90.02572247656339, 3.3427009870333677, 124.87192338433934, 5.215921179863647, 93.79071956743407, 123.02243769926955, 125.63572990738757, 123.80827038086784, 117.18437239182823, 119.60848296471104, 107.45800448519795, 111.59927248818722] 
+Average of EMD is:  98.2860681225 
+Standard deviation of EMD is:  78.97995229275685 
+
+Statistics 4
+Precision is: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1111111111111111, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.09090909090909091, 0.0, 0.0, 0.1, 0.0, 0.2, 0.0, 0.0, 0.08333333333333333, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+Average of precision is:  0.0146338383838 
+Standard deviation of precision is:  0.04152969336298289 
+
+Statistics 5
+Recall is: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.25, 0.0, 0.0, 0.25, 0.0, 0.5, 0.0, 0.0, 0.25, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0] 
+Average of recall is:  0.0375 
+Standard deviation of recall is:  0.10532687216470447 
+
+Statistics 6
+Total Variation Distance is: [0.9799999999999999, 0.9799999999999999, 0.9800000000000001, 0.9799999999999999, 0.9800000000000001, 0.98, 0.9799999999999999, 0.98, 0.98, 0.9800000000000001, 0.9799999999999999, 0.9799999999999999, 0.7824181369464172, 0.98, 0.9799999999999999, 0.98, 0.98, 0.9800000000000001, 0.9799999999999999, 0.6951933830768177, 0.9799999999999999, 0.9799999999999998, 0.8617051500175088, 0.98, 0.20194842856633669, 0.98, 0.9800000000000001, 0.7681084310240724, 0.98, 0.9800000000000001, 0.9799999999999998, 0.98, 0.98, 0.9799999999999999, 0.98, 0.98, 0.98, 0.9800000000000002, 0.98, 0.9800000000000001] 
+Average of Total Variation Distance is:  0.940234338241 
+Standard deviation of Total Variation Distance is:  0.13427183656586877 
