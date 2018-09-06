@@ -18,6 +18,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
 import argparse
+import cs_sim_strainSolver as cs
 plt.style.use('ggplot')
 
 
@@ -47,8 +48,8 @@ def run_sim(num_samples, num_strains, editDist, num_mut):
     
     #read in the database of strains
     loci = ['clpA','clpX','nifS','pepX','pyrG','recG','rplB','uvrA']
-    path = '/home/elijah/Documents/Borellia/Multi_Sample_Simulation/strain_ref.txt'
-    pathToDistMat = '/home/elijah/Documents/Borellia/Multi_Sample_Simulation/Dist_DB'
+    path = '/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/strain_ref.txt'
+    pathToDistMat = '/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB'
     reference = pd.read_csv(path,sep="\t",usecols=range(1,len(loci)+1))
     for name in loci:
         reference["%s" %name] = name + "_" + reference["%s" %name].astype(str)
@@ -58,7 +59,7 @@ def run_sim(num_samples, num_strains, editDist, num_mut):
     for index in range(reference.shape[0]):
         all_strains.append(reference.iloc[index,:].values.tolist())
         
-    #select 10 random strains from the database
+    #select 4 random strains from the database
     strains_orig = [random.choice(all_strains) for _ in range(num_strains)]
                     
     #print(strains_orig)
@@ -103,7 +104,7 @@ def run_sim(num_samples, num_strains, editDist, num_mut):
         samples.append('Sample_{}'.format(i))
         
     #change to the samples directory
-    os.chdir('/home/elijah/Documents/Borellia/Multi_Sample_Simulation/Samples')
+    os.chdir('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Samples')
     
     #for each sample in the sample list, create that sample in the samples directory
     for sample in samples:
@@ -176,10 +177,10 @@ def run_sim(num_samples, num_strains, editDist, num_mut):
     #print(all_strains_dict)
     print(strains_dict)
     
-    #now we run the SDP on all 10 samples
-    samplesDir = '/home/elijah/Documents/Borellia/Multi_Sample_Simulation/Samples'
-    outputDir = '/home/elijah/Documents/Borellia/Multi_Sample_Simulation/SDP_Results'
-    #SDP_result = pf.strainSolver(samplesDir,path,outputDir,'noProp','all',10800,5, loci=loci,pathToDistMat=pathToDistMat)
+    #now we run the SDP on all 4 samples
+    samplesDir = '/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Samples'
+    outputDir = '/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/SDP_Results'
+    SDP_result = cs.strainSolver(samplesDir,path,outputDir,'noProp','all',10800,5, loci=loci,pathToDistMat=pathToDistMat)
     #print(SDP_result)
     
     #compute the precision, recall, and tvd for the SDP
@@ -218,7 +219,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("-n", "--numOfiter", required=False, default=40, type=int, help="The number of simulation iterations default = 40")
     ap.add_argument("-s", "--numOfstrains", required=False, default=5 ,type=int, help="The number of initial strains to select. Default = 5")
-    ap.add_argument("-Ns", "--numOfsample", required=False, default=10, type=int, help="The number of samples to simulate. Default = 10")
+    ap.add_argument("-Ns", "--numOfsample", required=False, default=4, type=int, help="The number of samples to simulate. Default = 4")
     ap.add_argument("-Ed", "--editDist", required=False, default=15, type=int, help="The maximum edit distance. Default = 15")
     ap.add_argument("-nm", "--numMut", required=False, default=1, type=int, help="The number of mutations to introduce. Default = 1")
     #parse the arguments
