@@ -114,6 +114,10 @@ def solve_cs(A, b, cols, epsilon=0.01, obj=None):
         print exc
         exit(-1)
 
+def createMeasureMatrix(strains, loci, variants):
+	# todo: create measurment matrix from strains and variants
+	# strains is a dataframe, variants is a list
+	return
 
 '''
 Predict strains using CS and output in csv file
@@ -254,6 +258,32 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 
 	print "\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n\n"
 
+	print strains
+	
+	# Solving for strains present in several samples
+	# some data processing
+	vpdf = varAndProp.drop_duplicates(['Variant'])
+	loci = vpdf['Locus'].tolist()
+	from collections import OrderedDict
+	loci = list(OrderedDict.fromkeys(loci))
+
+	strSet = set(strains.drop_duplicates(loci)['ST'].tolist())
+	chosenStrs = list()
+	for s in strSet:
+	    sampSet = set(strains.loc[strains['ST'] == s].drop_duplicates('Sample')['Sample'].tolist())
+	    if len(sampSet) > 1:
+		chosenStrs.append(s - 1)
+	sharedStrs = strains.iloc[chosenStrs].reset_index(drop=True)
+	print 'SHARED:\n', sharedStrs
+	chosenVars = list()
+	dims = []
+	variants = []
+	for l in loci:
+	    dims.append(len(set(sharedStrs[l].tolist())))
+	    variants.append(list(set(sharedStrs[l].tolist())))
+	A = createMeasureMatrix(sharedStrs, loci, variants)
+	
+	
         sampAlleles = [] # List for having each samples data
 
 	nrows = len((varAndProp.drop_duplicates(['Variant'])).values.tolist()) # Number of rows of A and rows of B
@@ -266,10 +296,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 	# Defining the problem
 	B = [[0 for x in range(nsamp)] for x in range(nrows)]
 	
-	vpdf = varAndProp.drop_duplicates(['Variant'])
-	loci = vpdf['Locus'].tolist()
-	from collections import OrderedDict
-	loci = list(OrderedDict.fromkeys(loci))
+	
 	dims = []
         for l in loci:
 	    # if len(vpdf.index[vpdf['Locus'] == l]) > 1:

@@ -217,7 +217,7 @@ def main():
     
     #get and parse the arguments
     ap = argparse.ArgumentParser()
-    ap.add_argument("-n", "--numOfiter", required=False, default=40, type=int, help="The number of simulation iterations default = 40")
+    ap.add_argument("-n", "--numOfiter", required=False, default=10, type=int, help="The number of simulation iterations default = 10")
     ap.add_argument("-s", "--numOfstrains", required=False, default=5 ,type=int, help="The number of initial strains to select. Default = 5")
     ap.add_argument("-Ns", "--numOfsample", required=False, default=4, type=int, help="The number of samples to simulate. Default = 4")
     ap.add_argument("-Ed", "--editDist", required=False, default=15, type=int, help="The maximum edit distance. Default = 15")

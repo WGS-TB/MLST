@@ -25,21 +25,21 @@ MAX_WEIGHT = 100
     
 #set up genes edit distance matrices
 #clpA
-clpA_df = pd.read_csv('/home/elijah/Documents/Borellia/Multi_Sample_Simulation/Dist_DB/editDistanceMatrix_clpA.csv', sep=",")
+clpA_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_clpA.csv', sep=",")
 #clpX
-clpX_df = pd.read_csv('/home/elijah/Documents/Borellia/Multi_Sample_Simulation/Dist_DB/editDistanceMatrix_clpX.csv', sep=",")
+clpX_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_clpX.csv', sep=",")
 #nifS
-nifS_df = pd.read_csv('/home/elijah/Documents/Borellia/Multi_Sample_Simulation/Dist_DB/editDistanceMatrix_nifS.csv', sep=",")
+nifS_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_nifS.csv', sep=",")
 #pepX
-pepX_df = pd.read_csv('/home/elijah/Documents/Borellia/Multi_Sample_Simulation/Dist_DB/editDistanceMatrix_pepX.csv', sep=",")
+pepX_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_pepX.csv', sep=",")
 #pyrG
-pyrG_df = pd.read_csv('/home/elijah/Documents/Borellia/Multi_Sample_Simulation/Dist_DB/editDistanceMatrix_pyrG.csv', sep=",")
+pyrG_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_pyrG.csv', sep=",")
 #recG
-recG_df = pd.read_csv('/home/elijah/Documents/Borellia/Multi_Sample_Simulation/Dist_DB/editDistanceMatrix_recG.csv', sep=",")
+recG_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_recG.csv', sep=",")
 #rplB
-rplB_df = pd.read_csv('/home/elijah/Documents/Borellia/Multi_Sample_Simulation/Dist_DB/editDistanceMatrix_rplB.csv', sep=",")
+rplB_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_rplB.csv', sep=",")
 #uvrA
-uvrA_df = pd.read_csv('/home/elijah/Documents/Borellia/Multi_Sample_Simulation/Dist_DB/editDistanceMatrix_uvrA.csv', sep=",")
+uvrA_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_uvrA.csv', sep=",")
 
 genes_df = [clpA_df,clpX_df,nifS_df,pepX_df,pyrG_df,recG_df,rplB_df,uvrA_df]
 
@@ -104,7 +104,7 @@ def Generate_reads(strains, seed, editDist):
         strain = strains[i]
         output_file_name = 'editDist_{}_strain_{}_reads_'.format(editDist,i)
         for j in range(len(strain)):
-            variant_sequence = sh.grep(str(strain[j]),"/home/elijah/Documents/Borellia/Multi_Sample_Simulation/Variant_files/{}_linear.txt".format(genes[j]),"-w","-A1") #use bash to extract the variant sequence
+            variant_sequence = sh.grep(str(strain[j]),"/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Variant_files/{}_linear.txt".format(genes[j]),"-w","-A1") #use bash to extract the variant sequence
             variant_sequence = variant_sequence.rstrip() #remove the "\n" character that is returned by bash
             variant_sequence = str(variant_sequence)
             #total_variants_sequence += variant_sequence
@@ -172,7 +172,7 @@ def Dict_to_csv(gene_dict, filename):
             
             
 def Process_reads(gene, editDist):
-    mapping_cmd = "bowtie -a --best --strata -v 3 -p 4 /home/elijah/Documents/Borellia/Multi_Sample_Simulation/Bowtie_Indices/{0}_bowtie -1 ./editDist_{1}_all_Strains_1.fa -2 ./editDist_{1}_all_Strains_2.fa --sam all_Strains.sam >/dev/null 2>&1".format(gene, editDist)
+    mapping_cmd = "bowtie -a --best --strata -v 3 -p 4 /home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Bowtie_Indices/{0}_bowtie -1 ./editDist_{1}_all_Strains_1.fa -2 ./editDist_{1}_all_Strains_2.fa --sam all_Strains.sam >/dev/null 2>&1".format(gene, editDist)
     os.system(mapping_cmd)
     mapped_cmd = "samtools view -h -F4 all_Strains.sam > all_Strains_mapped.sam"
     paired_cmd = "samtools view -F8 all_Strains_mapped.sam > all_Strains_pairedNoHeader.sam"
