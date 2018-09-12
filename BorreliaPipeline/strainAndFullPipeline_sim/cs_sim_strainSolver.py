@@ -1,10 +1,11 @@
 from __future__ import division
 import matplotlib
 import matplotlib.pyplot as plt
-import numpy.random
+import numpy as np
 from cplex.exceptions import CplexError
 from pipeline_functions import *
 from scipy.spatial.distance import hamming
+from spgl1 import spgl1, spg_mmv, spgSetParms
 
 matplotlib.use('Agg')
 plt.style.use('ggplot')
@@ -106,7 +107,7 @@ def solve_cs(A, b, cols, epsilon=0.01, obj=None):
 
         x = prob.solution.get_values()
 	print prob.solution.get_objective_value()
-        error = np.sum(numpy.subtract(numpy.dot(A, x), b))
+        error = np.sum(np.subtract(np.dot(A, x), b))
         return x, sum(x), error
 
     except CplexError, exc:
@@ -192,69 +193,135 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 
     weights = [-1 if min(i) == 0 else min(i) for i in distMat]
 
-    '''newOrOld = strains.merge(reference, indicator=True, how="left")
-    newOrOld["_merge"].replace(to_replace="both", value= -1.0, inplace=True)
-    newOrOld["_merge"].replace(to_replace="left_only", value=2.0, inplace=True)
-    newOrOld = newOrOld.rename(columns = {"_merge":"Weights"})
-    newOrOld = newOrOld.drop_duplicates(loci)
-
-    for index, row in newOrOld.iterrows():
-	if row["Weights"] == -1.0:
-	    continue
-	newOrOld.at[index, "Weights"] = 8.0 * min([hamming(row[loci].tolist(), l) for l in reference[loci].values.tolist()])
-
-    print newOrOld'''
-
     # For each variants, get a mapping of which strains it maps to
     varSampToST = mapVarAndSampleToStrain(strains, loci, allSamples)
 
-    print "\n\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n"
+    if len(allSamples) == 1:
+        print "\n\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n"
 
-    # b is the measurements matrix in cs
-    b = []
-    # dims is the number of variants in each locus
-    dims = []
+        # b is the measurements matrix in cs
+        b = []
+        # dims is the number of variants in each locus
+        dims = []
 
-    for p in varAndProp['Proportion']:
-        if p < 1.0:
-	    b.append(float(p))
+        for p in varAndProp['Proportion']:
+            if p < 1.0:
+	        b.append(float(p))
 	    
 
-    loci = varAndProp['Locus'].tolist()
-    prev = ''
-    for l in loci:
-	if prev == l:
-	    continue
-	prev = l
-	if len(varAndProp.index[varAndProp['Locus'] == l]) > 1:
-            dims.append(len(varAndProp.index[varAndProp['Locus'] == l]))
+        loci = varAndProp['Locus'].tolist()
+        prev = ''
+        for l in loci:
+	    if prev == l:
+	        continue
+	    prev = l
+	    if len(varAndProp.index[varAndProp['Locus'] == l]) > 1:
+                dims.append(len(varAndProp.index[varAndProp['Locus'] == l]))
 
-    # A is the coefficient matrix for the cs problem
-    samp, numOfC = numOfComb.popitem()
-    A = defineProblem(numOfC, dims)
+        # A is the coefficient matrix for the cs problem
+        samp, numOfC = numOfComb.popitem()
+	numOfComb[samp] = numOfC
+	# print samp, numOfC
+        A = defineProblem(numOfC, dims)
 
-    # Now we solve the cs problem
-    strainProps, sumOfProps, error = solve_cs(A, b, numOfC, eps, weights)
-    print '~~~', sumOfProps, error
+        # Now we solve the cs problem
+        strainProps, sumOfProps, error = solve_cs(A, b, numOfC, eps, weights)
+        print '~~~', sumOfProps, error
 
-    strainNums = np.nonzero(strainProps)[0]
-    strainNumsIndexes = [i + 1 for i in strainNums]
+        strainNums = np.nonzero(strainProps)[0]
+        strainNumsIndexes = [i + 1 for i in strainNums]
 
-    # output fromatting
-    output = strains.merge(reference, indicator=True, how="left")
-    output["_merge"].replace(to_replace="both", value="Existing", inplace=True)
-    output["_merge"].replace(to_replace="left_only", value="New", inplace=True)
-    output = output.rename(columns = {"_merge":"New/Existing"})
-    out = output.drop_duplicates(loci)
-    retainCol = ["ST", "New/Existing"]
-    out = out[retainCol].reset_index(drop=True)
-    out = pd.merge(out, strains.iloc[strainNums], on='ST')
-    out['Proportions'] = [strainProps[i] for i in strainNums]
-    out.drop('Sample', axis=1, inplace=True)
-    
-    print out
-    out.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, newNameToOriName[samp]))
+        # output fromatting
+        output = strains.merge(reference, indicator=True, how="left")
+        output["_merge"].replace(to_replace="both", value="Existing", inplace=True)
+        output["_merge"].replace(to_replace="left_only", value="New", inplace=True)
+        output = output.rename(columns = {"_merge":"New/Existing"})
+        out = output.drop_duplicates(loci)
+        retainCol = ["ST", "New/Existing"]
+        out = out[retainCol].reset_index(drop=True)
+        out = pd.merge(out, strains.iloc[strainNums], on='ST')
+        out['Proportions'] = [strainProps[i] for i in strainNums]
+	out_cols = out.columns.tolist()
+	out_cols = out_cols[0:-2] + out_cols[-1:] + out_cols[-2:-1]
+	out = out[out_cols]
+        print out
+	out.drop('Sample', axis=1, inplace=True)
+        out.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, newNameToOriName[samp]))
 
-    print "\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n"
+        print "\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n"
+	return out
+    else:
+	print "\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n\n"
 
-    return out
+        sampAlleles = [] # List for having each samples data
+
+	nrows = len((varAndProp.drop_duplicates(['Variant'])).values.tolist()) # Number of rows of A and rows of B
+	nsamp = 0 # Number of columns of X and columns of B
+	
+	for samp, numOfC in numOfComb.iteritems():
+	    sampAlleles.append(varAndProp.loc[varAndProp['Sample'] == samp])
+	    nsamp += 1
+	
+	# Defining the problem
+	B = [[0 for x in range(nsamp)] for x in range(nrows)]
+
+	vpdf = varAndProp.drop_duplicates(['Variant'])
+	loci = vpdf['Locus'].tolist() # IMPORTANT: must be sorted if it's not
+	dims = []
+	prev = ''
+        for l in loci:
+	    if prev == l:
+	        continue
+	    prev = l
+	    # if len(vpdf.index[vpdf['Locus'] == l]) > 1:
+            dims.append(len(vpdf.index[vpdf['Locus'] == l]))
+	ncols = 1
+	for d in dims:
+	    ncols *= d
+	A = defineProblem(ncols, dims)
+
+	for ind in range(nsamp):
+	    for indV in range(len(vpdf['Variant'].tolist())):
+		if vpdf['Variant'].tolist()[indV] in sampAlleles[ind]['Variant'].tolist():
+		    B[indV][ind] = sampAlleles[ind].loc[sampAlleles[ind]['Variant'] == vpdf['Variant'].tolist()[indV]]['Proportion'].values.tolist()[0]
+		    
+	# Solving the problem using spgl1	
+	print "----------------------------------------------------------------------\n           Solving the Joint Sparsity " \
+          "using SPGL1\n---------------------------------------------------------------------- "
+        print
+	opts = spgSetParms({'verbosity': 1})
+	X, _, _, _ = spg_mmv(np.array(A), np.array(B), eps, opts)
+	print X, '\n'
+	
+	# output formatting
+	output = strains.merge(reference, indicator=True, how="left")
+        output["_merge"].replace(to_replace="both", value="Existing", inplace=True)
+        output["_merge"].replace(to_replace="left_only", value="New", inplace=True)
+        output = output.rename(columns = {"_merge":"New/Existing"})
+        out2 = output.drop_duplicates(loci)
+	retainCol = ["ST", "New/Existing"]
+	out2['Proportions'] = ""
+	out3 = out2.iloc[0:0]
+	out2 = out2[retainCol].reset_index(drop=True)
+	samplecnt = 1
+	for sampStrains in X.transpose():
+	    persampout = out2.copy(deep=True)
+	    strainNums = np.nonzero(sampStrains)[0]
+	    persampout = pd.merge(persampout, strains.iloc[strainNums], on='ST')
+            persampout['Proportions'] = [sampStrains[i] for i in strainNums]
+	    persampout_cols = persampout.columns.tolist()
+	    persampout_cols = persampout_cols[0:-2] + persampout_cols[-1:] + persampout_cols[-2:-1]
+    	    persampout = persampout[persampout_cols]
+	    persampout['Sample'] = 's' + str(samplecnt)
+	    samplecnt += 1
+	    out3 = out3[persampout_cols]
+	    out3 = out3.append(persampout, ignore_index=True)
+
+	print out3
+	print "\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n\n"
+	out3.drop('Sample', axis=1, inplace=True)
+        out3.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, newNameToOriName[samp]))
+	return out3
+
+
+
