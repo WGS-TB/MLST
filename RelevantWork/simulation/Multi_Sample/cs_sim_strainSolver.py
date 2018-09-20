@@ -69,25 +69,9 @@ def solve_cs(A, b, cols, epsilon=0.01, obj=None):
     for row in A:
         constraints.append([range(cols), [-x for x in row]])
 
-    # Proportions should add up to 1
-    '''rhs.append(1 + 10 * epsilon)
-    rhs.append(-1 + 10 * epsilon)
-    constraints.append([range(cols), [1 for i in row]])
-    constraints.append([range(cols), [-1 for i in row]])'''
-
-    #print
-    #for row in constraints:
-	#print row, '     ', rhs[constraints.index(row)]
-    #print
-
     senses = ""
     for i in range(len(constraints)):
         senses += "L"
-
-    # print "    Constraints:"
-    # for r in range(len(constraints)):
-    #     print constraints[r][1], "\t\t\t", rhs[r]
-    # print "\n"
 
     # -------------------- Using cplex to solve the LP ----------------------
 
@@ -99,12 +83,7 @@ def solve_cs(A, b, cols, epsilon=0.01, obj=None):
 
         prob.solve()
 
-        # print
         print "Solution status:", prob.solution.get_status(), prob.solution.status[prob.solution.get_status()]
-        # print "Solution value  = ", prob.solution.get_objective_value()
-        # for i in range(prob.variables.get_num()):
-        #     print prob.variables.get_names()[i], '\t=\t', prob.solution.get_values()[i]
-
         x = prob.solution.get_values()
 	print prob.solution.get_objective_value()
         error = np.sum(numpy.subtract(numpy.dot(A, x), b))
@@ -114,10 +93,29 @@ def solve_cs(A, b, cols, epsilon=0.01, obj=None):
         print exc
         exit(-1)
 
-def createMeasureMatrix(strains, loci, variants):
-	# todo: create measurment matrix from strains and variants
-	# strains is a dataframe, variants is a list
-	return
+'''
+Creating the measurment matrix (A) via inspecting the strains
+Input:
+    strains, the strains to be inspected
+    loci, list of locus
+    variant, list of lists of variants in each locus
+    dims, list of lists of number of variants in each locus
+'''
+def createMeasureMatrix(strains, loci, variants, dims):
+    AT = [] 				# the matrix created here is the transpose of the matrix we want
+    for index, strain in strains.iterrows():
+	strainCol = []
+	for li in range(len(loci)): 	#li is locus index
+	    l = loci[li]
+	    for vi in range(dims[li]): 	#vi is variant index
+		v = variants[li][vi]
+		if strain[l] == v:
+		    strainCol.append(1)
+		else:
+		    strainCol.append(0)
+	AT.append(strainCol)
+    A = (np.array(AT)).transpose()
+    return A
 
 '''
 Predict strains using CS and output in csv file
@@ -257,55 +255,101 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     else:
 
 	print "\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n\n"
-
-	print strains
 	
-	# Solving for strains present in several samples
 	# some data processing
 	vpdf = varAndProp.drop_duplicates(['Variant'])
 	loci = vpdf['Locus'].tolist()
 	from collections import OrderedDict
 	loci = list(OrderedDict.fromkeys(loci))
+	sampAlleles = [] 	# List for having each samples data
+	nsamp = 0 		# Number of columns of X and columns of B
+	for samp, numOfC in numOfComb.iteritems():
+	    sampAlleles.append(varAndProp.loc[varAndProp['Sample'] == samp])
+	    nsamp += 1
 
+
+	# ~~~~~~~~~~~~  Solving for strains present in several samples  ~~~~~~~~~~~~~~
+	# Below we detect the shared strains between all samples
 	strSet = set(strains.drop_duplicates(loci)['ST'].tolist())
 	chosenStrs = list()
+	sampsets = list()
 	for s in strSet:
 	    sampSet = set(strains.loc[strains['ST'] == s].drop_duplicates('Sample')['Sample'].tolist())
 	    if len(sampSet) > 1:
 		chosenStrs.append(s - 1)
+		sampsets.append(sampSet)
 	sharedStrs = strains.iloc[chosenStrs].reset_index(drop=True)
-	print 'SHARED:\n', sharedStrs
-	chosenVars = list()
-	dims = []
-	variants = []
-	for l in loci:
-	    dims.append(len(set(sharedStrs[l].tolist())))
-	    variants.append(list(set(sharedStrs[l].tolist())))
-	A = createMeasureMatrix(sharedStrs, loci, variants)
-	
-	
-        sampAlleles = [] # List for having each samples data
+	sharedStrs['Sample'] = sampsets
+	print '**SHARED STRAINS'
+	print sharedStrs, '\n'
 
-	nrows = len((varAndProp.drop_duplicates(['Variant'])).values.tolist()) # Number of rows of A and rows of B
-	nsamp = 0 # Number of columns of X and columns of B
+	# In some iterations it's possible to not have any shared strains
+	if len(chosenStrs) > 0:
+	    chosenVars = list()
+	    dims = []
+	    variants = []
+	    variantsMixed = []
+	    for l in loci:
+	        dims.append(len(set(sharedStrs[l].tolist())))
+	        locusvars = list(set(sharedStrs[l].tolist()))
+	        variants.append(locusvars)
+	        variantsMixed.extend(locusvars)
+	
+	    # A: Measurement matrix
+	    A = createMeasureMatrix(sharedStrs, loci, variants, dims)
 
-	for samp, numOfC in numOfComb.iteritems():
-	    sampAlleles.append(varAndProp.loc[varAndProp['Sample'] == samp])
-	    nsamp += 1
+	    # B: Observation Matrix		data ceated here is used to solve normally too
+	    nrows = len(variantsMixed) # Number of rows of A and rows of B
+	    B = [[0 for x in range(nsamp)] for x in range(nrows)]
+	    for ind in range(nsamp):
+	        for indV in range(nrows):
+		    if variantsMixed[indV] in sampAlleles[ind]['Variant'].tolist():
+		        B[indV][ind] = sampAlleles[ind].loc[sampAlleles[ind]['Variant'] == variantsMixed[indV]]['Proportion'].values.tolist()[0]
 	
-	# Defining the problem
-	B = [[0 for x in range(nsamp)] for x in range(nrows)]
+	    # Now we solve the shared strains with mmv, then the remaining strains for each sample with single sample solution
+	    # For solving the shared strains problem,  we choose a range  of sigmas, and use each of them as  input to get the
+	    # best result. this needs to be replaced with a multiple meusurement version of lasso (?).
 	
+	    sigmas = []
+	    errs = []
+	    min_err = 100.0
+	    best_sig = 0
+	    X1 = np.array([[0]])
+	    for i in range(11):
+	        sigmas.append(i * 0.05)
+	    for sig in sigmas:
+	        opts = spgSetParms({'verbosity': 1})
+	        X, _, _, _ = spg_mmv(A, np.array(B), sig, opts)
+	        print '**SHARED RES FOR SIGMA ', sig
+	        print pd.DataFrame(X)
+	        errmat = np.dot(A,X) - np.array(B)
+	        err = np.sqrt(sum([np.linalg.norm(row) for row in errmat]))
+	        print err, '\n\n'
+	        errs.append(err)
+		if min_err > err:
+		    min_err = err
+		    best_sig = sig
+		    X1 = X
+	    print '**BEST SIG AND ITS ERR ', best_sig, min_err
 	
+	# The single sample solver turned into a function and called here on each samples, after substraction of the results of
+	# the shared sample step above. This is an easy task to do so for now, I'm gonna focus on making the multi sample resu-
+	# -lts better. ~PG
+	
+	# X2 = SolveSingleSample(args...)
+	
+
+	# ~~~~~~~~~~~~~~~~~~~~~~~~~~~  Solving normally  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	dims = []
         for l in loci:
-	    # if len(vpdf.index[vpdf['Locus'] == l]) > 1:
             dims.append(len(vpdf.index[vpdf['Locus'] == l]))
 	ncols = 1
 	for d in dims:
 	    ncols *= d
 	A = defineProblem(ncols, dims)
-
+	
+	nrows = len((varAndProp.drop_duplicates(['Variant'])).values.tolist()) 		# Number of rows of A and rows of B
+	B = [[0 for x in range(nsamp)] for x in range(nrows)]
 	for ind in range(nsamp):
 	    for indV in range(len(vpdf['Variant'].tolist())):
 		if vpdf['Variant'].tolist()[indV] in sampAlleles[ind]['Variant'].tolist():
@@ -331,9 +375,6 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
         print
 	opts = spgSetParms({'verbosity': 1})
 	X, _, _, _ = spg_mmv(np.array(A), np.array(B), eps, opts)
-	for Row in X.transpose():
-	    print Row
-	print
 	
 	# output formatting
 	output = allCombs.merge(reference, indicator=True, how="left")
