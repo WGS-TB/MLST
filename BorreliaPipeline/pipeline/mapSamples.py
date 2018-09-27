@@ -68,7 +68,7 @@ if not os.path.exists("variantsAndProp"):
 os.chdir("variantsAndProp")
 
 ''' $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Mapping Samples $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$''' 
-samples=["SRR2034333"]
+#samples=["SRR2034333"]
 for samp in samples:
     if not os.path.exists(samp):
         os.mkdir(samp)
