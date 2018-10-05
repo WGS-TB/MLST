@@ -113,7 +113,7 @@ def createMeasureMatrix(strains, loci, variants, dims):
 		    strainCol.append(1)
 		else:
 		    strainCol.append(0)
-	AT.append(strainCol)
+	AT.append(strainCol)	
     A = (np.array(AT)).transpose()
     return A
 
@@ -270,10 +270,15 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     loci = list(OrderedDict.fromkeys(loci))
     sampAlleles = [] 	# List for having each samples data
     nsamp = 0 		# Number of columns of X and columns of B
+
+    sampNames = []
     for samp, numOfC in numOfComb.iteritems():
-	sampAlleles.append(varAndProp.loc[varAndProp['Sample'] == samp])
+	sampNames.append(samp)
 	nsamp += 1
-    sampAlleles.reverse()
+    sampNames = sorted(sampNames)
+    for samp in sampNames:
+	sampAlleles.append(varAndProp.loc[varAndProp['Sample'] == samp])
+
     for sa in sampAlleles:
         print sa
     print '\n'
@@ -324,6 +329,9 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 	    variants[1].append((l, locusvars))
             variantsMixed.extend(locusvars)
         # print variants[0]
+	# print variantsMixed
+	# print variants[1]
+
         # A: Measurement matrix
         A = createMeasureMatrix(sharedStrs, loci, variants[0], dims)
 	
@@ -343,27 +351,14 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
         # best result.
 
         # calculating weights for shared strains
-        noc = 1
-        for g in variants[1]:
-            noc *= len(g[1])
-   
-        distMat = [[8 for x in range(len(reference.values.tolist()))] for x in range(noc)]
+	weights = []
+	for st in sharedStrs[loci].values.tolist():
+	    weights.append(min([hamming(st, rst) for rst in reference[loci].values.tolist()]) * 8 + 1)
 
-        # Calculating weights for minimization
-        for i in range(len(reference.values.tolist())):
-	    rem = noc
-            for g in variants[1]:
-	        refV = reference.iloc[i][g[0]]
-	        for j in range(len(g[1])):
-		    v = g[1][j]
-		    if refV == v:
-		        for repeat in range(int(noc/rem)):
-			    offset = repeat * rem
-			    for index in range(int(rem/len(g[1]))):
-			        distMat[index + j * int(rem / len(g[1])) + offset][i] -= 1
-	        rem = int(rem / len(g[1]))
-
-        weights = [min(i) + 1 for i in distMat]
+        # print len(weights)
+        # print weights
+        # print "**SHAPES:"
+	# print A.shape
     
         print "----------------------------------------------------------------------\n           Solving the Joint Sparsity " \
         "using SPGL1\n---------------------------------------------------------------------- "
@@ -377,7 +372,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
         for i in range(11):
             sigmas.append(i * 0.05)
         for sig in sigmas:
-            opts = {'weights': np.array(weights)}#, 'project' : NormL1_project, 'primal_norm': NormL1_primal, 'dual_norm'  : NormL1_dual})
+            opts = {'weights' : np.array(weights), 'verbosity' : 1}
             X, _, _, _ = spg_mmv(A, np.array(B), sig, opts)
             errmat = np.dot(A,X) - np.array(B)
             err = np.sqrt(sum([np.linalg.norm(row) for row in errmat]))
@@ -392,9 +387,9 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 	
 	# setting the residue matrix for samples that were included in this part
 	BR = np.array(B) - np.dot(A,X1)
-	print np.array(B)
-	print BR
-	print variantsMixed
+	# print np.array(B)
+	# print BR
+	# print variantsMixed
 
 	# creating the output of shared strains. Latter output for individual samples will be appended to these.
 	output = sharedStrs.merge(reference, indicator=True, how="left")
@@ -436,95 +431,4 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 	    outputdict[sampName] = persampout
 	print outputdict[sampName]
     return outputdict
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # Obsolete code. here in case I needed to copy paste sth
-
-    # ~~~~~~~~~~~~~~~~~~~~~~~~~~~  Solving normally  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    dims = []
-    for l in loci:
-        dims.append(len(vpdf.index[vpdf['Locus'] == l]))
-    ncols = 1
-    for d in dims:
-        ncols *= d
-    A = defineProblem(ncols, dims)
-    
-    nrows = len((varAndProp.drop_duplicates(['Variant'])).values.tolist()) 		# Number of rows of A and rows of B
-    B = [[0 for x in range(nsamp)] for x in range(nrows)]
-    variants = sorted(vpdf['Variant'].tolist())
-    for ind in range(nsamp):
-        for indV in range(len(variants)):
-            if variants[indV] in sampAlleles[ind]['Variant'].tolist():
-	        B[indV][ind] = sampAlleles[ind].loc[sampAlleles[ind]['Variant'] == variants[indV]]['Proportion'].values.tolist()[0]
-    
-    # finding all combinations across samples
-    vlist = list()
-    for l in loci:
-        vlist.append(sorted(list(set(varAndProp.loc[varAndProp['Locus'] == l]['Variant'].tolist()))))
-    
-    combination = itertools.product(*vlist)
-    combinationIndices = [list(comb) for comb in itertools.product(*[range(len(var)) for var in vlist])]
-    allCombs = list()
-    for strain, strainIndex in itertools.izip(combination,combinationIndices):
-        temp = list(strain)
-        allCombs.append(temp)
-    allCombs = pd.DataFrame(allCombs, columns=(loci))
-    allCombs["ST"] = allCombs.index.values + 1
-
-	    
-    # Solving the problem using spgl1	
-    print "----------------------------------------------------------------------\n           Solving the Joint Sparsity " \
-    "using SPGL1\n---------------------------------------------------------------------- "
-    print
-    #opts = spgSetParms({'verbosity': 1})
-    X, _, _, _ = spg_mmv(np.array(A), np.array(B), eps, opts)
-    tmpB = []
-    for b in B:
-	tmpB.append(b[0])
-    # X2, _, _, _= spg_bpdn(np.array(A), np.array(tmpB), eps, opts)
-    
-    # output formatting
-    output = allCombs.merge(reference, indicator=True, how="left")
-    output["_merge"].replace(to_replace="both", value="Existing", inplace=True)
-    output["_merge"].replace(to_replace="left_only", value="New", inplace=True)
-    output = output.rename(columns = {"_merge":"New/Existing"})
-    out = output.drop_duplicates(loci)
-
-    retainCol = ["ST", "New/Existing"]
-    out = out[retainCol].reset_index(drop=True)
-    samplecnt = 1
-    outputdict = dict()
-    for sampStrains in X.transpose():
-        persampout = out.copy(deep=True)
-        strainNums = np.nonzero(sampStrains)[0]
-        persampout = pd.merge(persampout, allCombs.iloc[strainNums], on='ST')
-        persampout['Proportions'] = [sampStrains[i] for i in strainNums]
-        persampout['Sample'] = 's' + str(samplecnt)
-        samplecnt += 1
-        print persampout
-        outputdict['s' + str(samplecnt)] = persampout
-
-    print "\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n\n"
-    return outputdict
-
 
