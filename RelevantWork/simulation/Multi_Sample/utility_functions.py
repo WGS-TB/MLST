@@ -145,7 +145,7 @@ def run_ADP(editDist):
             else:
                 ADP_dict[key] = ADP_dict[key] + result[key]
         #os.chdir(samplesDir)
-        Dict_to_csv(result,gene)
+        # Dict_to_csv(result,gene) # input from this won't go to sdp
         ADP_alleles.append(result.keys())
         ADP_prop.append(result.values())
         #print('The predicted genes and their proportions are: {}'.format(result))
@@ -290,17 +290,24 @@ def Compute_Prec_and_rec(strain_dict, strain_df):
         strain_df: A dataframe containing the strains predicted by the ILP
 
     '''
+
+    # print strain_dict
+    # print strain_df.shape
+
+
     count = 0
     total_var_dist = 0
     predicted_dict = defaultdict(list)
     #convert the dataframe into a dictionary
     for i in range(strain_df.shape[0]):
         row = strain_df.iloc[i].tolist()
-        temp_key = tuple(row[0:10])
-        #print(row[9])
+        temp_key = tuple(row[2:10])
+	# print temp_key
+        # print(row[9])
         predicted_dict[temp_key] = float(row[10])
-    #print ('The True strains and their proportions are {}\n'.format(strain_dict))
-    #print ('The Predicted strains and their proportions are\n {}'.format(predicted_dict))
+	# print predicted_dict[temp_key]
+    # print ('The True strains and their proportions are {}\n'.format(strain_dict))
+    # print ('The Predicted strains and their proportions are\n {}'.format(predicted_dict))
     #Compute the total variation distance
     for key in predicted_dict.keys():
         if key in strain_dict.keys():
