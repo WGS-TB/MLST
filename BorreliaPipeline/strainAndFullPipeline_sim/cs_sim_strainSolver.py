@@ -69,25 +69,9 @@ def solve_cs(A, b, cols, epsilon=0.01, obj=None):
     for row in A:
         constraints.append([range(cols), [-x for x in row]])
 
-    # Proportions should add up to 1
-    '''rhs.append(1 + 10 * epsilon)
-    rhs.append(-1 + 10 * epsilon)
-    constraints.append([range(cols), [1 for i in row]])
-    constraints.append([range(cols), [-1 for i in row]])'''
-
-    #print
-    #for row in constraints:
-	#print row, '     ', rhs[constraints.index(row)]
-    #print
-
     senses = ""
     for i in range(len(constraints)):
         senses += "L"
-
-    # print "    Constraints:"
-    # for r in range(len(constraints)):
-    #     print constraints[r][1], "\t\t\t", rhs[r]
-    # print "\n"
 
     # -------------------- Using cplex to solve the LP ----------------------
 
@@ -99,11 +83,7 @@ def solve_cs(A, b, cols, epsilon=0.01, obj=None):
 
         prob.solve()
 
-        # print
         print "Solution status:", prob.solution.get_status(), prob.solution.status[prob.solution.get_status()]
-        # print "Solution value  = ", prob.solution.get_objective_value()
-        # for i in range(prob.variables.get_num()):
-        #     print prob.variables.get_names()[i], '\t=\t', prob.solution.get_values()[i]
 
         x = prob.solution.get_values()
 	print prob.solution.get_objective_value()
@@ -169,15 +149,20 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     strains = strains.merge(uniqueStrains, indicator=True, how="left")  # assign the index to the combinations(as strain data frame contains duplicated rows)
     strains = strains.drop("_merge", 1)
 
-    alleleSet = []
+    
+    # -------------------- Creating the weights matrix ----------------------
+    alleleSet = []	# set of alleles present in sample
     for l in loci:
         alleleSet.append((l, varAndProp.loc[varAndProp['Locus'] == l]['Variant'].tolist()))
-    noc = 1
+    noc = 1		# noc: number of combinations
     for g in alleleSet:
 	noc *= len(g[1])
    
+    # The matrix below is the hamming distance between each pair of a possible strain in the sample
+    # and a known strain. Its rows correspond to sample strains and its columns to known strains.
     distMat = [[8 for x in range(len(reference.values.tolist()))] for x in range(noc)]
 
+    # distmat is calculated using an undirect approach
     for i in range(len(reference.values.tolist())):
 	rem = noc
         for g in alleleSet:
@@ -209,6 +194,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 	        b.append(float(p))
 	    
 
+	# below we calculate dims, which is the number of alleles per each locus
         loci = varAndProp['Locus'].tolist()
         prev = ''
         for l in loci:
@@ -250,78 +236,9 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 
         print "\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n"
 	return out
-    else:
-	print "\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n\n"
-
-        sampAlleles = [] # List for having each samples data
-
-	nrows = len((varAndProp.drop_duplicates(['Variant'])).values.tolist()) # Number of rows of A and rows of B
-	nsamp = 0 # Number of columns of X and columns of B
-	
-	for samp, numOfC in numOfComb.iteritems():
-	    sampAlleles.append(varAndProp.loc[varAndProp['Sample'] == samp])
-	    nsamp += 1
-	
-	# Defining the problem
-	B = [[0 for x in range(nsamp)] for x in range(nrows)]
-
-	vpdf = varAndProp.drop_duplicates(['Variant'])
-	loci = vpdf['Locus'].tolist() # IMPORTANT: must be sorted if it's not
-	dims = []
-	prev = ''
-        for l in loci:
-	    if prev == l:
-	        continue
-	    prev = l
-	    # if len(vpdf.index[vpdf['Locus'] == l]) > 1:
-            dims.append(len(vpdf.index[vpdf['Locus'] == l]))
-	ncols = 1
-	for d in dims:
-	    ncols *= d
-	A = defineProblem(ncols, dims)
-
-	for ind in range(nsamp):
-	    for indV in range(len(vpdf['Variant'].tolist())):
-		if vpdf['Variant'].tolist()[indV] in sampAlleles[ind]['Variant'].tolist():
-		    B[indV][ind] = sampAlleles[ind].loc[sampAlleles[ind]['Variant'] == vpdf['Variant'].tolist()[indV]]['Proportion'].values.tolist()[0]
-		    
-	# Solving the problem using spgl1	
-	print "----------------------------------------------------------------------\n           Solving the Joint Sparsity " \
-          "using SPGL1\n---------------------------------------------------------------------- "
-        print
-	opts = spgSetParms({'verbosity': 1})
-	X, _, _, _ = spg_mmv(np.array(A), np.array(B), eps, opts)
-	print X, '\n'
-	
-	# output formatting
-	output = strains.merge(reference, indicator=True, how="left")
-        output["_merge"].replace(to_replace="both", value="Existing", inplace=True)
-        output["_merge"].replace(to_replace="left_only", value="New", inplace=True)
-        output = output.rename(columns = {"_merge":"New/Existing"})
-        out2 = output.drop_duplicates(loci)
-	retainCol = ["ST", "New/Existing"]
-	out2['Proportions'] = ""
-	out3 = out2.iloc[0:0]
-	out2 = out2[retainCol].reset_index(drop=True)
-	samplecnt = 1
-	for sampStrains in X.transpose():
-	    persampout = out2.copy(deep=True)
-	    strainNums = np.nonzero(sampStrains)[0]
-	    persampout = pd.merge(persampout, strains.iloc[strainNums], on='ST')
-            persampout['Proportions'] = [sampStrains[i] for i in strainNums]
-	    persampout_cols = persampout.columns.tolist()
-	    persampout_cols = persampout_cols[0:-2] + persampout_cols[-1:] + persampout_cols[-2:-1]
-    	    persampout = persampout[persampout_cols]
-	    persampout['Sample'] = 's' + str(samplecnt)
-	    samplecnt += 1
-	    out3 = out3[persampout_cols]
-	    out3 = out3.append(persampout, ignore_index=True)
-
-	print out3
-	print "\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n\n"
-	out3.drop('Sample', axis=1, inplace=True)
-        out3.to_csv("{0}/{1}_strainsAndProportions.csv".format(outputPath, newNameToOriName[samp]))
-	return out3
-
+    
+    else: 
+	print "error: this simulation is for single sample mode"
+	return
 
 
