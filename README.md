@@ -1,4 +1,4 @@
-# Deconvoluting the Diversity of Within-host Pathogen Strain in a MLST Framework
+# Compressed Sensing for Deconvoluting the Diversity of Within-host Pathogen Strain in a MLST Framework
 ## Pre-requisites
 1) We are using Python 2.7. You will only need the folder **BorreliaPipeline** to run the pipeline. This can be done in the following `git` commands:
 ```
@@ -41,9 +41,9 @@ The script will output some intermediate results for you to keep track.
 
 5) To solve the global strain diversity problem, run the following script:
 ```
-python globalStrainDiversity.py [-h] [-o OUTPUT] [-oc OBJECTIVECOMPONENT] [-timelim TIMELIMIT] [-g GAP] [-pathToDistMat PTDM]
+python globalStrainDiversity.py [-h] [-o OUTPUT] [-oc OBJECTIVECOMPONENT] [-timelim TIMELIMIT] [-g GAP] [-pathToDistMat PTDM] [-cs TRUE/FALSE]
 ```
-Specify `-o`, the folder name for the results to be stored. Default will be `strainsAndProp`. The `-oc` argument specifies different formulation of the objective function, 'all' includes all components of the objective function, 'noPropAndErr' omits the proportion and error component. `-g` specifies the relative gap in % to stop the solver, default is 5%. `-timelim` specifies the maximum time limit in seconds before stopping the solver, default is 600 seconds. The program will stop if and only if `-g` and `-timelim` are both satisfied. For example, if `-g` is 5 and `timelim` is 600, if the relative gap is above 5% and the 600 seconds have passed, the program will not stop until gap of 5% is reached. `-pathToDistMat` is the folder name containing the distance matrices for each gene, which is provided and named 'editDist'.
+Specify `-o`, the folder name for the results to be stored. Default will be `strainsAndProp`. The `-oc` argument specifies different formulation of the objective function, 'all' includes all components of the objective function, 'noPropAndErr' omits the proportion and error component. `-g` specifies the relative gap in % to stop the solver, default is 5%. `-timelim` specifies the maximum time limit in seconds before stopping the solver, default is 600 seconds. The program will stop if and only if `-g` and `-timelim` are both satisfied. For example, if `-g` is 5 and `timelim` is 600, if the relative gap is above 5% and the 600 seconds have passed, the program will not stop until gap of 5% is reached. `-pathToDistMat` is the folder name containing the distance matrices for each gene, which is provided and named 'editDist'. if `-cs` is set as True, the compressed sensing methods will be used. else, the MILP method will be used.
 
 The script will output some intermediate results for you to keep track. It will create a new folder in your current directory with name specified by `-o`. The folder contains a list of `sampleX_strainsAndProportions.csv` with sampleX corresponds a particular sample, and the csv file contains the strains and their proportions identified in sampleX.
 
