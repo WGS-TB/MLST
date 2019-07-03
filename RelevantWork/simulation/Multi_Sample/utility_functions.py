@@ -22,24 +22,24 @@ import numpy as np
 EDITDIST = 5    #For soft precision and recall calculation
 MAX_WEIGHT = 100
 
-    
+
 #set up genes edit distance matrices
 #clpA
-clpA_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_clpA.csv', sep=",")
+clpA_df = pd.read_csv('/home/parham/Desktop/CS-MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_clpA.csv', sep=",")
 #clpX
-clpX_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_clpX.csv', sep=",")
+clpX_df = pd.read_csv('/home/parham/Desktop/CS-MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_clpX.csv', sep=",")
 #nifS
-nifS_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_nifS.csv', sep=",")
+nifS_df = pd.read_csv('/home/parham/Desktop/CS-MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_nifS.csv', sep=",")
 #pepX
-pepX_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_pepX.csv', sep=",")
+pepX_df = pd.read_csv('/home/parham/Desktop/CS-MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_pepX.csv', sep=",")
 #pyrG
-pyrG_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_pyrG.csv', sep=",")
+pyrG_df = pd.read_csv('/home/parham/Desktop/CS-MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_pyrG.csv', sep=",")
 #recG
-recG_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_recG.csv', sep=",")
+recG_df = pd.read_csv('/home/parham/Desktop/CS-MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_recG.csv', sep=",")
 #rplB
-rplB_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_rplB.csv', sep=",")
+rplB_df = pd.read_csv('/home/parham/Desktop/CS-MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_rplB.csv', sep=",")
 #uvrA
-uvrA_df = pd.read_csv('/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_uvrA.csv', sep=",")
+uvrA_df = pd.read_csv('/home/parham/Desktop/CS-MLST/RelevantWork/simulation/Multi_Sample/Dist_DB/editDistanceMatrix_uvrA.csv', sep=",")
 
 genes_df = [clpA_df,clpX_df,nifS_df,pepX_df,pyrG_df,recG_df,rplB_df,uvrA_df]
 
@@ -74,7 +74,7 @@ def Mutate_strain(S1, editDist, num_mut):
     for j in range(len(S1)):
         S2[j] = S1[j]
     #radomly select an allele to mutate
-    for i in range(num_mut):    
+    for i in range(num_mut):
         A = random.choice(S1)
         #find closest allele with max edit distance
         L = Compute_Allele(A, editDist)
@@ -83,17 +83,17 @@ def Mutate_strain(S1, editDist, num_mut):
         S2[idx] = L
     #print 'strain one is:', S1
     #print 'strain two is:', S2
-    return S2    
-    
-#check if a strain is already in the database    
+    return S2
+
+#check if a strain is already in the database
 def check_strain(strain,strains):
     if strain not in strains:
         return True
     else:
         return False
-    
 
-        
+
+
 def Generate_reads(strains, seed, editDist):
     genes = ['clpA', 'clpX', 'nifS', 'pepX', 'pyrG', 'recG', 'rplB', 'uvrA']
     nums = [random.uniform(0,1) for x in range(0,len(strains))]
@@ -104,7 +104,7 @@ def Generate_reads(strains, seed, editDist):
         strain = strains[i]
         output_file_name = 'editDist_{}_strain_{}_reads_'.format(editDist,i)
         for j in range(len(strain)):
-            variant_sequence = sh.grep(str(strain[j]),"/home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Variant_files/{}_linear.txt".format(genes[j]),"-w","-A1") #use bash to extract the variant sequence
+            variant_sequence = sh.grep(str(strain[j]),"/home/parham/Desktop/CS-MLST/RelevantWork/simulation/Multi_Sample/Variant_files/{}_linear.txt".format(genes[j]),"-w","-A1") #use bash to extract the variant sequence
             variant_sequence = variant_sequence.rstrip() #remove the "\n" character that is returned by bash
             variant_sequence = str(variant_sequence)
             #total_variants_sequence += variant_sequence
@@ -124,10 +124,10 @@ def Generate_reads(strains, seed, editDist):
     os.system('rm *sam*')
     #os.system('rm *fa*')
     os.system('rm *fq*')
-    return proportions          
-        
+    return proportions
 
-    
+
+
 #A function to run the ADP on individual genes
 def run_ADP(editDist):
     genes = ['clpA', 'clpX', 'nifS', 'pepX', 'pyrG', 'recG', 'rplB', 'uvrA']
@@ -153,9 +153,9 @@ def run_ADP(editDist):
         #os.chdir('../')
         #ADP_dict[gene] = result
     return ADP_dict, ADP_alleles, ADP_prop
-    
-    
-    
+
+
+
 def Dict_to_csv(gene_dict, filename):
     '''
         A function that takes in a dictionary and writes it to a csv file with the given name
@@ -168,11 +168,11 @@ def Dict_to_csv(gene_dict, filename):
         writer = csv.writer(csv_file)
         for key, value in gene_dict.items():
             writer.writerow([key, value])
-    
-            
-            
+
+
+
 def Process_reads(gene, editDist):
-    mapping_cmd = "bowtie -a --best --strata -v 3 -p 4 /home/parhamgg/Desktop/MLST_CS/MLST/RelevantWork/simulation/Multi_Sample/Bowtie_Indices/{0}_bowtie -1 ./editDist_{1}_all_Strains_1.fa -2 ./editDist_{1}_all_Strains_2.fa --sam all_Strains.sam >/dev/null 2>&1".format(gene, editDist)
+    mapping_cmd = "bowtie -a --best --strata -v 3 -p 4 /home/parham/Desktop/CS-MLST/RelevantWork/simulation/Multi_Sample/Bowtie_Indices/{0}_bowtie -1 ./editDist_{1}_all_Strains_1.fa -2 ./editDist_{1}_all_Strains_2.fa --sam all_Strains.sam >/dev/null 2>&1".format(gene, editDist)
     os.system(mapping_cmd)
     mapped_cmd = "samtools view -h -F4 all_Strains.sam > all_Strains_mapped.sam"
     paired_cmd = "samtools view -F8 all_Strains_mapped.sam > all_Strains_pairedNoHeader.sam"
@@ -185,25 +185,25 @@ def Process_reads(gene, editDist):
     paired_Qmatrix = pf.returnQualityMatrix('all_Strains_reads.txt', "paired")
 #       singleton_Qmatrix = returnQualityMatrix(singleton_readsTxt_path, "singleton")
     Qmatrix = paired_Qmatrix
-    
+
         #Run the ILP solver
     pred_object_val,var_predicted,reads_cov,all_solutions, all_objective = varSolver.solver(dataMatrix)
     #compute the likelihood scores
     score_list = list()
     min_score = sys.maxint
-        
+
     #Compute negative log likelihood score for each solution
     for i in range(len(all_solutions)):
         score = pf.compute_likelihood(dataMatrix.loc[reads_cov, all_solutions[i]], 6)
         score_list.append(score)
-        
+
         if score <= min_score:
             min_score = score
-                
+
     argmin_score_list = [i for i in range(len(all_solutions)) if score_list[i] == min_score]
     if len(argmin_score_list) > 1:
         print("More than 1 solution having minimum negative log likelihood score.")
-        lexico_min_score_sol = [all_solutions[i] for i in argmin_score_list]    
+        lexico_min_score_sol = [all_solutions[i] for i in argmin_score_list]
         lexico_min_score_sol = sorted(lexico_min_score_sol)
         var_predicted = lexico_min_score_sol[0]
     else:
@@ -212,10 +212,10 @@ def Process_reads(gene, editDist):
     print("The chosen solution based on minimum negative log likelihood is: {}".format(var_predicted))
     predicted_DF = dataMatrix.loc[reads_cov,var_predicted]
     prop_count = pf.compute_proportions(predicted_DF)
-    
+
     pred_prop_count = pf.create_dictionary(var_predicted, prop_count)
     return pred_prop_count, all_solutions
-    
+
 
 def writeReadTable():
     readOutFile = open("all_Strains_pairedNoHeader.sam")
@@ -228,27 +228,27 @@ def writeReadTable():
 #        mm = [i for i in fields if i.startswith("XM:i:")][0]  #bowtie2
         mm = [i for i in fields if i.startswith("NM:i:")][0]   #bowtie
         mm_pos = [j for j in fields if j.startswith("MD:Z:")][0]
-        
+
         writefile.write(read + "\t" + allele + "\t" + quality + "\t" + mm + "\t" + mm_pos + '\n')
-        
+
     readOutFile.close()
-    writefile.close()    
-    
+    writefile.close()
+
 def Compute_ADP_Prec_and_rec(true, predicted):
     '''
     A function that computes the precision and recall afer a simulation
-    
+
     true: A list that contains the true alleles
-    
+
     Predicted: A list that contians the predicted alleles from the ADP
-    
+
     Returns a precision and recall value
     '''
     tvd = 0
     count = 0
     print ('The True Alleles  and their proportions are are {}\n'.format(true))
     print ('The Predicted Alleles and their proportions are {}\n'.format(predicted))
-    
+
     for key in true.keys():
         if key in predicted.keys():
             count = count + 1
@@ -263,15 +263,15 @@ def Compute_ADP_Prec_and_rec(true, predicted):
     #print len(true), len(predicted)
     #print 'Count is:', count
     return prec, rec, tvd/16.0
-    
+
 def Compute_avg(precision,recall, tvd):
-    
+
     avg_prec = sum(map(float, [item for sublist in precision.values() for item in sublist]))/len(precision.values())
     avg_rec = sum(map(float, [item for sublist in recall.values() for item in sublist]))/len(precision.values())
     avg_tvd = sum(map(float, [item for sublist in tvd.values() for item in sublist]))/len(precision.values())
-    
+
     return avg_prec, avg_rec, avg_tvd
-    
+
 
 def Write_Proportions(strains, proportions):
     #create a strain and its proportions dict
@@ -412,8 +412,8 @@ def Compute_Soft_Prec_and_Rec(strain_dict, strain_df, editDist):
 
 
     return soft_precision, soft_recall
-    
-    
+
+
     '''
 Returns the edit distance between two alleles
 Input:
@@ -445,7 +445,7 @@ def compute_strain_distance(pred, true, mode="snp"):
         dist = hamming(pred, true)
     else:
         strain_length = len(pred)
-        
+
         dist = 0
         for i in range(strain_length):
             p_gene = pred[i].split("_")[0]
@@ -482,7 +482,7 @@ def compute_EMD(pred_dict, true_dict, mode="snp"):
     pred_s_dict = {"p{}".format(i): strain for i,strain in enumerate(pred_list)}
     true_s_dict = {"t{}".format(i): strain for i,strain in enumerate(true_list)}
 
-    #Short form 
+    #Short form
     pred_s_list = np.array(pred_s_dict.keys())
     true_s_list = np.array(true_s_dict.keys())
 
@@ -512,9 +512,9 @@ def compute_EMD(pred_dict, true_dict, mode="snp"):
     EMD = emd(pred_s_array, true_s_array,X_weights=pred_prop, Y_weights=true_prop, distance='precomputed', D=distance_mat)
     #import pdb
     #pdb.set_trace()
-    return EMD 
-    
-    
+    return EMD
+
+
 
 def Compute_EditDist_Stats(strain_dict, strain_df):
     '''

@@ -7,7 +7,7 @@ from cplex.exceptions import CplexError
 from pipeline_functions import *
 from utility_functions import *
 from scipy.spatial.distance import hamming
-from spgl1 import spgl1, spg_mmv, spgSetParms, spg_bpdn
+from spgl1 import spg_bpdn, spg_mmv
 
 matplotlib.use('Agg')
 plt.style.use('ggplot')
@@ -43,6 +43,12 @@ def defineProblem(cols, dims):
 # ----------------------------------------------------------------------
 #                     Solving the CS using CPLEX
 # ----------------------------------------------------------------------
+
+
+def spgl1_solve(A, b, epsilon, obj):
+    W = [w + 1.01 for w in obj]
+    x, o1, o2, o3 = spg_bpdn(np.array(A), np.array(b), epsilon, weights=np.array(W), verbosity=1)
+    return x, sum(x), np.linalg.norm(np.subtract(np.dot(A, x), np.array(b)), 1)
 
 
 def solve_cs_qcp(A, b, cols, epsilon, obj):
@@ -183,7 +189,7 @@ def createMeasureMatrix(strains, loci, variants, dims):
 		    strainCol.append(1)
 		else:
 		    strainCol.append(0)
-	AT.append(strainCol)	
+	AT.append(strainCol)
     A = (np.array(AT)).transpose()
     return A
 
@@ -208,7 +214,7 @@ def single_sample_solver(loci, varAndProp, reference, strains, eps, re=False, br
     noc = 1
     for g in alleleSet:
 	noc *= len(g[1])
-   
+
     distMat = [[8 for x in range(len(reference.values.tolist()))] for x in range(noc)]
 
     # Calculating weights for minimization
@@ -234,7 +240,7 @@ def single_sample_solver(loci, varAndProp, reference, strains, eps, re=False, br
         if p < 1.0:
 	    b.append(float(p))
 	bcheck.append(p)
-    
+
     if re:
 	ind1 = 0
 	ind2 = 0
@@ -243,7 +249,7 @@ def single_sample_solver(loci, varAndProp, reference, strains, eps, re=False, br
 		b[ind1] -= br[vm.index(v)]
 		ind1 += 1
 	    ind2 += 1
-	
+
     # dims is the number of variants in each locus
     dims = []
     prev = ''
@@ -265,7 +271,8 @@ def single_sample_solver(loci, varAndProp, reference, strains, eps, re=False, br
     print np.array(A).shape
 
     # Now we solve the cs problem
-    strainProps, sumOfProps, error = solve_cs(A, b, noc, eps, weights, True)
+    # strainProps, sumOfProps, error = solve_cs(A, b, noc, eps, weights, True)
+    strainProps, sumOfProps, error = spgl1_solve(A, b, eps, weights)
     print '~~~', sumOfProps, error
 
     strainNums = np.nonzero(strainProps)[0]
@@ -288,7 +295,7 @@ def single_sample_solver(loci, varAndProp, reference, strains, eps, re=False, br
     print "\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n"
     return out
 
-	
+
 
 def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_option='all', timelimit=600, gap=8,
                  loci=["clpA", "clpX", "nifS", "pepX", "pyrG", "recG", "rplB", "uvrA"], pathToDistMat=None, eps=0.05):
@@ -336,7 +343,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 
 
     print "\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n\n"
-	
+
     # some data processing
     vpdf = varAndProp.drop_duplicates(['Variant'])
     loci = vpdf['Locus'].tolist()
@@ -353,9 +360,9 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     for samp in sampNames:
 	sampAlleles.append(varAndProp.loc[varAndProp['Sample'] == 's' + str(samp)])
 
-    for sa in sampAlleles:
-        print sa
-    print '\n'
+#    for sa in sampAlleles:
+#        print sa
+#    print '\n'
 
 
 
@@ -366,7 +373,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     chosenStrs = list()
     sampsets = list()
     for s in strSet:
-	# those strains which are present in more than two samples are detected by 
+	# those strains which are present in more than two samples are detected by
 	# counting the number of samples they appear in
 	sampSet = set(strains.loc[strains['ST'] == s].drop_duplicates('Sample')['Sample'].tolist())
 	if len(sampSet) > 1:
@@ -406,16 +413,16 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 
         # A: Measurement matrix
         A = createMeasureMatrix(sharedStrs, loci, variants[0], dims)
-	
 
-        # B: Observation Matrix		
+
+        # B: Observation Matrix
         nrows = len(variantsMixed) # Number of rows of A and rows of B
         B = [[0 for x in range(nsampS)] for x in range(nrows)]
         for ind in range(nsampS):
             for indV in range(nrows):
 	        if variantsMixed[indV] in sampAlleles[samplesSharing[ind] - 1]['Variant'].tolist():
 	            B[indV][ind] = sampAlleles[samplesSharing[ind] - 1].loc[sampAlleles[samplesSharing[ind] - 1]['Variant'] == variantsMixed[indV]]['Proportion'].values.tolist()[0]
-	
+
 
 
         # Now we solve the shared strains with mmv, then the remaining strains for each sample with single sample solution
@@ -426,7 +433,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 	weights = []
 	for st in sharedStrs[loci].values.tolist():
 	    weights.append(min([hamming(st, rst) for rst in reference[loci].values.tolist()]) * 8 + 1)
-    
+
         print "----------------------------------------------------------------------\n           Solving the Joint Sparsity " \
         "using SPGL1\n---------------------------------------------------------------------- "
         print
@@ -441,8 +448,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
         for i in range(11):
             sigmas.append(i * 0.05)
         for sig in sigmas:
-            opts = {'weights' : np.array(weights), 'verbosity' : 1}
-            X, _, _, _ = spg_mmv(A, np.array(B), sig, opts)
+            X, _, _, _ = spg_mmv(A, np.array(B), sig, verbosity=1, weights=np.array(weights))
             errmat = np.dot(A,X) - np.array(B)
             err = np.sqrt(sum([np.linalg.norm(row) for row in errmat]))
             errs.append(err)
@@ -453,7 +459,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
         print '**BEST SIG AND ITS ERR ', best_sig, min_err
 	print '**RESULT column=samp row=strain:'
 	print pd.DataFrame(X1)
-	
+
 	# setting the residue matrix for samples that were included in this part
 	BR = np.array(B) - np.dot(A,X1)
 
@@ -463,7 +469,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
         output["_merge"].replace(to_replace="left_only", value="New", inplace=True)
         output = output.rename(columns = {"_merge":"New/Existing"})
         out = output.drop_duplicates(loci)
-	
+
 	# more output formatting and adding the results to proper dataframes
         retainCol = ["ST", "New/Existing"]
         out = out[retainCol].reset_index(drop=True)
@@ -499,4 +505,3 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 	    outputdict[sampName] = persampout
 	print outputdict[sampName]
     return outputdict
-
