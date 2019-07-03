@@ -6,7 +6,7 @@ import cplex
 from cplex.exceptions import CplexError
 from pipeline_functions import *
 from scipy.spatial.distance import hamming
-from spgl1 import spgl1, spg_mmv, spgSetParms
+from spgl1 import spg_bpdn
 
 matplotlib.use('Agg')
 plt.style.use('ggplot')
@@ -42,6 +42,11 @@ def defineProblem(cols, dims):
 # ----------------------------------------------------------------------
 #                     Solving the CS using CPLEX
 # ----------------------------------------------------------------------
+
+def spgl1_solve(A, b, epsilon, obj):
+    W = [w + 1.01 for w in obj]
+    x, o1, o2, o3 = spg_bpdn(np.array(A), np.array(b), epsilon, weights=np.array(W), verbosity=1)
+    return x, sum(x), np.linalg.norm(np.subtract(np.dot(A, x), np.array(b)), 1)
 
 
 def solve_cs_qcp(A, b, cols, epsilon, obj):
@@ -216,7 +221,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     strains = strains.merge(uniqueStrains, indicator=True, how="left")  # assign the index to the combinations(as strain data frame contains duplicated rows)
     strains = strains.drop("_merge", 1)
 
-    
+
     # -------------------- Creating the weights matrix ----------------------
     alleleSet = []	# set of alleles present in sample
     for l in loci:
@@ -224,7 +229,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     noc = 1		# noc: number of combinations
     for g in alleleSet:
 	noc *= len(g[1])
-   
+
     # The matrix below is the hamming distance between each pair of a possible strain in the sample
     # and a known strain. Its rows correspond to sample strains and its columns to known strains.
     distMat = [[8 for x in range(len(reference.values.tolist()))] for x in range(noc)]
@@ -259,7 +264,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
         for p in varAndProp['Proportion']:
             if p < 1.0:
 	        b.append(float(p))
-	    
+
 
 	# below we calculate dims, which is the number of alleles per each locus
         loci = varAndProp['Locus'].tolist()
@@ -278,7 +283,8 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
         A = defineProblem(numOfC, dims)
 
         # Now we solve the cs problem
-        strainProps, sumOfProps, error = solve_cs(A, b, numOfC, eps, weights, True)
+        # strainProps, sumOfProps, error = solve_cs(A, b, numOfC, eps, weights, True)
+        strainProps, sumOfProps, error = spgl1_solve(A, b, eps, weights)
         print '~~~', sumOfProps, error
 
         strainNums = np.nonzero(strainProps)[0]
@@ -303,9 +309,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 
         print "\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n"
 	return out
-    
-    else: 
+
+    else:
 	print "error: this simulation is for single sample mode"
 	return
-
-
