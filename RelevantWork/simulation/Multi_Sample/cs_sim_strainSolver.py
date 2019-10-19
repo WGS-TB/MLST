@@ -8,6 +8,8 @@ from pipeline_functions import *
 from utility_functions import *
 from scipy.spatial.distance import hamming
 from spgl1 import spg_bpdn, spg_mmv
+from spgl1.spgl1 import _norm_l12nn_primal, _norm_l12nn_dual, _norm_l12nn_project
+from spgl1.spgl1 import _norm_l1nn_primal, _norm_l1nn_dual, _norm_l1nn_project
 
 matplotlib.use('Agg')
 plt.style.use('ggplot')
@@ -18,9 +20,9 @@ plt.style.use('ggplot')
 
 
 def defineProblem(cols, dims):
-    print "----------------------------------------------------------------------\n               Creating the " \
-          "matrices " \
-          "used in LP\n---------------------------------------------------------------------- "
+    #print "----------------------------------------------------------------------\n               Creating the " \
+     #     "matrices " \
+      #    "used in LP\n---------------------------------------------------------------------- "
 
     # --------------------- Generating the Coeff. matrix -------------------
 
@@ -47,7 +49,8 @@ def defineProblem(cols, dims):
 
 def spgl1_solve(A, b, epsilon, obj):
     W = [w + 1.01 for w in obj]
-    x, o1, o2, o3 = spg_bpdn(np.array(A), np.array(b), epsilon, weights=np.array(W), verbosity=1)
+    x, o1, o2, o3 = spg_bpdn(np.array(A), np.array(b), epsilon, weights=np.array(W), verbosity=0, project=_norm_l1nn_project, primal_norm=_norm_l1nn_primal,
+dual_norm=_norm_l1nn_dual)
     return x, sum(x), np.linalg.norm(np.subtract(np.dot(A, x), np.array(b)), 1)
 
 
@@ -206,8 +209,8 @@ Input:
 '''
 
 def single_sample_solver(loci, varAndProp, reference, strains, eps, re=False, br=None, vm=None):
-    print "\n\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n"
 
+    varAndProp = varAndProp[varAndProp.Proportion != 0.000]
     alleleSet = []
     for l in loci:
         alleleSet.append((l, varAndProp.loc[varAndProp['Locus'] == l]['Variant'].tolist()))
@@ -263,17 +266,17 @@ def single_sample_solver(loci, varAndProp, reference, strains, eps, re=False, br
     # A is the coefficient matrix for the cs problem
     A = defineProblem(noc, dims)
 
-    print 'Proportions:'
-    for p in b:
-	print p
-    print 'varAndProp input'
-    print varAndProp
-    print np.array(A).shape
+    # print 'Proportions:'
+    # for p in b:
+	# print p
+    # print 'varAndProp input'
+    # print varAndProp
+    # print np.array(A).shape
 
     # Now we solve the cs problem
     # strainProps, sumOfProps, error = solve_cs(A, b, noc, eps, weights, True)
     strainProps, sumOfProps, error = spgl1_solve(A, b, eps, weights)
-    print '~~~', sumOfProps, error
+    print '~~~Single Sample Operation Results', sumOfProps, error
 
     strainNums = np.nonzero(strainProps)[0]
 
@@ -289,10 +292,12 @@ def single_sample_solver(loci, varAndProp, reference, strains, eps, re=False, br
     out['Proportions'] = [strainProps[i] for i in strainNums]
     out_cols = out.columns.tolist()
     out_cols = out_cols[0:-2] + out_cols[-1:] + out_cols[-2:-1]
-    out = out[out_cols]
-    print "\n**SINGLE SAMPLE OUTPUT:"
-    print out
-    print "\n-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n"
+    out = out[out_cols].round(3)[out.Proportions > 0.000][abs(out.Proportions) > 0.05]
+    #print "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n"
+    #print b
+    #print "**SINGLE SAMPLE OUTPUT:"
+    #print out
+    #print "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-\n\n"
     return out
 
 
@@ -308,9 +313,10 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     data, numSamples = readData(dataPath, loci, globalILP_option)
     newNameToOriName = dict()
     namingIndex = 1
-    for i in sorted(data.keys()):
+    for i in data.keys():
         newNameToOriName["s{}".format(namingIndex)] = i
-        data["s{}".format(namingIndex)] = data.pop(i)
+        temp = data.pop(i)
+        data["s{}".format(namingIndex)] = temp
         namingIndex += 1
     reference = pd.read_csv(refStrains, sep="\t", usecols=range(1, numLoci + 1))
     lociNames = list(reference.columns.values)
@@ -341,8 +347,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     # For each variants, get a mapping of which strains it maps to
     varSampToST = mapVarAndSampleToStrain(strains, loci, allSamples)
 
-
-    print "\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n\n"
+    #print "\n-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-\n\n"
 
     # some data processing
     vpdf = varAndProp.drop_duplicates(['Variant'])
@@ -356,13 +361,11 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 	sampNames.append(int(samp[1:]))
 	nsamp += 1
     sampNames = sorted(sampNames)
-    print sampNames
     for samp in sampNames:
 	sampAlleles.append(varAndProp.loc[varAndProp['Sample'] == 's' + str(samp)])
 
-#    for sa in sampAlleles:
-#        print sa
-#    print '\n'
+#    for ind in range(len(sampNames)):
+#      print newNameToOriName["s{}".format(sampNames[ind])], sampAlleles[ind]
 
 
 
@@ -382,8 +385,9 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
     sharedStrs = strains.iloc[chosenStrs].reset_index(drop=True)
     sharedStrs['Sample'] = sampsets
     sharedStrs = sharedStrs.drop_duplicates(loci)
-    print '**SHARED STRAINS'
-    print sharedStrs, '\n'
+#    print '**SHARED STRAINS'
+#    print sharedStrs, '\n'
+#    print '**END OF SHARED STRAINS'
 
     # detecting the samples which have a shared strain
     samplesSharing = []
@@ -424,7 +428,6 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 	            B[indV][ind] = sampAlleles[samplesSharing[ind] - 1].loc[sampAlleles[samplesSharing[ind] - 1]['Variant'] == variantsMixed[indV]]['Proportion'].values.tolist()[0]
 
 
-
         # Now we solve the shared strains with mmv, then the remaining strains for each sample with single sample solution
         # For solving the shared strains problem,  we choose a range  of sigmas, and use each of them as  input to get the
         # best result.
@@ -434,7 +437,7 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 	for st in sharedStrs[loci].values.tolist():
 	    weights.append(min([hamming(st, rst) for rst in reference[loci].values.tolist()]) * 8 + 1)
 
-        print "----------------------------------------------------------------------\n           Solving the Joint Sparsity " \
+        print "----------------------------------------------------------------------\n           Solving the Joint Sparsity Problem " \
         "using SPGL1\n---------------------------------------------------------------------- "
         print
 
@@ -448,20 +451,23 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
         for i in range(11):
             sigmas.append(i * 0.05)
         for sig in sigmas:
-            X, _, _, _ = spg_mmv(A, np.array(B), sig, verbosity=1, weights=np.array(weights))
+            X, _, _, _ = spg_mmv(A, np.array(B), sig, verbosity=0, weights=np.array(weights), project=_norm_l12nn_project, primal_norm=_norm_l12nn_primal,
+dual_norm=_norm_l12nn_dual)
             errmat = np.dot(A,X) - np.array(B)
             err = np.sqrt(sum([np.linalg.norm(row) for row in errmat]))
             errs.append(err)
     	if min_err > err:
     	    min_err = err
     	    best_sig = sig
-    	    X1 = X
-        print '**BEST SIG AND ITS ERR ', best_sig, min_err
-	print '**RESULT column=samp row=strain:'
-	print pd.DataFrame(X1)
+    	    X1 = np.round(X, decimals=3)
+	    X1[X1 == 0.] = 0.
+	    X1[X1 < 0.] = 0.
+#        print '**BEST SIG AND ITS ERR ', best_sig, min_err
+# 	 print '**RESULT column=samp row=strain:'
+# 	 print pd.DataFrame(X1)
 
 	# setting the residue matrix for samples that were included in this part
-	BR = np.array(B) - np.dot(A,X1)
+	BR = np.maximum(np.array(B) - np.dot(A,X1), np.zeros_like(np.array(B)))
 
 	# creating the output of shared strains. Latter output for individual samples will be appended to these.
 	output = sharedStrs.merge(reference, indicator=True, how="left")
@@ -488,20 +494,38 @@ def strainSolver(dataPath, refStrains, outputPath, objectiveOption, globalILP_op
 	    columns = persampout.columns.tolist()
 	    columns = columns[:-2] + columns[-1:] + columns[-2:-1]
 	    persampout = persampout[columns]
-            #print persampout
-            outputdict['s' + str(samplesSharing[samplecnt])] = persampout
+            outputdict[newNameToOriName["s{}".format(samplesSharing[samplecnt])]] = persampout.round(3)[persampout.Proportions > 0.000][abs(persampout.Proportions) > 0.05]
 	    samplecnt += 1
 
     # ------------------ Per-sample solution using single sample solver -------------------
     # after subtraction of the results of shared strains, the remaining proportions are pas
     # -sed to the function which solves the single sample problem.
     for i in range(nsamp):
-	sampName = 's' + str(i + 1)
+	print '^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^ '
+	sampName = newNameToOriName["s{}".format(sampNames[i])]
+	print 'sample name:', sampName
+	if sampNames[i] in samplesSharing:
+	    print 'shared strains:'
+	    print outputdict[sampName]
+	print 'sample_only strains:'
 	if i + 1 in samplesSharing:
-	    persampout = single_sample_solver(loci, sampAlleles[i], reference, strains.loc[strains['Sample'] == sampName], eps, True, BR.transpose().tolist()[samplesSharing.index(i + 1)], variantsMixed)
-	    outputdict[sampName] = outputdict[sampName].append(persampout)
+	    persampout = single_sample_solver(loci, sampAlleles[i], reference, strains.loc[strains['Sample'] == 's' + str(i + 1)], eps, True, BR.transpose().tolist()[samplesSharing.index(i + 1)], variantsMixed)
+	    print persampout.round(3)[persampout.Proportions > 0.000][abs(persampout.Proportions) > 0.05]
+	    for index, row in persampout.round(3)[persampout.Proportions > 0.000][abs(persampout.Proportions) > 0.05].iterrows():
+		if any(outputdict[sampName].ST == row['ST']):
+		    outputdict[sampName].loc[outputdict[sampName]['ST'] == row['ST'], 'Proportions'] = outputdict[sampName].loc[outputdict[sampName]['ST'] == row['ST'], 'Proportions'] + row['Proportions']
+		else:
+		    outputdict[sampName] = outputdict[sampName].append(row, ignore_index=True)
 	else:
-            persampout = single_sample_solver(loci, sampAlleles[i], reference, strains.loc[strains['Sample'] == sampName], eps)
-	    outputdict[sampName] = persampout
-	print outputdict[sampName]
+            persampout = single_sample_solver(loci, sampAlleles[i], reference, strains.loc[strains['Sample'] == 's' + str(i + 1)], eps)
+	    print persampout.round(3)[persampout.Proportions > 0.000][abs(persampout.Proportions) > 0.05]
+	    outputdict[sampName] = persampout.round(3)[persampout.Proportions > 0.000][abs(persampout.Proportions) > 0.05]
+
+	total_proportions = outputdict[sampName]['Proportions'].sum()
+	for index, row in outputdict[sampName].iterrows():
+	    outputdict[sampName].loc[outputdict[sampName]['ST'] == row['ST'], 'Proportions'] = outputdict[sampName].loc[outputdict[sampName]['ST'] == row['ST'], 'Proportions'] / total_proportions
+	print "^~^~^~^~^~^~^~^~^~^~^~^ sample {}  final output ^~^~^~^~^~^~^~^~^~^~^~^~^~^~^ ".format(i + 1)
+        print outputdict[sampName]
+        print '^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^~^ '
+
     return outputdict

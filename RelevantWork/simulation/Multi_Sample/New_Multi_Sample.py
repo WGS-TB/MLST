@@ -107,7 +107,7 @@ def run_sim(num_samples, num_strains, editDist, num_mut, epsilon):
     #for each sample, select two strains at rondom from the total set of strains and assign it to that sample
     #we also assign assign proportions and generate proportions
     for sample in samples:
-        print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW PROCESSING {}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format(sample))
+        #print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~NOW PROCESSING {}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'.format(sample))
         #enter the currenct sample directory
         os.chdir(sample)
 
@@ -145,13 +145,13 @@ def run_sim(num_samples, num_strains, editDist, num_mut, epsilon):
         strain_prop_dict = uf.Write_Proportions(strains, proportions)
         #add it to the dictionary containing all the strains
         all_strains_dict[sample] = strain_prop_dict
-	print strain_prop_dict, '\n'
-	print true_all, '\n'
+	#print strain_prop_dict, '\n'
+	#print true_all, '\n'
 
         #change back to top directory
         os.chdir('../')
 
-    print '\n\n\n', (strains_dict), '\n\n\n'
+    #print '\n\n\n', (strains_dict), '\n\n\n'
 
     #now we run the SDP on all 4 samples
     samplesDir = '/home/parham/Desktop/CS-MLST/RelevantWork/simulation/Multi_Sample/Samples'
@@ -159,27 +159,30 @@ def run_sim(num_samples, num_strains, editDist, num_mut, epsilon):
     SDP_result = cs.strainSolver(samplesDir,path,outputDir,'noProp','all',10800,5, loci=loci,pathToDistMat=pathToDistMat, eps=epsilon)
 
     #compute the precision, recall, and tvd for the SDP
-    S1t = sorted([int(x[7:]) for x in all_strains_dict.keys()])
-    S1 = []
-    for s in S1t:
-	S1.append('Sample_' + str(s))
-    S2t = sorted([int(x[1:]) for x in SDP_result.keys()])
-    S2 = []
-    for s in S2t:
-	S2.append('s' + str(s))
+    # S1t = sorted([int(x[7:]) for x in all_strains_dict.keys()])
+    # S1 = []
+    # for s in S1t:
+	# S1.append('Sample_' + str(s))
+    # S2t = sorted([int(x[1:]) for x in SDP_result.keys()])
+    # S2 = []
+    # for s in S2t:
+	# S2.append('s' + str(s))
+    #compute the precision, recall, and tvd for the SDP
+    S1 = sorted(all_strains_dict.keys())
+    S2 = sorted(SDP_result.keys())
 
     #dictionary to hold the precision, recall and tvd values
     SDP_prec = defaultdict(list)
     SDP_recall = defaultdict(list)
     SDP_tvd = defaultdict(list)
 
-    print
+    #print
     #for each sample in the SDP result, compute the summary statistics
     for i in range(len(S1)):
         T1 = SDP_result[S2[i]]
         prec, rec, tvd = uf.Compute_Prec_and_rec(all_strains_dict[S1[i]], T1)
 
-        print(prec, rec, tvd)
+        #print(prec, rec, tvd)
         SDP_prec[S1[i]].append(prec)
         SDP_recall[S1[i]].append(rec)
         SDP_tvd[S1[i]].append(tvd)
@@ -197,7 +200,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("-n", "--numOfiter", required=False, default=40, type=int, help="The number of simulation iterations default = 10")
     ap.add_argument("-s", "--numOfstrains", required=False, default=5 ,type=int, help="The number of initial strains to select. Default = 5")
-    ap.add_argument("-Ns", "--numOfsample", required=False, default=5, type=int, help="The number of samples to simulate. Default = 5")
+    ap.add_argument("-Ns", "--numOfsample", required=False, default=11, type=int, help="The number of samples to simulate. Default = 5")
     ap.add_argument("-Ed", "--editDist", required=False, default=15, type=int, help="The maximum edit distance. Default = 15")
     ap.add_argument("-nm", "--numMut", required=False, default=1, type=int, help="The number of mutations to introduce. Default = 1")
     ap.add_argument("-eps", "--epsilon", required=False, default=0.01, type=float, help="The epsilon to be used in the strain solver")
